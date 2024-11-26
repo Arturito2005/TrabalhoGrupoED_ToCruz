@@ -8,14 +8,15 @@ package "Mapa" {
 
 
     enum typeAlvo {
-
+        quimico 
+        vitima
+        materialValioso
     }
 
     class Alvo {
         - Divisao divisao
         - typeAlvo type
     }
-
 
     enum typeItem {
         kit_vida
@@ -31,6 +32,7 @@ package "Mapa" {
     }
 
     Item "1..1" -- "1..1" Divisoes
+    Item "1..1" -- "0..*" typeItem
     Alvo "0..*" -- "1..1" typeAlvo
 }
 
@@ -47,9 +49,8 @@ package "personagens" {
     }
 
     interface interacoesToCruz {
+        + public void guardarKit(Item item)        
         + public void usarKit()
-
-        
     }
     /'
     A Stack guarda apenas os kitVida
@@ -58,7 +59,7 @@ package "personagens" {
         - static final double DEFAULT_VIDA = 100
         - StackItems kitVida
         --
-        
+
     }
 
     class Inimgo extends Personagem {
@@ -67,4 +68,5 @@ package "personagens" {
 
     Personagem "1..1" -- "0..*" Divisoes
 }
+
 @enduml
