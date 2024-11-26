@@ -1,0 +1,70 @@
+@startuml DiagramaClassesToCruz
+
+package "Mapa" {
+    class Divisoes {
+        - String nome
+        - boolean entrada_saidas
+    }
+
+
+    enum typeAlvo {
+
+    }
+
+    class Alvo {
+        - Divisao divisao
+        - typeAlvo type
+    }
+
+
+    enum typeItem {
+        kit_vida
+        coletes
+    }
+
+    /'Se houver diferente entre o que cada item fornce,
+    criar hierarquia'/
+    class Item {
+        - Divisoes divisao
+        - typeItem type
+        - double vida_recuperada
+    }
+
+    Item "1..1" -- "1..1" Divisoes
+    Alvo "0..*" -- "1..1" typeAlvo
+}
+
+package "personagens" {
+    abstract class Personagem {
+        - String nome
+        - double vida
+        - double poder
+        - Divisoes divisao
+        --
+        + geteres()
+        - setVida()
+        - setDivisao()
+    }
+
+    interface interacoesToCruz {
+        + public void usarKit()
+
+        
+    }
+    /'
+    A Stack guarda apenas os kitVida
+    '/
+    class ToCruz extends Personagem implements interacoesToCruz {
+        - static final double DEFAULT_VIDA = 100
+        - StackItems kitVida
+        --
+        
+    }
+
+    class Inimgo extends Personagem {
+
+    }
+
+    Personagem "1..1" -- "0..*" Divisoes
+}
+@enduml
