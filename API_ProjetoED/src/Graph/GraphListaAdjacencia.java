@@ -5,6 +5,7 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import Interfaces.GraphADT;
 import LinkedList.LinearLinkedOrderedList;
+import LinkedList.LinearLinkedUnorderedList;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import java.util.Iterator;
@@ -15,7 +16,6 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
     protected T[] vertices; // Array de vértices
 
-    //Ver se tenho 
     protected LinearLinkedOrderedList<T>[] listaAdj; // Lista de adjacência como array de ListaLigada
 
     protected int numVertices; // Número atual de vértices

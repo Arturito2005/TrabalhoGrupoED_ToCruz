@@ -1,11 +1,28 @@
 @startuml DiagramaClassesToCruz
 
 package "Mapa" {
-    class Divisoes {
+    /'
+    Provavelmente é preciso remover este boolean
+    '/
+    class Divisao {
+        - int id_Divisao
         - String nome
         - boolean entrada_saidas
     }
 
+    /'
+    As Divisao do edifio vão ser um grafo
+    o grafo é construido quando e feita a importação dos dados
+    '/
+    class Edificio {
+        - int id_edificio
+        - int contDivisoes
+        - GrafoDivisao Divisao
+        --
+        + MetodoGerarMapa
+    }
+
+    Edificio "1..1" -- "1..*" Divisao
 
     enum typeAlvo {
         quimico 
@@ -13,9 +30,20 @@ package "Mapa" {
         materialValioso
     }
 
+    /'
+    Talvez meter o type como uma String se sim remover typeAlvo acima
+    
+    O boolean antigido representa se o objeto já foi coletado ou não pelo 
+    ToCruz
+    '/
     class Alvo {
+        - int id_alvo
+        - String nome
         - Divisao divisao
         - typeAlvo type
+        - boolean atinigido
+        --
+        + setAntigido(boolean antigido)
     }
 
     enum typeItem {
@@ -26,47 +54,98 @@ package "Mapa" {
     /'Se houver diferente entre o que cada item fornce,
     criar hierarquia'/
     class Item {
-        - Divisoes divisao
+        - int id_item
+        - Divisao divisao
         - typeItem type
         - double vida_recuperada
     }
 
-    Item "1..1" -- "1..1" Divisoes
+    Alvo "1..1" -- "1..1" Divisao
+    Item "1..1" -- "1..1" Divisao
     Item "1..1" -- "0..*" typeItem
     Alvo "0..*" -- "1..1" typeAlvo
 }
 
 package "personagens" {
-    abstract class Personagem {
+    
+    /'Não daria para meter o To Cruz e o inimigo como uma enum,
+    mas só fazer se nã achar mais campos para o inimigo e para o To Cruz'/
+    interface interacoesPersonagens {
+        + void movimentacao()
+        + void ataque()
+    }
+    
+    abstract class Personagem extends interacoesPersonagens {
+        - int id_personagem
         - String nome
         - double vida
-        - double poder
-        - Divisoes divisao
+        - Divisao divisao
+        - boolean confronto
         --
         + geteres()
         - setVida()
         - setDivisao()
+        - abstract attack(double vida_perdida)
     }
 
     interface interacoesToCruz {
         + public void guardarKit(Item item)        
         + public void usarKit()
+        + public void usarColete(double colete)
     }
+
     /'
     A Stack guarda apenas os kitVida
+    A double vidaColete em principio não é necessário.
+    O ToCruz não tem a variavel poder, porque ele vai dar sempre
+    instaKill
     '/
     class ToCruz extends Personagem implements interacoesToCruz {
         - static final double DEFAULT_VIDA = 100
-        - StackItems kitVida
+        - StackItems mochila
+        - double vidaColete
         --
-
+        + attack(double vida_perdida)
     }
 
     class Inimgo extends Personagem {
-
+        - double poder
+        --
     }
 
-    Personagem "1..1" -- "0..*" Divisoes
+    Personagem "1..1" -- "0..*" Divisao
+    ToCruz "1..1" -- "0..*" Item
+}
+
+package "Missoes" {
+
+    /'
+    O item é uma LinkedList ou um array
+    As entras também podem ser LinkedList ou Stacks 
+
+    Estes campos também podem ser Listas (que pode ser melhor)
+
+    No construtor o ToCruz não é mandado no 
+    '/
+    class Missao {
+        - string nome
+        - int versao
+        - Edificio edificio
+        - Alvo alvo
+        - ListaUnordered item
+        - ListaUnordered entradas_saidas
+        - ListaUnordered inimigos
+        - ToCruz toCruz
+        - boolean sucesso
+        --
+        + String resumoMissao()
+    }
+
+    Missao "1..1" -- "0..*" Item
+    Missao "1..1" -- "1..1" Edificio
+    Missao "1..1" -- "1..*" Divisao
+    Missao "1..1" -- "1..*" Inimgo
+    Missao "1..1" -- "1..1" ToCruz
 }
 
 @enduml
