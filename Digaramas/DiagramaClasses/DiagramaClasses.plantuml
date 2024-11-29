@@ -23,13 +23,6 @@ package "Mapa" {
     }
 
     Edificio "1..1" -- "1..*" Divisao
-
-    enum typeAlvo {
-        quimico 
-        vitima
-        materialValioso
-    }
-
     /'
     Talvez meter o type como uma String se sim remover typeAlvo acima
     
@@ -40,7 +33,7 @@ package "Mapa" {
         - int id_alvo
         - String nome
         - Divisao divisao
-        - typeAlvo type
+        - String alvo
         - boolean atinigido
         --
         + setAntigido(boolean antigido)
@@ -53,17 +46,20 @@ package "Mapa" {
 
     /'Se houver diferente entre o que cada item fornce,
     criar hierarquia'/
-    class Item {
+    abstract class Item {
         - int id_item
         - Divisao divisao
+    }
+
+    class ItemCura extends Item{
         - typeItem type
         - double vida_recuperada
     }
 
+
     Alvo "1..1" -- "1..1" Divisao
-    Item "1..1" -- "1..1" Divisao
-    Item "1..1" -- "0..*" typeItem
-    Alvo "0..*" -- "1..1" typeAlvo
+    ItemCura "1..1" -- "1..1" Divisao
+    ItemCura "1..1" -- "0..*" typeItem
 }
 
 package "personagens" {
@@ -139,6 +135,7 @@ package "Missoes" {
         - boolean sucesso
         --
         + String resumoMissao()
+        + Inimigo removeInimigo
     }
 
     Missao "1..1" -- "0..*" Item
@@ -146,6 +143,26 @@ package "Missoes" {
     Missao "1..1" -- "1..*" Divisao
     Missao "1..1" -- "1..*" Inimgo
     Missao "1..1" -- "1..1" ToCruz
+}
+
+package "Importar Dados" {
+
+    class Import {
+        --
+        + void importData(String path)
+    }
+
+    Import "1..1" -- "1..1" Missao
+}
+
+package "Exportar Dados" {
+
+    class Exportar {
+        --
+        + void exportarDados()
+    }
+
+    Exportar "1..1" -- "1..1" Missao
 }
 
 @enduml
