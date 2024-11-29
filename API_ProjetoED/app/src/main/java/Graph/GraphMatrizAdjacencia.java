@@ -278,10 +278,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         Integer x;
         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
-        
-        T previous[] = (T[])(new Object[this.numVertices + 1]);
-        int comprimento[] = new int[this.numVertices];     
-        
+
+        T previous[] = (T[]) (new Object[this.numVertices]);
+        int comprimento[] = new int[this.numVertices];
+
         if (!indexIsValid(startVertex)) {
             return resultList.iterator();
         }
@@ -296,27 +296,31 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         visited[indexVertex] = true;
         //Até aqui em cima guardar tudo
 
-        int i = 0;
-        while (!traversalQueue.isEmpty() && traversalQueue.first() != indexFinal) {
+        while (!traversalQueue.isEmpty()) {
             x = traversalQueue.dequeue();
-            //previous[i+1] = x;
-            
-            resultList.addToRear(vertices[x.intValue()]);
             /**
              * Find all vertices adjacent to x that have not been visited and
              * queue them up
              */
-           /*
-             for (int i = 0; i < numVertices; i++) {
+            for (int i = 0; i < numVertices; i++) {
                 if (adjMatrix[x.intValue()][i] && !visited[i]) {
-                    traversalQueue.enqueue(new Integer(i));
+                    traversalQueue.enqueue(i);
                     visited[i] = true;
+                    previous[i] = vertices[x.intValue()];
+
+                    if(i > 0) {
+                        comprimento[i] = comprimento[i - 1]++;
+                    } else {
+                        comprimento[i] = 0;
+                    }
                 }
             }
-            
-            comprimento++;
-            */
         }
+
+        for(int i = indexFinal; i > 0; i++) {
+            resultList.addToFront(vertices[x.intValue()]);
+        }
+
         return resultList.iterator();
     }
 
@@ -337,7 +341,6 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
         if (this.numVertices > 0) {
             Iterator<T> itr = iteratorBFS(vertices[0]);
-
             int visti_cont = 0;
 
             while (itr.hasNext()) {
