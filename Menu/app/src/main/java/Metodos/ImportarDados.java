@@ -12,6 +12,7 @@ public class ImportarDados {
         Scanner sc = new Scanner(System.in);
         String nome_file = "";
 
+        //meter if para ver se tem ficheiros a importar
         //do {
         System.out.println("Importar Dados!");
         System.out.println("Introduza o nome do ficheiro:");

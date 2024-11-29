@@ -9,5 +9,14 @@ package Metodos;
  * @author artur
  */
 public class ModoManualMet {
-    
+
+
+
+    void apanharItem() {
+        //if(inimigo.divisao == ToCruz.divisao) {
+            //lutar
+        //} else {
+            //ToCruz.apnharItem();
+        //}
+    }
 }
