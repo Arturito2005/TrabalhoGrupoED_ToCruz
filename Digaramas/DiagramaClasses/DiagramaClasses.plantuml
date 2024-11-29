@@ -81,7 +81,8 @@ package "personagens" {
         + geteres()
         - setVida()
         - setDivisao()
-        - abstract attack(double vida_perdida)
+        - abstract void attack(double vida_perdida)
+        - abstract void mudarDivisao()
     }
 
     interface interacoesToCruz {
@@ -104,9 +105,11 @@ package "personagens" {
         + attack(double vida_perdida)
     }
 
+    /'O mudarDivisao vai definir a nova divisao do 
+    inimigo e depois chama o set para o mover'/
     class Inimgo extends Personagem {
-        - double poder
         --
+        + mudarDivisao()
     }
 
     Personagem "1..1" -- "0..*" Divisao
