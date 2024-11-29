@@ -157,7 +157,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         int indexVertex = getIndex(startVertex);
         Integer x;
         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
         if (!indexIsValid(startVertex)) {
             return resultList.iterator();
@@ -169,7 +169,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalQueue.enqueue(new Integer(indexVertex));
+        traversalQueue.enqueue(indexVertex);
         visited[indexVertex] = true;
 
         while (!traversalQueue.isEmpty()) {
@@ -188,7 +188,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
                     int index = getIndex(element);
                     
                     if (indexIsValid(index) && !visited[index]) {
-                        traversalQueue.enqueue(new Integer(index));
+                        traversalQueue.enqueue(index);
                         visited[index] = true;
                     }
                 }
@@ -204,7 +204,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         int startIndex = getIndex(startVertex);
         boolean found;
         LinkedStack<Integer> traversalStack = new LinkedStack<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
         boolean[] visited = new boolean[numVertices];
 
         if (!indexIsValid(startIndex)) {
@@ -215,7 +215,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalStack.push(new Integer(startIndex));
+        traversalStack.push(startIndex);
         resultList.addToRear(vertices[startIndex]);
         visited[startIndex] = true;
 
@@ -235,7 +235,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
                     int index = getIndex(element);
                     
                     if (indexIsValid(index) && !visited[index]) {
-                        traversalStack.push(new Integer(index));
+                        traversalStack.push(index);
                         resultList.addToRear(vertices[index]);
                         visited[index] = true;
                         found = true;
