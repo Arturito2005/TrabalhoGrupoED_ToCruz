@@ -318,7 +318,8 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         }
 
         for(int i = indexFinal; i > 0; i++) {
-            resultList.addToFront(vertices[x.intValue()]);
+            //Este for está mal aqui seria o x de alguma forma
+            resultList.addToFront(vertices[i]);
         }
 
         return resultList.iterator();

@@ -62,10 +62,12 @@ public class ModoManualMet {
         int op = -1;
         int i = 0;
 
-        do {
+        /*
+        *         do {
             System.out.println(i + " " + Divisao.getName);
             i++;
         } while(i < contDivisao);
+        * */
 
         do {
             System.out.println("Selecione uma opção -->");
