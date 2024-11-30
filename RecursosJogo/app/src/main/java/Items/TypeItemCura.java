@@ -1,4 +1,6 @@
 package Items;
 
-public interface TypeItemCura {
+public enum TypeItemCura {
+    KIT_VIDA,
+    COLETE
 }

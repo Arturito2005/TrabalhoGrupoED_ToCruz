@@ -5,10 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Exportar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesPersonagens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesToCruz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ModoManualMet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ModoManualMet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Exportar/ExportarDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Exportar/ExportarDado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/ItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/ItemCura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +61,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Artur&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/API_ProjetoED/app/src/main/java&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Artur",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/API_ProjetoED/app/src/main/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\TrabalhoGrupoED_ToCruz\API_ProjetoED\app\src\main\java" />
@@ -75,7 +89,7 @@
       <updated>1732873234155</updated>
       <workItem from="1732873237202" duration="81000" />
       <workItem from="1732874066266" duration="281000" />
-      <workItem from="1732966808744" duration="63000" />
+      <workItem from="1732966808744" duration="3179000" />
     </task>
     <servers />
   </component>
