@@ -2,7 +2,7 @@ package Mapa;
 
 import java.util.Objects;
 
-public class Divisao {
+public class Divisao implements Comparable {
 
     private static int ID_DIVISAO_CONT = 0;
 
@@ -10,24 +10,19 @@ public class Divisao {
 
     private String name;
 
-    private boolean entradas_saidas;
-
     public Divisao(String name, boolean entradas_saidas) {
         this.id_divisao = ID_DIVISAO_CONT++;
         this.name = name;
-        this.entradas_saidas = entradas_saidas;
     }
 
     public Divisao(String name) {
         this.id_divisao = ID_DIVISAO_CONT++;
         this.name = name;
-        this.entradas_saidas = false;
     }
 
     public Divisao() {
         this.id_divisao = ID_DIVISAO_CONT++;
         this.name = "";
-        this.entradas_saidas = false;
     }
 
     public int getId_divisao() {
@@ -38,16 +33,11 @@ public class Divisao {
         return name;
     }
 
-    public boolean isEntradas_saidas() {
-        return entradas_saidas;
-    }
-
     @Override
     public String toString() {
         return "Divisao{" +
                 "id_divisao=" + id_divisao +
                 ", name='" + name + '\'' +
-                ", entradas_saidas=" + entradas_saidas +
                 '}';
     }
 
@@ -68,15 +58,22 @@ public class Divisao {
             return true;
         }
 
-        if(this.name.equals(((Divisao) o).name) && this.entradas_saidas == ((Divisao) o).entradas_saidas) {
-            return true;
-        }
-
         return false;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_divisao, name, entradas_saidas);
+        return Objects.hash(id_divisao, name);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int compare = 0;
+        if(this.id_divisao > ((Divisao) o).id_divisao) {
+            compare = 1;
+        } else if (this.id_divisao < ((Divisao) o).id_divisao) {
+            compare = -1;
+        }
+        return compare;
     }
 }

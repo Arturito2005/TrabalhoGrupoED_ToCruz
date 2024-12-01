@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
-    protected final int DEFAULT_CAPACITY = 10;
+    protected final int DEFAULT_CAPACITY = 30;
 
     protected T[] vertices; // Array de vértices
 
@@ -139,10 +139,13 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
      * @param vertex2 the second vertex
      */
     @Override
-    public void addEdge(T vertex1, T vertex2) {      
-        if (indexIsValid(vertex1) && indexIsValid(vertex2)) {
-            this.listaAdj[getIndex(vertex1)].add(vertex2);
-            this.listaAdj[getIndex(vertex2)].add(vertex1);
+    public void addEdge(T vertex1, T vertex2) {
+        int indexVertex1 = getIndex(vertex1);
+        int indexVertex2 = getIndex(vertex2);
+
+        if (indexIsValid(indexVertex1) && indexIsValid(indexVertex1)) {
+            this.listaAdj[indexVertex1].add(vertex2);
+            this.listaAdj[indexVertex2].add(vertex1);
         }
     }
 

@@ -10,17 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/Importar/TestImportarMapa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/MimiTestImportar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/MimiTestImportar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../jars/API_ProjetoED.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +96,7 @@
       <workItem from="1732874066266" duration="281000" />
       <workItem from="1732966808744" duration="3179000" />
       <workItem from="1733046028912" duration="4803000" />
-      <workItem from="1733054707673" duration="56000" />
+      <workItem from="1733054707673" duration="4977000" />
     </task>
     <servers />
   </component>

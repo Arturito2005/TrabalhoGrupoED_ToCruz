@@ -1,5 +1,7 @@
 package Missoes;
 
+import Importar.ImportarMapa;
+import Interfaces.MissaoADT;
 import Items.Item;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Alvo;
@@ -8,11 +10,14 @@ import Mapa.Edificio;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
 
-public class Missao {
+import java.io.IOException;
+import java.util.Objects;
+
+public class Missao implements MissaoADT {
 
     private String cod_missao;
 
-    private int versao;
+    private long versao;
 
     private Edificio edificio;
 
@@ -26,7 +31,7 @@ public class Missao {
 
     private ToCruz toCruz;
 
-    public Missao(String cod_missao, int versao, Edificio edificio, Alvo alvo, LinearLinkedUnorderedList<Item> item, LinearLinkedUnorderedList<Inimigo> inimigos, LinearLinkedUnorderedList<Divisao> entrada_saida, ToCruz toCruz) {
+    public Missao(String cod_missao, long versao, Edificio edificio, Alvo alvo, LinearLinkedUnorderedList<Item> item, LinearLinkedUnorderedList<Inimigo> inimigos, LinearLinkedUnorderedList<Divisao> entrada_saida) {
         this.cod_missao = cod_missao;
         this.versao = versao;
         this.edificio = edificio;
@@ -34,7 +39,7 @@ public class Missao {
         this.item = item;
         this.inimigos = inimigos;
         this.entrada_saida = entrada_saida;
-        this.toCruz = toCruz;
+        this.toCruz = new ToCruz();
     }
 
     public Missao() {
@@ -52,8 +57,12 @@ public class Missao {
         return cod_missao;
     }
 
-    public int getVersao() {
+    public long getVersao() {
         return versao;
+    }
+
+    public void setVersao(long versao) {
+        this.versao = versao;
     }
 
     public Edificio getEdificio() {
@@ -80,6 +89,26 @@ public class Missao {
         return toCruz;
     }
 
+    public void addInimigo(Inimigo inimigo) {
+        this.inimigos.addToRear(inimigo);
+    }
+
+    @Override
+    public void getItem(Item item) {
+
+    }
+
+    @Override
+    public void iniciarConfronto() {
+
+    }
+
+    @Override
+    public void apanahrAlvo() {
+
+    }
+
+
     @Override
     public String toString() {
         return "Missao{" +
@@ -92,5 +121,28 @@ public class Missao {
                 ", entrada_saida=" + entrada_saida.toString() +
                 ", toCruz=" + toCruz.toString() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        if(!(o instanceof Missao)) {
+            return false;
+        }
+
+        Missao missao = (Missao) o;
+        return Objects.equals(cod_missao, missao.cod_missao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(cod_missao);
     }
 }

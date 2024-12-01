@@ -6,5 +6,5 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public interface Importar {
-    public void importarDados(String path, Missao missao) throws FileNotFoundException, IOException;
+    public Missao gerarMapa(String path) throws FileNotFoundException, IOException;
 }

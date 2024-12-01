@@ -1,6 +1,7 @@
 package Mapa;
 
 import Graph.GraphListaAdjacencia;
+import Graph.GraphMatrizAdjacencia;
 
 public class Edificio {
 
@@ -48,7 +49,9 @@ public class Edificio {
         this.planta_edificio.addVertex(divisao);
     }
 
-
+    public void addLigacao(Divisao vertex1, Divisao vertex2) {
+        this.planta_edificio.addEdge(vertex1, vertex2);
+    }
 
     @Override
     public String toString() {
