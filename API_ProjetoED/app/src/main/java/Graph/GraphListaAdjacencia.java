@@ -29,7 +29,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         T[] temp = (T[]) (new Object[(this.vertices.length * 2)]);
         System.arraycopy(this.vertices, 0, temp, 0, this.vertices.length);
         this.vertices = temp;
-        
+
         LinearLinkedOrderedList<T>[] novoArray = new LinearLinkedOrderedList[listaAdj.length * 2];
         System.arraycopy(listaAdj, 0, novoArray, 0, listaAdj.length);
         listaAdj = novoArray;
