@@ -6,7 +6,6 @@ import Items.ItemCura;
 import Items.TypeItemCura;
 import Mapa.Divisao;
 import Stacks.LinkedStack;
-
 /**
  *
  * Testar metodos
@@ -17,11 +16,12 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
 
     public ToCruz(Divisao divisao) {
         super("ToCruz", divisao);
-        mochila = new LinkedStack<>();
+        mochila = new LinkedStack<ItemCura>();
     }
 
     public ToCruz() {
         super("ToCruz");
+        mochila = new LinkedStack<ItemCura>();
     }
 
     /*Neste caso não sei até que ponto este mudar de divisão não devia de

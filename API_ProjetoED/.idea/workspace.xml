@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="API_ProjetoED:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/API_ProjetoED_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/API_ProjetoED.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/TestMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/TestMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/GraphADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/GraphADT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestsPersonagens/TestToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestsPersonagens/TestToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.API_ProjetoED:app [:app:Graph.TestListaAdjacencia.main()].executor": "Run",
     "Gradle.API_ProjetoED:app [:app:Graph.TestMatrizAdjacencia.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Artur",
@@ -62,6 +68,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -81,7 +90,7 @@
       <workItem from="1732873237202" duration="81000" />
       <workItem from="1732874066266" duration="281000" />
       <workItem from="1732966808744" duration="3179000" />
-      <workItem from="1733046028912" duration="2898000" />
+      <workItem from="1733046028912" duration="4803000" />
     </task>
     <servers />
   </component>

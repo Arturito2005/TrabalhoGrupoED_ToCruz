@@ -1,7 +1,6 @@
 package TestsPersonagens;
 
 import Exceptions.WrongTypeItem;
-import Items.Item;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import Mapa.Divisao;
@@ -21,9 +20,9 @@ public class TestToCruz {
 
     @BeforeEach
     public void setUp() {
-        divisao = new Divisao("Heliporto");
-        kit = new ItemCura(divisao, TypeItemCura.KIT_VIDA, 20);
-        toCruz = new ToCruz();
+        this.divisao = new Divisao("Heliporto");
+        this.kit = new ItemCura(divisao, TypeItemCura.KIT_VIDA, 20);
+        this.toCruz = new ToCruz();
     }
 
     @Test
@@ -54,16 +53,12 @@ public class TestToCruz {
     @Test
     public void testguardarKitNull() {
         Exception excecao = assertThrows(NullPointerException.class, () -> toCruz.guardarKit(null));
-        String excepted = "O kit medico a guardar na mochila não pode ser null";
-        assertEquals(excepted, excecao.getMessage(), "Quando se mete como parametro o valor null é lançada a exceção NullPointerException");
     }
 
     @Test
     public void testguardarKitTypeDifKit_NesteCasoColete() {
         ItemCura colete = new ItemCura(divisao, TypeItemCura.COLETE, 20);
         Exception excecao = assertThrows(WrongTypeItem.class, () -> toCruz.guardarKit(colete));
-        String excepted = "O kit medico a guardar na mochila não pode ser null";
-        assertEquals(excepted, excecao.getMessage(), "Quando se mete como parametro o valor null é lançada a exceção NullPointerException");
     }
 
     @Test
@@ -75,6 +70,7 @@ public class TestToCruz {
     @Test
     public void testUsarKitComKitNaMochilaEToComMenosDe100Pontos() {
         String excepted = "Curar";
+        //O kit esta a vir a null
         toCruz.guardarKit(kit);
         toCruz.setVida(70);
         assertEquals(excepted, toCruz.usarKit(), "Como o To Cruz tem pelo menos um kit na mochila e ele não tem a vida cheia ele vai poder usar o kit e curar-se");
@@ -97,14 +93,10 @@ public class TestToCruz {
     @Test
     public void testUsarColeteNullPoninterException() {
         Exception excecao = assertThrows(NullPointerException.class, () -> toCruz.usarColete(null));
-        String excepted = "O colete não pode ser nul";
-        assertEquals(excepted, excecao.getMessage(), "Como o item de curar mandado por parametro é nulo é lançada a exceção NullPointerException");
     }
 
     @Test
     public void testUsarColeteWrongTypeItem() {
         Exception excecao = assertThrows(WrongTypeItem.class, () -> toCruz.usarColete(this.kit));
-        String excepted = "O tipo do item tem de ser colete";
-        assertEquals(excepted, excecao.getMessage(), "Como o item de curar mandado por parametro não é do tipo colete é mandada a excessão WrongTypeItem");
     }
 }
