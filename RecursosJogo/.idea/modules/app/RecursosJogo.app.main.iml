@@ -12,13 +12,12 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../API_ProjetoED/app/build/libs/app.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../../../API_ProjetoED/app/build/libs/app.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="json-simple-1.1.1" level="project" />
   </component>
 </module>

@@ -10,6 +10,15 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="RecursosJogo.app.main" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../../API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.8.1" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.8.1" level="project" />
     <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
