@@ -182,7 +182,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      * @return an iterator that performs a breadth first traversal
      */
     @Override
-    public Iterator iteratorBFS(T startVertex) {
+    public Iterator<T> iteratorBFS(T startVertex) {
         int indexVertex = getIndex(startVertex);
         Integer x;
         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
@@ -227,7 +227,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      * @return an iterator that performs a depth first traversal
      */
     @Override
-    public Iterator iteratorDFS(T startVertex) {
+    public Iterator<T> iteratorDFS(T startVertex) {
         Integer x;
         int startIndex = getIndex(startVertex);
         boolean found;
@@ -270,56 +270,60 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
-    //Testar!!!!!!
     @Override
-    public Iterator iteratorShortestPath(T startVertex, T targetVertex) {
-        int indexVertex = getIndex(startVertex);
-        int indexFinal = getIndex(targetVertex);
-        Integer x;
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+    public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int start_index = getIndex(startVertex);
+        int final_index = getIndex(targetVertex);
 
-        T previous[] = (T[]) (new Object[this.numVertices]);
-        int comprimento[] = new int[this.numVertices];
-
-        if (!indexIsValid(startVertex)) {
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
             return resultList.iterator();
         }
 
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        int[] comprimeto = new int[numVertices];
+        int[] antecessor = new int[numVertices];
         boolean[] visited = new boolean[numVertices];
 
         for (int i = 0; i < numVertices; i++) {
             visited[i] = false;
         }
 
-        traversalQueue.enqueue(indexVertex);
-        visited[indexVertex] = true;
-        //Até aqui em cima guardar tudo
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        comprimeto[start_index] = 0;
+        antecessor[start_index] = -1;
 
-        while (!traversalQueue.isEmpty()) {
-            x = traversalQueue.dequeue();
-            /**
-             * Find all vertices adjacent to x that have not been visited and
-             * queue them up
-             */
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
             for (int i = 0; i < numVertices; i++) {
-                if (adjMatrix[x.intValue()][i] && !visited[i]) {
+                if (adjMatrix[index][i] && !visited[i]) {
+                    comprimeto[i] = comprimeto[index] + 1;
+                    antecessor[i] = index;
                     traversalQueue.enqueue(i);
                     visited[i] = true;
-                    previous[i] = vertices[x.intValue()];
-
-                    if(i > 0) {
-                        comprimento[i] = comprimento[i - 1]++;
-                    } else {
-                        comprimento[i] = 0;
-                    }
                 }
             }
         }
 
-        for(int i = indexFinal; i > 0; i++) {
-            //Este for está mal aqui seria o x de alguma forma
-            resultList.addToFront(vertices[i]);
+        //Não existe caminho
+        if (index != final_index) {
+            return resultList.iterator();
+        }
+
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            resultList.addToRear(vertices[stack.pop()]);
         }
 
         return resultList.iterator();
