@@ -27,10 +27,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
     protected void expandCapacity() {
         T[] temp = (T[]) (new Object[(this.vertices.length * 2)]);
-
         System.arraycopy(this.vertices, 0, temp, 0, this.vertices.length);
         this.vertices = temp;
-       
+        
+        LinearLinkedOrderedList<T>[] novoArray = new LinearLinkedOrderedList[listaAdj.length * 2];
+        System.arraycopy(listaAdj, 0, novoArray, 0, listaAdj.length);
+        listaAdj = novoArray;
     }
 
     /**
@@ -250,51 +252,6 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
         return resultList.iterator();
     }
-
-/*
-*     @Override
-    public Iterator iteratorShortestPath(T startVertex, T targetVertex) {
-        int index_start = getIndex(startVertex);
-        int index_target = getIndex(targetVertex);
-        int[] comprimento = new int[numVertices];
-        int[] antecessor = new int[numVertices];
-        Integer x = 0;
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
-
-        if (!indexIsValid(index_start) || !indexIsValid(index_target)) {
-            return resultList.iterator();
-        }
-
-        boolean[] visited = new boolean[numVertices];
-
-        for (int i = 0; i < numVertices; i++) {
-            visited[i] = false;
-        }
-
-        traversalQueue.enqueue(index_start);
-        visited[index_start] = true;
-
-        while (!traversalQueue.isEmpty() && (x.intValue() != index_target)) {
-            x = traversalQueue.dequeue();
-
-
-            if (listaAdj[x.intValue()] != null) {
-        Iterator<T> itr = listaAdj[x.intValue()].iterator();
-
-        while (itr.hasNext()) {
-            T element = itr.next();
-            int index = getIndex(element);
-
-            if (indexIsValid(index) && !visited[index]) {
-                traversalQueue.enqueue(index);
-                visited[index] = true;
-            }
-        }
-    }
-}
-
-        return resultList.iterator();    }*/
 
     @Override
     public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {

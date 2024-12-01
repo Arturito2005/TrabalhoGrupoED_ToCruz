@@ -24,6 +24,12 @@ public class Divisao {
         this.entradas_saidas = false;
     }
 
+    public Divisao() {
+        this.id_divisao = ID_DIVISAO_CONT++;
+        this.name = "";
+        this.entradas_saidas = false;
+    }
+
     public int getId_divisao() {
         return id_divisao;
     }

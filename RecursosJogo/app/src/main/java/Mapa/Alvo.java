@@ -19,6 +19,12 @@ public class Alvo {
         this.atinigido = false;
     }
 
+    public Alvo() {
+        this.id_alvo = ID_ALVO_CONT++;
+        this.nome = "";
+        this.divisao = new Divisao();
+    }
+
     public int getId_alvo() {
         return id_alvo;
     }

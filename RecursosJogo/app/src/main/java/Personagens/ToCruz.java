@@ -40,9 +40,13 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         double cura = item.getVida_recuperada();
         double nova_vida = 0;
 
-        if(this.getVida() + cura > 100) {
-            nova_vida = 100;
-        } else {
+        if (item.getType().equals(TypeItemCura.KIT_VIDA)) {
+            if (this.getVida() + cura > 100) {
+                nova_vida = 100;
+            } else {
+                nova_vida = this.getVida() + cura;
+            }
+        } else if (item.getType().equals(TypeItemCura.COLETE)) {
             nova_vida = this.getVida() + cura;
         }
 

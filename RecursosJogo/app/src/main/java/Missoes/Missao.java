@@ -37,6 +37,17 @@ public class Missao {
         this.toCruz = toCruz;
     }
 
+    public Missao() {
+        this.cod_missao = null;
+        this.versao = 0;
+        this.edificio = new Edificio();
+        this.alvo = new Alvo();
+        this.item = new LinearLinkedUnorderedList<>();
+        this.inimigos = new LinearLinkedUnorderedList<>();
+        this.entrada_saida = new LinearLinkedUnorderedList<>();
+        this.toCruz = new ToCruz();
+    }
+
     public String getCod_missao() {
         return cod_missao;
     }
