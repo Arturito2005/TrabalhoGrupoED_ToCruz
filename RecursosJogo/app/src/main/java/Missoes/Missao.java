@@ -89,10 +89,6 @@ public class Missao implements MissaoADT {
         return toCruz;
     }
 
-    public void addInimigo(Inimigo inimigo) {
-        this.inimigos.addToRear(inimigo);
-    }
-
     @Override
     public void getItem(Item item) {
 
@@ -108,6 +104,10 @@ public class Missao implements MissaoADT {
 
     }
 
+    @Override
+    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhas(Divisao divisao) {
+        return null;
+    }
 
     @Override
     public String toString() {

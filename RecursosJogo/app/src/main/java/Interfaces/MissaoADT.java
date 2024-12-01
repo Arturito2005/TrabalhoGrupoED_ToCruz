@@ -1,7 +1,8 @@
 package Interfaces;
 
 import Items.Item;
-import Personagens.Inimigo;
+import LinkedList.LinearLinkedUnorderedList;
+import Mapa.Divisao;
 
 public interface MissaoADT {
 
@@ -11,4 +12,5 @@ public interface MissaoADT {
 
     public void apanahrAlvo();
 
+    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhas(Divisao divisao);
 }

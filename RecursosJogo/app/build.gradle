@@ -36,4 +36,4 @@ java {
     }
 }
 
-//build.finalizedBy javadoc
+build.finalizedBy javadoc

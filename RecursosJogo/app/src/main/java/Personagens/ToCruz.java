@@ -6,36 +6,41 @@ import Items.ItemCura;
 import Items.TypeItemCura;
 import Mapa.Divisao;
 import Stacks.LinkedStack;
+
 /**
- *
- * Testar metodos
+ * Classe que representa o personagem principal do jogo, ToCruz.
+ * @author Artur
  */
 public class ToCruz extends Personagem implements InteracoesToCruz {
 
-    private LinkedStack<ItemCura> mochila;
+    private LinkedStack<ItemCura> mochila; // Mochila para armazenar itens de cura.
 
+    /**
+     * Construtor que inicializa o personagem ToCruz em uma divisão específica.
+     *
+     * @param divisao A divisão inicial onde o personagem estará localizado.
+     */
     public ToCruz(Divisao divisao) {
         super("ToCruz", divisao);
         mochila = new LinkedStack<ItemCura>();
     }
 
+    /**
+     * Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.
+     */
     public ToCruz() {
         super("ToCruz");
         mochila = new LinkedStack<ItemCura>();
     }
 
-    /*Neste caso não sei até que ponto este mudar de divisão não devia de
-    * receber como parametro a divisao ou até o metodo do menu para mudar
-    * de divisão vinha para aqui
-    *
-    * Tipo chamava-se o Metodo para mostar a proxima divisao do Ediifio
-    * mostrava aqui as opções e o To Cruz selecionava a nova divisao
-    * */
-    @Override
-    public void mudarDivisao() {
+    /*Pode ser preciso meter um metodo para mover o ToCruz aqui ou na missao*/
 
-    }
-
+    /**
+     * Método privado que aplica a cura ao personagem utilizando um item de cura.
+     * Atualiza a vida do personagem com base no tipo e na quantidade de cura fornecida pelo item.
+     *
+     * @param item O item de cura a ser utilizado.
+     */
     private void curar(ItemCura item) {
         double cura = item.getVida_recuperada();
         double nova_vida = 0;
@@ -54,7 +59,15 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         item.setColected(true);
     }
 
-    //Testar
+    /**
+     * Método para guardar um kit médico na mochila.
+     * Caso a mochila esteja cheia, o personagem poderá usá-lo imediatamente se necessário.
+     *
+     * @param item O item de cura a ser guardado.
+     * @return Uma mensagem indicando o estado da operação (guardado, usado ou descartado).
+     * @throws NullPointerException Se o item for nulo.
+     * @throws WrongTypeItem Se o tipo do item não for um kit de vida.
+     */
     @Override
     public String guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem {
         if(item == null) {
@@ -84,6 +97,12 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return temp;
     }
 
+    /**
+     * Método para usar um kit médico da mochila.
+     * Apenas possível se houver kits na mochila e se a vida não estiver cheia.
+     *
+     * @return Uma mensagem indicando o resultado da operação.
+     */
     @Override
     public String usarKit() {
         String temp = "";
@@ -104,6 +123,14 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return temp;
     }
 
+    /**
+     * Método para usar um colete de proteção.
+     *
+     * @param colete O item do tipo colete a ser usado.
+     * @return Uma mensagem indicando que o colete foi usado.
+     * @throws NullPointerException Se o colete for nulo.
+     * @throws WrongTypeItem Se o item não for do tipo colete.
+     */
     @Override
     public String usarColete(ItemCura colete) throws NullPointerException, WrongTypeItem{
         if(colete == null) {
@@ -119,6 +146,11 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return temp;
     }
 
+    /**
+     * Retorna uma string com todos os dados do ToCruz.
+     *
+     * @return Uma string com detalhes do personagem e sua mochila.
+     */
     @Override
     public String toString() {
         return "ToCruz{" +

@@ -10,17 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/Importar/TestImportarMapa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/MimiTestImportar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/MimiTestImportar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesPersonagens.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesPersonagens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
