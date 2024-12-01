@@ -3,6 +3,13 @@ package menu;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+/*
+* Não esquecer de meter metodos para gerar o mapa e para atualizar o mapa,
+* o atualizar mapa ele é chamado após cada turno (provavlemente vai ficar na missão)
+* e ele vai mudar de divisao do toCruz e dos inimigos e é onde caso o ToCruz esteja na divisao do item ele vai
+* coletá-lo
+* */
 public class ModoJogo {
 
     public static void main(String[] args) {

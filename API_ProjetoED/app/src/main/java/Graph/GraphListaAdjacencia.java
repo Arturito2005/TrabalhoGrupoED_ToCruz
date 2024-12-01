@@ -27,10 +27,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
     protected void expandCapacity() {
         T[] temp = (T[]) (new Object[(this.vertices.length * 2)]);
-
         System.arraycopy(this.vertices, 0, temp, 0, this.vertices.length);
         this.vertices = temp;
-       
+
+        LinearLinkedOrderedList<T>[] novoArray = new LinearLinkedOrderedList[listaAdj.length * 2];
+        System.arraycopy(listaAdj, 0, novoArray, 0, listaAdj.length);
+        listaAdj = novoArray;
     }
 
     /**
@@ -157,7 +159,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         int indexVertex = getIndex(startVertex);
         Integer x;
         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
         if (!indexIsValid(startVertex)) {
             return resultList.iterator();
@@ -169,7 +171,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalQueue.enqueue(new Integer(indexVertex));
+        traversalQueue.enqueue(indexVertex);
         visited[indexVertex] = true;
 
         while (!traversalQueue.isEmpty()) {
@@ -188,7 +190,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
                     int index = getIndex(element);
                     
                     if (indexIsValid(index) && !visited[index]) {
-                        traversalQueue.enqueue(new Integer(index));
+                        traversalQueue.enqueue(index);
                         visited[index] = true;
                     }
                 }
@@ -204,7 +206,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         int startIndex = getIndex(startVertex);
         boolean found;
         LinkedStack<Integer> traversalStack = new LinkedStack<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
         boolean[] visited = new boolean[numVertices];
 
         if (!indexIsValid(startIndex)) {
@@ -215,7 +217,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalStack.push(new Integer(startIndex));
+        traversalStack.push(startIndex);
         resultList.addToRear(vertices[startIndex]);
         visited[startIndex] = true;
 
@@ -235,7 +237,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
                     int index = getIndex(element);
                     
                     if (indexIsValid(index) && !visited[index]) {
-                        traversalStack.push(new Integer(index));
+                        traversalStack.push(index);
                         resultList.addToRear(vertices[index]);
                         visited[index] = true;
                         found = true;
@@ -252,8 +254,67 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     @Override
-    public Iterator iteratorShortestPath(T startVertex, T targetVertex) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int start_index = getIndex(startVertex);
+        int final_index = getIndex(targetVertex);
+
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
+            return resultList.iterator();
+        }
+
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        int[] comprimeto = new int[numVertices];
+        int[] antecessor = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            visited[i] = false;
+        }
+
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        comprimeto[start_index] = 0;
+        antecessor[start_index] = -1;
+
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
+            Iterator<T> itr = listaAdj[index].iterator();
+
+            while (itr.hasNext()) {
+                T element = itr.next();
+                int index_ele = getIndex(element);
+
+                if (indexIsValid(index_ele) && !visited[index_ele]) {
+                    comprimeto[index_ele] = comprimeto[index_ele] + 1;
+                    antecessor[index_ele] = index;
+                    traversalQueue.enqueue(index_ele);
+                    visited[index_ele] = true;
+                }
+            }
+        }
+
+        //Não existe caminho
+        if (index != final_index) {
+            return resultList.iterator();
+        }
+
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            resultList.addToRear(vertices[stack.pop()]);
+        }
+
+        return resultList.iterator();
     }
 
     @Override

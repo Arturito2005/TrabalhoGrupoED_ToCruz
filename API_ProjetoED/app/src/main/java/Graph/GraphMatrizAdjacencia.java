@@ -182,11 +182,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      * @return an iterator that performs a breadth first traversal
      */
     @Override
-    public Iterator iteratorBFS(T startVertex) {
+    public Iterator<T> iteratorBFS(T startVertex) {
         int indexVertex = getIndex(startVertex);
         Integer x;
         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
         if (!indexIsValid(startVertex)) {
             return resultList.iterator();
@@ -198,7 +198,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalQueue.enqueue(new Integer(indexVertex));
+        traversalQueue.enqueue(indexVertex);
         visited[indexVertex] = true;
 
         while (!traversalQueue.isEmpty()) {
@@ -210,7 +210,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
              */
             for (int i = 0; i < numVertices; i++) {
                 if (adjMatrix[x.intValue()][i] && !visited[i]) {
-                    traversalQueue.enqueue(new Integer(i));
+                    traversalQueue.enqueue(i);
                     visited[i] = true;
                 }
             }
@@ -227,12 +227,12 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      * @return an iterator that performs a depth first traversal
      */
     @Override
-    public Iterator iteratorDFS(T startVertex) {
+    public Iterator<T> iteratorDFS(T startVertex) {
         Integer x;
         int startIndex = getIndex(startVertex);
         boolean found;
         LinkedStack<Integer> traversalStack = new LinkedStack<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
         boolean[] visited = new boolean[numVertices];
 
         if (!indexIsValid(startIndex)) {
@@ -243,7 +243,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
             visited[i] = false;
         }
 
-        traversalStack.push(new Integer(startIndex));
+        traversalStack.push(startIndex);
         resultList.addToRear(vertices[startIndex]);
         visited[startIndex] = true;
 
@@ -256,7 +256,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
              */
             for (int i = 0; (i < numVertices) && !found; i++) {
                 if (adjMatrix[x.intValue()][i] && !visited[i]) {
-                    traversalStack.push(new Integer(i));
+                    traversalStack.push(i);
                     resultList.addToRear(vertices[i]);
                     visited[i] = true;
                     found = true;
@@ -270,53 +270,62 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
-    //Testar!!!!!!
     @Override
-    public Iterator iteratorShortestPath(T startVertex, T targetVertex) {
-        int indexVertex = getIndex(startVertex);
-        int indexFinal = getIndex(targetVertex);
-        Integer x;
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<>();
-        
-        T previous[] = (T[])(new Object[this.numVertices + 1]);
-        int comprimento[] = new int[this.numVertices];     
-        
-        if (!indexIsValid(startVertex)) {
+    public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int start_index = getIndex(startVertex);
+        int final_index = getIndex(targetVertex);
+
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
             return resultList.iterator();
         }
 
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        int[] comprimeto = new int[numVertices];
+        int[] antecessor = new int[numVertices];
         boolean[] visited = new boolean[numVertices];
 
         for (int i = 0; i < numVertices; i++) {
             visited[i] = false;
         }
 
-        traversalQueue.enqueue(new Integer(indexVertex));
-        visited[indexVertex] = true;
-        //Até aqui em cima guardar tudo
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        comprimeto[start_index] = 0;
+        antecessor[start_index] = -1;
 
-        int i = 0;
-        while (!traversalQueue.isEmpty() && traversalQueue.first() != indexFinal) {
-            x = traversalQueue.dequeue();
-            //previous[i+1] = x;
-            
-            resultList.addToRear(vertices[x.intValue()]);
-            /**
-             * Find all vertices adjacent to x that have not been visited and
-             * queue them up
-             */
-           /*
-             for (int i = 0; i < numVertices; i++) {
-                if (adjMatrix[x.intValue()][i] && !visited[i]) {
-                    traversalQueue.enqueue(new Integer(i));
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjMatrix[index][i] && !visited[i]) {
+                    comprimeto[i] = comprimeto[index] + 1;
+                    antecessor[i] = index;
+                    traversalQueue.enqueue(i);
                     visited[i] = true;
                 }
             }
-            
-            comprimento++;
-            */
         }
+
+        //Não existe caminho
+        if (index != final_index) {
+            return resultList.iterator();
+        }
+
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            resultList.addToRear(vertices[stack.pop()]);
+        }
+
         return resultList.iterator();
     }
 
@@ -337,7 +346,6 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
         if (this.numVertices > 0) {
             Iterator<T> itr = iteratorBFS(vertices[0]);
-
             int visti_cont = 0;
 
             while (itr.hasNext()) {
