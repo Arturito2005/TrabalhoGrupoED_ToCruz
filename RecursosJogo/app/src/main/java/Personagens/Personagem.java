@@ -3,7 +3,6 @@ package Personagens;
 import Interfaces.InteracoesPersonagens;
 import Mapa.Divisao;
 
-
 public abstract class Personagem implements InteracoesPersonagens {
     private static int ID_PERSONAGEM_CONT = 0;
 
@@ -21,6 +20,8 @@ public abstract class Personagem implements InteracoesPersonagens {
     
     private Divisao divisao;
 
+    private boolean confronto;
+
     private boolean dead;
 
     public Personagem(String nome, double vida, double poder , Divisao divisao) {
@@ -29,6 +30,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = vida;
         this.poder = poder;
         this.divisao = divisao;
+        this.confronto = false;
         this.dead = false;
     }
 
@@ -38,6 +40,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = DEFAULT_VIDA;
         this.poder = DEFAULT_PODER;
         this.divisao = divisao;
+        this.confronto = false;
         this.dead = false;
     }
 
@@ -47,6 +50,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = DEFAULT_VIDA;
         this.poder = DEFAULT_PODER;
         this.divisao = null;
+        this.confronto = false;
         this.dead = false;
     }
 
@@ -85,6 +89,22 @@ public abstract class Personagem implements InteracoesPersonagens {
     
     public void setVida(Divisao divisao) {
         this.divisao = divisao;
+    }
+
+    public boolean isConfronto() {
+        return confronto;
+    }
+
+    public void setConfronto(boolean confronto) {
+        this.confronto = confronto;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
     }
 
     @Override

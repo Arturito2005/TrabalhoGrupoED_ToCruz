@@ -32,8 +32,10 @@ public class ModoJogo {
 
         if (op == 1) {
             //Inicializa o jogo no modo Manual
+            missao.modoManual
         } else {
             //Inicialzia o jogo no modo Automático
+            missao.modoAutomatico();
         }
     }
 

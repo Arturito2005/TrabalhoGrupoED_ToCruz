@@ -1,5 +1,6 @@
 package Missoes;
 
+import Graph.GraphListaAdjacencia;
 import Importar.ImportarMapa;
 import Interfaces.MissaoADT;
 import Items.Item;
@@ -28,6 +29,8 @@ public class Missao implements MissaoADT {
     private LinearLinkedUnorderedList<Inimigo> inimigos;
 
     private LinearLinkedUnorderedList<Divisao> entrada_saida;
+
+    private LinearLinkedUnorderedList<Divisao> trajeto_to;
 
     private ToCruz toCruz;
 
@@ -89,24 +92,39 @@ public class Missao implements MissaoADT {
         return toCruz;
     }
 
+    /*
+    * Retorna as divisoes vizinhas do Inimigo
+    * */
     @Override
-    public void getItem(Item item) {
-
-    }
-
-    @Override
-    public void iniciarConfronto() {
-
-    }
-
-    @Override
-    public void apanahrAlvo() {
-
-    }
-
-    @Override
-    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhas(Divisao divisao) {
+    public GraphListaAdjacencia<Divisao> getDivisoesVizinhasInimigo(Divisao divisao) {
         return null;
+    }
+
+    /*
+    * Retorna as divisoes vizinhas do To
+    * */
+    @Override
+    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhasTo(Divisao divisao) {
+        return null;
+    }
+
+    /*
+    * Adiciona um nova divisão ao percurso manual do To Cruz.
+    * */
+    @Override
+    public void addDivisaoTrajeto(Divisao divisao) {
+
+    }
+
+    @Override
+    public void modoAutomatico() {
+
+    }
+
+    //Ir buscar o menu dele ao projeto do menu
+    @Override
+    public void modoManual() {
+
     }
 
     @Override

@@ -1,16 +1,18 @@
 package Interfaces;
 
-import Items.Item;
+import Graph.GraphListaAdjacencia;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 
 public interface MissaoADT {
 
-    public void getItem(Item item);
+    public GraphListaAdjacencia<Divisao> getDivisoesVizinhasInimigo(Divisao divisao);
 
-    public void iniciarConfronto();
+    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhasTo(Divisao divisao);
 
-    public void apanahrAlvo();
+    public void addDivisaoTrajeto(Divisao divisao);
 
-    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhas(Divisao divisao);
+    public void modoAutomatico();
+
+    public void modoManual();
 }
