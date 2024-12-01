@@ -1,11 +1,12 @@
 package Interfaces;
 
+import Exceptions.WrongTypeItem;
 import Items.ItemCura;
 
 public interface InteracoesToCruz {
-    public void guardarKit(ItemCura item);
+    public String guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem;
 
-    public void usarKit();
+    public String usarKit();
 
-    public void usarColete(double colete);
+    public String usarColete(ItemCura colete) throws NullPointerException, WrongTypeItem;
 }

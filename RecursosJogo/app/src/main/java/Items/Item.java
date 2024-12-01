@@ -13,9 +13,12 @@ public abstract class Item {
 
     private Divisao divisao;
 
+    private boolean colected;
+
     public Item(Divisao divisao) {
         this.id_item = ID_ITEM_CONT++;
         this.divisao = divisao;
+        this.colected = false;
     }
 
     public int getId_item() {
@@ -24,6 +27,14 @@ public abstract class Item {
 
     public Divisao getDivisao() {
         return divisao;
+    }
+
+    public boolean isColected() {
+        return colected;
+    }
+
+    public void setColected(boolean colected) {
+        this.colected = colected;
     }
 
     @Override

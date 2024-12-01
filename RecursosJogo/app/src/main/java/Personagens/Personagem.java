@@ -20,12 +20,15 @@ public abstract class Personagem implements InteracoesPersonagens {
     
     private Divisao divisao;
 
+    private boolean dead;
+
     public Personagem(String nome, double vida, double poder , Divisao divisao) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
         this.nome = nome;
         this.vida = vida;
         this.poder = poder;
         this.divisao = divisao;
+        this.dead = false;
     }
 
     public Personagem(String nome, Divisao divisao) {
@@ -34,6 +37,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = DEFAULT_VIDA;
         this.poder = DEFAULT_PODER;
         this.divisao = divisao;
+        this.dead = false;
     }
 
     public Personagem(String nome) {
@@ -42,6 +46,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = DEFAULT_VIDA;
         this.poder = DEFAULT_PODER;
         this.divisao = null;
+        this.dead = false;
     }
 
     public Personagem(String nome, double poder, Divisao divisao) {
@@ -50,6 +55,7 @@ public abstract class Personagem implements InteracoesPersonagens {
         this.vida = DEFAULT_VIDA;
         this.poder = poder;
         this.divisao = divisao;
+        this.dead = false;
     }
 
     public int getId_personagem() {

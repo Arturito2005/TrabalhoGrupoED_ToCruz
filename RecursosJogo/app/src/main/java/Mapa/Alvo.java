@@ -48,4 +48,6 @@ public class Alvo {
                 ", atinigido=" + atinigido +
                 '}';
     }
+
+
 }

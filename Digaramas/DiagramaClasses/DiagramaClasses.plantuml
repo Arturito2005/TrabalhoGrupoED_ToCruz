@@ -19,7 +19,8 @@ package "Mapa" {
         - int contDivisoes
         - GrafoDivisao Divisao
         --
-        + MetodoGerarMapa
+        + void gerarMapa()
+        + String proximasDivisoes(Divisao target)
     }
 
     Edificio "1..1" -- "1..*" Divisao
@@ -125,6 +126,16 @@ package "Missoes" {
     Estes campos também podem ser Listas (que pode ser melhor)
 
     No construtor o ToCruz não é mandado no 
+
+    RemoverInimigo é dar setDead
+    
+    Mostrar no resumo
+    - Vida do ToCruz
+    - Items que utilizou
+    - Itens na mochila (se tiver)
+    - Percurso do ToCruz
+    - Total de kills
+    - Se a missão foi bem sucedida
     '/
     class Missao {
         - string nome
@@ -135,10 +146,9 @@ package "Missoes" {
         - ListaUnordered entradas_saidas
         - ListaUnordered inimigos
         - ToCruz toCruz
-        - boolean sucesso
         --
         + String resumoMissao()
-        + Inimigo removeInimigo
+        + Inimigo removeInimigo(Inimigo target)
     }
 
     Missao "1..1" -- "0..*" Item

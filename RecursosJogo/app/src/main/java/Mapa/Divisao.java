@@ -18,6 +18,12 @@ public class Divisao {
         this.entradas_saidas = entradas_saidas;
     }
 
+    public Divisao(String name) {
+        this.id_divisao = ID_DIVISAO_CONT++;
+        this.name = name;
+        this.entradas_saidas = false;
+    }
+
     public int getId_divisao() {
         return id_divisao;
     }
