@@ -14,10 +14,8 @@ import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
-import java.util.InputMismatchException;
-import java.util.Iterator;
-import java.util.Objects;
-import java.util.Scanner;
+
+import java.util.*;
 
 /**
  * Falta o turno do inimigo
@@ -77,6 +75,10 @@ public class Missao implements MissaoADT {
         this.inimigos_dead = new LinkedStack<>();
         this.trajeto_to = new LinkedQueue<>();
         this.toCruz = new ToCruz();
+    }
+
+    public Edificio getEdificio() {
+        return this.edificio;
     }
 
     /* Retorna as divisoes vizinhas do Inimigo */
@@ -326,10 +328,37 @@ public class Missao implements MissaoADT {
         }
     }
 
+    private void moverInimigo(Inimigo inimigo) {
+        Random randomizer =  new Random();
+        int numMoves = randomizer.nextInt(3);
+        Divisao[] tmpDivisoes = new Divisao[getEdificio().getPlantaEdificio().size()];
+        Divisao divisaoEscolhida = null;
+        Iterator<Divisao> it = null;
+        int cont = 0;
+
+        for (int i = 0; i < numMoves; i++) {
+            it = getEdificio().getPlantaEdificio().iteratorBFSNextDivisoes(inimigo.getDivisao());
+            while (it.hasNext()) {
+                // guarda cada uma das divisões adjacentes num array auxiliar
+                tmpDivisoes[cont++] = it.next();
+            }
+            // escolhe uma das divisões adjacentes à divisão onde o inimigo está
+            divisaoEscolhida = tmpDivisoes[randomizer.nextInt(cont)];
+            inimigo.setDivisao(divisaoEscolhida);
+            // limpar array para o caso de haver o próximo move
+            for (int j = 0; j < cont; j++) {
+                tmpDivisoes[j] = null;
+            }
+            cont = 0;
+        }
+    }
+
     private void turnoInimigo() {
         //Meter todo o codigo dos inimigos
-        for(Inimigo inimigo: inimigos) {
-            //Meter o metodo para o inimigo
+        for (Inimigo inimigo: inimigos) {
+            System.out.println(inimigo.getDivisao());
+            moverInimigo(inimigo);
+            System.out.println(inimigo.getDivisao());
         }
 
         if(existeConfronto()) {
@@ -337,7 +366,6 @@ public class Missao implements MissaoADT {
                 attackInimigo(inimigo);
             }
         }
-
     }
 
     //Também meter para sugerir uma entrada ao ToCruz (Meter a sala que está mais perto do alvo ou item)
