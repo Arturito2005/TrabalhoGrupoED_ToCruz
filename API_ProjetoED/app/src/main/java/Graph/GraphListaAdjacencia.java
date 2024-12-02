@@ -157,6 +157,39 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         }
     }
 
+    public Iterator<T> iteratorBFSNextDivisoes(T startVertex) {
+        int indexVertex = getIndex(startVertex);
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+
+        if (!indexIsValid(startVertex)) {
+            return resultList.iterator();
+        }
+
+        boolean[] visited = new boolean[numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            visited[i] = false;
+        }
+
+        visited[indexVertex] = true;
+
+        if (listaAdj[indexVertex] != null) {
+            Iterator<T> itr = listaAdj[indexVertex].iterator();
+
+            while (itr.hasNext()) {
+                T element = itr.next();
+                int index = getIndex(element);
+
+                if (indexIsValid(index) && !visited[index]) {
+                    visited[index] = true;
+                    resultList.addToRear(element);
+                }
+            }
+        }
+
+        return resultList.iterator();
+    }
+
     @Override
     public Iterator iteratorBFS(T startVertex) {
         int indexVertex = getIndex(startVertex);
@@ -306,7 +339,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
         LinkedStack<Integer> stack = new LinkedStack<>();
         index = final_index;
-        stack.push(index);
+        stack.push(final_index);
 
         do {
             index = antecessor[index];

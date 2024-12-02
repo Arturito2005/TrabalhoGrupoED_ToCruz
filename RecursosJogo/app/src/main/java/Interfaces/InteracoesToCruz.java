@@ -8,5 +8,5 @@ public interface InteracoesToCruz {
 
     public String usarKit();
 
-    public String usarColete(ItemCura colete) throws NullPointerException, WrongTypeItem;
+    public String usarItem(ItemCura colete) throws NullPointerException;
 }

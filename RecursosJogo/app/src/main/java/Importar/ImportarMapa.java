@@ -73,7 +73,6 @@ public class ImportarMapa implements Importar {
         JSONParser jsonP = new JSONParser();
         Missao missao = null;
 
-
         try {
             FileReader reader = new FileReader(path);
             Object obj = jsonP.parse(reader);
@@ -131,7 +130,7 @@ public class ImportarMapa implements Importar {
                 for (Object entrada : entradas_array) {
                     Divisao divisao = findDivisao((String) entrada);
                     if (divisao != null) {
-                        entradas_saidas.addToRear(divisao);
+                        divisao.setEntrada_saida(true); // Definir como entrada/saída
                     }
                 }
 
@@ -141,7 +140,7 @@ public class ImportarMapa implements Importar {
 
                 Alvo alvo = new Alvo(tipo_alvo, findDivisao(divisao_alvo));
 
-                LinearLinkedUnorderedList<Item> itens = new LinearLinkedUnorderedList<>();
+                LinearLinkedUnorderedList<ItemCura> itens = new LinearLinkedUnorderedList<>();
                 JSONArray itens_array = (JSONArray) readingObj.get("itens");
 
                 for (Object cont_obj : itens_array) {
@@ -167,7 +166,7 @@ public class ImportarMapa implements Importar {
                     itens.addToRear(new ItemCura(findDivisao(divisao_item), type, pontos_vida));
                 }
 
-                missao = new Missao(codigo_missao, versao, edificio, alvo, itens, inimigos, entradas_saidas);
+                missao = new Missao(codigo_missao, versao, edificio, alvo, itens, inimigos);
             }
         } catch (ParseException | FileNotFoundException e) {
             throw new RuntimeException(e);

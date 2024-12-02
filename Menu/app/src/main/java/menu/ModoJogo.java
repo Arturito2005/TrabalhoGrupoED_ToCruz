@@ -1,5 +1,7 @@
 package menu;
 
+import Metodos.ImportarDados;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -13,6 +15,8 @@ import java.util.Scanner;
 public class ModoJogo {
 
     public static void main(String[] args) {
+        //Missao missao = new Missao;
+        //ImportarDados import = new ImportarDados();
         Scanner sc = new Scanner(System.in);
         int op = -1;
 
@@ -32,10 +36,10 @@ public class ModoJogo {
 
         if (op == 1) {
             //Inicializa o jogo no modo Manual
-            missao.modoManual
+            //missao.modoManual
         } else {
             //Inicialzia o jogo no modo Automático
-            missao.modoAutomatico();
+            //missao.modoAutomatico();
         }
     }
 

@@ -1,5 +1,6 @@
-package Importar;
+package TestImportar;
 
+import Importar.ImportarMapa;
 import Missoes.Missao;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

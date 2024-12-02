@@ -5,7 +5,7 @@ package Interfaces;
  *
  * @param <T>
  */
-public interface NetworkADT<T> extends Iterable<T> {
+public interface NetworkADT<T> extends Iterable<T>, GraphADT<T> {
 
     /**
      * Inserts an edge between two vertices of this graph.

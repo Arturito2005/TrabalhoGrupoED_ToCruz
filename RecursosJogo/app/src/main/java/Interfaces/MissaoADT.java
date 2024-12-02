@@ -1,18 +1,22 @@
 package Interfaces;
 
 import Graph.GraphListaAdjacencia;
-import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import java.util.Iterator;
 
 public interface MissaoADT {
 
     public GraphListaAdjacencia<Divisao> getDivisoesVizinhasInimigo(Divisao divisao);
 
-    public LinearLinkedUnorderedList<Divisao> getDivisoesVizinhasTo(Divisao divisao);
+    public Iterator<Divisao> getCaminhoMaisCurtoToItemOrAlvo();
 
-    public void addDivisaoTrajeto(Divisao divisao);
+    public Divisao getDivisoesVizinhasTo();
+
+    public void addDivisaoTrajetoToCruz(Divisao divisao);
 
     public void modoAutomatico();
 
     public void modoManual();
+
+    public void relatoriosMissao();
 }

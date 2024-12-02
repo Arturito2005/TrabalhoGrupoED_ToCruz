@@ -87,16 +87,12 @@ public class TestToCruz {
     public void testUsarColete() {
         String excepted = "Colete Usado";
         ItemCura item = new ItemCura(divisao, TypeItemCura.COLETE, 20);
-        assertEquals(excepted, toCruz.usarColete(item), "Como o To Cruz apanham um colete ele vai utiliza-lo");
+        assertEquals(excepted, toCruz.usarItem(item), "Como o To Cruz apanham um colete ele vai utiliza-lo");
     }
 
     @Test
     public void testUsarColeteNullPoninterException() {
-        Exception excecao = assertThrows(NullPointerException.class, () -> toCruz.usarColete(null));
+        Exception excecao = assertThrows(NullPointerException.class, () -> toCruz.usarItem(null));
     }
 
-    @Test
-    public void testUsarColeteWrongTypeItem() {
-        Exception excecao = assertThrows(WrongTypeItem.class, () -> toCruz.usarColete(this.kit));
-    }
 }

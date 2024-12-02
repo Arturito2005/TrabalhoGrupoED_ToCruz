@@ -1,7 +1,8 @@
 package Mapa;
 
 import Graph.GraphListaAdjacencia;
-import Graph.GraphMatrizAdjacencia;
+
+import java.util.Iterator;
 
 public class Edificio {
 
@@ -41,6 +42,10 @@ public class Edificio {
         return name;
     }
 
+    public int numDivisoes() {
+        return this.planta_edificio.size();
+    }
+
     public GraphListaAdjacencia<Divisao> getPlantaEdificio() {
         return planta_edificio;
     }
@@ -51,6 +56,10 @@ public class Edificio {
 
     public void addLigacao(Divisao vertex1, Divisao vertex2) {
         this.planta_edificio.addEdge(vertex1, vertex2);
+    }
+
+    public Iterator<Divisao> getNextDivisoes(Divisao divisao) {
+        return this.planta_edificio.iteratorBFSNextDivisoes(divisao);
     }
 
     @Override

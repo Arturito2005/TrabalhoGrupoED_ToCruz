@@ -28,7 +28,7 @@ public class TestListaAdjacencia {
         graph.addEdge("E", "G");
         System.out.println(graph.isConnected());
 
-        Iterator<String> itr2 = graph.iteratorDFS("A");
+        Iterator<String> itr2 = graph.iteratorBFSNextDivisoes("A");
         Iterator<String> itr = graph.iteratorShortestPath("A", "G");
 
         while(itr.hasNext()) {

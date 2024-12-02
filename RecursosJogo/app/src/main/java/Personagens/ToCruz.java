@@ -34,6 +34,18 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
     }
 
     /*Pode ser preciso meter um metodo para mover o ToCruz aqui ou na missao*/
+    /**
+     * Método publico que verifica se a mochila do To Cruz já está cheia
+     */
+    public boolean mochilaIsFull() {
+        boolean full = false;
+
+        if(mochila.size() == 3) {
+            full = true;
+        }
+
+        return full;
+    }
 
     /**
      * Método privado que aplica a cura ao personagem utilizando um item de cura.
@@ -41,6 +53,7 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
      *
      * @param item O item de cura a ser utilizado.
      */
+    //Meter public
     private void curar(ItemCura item) {
         double cura = item.getVida_recuperada();
         double nova_vida = 0;
@@ -56,7 +69,6 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         }
 
         this.setVida(nova_vida);
-        item.setColected(true);
     }
 
     /**
@@ -123,26 +135,32 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return temp;
     }
 
+    public boolean mochilaTemKit() {
+        boolean contem = true;
+
+        if(mochila.isEmpty()) {
+            contem = false;
+        }
+
+        return contem;
+    }
+
     /**
      * Método para usar um colete de proteção.
      *
-     * @param colete O item do tipo colete a ser usado.
+     * @param item O item do tipo colete a ser usado.
      * @return Uma mensagem indicando que o colete foi usado.
      * @throws NullPointerException Se o colete for nulo.
      * @throws WrongTypeItem Se o item não for do tipo colete.
      */
     @Override
-    public String usarColete(ItemCura colete) throws NullPointerException, WrongTypeItem{
-        if(colete == null) {
-            throw new NullPointerException("O colete não pode ser nulo");
-        }
-
-        if(colete.getType() != TypeItemCura.COLETE) {
-            throw new WrongTypeItem("O tipo do item tem de ser colete");
+    public String usarItem(ItemCura item) throws NullPointerException, WrongTypeItem{
+        if(item == null) {
+            throw new NullPointerException("O item não pode ser nulo");
         }
 
         String temp = "Colete Usado";
-        curar(colete);
+        curar(item);
         return temp;
     }
 
