@@ -133,8 +133,8 @@ public class Missao implements MissaoADT {
             }
         } while (0 < op || op >= listaDiv.size());
 
-        int y = listaDiv.size();
-        while (y > op) {
+        int y = listaDiv.size() - 1;
+        while(y > op) {
             listaDiv.pop();
             y--;
         }

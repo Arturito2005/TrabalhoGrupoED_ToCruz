@@ -1,9 +1,8 @@
 package Personagens;
 
-import Interfaces.InteracoesPersonagens;
 import Mapa.Divisao;
 
-public abstract class Personagem implements InteracoesPersonagens {
+public abstract class Personagem {
     private static int ID_PERSONAGEM_CONT = 0; //Variável estática para controlar o ID único para cada personagem.
 
     private static final int DEFAULT_VIDA = 100; //Variável estasticas para definir um valor default da vida do personagem
@@ -87,10 +86,6 @@ public abstract class Personagem implements InteracoesPersonagens {
     }
 
     public void setDivisao(Divisao divisao) {
-        this.divisao = divisao;
-    }
-
-    public void setVida(Divisao divisao) {
         this.divisao = divisao;
     }
 
