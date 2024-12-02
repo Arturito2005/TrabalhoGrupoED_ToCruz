@@ -1,8 +1,11 @@
 package Network;
 
+import ArrayList.ArrayUnorderedList;
 import Graph.GraphMatrizAdjacencia;
 import Interfaces.NetworkADT;
 import LinkedTree.LinkedHeap;
+import Queue.LinkedQueue;
+import Stacks.LinkedStack;
 
 import java.util.Iterator;
 
@@ -17,16 +20,10 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
 
-        /*
-        Este são os campos do super as tantas valha apena só chamar o mesmo
-        numVertices = 0;
-        this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
-        this.vertices = (T[]) (new Object[DEFAULT_CAPACITY]);
-        * */
-        //Isto abaixo é desnecessario, pois quando
+        //Ver se realmente é necessário
         for (int i = 0; i < DEFAULT_CAPACITY; i++) {
             for (int y = 0; y < DEFAULT_CAPACITY; y++) {
-                adjMatrix[i][y] = Double.POSITIVE_INFINITY;
+                adjMatrix[i][y] = 0;
             }
         }
     }
@@ -71,14 +68,145 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
     }
     /*
-    * Vamos ter que ter dois shotrestPathWeight, um para ir no fundo da Entrada para o Alvo
-    * (neste caso considerar 1º o caminho mais curto e depois o sem custos)
-    *
-    * e outra do alvo para uma saida
+    * Simula o dano que o ToCruz tomaria ao ir deste sitio até outro
     * */
     @Override
     public double shortestPathWeight(T vertex1, T vertex2) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        double pathWeight = 0;
+        int start_index = getIndex(vertex1);
+        int final_index = getIndex(vertex2);
+
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
+            return -1;
+        }
+
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        double[] distances = new double[numVertices];
+        int[] antecessor = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            distances[i] = 0;
+            visited[i] = false;
+            antecessor[i] = -1;
+        }
+
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        int[] indexes = new int[numVertices];
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjMatrix[index][i] > 0 && !visited[i]) {
+                    distances[i] = distances[index] + adjMatrix[index][i];
+                    antecessor[i] = index;
+                    traversalQueue.enqueue(i);
+                    visited[i] = true;
+                }
+            }
+        }
+
+        //Não existe caminho
+        if (index != final_index) {
+            return -1;
+        }
+
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            pathWeight = stack.pop();
+        }
+
+        return pathWeight;
+    }
+
+    private int getNoMiniumDistance(double[] distances, boolean[] visited) {
+        double minDistance = Double.POSITIVE_INFINITY;
+        int minIndex = -1;
+
+        for (int i = 0; i < distances.length; i++) {
+            if (!visited[i] && distances[i] < minDistance) {
+                minDistance = distances[i];
+                minIndex = i;
+            }
+        }
+
+        return minIndex;
+    }
+
+    public Iterator<T> getCaminhoMaisCurto(T vertex1, T vertex2) {
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int start_index = getIndex(vertex1);
+        int final_index = getIndex(vertex2);
+
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
+            return resultList.iterator();
+        }
+
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        double[] distances = new double[numVertices];
+        int[] antecessor = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            distances[i] = Double.POSITIVE_INFINITY;
+            visited[i] = false;
+            antecessor[i] = -1;
+        }
+
+        distances[start_index] = 0;
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        double min;
+        int indexmin = -1;
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
+            min = Double.POSITIVE_INFINITY;
+            for (int i = 0; i < numVertices; i++) {
+                if(adjMatrix[index][i] > min && !visited[i]) {
+                    min = adjMatrix[index][i];
+                    indexmin = i;
+                }
+            }
+
+            if (indexmin > -1) {
+                distances[indexmin] = distances[index] + adjMatrix[index][indexmin];
+                antecessor[indexmin] = index;
+                traversalQueue.enqueue(indexmin);
+                visited[indexmin] = true;
+            }
+        }
+
+        //Não existe caminho
+        if (index != final_index) {
+            return resultList.iterator();
+        }
+        //Não existe caminho
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            resultList.addToRear(vertices[stack.pop()]);
+        }
+
+        return resultList.iterator();
     }
 
     //Por enquanto fica isto
@@ -88,7 +216,20 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     protected int[] getEdgeWithWeightOf(double weight, boolean visited[]) {
-        return null;
+        int[] edges = new int[2];
+        for (int i = 0; i < this.adjMatrix.length; i++) {
+            for (int y = 0; y < this.adjMatrix[i].length; y++) {
+                if (this.adjMatrix[i][y] == weight && (visited[i] && !visited[y]) || (!visited[i] && visited[y])) {
+                    edges[0] = i;
+                    edges[1] = y;
+                    return edges;
+                }
+            }
+        }
+
+        edges[0] = -1;
+        edges[1] = -1;
+        return edges;
     }
 
     /**
@@ -112,6 +253,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
 
         resultGraph.adjMatrix = new double[numVertices][numVertices];
+        //Talvez meter aqui 0;
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
                 resultGraph.adjMatrix[i][j] = Double.POSITIVE_INFINITY;
@@ -137,7 +279,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
          Adicione todas as arestas adjacentes ao vértice inicial,
          para a heap*/
         for (int i = 0; i < numVertices; i++){
-            //minHeap.addElement(new Double(adjMatrix[0][i]));
             minHeap.addElement(adjMatrix[0][i]);
         }
 
@@ -178,6 +319,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
                 }
             }
         }
+
         return resultGraph;
     }
 }

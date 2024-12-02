@@ -51,10 +51,7 @@ public class Divisao implements Comparable {
 
     @Override
     public String toString() {
-        return "Divisao{" +
-                "id_divisao=" + id_divisao +
-                ", name='" + name + '\'' +
-                '}';
+        return this.name;
     }
 
     @Override

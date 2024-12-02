@@ -2,20 +2,18 @@ package Missoes;
 
 import Graph.GraphListaAdjacencia;
 import Interfaces.MissaoADT;
-import Items.Item;
+import Interfaces.QueueADT;
+import Interfaces.StackADT;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Alvo;
 import Mapa.Divisao;
 import Mapa.Edificio;
-import Nodes.LinearNode;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-import Queue.CircularArrayQueue;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
-
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Objects;
@@ -26,6 +24,8 @@ import java.util.Scanner;
  * Falta o modo automatico
  * Falta sugerir o caminho mais curto para o item ou alvo para o To Cruz
  * Trocar o Grafo sem custo para um grafo com custo
+ *
+ * Ver se realmente vão ser preciso getters, penso que só será necessário os metodos da MissaoADT.
  * */
 public class Missao implements MissaoADT {
 
@@ -66,7 +66,7 @@ public class Missao implements MissaoADT {
     }
 
     public Missao() {
-        this.cod_missao = null;
+        this.cod_missao = "";
         this.versao = 0;
         this.edificio = new Edificio();
         this.alvo = new Alvo();
@@ -79,55 +79,13 @@ public class Missao implements MissaoADT {
         this.toCruz = new ToCruz();
     }
 
-    public String getCod_missao() {
-        return cod_missao;
-    }
-
-    public long getVersao() {
-        return versao;
-    }
-
-    public void setVersao(long versao) {
-        this.versao = versao;
-    }
-
-    public Edificio getEdificio() {
-        return edificio;
-    }
-
-    public Alvo getAlvo() {
-        return alvo;
-    }
-
-    public LinearLinkedUnorderedList<ItemCura> getItemLista() {
-        return item_list;
-    }
-
-    public LinearLinkedUnorderedList<Inimigo> getInimigos() {
-        return inimigos;
-    }
-
-    public LinkedStack<Inimigo> getInimigos_dead() {
-        return inimigos_dead;
-    }
-
-    public LinearLinkedUnorderedList<Inimigo> getInimigos_confronto() {
-        return inimigos_confronto;
-    }
-
-    public ToCruz getToCruz() {
-        return toCruz;
-    }
-
-    /*
-    * Retorna as divisoes vizinhas do Inimigo
-    * */
+    /* Retorna as divisoes vizinhas do Inimigo */
     @Override
     public GraphListaAdjacencia<Divisao> getDivisoesVizinhasInimigo(Divisao divisao) {
         return null;
     }
 
-    /*Fazer com base no sem custos e depois adaptar*/
+    /* Fazer com base no sem custos e depois adaptar */
     @Override
     public Iterator<Divisao> getCaminhoMaisCurtoToItemOrAlvo() {
         return null;
@@ -144,7 +102,7 @@ public class Missao implements MissaoADT {
         int op = -1;
         Scanner sc = new Scanner(System.in);
         Iterator<Divisao> itr = this.edificio.getNextDivisoes(toCruz.getDivisao());
-        LinearLinkedUnorderedList<Divisao> listaDiv = new LinearLinkedUnorderedList<>();
+        LinkedStack<Divisao> listaDiv = new LinkedStack<>();
 
         System.out.println("Selecione a divisão para o ToCruz se mover!");
 
@@ -152,7 +110,7 @@ public class Missao implements MissaoADT {
         while (itr.hasNext()) {
             String temp = "";
             Divisao divisao = itr.next();
-            temp = i + " - " + divisao;
+            temp = i++ + " - " + divisao.toString();
 
             if(divisao.isEntrada_saida()) {
                 temp = temp + " (esta divisao é uma saida)";
@@ -161,7 +119,7 @@ public class Missao implements MissaoADT {
             }
 
             System.out.println(temp);
-            listaDiv.addToRear(itr.next());
+            listaDiv.push(divisao);
         }
 
         do {
@@ -173,14 +131,15 @@ public class Missao implements MissaoADT {
                 System.out.println("Numero inválido!");
                 sc.next();
             }
-        } while (0 < op || op > listaDiv.size());
+        } while (0 < op || op >= listaDiv.size());
 
-        while(op > 0) {
-            listaDiv.removeFirst();
-            op--;
+        int y = listaDiv.size();
+        while (y > op) {
+            listaDiv.pop();
+            y--;
         }
 
-        return listaDiv.first();
+        return listaDiv.peek();
     }
 
     /*
@@ -249,10 +208,10 @@ public class Missao implements MissaoADT {
         ItemCura item_div = null;
         if(!item_list.isEmpty()) {
             boolean find = false;
-            LinearLinkedUnorderedList<ItemCura> current = this.item_list;
+            Iterator<ItemCura> itr = this.item_list.iterator();
 
-            while(current != null && !find) {
-                ItemCura item = current.removeFirst();
+            while(itr.hasNext() && !find) {
+                ItemCura item = itr.next();
                 if (toCruz.getDivisao().equals(item.getDivisao())) {
                     this.item_colected.push(this.item_list.remove(item));
                     item_div = item;
@@ -294,9 +253,9 @@ public class Missao implements MissaoADT {
                         System.out.println("Numero inválido!");
                         sc.next();
                     }
-                } while(op < 1 || op > 2);
+                } while(op < 1 || op >= 2);
             } else {
-                System.out.println("Como a mochila do To Cruz está vazia, o To Cruz ataca");
+                System.out.println("Não é possível o To Cruz corrar-se porque não tem kits na mochila. Por isso ToCruz ataca!");
                 op = 1;
             }
 
@@ -305,27 +264,20 @@ public class Missao implements MissaoADT {
             } else if(op == 2) {
                 toCruz.usarKit();
             }
-
-            if(!existeConfronto() && toCruz.getDivisao().equals(alvo.getDivisao())) {
-                this.alvo.setAtinigido(true);
-            }
         } else {
             //Mete o ToCruz na no
+            //Este getDivisoesVizinhasTo funciona
             this.toCruz.setDivisao(this.getDivisoesVizinhasTo());
             addDivisaoTrajetoToCruz(toCruz.getDivisao());
 
             if(toCruz.getDivisao().equals(alvo.getDivisao())) {
                 System.out.println("To Cruz entrou na sala do alvo");
             }
+
             iniciarConfronto();
 
             if(existeConfronto()) {
                 attackToCruz();
-            }
-
-            if(!existeConfronto() && toCruz.getDivisao().equals(alvo.getDivisao())) {
-                this.alvo.setAtinigido(true);
-                System.out.println("To Cruz está com o alvo, agora só falta sair do edificio com vida");
             }
 
             //To Cruz entra numa sala com Item de cura
@@ -363,6 +315,12 @@ public class Missao implements MissaoADT {
                 }
             }
         }
+
+        //Qunado o TOCruz apava o confilto ou entrar na divisao do alvo e pode coleta-lo
+        if(!existeConfronto() && toCruz.getDivisao().equals(alvo.getDivisao())) {
+            this.alvo.setAtinigido(true);
+            System.out.println("To Cruz está com o alvo, agora só falta sair do edificio com vida");
+        }
     }
 
     private void turnoInimigo() {
@@ -379,22 +337,22 @@ public class Missao implements MissaoADT {
 
     }
 
-    //Também meter para sugerir uma entrada ao ToCruz
-    //Atualizar o Percurso do ToCruz
+    //Também meter para sugerir uma entrada ao ToCruz (Meter a sala que está mais perto do alvo ou item)
     //Testar (especialmente o set Divisão)
     private void ToCruzEntrarEdificio() {
         int op = -1;
         int i = 0;
         Scanner sc = new Scanner(System.in);
+
         //Dou um ponto inicial random
         Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iteratorBFS(alvo.getDivisao());
-        LinearLinkedUnorderedList<Divisao> entradas = new LinearLinkedUnorderedList<>();
+        StackADT<Divisao> entradas = new LinkedStack<>();
         while(itr.hasNext()) {
             Divisao div = itr.next();
 
             if(div.isEntrada_saida()) {
                 System.out.println(i++ + " - " + div.getName());
-                entradas.addToFront(div);
+                entradas.push(div);
             }
         }
 
@@ -407,16 +365,19 @@ public class Missao implements MissaoADT {
                 System.out.println("Numero inválido!");
                 sc.next();
             }
-        } while (op < 0 || op > i);
+        } while (op < 0 || op >= i);
 
-        for(int y = 0; y < op; y++) {
-            entradas.removeFirst();
+        //Trocar se calhar todo que seja deste tipo por uma stack
+        int y = entradas.size() - 1;
+        while(y > op) {
+            entradas.pop();
+            y--;
         }
 
-        toCruz.setDivisao(entradas.first());
+        toCruz.setDivisao(entradas.peek());
         addDivisaoTrajetoToCruz(toCruz.getDivisao());
-        iniciarConfronto();
 
+        iniciarConfronto();
         if(existeConfronto()) {
             attackToCruz();
         }
@@ -433,28 +394,50 @@ public class Missao implements MissaoADT {
      * */
     @Override
     public void modoManual() {
-        //To Cruz seleciona a sala que vai entrar
         ToCruzEntrarEdificio();
 
-        //Ver se o while está bem, em principio sim
-        while (!toCruz.isDead() || (ToCruzinExit() && this.trajeto_to.size() > 1)) {
-            //Turno Inimigo
+        //Já testei o while funciona
+        while (!toCruz.isDead() && (ToCruzinExit() || this.trajeto_to.size() < 1)) {
             turnoInimigo();
+            this.versao++;
 
-            //Turno To Cruz
             turnoToCruz();
+            this.versao++;
         }
 
+        relatoriosMissao();
+    }
+
+    private void relatoriosMissao() {
         if(!toCruz.isDead() && (alvo.isAtinigido())) {
             System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
+            System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
         } else {
             System.out.println("Missão falhada ಥ_ಥ");
         }
-    }
 
-    @Override
-    public void relatoriosMissao() {
+        System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
 
+        if(!inimigos_dead.isEmpty()) {
+            System.out.println("Inimigos mortos pelo o To Cruz:");
+            System.out.println(inimigos_dead.toString());
+        }
+
+        System.out.println("Numero de itensColetados: " + item_colected.size());
+        if(!item_colected.isEmpty()) {
+            System.out.println("Itens coletados pelo o ToCruz:");
+            System.out.println(item_colected.toString());
+        }
+
+        if(!toCruz.getMochila().isEmpty()) {
+            System.out.println("Itens na mochilda do ToCruz:");
+            System.out.println(toCruz.getMochila().toString());
+        } else {
+            System.out.println("A mochila do To Cruz está vazia.");
+        }
+
+        System.out.println("Percurso feito pelo o ToCruz:");
+        System.out.print(trajeto_to.toString());
     }
 
     @Override

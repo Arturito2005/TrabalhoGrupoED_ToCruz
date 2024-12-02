@@ -33,6 +33,9 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         mochila = new LinkedStack<ItemCura>();
     }
 
+    public LinkedStack<ItemCura> getMochila() {
+        return mochila;
+    }
     /*Pode ser preciso meter um metodo para mover o ToCruz aqui ou na missao*/
     /**
      * Método publico que verifica se a mochila do To Cruz já está cheia

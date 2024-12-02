@@ -161,7 +161,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         int indexVertex = getIndex(startVertex);
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
-        if (!indexIsValid(startVertex)) {
+        if (!indexIsValid(indexVertex)) {
             return resultList.iterator();
         }
 
@@ -172,18 +172,15 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         }
 
         visited[indexVertex] = true;
+        Iterator<T> itr = listaAdj[indexVertex].iterator();
 
-        if (listaAdj[indexVertex] != null) {
-            Iterator<T> itr = listaAdj[indexVertex].iterator();
+        while (itr.hasNext()) {
+            T element = itr.next();
+            int index = getIndex(element);
 
-            while (itr.hasNext()) {
-                T element = itr.next();
-                int index = getIndex(element);
-
-                if (indexIsValid(index) && !visited[index]) {
-                    visited[index] = true;
-                    resultList.addToRear(element);
-                }
+            if (indexIsValid(index) && !visited[index]) {
+                visited[index] = true;
+                resultList.addToRear(element);
             }
         }
 

@@ -17,6 +17,4 @@ public interface MissaoADT {
     public void modoAutomatico();
 
     public void modoManual();
-
-    public void relatoriosMissao();
 }

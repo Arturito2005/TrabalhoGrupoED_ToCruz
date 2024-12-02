@@ -10,35 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/Gradle__com_googlecode_json_simple_json_simple_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/Gradle__junit_junit_4_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/.idea/libraries/RecursosJogo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/artifacts/RecursosJogo_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/TestListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/TestListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/NetworkADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/NetworkADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Network/NetworkListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Network/NetworkListaAdjacencia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Network/NetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Network/NetworkMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ImportarDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ImportarDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ModoAutomatico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/Metodos/ModoManualMet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/MissaoADT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/Importar/TestImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestImportar/TestImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestsPersonagens/TestToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestsPersonagens/TestToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +106,10 @@
       <workItem from="1733090459714" duration="94000" />
       <workItem from="1733137925380" duration="4281000" />
       <workItem from="1733142313245" duration="1538000" />
-      <workItem from="1733145113867" duration="763000" />
+      <workItem from="1733145113867" duration="1975000" />
+      <workItem from="1733152362213" duration="134000" />
+      <workItem from="1733160015094" duration="5435000" />
+      <workItem from="1733174634007" duration="507000" />
     </task>
     <servers />
   </component>
@@ -129,6 +117,15 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ArrayList.ArrayUnorderedList" memberName="count" />
