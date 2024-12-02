@@ -122,6 +122,7 @@ public class Missao implements MissaoADT {
             listaDiv.push(divisao);
         }
 
+        //Dá erro este do while
         do {
             System.out.println("Selecione a divisao que o ToCruz vai se mover");
 
@@ -131,7 +132,7 @@ public class Missao implements MissaoADT {
                 System.out.println("Numero inválido!");
                 sc.next();
             }
-        } while (0 < op || op >= listaDiv.size());
+        } while (op < 0 || op > i);
 
         int y = listaDiv.size() - 1;
         while(y > op) {
@@ -176,31 +177,33 @@ public class Missao implements MissaoADT {
     }
 
     private void iniciarConfronto() {
-        for(Inimigo inimigo: inimigos) {
-            if(inimigo.getDivisao().equals(toCruz.getDivisao())) {
-                this.inimigos_confronto.addToRear(inimigos.remove(inimigo));
+        Iterator<Inimigo> iterator = inimigos.iterator();
+
+        while (iterator.hasNext()) {
+            Inimigo inimigo = iterator.next();
+            if (inimigo.getDivisao().equals(toCruz.getDivisao())) {
+                iterator.remove(); // Remove da lista de inimigos
+                this.inimigos_confronto.addToRear(inimigo); // Adiciona à lista de confronto
             }
         }
     }
 
+    //Também dar erro
     private void attackToCruz() {
-        for(Inimigo inimigo: inimigos_confronto) {
+        Iterator<Inimigo> iterator = inimigos_confronto.iterator();
+        while (iterator.hasNext()) {
+            Inimigo inimigo = iterator.next();
             inimigo.setVida(inimigo.getVida() - toCruz.getPoder());
 
-            if(inimigo.isDead()) {
-                this.inimigos_dead.push(this.inimigos_confronto.remove(inimigo));
+            if (inimigo.isDead()) {
+                iterator.remove(); // Remove o inimigo da lista de confronto
+                this.inimigos_dead.push(inimigo); // Adiciona o inimigo à pilha de mortos
             }
         }
     }
 
-    private void attackInimigo() {
-        for(Inimigo inimigo: inimigos_confronto) {
-            inimigo.setVida(inimigo.getVida() - toCruz.getPoder());
-
-            if(inimigo.isDead()) {
-                this.inimigos_dead.push(this.inimigos_confronto.remove(inimigo));
-            }
-        }
+    private void attackInimigo(Inimigo inimigo) {
+        toCruz.setVida(toCruz.getVida() - inimigo.getPoder());
     }
 
     //Testar
@@ -331,7 +334,7 @@ public class Missao implements MissaoADT {
 
         if(existeConfronto()) {
             for(Inimigo inimigo: inimigos_confronto) {
-                attackInimigo();
+                attackInimigo(inimigo);
             }
         }
 
@@ -357,7 +360,7 @@ public class Missao implements MissaoADT {
         }
 
         do {
-            System.out.println("Introduza onde o ToCruz vai entrar");
+            System.out.println("Introduza onde o ToCruz vai entrar:");
 
             try {
                 op = sc.nextInt();
@@ -396,8 +399,8 @@ public class Missao implements MissaoADT {
     public void modoManual() {
         ToCruzEntrarEdificio();
 
-        //Já testei o while funciona
-        while (!toCruz.isDead() && (ToCruzinExit() || this.trajeto_to.size() < 1)) {
+        //Está mal
+        while (!toCruz.isDead() || (!ToCruzinExit() && this.trajeto_to.size() <= 1)) {
             turnoInimigo();
             this.versao++;
 
