@@ -30,7 +30,6 @@ public class ModoJogo {
 
         //Inicializa ciclo do while
         do {
-
             System.out.println("1- Modo Manual");
             System.out.println("2- Modo automárico");
             System.out.println("Introduza o modo do jogo -->");

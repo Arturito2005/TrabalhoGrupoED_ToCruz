@@ -26,6 +26,10 @@ import java.io.IOException;
 public class ImportarMapa implements Importar {
 
     private static LinearLinkedUnorderedList<Divisao> lista_divisoes;
+
+    public void ImportarMapa() {
+        lista_divisoes = new LinearLinkedUnorderedList<>();
+    }
     /**
      * Método auxiliar para encontrar uma divisão pelo nome em uma lista de divisões.
      * Cria uma cópia da lista e a percorre para evitar modificações na lista original.
