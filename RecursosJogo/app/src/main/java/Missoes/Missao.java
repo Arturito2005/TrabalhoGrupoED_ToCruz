@@ -48,38 +48,6 @@ public class Missao {
         this.toCruz = new ToCruz();
     }
 
-    public String getCod_missao() {
-        return cod_missao;
-    }
-
-    public int getVersao() {
-        return versao;
-    }
-
-    public Edificio getEdificio() {
-        return edificio;
-    }
-
-    public Alvo getAlvo() {
-        return alvo;
-    }
-
-    public LinearLinkedUnorderedList<Item> getItem() {
-        return item;
-    }
-
-    public LinearLinkedUnorderedList<Inimigo> getInimigos() {
-        return inimigos;
-    }
-
-    public LinearLinkedUnorderedList<Divisao> getEntrada_saida() {
-        return entrada_saida;
-    }
-
-    public ToCruz getToCruz() {
-        return toCruz;
-    }
-
     @Override
     public String toString() {
         return "Missao{" +

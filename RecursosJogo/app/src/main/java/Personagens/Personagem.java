@@ -3,7 +3,7 @@ package Personagens;
 import Interfaces.InteracoesPersonagens;
 import Mapa.Divisao;
 
-public abstract class Personagem implements InteracoesPersonagens {
+public abstract class Personagem {
     private static int ID_PERSONAGEM_CONT = 0;
 
     private static final int DEFAULT_VIDA = 100;
@@ -85,9 +85,6 @@ public abstract class Personagem implements InteracoesPersonagens {
     public void setVida(Divisao divisao) {
         this.divisao = divisao;
     }
-
-    @Override
-    public abstract void mudarDivisao();
 
     @Override
     public String toString() {
