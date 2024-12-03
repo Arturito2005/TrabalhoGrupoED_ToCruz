@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestImportarMapa {
     private static final String path = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
 
+    private static final String path2 = "./Jsons/Import/FicheiroMissao.json";
+
     private static final String pathNoDATA = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/Ficheiro.json";
 
     private ImportarMapa importM;
@@ -27,8 +29,8 @@ public class TestImportarMapa {
 
     @Test
     public void testGerarMapaComFicheiroValido() throws IOException{
-        Missao missao1 = importM.gerarMapa(path);
-        assertEquals(missao1, importM.gerarMapa(path), "Como o ficheiro existe e tem dados os dados são importados para a missao");
+        Missao missao1 = importM.gerarMapa(path2);
+        assertEquals(missao1, importM.gerarMapa(path2), "Como o ficheiro existe e tem dados os dados são importados para a missao");
     }
 
     @Test

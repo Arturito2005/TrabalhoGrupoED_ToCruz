@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EstruturasDados:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/EstruturasDados_jar</output-path>
+    <root id="archive" name="EstruturasDados.jar" />
+  </artifact>
+</component>

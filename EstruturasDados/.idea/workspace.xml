@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="API_ProjetoED:jar" />
+      <artifact name="EstruturasDados:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="" />
+    <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/EstruturasDados_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API_ProjetoED_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestImportar/TestImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestImportar/TestImportarMapa.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +67,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Artur&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/TrabalhoExemplo/estg-ed&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursosJogo&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -109,6 +119,8 @@
       <workItem from="1733214599730" duration="6582000" />
       <workItem from="1733242540669" duration="4124000" />
       <workItem from="1733251767953" duration="3227000" />
+      <workItem from="1733264600336" duration="26000" />
+      <workItem from="1733264991189" duration="231000" />
     </task>
     <servers />
   </component>
