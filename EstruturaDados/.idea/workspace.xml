@@ -10,10 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API_ProjetoED_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/API_ProjetoED.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/API_ProjetoED.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -112,7 +111,8 @@
       <workItem from="1733264600336" duration="26000" />
       <workItem from="1733264991189" duration="231000" />
       <workItem from="1733265267114" duration="104000" />
-      <workItem from="1733266311828" duration="154000" />
+      <workItem from="1733266311828" duration="190000" />
+      <workItem from="1733266509147" duration="108000" />
     </task>
     <servers />
   </component>
