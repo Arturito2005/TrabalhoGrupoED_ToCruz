@@ -7,12 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/resources" type="java-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="22" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
+          <root url="jar://C:/Users/FranciscoMiguelPerei/OneDrive - Instituto Politecnico do Porto/Ambiente de Trabalho/TP ED/Projeto/TrabalhoGrupoED_ToCruz/API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
