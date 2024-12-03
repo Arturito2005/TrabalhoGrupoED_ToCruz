@@ -9,19 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/ItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/ItemCura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Alvo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Inimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
-    </list>
+    <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
