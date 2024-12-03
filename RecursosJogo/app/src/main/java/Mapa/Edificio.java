@@ -3,6 +3,7 @@ package Mapa;
 import Graph.NetworkMatrizAdjacencia;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Edificio {
 
@@ -73,5 +74,27 @@ public class Edificio {
                 ", name='" + name + '\'' +
                 ", planta_edificio=" + planta_edificio.toString() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Edificio edificio = (Edificio) o;
+        if(id == edificio.id) {
+            return true;
+        }
+
+        return  Objects.equals(name, edificio.name) && Objects.equals(planta_edificio, edificio.planta_edificio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
     }
 }

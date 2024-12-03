@@ -7,6 +7,8 @@ import Items.TypeItemCura;
 import Mapa.Divisao;
 import Stacks.LinkedStack;
 
+import java.util.Objects;
+
 /**
  * Classe que representa o personagem principal do jogo, ToCruz.
  *
@@ -189,5 +191,15 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return "ToCruz{" +
                 "mochila=" + mochila.toString() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

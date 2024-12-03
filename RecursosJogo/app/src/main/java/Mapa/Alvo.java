@@ -1,5 +1,7 @@
 package Mapa;
 
+import java.util.Objects;
+
 public class Alvo {
 
     private static int ID_ALVO_CONT = 0;
@@ -55,5 +57,26 @@ public class Alvo {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
 
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Alvo alvo = (Alvo) o;
+
+        if(id_alvo == alvo.id_alvo) {
+            return true;
+        }
+        return Objects.equals(nome, alvo.nome) && Objects.equals(divisao, alvo.divisao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nome);
+    }
 }

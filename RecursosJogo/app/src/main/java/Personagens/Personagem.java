@@ -2,6 +2,8 @@ package Personagens;
 
 import Mapa.Divisao;
 
+import java.util.Objects;
+
 /**
  * Classe abstrata que representa cada personagem no jogo
  *
@@ -176,5 +178,27 @@ public abstract class Personagem {
                 ", poder=" + this.poder +
                 ", divisao=" + this.divisao +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Personagem pers = (Personagem) o;
+        if(this.id_personagem == pers.id_personagem) {
+            return true;
+        }
+
+        return Objects.equals(nome, pers.nome) && Objects.equals(divisao, pers.divisao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(nome);
     }
 }

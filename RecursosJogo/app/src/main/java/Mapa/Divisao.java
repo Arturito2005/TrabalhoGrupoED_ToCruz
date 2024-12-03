@@ -63,20 +63,16 @@ public class Divisao implements Comparable {
             return false;
         }
 
-        if(!(o instanceof Divisao)) {
-            return false;
-        }
-
-        if(this.id_divisao == ((Divisao) o).id_divisao) {
+        Divisao divisao = (Divisao) o;
+        if(id_divisao == divisao.id_divisao) {
             return true;
         }
-
-        return false;
+        return entrada_saida == divisao.entrada_saida && Objects.equals(name, divisao.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id_divisao, name);
+        return Objects.hashCode(name);
     }
 
     @Override

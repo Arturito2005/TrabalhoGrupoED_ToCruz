@@ -2,6 +2,8 @@ package Items;
 
 import Mapa.Divisao;
 
+import java.util.Objects;
+
 /*
 * Tens os dados abstratos do Item
 * */
@@ -32,5 +34,24 @@ public abstract class Item {
                 "id_item=" + id_item +
                 ", divisao=" + divisao +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Item item = (Item) o;
+
+        return id_item == item.id_item || Objects.equals(divisao, item.divisao);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id_item);
     }
 }

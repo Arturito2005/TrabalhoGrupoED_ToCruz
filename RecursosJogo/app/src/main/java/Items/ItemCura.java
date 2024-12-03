@@ -29,4 +29,22 @@ public class ItemCura extends Item {
                 ", vida_recuperada=" + vida_recuperada +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()){
+            return false;
+        }
+
+        if (!super.equals(o)) {
+            return false;
+        }
+
+        ItemCura itemCura = (ItemCura) o;
+        return Double.compare(vida_recuperada, itemCura.vida_recuperada) == 0 && type == itemCura.type;
+    }
 }
