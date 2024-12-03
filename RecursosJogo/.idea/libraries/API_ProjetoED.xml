@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="API_ProjetoED">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../EstruturasDados/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
