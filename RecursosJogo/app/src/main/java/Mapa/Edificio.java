@@ -1,6 +1,6 @@
 package Mapa;
 
-import Graph.GraphListaAdjacencia;
+import Graph.NetworkMatrizAdjacencia;
 
 import java.util.Iterator;
 
@@ -14,21 +14,21 @@ public class Edificio {
 
     private String name;
 
-    private GraphListaAdjacencia<Divisao> planta_edificio;
+    private NetworkMatrizAdjacencia<Divisao> planta_edificio;
 
     public Edificio() {
         this.id = ID_EDIFICIO_CONT++;
         this.name = NAME_DEFAULT;
-        this.planta_edificio = new GraphListaAdjacencia<>();
+        this.planta_edificio = new NetworkMatrizAdjacencia<>();
     }
 
     public Edificio(String name) {
         this.id = ID_EDIFICIO_CONT++;
         this.name = name;
-        this.planta_edificio = new GraphListaAdjacencia<>();
+        this.planta_edificio = new NetworkMatrizAdjacencia<>();
     }
 
-    public Edificio(String name, GraphListaAdjacencia<Divisao> planta_edificio) {
+    public Edificio(String name, NetworkMatrizAdjacencia<Divisao> planta_edificio) {
         this.id = ID_EDIFICIO_CONT++;
         this.name = name;
         this.planta_edificio = planta_edificio;
@@ -46,7 +46,7 @@ public class Edificio {
         return this.planta_edificio.size();
     }
 
-    public GraphListaAdjacencia<Divisao> getPlantaEdificio() {
+    public NetworkMatrizAdjacencia<Divisao> getPlantaEdificio() {
         return planta_edificio;
     }
 
@@ -56,6 +56,10 @@ public class Edificio {
 
     public void addLigacao(Divisao vertex1, Divisao vertex2) {
         this.planta_edificio.addEdge(vertex1, vertex2);
+    }
+
+    public void addLigacao(Divisao vertex1, Divisao vertex2, double weight) {
+        this.planta_edificio.addEdge(vertex1, vertex2, weight);
     }
 
     public Iterator<Divisao> getNextDivisoes(Divisao divisao) {

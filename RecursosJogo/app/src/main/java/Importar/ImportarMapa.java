@@ -1,7 +1,6 @@
 package Importar;
 
 import Interfaces.Importar;
-import Items.Item;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import LinkedList.LinearLinkedUnorderedList;
@@ -25,8 +24,11 @@ import java.io.IOException;
  */
 public class ImportarMapa implements Importar {
 
-    private static LinearLinkedUnorderedList<Divisao> lista_divisoes;
+    private static LinearLinkedUnorderedList<Divisao> lista_divisoes; /** Variavel que guarda todas as divisoes do edificio*/
 
+    /**
+     * Construtor do ImportarMapa
+     * */
     public void ImportarMapa() {
         lista_divisoes = new LinearLinkedUnorderedList<>();
     }
@@ -90,7 +92,6 @@ public class ImportarMapa implements Importar {
                 Edificio edificio = new Edificio();
                 JSONArray edificio_array = (JSONArray) readingObj.get("edificio");
 
-
                 for (Object edificioNome : edificio_array) {
                     Divisao divisao = new Divisao((String) edificioNome);
                     edificio.addVertice(divisao);
@@ -110,6 +111,7 @@ public class ImportarMapa implements Importar {
 
                     if (divisaoc1 != null && divisaoc2 != null) {
                         edificio.addLigacao(divisaoc1, divisaoc2);
+                        edificio.addLigacao(divisaoc1, divisaoc2, 0);
                     } else {
                         System.out.println("Alguma das divisões não existem");
                     }
@@ -128,7 +130,7 @@ public class ImportarMapa implements Importar {
                     inimigos.addToRear(new Inimigo(nome, poder, findDivisao(divisao)));
                 }
 
-                LinearLinkedUnorderedList<Divisao> entradas_saidas = new LinearLinkedUnorderedList<>();
+                LinearLinkedUnorderedList<Divisao> entradas_saidas = new LinearLinkedUnorderedList<Divisao>();
                 JSONArray entradas_array = (JSONArray) readingObj.get("entradas-saidas");
 
                 for (Object entrada : entradas_array) {
@@ -144,7 +146,7 @@ public class ImportarMapa implements Importar {
 
                 Alvo alvo = new Alvo(tipo_alvo, findDivisao(divisao_alvo));
 
-                LinearLinkedUnorderedList<ItemCura> itens = new LinearLinkedUnorderedList<>();
+                LinearLinkedUnorderedList<ItemCura> itens = new LinearLinkedUnorderedList<ItemCura>();
                 JSONArray itens_array = (JSONArray) readingObj.get("itens");
 
                 for (Object cont_obj : itens_array) {

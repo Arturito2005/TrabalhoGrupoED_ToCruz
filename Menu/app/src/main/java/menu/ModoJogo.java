@@ -18,7 +18,7 @@ import java.util.Scanner;
 public class ModoJogo {
 
     //Depois eliminar
-    private static final String path = "C:/Users/FranciscoMiguelPerei/OneDrive - Instituto Politecnico do Porto/Ambiente de Trabalho/TP ED/Projeto/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
+    private static final String path = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
 
     public static void main(String[] args) throws IOException {
         Missao missao = new Missao();
@@ -26,7 +26,6 @@ public class ModoJogo {
         ImportarMapa importarMapa = new ImportarMapa();
         missao = importarMapa.gerarMapa(path);
 
-        /*
         Scanner sc = new Scanner(System.in);
         int op = -1;
 
@@ -50,9 +49,6 @@ public class ModoJogo {
             //Inicialzia o jogo no modo Automático
             //missao.modoAutomatico();
         }
-         */
-
-        missao.turnoInimigo();
     }
 
 }

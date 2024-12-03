@@ -1,12 +1,12 @@
-package Network;
+package Graph;
 
 import ArrayList.ArrayUnorderedList;
-import Graph.GraphMatrizAdjacencia;
 import Interfaces.NetworkADT;
+import LinkedList.LinearLinkedUnorderedList;
 import LinkedTree.LinkedHeap;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
-
+import PriorityQueues.PriorityQueue;
 import java.util.Iterator;
 
 /*
@@ -19,15 +19,15 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     public NetworkMatrizAdjacencia() {
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
-
-        //Ver se realmente é necessário
-        for (int i = 0; i < DEFAULT_CAPACITY; i++) {
-            for (int y = 0; y < DEFAULT_CAPACITY; y++) {
-                adjMatrix[i][y] = 0;
-            }
-        }
     }
 
+
+    public void addVertex(T vertex) {
+        if(this.vertices.length == this.numVertices) {
+            expandadweightMatrix();
+        }
+        super.addVertex(vertex);
+    }
     //Testar
     protected void expandadweightMatrix() {
         super.expandCapacity();
@@ -57,14 +57,24 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     * Usado para atualizar o dano que o ToCruz toma se entrar numa sala.
     * O To Cruz só leva dano se não matar o inimigo com instaKill
     * */
-    public void updateWeightEdge(T vertex1, T vertex2, double weight) {
-        updateWeightEdge(getIndex(vertex1), getIndex(vertex2), weight);
+    public void updateWeightEdge(T vertex, double weight) {
+        updateWeightEdge(getIndex(vertex), weight);
     }
 
-    public void updateWeightEdge(int index1, int index2, double weight) {
-        if (indexIsValid(index1) && indexIsValid(index2)) {
-            this.adjMatrix[index1][index2] = weight;
-            this.adjMatrix[index2][index1] = weight;
+    public void updateWeightEdge(int index1, double weight) {
+        if (indexIsValid(index1)) {
+            Iterator<T> itr = this.iteratorBFSNextDivisoes(index1);
+
+            while (itr.hasNext()) {
+                T element = itr.next();
+                int index2 = getIndex(element);
+
+                if(indexIsValid(index2)) {
+                    this.adjMatrix[index1][index2] = weight;
+                    this.adjMatrix[index2][index1] = weight;
+                }
+            }
+
         }
     }
     /*
@@ -99,7 +109,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
             index = traversalQueue.dequeue();
 
             for (int i = 0; i < numVertices; i++) {
-                if (adjMatrix[index][i] > 0 && !visited[i]) {
+                if (adjMatrix[index][i] == 0 && !visited[i]) {
                     distances[i] = distances[index] + adjMatrix[index][i];
                     antecessor[i] = index;
                     traversalQueue.enqueue(i);
@@ -143,6 +153,8 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return minIndex;
     }
 
+    /*
+    * //Testar em principio não dá
     public Iterator<T> getCaminhoMaisCurto(T vertex1, T vertex2) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
         int start_index = getIndex(vertex1);
@@ -208,6 +220,135 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
         return resultList.iterator();
     }
+    * */
+
+    /*Testar em principio a base do Dijkstra é isso e só é preciso alterar isto para as
+    * prioridades que pretendo e implementar outro metodo para retornar o caminho mais proximo do ponto x a y
+    */
+    protected double[] DijkstraApon(T starVertex) {
+        int start_index = getIndex(starVertex);
+        double[] distances = new double[numVertices];
+
+        if(!indexIsValid(start_index)) {
+            return distances;
+        }
+
+
+        for (int i = 0; i < this.adjMatrix.length; i++) {
+            distances[i] = Double.POSITIVE_INFINITY;
+        }
+
+        distances[start_index] = 0;
+        PriorityQueue<T> priorytyQueue = new PriorityQueue<>();
+
+        Iterator<T> itr = this.iteratorBFSNextDivisoes(starVertex);
+        boolean find;
+
+        /*
+        * Adiciona os elementos há priority queue, se ele for um nó adjacente do starVertex meto
+        * com prioridade alta se não com prioridade baixa
+        *
+        * Ver se é mesmo isto talvez esteja mais e a prioridade seja com base na distancia?
+        * */
+        for (int i = 0; i < numVertices; i++) {
+
+            find = false;
+            while(itr.hasNext() && !find) {
+                T vertex = itr.next();
+
+                if(this.vertices[i].equals(vertex)) {
+                    priorytyQueue.addElement(vertex, 1);
+                    find = true;
+                }
+            }
+
+            if (!find) {
+                priorytyQueue.addElement(this.vertices[i], 2);
+            }
+        }
+
+        //Ver se o remove minimo está a remover os de prioridade 2
+        while (!priorytyQueue.isEmpty()) {
+            T u = priorytyQueue.removeNext();
+            int vertex_u = getIndex(u);
+
+            if(indexIsValid(vertex_u)) {
+                Iterator<T> itr2 =  this.iteratorBFSNextDivisoes(u);
+                while (itr2.hasNext()) {
+                    T vertex2 = itr2.next();
+                    int index2 = getIndex(vertex2);
+
+                    if(distances[vertex_u] + this.adjMatrix[vertex_u][index2] < distances[index2]) {
+                        distances[index2] = distances[vertex_u] + this.adjMatrix[vertex_u][index2];
+
+                        //Change the priority of vertex z in queue toD[z] (Ver se é isto que fiz)
+                        priorytyQueue.addElement(vertex2, (int) distances[index2]);
+                    }
+                }
+            }
+
+        }
+
+        return distances;
+    }
+
+    public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
+        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int start_index = getIndex(startVertex);
+        int final_index = getIndex(targetVertex);
+
+        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
+            return resultList.iterator();
+        }
+
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        int index = start_index;
+        int[] comprimeto = new int[numVertices];
+        int[] antecessor = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+
+        for (int i = 0; i < numVertices; i++) {
+            visited[i] = false;
+        }
+
+        traversalQueue.enqueue(start_index);
+        visited[start_index] = true;
+        comprimeto[start_index] = 0;
+        antecessor[start_index] = -1;
+
+        while (!traversalQueue.isEmpty() && (index != final_index)) {
+            index = traversalQueue.dequeue();
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjMatrix[index][i] > 0 && !visited[i]) {
+                    comprimeto[i] = comprimeto[index] + 1;
+                    antecessor[i] = index;
+                    traversalQueue.enqueue(i);
+                    visited[i] = true;
+                }
+            }
+        }
+
+        //Não existe caminho
+        if (index != final_index) {
+            return resultList.iterator();
+        }
+
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        index = final_index;
+        stack.push(index);
+
+        do {
+            index = antecessor[index];
+            stack.push(index);
+        } while (index != start_index);
+
+        while (!stack.isEmpty()) {
+            resultList.addToRear(vertices[stack.pop()]);
+        }
+
+        return resultList.iterator();
+    }
 
     //Por enquanto fica isto
     @Override
@@ -232,6 +373,42 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return edges;
     }
 
+
+    //Ver se funciona
+    public Iterator<T> caminhoMaisCurto(T vertex1, T vertex2) {
+        LinearLinkedUnorderedList<T> list = new LinearLinkedUnorderedList<>();
+        int index_vertex1 = getIndex(vertex1);
+        int index_vertex2 = getIndex(vertex2);
+
+        if (!indexIsValid(index_vertex1) || !indexIsValid(index_vertex2)) {
+            return list.iterator();
+        }
+
+        NetworkMatrizAdjacencia<T> mst = mstNetwork();
+
+        boolean[] visited = new boolean[mst.size()];
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        stack.push(index_vertex1);
+
+        while (!stack.isEmpty() && stack.peek() != index_vertex2) {
+            int current = stack.pop();
+
+            if (!visited[current]) {
+                visited[current] = true;
+                list.addToRear(vertices[current]);
+
+                for (int i = 0; i < mst.size(); i++) {
+                    if (mst.adjMatrix[current][i] < Double.POSITIVE_INFINITY && !visited[i]) {
+                        stack.push(i);
+                    }
+                }
+            }
+        }
+
+        list.addToRear(vertices[stack.peek()]);
+        return list.iterator();
+    }
+
     /**
      * No jogo esta arvore gerador é que nos vai gerar o caminho mais curto do ToCruz até uma sala, vai ter
      * de ser chamado constantemente para ser atualizada de acordo com a movimentação dos inimigos
@@ -240,7 +417,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
      *
      * @return a minimum spanning tree of the network
      */
-    public NetworkMatrizAdjacencia mstNetwork() {
+    public NetworkMatrizAdjacencia<T> mstNetwork() {
         int x, y;
         int index;
         double weight;

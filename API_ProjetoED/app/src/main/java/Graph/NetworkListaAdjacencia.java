@@ -1,13 +1,7 @@
-package Network;
+package Graph;
 
-import ArrayList.ArrayUnorderedList;
-import Graph.GraphListaAdjacencia;
 import Interfaces.NetworkADT;
 import LinkedList.LinearLinkedOrderedList;
-import LinkedList.LinearLinkedUnorderedList;
-import LinkedTree.LinkedHeap;
-import Queue.LinkedQueue;
-import Stacks.LinkedStack;
 
 import java.util.Iterator;
 
@@ -102,6 +96,8 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
     public Iterator<T> iterator() {
         return super.iteratorDFS(this.vertices[0]);
     }
+
+
 
     protected int[] getEdgeWithWeightOf(double weight, boolean visited[]) {
         return null;

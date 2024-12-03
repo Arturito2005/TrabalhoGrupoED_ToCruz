@@ -2,7 +2,6 @@ package Missoes;
 
 import Graph.GraphListaAdjacencia;
 import Interfaces.MissaoADT;
-import Interfaces.QueueADT;
 import Interfaces.StackADT;
 import Items.ItemCura;
 import Items.TypeItemCura;
@@ -190,7 +189,6 @@ public class Missao implements MissaoADT {
         }
     }
 
-    //Também dar erro
     private void attackToCruz() {
         Iterator<Inimigo> iterator = inimigos_confronto.iterator();
         while (iterator.hasNext()) {
@@ -198,14 +196,26 @@ public class Missao implements MissaoADT {
             inimigo.setVida(inimigo.getVida() - toCruz.getPoder());
 
             if (inimigo.isDead()) {
-                iterator.remove(); // Remove o inimigo da lista de confronto
-                this.inimigos_dead.push(inimigo); // Adiciona o inimigo à pilha de mortos
+                System.out.println("O inimigo " + inimigo.getNome() + " HP");
+                iterator.remove();
+                this.inimigos_dead.push(inimigo);
+            } else {
+                System.out.println("Vida do inimigo " + inimigo.getNome() + ": " + inimigo.getVida() + " HP");
             }
         }
     }
 
     private void attackInimigo(Inimigo inimigo) {
+        double vidaTo = toCruz.getVida() - inimigo.getPoder();
         toCruz.setVida(toCruz.getVida() - inimigo.getPoder());
+
+        System.out.println("O imimigo" + inimigo.getNome() + " atacou o To Cruz");
+
+        if(toCruz.isDead()) {
+            System.out.println("O inimigo " + inimigo.getNome() + "matou o To Cruz");
+        } else{
+            System.out.println("To Cruz resiste ao ataque e fica com " + vidaTo + " HP");
+        }
     }
 
     //Testar
@@ -354,7 +364,7 @@ public class Missao implements MissaoADT {
     }
 
     private void turnoInimigo() {
-        //Meter todo o codigo dos inimigos
+        //Depois retirar println quando tivermos o mapa
         for (Inimigo inimigo: inimigos) {
             System.out.println(inimigo.getDivisao());
             moverInimigo(inimigo);
@@ -419,15 +429,13 @@ public class Missao implements MissaoADT {
     }
 
     /**
-     * Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!
      *
-     * Falta apenas turno do inimigo
+     * Só falta meter para sugeir ao ToCruz o caminho mais curto para chegar a Item ou Alvo
      * */
     @Override
     public void modoManual() {
         ToCruzEntrarEdificio();
 
-        //Está mal
         while (!toCruz.isDead() || (!ToCruzinExit() && this.trajeto_to.size() <= 1)) {
             turnoInimigo();
             this.versao++;

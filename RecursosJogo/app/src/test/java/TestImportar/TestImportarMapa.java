@@ -11,8 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestImportarMapa {
-    /*
-    private static final String path = "C:/Users/FranciscoMiguelPerei/OneDrive - Instituto Politecnico do Porto/Ambiente de Trabalho/TP ED/Projeto/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
+    private static final String path = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
 
     private static final String pathNoDATA = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/Ficheiro.json";
 
@@ -36,6 +35,5 @@ public class TestImportarMapa {
     public void testGerarMapaComFicheiroInvalivdoNull() {
         Exception excecao = assertThrows(NullPointerException.class, () -> importM.gerarMapa(null));
     }
-     */
 
 }

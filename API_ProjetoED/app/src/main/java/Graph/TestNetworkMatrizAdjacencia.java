@@ -1,4 +1,4 @@
-package Network;
+package Graph;
 
 public class TestNetworkMatrizAdjacencia {
 

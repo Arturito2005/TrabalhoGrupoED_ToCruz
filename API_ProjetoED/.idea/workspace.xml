@@ -10,16 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/EstruturasDados.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Network/NetworkListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkListaAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Network/NetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Network/TestNetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/TestNetworkMatrizAdjacencia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/artifacts/RecursosJogo_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/artifacts/RecursosJogo_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/libraries/RecursosJogo.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/app/src/main/java/menu/ModoJogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Exceptions/WrongTypeItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Exceptions/WrongTypeItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Items/TypeItemCura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Exportar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Exportar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/Importar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/InteracoesToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/out/artifacts/RecursosJogo_jar/RecursosJogo.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestImportar/TestImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestImportar/TestImportarMapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/out/artifacts/RecursosJogo_jar/RecursosJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/out/artifacts/RecursosJogo_jar/RecursosJogo.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,24 +75,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.API_ProjetoED:app [:app:Graph.TestListaAdjacencia.main()].executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.API_ProjetoED:app [:app:Graph.TestMatrizAdjacencia.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Artur&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/TrabalhoExemplo/estg-ed&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.API_ProjetoED:app [:app:Graph.TestListaAdjacencia.main()].executor": "Debug",
+    "Gradle.API_ProjetoED:app [:app:Graph.TestMatrizAdjacencia.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Artur",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/TrabalhoExemplo/estg-ed",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\TrabalhoGrupoED_ToCruz\API_ProjetoED\app\src\main\java" />
@@ -116,6 +132,9 @@
       <workItem from="1733174634007" duration="3182000" />
       <workItem from="1733179047448" duration="177000" />
       <workItem from="1733179349054" duration="601000" />
+      <workItem from="1733214599730" duration="6582000" />
+      <workItem from="1733242540669" duration="4124000" />
+      <workItem from="1733251767953" duration="3227000" />
     </task>
     <servers />
   </component>

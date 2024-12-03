@@ -9,11 +9,13 @@ import Stacks.LinkedStack;
 
 /**
  * Classe que representa o personagem principal do jogo, ToCruz.
+ *
  * @author Artur
+ * @version 1.0
  */
 public class ToCruz extends Personagem implements InteracoesToCruz {
 
-    private LinkedStack<ItemCura> mochila; // Mochila para armazenar itens de cura.
+    private LinkedStack<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
 
     /**
      * Construtor que inicializa o personagem ToCruz em uma divisão específica.
@@ -33,10 +35,15 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         mochila = new LinkedStack<ItemCura>();
     }
 
+    /**
+     * Retorna a mochila do To Cruz.
+     *
+     * @return A Stack de itens de cura armazenados na mochila.
+     */
     public LinkedStack<ItemCura> getMochila() {
         return mochila;
     }
-    /*Pode ser preciso meter um metodo para mover o ToCruz aqui ou na missao*/
+
     /**
      * Método publico que verifica se a mochila do To Cruz já está cheia
      */
@@ -56,7 +63,6 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
      *
      * @param item O item de cura a ser utilizado.
      */
-    //Meter public
     private void curar(ItemCura item) {
         double cura = item.getVida_recuperada();
         double nova_vida = 0;
@@ -138,6 +144,12 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
         return temp;
     }
 
+    /**
+     * Metodo para verificar se a mochila contém pelo menos um kit.
+     *
+     *
+     * @return true se a mochila contiver pelo menos um item, false se estiver vazia.
+     */
     public boolean mochilaTemKit() {
         boolean contem = true;
 
@@ -149,7 +161,7 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
     }
 
     /**
-     * Método para usar um colete de proteção.
+     * Método para usar um item.
      *
      * @param item O item do tipo colete a ser usado.
      * @return Uma mensagem indicando que o colete foi usado.
@@ -157,7 +169,7 @@ public class ToCruz extends Personagem implements InteracoesToCruz {
      * @throws WrongTypeItem Se o item não for do tipo colete.
      */
     @Override
-    public String usarItem(ItemCura item) throws NullPointerException, WrongTypeItem{
+    public String usarItem(ItemCura item) throws NullPointerException{
         if(item == null) {
             throw new NullPointerException("O item não pode ser nulo");
         }
