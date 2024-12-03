@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="API_ProjetoED:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PMDPlugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/API_ProjetoED_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayHeaps/ArrayHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayHeaps/TestArrayHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/ArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/ArrayOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/ArrayUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/TestArrayUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/TesteArrayOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/ArrayBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/TestArrayBinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoubleLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoubleNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoublyLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoublyLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/TestDoublyLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/TestDoublyLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Exceptions/ElementNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Exceptions/EmptyCollectionException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkListaAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/TestListaAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/TestMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/TestNetworkMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/BinarySearchTreeADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/BinaryTreeADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/GraphADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/HeapADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/ListADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/NetworkADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/OrderedListADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/QueueADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/StackADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/UnorderedListADT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/LinearLinkedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/LinearLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/LinearLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/TestLinearLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/TestLinearLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/BinaryTreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/HeapNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/LinkedBinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/LinkedBinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/LinkedHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/TestLinkedBinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/TestLinkedHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Nodes/LinearNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/PriorityQueues/PriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/PriorityQueues/PriorityQueueNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/PriorityQueues/TestPriortyQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Queue/CircularArrayQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Queue/LinkedQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Queue/TesteArrayQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Queue/TesteLinkedQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Stacks/ArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Stacks/LinkedStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Stacks/TestArrayStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Stacks/TestLinkedStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/API_ProjetoED.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/libraries/API_ProjetoED.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="API_ProjetoED" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2pWE3AK7qFDiJwT2uECqqhA3lQ9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.API_ProjetoED:app [:app:Graph.TestListaAdjacencia.main()].executor": "Debug",
+    "Gradle.API_ProjetoED:app [:app:Graph.TestMatrizAdjacencia.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Artur",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursosJogo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\TrabalhoGrupoED_ToCruz\API_ProjetoED\app\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\ED_AC_8230138_8230148\EstruturasDados\app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="" />
+      <created>1732873234155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732873234155</updated>
+      <workItem from="1732873237202" duration="81000" />
+      <workItem from="1732874066266" duration="281000" />
+      <workItem from="1732966808744" duration="3179000" />
+      <workItem from="1733046028912" duration="4803000" />
+      <workItem from="1733054707673" duration="4977000" />
+      <workItem from="1733079101462" duration="2085000" />
+      <workItem from="1733086950623" duration="40000" />
+      <workItem from="1733087684099" duration="816000" />
+      <workItem from="1733090459714" duration="94000" />
+      <workItem from="1733137925380" duration="4281000" />
+      <workItem from="1733142313245" duration="1538000" />
+      <workItem from="1733145113867" duration="1975000" />
+      <workItem from="1733152362213" duration="134000" />
+      <workItem from="1733160015094" duration="5435000" />
+      <workItem from="1733174634007" duration="3182000" />
+      <workItem from="1733179047448" duration="177000" />
+      <workItem from="1733179349054" duration="601000" />
+      <workItem from="1733214599730" duration="6582000" />
+      <workItem from="1733242540669" duration="4124000" />
+      <workItem from="1733251767953" duration="3227000" />
+      <workItem from="1733264600336" duration="26000" />
+      <workItem from="1733264991189" duration="231000" />
+      <workItem from="1733265267114" duration="104000" />
+      <workItem from="1733265416016" duration="801000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/Graph/GraphListaAdjacencia.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ArrayList.ArrayUnorderedList" memberName="count" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

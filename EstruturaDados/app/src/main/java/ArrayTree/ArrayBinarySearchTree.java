@@ -68,9 +68,9 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
 
     protected void replace(int targetIndex) {
         int currentIndex, oldIndex, newIndex;
-        ArrayUnorderedList<Integer> oldlist = new ArrayUnorderedList<>();
-        ArrayUnorderedList<Integer> newlist = new ArrayUnorderedList<>();
-        ArrayUnorderedList<Integer> templist = new ArrayUnorderedList<>();
+        ArrayUnorderedList<Integer> oldlist = new ArrayUnorderedList<Integer>();
+        ArrayUnorderedList<Integer> newlist = new ArrayUnorderedList<Integer>();
+        ArrayUnorderedList<Integer> templist = new ArrayUnorderedList<Integer>();
         Iterator<Integer> oldIt, newIt;
 
         if ((targetIndex * 2 + 1 >= tree.length) || (targetIndex * 2 + 2 >= tree.length)) {
