@@ -13,7 +13,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../../TrabalhoGrupoED_ToCruz/API_ProjetoED/out/artifacts/API_ProjetoED_jar/API_ProjetoED.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../EstruturasDados/out/artifacts/API_ProjetoED_jar/EstruturasDados.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

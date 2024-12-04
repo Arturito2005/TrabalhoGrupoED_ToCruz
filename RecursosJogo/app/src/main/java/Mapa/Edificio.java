@@ -63,6 +63,10 @@ public class Edificio {
         this.planta_edificio.addEdge(vertex1, vertex2, weight);
     }
 
+    public void updateLigacoa(Divisao vertex1, double weight) {
+        this.planta_edificio.updateWeightEdge(vertex1, weight);
+    }
+
     public Iterator<Divisao> getNextDivisoes(Divisao divisao) {
         return this.planta_edificio.iteratorBFSNextDivisoes(divisao);
     }

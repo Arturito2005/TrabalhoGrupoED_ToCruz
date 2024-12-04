@@ -1,8 +1,8 @@
 package menu;
 
 import Importar.ImportarMapa;
-import Metodos.ImportarDados;
 import Missoes.Missao;
+import Missoes.ModoManual;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -44,7 +44,8 @@ public class ModoJogo {
 
         if (op == 1) {
             //Inicializa o jogo no modo Manual
-            missao.modoManual();
+            ModoManual manual = new ModoManual();
+            manual.modoManual();
         } else {
             //Inicialzia o jogo no modo Automático
             //missao.modoAutomatico();

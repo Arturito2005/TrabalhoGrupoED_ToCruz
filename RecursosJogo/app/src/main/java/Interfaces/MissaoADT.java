@@ -13,8 +13,4 @@ public interface MissaoADT {
     public Divisao getDivisoesVizinhasTo();
 
     public void addDivisaoTrajetoToCruz(Divisao divisao);
-
-    public void modoAutomatico();
-
-    public void modoManual();
 }
