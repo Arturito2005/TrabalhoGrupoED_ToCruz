@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestsPersonagens.TestToCruz" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-04T10:58:26" hostname="LAPTOP-8POH8N1C" time="0.06">
+  <properties/>
+  <testcase name="testguardarKitTypeDifKit_NesteCasoColete()" classname="TestsPersonagens.TestToCruz" time="0.006"/>
+  <testcase name="testUsarColeteNullPoninterException()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <testcase name="testUsarKitSemKitsNaMochila()" classname="TestsPersonagens.TestToCruz" time="0.009"/>
+  <testcase name="testUsarKitComAvidaCheia()" classname="TestsPersonagens.TestToCruz" time="0.004"/>
+  <testcase name="testguardarKitMochilaCheia()" classname="TestsPersonagens.TestToCruz" time="0.003"/>
+  <testcase name="testguardarKitMochilaCheiaToCruzSemVidaCheia()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <testcase name="testguardarKitNull()" classname="TestsPersonagens.TestToCruz" time="0.003"/>
+  <testcase name="testguardarKitValida()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <testcase name="testUsarKitComKitNaMochilaEToComMenosDe100Pontos()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <testcase name="testUsarColete()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <system-out><![CDATA[Não existem kit medicos na mochila!
+Não é possível usar o kit médico, porque a vida está cheia
+A mochila está cheia
+A sua vida está cheia, logo o item continuará na sala
+A mochila está cheia
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
