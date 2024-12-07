@@ -1,4 +1,4 @@
-package menu;
+package Menu;
 
 import Importar.ImportarMapa;
 import Missoes.Missao;
@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 
 /*
-* Não esquecer de meter metodos para gerar o mapa e para atualizar o mapa,
-* o atualizar mapa ele é chamado após cada turno (provavlemente vai ficar na missão)
-* e ele vai mudar de divisao do toCruz e dos inimigos e é onde caso o ToCruz esteja na divisao do item ele vai
-* coletá-lo
-* */
-public class ModoJogo {
+ * Não esquecer de meter metodos para gerar o mapa e para atualizar o mapa,
+ * o atualizar mapa ele é chamado após cada turno (provavlemente vai ficar na missão)
+ * e ele vai mudar de divisao do toCruz e dos inimigos e é onde caso o ToCruz esteja na divisao do item ele vai
+ * coletá-lo
+ * */
+public class Menu {
 
     //Depois eliminar
     private static final String path = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/TrabalhoGrupoED_ToCruz/JSON/FicheiroMissao.json";
