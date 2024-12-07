@@ -174,7 +174,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         }
     }
 
-    public Iterator<T> iteratorBFSNextDivisoes(int startVertex) {
+    public Iterator<T> iteratorNextVertexs(int startVertex) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
         if (!indexIsValid(startVertex)) {
@@ -199,8 +199,8 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
-    public Iterator<T> iteratorBFSNextDivisoes(T startVertex) {
-        return iteratorBFSNextDivisoes(getIndex(startVertex));
+    public Iterator<T> iteratorNextVertexs(T startVertex) {
+        return iteratorNextVertexs(getIndex(startVertex));
     }
 
     /**

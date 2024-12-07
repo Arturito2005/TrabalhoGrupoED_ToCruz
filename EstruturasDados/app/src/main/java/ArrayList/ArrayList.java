@@ -2,12 +2,13 @@ package ArrayList;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
+import Interfaces.ArrayListADT;
 import Interfaces.ListADT;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public abstract class ArrayList<T> implements ListADT<T> {
+public abstract class ArrayList<T> implements ListADT<T>, ArrayListADT<T> {
 
     private static final int CAPACITY_DEFAULT = 100;
 
@@ -125,6 +126,19 @@ public abstract class ArrayList<T> implements ListADT<T> {
         }
 
         return targetFound;
+    }
+
+    @Override
+    public T find(int pos) throws ArrayIndexOutOfBoundsException, NullPointerException {
+        if(pos > this.count - 1 || pos < 0) {
+            throw new ArrayIndexOutOfBoundsException("Posição que não existe no array");
+        }
+
+        if(this.list[pos] == null) {
+            throw new NullPointerException("A posição corresponde a uma posição nula");
+        }
+
+        return this.list[pos];
     }
 
     @Override

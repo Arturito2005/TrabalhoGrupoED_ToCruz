@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="EstruturasDados">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../EstruturaDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

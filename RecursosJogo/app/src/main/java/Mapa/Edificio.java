@@ -1,85 +1,195 @@
 package Mapa;
 
 import Graph.NetworkMatrizAdjacencia;
+import Interfaces.EdificoInt;
+import Interfaces.NetworkADT;
 
 import java.util.Iterator;
 import java.util.Objects;
 
-public class Edificio {
+/**
+ * Classe que representa um edifício no jogo.
+ *
+ * @author Artur
+ * @version 1.0
+ */
+public class Edificio implements EdificoInt {
 
+    /** Contador para atribuir IDs únicos aos edifícios. */
     private static int ID_EDIFICIO_CONT = 0;
 
-    private static final String NAME_DEFAULT = "Edficio";
+    /** Nome padrão para o edifício caso não seja fornecido um. */
+    private static final String NAME_DEFAULT = "CIA Headquarters";
 
-    private int id;
+    private int id;  /** Identificador único do edifício. */
 
-    private String name;
+    private String name; /** Nome do edifício. */
 
-    private NetworkMatrizAdjacencia<Divisao> planta_edificio;
+    private NetworkMatrizAdjacencia<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
 
+    /**
+     * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
+     */
     public Edificio() {
         this.id = ID_EDIFICIO_CONT++;
         this.name = NAME_DEFAULT;
         this.planta_edificio = new NetworkMatrizAdjacencia<>();
     }
 
-    public Edificio(String name) {
-        this.id = ID_EDIFICIO_CONT++;
-        this.name = name;
-        this.planta_edificio = new NetworkMatrizAdjacencia<>();
-    }
-
-    public Edificio(String name, NetworkMatrizAdjacencia<Divisao> planta_edificio) {
-        this.id = ID_EDIFICIO_CONT++;
-        this.name = name;
-        this.planta_edificio = planta_edificio;
-    }
-
-    public int getId() {
-        return id;
-    }
-
+    /**
+     * Retorna o nome do edifício.
+     *
+     * @return Nome do edifício.
+     */
     public String getName() {
         return name;
     }
 
-    public int numDivisoes() {
-        return this.planta_edificio.size();
-    }
-
+    /**
+     * Retorna a planta do edifício (grafo de divisões).
+     *
+     * @return Grafo que representa as divisões e conexões do edifício.
+     */
     public NetworkMatrizAdjacencia<Divisao> getPlantaEdificio() {
         return planta_edificio;
     }
 
-    public void addVertice(Divisao divisao) {
+    /**
+     * Retorna o número de divisões no edifício.
+     *
+     * @return Número de divisões.
+     */
+    public int numDivisoes() {
+        return this.planta_edificio.size();
+    }
+
+    public double getShortestPath(Divisao div_inicial, Divisao div_final) {
+        return this.planta_edificio.shortestPathWeight(div_inicial, div_final);
+    }
+
+    public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final) {
+        return this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
+    }
+
+    //Dá já de forma automatica a divisao para o ToCruz andar
+    public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final) {
+        Iterator<Divisao> it = this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
+        it.next();
+        Divisao div = it.next();
+
+        return div;
+    }
+
+    /**
+     * Retorna o número de entradas/saídas (divisões com a flag de entrada/saída ativada).
+     *
+     * @return Número de divisões de entrada/saída.
+     */
+    @Override
+    public int getNumEntradasSaidas() {
+        int numEntradas = 0;
+
+        Iterator<Divisao> it = this.planta_edificio.iterator();
+
+        while (it.hasNext()) {
+            Divisao divisao = it.next();
+
+            if (divisao.isEntrada_saida()) {
+                numEntradas++;
+            }
+        }
+
+        return numEntradas;
+    }
+
+//Meter throws
+    /**
+     * Adiciona uma divisão ao edifício.
+     *
+     * @param divisao A divisão a ser adicionada ao edifício.
+     */
+    @Override
+    public void addDivisao(Divisao divisao) {
         this.planta_edificio.addVertex(divisao);
     }
 
+    /**
+     * Adiciona uma ligação entre duas divisões no edifício.
+     *
+     * @param vertex1 Primeira divisão.
+     * @param vertex2 Segunda divisão.
+     */
+    @Override
     public void addLigacao(Divisao vertex1, Divisao vertex2) {
         this.planta_edificio.addEdge(vertex1, vertex2);
     }
 
+    /**
+     * Adiciona uma ligação entre duas divisões com um peso específico.
+     *
+     * @param vertex1 Primeira divisão.
+     * @param vertex2 Segunda divisão.
+     * @param weight Peso da ligação entre as divisões.
+     */
+    @Override
     public void addLigacao(Divisao vertex1, Divisao vertex2, double weight) {
         this.planta_edificio.addEdge(vertex1, vertex2, weight);
     }
 
-    public void updateLigacoa(Divisao vertex1, double weight) {
+    /**
+     * Atualiza o peso de uma ligação no grafo.
+     *
+     * @param vertex1 A divisão cuja ligação será atualizada.
+     * @param weight O novo peso da ligação.
+     */
+    @Override
+    public void updateWeight(Divisao vertex1, double weight) {
         this.planta_edificio.updateWeightEdge(vertex1, weight);
     }
 
+    /**
+     * Retorna um iterador para as divisões adjacentes a uma divisão específica, usando BFS.
+     *
+     * @param divisao A divisão para a qual se deseja obter as divisões adjacentes.
+     * @return Um iterador para as divisões adjacentes.
+     */
+    @Override
     public Iterator<Divisao> getNextDivisoes(Divisao divisao) {
-        return this.planta_edificio.iteratorBFSNextDivisoes(divisao);
+        return this.planta_edificio.iteratorNextVertexs(divisao);
     }
 
+
+    /**
+     * Retorna um iterador para todas as divisões do edifício.
+     *
+     * @return Um iterador para todas as divisões.
+     */
+    @Override
+    public Iterator<Divisao> IteratorMapa() {
+        return this.planta_edificio.iterator();
+    }
+
+    /**
+     * Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.
+     *
+     * @return String representando o edifício.
+     */
     @Override
     public String toString() {
         return "Edificio{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name +
                 ", planta_edificio=" + planta_edificio.toString() +
                 '}';
     }
 
+
+    /**
+     * Compara este edifício com outro objeto para verificar se são iguais.
+     *
+     * @param o O objeto a ser comparado.
+     * @return true se os edifícios forem iguais, false caso contrário.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -90,13 +200,18 @@ public class Edificio {
         }
 
         Edificio edificio = (Edificio) o;
-        if(id == edificio.id) {
+        if (id == edificio.id) {
             return true;
         }
 
-        return  Objects.equals(name, edificio.name) && Objects.equals(planta_edificio, edificio.planta_edificio);
+        return Objects.equals(name, edificio.name) && Objects.equals(planta_edificio, edificio.planta_edificio);
     }
 
+    /**
+     * Gera um código hash para o edifício, utilizando seu nome e planta.
+     *
+     * @return O código hash do edifício.
+     */
     @Override
     public int hashCode() {
         return Objects.hashCode(name);

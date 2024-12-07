@@ -1,27 +1,69 @@
 package Items;
 
-import Mapa.Divisao;
-
+/**
+ * Classe que representa um item de cura no jogo.
+ *
+ * @author Artur
+ * @version 1.0
+ */
 public class ItemCura extends Item {
 
+    /**
+     * O tipo do item de cura (kit de vida ou colete).
+     */
     private TypeItemCura type;
 
+    /**
+     * A quantidade de vida que o item de cura recupera.
+     */
     private double vida_recuperada;
 
-    public ItemCura(Divisao divisao, TypeItemCura type, double vida_recuperada) {
-        super(divisao);
+    /**
+     * Construtor para criar um {@link ItemCura} com o tipo de item e a
+     * quantidade de vida a ser recuperada.
+     *
+     * @param type O tipo do item de cura.
+     * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
+     */
+    public ItemCura(TypeItemCura type, double vida_recuperada) {
+        super();
         this.type = type;
         this.vida_recuperada = vida_recuperada;
     }
 
+    /**
+     * Construtor padrão para criar um {@link ItemCura} com valores nulos ou zero para suas
+     * propriedades.
+     */
+    public ItemCura() {
+        this.type = null;
+        this.vida_recuperada = 0;
+    }
+
+    /**
+     * Retorna o tipo de item de cura.
+     *
+     * @return o tipo do item de cura.
+     */
     public TypeItemCura getType() {
         return type;
     }
 
+    /**
+     * Retorna a quantidade de vida que o item de cura pode recuperar.
+     *
+     * @return a quantidade de vida recuperada.
+     */
     public double getVida_recuperada() {
         return vida_recuperada;
     }
 
+    /**
+     * Retorna uma string com os dados do {@link ItemCura}, incluindo o tipo do item de cura
+     * e a quantidade de vida recuperada.
+     *
+     * @return uma string representando o item de cura.
+     */
     @Override
     public String toString() {
         return super.toString() + "ItemCura{" +
@@ -30,6 +72,14 @@ public class ItemCura extends Item {
                 '}';
     }
 
+    /**
+     * Compara este item de cura com outro objeto para verificar se são iguais.
+     * A comparação é baseada no tipo do item de cura e na quantidade de vida recuperada.
+     *
+     * @param o o objeto a ser comparado.
+     * @return true se os itens de cura forem iguais (mesmo tipo e mesma quantidade de vida recuperada),
+     *         caso contrário false.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {

@@ -5,14 +5,13 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../app/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/main/resources" type="java-resource" />
     </content>
-    <orderEntry type="jdk" jdkName="22" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../EstruturasDados/out/artifacts/API_ProjetoED_jar/EstruturasDados.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -21,6 +20,5 @@
     <orderEntry type="library" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" name="EstruturasDados" level="project" />
   </component>
 </module>

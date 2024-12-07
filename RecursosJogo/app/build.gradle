@@ -19,7 +19,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    implementation(files("C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/EstruturasDados/out/artifacts/API_ProjetoED_jar/EstruturasDados.jar"))
+    implementation(files("C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar"))
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 }
 

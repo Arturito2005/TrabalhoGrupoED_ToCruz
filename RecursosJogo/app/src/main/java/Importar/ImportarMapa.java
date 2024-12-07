@@ -13,6 +13,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,10 +29,11 @@ public class ImportarMapa implements Importar {
 
     /**
      * Construtor do ImportarMapa
-     * */
+     */
     public void ImportarMapa() {
         lista_divisoes = new LinearLinkedUnorderedList<>();
     }
+
     /**
      * Método auxiliar para encontrar uma divisão pelo nome em uma lista de divisões.
      * Cria uma cópia da lista e a percorre para evitar modificações na lista original.
@@ -67,12 +69,12 @@ public class ImportarMapa implements Importar {
      * @param path Caminho para o ficheiro JSON.
      * @return O objeto Missao criado com os dados do ficheiro.
      * @throws FileNotFoundException Se o arquivo não for encontrado.
-     * @throws IOException Se ocorrer algum erro de leitura do ficheiro.
-     * @throws NullPointerException Se o caminho for null.
+     * @throws IOException           Se ocorrer algum erro de leitura do ficheiro.
+     * @throws NullPointerException  Se o caminho for null.
      */
     @Override
-    public Missao gerarMapa(String path) throws FileNotFoundException, IOException, NullPointerException{
-        if(path == null) {
+    public Missao gerarMapa(String path) throws FileNotFoundException, IOException, NullPointerException {
+        if (path == null) {
             throw new NullPointerException("O caminho do ficheiro não pode ser null");
         }
 
@@ -84,7 +86,7 @@ public class ImportarMapa implements Importar {
             Object obj = jsonP.parse(reader);
 
             if (obj instanceof JSONObject) {
-                lista_divisoes =new LinearLinkedUnorderedList<>();
+                lista_divisoes = new LinearLinkedUnorderedList<>();
                 JSONObject readingObj = (JSONObject) obj;
 
                 String codigo_missao = (String) readingObj.get("cod-missao");
@@ -94,7 +96,7 @@ public class ImportarMapa implements Importar {
 
                 for (Object edificioNome : edificio_array) {
                     Divisao divisao = new Divisao((String) edificioNome);
-                    edificio.addVertice(divisao);
+                    edificio.addDivisao(divisao);
                     lista_divisoes.addToRear(divisao);
                 }
 
@@ -117,9 +119,10 @@ public class ImportarMapa implements Importar {
                     }
                 }
 
-                LinearLinkedUnorderedList<Inimigo> inimigos = new LinearLinkedUnorderedList<>();
                 JSONArray inimigos_array = (JSONArray) readingObj.get("inimigos");
-
+                LinearLinkedUnorderedList<Inimigo> inimigos_list = new LinearLinkedUnorderedList<>();
+                LinearLinkedUnorderedList<String> divisao_list = new LinearLinkedUnorderedList<>();
+                int num_inimigos = 0;
                 for (Object cont_obj : inimigos_array) {
                     JSONObject readingObjConte = (JSONObject) cont_obj;
 
@@ -127,16 +130,21 @@ public class ImportarMapa implements Importar {
                     long poder = (long) readingObjConte.get("poder");
                     String divisao = (String) readingObjConte.get("divisao");
 
-                    inimigos.addToRear(new Inimigo(nome, poder, findDivisao(divisao)));
+                    Divisao div = findDivisao(divisao);
+                    div.addInimigo(new Inimigo(nome, poder));
                 }
 
-                LinearLinkedUnorderedList<Divisao> entradas_saidas = new LinearLinkedUnorderedList<Divisao>();
-                JSONArray entradas_array = (JSONArray) readingObj.get("entradas-saidas");
+                for (int i = 0; i < num_inimigos; i++) {
+                    Divisao div = findDivisao(divisao_list.removeFirst());
+                    Inimigo inimigo = inimigos_list.removeFirst();
+                    div.addInimigo(inimigo);
+                }
 
+                JSONArray entradas_array = (JSONArray) readingObj.get("entradas-saidas");
                 for (Object entrada : entradas_array) {
                     Divisao divisao = findDivisao((String) entrada);
                     if (divisao != null) {
-                        divisao.setEntrada_saida(true); // Definir como entrada/saída
+                        divisao.setEntrada_saida(true);
                     }
                 }
 
@@ -144,11 +152,11 @@ public class ImportarMapa implements Importar {
                 String divisao_alvo = (String) alvo_obj.get("divisao");
                 String tipo_alvo = (String) alvo_obj.get("tipo");
 
-                Alvo alvo = new Alvo(tipo_alvo, findDivisao(divisao_alvo));
+                Divisao divisao_al = findDivisao(divisao_alvo);
+                Alvo alvo = new Alvo(tipo_alvo);
+                divisao_al.setAlvo(alvo);
 
-                LinearLinkedUnorderedList<ItemCura> itens = new LinearLinkedUnorderedList<ItemCura>();
                 JSONArray itens_array = (JSONArray) readingObj.get("itens");
-
                 for (Object cont_obj : itens_array) {
                     JSONObject readingObjConte = (JSONObject) cont_obj;
 
@@ -169,10 +177,12 @@ public class ImportarMapa implements Importar {
                         type = TypeItemCura.COLETE;
                     }
 
-                    itens.addToRear(new ItemCura(findDivisao(divisao_item), type, pontos_vida));
+                    Divisao divisao = findDivisao(divisao_item);
+                    ItemCura item = (new ItemCura(type, pontos_vida));
+                    divisao.setItemCura(item);
                 }
 
-                missao = new Missao(codigo_missao, versao, edificio, alvo, itens, inimigos);
+                missao = new Missao(codigo_missao, versao, edificio);
             }
         } catch (ParseException | FileNotFoundException e) {
             throw new RuntimeException(e);

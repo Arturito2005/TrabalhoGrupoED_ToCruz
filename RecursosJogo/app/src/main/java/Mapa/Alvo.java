@@ -2,61 +2,97 @@ package Mapa;
 
 import java.util.Objects;
 
+/**
+ * Classe que representa um alvo no jogo.
+ *
+ * @author Artur
+ * @version 1.0
+ */
 public class Alvo {
 
+    /**
+     * Contador estático para gerar identificadores únicos para os alvos.
+     */
     private static int ID_ALVO_CONT = 0;
 
+    /**
+     * Identificador único do alvo.
+     */
     private int id_alvo;
 
+    /**
+     * Nome do alvo.
+     */
     private String nome;
 
-    private Divisao divisao;
-
+    /**
+     * Status que indica se o alvo foi atingido ou não.
+     */
     private boolean atinigido;
 
-    public Alvo(String nome, Divisao divisao) {
+    /**
+     * Construtor para criar um alvo com um nome fornecido.
+     * O identificador do alvo será gerado automaticamente e o status será
+     * definido como não atingido (false).
+     *
+     * @param nome O nome do alvo.
+     */
+    public Alvo(String nome) {
         this.id_alvo = ID_ALVO_CONT++;
         this.nome = nome;
-        this.divisao = divisao;
         this.atinigido = false;
     }
 
+    /**
+     * Construtor padrão para criar um alvo sem nome. O identificador será gerado
+     * automaticamente, e o nome será uma string vazia.
+     */
     public Alvo() {
         this.id_alvo = ID_ALVO_CONT++;
         this.nome = "";
-        this.divisao = new Divisao();
     }
 
-    public int getId_alvo() {
-        return id_alvo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Divisao getDivisao() {
-        return divisao;
-    }
-
+    /**
+     * Retorna o status de atingido do alvo.
+     *
+     * @return true se o alvo foi atingido, false caso contrário.
+     */
     public boolean isAtinigido() {
         return atinigido;
     }
 
+    /**
+     * Altera o status de atingido do alvo.
+     *
+     * @param atinigido O status do alvo (true se atingido, false caso contrário).
+     */
     public void setAtinigido(boolean atinigido) {
         this.atinigido = atinigido;
     }
 
+    /**
+     * Retorna uma representação em string do alvo, incluindo seu identificador,
+     * nome e status de atingido.
+     *
+     * @return uma string representando o alvo.
+     */
     @Override
     public String toString() {
         return "Alvo{" +
                 "id_alvo=" + id_alvo +
                 ", nome='" + nome + '\'' +
-                ", divisao=" + divisao +
                 ", atinigido=" + atinigido +
                 '}';
     }
 
+    /**
+     * Compara este alvo com outro objeto para verificar se são iguais.
+     * A comparação é baseada no identificador único e no nome do alvo.
+     *
+     * @param o o objeto a ser comparado.
+     * @return true se os alvos forem iguais (mesmo identificador ou mesmo nome),
+     * caso contrário false.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -69,12 +105,17 @@ public class Alvo {
 
         Alvo alvo = (Alvo) o;
 
-        if(id_alvo == alvo.id_alvo) {
+        if (id_alvo == alvo.id_alvo) {
             return true;
         }
-        return Objects.equals(nome, alvo.nome) && Objects.equals(divisao, alvo.divisao);
+        return Objects.equals(nome, alvo.nome);
     }
 
+    /**
+     * Gera um código hash para o alvo baseado no nome.
+     *
+     * @return o código hash do nome do alvo.
+     */
     @Override
     public int hashCode() {
         return Objects.hashCode(nome);
