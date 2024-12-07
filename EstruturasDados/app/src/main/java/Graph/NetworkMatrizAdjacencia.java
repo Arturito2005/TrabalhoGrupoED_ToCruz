@@ -1,12 +1,11 @@
 package Graph;
 
-import ArrayList.ArrayUnorderedList;
 import Interfaces.NetworkADT;
 import LinkedList.LinearLinkedUnorderedList;
 import LinkedTree.LinkedHeap;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
-import PriorityQueues.PriorityQueue;
+
 import java.util.Iterator;
 
 /*
@@ -57,28 +56,8 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     * Usado para atualizar o dano que o ToCruz toma se entrar numa sala.
     * O To Cruz só leva dano se não matar o inimigo com instaKill
     * */
-    public void updateWeightEdge(T vertex, double weight) {
-        updateWeightEdge(getIndex(vertex), weight);
-    }
 
-    public void updateWeightEdge(int index1, double weight) {
-        if (indexIsValid(index1)) {
-            Iterator<T> itr = this.iteratorNextVertexs(index1);
-
-            while (itr.hasNext()) {
-                T element = itr.next();
-                int index2 = getIndex(element);
-
-                if(indexIsValid(index2)) {
-                    this.adjMatrix[index1][index2] = weight;
-                    this.adjMatrix[index2][index1] = weight;
-                }
-            }
-
-        }
-    }
-
-    private int getNoMiniumDistance(double[] distances, boolean[] visited) {
+    protected int getNoMiniumDistance(double[] distances, boolean[] visited) {
         double minDistance = Double.POSITIVE_INFINITY;
         int minIndex = -1;
 
@@ -144,11 +123,68 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
     /**
      * Testar (Xico copiei a que tu fizeste para o caminho mais curto e meti para no final retornar o caminho em vez do tamanho)
+     *
+     *
+     * ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+     *         int start_index = getIndex(startVertex);
+     *         int final_index = getIndex(targetVertex);
+     *
+     *         if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
+     *             return resultList.iterator();
+     *         }
+     *
+     *         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+     *         int index = start_index;
+     *         int[] comprimeto = new int[numVertices];
+     *         int[] antecessor = new int[numVertices];
+     *         boolean[] visited = new boolean[numVertices];
+     *
+     *         for (int i = 0; i < numVertices; i++) {
+     *             visited[i] = false;
+     *         }
+     *
+     *         traversalQueue.enqueue(start_index);
+     *         visited[start_index] = true;
+     *         comprimeto[start_index] = 0;
+     *         antecessor[start_index] = -1;
+     *
+     *         while (!traversalQueue.isEmpty() && (index != final_index)) {
+     *             index = traversalQueue.dequeue();
+     *
+     *             for (int i = 0; i < numVertices; i++) {
+     *                 if (adjMatrix[index][i] && !visited[i]) {
+     *                     comprimeto[i] = comprimeto[index] + 1;
+     *                     antecessor[i] = index;
+     *                     traversalQueue.enqueue(i);
+     *                     visited[i] = true;
+     *                 }
+     *             }
+     *         }
+     *
+     *         //Não existe caminho
+     *         if (index != final_index) {
+     *             return resultList.iterator();
+     *         }
+     *
+     *         LinkedStack<Integer> stack = new LinkedStack<>();
+     *         index = final_index;
+     *         stack.push(index);
+     *
+     *         do {
+     *             index = antecessor[index];
+     *             stack.push(index);
+     *         } while (index != start_index);
+     *
+     *         while (!stack.isEmpty()) {
+     *             resultList.addToRear(vertices[stack.pop()]);
+     *         }
      * */
+    @Override
     public Iterator<T> iteratorShortestPath(T vertex, T vertex2) {
         int start_index = getIndex(vertex);
         int final_index = getIndex(vertex2);
         LinearLinkedUnorderedList<T> resultList = new LinearLinkedUnorderedList<>();
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
 
         if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
             return resultList.iterator();
@@ -166,7 +202,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
 
         distances[start_index] = 0;
-
         for (int count = 0; count < numVertices - 1; count++) {
             int u = getNoMiniumDistance(distances, visited);
             if (u == -1) {

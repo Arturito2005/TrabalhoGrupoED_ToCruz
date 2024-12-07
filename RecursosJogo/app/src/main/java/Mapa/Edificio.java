@@ -1,5 +1,6 @@
 package Mapa;
 
+import Graph.Network;
 import Graph.NetworkMatrizAdjacencia;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkADT;
@@ -25,7 +26,7 @@ public class Edificio implements EdificoInt {
 
     private String name; /** Nome do edifício. */
 
-    private NetworkMatrizAdjacencia<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
+    private Network<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
 
     /**
      * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
@@ -33,7 +34,7 @@ public class Edificio implements EdificoInt {
     public Edificio() {
         this.id = ID_EDIFICIO_CONT++;
         this.name = NAME_DEFAULT;
-        this.planta_edificio = new NetworkMatrizAdjacencia<>();
+        this.planta_edificio = new Network<>();
     }
 
     /**

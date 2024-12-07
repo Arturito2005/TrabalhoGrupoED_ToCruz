@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7f5fe3-3eba-4927-9d5d-4ae23c81a07f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Interfaces/NetworkMatrizADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/TestDijsktra.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/TestDijsktra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +109,7 @@
       <workItem from="1733561249276" duration="15822000" />
       <workItem from="1733582072747" duration="160000" />
       <workItem from="1733583226193" duration="4000" />
+      <workItem from="1733583999686" duration="2354000" />
     </task>
     <servers />
   </component>

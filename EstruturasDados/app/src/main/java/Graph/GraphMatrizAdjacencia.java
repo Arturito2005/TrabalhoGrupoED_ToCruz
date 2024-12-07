@@ -174,35 +174,6 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         }
     }
 
-    public Iterator<T> iteratorNextVertexs(int startVertex) {
-        ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
-
-        if (!indexIsValid(startVertex)) {
-            return resultList.iterator();
-        }
-
-        boolean[] visited = new boolean[numVertices];
-
-        for (int i = 0; i < numVertices; i++) {
-            visited[i] = false;
-        }
-
-        visited[startVertex] = true;
-
-        for (int i = 0; i < numVertices; i++) {
-            if (adjMatrix[startVertex][i] && !visited[i]) {
-                visited[i] = true;
-                resultList.addToRear(vertices[i]);
-            }
-        }
-
-        return resultList.iterator();
-    }
-
-    public Iterator<T> iteratorNextVertexs(T startVertex) {
-        return iteratorNextVertexs(getIndex(startVertex));
-    }
-
     /**
      * Returns an iterator that performs a breadth first search traversal
      * starting at the given index.
