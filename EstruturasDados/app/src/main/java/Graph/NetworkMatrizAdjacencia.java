@@ -92,6 +92,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return minIndex;
     }
 
+    //Não funcional pois adicionei o damage para ficar normal é só retirar o damage
     @Override
     public double shortestPathWeight(T vertex1, T vertex2) {
         int start_index = getIndex(vertex1);
