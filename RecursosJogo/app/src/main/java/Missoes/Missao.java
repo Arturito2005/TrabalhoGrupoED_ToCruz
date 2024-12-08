@@ -26,6 +26,8 @@ import java.util.*;
  */
 public class Missao implements MissaoInt {
 
+    private static Scanner sc;
+
     private String cod_missao;
 
     private long versao;
@@ -42,6 +44,7 @@ public class Missao implements MissaoInt {
         this.edificio = edificio;
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
+        this.sc = new Scanner(System.in);
     }
 
     public Missao() {
@@ -50,6 +53,7 @@ public class Missao implements MissaoInt {
         this.edificio = new Edificio();
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
+        this.sc = new Scanner(System.in);
     }
 
     public QueueADT<Divisao> getTrajeto_to() {
@@ -68,13 +72,13 @@ public class Missao implements MissaoInt {
      * e em que momento no confronto em que ele deve utilizar um Item da mochila
      */
 
-    private void exportarMissao() {
+    private void exportarMissao(QueueADT<Divisao> trajeto) {
         QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
-        trajetoQueue.enqueue(this.trajeto_to);
+        trajetoQueue.enqueue(trajeto);
         ExportarDado exportar = new ExportarDado(versao, trajetoQueue);
         String path = "./Jsons/Export/";
         String name_file = "";
-        Scanner sc = new Scanner(System.in);
+
         do {
             System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
             try {
@@ -87,7 +91,6 @@ public class Missao implements MissaoInt {
 
         path += name_file;
         exportar.exportarDados(path);
-
     }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
@@ -368,7 +371,6 @@ public class Missao implements MissaoInt {
 
     private Divisao getNewDivisaoTo(Divisao divisao_atual) {
         int op = -1;
-        Scanner sc = new Scanner(System.in);
         Iterator<Divisao> itr = this.edificio.getNextDivisoes(divisao_atual);
         //Trocar apra UnorderedList
         ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
@@ -411,7 +413,7 @@ public class Missao implements MissaoInt {
                 System.out.println("Numero invalido!");
                 sc.next();
             }
-        } while (op < 0 || op > listDiv.size());
+        } while (op < 0 || op > listDiv.size() - 1);
 
         //Meter Try Catch
         return listDiv.find(op);
@@ -419,6 +421,8 @@ public class Missao implements MissaoInt {
 
     /*
      * Falta meter apenas sugerir o caminho mais curto para o ToCruz chegar a um kit de vida ou ao alvo
+     *
+     * Verificar se estão todos os cenarios feitos
      *  */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
         ItemCura item = divisao.getItemCura();
@@ -427,9 +431,9 @@ public class Missao implements MissaoInt {
                 if (toCruz.mochilaIsFull() && toCruz.getVida() < 100) {
                     toCruz.usarItem(item);
                 }
+                break;
             }
             case KIT_VIDA: {
-                Scanner sc = new Scanner(System.in);
                 int op = -1;
 
                 if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
@@ -445,7 +449,7 @@ public class Missao implements MissaoInt {
                             sc.next();
                         }
                     } while (op < 0 || op > 2);
-                } else if (!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
+                } else if (toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
                     do {
                         System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
                         System.out.println("0 - Usar Item");
@@ -457,6 +461,18 @@ public class Missao implements MissaoInt {
                             sc.next();
                         }
                     } while (op < 0 || op > 1);
+                } else if(!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
+                    System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                    System.out.println("1 - Deixa-lo na sala");
+                    System.out.println("2 - Guardar");
+                    do {
+                        try {
+                            op = sc.nextInt();
+                        } catch (InputMismatchException ex) {
+                            System.out.println("Numero inválido!");
+                            sc.next();
+                        }
+                    } while (op < 1 || op > 2);
                 }
 
                 switch (op) {
@@ -476,6 +492,7 @@ public class Missao implements MissaoInt {
                         throw new InvalidOptionException("Introduziu uma opção invalida");
                     }
                 }
+                break;
             }
             default: {
                 throw new InvalidTypeItemException("Tipo de item invalido");
@@ -484,7 +501,6 @@ public class Missao implements MissaoInt {
     }
 
     private void turnoToCruz(Divisao divisao_atual) {
-        Scanner sc = new Scanner(System.in);
         ToCruz toCruz = divisao_atual.getToCruz();
         Divisao divisao = divisao_atual;
         int op = -1;
@@ -600,7 +616,6 @@ public class Missao implements MissaoInt {
     private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
         int op = -1;
         int i = 0;
-        Scanner sc = new Scanner(System.in);
 
         Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
         StackADT<Divisao> listDiv = new LinkedStack<>();
@@ -783,6 +798,8 @@ public class Missao implements MissaoInt {
 
         System.out.println("Percurso feito pelo o ToCruz:");
         String percurso = " ";
+        //Talvez mandar uma nova queue para o exportar
+        QueueADT<Divisao> trajeto_temp = new LinkedQueue<Divisao>();
         while (!trajeto_to.isEmpty()) {
             Divisao div = trajeto_to.dequeue();
             if (trajeto_to.isEmpty()) {
@@ -790,10 +807,12 @@ public class Missao implements MissaoInt {
             } else {
                 percurso = percurso + div.getName() + " --> ";
             }
+
+            trajeto_temp.enqueue(div);
         }
 
         System.out.println(percurso);
-        exportarMissao();
+        exportarMissao(trajeto_temp);
     }
 
     @Override
