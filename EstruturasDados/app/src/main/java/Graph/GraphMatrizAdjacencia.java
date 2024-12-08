@@ -288,6 +288,8 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
         for (int i = 0; i < numVertices; i++) {
             visited[i] = false;
+            comprimeto[i] = Integer.MAX_VALUE;
+            antecessor[i] = -1;
         }
 
         traversalQueue.enqueue(start_index);

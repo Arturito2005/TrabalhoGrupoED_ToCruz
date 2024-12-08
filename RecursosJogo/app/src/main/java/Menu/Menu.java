@@ -1,5 +1,6 @@
 package Menu;
 
+import Exceptions.InvalidOptionException;
 import Importar.ImportarMapa;
 import Missoes.Missao;
 
@@ -8,7 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
-    private static final String path = "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursosJogo/Jsons/Import/FicheiroMissao.json";
+    private static final String path = "./Jsons/Import/FicheiroMissao.json";
 
     public static void main(String[] args) throws IOException {
         Missao missao = new Missao();
@@ -29,14 +30,18 @@ public class Menu {
                 System.out.println("Numero inválido!");
                 sc.next();
             }
-        } while (op < 0 || op >= 2);
+        } while (op < 0 || op > 2);
 
-        if (op == 1) {
-            //Inicializa o jogo no modo Manual
-            missao.modoManual();
-        } else {
-            //Inicialzia o jogo no modo Automático
-            //missao.modoAutomatico();
+        switch (op) {
+            case 1: {
+                missao.modoManual();
+                break;
+            } case 2: {
+                missao.modoAutomatico();
+                break;
+            } default: {
+                throw new InvalidOptionException("Opção selecionada é invalida");
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 package Graph;
 
 import Interfaces.NetworkADT;
+import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedUnorderedList;
 import LinkedTree.LinkedHeap;
 import Queue.LinkedQueue;
@@ -18,8 +19,14 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     public NetworkMatrizAdjacencia() {
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
-    }
 
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = 0; j < numVertices; j++) {
+                adjMatrix[i][j] = Double.NEGATIVE_INFINITY; // Sem conexão inicial
+            }
+        }
+
+    }
 
     public void addVertex(T vertex) {
         if(this.vertices.length == this.numVertices) {
@@ -27,6 +34,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
         super.addVertex(vertex);
     }
+
     //Testar
     protected void expandadweightMatrix() {
         super.expandCapacity();
@@ -56,7 +64,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     * Usado para atualizar o dano que o ToCruz toma se entrar numa sala.
     * O To Cruz só leva dano se não matar o inimigo com instaKill
     * */
-
     protected int getNoMiniumDistance(double[] distances, boolean[] visited) {
         double minDistance = Double.POSITIVE_INFINITY;
         int minIndex = -1;
@@ -71,7 +78,16 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return minIndex;
     }
 
-    //Não funcional pois adicionei o damage para ficar normal é só retirar o damage
+    /**
+     * Não funciona!!!!!!!!!!!!!
+     *
+     * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas
+     * no caminho. Em caso de empate no custo, o caminho com menos arestas é priorizado.
+     *
+     * @param vertex1 O vértice de origem.
+     * @param vertex2 O vértice de destino.
+     * @return O custo do caminho mais curto entre os dois vértices. Retorna -1 se não houver caminho entre eles.
+     */
     @Override
     public double shortestPathWeight(T vertex1, T vertex2) {
         int start_index = getIndex(vertex1);
@@ -81,162 +97,106 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
             return -1;
         }
 
-        double damage = 0;
-        double[] distances = new double[numVertices];
+        double[] custos = new double[numVertices];
         boolean[] visited = new boolean[numVertices];
+        int[] comprimento = new int[numVertices];
 
         for (int i = 0; i < numVertices; i++) {
-            distances[i] = Double.POSITIVE_INFINITY;
+            custos[i] = Double.POSITIVE_INFINITY;
+            comprimento[i] = Integer.MAX_VALUE;
             visited[i] = false;
         }
 
-        distances[start_index] = 0;
-
+        comprimento[start_index] = 0;
+        custos[start_index] = 0;
         for (int count = 0; count < numVertices - 1; count++) {
-            int u = getNoMiniumDistance(distances, visited);
-
+            int u = getNoMiniumDistance(custos, visited);
             if (u == -1) {
                 break;
             }
 
             visited[u] = true;
-
             for (int v = 0; v < numVertices; v++) {
-                if (!visited[v] && adjMatrix[u][v] >= 0 && distances[u] + adjMatrix[u][v] < distances[v]) {
-                    double value_weight = adjMatrix[u][v];
-                    if(value_weight == 0) {
-                        value_weight = 1;
-                    } else {
-                        damage = damage + value_weight/ 2;
+                if (!visited[v] && adjMatrix[u][v] >= 0) {
+                    double newCusto = custos[u] + adjMatrix[u][v];
+
+                    if (newCusto < custos[v] || (newCusto == custos[v] && comprimento[u] + 1 < comprimento[v])) {
+                        custos[v] = newCusto;
+                        comprimento[v] = comprimento[u] + 1;
                     }
-                    distances[v] = distances[u] + value_weight;
                 }
             }
         }
 
-        if (distances[final_index] == Double.POSITIVE_INFINITY) {
+        if (custos[final_index] == Double.POSITIVE_INFINITY) {
             return -1;
         }
 
-        return distances[final_index];
+        double tot_custos = 0;
+        double tot_comp = 0;
+        for(int i = start_index; i < final_index; i++ ) {
+            tot_custos += custos[i];
+            tot_comp += comprimento[i];
+        }
+
+        return custos[final_index] + comprimento[final_index];
     }
 
-    /**
-     * Testar (Xico copiei a que tu fizeste para o caminho mais curto e meti para no final retornar o caminho em vez do tamanho)
-     *
-     *
-     * ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
-     *         int start_index = getIndex(startVertex);
-     *         int final_index = getIndex(targetVertex);
-     *
-     *         if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
-     *             return resultList.iterator();
-     *         }
-     *
-     *         LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-     *         int index = start_index;
-     *         int[] comprimeto = new int[numVertices];
-     *         int[] antecessor = new int[numVertices];
-     *         boolean[] visited = new boolean[numVertices];
-     *
-     *         for (int i = 0; i < numVertices; i++) {
-     *             visited[i] = false;
-     *         }
-     *
-     *         traversalQueue.enqueue(start_index);
-     *         visited[start_index] = true;
-     *         comprimeto[start_index] = 0;
-     *         antecessor[start_index] = -1;
-     *
-     *         while (!traversalQueue.isEmpty() && (index != final_index)) {
-     *             index = traversalQueue.dequeue();
-     *
-     *             for (int i = 0; i < numVertices; i++) {
-     *                 if (adjMatrix[index][i] && !visited[i]) {
-     *                     comprimeto[i] = comprimeto[index] + 1;
-     *                     antecessor[i] = index;
-     *                     traversalQueue.enqueue(i);
-     *                     visited[i] = true;
-     *                 }
-     *             }
-     *         }
-     *
-     *         //Não existe caminho
-     *         if (index != final_index) {
-     *             return resultList.iterator();
-     *         }
-     *
-     *         LinkedStack<Integer> stack = new LinkedStack<>();
-     *         index = final_index;
-     *         stack.push(index);
-     *
-     *         do {
-     *             index = antecessor[index];
-     *             stack.push(index);
-     *         } while (index != start_index);
-     *
-     *         while (!stack.isEmpty()) {
-     *             resultList.addToRear(vertices[stack.pop()]);
-     *         }
-     * */
-    @Override
-    public Iterator<T> iteratorShortestPath(T vertex, T vertex2) {
-        int start_index = getIndex(vertex);
+    /*
+    * public double shortestPathWeight2(T vertex1, T vertex2) {
+        int start_index = getIndex(vertex1);
         int final_index = getIndex(vertex2);
-        LinearLinkedUnorderedList<T> resultList = new LinearLinkedUnorderedList<>();
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
 
         if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
-            return resultList.iterator();
+            return -1;
         }
 
-        int index = start_index;
-        double[] distances = new double[numVertices];
+        double[] custos = new double[numVertices];
         boolean[] visited = new boolean[numVertices];
-        int[] predecessors = new int[numVertices];
+        int[] comprimento = new int[numVertices];
 
         for (int i = 0; i < numVertices; i++) {
-            distances[i] = Double.POSITIVE_INFINITY;
+            custos[i] = Double.POSITIVE_INFINITY;
+            comprimento[i] = Integer.MAX_VALUE;
             visited[i] = false;
-            predecessors[i] = -1;
         }
 
-        distances[start_index] = 0;
+        comprimento[start_index] = 0;
+        custos[start_index] = 0;
         for (int count = 0; count < numVertices - 1; count++) {
-            int u = getNoMiniumDistance(distances, visited);
+            int u = getNoMiniumDistance(custos, visited);
             if (u == -1) {
                 break;
             }
 
             visited[u] = true;
-
             for (int v = 0; v < numVertices; v++) {
-                if (!visited[v] && adjMatrix[u][v] >= 0 && distances[u] + adjMatrix[u][v] < distances[v]) {
-                    distances[v] = distances[u] + adjMatrix[u][v];
-                    predecessors[v] = u;
+                if (!visited[v] && adjMatrix[u][v] >= 0) {
+                    double newCusto = custos[u] + adjMatrix[u][v];
+
+                    if (newCusto < custos[v] || (newCusto == custos[v] && comprimento[u] + 1 < comprimento[v])) {
+                        custos[v] = newCusto;
+                        comprimento[v] = comprimento[u] + 1;
+                    }
                 }
+
             }
         }
 
-        if (distances[final_index] == Double.POSITIVE_INFINITY) {
-            resultList.iterator();
+        if (custos[final_index] == Double.POSITIVE_INFINITY) {
+            return -1;
         }
 
-        LinkedStack<Integer> stack = new LinkedStack<>();
-        index = final_index;
-        stack.push(index);
-
-        do {
-            index = predecessors[index];
-            stack.push(index);
-        } while (index != start_index);
-
-        while (!stack.isEmpty()) {
-            resultList.addToRear(vertices[stack.pop()]);
+        double tot_custos = 0;
+        double tot_comp = 0;
+        for(int i = start_index; i < final_index; i++ ) {
+            tot_custos += custos[i];
+            tot_comp += comprimento[i];
         }
 
-        return resultList.iterator();
+        return custos[final_index] + comprimento[final_index];
     }
+    * */
 
     @Override
     public Iterator<T> iterator() {

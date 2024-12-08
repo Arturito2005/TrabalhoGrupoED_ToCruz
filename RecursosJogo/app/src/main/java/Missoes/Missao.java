@@ -2,7 +2,7 @@ package Missoes;
 
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
-import Interfaces.MissaoInt;
+import Interfaces.*;
 import Items.ItemCura;
 import ArrayList.ArrayUnorderedList;
 import LinkedList.LinearLinkedUnorderedList;
@@ -12,6 +12,7 @@ import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
+import ArrayList.ArrayUnordered;
 
 import java.util.*;
 
@@ -31,7 +32,7 @@ public class Missao implements MissaoInt {
 
     private Edificio edificio;
 
-    private LinkedQueue<Divisao> trajeto_to;
+    private QueueADT<Divisao> trajeto_to;
 
     public Missao(String cod_missao, long versao, Edificio edificio) {
         this.cod_missao = cod_missao;
@@ -70,7 +71,6 @@ public class Missao implements MissaoInt {
                     break;
                 }
                 case KIT_VIDA: {
-                    //Ver depois o usarItem
                     if (!toCruz.mochilaIsFull() && (toCruz.getVida() == 100 || toCruz.getVida() + itemCura.getVida_recuperada() >= 100)) {
                         toCruz.guardarKit(itemCura);
                     } else if (toCruz.getVida() + itemCura.getVida_recuperada() <= 100) {
@@ -96,9 +96,7 @@ public class Missao implements MissaoInt {
      * Testar a ver se funciona
      */
     private Divisao BestStartToCruz(ToCruz toCruz) {
-        Divisao div_start = null;
-        Divisao div_alvo = null;
-        ArrayUnorderedList<Divisao> list_item = new ArrayUnorderedList<>();
+        UnorderedListADT<Divisao> list_entradas = new ArrayUnorderedList<>();
         Iterator<Divisao> itr;
 
         //1º Encontrar todos os itens e o alvo
@@ -107,53 +105,59 @@ public class Missao implements MissaoInt {
         while (itr.hasNext()) {
             Divisao div = itr.next();
 
-            if (div.getItemCura() != null) {
-                list_item.addToRear(div);
-            } else if (div.getAlvo() != null) {
-                div_alvo = div;
+            if (div.isEntrada_saida()) {
+                list_entradas.addToRear(div);
             }
         }
 
-        //2º Ver o caminho mais curto de cada divisao para o item ou alvo (Deve estar muito mal)
-        double distance = 0;
-        double min = 0;
-        ArrayUnorderedList<Double> min_divi = new ArrayUnorderedList<Double>();
+        /*2º Ver o caminho mais curto de cada divisao para o item ou alvo
+         * Testar em principio está a dar
+         * */
+        Divisao best_entr = null;
+        double min_dist = Double.MAX_VALUE;
         itr = this.edificio.getPlantaEdificio().iterator();
 
         while (itr.hasNext()) {
             Divisao div = itr.next();
 
-            if(div.isEntrada_saida()) {
-                distance = this.edificio.getShortestPath(div, div_alvo);
-                min = distance;
-                div_start = div;
-                Iterator<Divisao> itr_item = list_item.iterator();
+            if (div.getItemCura() != null || div.getAlvo() != null) {
+                double min = Double.MAX_VALUE;
+                double distance;
+                Iterator<Divisao> itrEntr = list_entradas.iterator();
+                Divisao div_min = null;
+                int i = 0;
 
-                while (itr_item.hasNext()) {
-                    Divisao div_item = itr_item.next();
-                    distance = this.edificio.getShortestPath(div, div_item);
+                while (itrEntr.hasNext()) {
+                    Divisao div_entr = itrEntr.next();
+                    distance = this.edificio.getShortestPath(div_entr, div);
 
-                    if(distance < min) {
+                    if (distance < min || i == 0) {
                         min = distance;
-                        div_start = div_item;
+                        div_min = div_entr;
                     }
 
+                    i++;
+                }
+
+                if (min < min_dist) {
+                    min_dist = min;
+                    best_entr = div_min;
                 }
             }
         }
 
         //3º Encontrar o caminho mais curto para um item
-        div_start.addToCruz(toCruz);
+        best_entr.addToCruz(toCruz);
 
-        if (div_start.haveConfronto()) {
-            div_start.attackToCruz();
+        if (best_entr.haveConfronto()) {
+            best_entr.attackToCruz();
         }
 
-        if (div_start.getItemCura() != null) {
-            DivisaoComItem(div_start, div_start.getToCruz());
+        if (best_entr.getItemCura() != null) {
+            DivisaoComItem(best_entr, best_entr.getToCruz());
         }
 
-        return div_start;
+        return best_entr;
     }
 
     /**
@@ -241,14 +245,15 @@ public class Missao implements MissaoInt {
      */
     @Override
     public void modoAutomatico() {
-
         //ToCruz entra na sala (meter o codigo)
+        //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
         BestStartToCruz(toCruz); //Ver se isto mete já o ToCruz na melhor divisao se sim alterar no modo manual se não alterar e meter como o manual
         while (!finishgame) {
+            //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
             LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
@@ -265,7 +270,7 @@ public class Missao implements MissaoInt {
 
             itrMapa = this.edificio.IteratorMapa();
             boolean findToCruz = false;
-
+            //this.edificio.drawMapa();
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
@@ -279,25 +284,60 @@ public class Missao implements MissaoInt {
                     findToCruz = true;
                 }
             }
-
+            //this.edificio.drawMapa();
             this.versao++;
         }
 
-        relatoriosMissao();
+        //relatoriosMissao();
     }
 
-
     /*
-     * Retorna a nova divisao do ToCruz, ver se a parte de seleção da divisao está correta
+     * Dá a suguestão do melhor caminho ao To Cruz
      *
-     * Falta meter agora metodo para sugerir o melhor caminho ao ToCruz para chegar a um item( No final de cada turno, deve ser
-     * apresentado ao Tó Cruz o melhor caminho para o alvo e para o kit de recuperação mais próximo.)
      * */
+    private void sugestaoCaminhoToCruz(Divisao div_to, ArrayUnorderedADT<Divisao> listDiv) {
+        ToCruz toCruz = div_to.getToCruz();
+        Divisao min_division = null;
+        Iterator<Divisao> itr = listDiv.iterator();
+
+        double min = Double.MAX_VALUE;
+        while (itr.hasNext()) {
+            Divisao div = itr.next();
+
+            double distance = Double.MAX_VALUE;
+            if (div.getAlvo() != null && !toCruz.isColectedAlvo() || div.getItemCura() != null || div.isEntrada_saida() && toCruz.isColectedAlvo()) {
+                distance = this.edificio.getShortestPath(div_to, div);
+            }
+
+            if (distance < min) {
+                min = distance;
+                min_division = div;
+            }
+        }
+
+        Iterator<Divisao> shortestPath = this.edificio.shortesPathIt(div_to, min_division);
+        String temp = "";
+        System.out.println("Sugestão de caminho mais curto para o To Cruz");
+
+        while (shortestPath.hasNext()) {
+            Divisao div = shortestPath.next();
+
+            if(shortestPath.hasNext()) {
+                temp = temp + itr.next() + " -->";
+            } else {
+                temp = temp + itr.next();
+            }
+
+        }
+        System.out.println(temp);
+    }
+
     private Divisao getNewDivisaoTo(Divisao divisao_atual) {
         int op = -1;
         Scanner sc = new Scanner(System.in);
         Iterator<Divisao> itr = this.edificio.getNextDivisoes(divisao_atual);
-        ArrayUnorderedList<Divisao> listDiv = new ArrayUnorderedList<>();
+        //Trocar apra UnorderedList
+        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
 
         System.out.println("Selecione a divisao para o ToCruz se mover!");
 
@@ -322,28 +362,8 @@ public class Missao implements MissaoInt {
         /*
          * Sugerir melhor caminho To
          * */
-        /*
-        * Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
-        Divisao best_div = null;
-        double min = 0;
-        double distance;
-        int i = 0;
+        sugestaoCaminhoToCruz(divisao_atual, listDiv);
 
-        while (itr.hasNext()) {
-            Divisao div = itr.next();
-
-            if (div.getAlvo() != null || div.getItemCura() != null) {
-                distance = this.edificio.getShortestPath(divisao_atual, div);
-
-                if (distance < min || i == 0) {
-                    min = distance;
-                    best_div = div;
-                }
-
-                i++;
-            }
-        }
-        * */
         /*
          * Fim da sugestão
          * */
@@ -358,14 +378,8 @@ public class Missao implements MissaoInt {
             }
         } while (op < 0 || op > listDiv.size());
 
-        Divisao div = null;
-        try {
-            div = listDiv.find(op);
-        } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        return div;
+        //Meter Try Catch
+        return listDiv.find(op);
     }
 
     /*
@@ -494,49 +508,55 @@ public class Missao implements MissaoInt {
     }
 
     //Esta bugado
-    private void moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
+    //Só da erro no remover
+    private Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
         Random randomizer = new Random();
         int numMoves = randomizer.nextInt(3);
 
         for (int i = 0; i < numMoves; i++) {
             this.edificio.updateWeight(divisao_atual, 0);
-            ArrayUnorderedList<Divisao> listDiv = new ArrayUnorderedList<>();
+            StackADT<Divisao> stDiv = new LinkedStack<>();
             Divisao divisaoEscolhida;
             Iterator<Divisao> itrDiv = this.edificio.getNextDivisoes(divisao_atual);
 
             while (itrDiv.hasNext()) {
-                listDiv.addToRear(itrDiv.next());
+                stDiv.push(itrDiv.next());
             }
 
-            int rand = randomizer.nextInt(listDiv.size());
+            //Testar
+            int rand = randomizer.nextInt(stDiv.size() - 1);
 
-            divisaoEscolhida = listDiv.find(rand);
+            while (stDiv.size() - 1 > rand && !stDiv.isEmpty()) {
+                stDiv.pop();
+            }
+
+            divisaoEscolhida = stDiv.peek();
             divisao_atual.removeInimigo(inimigo);
             divisaoEscolhida.addInimigo(inimigo);
 
             this.edificio.updateWeight(divisaoEscolhida, inimigo.getPoder());
             divisao_atual = divisaoEscolhida; //Testar
         }
-        System.out.println("O inimigo" + inimigo.getNome() + " moveu-se para a sala" + divisao_atual.getName());
+        System.out.println("O inimigo" + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
+        return divisao_atual;
     }
 
-    //Acho que já sei como corrigir é só trocar o iterator pela lista
     private void turnoInimigo(Divisao divisao) {
-        Iterator<Inimigo> inimigos = divisao.getInimigos().iterator();
-        Inimigo inimigo;
+        LinearLinkedUnorderedList<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
-        while (inimigos.hasNext()) {
-            inimigo = inimigos.next();
-
+        for (Inimigo inimigo: divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
                 System.out.println("O inimigo" + inimigo.getNome() + " está na sala" + divisao.getName());
-                moverInimigo(divisao, inimigo);
-
-                if (divisao.haveConfronto()) {
-                    divisao.attackInimigo(inimigo);
-                }
+                inimigos_move.addToRear(inimigo);
             } else {
                 divisao.attackInimigo(inimigo);
+            }
+        }
+
+        for (Inimigo inimigo: inimigos_move) {
+            Divisao div = moverInimigo(divisao, inimigo);
+            if (div.haveConfronto()) {
+                div.attackInimigo(inimigo);
             }
         }
     }
@@ -552,14 +572,15 @@ public class Missao implements MissaoInt {
         Scanner sc = new Scanner(System.in);
 
         Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
-        ArrayUnorderedList<Divisao> listDiv = new ArrayUnorderedList<>();
+        StackADT<Divisao> listDiv = new LinkedStack<>();
+        Divisao[] divisaos = new Divisao[this.edificio.getNumEntradasSaidas()]; //Numero de divisoes
 
         while (itr.hasNext()) {
             Divisao div = itr.next();
 
             if (div.isEntrada_saida()) {
                 System.out.println(i + " - " + div.getName());
-                listDiv.addToRear(div);
+                listDiv.push(div);
                 i++;
             }
         }
@@ -576,9 +597,13 @@ public class Missao implements MissaoInt {
         } while (op < 0 || op > i);
 
         Divisao divisao_nova = null;
+        while (listDiv.size() - 1 > op && !listDiv.isEmpty()) {
+            listDiv.pop();
+        }
 
         try {
-            divisao_nova = listDiv.find(op);
+            divisao_nova = divisaos[op];
+            divisao_nova = listDiv.peek();
             divisao_nova.addToCruz(toCruz);
             addDivisaoTrajetoToCruz(divisao_nova);
 
@@ -610,6 +635,7 @@ public class Missao implements MissaoInt {
      */
     @Override
     public void modoManual() {
+        //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
         Divisao divisaoInicial = ToCruzEntrarEdificio(toCruz);
@@ -630,8 +656,6 @@ public class Missao implements MissaoInt {
         while (!finishgame) {
             itrMapa = this.edificio.IteratorMapa();
             LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
-            //Turno de cada inimigo só falta a movimentação
-            //Se a sala estiver com dois inimigos só um é que fica em confronto
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
@@ -673,25 +697,18 @@ public class Missao implements MissaoInt {
     private void relatoriosMissao() {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
         boolean missaoSucesso = false;
-        LinkedList<Inimigo> inimigos_dead = new LinkedList<>();
-        LinkedList<ItemCura> item_colected = new LinkedList<>();
+        UnorderedListADT<ItemCura> item_colected = new LinearLinkedUnorderedList<ItemCura>();
         ToCruz toCruz = null;
 
         while (itrMapa.hasNext()) {
             Divisao div = itrMapa.next();
         }
+
         if (missaoSucesso) {
             System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
             System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
         } else {
             System.out.println("Missão falhada ಥ_ಥ");
-        }
-
-        System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
-
-        if (!inimigos_dead.isEmpty()) {
-            System.out.println("Inimigos mortos pelo o To Cruz:");
-            System.out.println(inimigos_dead.toString());
         }
 
         System.out.println("Numero de itensColetados: " + item_colected.size());

@@ -4,6 +4,7 @@ import Graph.Network;
 import Graph.NetworkMatrizAdjacencia;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkADT;
+import Interfaces.NetworkMatrizADT;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -26,7 +27,8 @@ public class Edificio implements EdificoInt {
 
     private String name; /** Nome do edifício. */
 
-    private Network<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
+    //Ver se com esta inicialização
+    private NetworkMatrizADT<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
 
     /**
      * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
@@ -51,7 +53,7 @@ public class Edificio implements EdificoInt {
      *
      * @return Grafo que representa as divisões e conexões do edifício.
      */
-    public NetworkMatrizAdjacencia<Divisao> getPlantaEdificio() {
+    public NetworkMatrizADT<Divisao> getPlantaEdificio() {
         return planta_edificio;
     }
 
@@ -170,6 +172,25 @@ public class Edificio implements EdificoInt {
         return this.planta_edificio.iterator();
     }
 
+
+    public void drawMapa() {
+        Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
+
+        while (itrDiv.hasNext()) {
+            Divisao divOrigem = itrDiv.next();
+            divOrigem.drawnDivisao();
+
+            Iterator<Divisao> adjacentes = this.planta_edificio.iteratorNextVertexs(divOrigem);
+            while (adjacentes.hasNext()) {
+                Divisao divDestino = adjacentes.next();
+                double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
+                System.out.println("    ^");
+                System.out.println("    |    <---> (Peso: " + peso + ")");
+                System.out.println("    v");
+                divDestino.drawnDivisao();
+            }
+        }
+    }
     /**
      * Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.
      *

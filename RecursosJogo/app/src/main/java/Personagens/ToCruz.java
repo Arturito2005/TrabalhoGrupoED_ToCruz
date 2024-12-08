@@ -3,9 +3,11 @@ package Personagens;
 import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;
 import Exceptions.WrongTypeItem;
+import Interfaces.StackADT;
 import Interfaces.ToCruzItems;
 import Items.ItemCura;
 import Items.TypeItemCura;
+import Stacks.ArrayStack;
 import Stacks.LinkedStack;
 
 /**
@@ -16,7 +18,7 @@ import Stacks.LinkedStack;
  */
 public class ToCruz extends Personagem implements ToCruzItems {
 
-    private LinkedStack<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
+    private StackADT<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
 
     private boolean colectedAlvo = false;
     /**
@@ -41,7 +43,7 @@ public class ToCruz extends Personagem implements ToCruzItems {
      *
      * @return A Stack de itens de cura armazenados na mochila.
      */
-    public LinkedStack<ItemCura> getMochila() {
+    public StackADT<ItemCura> getMochila() {
         return mochila;
     }
 

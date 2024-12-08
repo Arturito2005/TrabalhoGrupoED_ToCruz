@@ -1,8 +1,7 @@
 package Mapa;
 
 import Exceptions.EmptyCollectionException;
-import Exceptions.WrongTypeItem;
-import Interfaces.DivisaoCondition;
+import Interfaces.DivisaoIt;
 import Interfaces.IteracoesInimigo;
 import Interfaces.IteracoesToCruz;
 import Interfaces.UnorderedListADT;
@@ -10,12 +9,11 @@ import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-
 import java.util.Iterator;
 import java.util.Objects;
 
 
-public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, DivisaoCondition {
+public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, DivisaoIt {
 
     private static int ID_DIVISAO_CONT = 0;
 
@@ -27,7 +25,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     private ToCruz toCruz;
 
-    private LinearLinkedUnorderedList<Inimigo> inimigos;
+    private UnorderedListADT<Inimigo> inimigos;
 
     // private LinearLinkedUnorderedList<Inimigo> inimigos_dead;
 
@@ -102,7 +100,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.toCruz = toCruz;
     }
 
-    public LinearLinkedUnorderedList<Inimigo> getInimigos() {
+    public UnorderedListADT<Inimigo> getInimigos() {
         return inimigos;
     }
 
@@ -247,6 +245,72 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             compare = -1;
         }
         return compare;
+    }
+
+    private String centralizarTexto(String texto, int largura) {
+        int espacosTotal = largura - texto.length();
+        int espacosEsquerda = espacosTotal / 2;
+        int espacosDireita = espacosTotal - espacosEsquerda;
+        String temp = "";
+
+        for(int i = 0; i < espacosEsquerda; i++) {
+            temp += " ";
+        }
+
+        temp += texto;
+
+        for(int i = 0; i < espacosDireita; i++) {
+            temp += " ";
+        }
+        return temp;
+    }
+
+    @Override
+    public void drawnDivisao() {
+        String dados_sala = "";
+
+        if (this.toCruz != null) {
+            dados_sala += this.toCruz.getNome() + " ";
+        }
+
+        if (this.itemCura != null) {
+            dados_sala += this.itemCura.getType() + " " + itemCura.getVida_recuperada() + " HP ";
+        }
+
+        if (this.alvo != null) {
+            dados_sala += this.alvo.getNome() + " ";
+        }
+
+        if (this.entrada_saida) {
+            dados_sala += "Saida" + " ";
+        }
+
+        if (!this.inimigos.isEmpty()) {
+            for (Inimigo inimigo : this.inimigos) {
+                dados_sala += inimigo.getNome() + " ";
+            }
+        }
+
+        int num_hifens;
+        if(dados_sala.length() > this.name.length()) {
+            num_hifens = dados_sala.length();
+        } else {
+            num_hifens = this.name.length();
+        }
+
+        num_hifens = num_hifens + 7;
+        String bordas = "";
+        for(int i = 0; i < num_hifens; i++) {
+            bordas = bordas + "-";
+        }
+
+        String nome_sala_central = "|" + centralizarTexto(this.name.trim(), bordas.length() - 2) + "|";
+        String dados_sala_central = "|" + centralizarTexto(dados_sala.trim(), bordas.length() - 2) + "|";
+
+        System.out.println(bordas);
+        System.out.println(nome_sala_central);
+        System.out.println(dados_sala_central);
+        System.out.println(bordas);
     }
 
     @Override

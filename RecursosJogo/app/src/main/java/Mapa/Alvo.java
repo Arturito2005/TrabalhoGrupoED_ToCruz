@@ -52,6 +52,10 @@ public class Alvo {
         this.nome = "";
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     /**
      * Retorna o status de atingido do alvo.
      *

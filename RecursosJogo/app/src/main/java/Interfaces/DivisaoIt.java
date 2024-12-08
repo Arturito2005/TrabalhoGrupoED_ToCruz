@@ -6,7 +6,7 @@ package Interfaces;
  * @author Francisco
  * @version 1.0
  */
-public interface DivisaoCondition {
+public interface DivisaoIt {
 
     /**
      * Verifica se há um confronto ativo na divisão.
@@ -35,4 +35,6 @@ public interface DivisaoCondition {
      * @return {@code true} se o To Cruz está numa saida ou entrada, caso contrário {@code false}.
      */
     public boolean isToCruzInExit();
+
+    public void drawnDivisao();
 }
