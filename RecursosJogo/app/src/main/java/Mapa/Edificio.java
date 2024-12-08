@@ -5,6 +5,7 @@ import Graph.NetworkMatrizAdjacencia;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkADT;
 import Interfaces.NetworkMatrizADT;
+import LinkedList.LinearLinkedUnorderedList;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -173,21 +174,36 @@ public class Edificio implements EdificoInt {
     }
 
 
+    /**
+     * Desenha uma aresta entre duas divisões no console.
+     */
+    private void desenharAresta(Divisao divOrigem, Divisao divDestino, double peso) {
+        String bordaOrigem = "-".repeat(divOrigem.getName().length() + 2); // Ajusta o comprimento da linha
+        String bordaDestino = "-".repeat(divDestino.getName().length() + 2); // Ajusta o comprimento da linha
+
+        // Desenha a ligação no console
+        System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
+    }
+
     public void drawMapa() {
+        LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
 
         while (itrDiv.hasNext()) {
             Divisao divOrigem = itrDiv.next();
+            divJaDesenhada.addToRear(divOrigem);
             divOrigem.drawnDivisao();
 
             Iterator<Divisao> adjacentes = this.planta_edificio.iteratorNextVertexs(divOrigem);
             while (adjacentes.hasNext()) {
                 Divisao divDestino = adjacentes.next();
-                double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
-                System.out.println("    ^");
-                System.out.println("    |    <---> (Peso: " + peso + ")");
-                System.out.println("    v");
-                divDestino.drawnDivisao();
+                if(!divJaDesenhada.contains(divDestino)) {
+                    double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
+                    System.out.println("    ^");
+                    System.out.println("    |    <---> (Peso: " + peso + ")");
+                    System.out.println("    v");
+                    divDestino.drawnDivisao();
+                }
             }
         }
     }

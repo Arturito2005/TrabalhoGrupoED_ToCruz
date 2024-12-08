@@ -1,12 +1,7 @@
 package Graph;
 
 import Interfaces.NetworkADT;
-import Interfaces.UnorderedListADT;
-import LinkedList.LinearLinkedUnorderedList;
 import LinkedTree.LinkedHeap;
-import Queue.LinkedQueue;
-import Stacks.LinkedStack;
-
 import java.util.Iterator;
 
 /*
@@ -19,15 +14,9 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     public NetworkMatrizAdjacencia() {
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
-
-        for (int i = 0; i < numVertices; i++) {
-            for (int j = 0; j < numVertices; j++) {
-                adjMatrix[i][j] = Double.NEGATIVE_INFINITY; // Sem conexão inicial
-            }
-        }
-
     }
 
+    @Override
     public void addVertex(T vertex) {
         if(this.vertices.length == this.numVertices) {
             expandadweightMatrix();
@@ -43,6 +32,12 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
         for (int i = 0; i < this.adjMatrix.length; i++) {
             System.arraycopy(this.adjMatrix[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
+        }
+
+        for (int i = this.adjMatrix.length; i < tempMatriz.length; i++) {
+            for (int j = this.adjMatrix.length; j < tempMatriz.length; j++) {
+                tempMatriz[i][j] = Double.NEGATIVE_INFINITY;
+            }
         }
 
         this.adjMatrix = tempMatriz;

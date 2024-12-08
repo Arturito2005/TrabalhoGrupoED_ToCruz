@@ -4,6 +4,10 @@ import Interfaces.ArrayUnorderedADT;
 
 public class ArrayUnordered<T> extends ArrayUnorderedList<T> implements ArrayUnorderedADT<T> {
 
+    public ArrayUnordered() {
+        super();
+    }
+
     @Override
     public T find(int index) throws ArrayIndexOutOfBoundsException, NullPointerException {
         if(index < 0 || index >= size()) {

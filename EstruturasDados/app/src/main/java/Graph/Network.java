@@ -1,27 +1,56 @@
 package Graph;
 
-import ArrayHeaps.ArrayHeap;
-import ArrayList.ArrayUnordered;
 import ArrayList.ArrayUnorderedList;
-import Interfaces.ArrayUnorderedADT;
 import Interfaces.NetworkMatrizADT;
+import Interfaces.StackADT;
 import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedUnorderedList;
-import Queue.LinkedQueue;
 import Stacks.LinkedStack;
-
 import java.util.Iterator;
 
 public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
 
-    //Ver se está bem (Inicializar o que não tem ligações a 0)
+    private static int DEFAULT_CAPACITY = 10;
+    private boolean[][] listAdj;
+
     public Network() {
         super();
+        this.listAdj = new boolean[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
+    }
+
+    @Override
+    protected void expandadweightMatrix() {
+        super.expandadweightMatrix();
+        boolean[][] tempMatriz = new boolean[this.vertices.length * 2][this.vertices.length * 2];
+
+        for (int i = 0; i < listAdj.length; i++) {
+            System.arraycopy(listAdj[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
+        }
+    }
+
+    @Override
+    public void addVertex(T vertex) {
+        if(this.vertices.length == this.numVertices) {
+            this.expandadweightMatrix();
+        }
+
+        super.addVertex(vertex);
+    }
+
+    @Override
+    public void addEdge(T vertex1, T vertex2, double weight) {
+        super.addEdge(vertex1, vertex2, weight);
+        int index1 = getIndex(vertex1);
+        int index2 = getIndex(vertex2);
+
+        if (indexIsValid(index1) && indexIsValid(index2)) {
+            this.listAdj[index1][index2] = true;
+            this.listAdj[index2][index2] = true;
+        }
     }
 
     @Override
     public double getWeightEdge(T vertex, T vertex2) {
-        double weight = 0;
         int ind_vertex = getIndex(vertex);
         int ind_vertex2 = getIndex(vertex2);
 
@@ -39,14 +68,13 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
 
         return weight;
     }
+
     @Override
     public void updateWeightEdge(T vertex, double weight) {
-        updateWeightEdge(getIndex(vertex), weight);
-    }
+        int index1 = getIndex(vertex);
 
-    private void updateWeightEdge(int index1, double weight) {
         if (indexIsValid(index1)) {
-            Iterator<T> itr = this.iteratorNextVertexs(index1);
+            Iterator<T> itr = this.iteratorNextVertexs(vertex);
 
             while (itr.hasNext()) {
                 T element = itr.next();
@@ -57,13 +85,13 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
                     this.adjMatrix[index2][index1] = weight;
                 }
             }
-
         }
     }
 
     @Override
-    public Iterator<T> iteratorNextVertexs(int startVertex) {
+    public Iterator<T> iteratorNextVertexs(T startVertex) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
+        int startIndex = getIndex(startVertex);
 
         if (!indexIsValid(startVertex)) {
             return resultList.iterator();
@@ -75,9 +103,9 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
             visited[i] = false;
         }
 
-        visited[startVertex] = true;
+        visited[startIndex] = true;
         for (int i = 0; i < numVertices; i++) {
-            if (adjMatrix[startVertex][i] >= 0 && !visited[i]) {
+            if(!visited[i] && listAdj[startIndex][i]) {
                 visited[i] = true;
                 resultList.addToRear(vertices[i]);
             }
@@ -140,7 +168,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
             return listaResult.iterator();
         }
 
-        LinkedStack<Integer> stack = new LinkedStack<>();
+        StackADT<Integer> stack = new LinkedStack<>();
         int index = final_index;
         stack.push(index);
 
@@ -200,8 +228,4 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         return distances[final_index];
     }*/
 
-    @Override
-    public Iterator<T> iteratorNextVertexs(T startVertex) {
-        return iteratorNextVertexs(getIndex(startVertex));
-    }
 }

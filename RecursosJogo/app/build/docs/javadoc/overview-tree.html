@@ -55,6 +55,7 @@ loadScripts(document, 'script');</script>
 <li><a href="Interfaces/package-tree.html">Interfaces</a>, </li>
 <li><a href="Items/package-tree.html">Items</a>, </li>
 <li><a href="Mapa/package-tree.html">Mapa</a>, </li>
+<li><a href="Menu/package-tree.html">Menu</a>, </li>
 <li><a href="Missoes/package-tree.html">Missoes</a>, </li>
 <li><a href="Personagens/package-tree.html">Personagens</a></li>
 </ul>
@@ -64,8 +65,8 @@ loadScripts(document, 'script');</script>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" class="type-name-link external-link" title="class or interface in java.lang">Object</a>
 <ul>
 <li class="circle">Mapa.<a href="Mapa/Alvo.html" class="type-name-link" title="class in Mapa">Alvo</a></li>
-<li class="circle">Mapa.<a href="Mapa/Divisao.html" class="type-name-link" title="class in Mapa">Divisao</a> (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;)</li>
-<li class="circle">Mapa.<a href="Mapa/Edificio.html" class="type-name-link" title="class in Mapa">Edificio</a></li>
+<li class="circle">Mapa.<a href="Mapa/Divisao.html" class="type-name-link" title="class in Mapa">Divisao</a> (implements java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;T&gt;, Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a>, Interfaces.<a href="Interfaces/IteracoesInimigo.html" title="interface in Interfaces">IteracoesInimigo</a>, Interfaces.<a href="Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a>)</li>
+<li class="circle">Mapa.<a href="Mapa/Edificio.html" class="type-name-link" title="class in Mapa">Edificio</a> (implements Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a>)</li>
 <li class="circle">Exportar.<a href="Exportar/ExportarDado.html" class="type-name-link" title="class in Exportar">ExportarDado</a> (implements Interfaces.<a href="Interfaces/Exportar.html" title="interface in Interfaces">Exportar</a>)</li>
 <li class="circle">Importar.<a href="Importar/ImportarMapa.html" class="type-name-link" title="class in Importar">ImportarMapa</a> (implements Interfaces.<a href="Interfaces/Importar.html" title="interface in Interfaces">Importar</a>)</li>
 <li class="circle">Items.<a href="Items/Item.html" class="type-name-link" title="class in Items">Item</a>
@@ -73,28 +74,24 @@ loadScripts(document, 'script');</script>
 <li class="circle">Items.<a href="Items/ItemCura.html" class="type-name-link" title="class in Items">ItemCura</a></li>
 </ul>
 </li>
-<li class="circle">Missoes.<a href="Missoes/Missao.html" class="type-name-link" title="class in Missoes">Missao</a> (implements Interfaces.<a href="Interfaces/MissaoADT.html" title="interface in Interfaces">MissaoADT</a>)
-<ul>
-<li class="circle">Missoes.<a href="Missoes/ModosJogo.html" class="type-name-link" title="class in Missoes">ModosJogo</a>
-<ul>
-<li class="circle">Missoes.<a href="Missoes/ModoAutomatico.html" class="type-name-link" title="class in Missoes">ModoAutomatico</a> (implements Interfaces.<a href="Interfaces/ModoAutomaticoADT.html" title="interface in Interfaces">ModoAutomaticoADT</a>)</li>
-<li class="circle">Missoes.<a href="Missoes/ModoManual.html" class="type-name-link" title="class in Missoes">ModoManual</a> (implements Interfaces.<a href="Interfaces/ModoManualADT.html" title="interface in Interfaces">ModoManualADT</a>)</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="circle">Menu.<a href="Menu/Menu.html" class="type-name-link" title="class in Menu">Menu</a></li>
+<li class="circle">Missoes.<a href="Missoes/Missao.html" class="type-name-link" title="class in Missoes">Missao</a> (implements Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a>)</li>
 <li class="circle">Personagens.<a href="Personagens/Personagem.html" class="type-name-link" title="class in Personagens">Personagem</a>
 <ul>
 <li class="circle">Personagens.<a href="Personagens/Inimigo.html" class="type-name-link" title="class in Personagens">Inimigo</a></li>
-<li class="circle">Personagens.<a href="Personagens/ToCruz.html" class="type-name-link" title="class in Personagens">ToCruz</a> (implements Interfaces.<a href="Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a>)</li>
+<li class="circle">Personagens.<a href="Personagens/ToCruz.html" class="type-name-link" title="class in Personagens">ToCruz</a> (implements Interfaces.<a href="Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a>)</li>
 </ul>
 </li>
+<li class="circle">Mapa.<a href="Mapa/TestDraw.html" class="type-name-link" title="class in Mapa">TestDraw</a></li>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Throwable.html" class="type-name-link external-link" title="class or interface in java.lang">Throwable</a> (implements java.io.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/Serializable.html" title="class or interface in java.io" class="external-link">Serializable</a>)
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Exception.html" class="type-name-link external-link" title="class or interface in java.lang">Exception</a>
 <ul>
 <li class="circle">java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/RuntimeException.html" class="type-name-link external-link" title="class or interface in java.lang">RuntimeException</a>
 <ul>
+<li class="circle">Exceptions.<a href="Exceptions/AllLifeException.html" class="type-name-link" title="class in Exceptions">AllLifeException</a></li>
+<li class="circle">Exceptions.<a href="Exceptions/InvalidOptionException.html" class="type-name-link" title="class in Exceptions">InvalidOptionException</a></li>
+<li class="circle">Exceptions.<a href="Exceptions/InvalidTypeItemException.html" class="type-name-link" title="class in Exceptions">InvalidTypeItemException</a></li>
 <li class="circle">Exceptions.<a href="Exceptions/WrongTypeItem.html" class="type-name-link" title="class in Exceptions">WrongTypeItem</a></li>
 </ul>
 </li>
@@ -109,12 +106,14 @@ loadScripts(document, 'script');</script>
 <section class="hierarchy">
 <h2 title="Interface Hierarchy">Interface Hierarchy</h2>
 <ul>
+<li class="circle">Interfaces.<a href="Interfaces/DivisaoIt.html" class="type-name-link" title="interface in Interfaces">DivisaoIt</a></li>
+<li class="circle">Interfaces.<a href="Interfaces/EdificoInt.html" class="type-name-link" title="interface in Interfaces">EdificoInt</a></li>
 <li class="circle">Interfaces.<a href="Interfaces/Exportar.html" class="type-name-link" title="interface in Interfaces">Exportar</a></li>
 <li class="circle">Interfaces.<a href="Interfaces/Importar.html" class="type-name-link" title="interface in Interfaces">Importar</a></li>
-<li class="circle">Interfaces.<a href="Interfaces/InteracoesToCruz.html" class="type-name-link" title="interface in Interfaces">InteracoesToCruz</a></li>
-<li class="circle">Interfaces.<a href="Interfaces/MissaoADT.html" class="type-name-link" title="interface in Interfaces">MissaoADT</a></li>
-<li class="circle">Interfaces.<a href="Interfaces/ModoAutomaticoADT.html" class="type-name-link" title="interface in Interfaces">ModoAutomaticoADT</a></li>
-<li class="circle">Interfaces.<a href="Interfaces/ModoManualADT.html" class="type-name-link" title="interface in Interfaces">ModoManualADT</a></li>
+<li class="circle">Interfaces.<a href="Interfaces/IteracoesInimigo.html" class="type-name-link" title="interface in Interfaces">IteracoesInimigo</a></li>
+<li class="circle">Interfaces.<a href="Interfaces/IteracoesToCruz.html" class="type-name-link" title="interface in Interfaces">IteracoesToCruz</a></li>
+<li class="circle">Interfaces.<a href="Interfaces/MissaoInt.html" class="type-name-link" title="interface in Interfaces">MissaoInt</a></li>
+<li class="circle">Interfaces.<a href="Interfaces/ToCruzItems.html" class="type-name-link" title="interface in Interfaces">ToCruzItems</a></li>
 </ul>
 </section>
 <section class="hierarchy">
