@@ -26,7 +26,7 @@ public class ToCruz extends Personagem implements ToCruzItems {
      */
     public ToCruz() {
         super("ToCruz");
-        mochila = new LinkedStack<ItemCura>();
+        mochila = new LinkedStack<>();
         colectedAlvo = false;
     }
 
@@ -116,7 +116,7 @@ public class ToCruz extends Personagem implements ToCruzItems {
      * @throws WrongTypeItem        Se o tipo do item não for um kit de vida.
      */
     @Override
-    public void guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem {
+    public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem, AllLifeException {
         if (item == null) {
             throw new NullPointerException("O kit medico a guardar na mochila não pode ser null");
         }
@@ -137,6 +137,8 @@ public class ToCruz extends Personagem implements ToCruzItems {
             mochila.push(item);
             item.setCollected(true);
         }
+
+        return item;
     }
 
     /**
@@ -146,18 +148,21 @@ public class ToCruz extends Personagem implements ToCruzItems {
      * @return Uma mensagem indicando o resultado da operação.
      */
     @Override
-    public void usarKit() throws EmptyCollectionException {
+    public ItemCura usarKit() throws EmptyCollectionException {
         String temp = "";
+        ItemCura kit = null;
         if (!this.mochila.isEmpty()) {
             if (this.getVida() == 100) {
                 throw new AllLifeException("Não é possível usar o kit médico, porque a vida está cheia");
             } else {
-                ItemCura kit = mochila.pop();
+                kit = mochila.pop();
                 curar(kit);
             }
         } else {
             throw new EmptyCollectionException("O To Cruz está sem kit de vidas na mochila");
         }
+
+        return kit;
     }
 
     /**
@@ -169,7 +174,7 @@ public class ToCruz extends Personagem implements ToCruzItems {
      * @throws WrongTypeItem        Se o item não for do tipo colete.
      */
     @Override
-    public void usarItem(ItemCura item) throws NullPointerException {
+    public ItemCura usarItem(ItemCura item) throws NullPointerException {
         if (item == null) {
             throw new NullPointerException("O item não pode ser nulo");
         }
@@ -179,6 +184,8 @@ public class ToCruz extends Personagem implements ToCruzItems {
         } catch (AllLifeException e) {
             System.out.println(e.getMessage());
         }
+
+        return item;
     }
 
     /**

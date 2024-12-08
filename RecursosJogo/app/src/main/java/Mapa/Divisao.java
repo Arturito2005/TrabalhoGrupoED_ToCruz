@@ -1,14 +1,13 @@
 package Mapa;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.DivisaoIt;
-import Interfaces.IteracoesInimigo;
-import Interfaces.IteracoesToCruz;
-import Interfaces.UnorderedListADT;
+import Interfaces.*;
 import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
+import Stacks.LinkedStack;
+
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -27,8 +26,6 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     private UnorderedListADT<Inimigo> inimigos;
 
-    // private LinearLinkedUnorderedList<Inimigo> inimigos_dead;
-
     private ItemCura itemCura;
 
     private Alvo alvo;
@@ -40,7 +37,6 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.alvo = alvo;
         this.itemCura = itemCura;
         this.inimigos = inimigos;
-        //this.inimigos_dead = new LinearLinkedUnorderedList<>();
         this.toCruz = new ToCruz();
     }
 
@@ -51,7 +47,6 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.alvo = null;
         this.itemCura = null;
         this.inimigos = new LinearLinkedUnorderedList<>();
-        //this.inimigos_dead = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
 
@@ -72,7 +67,6 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.alvo = null;
         this.itemCura = null;
         this.inimigos = new LinearLinkedUnorderedList<>();
-        //this.inimigos_dead = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
 
@@ -106,14 +100,6 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     public void addInimigo(Inimigo inimigo) {
         this.inimigos.addToRear(inimigo);
-    }
-
-    public Inimigo removeFirstInimigo() throws EmptyCollectionException {
-        if (this.inimigos.isEmpty()) {
-            throw new EmptyCollectionException("A divisao não tem inimigos!");
-        }
-
-        return this.inimigos.removeFirst();
     }
 
     public Inimigo removeInimigo(Inimigo inimigos) {
@@ -201,7 +187,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     @Override
-    public void attackToCruz() {
+    public void attackToCruz(StackADT<Inimigo> dead_inimigos) {
         Iterator<Inimigo> iterator = this.inimigos.iterator();
         UnorderedListADT<Inimigo> inimigosDead = new LinearLinkedUnorderedList<>();
 
@@ -218,7 +204,9 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
 
         while (!inimigosDead.isEmpty()) {
-            removeInimigo(inimigosDead.removeFirst());
+            Inimigo inimigo = inimigosDead.removeFirst();
+            dead_inimigos.push(inimigo);
+            removeInimigo(inimigo);
         }
     }
 
@@ -236,30 +224,19 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
     }
 
-    @Override
-    public int compareTo(Object o) {
-        int compare = 0;
-        if (this.id_divisao > ((Divisao) o).id_divisao) {
-            compare = 1;
-        } else if (this.id_divisao < ((Divisao) o).id_divisao) {
-            compare = -1;
-        }
-        return compare;
-    }
-
     private String centralizarTexto(String texto, int largura) {
         int espacosTotal = largura - texto.length();
         int espacosEsquerda = espacosTotal / 2;
         int espacosDireita = espacosTotal - espacosEsquerda;
         String temp = "";
 
-        for(int i = 0; i < espacosEsquerda; i++) {
+        for (int i = 0; i < espacosEsquerda; i++) {
             temp += " ";
         }
 
         temp += texto;
 
-        for(int i = 0; i < espacosDireita; i++) {
+        for (int i = 0; i < espacosDireita; i++) {
             temp += " ";
         }
         return temp;
@@ -292,7 +269,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
 
         int num_hifens;
-        if(dados_sala.length() > this.name.length()) {
+        if (dados_sala.length() > this.name.length()) {
             num_hifens = dados_sala.length();
         } else {
             num_hifens = this.name.length();
@@ -300,7 +277,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         num_hifens = num_hifens + 7;
         String bordas = "";
-        for(int i = 0; i < num_hifens; i++) {
+        for (int i = 0; i < num_hifens; i++) {
             bordas = bordas + "-";
         }
 
@@ -327,15 +304,27 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     @Override
+    public int compareTo(Object o) {
+        int compare = 0;
+        if (this.id_divisao > ((Divisao) o).id_divisao) {
+            compare = 1;
+        } else if (this.id_divisao < ((Divisao) o).id_divisao) {
+            compare = -1;
+        }
+        return compare;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
+
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
 
-        if (this.id_divisao == ((Divisao) o).id_divisao) {
+        if (this.id_divisao == ((Divisao) o).id_divisao || this.name == ((Divisao) o).name) {
             return true;
         }
 

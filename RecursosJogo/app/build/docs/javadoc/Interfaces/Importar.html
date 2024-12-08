@@ -90,12 +90,10 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Importar</span></div>
-<div class="block">Interface que define o contrato para importar dados e gerar um mapa.
- A interface é utilizada por classes que precisam ler um arquivo de dados
- de missões e gerar um objeto do tipo <a href="../Missoes/Missao.html" title="class in Missoes"><code>Missao</code></a> a partir desse arquivo.
+<div class="block">Interface que define perimite importar e gerar o mapa do jogo.
 
  <p>A implementação de classes que utilizam esta interface deve fornecer
- a lógica para carregar o mapa de missões a partir de um arquivo localizado
+ a lógica para carregar o mapa de missões a partir de um ficheiro localizado
  no caminho fornecido.</p></div>
 </div>
 </section>
@@ -114,7 +112,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Missoes/Missao.html" title="class in Missoes">Missao</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#gerarMapa(java.lang.String)" class="member-name-link">gerarMapa</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Gera um objeto do tipo <a href="../Missoes/Missao.html" title="class in Missoes"><code>Missao</code></a> representando a missão do To Cruz.</div>
+</div>
 </div>
 </div>
 </div>
@@ -136,10 +136,15 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="../Missoes/Missao.html" title="class in Missoes">Missao</a></span>&nbsp;<span class="element-name">gerarMapa</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a>,
 <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Gera um objeto do tipo <a href="../Missoes/Missao.html" title="class in Missoes"><code>Missao</code></a> representando a missão do To Cruz.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>path</code> - o caminho para o ficheiro de entrada contendo os dados das missões.</dd>
+<dt>Returns:</dt>
+<dd>um objeto <a href="../Missoes/Missao.html" title="class in Missoes"><code>Missao</code></a> representando o mapa gerado a partir dos dados.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code> - se o ficheiro especificado não for encontrado.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - se ocorrerem erros de E/S durante a leitura do ficheiro.</dd>
 </dl>
 </div>
 </section>

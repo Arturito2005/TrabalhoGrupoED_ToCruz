@@ -118,7 +118,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     protected boolean indexIsValid(int index) {
         boolean valid = false;
 
-        if (index >= 0 && this.vertices[index] != null) {
+        if (index >= 0 && index < this.vertices.length && this.vertices[index] != null) {
             valid = true;
         }
 

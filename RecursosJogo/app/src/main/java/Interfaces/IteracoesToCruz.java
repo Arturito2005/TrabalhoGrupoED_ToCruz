@@ -1,5 +1,10 @@
 package Interfaces;
 
+import Personagens.Inimigo;
+import Stacks.LinkedStack;
+
+import javax.naming.ldap.UnsolicitedNotification;
+
 /**
  * Interface que define as interações realizadas pelo To Cruz.
  *
@@ -16,7 +21,7 @@ public interface IteracoesToCruz {
     /**
      * Permite o To Cruz atacar todos os inimigos da divisão.
      */
-    public void attackToCruz();
+    public void attackToCruz(StackADT<Inimigo> dead_inimigo);
 
     /**
      * Permite ao To Cruz utilziar o item da divisão

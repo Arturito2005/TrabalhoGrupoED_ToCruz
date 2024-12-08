@@ -13,7 +13,7 @@ import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import ArrayList.ArrayUnordered;
-
+import Exportar.ExportarDado;
 import java.util.*;
 
 /**
@@ -34,11 +34,14 @@ public class Missao implements MissaoInt {
 
     private QueueADT<Divisao> trajeto_to;
 
+    private StackADT<Inimigo> inimigos_dead;
+
     public Missao(String cod_missao, long versao, Edificio edificio) {
         this.cod_missao = cod_missao;
         this.versao = versao;
         this.edificio = edificio;
         this.trajeto_to = new LinkedQueue<>();
+        this.inimigos_dead = new LinkedStack<>();
     }
 
     public Missao() {
@@ -46,6 +49,11 @@ public class Missao implements MissaoInt {
         this.versao = 0;
         this.edificio = new Edificio();
         this.trajeto_to = new LinkedQueue<>();
+        this.inimigos_dead = new LinkedStack<>();
+    }
+
+    public QueueADT<Divisao> getTrajeto_to() {
+        return trajeto_to;
     }
 
     /*
@@ -59,6 +67,28 @@ public class Missao implements MissaoInt {
      * Este metodo diz no modoAutomatico quando é que o ToCruz deve coletar o Item de cura da sala, usa-lo ou até mesmo ignora-lo
      * e em que momento no confronto em que ele deve utilizar um Item da mochila
      */
+
+    private void exportarMissao() {
+        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
+        trajetoQueue.enqueue(this.trajeto_to);
+        ExportarDado exportar = new ExportarDado(versao, trajetoQueue);
+        String path = "./Jsons/Export/";
+        String name_file = "";
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
+            try {
+                name_file = sc.nextLine();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
+        } while (name_file.equals(""));
+
+        path += name_file;
+        exportar.exportarDados(path);
+
+    }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
         ItemCura itemCura = divisao.getItemCura();
@@ -148,9 +178,10 @@ public class Missao implements MissaoInt {
 
         //3º Encontrar o caminho mais curto para um item
         best_entr.addToCruz(toCruz);
+        trajeto_to.enqueue(best_entr);
 
         if (best_entr.haveConfronto()) {
-            best_entr.attackToCruz();
+            best_entr.attackToCruz(this.inimigos_dead);
         }
 
         if (best_entr.getItemCura() != null) {
@@ -176,7 +207,7 @@ public class Missao implements MissaoInt {
             if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
                 toCruz.usarKit();
             } else {
-                divisao_atual.attackToCruz();
+                divisao_atual.attackToCruz(this.inimigos_dead);
             }
         } else {
             //Ver se está parte está realmente bem
@@ -221,10 +252,11 @@ public class Missao implements MissaoInt {
 
             divisao = this.edificio.nextDivAutomaticToCruz(divisao_atual, best_div);
             divisao.addToCruz(toCruz);
+            this.trajeto_to.enqueue(divisao);
             divisao_atual.removeToCruz();
 
             if (divisao.haveConfronto()) {
-                divisao.attackToCruz();
+                divisao.attackToCruz(this.inimigos_dead);
             }
 
             if (divisao.getItemCura() != null) {
@@ -242,6 +274,8 @@ public class Missao implements MissaoInt {
      * Mete o jogo a funcionar automaticamente.
      * Ver se o turno do Inimigo funciona
      * Mostrar o melhor caminho
+     * <p>
+     * Falta apenas testar, mas para isso é preciso o Dijkstra
      */
     @Override
     public void modoAutomatico() {
@@ -279,16 +313,16 @@ public class Missao implements MissaoInt {
                         finishgame = true;
                     } else {
                         turnoAutomaticoToCruz(div);
+                        this.versao++;
                     }
 
                     findToCruz = true;
                 }
             }
             //this.edificio.drawMapa();
-            this.versao++;
         }
 
-        //relatoriosMissao();
+        relatoriosMissao();
     }
 
     /*
@@ -322,10 +356,10 @@ public class Missao implements MissaoInt {
         while (shortestPath.hasNext()) {
             Divisao div = shortestPath.next();
 
-            if(shortestPath.hasNext()) {
-                temp = temp + itr.next() + " -->";
+            if (shortestPath.hasNext()) {
+                temp = temp + div.getName() + " -->";
             } else {
-                temp = temp + itr.next();
+                temp = temp + div.getName();
             }
 
         }
@@ -347,6 +381,7 @@ public class Missao implements MissaoInt {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
 
+            if(divisao.isEntrada_saida() || divisao.getAlvo() != null)
             if (divisao.isEntrada_saida()) {
                 temp = temp + " (esta divisao e uma entrada/saida)";
             } else if (divisao.getAlvo() != null) {
@@ -360,7 +395,7 @@ public class Missao implements MissaoInt {
         }
 
         /*
-         * Sugerir melhor caminho To
+         * Sugerir melhor caminho To DÁ ERRO
          * */
         sugestaoCaminhoToCruz(divisao_atual, listDiv);
 
@@ -474,7 +509,7 @@ public class Missao implements MissaoInt {
 
             switch (op) {
                 case 1: {
-                    divisao_atual.attackToCruz();
+                    divisao_atual.attackToCruz(this.inimigos_dead);
                     break;
                 }
                 case 2: {
@@ -493,7 +528,7 @@ public class Missao implements MissaoInt {
             addDivisaoTrajetoToCruz(divisao);
 
             if (divisao.haveConfronto()) {
-                divisao.attackToCruz();
+                divisao.attackToCruz(this.inimigos_dead);
             }
 
             if (divisao.getItemCura() != null) {
@@ -507,8 +542,6 @@ public class Missao implements MissaoInt {
         }
     }
 
-    //Esta bugado
-    //Só da erro no remover
     private Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
         Random randomizer = new Random();
         int numMoves = randomizer.nextInt(3);
@@ -523,8 +556,7 @@ public class Missao implements MissaoInt {
                 stDiv.push(itrDiv.next());
             }
 
-            //Testar
-            int rand = randomizer.nextInt(stDiv.size() - 1);
+            int rand = randomizer.nextInt(stDiv.size());
 
             while (stDiv.size() - 1 > rand && !stDiv.isEmpty()) {
                 stDiv.pop();
@@ -535,7 +567,7 @@ public class Missao implements MissaoInt {
             divisaoEscolhida.addInimigo(inimigo);
 
             this.edificio.updateWeight(divisaoEscolhida, inimigo.getPoder());
-            divisao_atual = divisaoEscolhida; //Testar
+            divisao_atual = divisaoEscolhida;
         }
         System.out.println("O inimigo" + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
         return divisao_atual;
@@ -544,7 +576,7 @@ public class Missao implements MissaoInt {
     private void turnoInimigo(Divisao divisao) {
         LinearLinkedUnorderedList<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
-        for (Inimigo inimigo: divisao.getInimigos()) {
+        for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
                 System.out.println("O inimigo" + inimigo.getNome() + " está na sala" + divisao.getName());
                 inimigos_move.addToRear(inimigo);
@@ -553,7 +585,7 @@ public class Missao implements MissaoInt {
             }
         }
 
-        for (Inimigo inimigo: inimigos_move) {
+        for (Inimigo inimigo : inimigos_move) {
             Divisao div = moverInimigo(divisao, inimigo);
             if (div.haveConfronto()) {
                 div.attackInimigo(inimigo);
@@ -561,9 +593,8 @@ public class Missao implements MissaoInt {
         }
     }
 
-
     /**
-     * Talvez deve para juntar o final dela com uma parte do turno do ToCruz
+     * Falta sugerir a melhor entrada, é reutilizar o codigo da bestEntradaToCruz, do modo automatico
      */
     //Também meter para sugerir uma entrada ao ToCruz (Meter a sala que está mais perto do alvo ou item)
     private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
@@ -584,6 +615,10 @@ public class Missao implements MissaoInt {
                 i++;
             }
         }
+
+        /**
+         * Sugerir melhor entrada
+         * */
 
         do {
             System.out.println("Introduza onde o ToCruz vai entrar -->");
@@ -608,7 +643,7 @@ public class Missao implements MissaoInt {
             addDivisaoTrajetoToCruz(divisao_nova);
 
             if (divisao_nova.haveConfronto()) {
-                divisao_nova.attackToCruz();
+                divisao_nova.attackToCruz(this.inimigos_dead);
             }
 
             if (!divisao_nova.haveConfronto()) {
@@ -627,32 +662,20 @@ public class Missao implements MissaoInt {
     }
 
     /**
+     * Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
      * Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!
      * <p>
-     * Ver se alterar não dá exceptionModCount
      * Meter para sugerir o caminho mais curto ao ToCRUZ
      * Fazre o teste que comentei linha 603
      */
     @Override
     public void modoManual() {
-        //this.edificio.drawMapa();
+        this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
-        Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
-        Divisao divisaoInicial = ToCruzEntrarEdificio(toCruz);
+        Iterator<Divisao> itrMapa;
         boolean finishgame = false;
-        boolean addSucesso = false;
 
-        //Testar sem isto e meter o addToCruz no ToCruzEntrarEdificio(toCruz)
-        while (itrMapa.hasNext() && !addSucesso) {
-            Divisao div = itrMapa.next();
-            if (div.equals(divisaoInicial)) {
-                div.addToCruz(divisaoInicial.getToCruz());
-                addSucesso = true;
-                System.out.println("To Cruz entrou na divisao: " + div.getName());
-            }
-        }
-
-        //Ver porque o ToCruz saiu nas escadas 5 (porque os inimigos movimentação em mais do que uma casa)
+        ToCruzEntrarEdificio(toCruz);
         while (!finishgame) {
             itrMapa = this.edificio.IteratorMapa();
             LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
@@ -680,13 +703,14 @@ public class Missao implements MissaoInt {
                         finishgame = true;
                     } else {
                         turnoToCruz(div);
+                        this.versao++;
                     }
 
                     findToCruz = true;
                 }
             }
 
-            this.versao++;
+
         }
 
         relatoriosMissao();
@@ -696,36 +720,80 @@ public class Missao implements MissaoInt {
     //Acabar de fazer
     private void relatoriosMissao() {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
-        boolean missaoSucesso = false;
         UnorderedListADT<ItemCura> item_colected = new LinearLinkedUnorderedList<ItemCura>();
         ToCruz toCruz = null;
 
         while (itrMapa.hasNext()) {
             Divisao div = itrMapa.next();
+
+            if (div.getItemCura() != null && div.getItemCura().isCollected()) {
+                item_colected.addToRear(div.getItemCura());
+            }
+
+            if (div.getToCruz() != null) {
+                toCruz = div.getToCruz();
+            }
         }
 
-        if (missaoSucesso) {
+        System.out.println(" ");
+        System.out.println("!---------------------------------!");
+        System.out.println(" ");
+        System.out.println("Fim do jogo");
+        System.out.println("Relatorio do jogo: ");
+        if (toCruz.getVida() > 0) {
             System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
             System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
         } else {
             System.out.println("Missão falhada ಥ_ಥ");
         }
 
+
+        System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
+        if (!inimigos_dead.isEmpty()) {
+            int i = 1;
+            while (!inimigos_dead.isEmpty()) {
+                System.out.println("Inimigo nº" + i + " : " + inimigos_dead.pop().toString());
+                i++;
+            }
+        }
+
         System.out.println("Numero de itensColetados: " + item_colected.size());
         if (!item_colected.isEmpty()) {
             System.out.println("Itens coletados pelo o ToCruz:");
-            System.out.println(item_colected.toString());
+
+            int i = 1;
+            while (!item_colected.isEmpty()) {
+                System.out.println("Item coletado nº " + i + " : " + item_colected.removeFirst().toString());
+                i++;
+            }
         }
 
-        if (!toCruz.getMochila().isEmpty()) {
+        StackADT<ItemCura> mochila = toCruz.getMochila();
+        if (!mochila.isEmpty()) {
             System.out.println("Itens na mochilda do ToCruz:");
-            System.out.println(toCruz.getMochila().toString());
+
+            int i = 1;
+            while (!mochila.isEmpty()) {
+                System.out.println("Item nº " + i + " : " + toCruz.getMochila().pop().toString());
+                i++;
+            }
         } else {
             System.out.println("A mochila do To Cruz está vazia.");
         }
 
         System.out.println("Percurso feito pelo o ToCruz:");
-        System.out.print(trajeto_to.toString());
+        String percurso = " ";
+        while (!trajeto_to.isEmpty()) {
+            Divisao div = trajeto_to.dequeue();
+            if (trajeto_to.isEmpty()) {
+                percurso = percurso + div.getName();
+            } else {
+                percurso = percurso + div.getName() + " --> ";
+            }
+        }
+
+        System.out.println(percurso);
+        exportarMissao();
     }
 
     @Override

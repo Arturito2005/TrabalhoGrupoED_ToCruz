@@ -91,12 +91,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ToCruz</span>
 <span class="extends-implements">extends <a href="Personagem.html" title="class in Personagens">Personagem</a>
-implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a></span></div>
+implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></span></div>
 <div class="block">Classe que representa o personagem principal do jogo, ToCruz.</div>
 </div>
 </section>
@@ -113,10 +113,6 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ToCruz</a>()</code></div>
 <div class="col-last even-row-color">
 <div class="block">Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.</div>
-</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(Mapa.Divisao)" class="member-name-link">ToCruz</a><wbr>(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</code></div>
-<div class="col-last odd-row-color">
-<div class="block">Construtor que inicializa o personagem ToCruz em uma divisão específica.</div>
 </div>
 </div>
 </section>
@@ -135,12 +131,12 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Stacks.LinkedStack<wbr>&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.StackADT<wbr>&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMochila()" class="member-name-link">getMochila</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna a mochila do To Cruz.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#guardarKit(Items.ItemCura)" class="member-name-link">guardarKit</a><wbr>(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Método para guardar um kit médico na mochila.</div>
@@ -149,26 +145,32 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaIsFull()" class="member-name-link">mochilaIsFull</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isColectedAlvo()" class="member-name-link">isColectedAlvo</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaIsFull()" class="member-name-link">mochilaIsFull</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaTemKit()" class="member-name-link">mochilaTemKit</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaTemKit()" class="member-name-link">mochilaTemKit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Metodo para verificar se a mochila contém pelo menos um kit.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColectedAlvo(boolean)" class="member-name-link">setColectedAlvo</a><wbr>(boolean&nbsp;colectedAlvo)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna uma string com todos os dados do ToCruz.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usarItem(Items.ItemCura)" class="member-name-link">usarItem</a><wbr>(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Método para usar um item.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usarKit()" class="member-name-link">usarKit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Método para usar um kit médico da mochila.</div>
@@ -178,7 +180,7 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-Personagens.Personagem">Methods inherited from class&nbsp;Personagens.<a href="Personagem.html" title="class in Personagens">Personagem</a></h3>
-<code><a href="Personagem.html#getDivisao()">getDivisao</a>, <a href="Personagem.html#getId_personagem()">getId_personagem</a>, <a href="Personagem.html#getNome()">getNome</a>, <a href="Personagem.html#getPoder()">getPoder</a>, <a href="Personagem.html#getVida()">getVida</a>, <a href="Personagem.html#isConfronto()">isConfronto</a>, <a href="Personagem.html#isDead()">isDead</a>, <a href="Personagem.html#setConfronto(boolean)">setConfronto</a>, <a href="Personagem.html#setDivisao(Mapa.Divisao)">setDivisao</a>, <a href="Personagem.html#setVida(double)">setVida</a></code></div>
+<code><a href="Personagem.html#getNome()">getNome</a>, <a href="Personagem.html#getPoder()">getPoder</a>, <a href="Personagem.html#getVida()">getVida</a>, <a href="Personagem.html#isDead()">isDead</a>, <a href="Personagem.html#setVida(double)">setVida</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -193,19 +195,6 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <section class="constructor-details" id="constructor-detail">
 <h2>Constructor Details</h2>
 <ul class="member-list">
-<li>
-<section class="detail" id="&lt;init&gt;(Mapa.Divisao)">
-<h3>ToCruz</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ToCruz</span><wbr><span class="parameters">(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</span></div>
-<div class="block">Construtor que inicializa o personagem ToCruz em uma divisão específica.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>divisao</code> - A divisão inicial onde o personagem estará localizado.</dd>
-</dl>
-</div>
-</section>
-</li>
 <li>
 <section class="detail" id="&lt;init&gt;()">
 <h3>ToCruz</h3>
@@ -224,10 +213,26 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="isColectedAlvo()">
+<h3>isColectedAlvo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isColectedAlvo</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="setColectedAlvo(boolean)">
+<h3>setColectedAlvo</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setColectedAlvo</span><wbr><span class="parameters">(boolean&nbsp;colectedAlvo)</span></div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getMochila()">
 <h3>getMochila</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Stacks.LinkedStack&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;</span>&nbsp;<span class="element-name">getMochila</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.StackADT&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;</span>&nbsp;<span class="element-name">getMochila</span>()</div>
 <div class="block">Retorna a mochila do To Cruz.</div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -242,44 +247,9 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mochilaIsFull</span>()</div>
 <div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="guardarKit(Items.ItemCura)">
-<h3>guardarKit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">guardarKit</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
-<a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></span></div>
-<div class="block">Método para guardar um kit médico na mochila.
- Caso a mochila esteja cheia, o personagem poderá usá-lo imediatamente se necessário.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/InteracoesToCruz.html#guardarKit(Items.ItemCura)">guardarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>item</code> - O item de cura a ser guardado.</dd>
-<dt>Returns:</dt>
-<dd>Uma mensagem indicando o estado da operação (guardado, usado ou descartado).</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o item for nulo.</dd>
-<dd><code><a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></code> - Se o tipo do item não for um kit de vida.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="usarKit()">
-<h3>usarKit</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">usarKit</span>()</div>
-<div class="block">Método para usar um kit médico da mochila.
- Apenas possível se houver kits na mochila e se a vida não estiver cheia.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/InteracoesToCruz.html#usarKit()">usarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a></code></dd>
-<dt>Returns:</dt>
-<dd>Uma mensagem indicando o resultado da operação.</dd>
+<dd><code><a href="../Interfaces/ToCruzItems.html#mochilaIsFull()">mochilaIsFull</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
 </dl>
 </div>
 </section>
@@ -291,8 +261,54 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mochilaTemKit</span>()</div>
 <div class="block">Metodo para verificar se a mochila contém pelo menos um kit.</div>
 <dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/ToCruzItems.html#mochilaTemKit()">mochilaTemKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
 <dt>Returns:</dt>
 <dd>true se a mochila contiver pelo menos um item, false se estiver vazia.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="guardarKit(Items.ItemCura)">
+<h3>guardarKit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">guardarKit</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
+                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
+<a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a>,
+<a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a></span></div>
+<div class="block">Método para guardar um kit médico na mochila.
+ Caso a mochila esteja cheia, o personagem poderá usá-lo imediatamente se necessário.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/ToCruzItems.html#guardarKit(Items.ItemCura)">guardarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>item</code> - O item de cura a ser guardado.</dd>
+<dt>Returns:</dt>
+<dd>Uma mensagem indicando o estado da operação (guardado, usado ou descartado).</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o item for nulo.</dd>
+<dd><code><a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></code> - Se o tipo do item não for um kit de vida.</dd>
+<dd><code><a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="usarKit()">
+<h3>usarKit</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">usarKit</span>()
+                 throws <span class="exceptions">Exceptions.EmptyCollectionException</span></div>
+<div class="block">Método para usar um kit médico da mochila.
+ Apenas possível se houver kits na mochila e se a vida não estiver cheia.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/ToCruzItems.html#usarKit()">usarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dt>Returns:</dt>
+<dd>Uma mensagem indicando o resultado da operação.</dd>
+<dt>Throws:</dt>
+<dd><code>Exceptions.EmptyCollectionException</code></dd>
 </dl>
 </div>
 </section>
@@ -301,12 +317,12 @@ implements <a href="../Interfaces/InteracoesToCruz.html" title="interface in Int
 <section class="detail" id="usarItem(Items.ItemCura)">
 <h3>usarItem</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">usarItem</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
-                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">usarItem</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
 <div class="block">Método para usar um item.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/InteracoesToCruz.html#usarItem(Items.ItemCura)">usarItem</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/InteracoesToCruz.html" title="interface in Interfaces">InteracoesToCruz</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzItems.html#usarItem(Items.ItemCura)">usarItem</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>item</code> - O item do tipo colete a ser usado.</dd>
 <dt>Returns:</dt>

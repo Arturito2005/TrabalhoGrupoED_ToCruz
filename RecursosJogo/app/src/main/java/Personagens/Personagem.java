@@ -111,11 +111,9 @@ public abstract class Personagem {
      */
     @Override
     public String toString() {
-        return "Personagem{" +
-                "nome='" + this.nome + '\'' +
+        return "Nome='" + this.nome + '\'' +
                 ", vida=" + this.vida +
-                ", poder=" + this.poder +
-                '}';
+                ", poder=" + this.poder;
     }
 
     @Override

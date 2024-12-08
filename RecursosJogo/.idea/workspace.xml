@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7f5fe3-3eba-4927-9d5d-4ae23c81a07f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/Exportar/TesteExportar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/ArrayList/ArrayUnordered.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/ArrayList/ArrayUnordered.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/TestNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Graph/TestNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Interfaces/ArrayUnorderedADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/main/java/Interfaces/ArrayUnorderedADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -17,15 +18,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Divisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Divisao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/compileTransaction/stash-dir/Importar.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/compileTransaction/stash-dir/ImportarMapa.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/compileTransaction/stash-dir/Menu.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/compileTransaction/stash-dir/Missao$1.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/compileTransaction/stash-dir/Missao.class.uniqueId3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Exportar/ExportarDado.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Exportar/ExportarDado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,9 +77,9 @@
     "Gradle.RecursosJogo:app [:app:Mapa.TestDraw.main()].executor": "Run",
     "Gradle.RecursosJogo:app [:app:Menu.Menu.main()].executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Artur",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/InterfaceGraficaEX/grafos-dijkstra-java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -124,6 +121,12 @@
       <workItem from="1733583226193" duration="4000" />
       <workItem from="1733583999686" duration="2354000" />
       <workItem from="1733650315046" duration="4972000" />
+      <workItem from="1733668183273" duration="43000" />
+      <workItem from="1733668235853" duration="9790000" />
+      <workItem from="1733678472429" duration="533000" />
+      <workItem from="1733679015492" duration="1371000" />
+      <workItem from="1733680728077" duration="1385000" />
+      <workItem from="1733685723971" duration="3954000" />
     </task>
     <servers />
   </component>
@@ -134,9 +137,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java</url>
+          <line>381</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java</url>
-          <line>160</line>
-          <option name="timeStamp" value="18" />
+          <line>196</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar!/Graph/Network.class</url>
+          <line>96</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
