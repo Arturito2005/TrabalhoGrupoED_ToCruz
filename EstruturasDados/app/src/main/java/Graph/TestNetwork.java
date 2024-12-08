@@ -64,10 +64,12 @@ public class TestNetwork {
         netMatriz.addEdge("Corredor 2", "Escada 4", 0);
         //netMatriz.addEdge("Corredor 2", "Segurança", 0);
         Double custo = netMatriz.shortestPathWeight("Camaratas", "Corredor 2");
-        Iterator<String> iterator1 = netMatriz.shortestPath2("Camaratas", "Corredor 2");
+        //Iterator<String> iterator1 = netMatriz.shortestPath2("Camaratas", "Corredor 2");
+       /*
         while (iterator1.hasNext()) {
             System.out.println(iterator1.next());
         }
+       * */
         System.out.println(netMatriz.shortestPathWeight("Corredor 2", "Hall"));
 
         Iterator<String> iterator2 = netMatriz.iteratorShortestPath("Heliporto", "Camaratas");

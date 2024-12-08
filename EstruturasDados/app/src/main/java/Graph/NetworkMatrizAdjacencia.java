@@ -22,7 +22,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
-                adjMatrix[i][j] = Double.NEGATIVE_INFINITY; // Sem conexão inicial
+                adjMatrix[i][j] = Double.POSITIVE_INFINITY;
             }
         }
 

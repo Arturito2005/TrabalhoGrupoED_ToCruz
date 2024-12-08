@@ -21,7 +21,6 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
 
     @Override
     public double getWeightEdge(T vertex, T vertex2) {
-        double weight = 0;
         int ind_vertex = getIndex(vertex);
         int ind_vertex2 = getIndex(vertex2);
 
@@ -34,7 +33,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         if(indexIsValid(vertex) && indexIsValid(vertex2)) {
             weight = this.adjMatrix[vertex][vertex2];
         } else {
-            weight = Double.NEGATIVE_INFINITY;
+            weight = Double.POSITIVE_INFINITY;
         }
 
         return weight;
@@ -57,7 +56,6 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
                     this.adjMatrix[index2][index1] = weight;
                 }
             }
-
         }
     }
 
@@ -77,7 +75,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
 
         visited[startVertex] = true;
         for (int i = 0; i < numVertices; i++) {
-            if (adjMatrix[startVertex][i] >= 0 && !visited[i]) {
+            if (adjMatrix[startVertex][i] != Double.POSITIVE_INFINITY) {
                 visited[i] = true;
                 resultList.addToRear(vertices[i]);
             }
