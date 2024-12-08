@@ -13,7 +13,7 @@ import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import ArrayList.ArrayUnordered;
-
+import Exportar.ExportarDado;
 import java.util.*;
 
 /**
@@ -52,6 +52,10 @@ public class Missao implements MissaoInt {
         this.inimigos_dead = new LinkedStack<>();
     }
 
+    public QueueADT<Divisao> getTrajeto_to() {
+        return trajeto_to;
+    }
+
     /*
      * Adiciona um nova divisão ao percurso manual do To Cruz.
      * */
@@ -63,6 +67,28 @@ public class Missao implements MissaoInt {
      * Este metodo diz no modoAutomatico quando é que o ToCruz deve coletar o Item de cura da sala, usa-lo ou até mesmo ignora-lo
      * e em que momento no confronto em que ele deve utilizar um Item da mochila
      */
+
+    private void exportarMissao() {
+        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
+        trajetoQueue.enqueue(this.trajeto_to);
+        ExportarDado exportar = new ExportarDado(versao, trajetoQueue);
+        String path = "./Jsons/Export/";
+        String name_file = "";
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
+            try {
+                name_file = sc.nextLine();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
+        } while (name_file.equals(""));
+
+        path += name_file;
+        exportar.exportarDados(path);
+
+    }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
         ItemCura itemCura = divisao.getItemCura();
@@ -287,13 +313,13 @@ public class Missao implements MissaoInt {
                         finishgame = true;
                     } else {
                         turnoAutomaticoToCruz(div);
+                        this.versao++;
                     }
 
                     findToCruz = true;
                 }
             }
             //this.edificio.drawMapa();
-            this.versao++;
         }
 
         relatoriosMissao();
@@ -530,7 +556,7 @@ public class Missao implements MissaoInt {
                 stDiv.push(itrDiv.next());
             }
 
-            int rand = randomizer.nextInt(stDiv.size() - 1);
+            int rand = randomizer.nextInt(stDiv.size());
 
             while (stDiv.size() - 1 > rand && !stDiv.isEmpty()) {
                 stDiv.pop();
@@ -677,13 +703,14 @@ public class Missao implements MissaoInt {
                         finishgame = true;
                     } else {
                         turnoToCruz(div);
+                        this.versao++;
                     }
 
                     findToCruz = true;
                 }
             }
 
-            this.versao++;
+
         }
 
         relatoriosMissao();
@@ -766,6 +793,7 @@ public class Missao implements MissaoInt {
         }
 
         System.out.println(percurso);
+        exportarMissao();
     }
 
     @Override

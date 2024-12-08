@@ -1,6 +1,8 @@
 package Graph;
 
+import ArrayList.ArrayUnordered;
 import ArrayList.ArrayUnorderedList;
+import Interfaces.ArrayUnorderedADT;
 import Interfaces.NetworkMatrizADT;
 import Interfaces.StackADT;
 import Interfaces.UnorderedListADT;
@@ -10,24 +12,28 @@ import java.util.Iterator;
 
 public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
 
-    private static int DEFAULT_CAPACITY = 10;
-    private boolean[][] listAdj;
+    private ArrayUnorderedADT<T>[] listAdj;
 
     public Network() {
         super();
-        this.listAdj = new boolean[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
+        this.listAdj = (ArrayUnorderedADT<T>[]) new ArrayUnordered[DEFAULT_CAPACITY];
+        for (int i = 0; i < DEFAULT_CAPACITY; i++) {
+            listAdj[i] = new ArrayUnordered<T>();
+        }
     }
 
     @Override
     protected void expandadweightMatrix() {
         super.expandadweightMatrix();
-        boolean[][] tempMatriz = new boolean[this.vertices.length * 2][this.vertices.length * 2];
 
-        for (int i = 0; i < listAdj.length; i++) {
-            System.arraycopy(listAdj[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
+        ArrayUnorderedADT<T>[] temp = (ArrayUnorderedADT<T>[]) new ArrayUnordered[listAdj.length * 2];
+        System.arraycopy(listAdj, 0, temp, 0, listAdj.length);
+        for (int i = listAdj.length; i < temp.length; i++) {
+            temp[i] = new ArrayUnordered<T>();
         }
-    }
 
+        listAdj = temp;
+    }
     @Override
     public void addVertex(T vertex) {
         if(this.vertices.length == this.numVertices) {
@@ -44,8 +50,8 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         int index2 = getIndex(vertex2);
 
         if (indexIsValid(index1) && indexIsValid(index2)) {
-            this.listAdj[index1][index2] = true;
-            this.listAdj[index2][index2] = true;
+            this.listAdj[index1].addToRear(vertex2);
+            this.listAdj[index2].addToRear(vertex1);
         }
     }
 
@@ -97,21 +103,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
             return resultList.iterator();
         }
 
-        boolean[] visited = new boolean[numVertices];
-
-        for (int i = 0; i < numVertices; i++) {
-            visited[i] = false;
-        }
-
-        visited[startIndex] = true;
-        for (int i = 0; i < numVertices; i++) {
-            if(!visited[i] && listAdj[startIndex][i]) {
-                visited[i] = true;
-                resultList.addToRear(vertices[i]);
-            }
-        }
-
-        return resultList.iterator();
+        return listAdj[startIndex].iterator();
     }
 
     /*
