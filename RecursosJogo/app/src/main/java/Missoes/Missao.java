@@ -3,9 +3,11 @@ package Missoes;
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
 import Interfaces.*;
-import Items.ItemCura;
+import Items.Item;
 import ArrayList.ArrayUnorderedList;
+import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
+import Mapa.Alvo;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Personagens.Inimigo;
@@ -14,19 +16,18 @@ import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import ArrayList.ArrayUnordered;
 import Exportar.ExportarDado;
+
 import java.util.*;
 
 /**
- * Falta o turno do inimigo (corrigir)
- * Falta o modo automatico (e testa-lo)
- * Falta sugerir o caminho mais curto para o item ou alvo para o To Cruz
+ * Falta no updateWeight o weight total ser o dano que o ToCruz toma no total dos turnos todos (ver se realmente é para fazer isso)
  * Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas
  * <p>
  * A nivel de testes só falta testar no modo manual a parte de o ToCruz entrar numa divisao com item
  */
 public class Missao implements MissaoInt {
 
-    private static Scanner sc;
+    private static Scanner sc = new Scanner(System.in);
 
     private String cod_missao;
 
@@ -44,7 +45,6 @@ public class Missao implements MissaoInt {
         this.edificio = edificio;
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
-        this.sc = new Scanner(System.in);
     }
 
     public Missao() {
@@ -53,11 +53,6 @@ public class Missao implements MissaoInt {
         this.edificio = new Edificio();
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
-        this.sc = new Scanner(System.in);
-    }
-
-    public QueueADT<Divisao> getTrajeto_to() {
-        return trajeto_to;
     }
 
     /*
@@ -67,57 +62,33 @@ public class Missao implements MissaoInt {
         this.trajeto_to.enqueue(divisao);
     }
 
-    /**
-     * Este metodo diz no modoAutomatico quando é que o ToCruz deve coletar o Item de cura da sala, usa-lo ou até mesmo ignora-lo
-     * e em que momento no confronto em que ele deve utilizar um Item da mochila
-     */
-
-    private void exportarMissao(QueueADT<Divisao> trajeto) {
-        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
-        trajetoQueue.enqueue(trajeto);
-        ExportarDado exportar = new ExportarDado(versao, trajetoQueue);
-        String path = "./Jsons/Export/";
-        String name_file = "";
-
-        do {
-            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
-            try {
-                name_file = sc.nextLine();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
-        } while (name_file.equals(""));
-
-        path += name_file;
-        exportar.exportarDados(path);
-    }
-
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
-        ItemCura itemCura = divisao.getItemCura();
-        ToCruz toCruz = divisao.getToCruz();
+        if(divisao.getItem() instanceof ItemCura) {
+            ItemCura Item = (ItemCura) divisao.getItem();
+            ToCruz toCruz = divisao.getToCruz();
 
-        if (itemCura != null) {
-            switch (itemCura.getType()) {
-                case COLETE: {
-                    toCruz.usarItem(itemCura);
-                    break;
-                }
-                case KIT_VIDA: {
-                    if (!toCruz.mochilaIsFull() && (toCruz.getVida() == 100 || toCruz.getVida() + itemCura.getVida_recuperada() >= 100)) {
-                        toCruz.guardarKit(itemCura);
-                    } else if (toCruz.getVida() + itemCura.getVida_recuperada() <= 100) {
-                        toCruz.usarItem(itemCura);
+            if (Item != null) {
+                switch (Item.getType()) {
+                    case COLETE: {
+                        toCruz.usarItem(Item);
+                        break;
                     }
-                    break;
+                    case KIT_VIDA: {
+                        if (!toCruz.mochilaIsFull() && (toCruz.getVida() == 100 || toCruz.getVida() + Item.getVida_recuperada() >= 100)) {
+                            toCruz.guardarKit(Item);
+                        } else if (toCruz.getVida() + Item.getVida_recuperada() <= 100) {
+                            toCruz.usarItem(Item);
+                        }
+                        break;
+                    }
+                    default: {
+                        throw new InvalidTypeItemException("Tipo de item de cura inválido");
+                    }
                 }
-                default: {
-                    throw new InvalidTypeItemException("Tipo de item de cura inválido");
+            } else {
+                if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
+                    toCruz.usarKit();
                 }
-            }
-        } else {
-            if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
-                toCruz.usarKit();
             }
         }
     }
@@ -153,7 +124,7 @@ public class Missao implements MissaoInt {
         while (itr.hasNext()) {
             Divisao div = itr.next();
 
-            if (div.getItemCura() != null || div.getAlvo() != null) {
+            if (div.getItem() != null || div.getAlvo() != null) {
                 double min = Double.MAX_VALUE;
                 double distance;
                 Iterator<Divisao> itrEntr = list_entradas.iterator();
@@ -187,7 +158,7 @@ public class Missao implements MissaoInt {
             best_entr.attackToCruz(this.inimigos_dead);
         }
 
-        if (best_entr.getItemCura() != null) {
+        if (best_entr.getItem() != null) {
             DivisaoComItem(best_entr, best_entr.getToCruz());
         }
 
@@ -225,7 +196,7 @@ public class Missao implements MissaoInt {
                 while (itr.hasNext()) {
                     Divisao div = itr.next();
 
-                    if (div.getAlvo() != null || (div.getItemCura() != null && !div.getItemCura().isCollected())) {
+                    if (div.getAlvo() != null || (div.getItem() != null && !div.getItem().isCollected())) {
                         distance = this.edificio.getShortestPath(divisao_atual, div);
 
                         if (distance < min || i == 0) {
@@ -240,7 +211,7 @@ public class Missao implements MissaoInt {
                 while (itr.hasNext()) {
                     Divisao div = itr.next();
 
-                    if (div.isEntrada_saida() || (div.getItemCura() != null && !div.getItemCura().isCollected())) {
+                    if (div.isEntrada_saida() || (div.getItem() != null && !div.getItem().isCollected())) {
                         distance = this.edificio.getShortestPath(divisao_atual, div);
 
                         if (distance < min || i == 0) {
@@ -262,7 +233,7 @@ public class Missao implements MissaoInt {
                 divisao.attackToCruz(this.inimigos_dead);
             }
 
-            if (divisao.getItemCura() != null) {
+            if (divisao.getItem() != null) {
                 ConditionGetUseItemAutomatico(divisao);
             }
         }
@@ -274,14 +245,110 @@ public class Missao implements MissaoInt {
     }
 
     /**
-     * Mete o jogo a funcionar automaticamente.
-     * Ver se o turno do Inimigo funciona
-     * Mostrar o melhor caminho
-     * <p>
-     * Falta apenas testar, mas para isso é preciso o Dijkstra
+     * Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
+     * outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
+     * e ter outro que apenas retorna o num_arestas
      */
     @Override
     public void modoAutomatico() {
+        Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
+        UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<Divisao>();
+        Divisao div_alvo = null;
+        Divisao best_div = null;
+        ToCruz to = new ToCruz();
+
+        while (itr.hasNext()) {
+            Divisao div = itr.next();
+
+            if (div.isEntrada_saida()) {
+                list_entradas.addToRear(div);
+            }
+
+            if (div.getAlvo() != null) {
+                div_alvo = div;
+            }
+        }
+
+        double best_distance = Double.MAX_VALUE;
+        double distance;
+        //double num_arestas_com = Double.MAX_VALUE;
+        //double num_arestas = 0;
+        for (Divisao div_entr : list_entradas) {
+            distance = this.edificio.getShortestPath(div_entr, div_alvo);
+
+            /*if(distance == 0) {
+                best_distance = distance;
+               // num_arestas = getNumArestas();
+                if(num_arestas < num_arestas_com) {
+                    best_div = div_entr;
+                    num_arestas_com = num_arestas;
+                }
+
+            } else */
+            if (distance < best_distance) {
+                best_div = div_entr;
+                best_distance = distance;
+            }
+        }
+
+        //Esta comparacao não está assim tão bem pois ele considera que o andar dá dano ao toCruz
+        if (best_distance < to.getVida()) {
+            Iterator<Divisao> itr2 = this.edificio.shortesPathIt(best_div, div_alvo);
+            System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div);
+            System.out.println("Melhor caminho que o To Cruz pode fazer até ao alvo");
+
+            String temp = "";
+            while (itr2.hasNext()) {
+                Divisao div = itr2.next();
+
+                if(itr.hasNext()) {
+                    temp += div.getName() + " --> ";
+                } else {
+                    temp += div.getName() + " ";
+                }
+            }
+            System.out.println(temp);
+
+
+            best_distance = Double.MAX_VALUE;
+            best_div = null;
+            for (Divisao div_entr : list_entradas) {
+                distance = this.edificio.getShortestPath(div_entr, div_alvo);
+
+                if (distance < best_distance) {
+                    best_div = div_entr;
+                    best_distance = distance;
+                }
+            }
+
+            //Ver aqui porque se a distancia for igual a 0 ele vai meter o numero de arestas.
+            if(best_distance < to.getVida()) {
+                Iterator<Divisao> itr3 = this.edificio.shortesPathIt(div_alvo, best_div);
+                System.out.println("Melhor caminho que o To Cruz deve fazer para sair do edificio");
+
+                temp = "";
+                while (itr2.hasNext()) {
+                    Divisao div = itr2.next();
+
+                    if(itr.hasNext()) {
+                        temp += div.getName() + " --> ";
+                    } else {
+                        temp += div.getName() + " ";
+                    }
+                }
+                System.out.println(temp);
+            } else {
+                System.out.println("É impossível o To Cruz sair do edificio com vida!");
+            }
+        } else {
+            System.out.println("O To Cruz não consegue chegar ao alvo sem morrer!");
+        }
+    }
+
+    /**
+     * Joga o jogo de forma automático
+     */
+    public void jogoAutomatico() {
         //ToCruz entra na sala (meter o codigo)
         //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
@@ -292,7 +359,7 @@ public class Missao implements MissaoInt {
         while (!finishgame) {
             //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
-            LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
@@ -342,7 +409,7 @@ public class Missao implements MissaoInt {
             Divisao div = itr.next();
 
             double distance = Double.MAX_VALUE;
-            if (div.getAlvo() != null && !toCruz.isColectedAlvo() || div.getItemCura() != null || div.isEntrada_saida() && toCruz.isColectedAlvo()) {
+            if ((div.getAlvo() != null && !toCruz.isColectedAlvo()) || (div.getItem() != null) || (div.isEntrada_saida() && toCruz.isColectedAlvo())) {
                 distance = this.edificio.getShortestPath(div_to, div);
             }
 
@@ -372,7 +439,6 @@ public class Missao implements MissaoInt {
     private Divisao getNewDivisaoTo(Divisao divisao_atual) {
         int op = -1;
         Iterator<Divisao> itr = this.edificio.getNextDivisoes(divisao_atual);
-        //Trocar apra UnorderedList
         ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
 
         System.out.println("Selecione a divisao para o ToCruz se mover!");
@@ -383,22 +449,19 @@ public class Missao implements MissaoInt {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
 
-            if(divisao.isEntrada_saida() || divisao.getAlvo() != null)
             if (divisao.isEntrada_saida()) {
                 temp = temp + " (esta divisao e uma entrada/saida)";
             } else if (divisao.getAlvo() != null) {
                 temp = temp + " (divisao onde esta o alvo)";
-            } else if (divisao.getItemCura() != null) {
+            } else if (divisao.getItem() != null) {
                 temp = temp + " (divisao com item de cura item)";
             }
+
 
             System.out.println(temp);
             listDiv.addToRear(divisao);
         }
 
-        /*
-         * Sugerir melhor caminho To DÁ ERRO
-         * */
         sugestaoCaminhoToCruz(divisao_atual, listDiv);
 
         /*
@@ -415,8 +478,13 @@ public class Missao implements MissaoInt {
             }
         } while (op < 0 || op > listDiv.size() - 1);
 
-        //Meter Try Catch
-        return listDiv.find(op);
+        Divisao div = null;
+        try {
+            div= listDiv.find(op);
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return div;
     }
 
     /*
@@ -425,77 +493,80 @@ public class Missao implements MissaoInt {
      * Verificar se estão todos os cenarios feitos
      *  */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
-        ItemCura item = divisao.getItemCura();
-        switch (item.getType()) {
-            case COLETE: {
-                if (toCruz.mochilaIsFull() && toCruz.getVida() < 100) {
-                    toCruz.usarItem(item);
-                }
-                break;
-            }
-            case KIT_VIDA: {
-                int op = -1;
+        if(divisao.getItem() instanceof ItemCura) {
+            ItemCura item = (ItemCura ) divisao.getItem();
 
-                if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
-                    do {
+            switch (item.getType()) {
+                case COLETE: {
+                    if (toCruz.mochilaIsFull() && toCruz.getVida() < 100) {
+                        toCruz.usarItem(item);
+                    }
+                    break;
+                }
+                case KIT_VIDA: {
+                    int op = -1;
+
+                    if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
+                        do {
+                            System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                            System.out.println("0 - Usar Item");
+                            System.out.println("1 - Deixa-lo na sala");
+                            System.out.println("2 - Guardar");
+                            try {
+                                op = sc.nextInt();
+                            } catch (InputMismatchException ex) {
+                                System.out.println("Numero inválido!");
+                                sc.next();
+                            }
+                        } while (op < 0 || op > 2);
+                    } else if (toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
+                        do {
+                            System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                            System.out.println("0 - Usar Item");
+                            System.out.println("1 - Deixa-lo na sala");
+                            try {
+                                op = sc.nextInt();
+                            } catch (InputMismatchException ex) {
+                                System.out.println("Numero inválido!");
+                                sc.next();
+                            }
+                        } while (op < 0 || op > 1);
+                    } else if (!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
                         System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
-                        System.out.println("0 - Usar Item");
                         System.out.println("1 - Deixa-lo na sala");
                         System.out.println("2 - Guardar");
-                        try {
-                            op = sc.nextInt();
-                        } catch (InputMismatchException ex) {
-                            System.out.println("Numero inválido!");
-                            sc.next();
-                        }
-                    } while (op < 0 || op > 2);
-                } else if (toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
-                    do {
-                        System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
-                        System.out.println("0 - Usar Item");
-                        System.out.println("1 - Deixa-lo na sala");
-                        try {
-                            op = sc.nextInt();
-                        } catch (InputMismatchException ex) {
-                            System.out.println("Numero inválido!");
-                            sc.next();
-                        }
-                    } while (op < 0 || op > 1);
-                } else if(!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
-                    System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
-                    System.out.println("1 - Deixa-lo na sala");
-                    System.out.println("2 - Guardar");
-                    do {
-                        try {
-                            op = sc.nextInt();
-                        } catch (InputMismatchException ex) {
-                            System.out.println("Numero inválido!");
-                            sc.next();
-                        }
-                    } while (op < 1 || op > 2);
-                }
+                        do {
+                            try {
+                                op = sc.nextInt();
+                            } catch (InputMismatchException ex) {
+                                System.out.println("Numero inválido!");
+                                sc.next();
+                            }
+                        } while (op < 1 || op > 2);
+                    }
 
-                switch (op) {
-                    case 0: {
-                        divisao.usarItemDivisao();
-                        break;
+                    switch (op) {
+                        case 0: {
+                            divisao.usarItemDivisao();
+                            break;
+                        }
+                        case 1: {
+                            System.out.println("To Cruz não coleta o item");
+                            break;
+                        }
+                        case 2: {
+                            toCruz.guardarKit(item);
+                            break;
+                        }
+                        default: {
+                            throw new InvalidOptionException("Introduziu uma opção invalida");
+                        }
                     }
-                    case 1: {
-                        System.out.println("To Cruz não coleta o item");
-                        break;
-                    }
-                    case 2: {
-                        toCruz.guardarKit(item);
-                        break;
-                    }
-                    default: {
-                        throw new InvalidOptionException("Introduziu uma opção invalida");
-                    }
+                    break;
                 }
-                break;
-            }
-            default: {
-                throw new InvalidTypeItemException("Tipo de item invalido");
+                default: {
+                    throw new InvalidTypeItemException("Tipo de item invalido");
+                }
             }
         }
     }
@@ -537,18 +608,23 @@ public class Missao implements MissaoInt {
                 }
             }
         } else {
-            divisao = this.getNewDivisaoTo(divisao_atual);
-            divisao.addToCruz(divisao_atual.getToCruz());
-            divisao_atual.removeToCruz();
+            try {
+                divisao = this.getNewDivisaoTo(divisao_atual);
+                divisao.addToCruz(divisao_atual.getToCruz());
+                divisao_atual.removeToCruz();
 
-            addDivisaoTrajetoToCruz(divisao);
+                addDivisaoTrajetoToCruz(divisao);
 
-            if (divisao.haveConfronto()) {
-                divisao.attackToCruz(this.inimigos_dead);
-            }
+                if (divisao.haveConfronto()) {
+                    divisao.attackToCruz(this.inimigos_dead);
+                }
 
-            if (divisao.getItemCura() != null) {
-                DivisaoComItem(divisao, toCruz);
+                if (divisao.getItem() != null) {
+                    DivisaoComItem(divisao, toCruz);
+                }
+            } catch (NullPointerException ne) {
+                System.out.println(ne.getMessage());
+                divisao = divisao_atual;
             }
         }
 
@@ -590,7 +666,7 @@ public class Missao implements MissaoInt {
     }
 
     private void turnoInimigo(Divisao divisao) {
-        LinearLinkedUnorderedList<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
+        UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
         for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
@@ -610,30 +686,24 @@ public class Missao implements MissaoInt {
     }
 
     /**
-     * Falta sugerir a melhor entrada, é reutilizar o codigo da bestEntradaToCruz, do modo automatico
+     * Pode faltar sugerir a melhor entrada
+     * Testar com a listDiv
      */
-    //Também meter para sugerir uma entrada ao ToCruz (Meter a sala que está mais perto do alvo ou item)
     private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
         int op = -1;
         int i = 0;
-
         Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
-        StackADT<Divisao> listDiv = new LinkedStack<>();
-        Divisao[] divisaos = new Divisao[this.edificio.getNumEntradasSaidas()]; //Numero de divisoes
+        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
 
         while (itr.hasNext()) {
             Divisao div = itr.next();
 
             if (div.isEntrada_saida()) {
                 System.out.println(i + " - " + div.getName());
-                listDiv.push(div);
+                listDiv.addToRear(div);
                 i++;
             }
         }
-
-        /**
-         * Sugerir melhor entrada
-         * */
 
         do {
             System.out.println("Introduza onde o ToCruz vai entrar -->");
@@ -647,13 +717,9 @@ public class Missao implements MissaoInt {
         } while (op < 0 || op > i);
 
         Divisao divisao_nova = null;
-        while (listDiv.size() - 1 > op && !listDiv.isEmpty()) {
-            listDiv.pop();
-        }
 
         try {
-            divisao_nova = divisaos[op];
-            divisao_nova = listDiv.peek();
+            divisao_nova = listDiv.find(op);
             divisao_nova.addToCruz(toCruz);
             addDivisaoTrajetoToCruz(divisao_nova);
 
@@ -665,7 +731,7 @@ public class Missao implements MissaoInt {
                 if (divisao_nova.isToCruzInDivisaoAlvo()) {
                     divisao_nova.ToCruzGetAlvo();
                     toCruz.setColectedAlvo(true);
-                } else if (divisao_nova.getItemCura() != null) {
+                } else if (divisao_nova.getItem() != null) {
                     DivisaoComItem(divisao_nova, divisao_nova.getToCruz());
                 }
             }
@@ -693,7 +759,7 @@ public class Missao implements MissaoInt {
         ToCruzEntrarEdificio(toCruz);
         while (!finishgame) {
             itrMapa = this.edificio.IteratorMapa();
-            LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
@@ -724,8 +790,6 @@ public class Missao implements MissaoInt {
                     findToCruz = true;
                 }
             }
-
-
         }
 
         relatoriosMissao();
@@ -735,18 +799,23 @@ public class Missao implements MissaoInt {
     //Acabar de fazer
     private void relatoriosMissao() {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
-        UnorderedListADT<ItemCura> item_colected = new LinearLinkedUnorderedList<ItemCura>();
+        UnorderedListADT<Item> item_colected = new LinearLinkedUnorderedList<Item>();
+        Alvo alvo = new Alvo();
         ToCruz toCruz = null;
 
         while (itrMapa.hasNext()) {
             Divisao div = itrMapa.next();
 
-            if (div.getItemCura() != null && div.getItemCura().isCollected()) {
-                item_colected.addToRear(div.getItemCura());
+            if (div.getItem() != null && div.getItem().isCollected()) {
+                item_colected.addToRear(div.getItem());
             }
 
             if (div.getToCruz() != null) {
                 toCruz = div.getToCruz();
+            }
+
+            if (div.getAlvo() != null) {
+                alvo = div.getAlvo();
             }
         }
 
@@ -755,7 +824,7 @@ public class Missao implements MissaoInt {
         System.out.println(" ");
         System.out.println("Fim do jogo");
         System.out.println("Relatorio do jogo: ");
-        if (toCruz.getVida() > 0) {
+        if (toCruz.getVida() > 0 && alvo != null) {
             System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
             System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
         } else {
@@ -815,12 +884,33 @@ public class Missao implements MissaoInt {
         exportarMissao(trajeto_temp);
     }
 
+    private void exportarMissao(QueueADT<Divisao> trajeto) {
+        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
+        trajetoQueue.enqueue(trajeto);
+        ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
+        String path = "./Jsons/Export/";
+        String name_file = "";
+
+        do {
+            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
+            try {
+                name_file = sc.nextLine();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
+        } while (name_file.equals(""));
+
+        path += name_file;
+        exportar.exportarDados(path);
+    }
+
     @Override
     public String toString() {
         return "Missao{" +
                 "cod_missao='" + cod_missao + '\'' +
                 ", versao=" + versao +
-                ", edificio=" + edificio.toString() +
+                ", edificio=" + edificio +
                 '}';
     }
 

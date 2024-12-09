@@ -28,7 +28,6 @@ public class Edificio implements EdificoInt {
 
     private String name; /** Nome do edifício. */
 
-    //Ver se com esta inicialização
     private NetworkMatrizADT<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
 
     /**
@@ -58,15 +57,6 @@ public class Edificio implements EdificoInt {
         return planta_edificio;
     }
 
-    /**
-     * Retorna o número de divisões no edifício.
-     *
-     * @return Número de divisões.
-     */
-    public int numDivisoes() {
-        return this.planta_edificio.size();
-    }
-
     public double getShortestPath(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathWeight(div_inicial, div_final);
     }
@@ -85,29 +75,6 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Retorna o número de entradas/saídas (divisões com a flag de entrada/saída ativada).
-     *
-     * @return Número de divisões de entrada/saída.
-     */
-    @Override
-    public int getNumEntradasSaidas() {
-        int numEntradas = 0;
-
-        Iterator<Divisao> it = this.planta_edificio.iterator();
-
-        while (it.hasNext()) {
-            Divisao divisao = it.next();
-
-            if (divisao.isEntrada_saida()) {
-                numEntradas++;
-            }
-        }
-
-        return numEntradas;
-    }
-
-//Meter throws
-    /**
      * Adiciona uma divisão ao edifício.
      *
      * @param divisao A divisão a ser adicionada ao edifício.
@@ -115,17 +82,6 @@ public class Edificio implements EdificoInt {
     @Override
     public void addDivisao(Divisao divisao) {
         this.planta_edificio.addVertex(divisao);
-    }
-
-    /**
-     * Adiciona uma ligação entre duas divisões no edifício.
-     *
-     * @param vertex1 Primeira divisão.
-     * @param vertex2 Segunda divisão.
-     */
-    @Override
-    public void addLigacao(Divisao vertex1, Divisao vertex2) {
-        this.planta_edificio.addEdge(vertex1, vertex2);
     }
 
     /**
@@ -220,7 +176,6 @@ public class Edificio implements EdificoInt {
                 ", planta_edificio=" + planta_edificio.toString() +
                 '}';
     }
-
 
     /**
      * Compara este edifício com outro objeto para verificar se são iguais.

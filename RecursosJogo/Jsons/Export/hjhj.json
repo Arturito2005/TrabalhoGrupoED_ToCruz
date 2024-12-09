@@ -1,0 +1,27 @@
+{
+  //"cod-missao": missao Impossivel
+  "simulacoes":[
+  {"codigoSimulacao":0,
+    "trajetoPercorrido":"Heliporto, Escada 6, Camaratas, Escada 5, Laboratório, Escada 5, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, Camaratas, Escada 6, "
+  }
+],"versao":72}
+
+
+{
+  "cod-missao": nome_missao,
+  "simulacoes": [
+    {
+      "versao": 0,
+      "trajetoPercorrido": "Heliporto"
+    },
+    {
+      "versao": 1,
+      "trajetoPercorrido": "Escada 6"
+    },
+    {
+      "codigoSimulacao": 2,
+      "trajetoPercorrido": "Camaratas",
+    }
+  ],
+  "tot_verses": 72
+}

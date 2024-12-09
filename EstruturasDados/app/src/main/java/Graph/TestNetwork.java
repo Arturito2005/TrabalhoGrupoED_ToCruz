@@ -1,5 +1,8 @@
 package Graph;
 
+import Interfaces.NetworkADT;
+import Interfaces.NetworkMatrizADT;
+
 import java.util.Iterator;
 
 public class TestNetwork {
@@ -64,15 +67,13 @@ public class TestNetwork {
         netMatriz.addEdge("Corredor 2", "Escada 4", 0);
         //netMatriz.addEdge("Corredor 2", "Segurança", 0);
         Double custo = netMatriz.shortestPathWeight("Camaratas", "Corredor 2");
-        //Iterator<String> iterator1 = netMatriz.shortestPath2("Camaratas", "Corredor 2");
-        /*
+        Iterator<String> iterator1 = netMatriz.shortestPath("Camaratas", "Corredor 2");
         while (iterator1.hasNext()) {
             System.out.println(iterator1.next());
         }
-        * */
         System.out.println(netMatriz.shortestPathWeight("Corredor 2", "Hall"));
 
-        Iterator<String> iterator2 = netMatriz.iteratorShortestPath("Heliporto", "Camaratas");
+        Iterator<String> iterator2 = netMatriz.shortestPath("Heliporto", "Camaratas");
         while (iterator2.hasNext()) {
             System.out.println(iterator2.next());
         }

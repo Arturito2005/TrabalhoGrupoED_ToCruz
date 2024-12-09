@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -112,7 +113,6 @@ public class ImportarMapa implements Importar {
                     Divisao divisaoc2 = findDivisao(divisao2);
 
                     if (divisaoc1 != null && divisaoc2 != null) {
-                        edificio.addLigacao(divisaoc1, divisaoc2);
                         edificio.addLigacao(divisaoc1, divisaoc2, 0);
                     } else {
                         System.out.println("Alguma das divisões não existem");
@@ -178,16 +178,16 @@ public class ImportarMapa implements Importar {
                     }
 
                     Divisao divisao = findDivisao(divisao_item);
-                    ItemCura item = (new ItemCura(type, pontos_vida));
-                    divisao.setItemCura(item);
+                    ItemCura item = new ItemCura(type, pontos_vida);
+                    divisao.setItem(item);
                 }
 
                 missao = new Missao(codigo_missao, versao, edificio);
             }
         } catch (ParseException | FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
 
         return missao;

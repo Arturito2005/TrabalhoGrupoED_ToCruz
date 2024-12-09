@@ -1,5 +1,7 @@
 package Interfaces;
 
+import java.util.Iterator;
+
 /**
  * NetworkADT defines the interface to a network.
  *
@@ -24,4 +26,6 @@ public interface NetworkADT<T> extends Iterable<T>, GraphADT<T> {
      * @return the weight of the shortest path in this network
      */
     public double shortestPathWeight(T vertex1, T vertex2);
+
+    public Iterator<T> iteratorNextVertexs(T startVertex);
 }

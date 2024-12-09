@@ -2,12 +2,11 @@ package TestsPersonagens;
 
 import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;
-import Exceptions.WrongTypeItem;
+import Exceptions.WrongTypeItemException;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import Mapa.Divisao;
 import Personagens.ToCruz;
-import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,7 +50,7 @@ Ver porque falha, unico que falha do ToCruz
     @Test
     public void testguardarKitTypeDifKit_NesteCasoColete() {
         ItemCura colete = new ItemCura(TypeItemCura.COLETE, 20);
-        Exception excecao = assertThrows(WrongTypeItem.class, () -> toCruz.guardarKit(colete));
+        Exception excecao = assertThrows(WrongTypeItemException.class, () -> toCruz.guardarKit(colete));
     }
 
     @Test

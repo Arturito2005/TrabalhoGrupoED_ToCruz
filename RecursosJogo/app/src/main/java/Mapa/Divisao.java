@@ -1,13 +1,11 @@
 package Mapa;
 
-import Exceptions.EmptyCollectionException;
 import Interfaces.*;
+import Items.Item;
 import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-import Stacks.LinkedStack;
-
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -26,16 +24,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     private UnorderedListADT<Inimigo> inimigos;
 
-    private ItemCura itemCura;
+    private Item item;
 
     private Alvo alvo;
 
-    public Divisao(String name, boolean entradas_saidas, Alvo alvo, ItemCura itemCura, LinearLinkedUnorderedList<Inimigo> inimigos) {
+    public Divisao(String name, boolean entradas_saidas, Alvo alvo, Item item, LinearLinkedUnorderedList<Inimigo> inimigos) {
         this.id_divisao = ID_DIVISAO_CONT++;
         this.name = name;
         this.entrada_saida = entradas_saidas;
         this.alvo = alvo;
-        this.itemCura = itemCura;
+        this.item = item;
         this.inimigos = inimigos;
         this.toCruz = new ToCruz();
     }
@@ -45,7 +43,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.name = name;
         this.entrada_saida = entradas_saidas;
         this.alvo = null;
-        this.itemCura = null;
+        this.item = null;
         this.inimigos = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
@@ -55,7 +53,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.name = name;
         this.entrada_saida = false;
         this.alvo = null;
-        this.itemCura = null;
+        this.item = null;
         this.inimigos = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
@@ -65,7 +63,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.name = "";
         this.entrada_saida = false;
         this.alvo = null;
-        this.itemCura = null;
+        this.item = null;
         this.inimigos = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
@@ -106,12 +104,12 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         return this.inimigos.remove(inimigos);
     }
 
-    public ItemCura getItemCura() {
-        return itemCura;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItemCura(ItemCura itemCura) {
-        this.itemCura = itemCura;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public Alvo getAlvo() {
@@ -212,10 +210,10 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     @Override
     public void usarItemDivisao() {
-        if (!this.itemCura.isCollected()) {
+        if (!this.item.isCollected() && (item instanceof ItemCura)) {
             try {
-                this.toCruz.usarItem(this.itemCura);
-                this.itemCura.setCollected(true);
+                this.toCruz.usarItem((ItemCura) this.item);
+                this.item.setCollected(true);
             } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
             }
@@ -250,8 +248,8 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             dados_sala += this.toCruz.getNome() + " ";
         }
 
-        if (this.itemCura != null) {
-            dados_sala += this.itemCura.getType() + " " + itemCura.getVida_recuperada() + " HP ";
+        if (this.item != null && item instanceof ItemCura) {
+            dados_sala += ((ItemCura) item).getType() + " " + ((ItemCura) item).getVida_recuperada() + " HP ";
         }
 
         if (this.alvo != null) {
@@ -298,7 +296,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
                 ", entrada_saida=" + entrada_saida +
                 ", toCruz=" + toCruz +
                 ", inimigos=" + inimigos +
-                ", itemCura=" + itemCura +
+                ", item=" + item +
                 ", alvo=" + alvo +
                 '}';
     }
