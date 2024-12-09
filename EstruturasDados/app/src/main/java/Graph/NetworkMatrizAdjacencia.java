@@ -23,7 +23,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
     protected void expandadweightMatrix() {
         super.expandCapacity();
-
         double[][] tempMatriz = new double[this.vertices.length * 2][this.vertices.length * 2];
 
         for (int i = 0; i < tempMatriz.length; i++) {
@@ -35,7 +34,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         for (int i = 0; i < this.adjMatrix.length; i++) {
             System.arraycopy(this.adjMatrix[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
         }
-
 
         this.adjMatrix = tempMatriz;
     }
@@ -57,6 +55,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         if (indexIsValid(index1) && indexIsValid(index2)) {
             this.adjMatrix[index1][index2] = weight;
             this.adjMatrix[index2][index1] = weight;
+            super.addEdge(index1, index2);
         }
     }
 
@@ -79,9 +78,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return adjacentVertices.iterator();
     }
     /**
-     * Aqui em principio só deve retornar a distancia e depois ter outro igual só para o caminho, ver com o Xico
-     *
-     *
      * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas
      * no caminho. Em caso de empate no custo, o caminho com menos arestas é priorizado.
      *
@@ -143,7 +139,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
             return Double.MAX_VALUE;
         }
 
-        return distances[finalIndex] + num_arestas[finalIndex];
+        return distances[finalIndex];
     }
 
     @Override

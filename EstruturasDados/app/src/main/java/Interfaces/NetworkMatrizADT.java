@@ -8,4 +8,6 @@ public interface NetworkMatrizADT<T> extends NetworkADT<T> {
     public void updateWeightEdge(T vertex, double weight);
 
     public Iterator<T> shortestPath(T startVertex, T finalVertex);
+
+    public double shortestPathArest(T startVertex, T finalVertex);
 }

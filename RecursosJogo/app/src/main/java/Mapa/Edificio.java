@@ -57,15 +57,23 @@ public class Edificio implements EdificoInt {
         return planta_edificio;
     }
 
+    @Override
     public double getShortestPath(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathWeight(div_inicial, div_final);
     }
 
+    @Override
+    public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final) {
+        return this.planta_edificio.shortestPathArest(div_inicial, div_final);
+    }
+
+    @Override
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
     }
 
     //Dá já de forma automatica a divisao para o ToCruz andar
+    @Override
     public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final) {
         Iterator<Divisao> it = this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
         it.next();

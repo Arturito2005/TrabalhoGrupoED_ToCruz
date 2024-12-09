@@ -8,11 +8,20 @@ import java.util.Iterator;
  * Permite a manipulação e consulta de divisões, bem como das ligações entre elas.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public interface EdificoInt {
 
+    public double getShortestPath(Divisao div_inicial, Divisao div_final);
+
+    public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final);
+
+    public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final);
+
+    public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final);
     /**
      * Adiciona uma divisão ao edifício.
      *
@@ -51,4 +60,5 @@ public interface EdificoInt {
      * @return um iterador sobre todas as divisões do edifício.
      */
     public Iterator<Divisao> IteratorMapa();
+
 }

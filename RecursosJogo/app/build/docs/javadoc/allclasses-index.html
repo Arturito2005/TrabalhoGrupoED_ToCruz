@@ -72,11 +72,17 @@ loadScripts(document, 'script');</script>
 <div class="block">Classe que representa um edifício no jogo.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/Exportar.html" title="interface in Interfaces">Exportar</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="Exportar/ExportarDado.html" title="class in Exportar">ExportarDado</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface que define o contrato para um edifício com divisões interconectadas.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="Exportar/ExportarDado.html" title="class in Exportar">ExportarDado</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Classe responsável por exportar os dados de trajetos de simulações para um ficheiro JSON.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
+<div class="block">Interface que define o contrato para exportação de dados.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/Importar.html" title="interface in Interfaces">Importar</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Interface que define perimite importar e gerar o mapa do jogo.</div>
@@ -90,9 +96,13 @@ loadScripts(document, 'script');</script>
 <div class="block">Esta classe representa um inimigo no jogo.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="Exceptions/InvalidOptionException.html" title="class in Exceptions">InvalidOptionException</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Exceção personalizada que representa uma situação onde uma opção inválida é selecionada.</div>
+</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="Exceptions/InvalidTypeItemException.html" title="class in Exceptions">InvalidTypeItemException</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Exceção personalizada que representa uma tentativa de uso ou manipulação de um item de tipo inválido em um contexto específico.</div>
+</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="Items/Item.html" title="class in Items">Item</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe abstrata que representa um item no jogo.</div>
@@ -113,9 +123,7 @@ loadScripts(document, 'script');</script>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="Missoes/Missao.html" title="class in Missoes">Missao</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Falta o turno do inimigo (corrigir)
- Falta o modo automatico (e testa-lo)
- Falta sugerir o caminho mais curto para o item ou alvo para o To Cruz
+<div class="block">Falta no updateWeight o weight total ser o dano que o ToCruz toma no total dos turnos todos (ver se realmente é para fazer isso)
  Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></div>
@@ -128,22 +136,26 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="Mapa/TestDraw.html" title="class in Mapa">TestDraw</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="Exportar/TesteExportar.html" title="class in Exportar">TesteExportar</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Classe que representa o personagem principal do jogo, ToCruz.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab1">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Interface que define todas as iterações que o ToCruz pode ter com qualquer item presentes no edificio.</div>
 </div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="Mapa/Trajeto.html" title="class in Mapa">Trajeto</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab2">&nbsp;</div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="Items/TypeItemCura.html" title="enum class in Items">TypeItemCura</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Enum que aramzena todos os tipos de itens de cura</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab5"><a href="Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab5">
+<div class="block">Exceção personalizada que indica uma tentativa de reutilizar um item já coletado ou usado em um contexto onde isso não é permitido.</div>
+</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab5"><a href="Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab5">
 <div class="block">Classe da Exceção WrongTypeItem, esta exceção é chamada sempre que é introduzido um tipo de item errado</div>
 </div>
 </div>
