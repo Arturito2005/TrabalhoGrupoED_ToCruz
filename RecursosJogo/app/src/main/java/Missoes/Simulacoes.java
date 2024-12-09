@@ -24,9 +24,11 @@ import java.util.*;
  * <p>
  * A nivel de testes só falta testar no modo manual a parte de o ToCruz entrar numa divisao com item
  */
-public class Simulacoes implements SimulacoesInt {
+public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     private static Scanner sc = new Scanner(System.in);
+
+    private long versao_simulacao;
 
     private QueueADT<Divisao> trajeto_to;
 
@@ -34,12 +36,23 @@ public class Simulacoes implements SimulacoesInt {
 
     private double vida_to;
 
-    public Simulacoes(String cod_missao, long versao, Edificio edificio) {
+    private Edificio edificio;
+
+    /*
+    * Ver como mando o edificio para não bugar
+    * */
+    public Simulacoes(long versao, Edificio edificio) {
+        this.edificio = edificio;
+        this.versao_simulacao = versao;
+        this.vida_to = 0;
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
     }
 
     public Simulacoes() {
+        this.edificio = null;
+        this.versao_simulacao = 0;
+        this.vida_to = 0;
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
     }
@@ -48,7 +61,9 @@ public class Simulacoes implements SimulacoesInt {
         this.trajeto_to.enqueue(divisao);
     }
 
-    public void addInimigosDead(Inimi)
+    public void addInimigosDead(Inimigo inimigo) {
+        this.inimigos_dead.push(inimigo);
+    }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
         if(divisao.getItem() instanceof ItemCura) {
@@ -140,7 +155,7 @@ public class Simulacoes implements SimulacoesInt {
 
         //3º Encontrar o caminho mais curto para um item
         best_entr.addToCruz(toCruz);
-        addDivisaoTrajetoToCruz(versao, best_entr, toCruz.getVida());
+        addDivisaoTrajetoToCruz(best_entr);
 
         if (best_entr.haveConfronto()) {
             best_entr.attackToCruz(this.inimigos_dead);
@@ -211,7 +226,7 @@ public class Simulacoes implements SimulacoesInt {
 
             divisao = edificio.nextDivAutomaticToCruz(divisao_atual, best_div);
             divisao.addToCruz(toCruz);
-            this.addDivisaoTrajetoToCruz(versao, divisao, toCruz.getVida());
+            this.addDivisaoTrajetoToCruz(divisao);
             divisao_atual.removeToCruz();
 
             if (divisao.haveConfronto()) {
@@ -237,7 +252,7 @@ public class Simulacoes implements SimulacoesInt {
      * Fazer o codigo para arestas na network
      */
     @Override
-    public Simulacoes modoAutomatico(Edificio edificio) {
+    public void modoAutomatico() {
         Iterator<Divisao> itr = edificio.getPlantaEdificio().iterator();
         UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<Divisao>();
         Divisao div_alvo = null;
@@ -341,14 +356,12 @@ public class Simulacoes implements SimulacoesInt {
         } else {
             System.out.println("O To Cruz não consegue chegar ao alvo sem morrer!");
         }
-
-        return this;
     }
 
     /**
      * Joga o jogo de forma automático
      */
-    public Simulacoes jogoAutomatico(Edificio edificio) {
+    public Simulacoes jogoAutomatico() {
         //ToCruz entra na sala (meter o codigo)
         //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
@@ -384,7 +397,6 @@ public class Simulacoes implements SimulacoesInt {
                         finishgame = true;
                     } else {
                         turnoAutomaticoToCruz(div);
-                        this.versao++;
                     }
 
                     findToCruz = true;
@@ -394,6 +406,11 @@ public class Simulacoes implements SimulacoesInt {
         }
 
         relatoriosMissao();
+        double vida = toCruz.getVida();
+        if (vida < 0) {
+            vida = 0;
+        }
+        this.vida_to = vida;
         return this;
     }
 
@@ -615,7 +632,7 @@ public class Simulacoes implements SimulacoesInt {
                 divisao.addToCruz(divisao_atual.getToCruz());
                 divisao_atual.removeToCruz();
 
-                addDivisaoTrajetoToCruz(divisao, toCruz.getVida());
+                addDivisaoTrajetoToCruz(divisao);
 
                 if (divisao.haveConfronto()) {
                     divisao.attackToCruz(this.inimigos_dead);
@@ -723,7 +740,7 @@ public class Simulacoes implements SimulacoesInt {
         try {
             divisao_nova = listDiv.find(op);
             divisao_nova.addToCruz(toCruz);
-            addDivisaoTrajetoToCruz(versao, divisao_nova, toCruz.getVida());
+            addDivisaoTrajetoToCruz(divisao_nova);
 
             if (divisao_nova.haveConfronto()) {
                 divisao_nova.attackToCruz(this.inimigos_dead);
@@ -745,9 +762,6 @@ public class Simulacoes implements SimulacoesInt {
     }
 
     /**
-     * Meter para retornar simulacao
-     *
-     *
      * Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
      * Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!
      * <p>
@@ -755,7 +769,7 @@ public class Simulacoes implements SimulacoesInt {
      * Fazre o teste que comentei linha 603
      */
     @Override
-    public Simulacoes modoManual(Edificio edificio) {
+    public Simulacoes modoManual() {
         edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
@@ -797,6 +811,12 @@ public class Simulacoes implements SimulacoesInt {
         }
 
         relatoriosMissao();
+        double vida = toCruz.getVida();
+
+        if (vida < 0) {
+            vida = 0;
+        }
+        this.vida_to = vida;
         return this;
     }
 
@@ -873,9 +893,9 @@ public class Simulacoes implements SimulacoesInt {
         System.out.println("Percurso feito pelo o ToCruz:");
         String percurso = " ";
         //Talvez mandar uma nova queue para o exportar
-        QueueADT<Trajeto> trajeto_temp = new LinkedQueue<Trajeto>();
+        QueueADT<Divisao> trajeto_temp = new LinkedQueue<Divisao>();
         while (!trajeto_to.isEmpty()) {
-            Trajeto trajeto = trajeto_to.dequeue();
+            Divisao trajeto = trajeto_to.dequeue();
             if (trajeto_to.isEmpty()) {
                 percurso = percurso + trajeto.toString();
             } else {
@@ -886,11 +906,13 @@ public class Simulacoes implements SimulacoesInt {
         }
 
         System.out.println(percurso);
-        exportarMissao(trajeto_temp);
+        this.trajeto_to = trajeto_temp;
+        //exportarMissao(trajeto_temp);
     }
 
-    private void exportarMissao(QueueADT<Trajeto> trajeto) {
-        QueueADT<QueueADT<Trajeto>> trajetoQueue = new LinkedQueue<>();
+   /*
+   *  private void exportarMissao(QueueADT<Divisao> trajeto) {
+        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
         trajetoQueue.enqueue(trajeto);
         //ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
         String path = "./Jsons/Export/";
@@ -909,12 +931,15 @@ public class Simulacoes implements SimulacoesInt {
         path += name_file;
         //exportar.exportarDados(path);
     }
+   * */
 
     @Override
     public String toString() {
-        return "Missao{" +
-                "cod_missao='" + cod_missao + '\'' +
-                ", versao=" + versao +
+        return "Simulacoes{" +
+                "versao_simulacao=" + versao_simulacao +
+                ", trajeto_to=" + trajeto_to +
+                ", inimigos_dead=" + inimigos_dead +
+                ", vida_to=" + vida_to +
                 ", edificio=" + edificio +
                 '}';
     }
@@ -929,12 +954,29 @@ public class Simulacoes implements SimulacoesInt {
             return false;
         }
 
-        Missao missao = (Missao) o;
-        return Objects.equals(cod_missao, missao.cod_missao);
+        Simulacoes that = (Simulacoes) o;
+        return versao_simulacao == that.versao_simulacao && Double.compare(vida_to, that.vida_to) == 0 && Objects.equals(trajeto_to, that.trajeto_to) && Objects.equals(edificio, that.edificio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(cod_missao);
+        return Objects.hash(versao_simulacao, trajeto_to, vida_to, edificio);
+    }
+
+    @Override
+    public int compareTo(Simulacoes o) {
+        if(this.vida_to > o.vida_to) {
+            return 1;
+        } else if(this.vida_to < o.vida_to) {
+            return -1;
+        } else {
+            if(this.versao_simulacao > o.versao_simulacao) {
+                return 1;
+            } else if(this.versao_simulacao < o.versao_simulacao) {
+                return -1;
+            }
+        }
+
+        return 0;
     }
 }
