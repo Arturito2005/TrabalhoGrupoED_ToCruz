@@ -13,17 +13,33 @@ public class Menu {
 
     public static void main(String[] args) throws IOException {
         Missao missao = new Missao();
-        //ImportarDados imp = new ImportarDados();
         ImportarMapa importarMapa = new ImportarMapa();
-        String path_default = "./Jsons/Import/";
-        missao = importarMapa.gerarMapa(path);
-
+        String path_name = "./Jsons/Import/";
+        String name_file = "";
         Scanner sc = new Scanner(System.in);
-        int op = -1;
 
         do {
-            System.out.println("1- Modo Manual");
-            System.out.println("2- Modo automárico");
+            System.out.print("Introduza o nome do ficheiro a importar -->");
+
+            try {
+                name_file = sc.nextLine();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
+        } while (path_name.equals(""));
+
+        path_name += name_file;
+        missao = importarMapa.gerarMapa(path_name);
+        int op = -1;
+
+        /*
+        * Pode ser necessario trocar a ordem, do Modo com o Jogo, porque o Jogo é o antigo modo automatico
+        * */
+        do {
+            System.out.println("1 - Modo Manual");
+            System.out.println("2 - Modo automático");
+            System.out.println("3 - Jogo automático");
             System.out.println("Introduza o modo do jogo -->");
             try {
                 op = sc.nextInt();
@@ -31,7 +47,7 @@ public class Menu {
                 System.out.println("Numero inválido!");
                 sc.next();
             }
-        } while (op < 0 || op > 2);
+        } while (op < 0 || op > 3);
 
         switch (op) {
             case 1: {
@@ -39,6 +55,9 @@ public class Menu {
                 break;
             } case 2: {
                 missao.modoAutomatico();
+                break;
+            } case 3: {
+                missao.jogoAutomatico();
                 break;
             } default: {
                 throw new InvalidOptionException("Opção selecionada é invalida");

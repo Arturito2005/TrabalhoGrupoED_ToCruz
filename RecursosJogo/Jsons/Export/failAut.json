@@ -1,0 +1,14 @@
+{"cod-missao":"pata de coelho","simulacoes":
+[{"divisao":"Escada de Emergência","versao":1},
+  {"divisao":"Escritório 1","versao":2},
+  {"divisao":"Corredor 1","versao":3},
+  {"divisao":"Escada 2","versao":4},
+  {"divisao":"Corredor 1","versao":5},
+  {"divisao":"Escada 3","versao":6},
+  {"divisao":"Hall","versao":7},
+  {"divisao":"Segurança","versao":8},
+  {"divisao":"Corredor 2","versao":9},
+  {"divisao":"WC","versao":10},
+  {"divisao":"Corredor 2","versao":11},
+  {"divisao":"Escada 4","versao":12}],
+  "tot_versoes":12}

@@ -1,12 +1,12 @@
 package Graph;
 
+import ArrayList.ArrayUnorderedList;
+import Interfaces.HeapADT;
 import Interfaces.NetworkADT;
+import Interfaces.UnorderedListADT;
 import LinkedTree.LinkedHeap;
 import java.util.Iterator;
 
-/*
-* Só falta implementar o de dijsktra e acabar o gerardor da menor arvore
-* */
 public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> implements NetworkADT<T> {
 
     protected double[][] adjMatrix;
@@ -14,6 +14,30 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     public NetworkMatrizAdjacencia() {
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
+        for(int i = 0; i < DEFAULT_CAPACITY; i++) {
+            for(int j = 0; j < DEFAULT_CAPACITY; j++) {
+                adjMatrix[i][j] = Double.POSITIVE_INFINITY;
+            }
+        }
+    }
+
+    protected void expandadweightMatrix() {
+        super.expandCapacity();
+
+        double[][] tempMatriz = new double[this.vertices.length * 2][this.vertices.length * 2];
+
+        for (int i = 0; i < tempMatriz.length; i++) {
+            for (int j = 0; j < tempMatriz.length; j++) {
+                tempMatriz[i][j] = Double.POSITIVE_INFINITY;
+            }
+        }
+
+        for (int i = 0; i < this.adjMatrix.length; i++) {
+            System.arraycopy(this.adjMatrix[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
+        }
+
+
+        this.adjMatrix = tempMatriz;
     }
 
     @Override
@@ -21,177 +45,106 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         if(this.vertices.length == this.numVertices) {
             expandadweightMatrix();
         }
+
         super.addVertex(vertex);
-    }
-
-    //Testar
-    protected void expandadweightMatrix() {
-        super.expandCapacity();
-       
-        double[][] tempMatriz = new double[this.vertices.length * 2][this.vertices.length * 2];
-
-        for (int i = 0; i < this.adjMatrix.length; i++) {
-            System.arraycopy(this.adjMatrix[i], 0, tempMatriz[i], 0, this.adjMatrix[i].length);
-        }
-
-        for (int i = this.adjMatrix.length; i < tempMatriz.length; i++) {
-            for (int j = this.adjMatrix.length; j < tempMatriz.length; j++) {
-                tempMatriz[i][j] = Double.NEGATIVE_INFINITY;
-            }
-        }
-
-        this.adjMatrix = tempMatriz;
     }
 
     @Override
     public void addEdge(T vertex1, T vertex2, double weight) {
-        addEdge(getIndex(vertex1), getIndex(vertex2), weight);
-    }
+        int index1 = getIndex(vertex1);
+        int index2 = getIndex(vertex2);
 
-    public void addEdge(int index1, int index2, double weight) {
         if (indexIsValid(index1) && indexIsValid(index2)) {
             this.adjMatrix[index1][index2] = weight;
             this.adjMatrix[index2][index1] = weight;
         }
     }
 
-    /*
-    * Usado para atualizar o dano que o ToCruz toma se entrar numa sala.
-    * O To Cruz só leva dano se não matar o inimigo com instaKill
-    * */
-    protected int getNoMiniumDistance(double[] distances, boolean[] visited) {
-        double minDistance = Double.POSITIVE_INFINITY;
-        int minIndex = -1;
+    @Override
+    public Iterator<T> iteratorNextVertexs(T startVertex) {
+        int index = getIndex(startVertex);
 
-        for (int i = 0; i < distances.length; i++) {
-            if (!visited[i] && distances[i] < minDistance) {
-                minDistance = distances[i];
-                minIndex = i;
+        if (!indexIsValid(index)) {
+            return new ArrayUnorderedList<T>().iterator();
+        }
+
+        UnorderedListADT<T> adjacentVertices = new ArrayUnorderedList<T>();
+
+        for (int i = 0; i < numVertices; i++) {
+            if (adjMatrix[index][i] != Double.POSITIVE_INFINITY) {
+                adjacentVertices.addToRear(vertices[i]);
             }
         }
 
-        return minIndex;
+        return adjacentVertices.iterator();
     }
-
     /**
-     * Não funciona!!!!!!!!!!!!!
+     * Aqui em principio só deve retornar a distancia e depois ter outro igual só para o caminho, ver com o Xico
+     *
      *
      * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas
      * no caminho. Em caso de empate no custo, o caminho com menos arestas é priorizado.
      *
-     * @param vertex1 O vértice de origem.
-     * @param vertex2 O vértice de destino.
+     * @param startVertex O vértice de origem.
+     * @param finalVertex O vértice de destino.
      * @return O custo do caminho mais curto entre os dois vértices. Retorna -1 se não houver caminho entre eles.
      */
     @Override
-    public double shortestPathWeight(T vertex1, T vertex2) {
-        int start_index = getIndex(vertex1);
-        int final_index = getIndex(vertex2);
+    public double shortestPathWeight(T startVertex, T finalVertex) {
+        int startIndex = getIndex(startVertex);
+        int finalIndex = getIndex(finalVertex);
 
-        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
-            return -1;
+        if (!indexIsValid(startIndex) || !indexIsValid(finalIndex)) {
+            return Double.MAX_VALUE;
         }
 
-        double[] custos = new double[numVertices];
+        double[] distances = new double[numVertices];
+        int[] num_arestas = new int[numVertices];
+        int[] predecessors = new int[numVertices];
         boolean[] visited = new boolean[numVertices];
-        int[] comprimento = new int[numVertices];
+        HeapADT<T> minHeap = new LinkedHeap<>();
 
         for (int i = 0; i < numVertices; i++) {
-            custos[i] = Double.POSITIVE_INFINITY;
-            comprimento[i] = Integer.MAX_VALUE;
-            visited[i] = false;
+            distances[i] = Double.MAX_VALUE;
+            predecessors[i] = -1;
+            num_arestas[i] = -1;
         }
 
-        comprimento[start_index] = 0;
-        custos[start_index] = 0;
-        for (int count = 0; count < numVertices - 1; count++) {
-            int u = getNoMiniumDistance(custos, visited);
-            if (u == -1) {
-                break;
-            }
+        distances[startIndex] = 0;
+        num_arestas[startIndex] = 0;
+        minHeap.addElement(startVertex);
 
-            visited[u] = true;
-            for (int v = 0; v < numVertices; v++) {
-                if (!visited[v] && adjMatrix[u][v] >= 0) {
-                    double newCusto = custos[u] + adjMatrix[u][v];
+        while (!minHeap.isEmpty()) {
+            T currentVertex = minHeap.removeMin();
+            int currentIndex = getIndex(currentVertex);
 
-                    if (newCusto < custos[v] || (newCusto == custos[v] && comprimento[u] + 1 < comprimento[v])) {
-                        custos[v] = newCusto;
-                        comprimento[v] = comprimento[u] + 1;
+            if (indexIsValid(currentIndex) && !visited[currentIndex]) {
+                visited[currentIndex] = true;
+
+                Iterator<T> itr = this.iteratorNextVertexs(currentVertex);
+                while (itr.hasNext()) {
+                    T element = itr.next();
+                    int neighborIndex = getIndex(element);
+
+                    if (indexIsValid(neighborIndex) && !visited[neighborIndex]) {
+                        double newDistance = distances[currentIndex] + this.adjMatrix[currentIndex][neighborIndex];
+
+                        if (newDistance < distances[neighborIndex]) {
+                            distances[neighborIndex] = newDistance;
+                            predecessors[neighborIndex] = currentIndex;
+                            minHeap.addElement(element);
+                        }
                     }
                 }
             }
         }
 
-        if (custos[final_index] == Double.POSITIVE_INFINITY) {
-            return -1;
+        if (distances[finalIndex] == Double.MAX_VALUE) {
+            return Double.MAX_VALUE;
         }
 
-        double tot_custos = 0;
-        double tot_comp = 0;
-        for(int i = start_index; i < final_index; i++ ) {
-            tot_custos += custos[i];
-            tot_comp += comprimento[i];
-        }
-
-        return custos[final_index] + comprimento[final_index];
+        return distances[finalIndex] + num_arestas[finalIndex];
     }
-
-    /*
-    * public double shortestPathWeight2(T vertex1, T vertex2) {
-        int start_index = getIndex(vertex1);
-        int final_index = getIndex(vertex2);
-
-        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
-            return -1;
-        }
-
-        double[] custos = new double[numVertices];
-        boolean[] visited = new boolean[numVertices];
-        int[] comprimento = new int[numVertices];
-
-        for (int i = 0; i < numVertices; i++) {
-            custos[i] = Double.POSITIVE_INFINITY;
-            comprimento[i] = Integer.MAX_VALUE;
-            visited[i] = false;
-        }
-
-        comprimento[start_index] = 0;
-        custos[start_index] = 0;
-        for (int count = 0; count < numVertices - 1; count++) {
-            int u = getNoMiniumDistance(custos, visited);
-            if (u == -1) {
-                break;
-            }
-
-            visited[u] = true;
-            for (int v = 0; v < numVertices; v++) {
-                if (!visited[v] && adjMatrix[u][v] >= 0) {
-                    double newCusto = custos[u] + adjMatrix[u][v];
-
-                    if (newCusto < custos[v] || (newCusto == custos[v] && comprimento[u] + 1 < comprimento[v])) {
-                        custos[v] = newCusto;
-                        comprimento[v] = comprimento[u] + 1;
-                    }
-                }
-
-            }
-        }
-
-        if (custos[final_index] == Double.POSITIVE_INFINITY) {
-            return -1;
-        }
-
-        double tot_custos = 0;
-        double tot_comp = 0;
-        for(int i = start_index; i < final_index; i++ ) {
-            tot_custos += custos[i];
-            tot_comp += comprimento[i];
-        }
-
-        return custos[final_index] + comprimento[final_index];
-    }
-    * */
 
     @Override
     public Iterator<T> iterator() {

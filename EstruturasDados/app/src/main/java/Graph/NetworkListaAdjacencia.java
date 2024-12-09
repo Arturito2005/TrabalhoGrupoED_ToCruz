@@ -21,11 +21,9 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
             this.listaAdj[getIndex(vertex2)].add(vertex1);
         }
     }
-    
-    //Fazer 1º o caminho mais curto para o alvo e depois fazer ou shortestPathWeight do alvo para uma saida
+
     @Override
     public double shortestPathWeight(T vertex1, T vertex2) {
-
         /*
         * ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
         int start_index = getIndex(vertex1);
@@ -90,6 +88,11 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
         return resultList.iterator();
         * */
         return 0;
+    }
+
+    @Override
+    public Iterator<T> iteratorNextVertexs(T startVertex) {
+        return null;
     }
 
     @Override

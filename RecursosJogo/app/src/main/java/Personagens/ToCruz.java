@@ -2,12 +2,12 @@ package Personagens;
 
 import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;
-import Exceptions.WrongTypeItem;
+import Exceptions.UsedColectedItemException;
+import Exceptions.WrongTypeItemException;
 import Interfaces.StackADT;
-import Interfaces.ToCruzItems;
+import Interfaces.ToCruzIt;
 import Items.ItemCura;
 import Items.TypeItemCura;
-import Stacks.ArrayStack;
 import Stacks.LinkedStack;
 
 /**
@@ -16,7 +16,7 @@ import Stacks.LinkedStack;
  * @author Artur
  * @version 1.0
  */
-public class ToCruz extends Personagem implements ToCruzItems {
+public class ToCruz extends Personagem implements ToCruzIt {
 
     private StackADT<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
 
@@ -113,16 +113,20 @@ public class ToCruz extends Personagem implements ToCruzItems {
      * @param item O item de cura a ser guardado.
      * @return Uma mensagem indicando o estado da operação (guardado, usado ou descartado).
      * @throws NullPointerException Se o item for nulo.
-     * @throws WrongTypeItem        Se o tipo do item não for um kit de vida.
+     * @throws WrongTypeItemException        Se o tipo do item não for um kit de vida.
      */
     @Override
-    public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem, AllLifeException {
+    public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItemException, AllLifeException, UsedColectedItemException {
         if (item == null) {
             throw new NullPointerException("O kit medico a guardar na mochila não pode ser null");
         }
 
         if (item.getType() != TypeItemCura.KIT_VIDA) {
-            throw new WrongTypeItem("O tipo de item de cura a guardar a mochila é do tipo Kit de vida");
+            throw new WrongTypeItemException("O tipo de item de cura a guardar a mochila é do tipo Kit de vida");
+        }
+
+        if(item.isCollected()) {
+            throw new UsedColectedItemException("O item a usar já foi utilizado anteriormente pelo o To Cruz");
         }
 
         if (this.mochila.size() == 3) {
@@ -150,7 +154,8 @@ public class ToCruz extends Personagem implements ToCruzItems {
     @Override
     public ItemCura usarKit() throws EmptyCollectionException {
         String temp = "";
-        ItemCura kit = null;
+        ItemCura kit;
+
         if (!this.mochila.isEmpty()) {
             if (this.getVida() == 100) {
                 throw new AllLifeException("Não é possível usar o kit médico, porque a vida está cheia");
@@ -171,12 +176,16 @@ public class ToCruz extends Personagem implements ToCruzItems {
      * @param item O item do tipo colete a ser usado.
      * @return Uma mensagem indicando que o colete foi usado.
      * @throws NullPointerException Se o colete for nulo.
-     * @throws WrongTypeItem        Se o item não for do tipo colete.
+     * @throws WrongTypeItemException        Se o item não for do tipo colete.
      */
     @Override
-    public ItemCura usarItem(ItemCura item) throws NullPointerException {
+    public ItemCura usarItem(ItemCura item) throws NullPointerException, UsedColectedItemException {
         if (item == null) {
             throw new NullPointerException("O item não pode ser nulo");
+        }
+
+        if(item.isCollected()) {
+            throw new UsedColectedItemException("O item a usar já foi utilizado anteriormente pelo o To Cruz");
         }
 
         try {

@@ -3,6 +3,7 @@ package Interfaces;
 /**
  * Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.
  *
+ * @author Artur Pinto
  * @author Francisco
  * @version 1.0
  */
@@ -36,5 +37,8 @@ public interface DivisaoIt {
      */
     public boolean isToCruzInExit();
 
+    /**
+     * Faz o desenho na consola da divisão
+     * */
     public void drawnDivisao();
 }

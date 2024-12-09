@@ -2,8 +2,8 @@ package Interfaces;
 
 import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;
-import Exceptions.WrongTypeItem;
-import Items.Item;
+import Exceptions.UsedColectedItemException;
+import Exceptions.WrongTypeItemException;
 import Items.ItemCura;
 
 /**
@@ -12,8 +12,7 @@ import Items.ItemCura;
  * @author Artur
  * @version 1.0
  */
-public interface ToCruzItems {
-
+public interface ToCruzIt {
 
     public boolean mochilaIsFull();
 
@@ -24,9 +23,9 @@ public interface ToCruzItems {
      * @param item O item de cura que será armazenado.
      * @return Uma mensagem indicando o sucesso ou falha ao guardar o item.
      * @throws NullPointerException Se o item fornecido for nulo.
-     * @throws WrongTypeItem        Se o item fornecido não for do tipo kit de vida.
+     * @throws WrongTypeItemException        Se o item fornecido não for do tipo kit de vida.
      */
-    public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItem, AllLifeException;
+    public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItemException, AllLifeException, UsedColectedItemException;
 
     /**
      * Método para usar um kit de cura armazenados na mochila, o metodo retorna o ItemUsado
@@ -43,5 +42,5 @@ public interface ToCruzItems {
      * @return Uma mensagem indicando o sucesso ou falha ao usar o item.
      * @throws NullPointerException Se o item fornecido for nulo.
      */
-    public ItemCura usarItem(ItemCura item) throws NullPointerException;
+    public ItemCura usarItem(ItemCura item) throws NullPointerException, UsedColectedItemException;
 }
