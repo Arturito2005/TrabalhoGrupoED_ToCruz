@@ -10,13 +10,13 @@ import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Alvo;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Mapa.Trajeto;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import ArrayList.ArrayUnordered;
 import Exportar.ExportarDado;
-
 import java.util.*;
 
 /**
@@ -35,7 +35,7 @@ public class Missao implements MissaoInt {
 
     private Edificio edificio;
 
-    private QueueADT<Divisao> trajeto_to;
+    private QueueADT<Trajeto> trajeto_to;
 
     private StackADT<Inimigo> inimigos_dead;
 
@@ -55,11 +55,8 @@ public class Missao implements MissaoInt {
         this.inimigos_dead = new LinkedStack<>();
     }
 
-    /*
-     * Adiciona um nova divisão ao percurso manual do To Cruz.
-     * */
-    private void addDivisaoTrajetoToCruz(Divisao divisao) {
-        this.trajeto_to.enqueue(divisao);
+    private void addDivisaoTrajetoToCruz(long versao, Divisao divisao, double pontos_vida) {
+        this.trajeto_to.enqueue(new Trajeto(versao, divisao, pontos_vida));
     }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
@@ -152,7 +149,7 @@ public class Missao implements MissaoInt {
 
         //3º Encontrar o caminho mais curto para um item
         best_entr.addToCruz(toCruz);
-        trajeto_to.enqueue(best_entr);
+        addDivisaoTrajetoToCruz(versao, best_entr, toCruz.getVida());
 
         if (best_entr.haveConfronto()) {
             best_entr.attackToCruz(this.inimigos_dead);
@@ -177,21 +174,18 @@ public class Missao implements MissaoInt {
         Divisao divisao = divisao_atual;
 
         if (divisao_atual.haveConfronto()) {
-            //Posso tamvém chamar o Metodo que fiz
             if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
                 toCruz.usarKit();
             } else {
                 divisao_atual.attackToCruz(this.inimigos_dead);
             }
         } else {
-            //Ver se está parte está realmente bem
             Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
             Divisao best_div = null;
             double min = 0;
             double distance;
             int i = 0;
 
-            //Vê se o alvo já foi coletado se sim ele vai procurar por items ou saida (depois otimizar)
             if (!toCruz.isColectedAlvo()) {
                 while (itr.hasNext()) {
                     Divisao div = itr.next();
@@ -226,7 +220,7 @@ public class Missao implements MissaoInt {
 
             divisao = this.edificio.nextDivAutomaticToCruz(divisao_atual, best_div);
             divisao.addToCruz(toCruz);
-            this.trajeto_to.enqueue(divisao);
+            this.addDivisaoTrajetoToCruz(versao, divisao, toCruz.getVida());
             divisao_atual.removeToCruz();
 
             if (divisao.haveConfronto()) {
@@ -248,6 +242,8 @@ public class Missao implements MissaoInt {
      * Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
      * outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
      * e ter outro que apenas retorna o num_arestas
+     *
+     * Fazer o codigo para arestas na network
      */
     @Override
     public void modoAutomatico() {
@@ -271,21 +267,21 @@ public class Missao implements MissaoInt {
 
         double best_distance = Double.MAX_VALUE;
         double distance;
-        //double num_arestas_com = Double.MAX_VALUE;
-        //double num_arestas = 0;
+        double num_arestas_com = Double.MAX_VALUE;
+        double num_arestas = 0;
+
         for (Divisao div_entr : list_entradas) {
             distance = this.edificio.getShortestPath(div_entr, div_alvo);
 
-            /*if(distance == 0) {
+            if(distance == 0) {
                 best_distance = distance;
-               // num_arestas = getNumArestas();
+                num_arestas = this.edificio.getShortestPathNumArestas(div_entr, div_alvo);
+
                 if(num_arestas < num_arestas_com) {
                     best_div = div_entr;
                     num_arestas_com = num_arestas;
                 }
-
-            } else */
-            if (distance < best_distance) {
+            } else if (distance < best_distance) {
                 best_div = div_entr;
                 best_distance = distance;
             }
@@ -312,10 +308,21 @@ public class Missao implements MissaoInt {
 
             best_distance = Double.MAX_VALUE;
             best_div = null;
+            distance = 0;
+            num_arestas_com = Double.MAX_VALUE;
+            num_arestas = 0;
             for (Divisao div_entr : list_entradas) {
                 distance = this.edificio.getShortestPath(div_entr, div_alvo);
 
-                if (distance < best_distance) {
+                if(distance == 0) {
+                    best_distance = distance;
+                    num_arestas = this.edificio.getShortestPathNumArestas(div_entr, div_alvo);
+
+                    if(num_arestas < num_arestas_com) {
+                        best_div = div_entr;
+                        num_arestas_com = num_arestas;
+                    }
+                } else if (distance < best_distance) {
                     best_div = div_entr;
                     best_distance = distance;
                 }
@@ -356,6 +363,7 @@ public class Missao implements MissaoInt {
         boolean finishgame = false;
 
         BestStartToCruz(toCruz); //Ver se isto mete já o ToCruz na melhor divisao se sim alterar no modo manual se não alterar e meter como o manual
+        this.versao++;
         while (!finishgame) {
             //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
@@ -613,7 +621,7 @@ public class Missao implements MissaoInt {
                 divisao.addToCruz(divisao_atual.getToCruz());
                 divisao_atual.removeToCruz();
 
-                addDivisaoTrajetoToCruz(divisao);
+                addDivisaoTrajetoToCruz(versao, divisao, toCruz.getVida());
 
                 if (divisao.haveConfronto()) {
                     divisao.attackToCruz(this.inimigos_dead);
@@ -714,14 +722,14 @@ public class Missao implements MissaoInt {
                 System.out.println("Numero invalido!");
                 sc.next();
             }
-        } while (op < 0 || op > i);
+        } while (op < 0 || op > listDiv.size());
 
         Divisao divisao_nova = null;
 
         try {
             divisao_nova = listDiv.find(op);
             divisao_nova.addToCruz(toCruz);
-            addDivisaoTrajetoToCruz(divisao_nova);
+            addDivisaoTrajetoToCruz(versao, divisao_nova, toCruz.getVida());
 
             if (divisao_nova.haveConfronto()) {
                 divisao_nova.attackToCruz(this.inimigos_dead);
@@ -868,26 +876,26 @@ public class Missao implements MissaoInt {
         System.out.println("Percurso feito pelo o ToCruz:");
         String percurso = " ";
         //Talvez mandar uma nova queue para o exportar
-        QueueADT<Divisao> trajeto_temp = new LinkedQueue<Divisao>();
+        QueueADT<Trajeto> trajeto_temp = new LinkedQueue<Trajeto>();
         while (!trajeto_to.isEmpty()) {
-            Divisao div = trajeto_to.dequeue();
+            Trajeto trajeto = trajeto_to.dequeue();
             if (trajeto_to.isEmpty()) {
-                percurso = percurso + div.getName();
+                percurso = percurso + trajeto.toString();
             } else {
-                percurso = percurso + div.getName() + " --> ";
+                percurso = percurso + trajeto.toString() + " --> ";
             }
 
-            trajeto_temp.enqueue(div);
+            trajeto_temp.enqueue(trajeto);
         }
 
         System.out.println(percurso);
         exportarMissao(trajeto_temp);
     }
 
-    private void exportarMissao(QueueADT<Divisao> trajeto) {
-        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
+    private void exportarMissao(QueueADT<Trajeto> trajeto) {
+        QueueADT<QueueADT<Trajeto>> trajetoQueue = new LinkedQueue<>();
         trajetoQueue.enqueue(trajeto);
-        ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
+        //ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
         String path = "./Jsons/Export/";
         String name_file = "";
 
@@ -902,7 +910,7 @@ public class Missao implements MissaoInt {
         } while (name_file.equals(""));
 
         path += name_file;
-        exportar.exportarDados(path);
+        //exportar.exportarDados(path);
     }
 
     @Override

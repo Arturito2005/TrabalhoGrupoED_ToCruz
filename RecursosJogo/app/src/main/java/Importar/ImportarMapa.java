@@ -132,6 +132,7 @@ public class ImportarMapa implements Importar {
 
                     Divisao div = findDivisao(divisao);
                     div.addInimigo(new Inimigo(nome, poder));
+                    edificio.updateWeight(div, poder);
                 }
 
                 for (int i = 0; i < num_inimigos; i++) {

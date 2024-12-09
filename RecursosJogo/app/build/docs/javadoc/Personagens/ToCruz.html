@@ -91,12 +91,12 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ToCruz</span>
 <span class="extends-implements">extends <a href="Personagem.html" title="class in Personagens">Personagem</a>
-implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></span></div>
+implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></span></div>
 <div class="block">Classe que representa o personagem principal do jogo, ToCruz.</div>
 </div>
 </section>
@@ -249,7 +249,7 @@ implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfac
 <div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html#mochilaIsFull()">mochilaIsFull</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html#mochilaIsFull()">mochilaIsFull</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 </dl>
 </div>
 </section>
@@ -262,7 +262,7 @@ implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfac
 <div class="block">Metodo para verificar se a mochila contém pelo menos um kit.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html#mochilaTemKit()">mochilaTemKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html#mochilaTemKit()">mochilaTemKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 <dt>Returns:</dt>
 <dd>true se a mochila contiver pelo menos um item, false se estiver vazia.</dd>
 </dl>
@@ -275,21 +275,23 @@ implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfac
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">guardarKit</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
-<a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a>,
-<a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a></span></div>
+<a href="../Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a>,
+<a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a>,
+<a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></span></div>
 <div class="block">Método para guardar um kit médico na mochila.
  Caso a mochila esteja cheia, o personagem poderá usá-lo imediatamente se necessário.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html#guardarKit(Items.ItemCura)">guardarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html#guardarKit(Items.ItemCura)">guardarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>item</code> - O item de cura a ser guardado.</dd>
 <dt>Returns:</dt>
 <dd>Uma mensagem indicando o estado da operação (guardado, usado ou descartado).</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o item for nulo.</dd>
-<dd><code><a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></code> - Se o tipo do item não for um kit de vida.</dd>
+<dd><code><a href="../Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a></code> - Se o tipo do item não for um kit de vida.</dd>
 <dd><code><a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a></code></dd>
+<dd><code><a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -304,7 +306,7 @@ implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfac
  Apenas possível se houver kits na mochila e se a vida não estiver cheia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html#usarKit()">usarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html#usarKit()">usarKit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 <dt>Returns:</dt>
 <dd>Uma mensagem indicando o resultado da operação.</dd>
 <dt>Throws:</dt>
@@ -318,18 +320,20 @@ implements <a href="../Interfaces/ToCruzItems.html" title="interface in Interfac
 <h3>usarItem</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">usarItem</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
+<a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></span></div>
 <div class="block">Método para usar um item.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ToCruzItems.html#usarItem(Items.ItemCura)">usarItem</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzItems.html" title="interface in Interfaces">ToCruzItems</a></code></dd>
+<dd><code><a href="../Interfaces/ToCruzIt.html#usarItem(Items.ItemCura)">usarItem</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>item</code> - O item do tipo colete a ser usado.</dd>
 <dt>Returns:</dt>
 <dd>Uma mensagem indicando que o colete foi usado.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o colete for nulo.</dd>
-<dd><code><a href="../Exceptions/WrongTypeItem.html" title="class in Exceptions">WrongTypeItem</a></code> - Se o item não for do tipo colete.</dd>
+<dd><code><a href="../Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a></code> - Se o item não for do tipo colete.</dd>
+<dd><code><a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></code></dd>
 </dl>
 </div>
 </section>

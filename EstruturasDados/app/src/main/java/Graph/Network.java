@@ -12,17 +12,6 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
     }
 
     @Override
-    public void addEdge(T vertex1, T vertex2, double weight) {
-        super.addEdge(vertex1, vertex2, weight);
-        int index1 = getIndex(vertex1);
-        int index2 = getIndex(vertex2);
-
-        if (indexIsValid(index1) || indexIsValid(index2)) {
-
-        }
-    }
-
-    @Override
     public double getWeightEdge(T vertex, T vertex2) {
         int ind_vertex = getIndex(vertex);
         int ind_vertex2 = getIndex(vertex2);
@@ -42,9 +31,6 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         return weight;
     }
 
-    public double shortestPathWeight(T startVertex, T finalVertex) {
-        return super.shortestPathWeight(startVertex, finalVertex);
-    }
     @Override
     public void updateWeightEdge(T vertex, double weight) {
         int index1 = getIndex(vertex);
@@ -127,5 +113,62 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         }
 
         return listResult.iterator();
+    }
+
+    @Override
+    public double shortestPathArest(T startVertex, T finalVertex) {
+        int startIndex = getIndex(startVertex);
+        int finalIndex = getIndex(finalVertex);
+
+        if (!indexIsValid(startIndex) || !indexIsValid(finalIndex)) {
+            return Double.MAX_VALUE;
+        }
+
+        double[] distances = new double[numVertices];
+        int[] num_arestas = new int[numVertices];
+        int[] predecessors = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+        HeapADT<T> minHeap = new LinkedHeap<>();
+
+        for (int i = 0; i < numVertices; i++) {
+            distances[i] = Double.MAX_VALUE;
+            predecessors[i] = -1;
+            num_arestas[i] = -1;
+        }
+
+        distances[startIndex] = 0;
+        num_arestas[startIndex] = 0;
+        minHeap.addElement(startVertex);
+
+        while (!minHeap.isEmpty()) {
+            T currentVertex = minHeap.removeMin();
+            int currentIndex = getIndex(currentVertex);
+
+            if (indexIsValid(currentIndex) && !visited[currentIndex]) {
+                visited[currentIndex] = true;
+
+                Iterator<T> itr = this.iteratorNextVertexs(currentVertex);
+                while (itr.hasNext()) {
+                    T element = itr.next();
+                    int neighborIndex = getIndex(element);
+
+                    if (indexIsValid(neighborIndex) && !visited[neighborIndex]) {
+                        double newDistance = distances[currentIndex] + this.adjMatrix[currentIndex][neighborIndex];
+
+                        if (newDistance < distances[neighborIndex]) {
+                            distances[neighborIndex] = newDistance;
+                            predecessors[neighborIndex] = currentIndex;
+                            minHeap.addElement(element);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (distances[finalIndex] == Double.MAX_VALUE) {
+            return Double.MAX_VALUE;
+        }
+
+        return num_arestas[finalIndex];
     }
 }

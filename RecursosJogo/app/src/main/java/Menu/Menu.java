@@ -30,7 +30,7 @@ public class Menu {
         } while (path_name.equals(""));
 
         path_name += name_file;
-        missao = importarMapa.gerarMapa(path_name);
+        missao = importarMapa.gerarMapa(path);
         int op = -1;
 
         /*

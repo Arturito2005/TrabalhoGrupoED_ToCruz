@@ -89,12 +89,13 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="../Interfaces/Exportar.html" title="interface in Interfaces">Exportar</a></code></dd>
+<dd><code><a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ExportarDado</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../Interfaces/Exportar.html" title="interface in Interfaces">Exportar</a></span></div>
+implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></span></div>
+<div class="block">Classe responsável por exportar os dados de trajetos de simulações para um ficheiro JSON.</div>
 </div>
 </section>
 <section class="summary">
@@ -107,9 +108,11 @@ implements <a href="../Interfaces/Exportar.html" title="interface in Interfaces"
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long,Interfaces.QueueADT)" class="member-name-link">ExportarDado</a><wbr>(long&nbsp;versao,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,Interfaces.QueueADT)" class="member-name-link">ExportarDado</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
  Interfaces.QueueADT&lt;Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&gt;&nbsp;trajetosSimulacoes)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor da classe <a href="ExportarDado.html" title="class in Exportar"><code>ExportarDado</code></a>.</div>
+</div>
 </div>
 </section>
 </li>
@@ -127,7 +130,7 @@ implements <a href="../Interfaces/Exportar.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportarDados(java.lang.String)" class="member-name-link">exportarDados</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Metodo que permite exportar os dados do percurso do ToCruz, para um ficherio</div>
+<div class="block">Método responsável por exportar os dados para um ficheiro JSON.</div>
 </div>
 </div>
 </div>
@@ -147,11 +150,17 @@ implements <a href="../Interfaces/Exportar.html" title="interface in Interfaces"
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(long,Interfaces.QueueADT)">
+<section class="detail" id="&lt;init&gt;(java.lang.String,Interfaces.QueueADT)">
 <h3>ExportarDado</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ExportarDado</span><wbr><span class="parameters">(long&nbsp;versao,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ExportarDado</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
  Interfaces.QueueADT&lt;Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&gt;&nbsp;trajetosSimulacoes)</span></div>
+<div class="block">Construtor da classe <a href="ExportarDado.html" title="class in Exportar"><code>ExportarDado</code></a>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cod_missao</code> - Código da missão a ser exportada.</dd>
+<dd><code>trajetosSimulacoes</code> - Queue de trajetos simulados, onde cada trajeto é uma fila de divisões.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -168,13 +177,15 @@ implements <a href="../Interfaces/Exportar.html" title="interface in Interfaces"
 <h3>exportarDados</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportarDados</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/Exportar.html#exportarDados(java.lang.String)">Exportar</a></code></span></div>
-<div class="block">Metodo que permite exportar os dados do percurso do ToCruz, para um ficherio</div>
+<div class="block">Método responsável por exportar os dados para um ficheiro JSON.
+
+ Este método percorre a fila de trajetos simulados, gera o ficheiro JSON
+ contendo as divisões de cada trajeto e suas versões, e escreve o ficheiro no caminho fornecido.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/Exportar.html#exportarDados(java.lang.String)">exportarDados</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/Exportar.html" title="interface in Interfaces">Exportar</a></code></dd>
+<dd><code><a href="../Interfaces/ExportarInt.html#exportarDados(java.lang.String)">exportarDados</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>path</code> - o caminho para guardar o ficheiro</dd>
+<dd><code>path</code> - Caminho do ficheiro onde os dados serão exportados.</dd>
 </dl>
 </div>
 </section>

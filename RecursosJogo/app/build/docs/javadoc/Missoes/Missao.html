@@ -95,9 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Missao</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></span></div>
-<div class="block">Falta o turno do inimigo (corrigir)
- Falta o modo automatico (e testa-lo)
- Falta sugerir o caminho mais curto para o item ou alvo para o To Cruz
+<div class="block">Falta no updateWeight o weight total ser o dano que o ToCruz toma no total dos turnos todos (ver se realmente é para fazer isso)
  Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas
  <p>
  A nivel de testes só falta testar no modo manual a parte de o ToCruz entrar numa divisao com item</div>
@@ -136,16 +134,22 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.QueueADT<wbr>&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTrajeto_to()" class="member-name-link">getTrajeto_to</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Joga o jogo de forma automático</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoAutomatico()" class="member-name-link">modoAutomatico</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Mete o jogo a funcionar automaticamente.</div>
+<div class="block">Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
+ outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
+ e ter outro que apenas retorna o num_arestas
+
+ Fazer o codigo para arestas na network</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoManual()" class="member-name-link">modoManual</a>()</code></div>
@@ -200,26 +204,31 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getTrajeto_to()">
-<h3>getTrajeto_to</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</span>&nbsp;<span class="element-name">getTrajeto_to</span>()</div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="modoAutomatico()">
 <h3>modoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modoAutomatico</span>()</div>
-<div class="block">Mete o jogo a funcionar automaticamente.
- Ver se o turno do Inimigo funciona
- Mostrar o melhor caminho
- <p>
- Falta apenas testar, mas para isso é preciso o Dijkstra</div>
+<div class="block">Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
+ outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
+ e ter outro que apenas retorna o num_arestas
+
+ Fazer o codigo para arestas na network</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/MissaoInt.html#modoAutomatico()">modoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="jogoAutomatico()">
+<h3>jogoAutomatico</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">jogoAutomatico</span>()</div>
+<div class="block">Joga o jogo de forma automático</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/MissaoInt.html#jogoAutomatico()">jogoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
 </dl>
 </div>
 </section>
