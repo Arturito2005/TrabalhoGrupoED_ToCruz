@@ -8,11 +8,10 @@ import java.io.IOException;
 /**
  * Interface que define perimite importar e gerar o mapa do jogo.
  *
- * <p>A implementação de classes que utilizam esta interface deve fornecer
- * a lógica para carregar o mapa de missões a partir de um ficheiro localizado
- * no caminho fornecido.</p>
- *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public interface Importar {

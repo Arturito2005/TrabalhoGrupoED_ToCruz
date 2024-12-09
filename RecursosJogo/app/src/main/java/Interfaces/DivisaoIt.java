@@ -4,7 +4,9 @@ package Interfaces;
  * Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public interface DivisaoIt {

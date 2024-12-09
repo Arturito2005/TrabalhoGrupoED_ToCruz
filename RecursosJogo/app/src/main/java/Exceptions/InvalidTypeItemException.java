@@ -4,7 +4,9 @@ package Exceptions;
  * Exceção personalizada que representa uma tentativa de uso ou manipulação de um item de tipo inválido em um contexto específico.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class InvalidTypeItemException extends RuntimeException {

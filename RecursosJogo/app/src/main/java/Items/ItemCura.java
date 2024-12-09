@@ -3,7 +3,10 @@ package Items;
 /**
  * Classe que representa um item de cura no jogo.
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class ItemCura extends Item {
@@ -29,15 +32,6 @@ public class ItemCura extends Item {
         super();
         this.type = type;
         this.vida_recuperada = vida_recuperada;
-    }
-
-    /**
-     * Construtor padrão para criar um {@link ItemCura} com valores nulos ou zero para suas
-     * propriedades.
-     */
-    public ItemCura() {
-        this.type = null;
-        this.vida_recuperada = 0;
     }
 
     /**

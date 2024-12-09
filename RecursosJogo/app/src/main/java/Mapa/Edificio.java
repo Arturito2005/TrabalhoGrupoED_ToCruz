@@ -13,6 +13,7 @@ import java.util.Objects;
 /**
  * Classe que representa um edifício no jogo.
  *
+ * Comentar o que falta quando conseguir fazer o desenho do Mapa
  * @author Artur
  * @version 1.0
  */
@@ -55,6 +56,10 @@ public class Edificio implements EdificoInt {
      */
     public NetworkMatrizADT<Divisao> getPlantaEdificio() {
         return planta_edificio;
+    }
+
+    public int getNumDivisoes() {
+        return planta_edificio.size();
     }
 
     @Override
@@ -149,6 +154,9 @@ public class Edificio implements EdificoInt {
         System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
     }
 
+    /*
+    * Utilziar BFS OU DFS o que não em Order
+    * */
     public void drawMapa() {
         LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
