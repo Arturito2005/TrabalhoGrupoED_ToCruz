@@ -15,6 +15,7 @@ public class Menu {
         Missao missao = new Missao();
         //ImportarDados imp = new ImportarDados();
         ImportarMapa importarMapa = new ImportarMapa();
+        String path_default = "./Jsons/Import/";
         missao = importarMapa.gerarMapa(path);
 
         Scanner sc = new Scanner(System.in);

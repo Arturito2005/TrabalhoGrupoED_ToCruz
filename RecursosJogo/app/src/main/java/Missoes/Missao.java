@@ -292,7 +292,7 @@ public class Missao implements MissaoInt {
         while (!finishgame) {
             //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
-            LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
@@ -432,8 +432,7 @@ public class Missao implements MissaoInt {
                     toCruz.usarItem(item);
                 }
                 break;
-            }
-            case KIT_VIDA: {
+            } case KIT_VIDA: {
                 int op = -1;
 
                 if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
@@ -590,7 +589,7 @@ public class Missao implements MissaoInt {
     }
 
     private void turnoInimigo(Divisao divisao) {
-        LinearLinkedUnorderedList<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
+        UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
         for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
@@ -693,7 +692,7 @@ public class Missao implements MissaoInt {
         ToCruzEntrarEdificio(toCruz);
         while (!finishgame) {
             itrMapa = this.edificio.IteratorMapa();
-            LinearLinkedUnorderedList<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
@@ -724,8 +723,6 @@ public class Missao implements MissaoInt {
                     findToCruz = true;
                 }
             }
-
-
         }
 
         relatoriosMissao();

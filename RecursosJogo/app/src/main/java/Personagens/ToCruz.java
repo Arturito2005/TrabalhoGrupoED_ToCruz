@@ -20,7 +20,7 @@ public class ToCruz extends Personagem implements ToCruzItems {
 
     private StackADT<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
 
-    private boolean colectedAlvo = false;
+    private boolean colectedAlvo;
     /**
      * Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.
      */

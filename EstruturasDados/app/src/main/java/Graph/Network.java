@@ -2,11 +2,9 @@ package Graph;
 
 import ArrayList.ArrayUnordered;
 import ArrayList.ArrayUnorderedList;
-import Interfaces.ArrayUnorderedADT;
-import Interfaces.NetworkMatrizADT;
-import Interfaces.StackADT;
-import Interfaces.UnorderedListADT;
+import Interfaces.*;
 import LinkedList.LinearLinkedUnorderedList;
+import LinkedTree.LinkedHeap;
 import Stacks.LinkedStack;
 import java.util.Iterator;
 
@@ -49,7 +47,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         int index1 = getIndex(vertex1);
         int index2 = getIndex(vertex2);
 
-        if (indexIsValid(index1) && indexIsValid(index2)) {
+        if (indexIsValid(index1) || indexIsValid(index2)) {
             this.listAdj[index1].addToRear(vertex2);
             this.listAdj[index2].addToRear(vertex1);
         }
@@ -66,7 +64,7 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
     private double getWeightEdge(int vertex, int vertex2) {
         double weight = 0;
 
-        if(indexIsValid(vertex) && indexIsValid(vertex2)) {
+        if(indexIsValid(vertex) || indexIsValid(vertex2)) {
             weight = this.adjMatrix[vertex][vertex2];
         } else {
             weight = Double.POSITIVE_INFINITY;
@@ -174,6 +172,79 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         }
 
         return listaResult.iterator();
+    }
+
+    /*
+    * Nova tentativa
+    * */
+    public Iterator<T> shortestPath2(T startVertex, T finalVertex) {
+        UnorderedListADT<T> listResult = new LinearLinkedUnorderedList<>();
+        int startIndex = getIndex(startVertex);
+        int finalIndex = getIndex(finalVertex);
+
+        if (!indexIsValid(startIndex) || indexIsValid(finalIndex)) {
+            return listResult.iterator();
+        }
+
+        double[] distances = new double[numVertices];
+        int[] predecessors = new int[numVertices];
+        boolean[] visited = new boolean[numVertices];
+        HeapADT<T> minHeap = new LinkedHeap<>();
+
+        for (int i = 0; i < numVertices; i++) {
+            distances[i] = Double.MAX_VALUE;
+            predecessors[i] = -1;
+        }
+        distances[startIndex] = 0;
+        
+        minHeap.addElement(startVertex);
+
+        // Processar a fila de prioridades
+        while (!minHeap.isEmpty()) {
+            Edge<T> currentEdge = minHeap.removeMin();
+            T currentVertex = currentEdge.getVertex();
+            int currentIndex = getVertexIndex(currentVertex);
+
+            // Ignorar se o vértice já foi visitado
+            if (visited[currentIndex]) {
+                continue;
+            }
+
+            visited[currentIndex] = true; // Marcar como visitado
+
+            // Relaxar as arestas de todos os vizinhos
+            for (Edge<T> edge : listAdj[currentIndex]) {
+                T neighbor = edge.getVertex();
+                int neighborIndex = getVertexIndex(neighbor);
+
+                if (!visited[neighborIndex]) {
+                    double newDistance = distances[currentIndex] + edge.getWeight();
+
+                    // Se a nova distância for menor, atualize
+                    if (newDistance < distances[neighborIndex]) {
+                        distances[neighborIndex] = newDistance;
+                        predecessors[neighborIndex] = currentIndex;
+                        minHeap.addElement(new Edge<>(neighbor, newDistance));
+                    }
+                }
+            }
+        }
+
+        // Se o vértice de destino não for alcançável
+        if (distances[targetIndex] == Double.MAX_VALUE) {
+            return new LinearLinkedUnorderedList<T>().iterator(); // Retorna iterador vazio
+        }
+
+        // Reconstruir o menor caminho a partir dos predecessores
+        LinearLinkedUnorderedList<T> path = new LinearLinkedUnorderedList<>();
+        int step = targetIndex;
+
+        while (step != -1) {
+            path.addToFront(getVertex(step));
+            step = predecessors[step];
+        }
+
+        return path.iterator();
     }
 
 /*
