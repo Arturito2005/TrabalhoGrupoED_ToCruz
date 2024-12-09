@@ -2,6 +2,10 @@ package Personagens;
 
 /**
  * Esta classe representa um inimigo no jogo.
+ *
+ * @author Francisco
+ * @author Artur Pinto
+ * @version 1.0
  */
 public class Inimigo extends Personagem {
 
