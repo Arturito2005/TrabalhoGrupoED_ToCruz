@@ -26,6 +26,10 @@ public class Missao implements MissoesInt {
         this.edificio = new Edificio();
     }
 
+    /*
+    Esta branch pode ter erros na simulação de eu estar num metodo em vez de mandar o edificio fazer "new Edificio"
+    e de não ter o compareTo na Missao
+    * */
     @Override
     public void modoManual() {
         Scanner sc = new Scanner(System.in);
