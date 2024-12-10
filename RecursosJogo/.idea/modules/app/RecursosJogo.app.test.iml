@@ -12,7 +12,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../app/libs/EstruturasDados.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
