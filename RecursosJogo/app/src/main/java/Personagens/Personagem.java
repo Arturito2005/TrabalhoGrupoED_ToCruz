@@ -5,26 +5,43 @@ import java.util.Objects;
 /**
  * Classe abstrata que representa cada personagem no jogo
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ *
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public abstract class Personagem {
-    private static int ID_PERSONAGEM_CONT = 0; //Variável estática para controlar o ID único para cada personagem.
+    /** Variável estática para controlar o ID único para cada personagem. */
+    private static int ID_PERSONAGEM_CONT = 0;
 
-    private static final int DEFAULT_VIDA = 100; //Variável estasticas para definir um valor default da vida do personagem
+    /** Valor padrão para a quantidade de vida de um personagem. */
+    private static final int DEFAULT_VIDA = 100;
 
-    private static final int DEFAULT_PODER = 40; //Variável estasticas para definir um valor default do poder do personagem
+    /** Valor padrão para o poder de um personagem. */
+    private static final int DEFAULT_PODER = 40;
 
-    private int id_personagem; //Identificador único de cada personagem.
+    /** Identificador único de cada personagem. */
+    private int id_personagem;
 
-    private String nome;  //Nome do personagem.
+    /** Nome do personagem. */
+    private String nome;
 
-    private double vida; //Quantidade de vida que o personagem possui.
+    /** Quantidade de vida que o personagem possui. */
+    private double vida;
 
-    private double poder; //Poder do personagem.
+    /** Poder do personagem. */
+    private double poder;
 
     /**
-     * Construtor principal com todos os atributos.
+     * Construtor principal que inicializa todos os atributos do personagem.
+     *
+     * @param id_personagem Identificador único do personagem.
+     * @param nome Nome do personagem.
+     * @param vida Quantidade inicial de vida do personagem.
+     * @param poder Quantidade inicial de poder do personagem.
      */
     public Personagem(int id_personagem, String nome, double vida, double poder) {
         this.id_personagem = id_personagem;
@@ -34,7 +51,9 @@ public abstract class Personagem {
     }
 
     /**
-     * Construtor com nome e divisão, usa os valores padrão para vida e poder.
+     * Construtor que inicializa o personagem com nome e utiliza valores padrão para vida e poder.
+     *
+     * @param nome Nome do personagem.
      */
     public Personagem(String nome) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
@@ -44,7 +63,10 @@ public abstract class Personagem {
     }
 
     /**
-     * Construtor com nome, poder e divisão, usa o valor padrão para vida.
+     * Construtor que inicializa o personagem com nome e poder, e utiliza o valor padrão para vida.
+     *
+     * @param nome Nome do personagem.
+     * @param poder Quantidade inicial de poder do personagem.
      */
     public Personagem(String nome, double poder) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
@@ -53,6 +75,11 @@ public abstract class Personagem {
         this.poder = poder;
     }
 
+    /**
+     * Retorna o identificador único do personagem.
+     *
+     * @return O identificador único do personagem.
+     */
     public int getId_personagem() {
         return id_personagem;
     }
@@ -120,6 +147,12 @@ public abstract class Personagem {
                 ", poder=" + this.poder;
     }
 
+    /**
+     * Compara dois personagens com base no ID ou no nome.
+     *
+     * @param o O objeto a ser comparado.
+     * @return {@code true} se os personagens são iguais, caso contrário {@code false}.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -137,6 +170,11 @@ public abstract class Personagem {
         return Objects.equals(nome, pers.nome);
     }
 
+    /**
+     * Retorna o código hash do personagem com base no nome.
+     *
+     * @return O código hash do personagem.
+     */
     @Override
     public int hashCode() {
         return Objects.hashCode(nome);

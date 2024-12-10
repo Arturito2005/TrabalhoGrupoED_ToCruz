@@ -14,8 +14,6 @@ import java.util.Scanner;
 public class Missao implements MissaoInt {
     private static Scanner sc = new Scanner(System.in);
 
-    private static int TOT_VERSOES = 0;
-
     private String cod_versao;
 
     private long versao;
@@ -40,22 +38,6 @@ public class Missao implements MissaoInt {
         this.edificio = new Edificio();
         this.simulacoes = new LinearLinkedOrderedList<>();
     }
-
-
-/*
-*     public Missao(String cod_versao, long versao, Edificio edificio, OrderedListADT<Simulacoes> simulacoes) {
-        this.cod_versao = cod_versao;
-        this.versao = versao;
-        OrderedListADT<Simulacoes> tempSimulacoes = new LinearLinkedOrderedList<>();
-        Edificio tempEdifico = new Edificio(edificio.getId(), edificio.getName(), edificio.getPlantaEdificio());
-
-        for(Simulacoes simulacao: simulacoes) {
-            Simulacoes tempSimulacao = new Simulacoes();
-            simulacoes.add(tempSimulacao);
-        }
-
-    }
-* */
 
     public String getCod_versao() {
         return cod_versao;
@@ -85,7 +67,6 @@ public class Missao implements MissaoInt {
         Simulacoes simula;
 
         do {
-
             System.out.println("Começar simulação");
             System.out.println("0 - Sair");
             System.out.println("1 - Jogar");
@@ -109,39 +90,12 @@ public class Missao implements MissaoInt {
         for (Simulacoes simulacao : simulacoes) {
             System.out.println(simulacao.toString());
         }
-
-        //Exportar Simulacoes
-
     }
 
     /*Fazer xico com base no outro exportar*/
     private void exportarMissao() {
 
     }
-
-    /*
-    *  private void exportarMissao(QueueADT<Divisao> trajeto) {
-        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
-        trajetoQueue.enqueue(trajeto);
-        //ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
-        String path = "./Jsons/Export/";
-
-       String name_file = "";
-
-        do {
-            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
-            try {
-                name_file = sc.nextLine();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
-        } while (name_file.equals(""));
-
-        path += name_file;
-        //exportar.exportarDados(path);
-    }
-   * */
 
     @Override
     public void modoAutomatico() {

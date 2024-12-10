@@ -95,10 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Missao</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></span></div>
-<div class="block">Falta no updateWeight o weight total ser o dano que o ToCruz toma no total dos turnos todos (ver se realmente é para fazer isso)
- Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas
- <p>
- A nivel de testes só falta testar no modo manual a parte de o ToCruz entrar numa divisao com item</div>
+<div class="block">Dar deepCopy das divisoes para não ser diretamente modificado o edificio das divisoes</div>
 </div>
 </section>
 <section class="summary">
@@ -113,7 +110,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Missao</a>()</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,long,Mapa.Edificio)" class="member-name-link">Missao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,long,Mapa.Edificio)" class="member-name-link">Missao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_versao,
  long&nbsp;versao,
  <a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a>&nbsp;edificio)</code></div>
 <div class="col-last odd-row-color">&nbsp;</div>
@@ -131,41 +128,41 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCod_versao()" class="member-name-link">getCod_versao</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEdificio()" class="member-name-link">getEdificio</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.OrderedListADT<wbr>&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulacoes()" class="member-name-link">getSimulacoes</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Executa a missão automaticamente até o final.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoAutomatico()" class="member-name-link">modoAutomatico</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Joga o jogo de forma automático</div>
+<div class="block">Inicia o modo automático da missão.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoAutomatico()" class="member-name-link">modoAutomatico</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoManual()" class="member-name-link">modoManual</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
- outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
- e ter outro que apenas retorna o num_arestas
-
- Fazer o codigo para arestas na network</div>
+<div class="block">Inicia o modo manual da missão.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoManual()" class="member-name-link">modoManual</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#viewSimulacoes()" class="member-name-link">viewSimulacoes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
- Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+<div class="block">Visualiza as simulações disponíveis para a missão.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 </div>
 </div>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
-<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
+<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
 </section>
 </li>
 </ul>
@@ -181,7 +178,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <section class="detail" id="&lt;init&gt;(java.lang.String,long,Mapa.Edificio)">
 <h3>Missao</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Missao</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Missao</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_versao,
  long&nbsp;versao,
  <a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a>&nbsp;edificio)</span></div>
 </div>
@@ -204,15 +201,69 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="getCod_versao()">
+<h3>getCod_versao</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getCod_versao</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getSimulacoes()">
+<h3>getSimulacoes</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.OrderedListADT&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</span>&nbsp;<span class="element-name">getSimulacoes</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getEdificio()">
+<h3>getEdificio</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a></span>&nbsp;<span class="element-name">getEdificio</span>()</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="viewSimulacoes()">
+<h3>viewSimulacoes</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">viewSimulacoes</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/MissaoInt.html#viewSimulacoes()">MissaoInt</a></code></span></div>
+<div class="block">Visualiza as simulações disponíveis para a missão.
+ Este método exibe informações ou resultados de simulações realizadas pelo o ToCruz
+ ordenadas pelo os pontos de vida que o mesmo terminou a missão.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/MissaoInt.html#viewSimulacoes()">viewSimulacoes</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="modoManual()">
+<h3>modoManual</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modoManual</span>()</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/MissaoInt.html#modoManual()">MissaoInt</a></code></span></div>
+<div class="block">Inicia o modo manual da missão.
+ No modo manual, o jogador controla diretamente as ações ou decisões durante a missão.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/MissaoInt.html#modoManual()">modoManual</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="modoAutomatico()">
 <h3>modoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modoAutomatico</span>()</div>
-<div class="block">Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
- outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
- e ter outro que apenas retorna o num_arestas
-
- Fazer o codigo para arestas na network</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/MissaoInt.html#modoAutomatico()">MissaoInt</a></code></span></div>
+<div class="block">Inicia o modo automático da missão.
+ No modo automático, é indicado ao To Cruz qual o melhor caminho que ele deve realizar
+ para chegar ao Alvo e se possível o caminho para voltar com vida.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/MissaoInt.html#modoAutomatico()">modoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
@@ -225,63 +276,12 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>jogoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">jogoAutomatico</span>()</div>
-<div class="block">Joga o jogo de forma automático</div>
+<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/MissaoInt.html#jogoAutomatico()">MissaoInt</a></code></span></div>
+<div class="block">Executa a missão automaticamente até o final.
+ Este método realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/MissaoInt.html#jogoAutomatico()">jogoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="modoManual()">
-<h3>modoManual</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modoManual</span>()</div>
-<div class="block">Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
- Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- <p>
- Meter para sugerir o caminho mais curto ao ToCRUZ
- Fazre o teste que comentei linha 603</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/MissaoInt.html#modoManual()">modoManual</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="toString()">
-<h3>toString</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="equals(java.lang.Object)">
-<h3>equals</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="hashCode()">
-<h3>hashCode</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
-<dl class="notes">
-<dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 </dl>
 </div>
 </section>

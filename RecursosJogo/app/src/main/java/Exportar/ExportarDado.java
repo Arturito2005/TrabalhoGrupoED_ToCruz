@@ -16,6 +16,7 @@ import java.io.IOException;
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveria
  * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class ExportarDado implements ExportarInt {

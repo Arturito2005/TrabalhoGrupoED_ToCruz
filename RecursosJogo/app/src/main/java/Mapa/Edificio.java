@@ -86,10 +86,6 @@ public class Edificio implements EdificoInt {
         return planta_edificio;
     }
 
-    public int getNumDivisoes() {
-        return planta_edificio.size();
-    }
-
     @Override
     public double getShortestPath(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathWeight(div_inicial, div_final);
@@ -182,13 +178,9 @@ public class Edificio implements EdificoInt {
         String bordaOrigem = "-".repeat(divOrigem.getName().length() + 2); // Ajusta o comprimento da linha
         String bordaDestino = "-".repeat(divDestino.getName().length() + 2); // Ajusta o comprimento da linha
 
-        // Desenha a ligação no console
         System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
     }
 
-    /*
-    * Utilziar BFS OU DFS o que não em Order
-    * */
     public void drawMapa() {
         LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
@@ -211,6 +203,7 @@ public class Edificio implements EdificoInt {
             }
         }
     }
+
     /**
      * Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.
      *

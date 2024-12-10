@@ -114,6 +114,14 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <div class="col-last even-row-color">
 <div class="block">Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.</div>
 </div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,double,double,Interfaces.StackADT)" class="member-name-link">ToCruz</a><wbr>(int&nbsp;id_personagem,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nome,
+ double&nbsp;vida,
+ double&nbsp;poder,
+ Interfaces.StackADT&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;&nbsp;mochila)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Construtor alternativo para realizar uma deepCopy do ToCruz.</div>
+</div>
 </div>
 </section>
 </li>
@@ -130,7 +138,9 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compara este objeto com outro para verificar igualdade.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.StackADT<wbr>&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getMochila()" class="member-name-link">getMochila</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -143,14 +153,18 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o código hash para este objeto.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isColectedAlvo()" class="member-name-link">isColectedAlvo</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se o alvo foi coletado, pelo o To Cruz.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaIsFull()" class="member-name-link">mochilaIsFull</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
+<div class="block">Verifica se a mochila está cheia.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#mochilaTemKit()" class="member-name-link">mochilaTemKit</a>()</code></div>
@@ -159,7 +173,9 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setColectedAlvo(boolean)" class="member-name-link">setColectedAlvo</a><wbr>(boolean&nbsp;colectedAlvo)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o status de coleta do alvo.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -180,7 +196,7 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-Personagens.Personagem">Methods inherited from class&nbsp;Personagens.<a href="Personagem.html" title="class in Personagens">Personagem</a></h3>
-<code><a href="Personagem.html#getNome()">getNome</a>, <a href="Personagem.html#getPoder()">getPoder</a>, <a href="Personagem.html#getVida()">getVida</a>, <a href="Personagem.html#isDead()">isDead</a>, <a href="Personagem.html#setVida(double)">setVida</a></code></div>
+<code><a href="Personagem.html#getId_personagem()">getId_personagem</a>, <a href="Personagem.html#getNome()">getNome</a>, <a href="Personagem.html#getPoder()">getPoder</a>, <a href="Personagem.html#getVida()">getVida</a>, <a href="Personagem.html#isDead()">isDead</a>, <a href="Personagem.html#setVida(double)">setVida</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -204,6 +220,27 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 </div>
 </section>
 </li>
+<li>
+<section class="detail" id="&lt;init&gt;(int,java.lang.String,double,double,Interfaces.StackADT)">
+<h3>ToCruz</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ToCruz</span><wbr><span class="parameters">(int&nbsp;id_personagem,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;nome,
+ double&nbsp;vida,
+ double&nbsp;poder,
+ Interfaces.StackADT&lt;<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&gt;&nbsp;mochila)</span></div>
+<div class="block">Construtor alternativo para realizar uma deepCopy do ToCruz.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id_personagem</code> - ID do personagem.</dd>
+<dd><code>nome</code> - Nome do personagem.</dd>
+<dd><code>vida</code> - Vida inicial do personagem.</dd>
+<dd><code>poder</code> - Poder inicial do personagem.</dd>
+<dd><code>mochila</code> - Mochila contendo itens de cura.</dd>
+</dl>
+</div>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -217,6 +254,11 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <h3>isColectedAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isColectedAlvo</span>()</div>
+<div class="block">Verifica se o alvo foi coletado, pelo o To Cruz.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> se o alvo foi coletado; caso contrário, <code>false</code>.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -225,6 +267,11 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <h3>setColectedAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setColectedAlvo</span><wbr><span class="parameters">(boolean&nbsp;colectedAlvo)</span></div>
+<div class="block">Define o status de coleta do alvo.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>colectedAlvo</code> - <code>true</code> para indicar que o alvo foi coletado, <code>false</code> caso contrário.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -246,10 +293,12 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <h3>mochilaIsFull</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">mochilaIsFull</span>()</div>
-<div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
+<div class="block">Verifica se a mochila está cheia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ToCruzIt.html#mochilaIsFull()">mochilaIsFull</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></code></dd>
+<dt>Returns:</dt>
+<dd><code>true</code> se a mochila estiver cheia; caso contrário, <code>false</code>.</dd>
 </dl>
 </div>
 </section>
@@ -358,9 +407,14 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <h3>equals</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<div class="block">Compara este objeto com outro para verificar igualdade.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Personagem.html#equals(java.lang.Object)">equals</a></code>&nbsp;in class&nbsp;<code><a href="Personagem.html" title="class in Personagens">Personagem</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - O objeto a ser comparado.</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> se os objetos forem iguais; caso contrário, <code>false</code>.</dd>
 </dl>
 </div>
 </section>
@@ -370,9 +424,12 @@ implements <a href="../Interfaces/ToCruzIt.html" title="interface in Interfaces"
 <h3>hashCode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
+<div class="block">Retorna o código hash para este objeto.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="Personagem.html#hashCode()">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="Personagem.html" title="class in Personagens">Personagem</a></code></dd>
+<dt>Returns:</dt>
+<dd>O código hash calculado.</dd>
 </dl>
 </div>
 </section>

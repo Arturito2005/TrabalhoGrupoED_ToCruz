@@ -1,14 +1,14 @@
 package Items;
 
-import java.lang.reflect.Type;
-
 /**
  * Classe que representa um item de cura no jogo.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
+ *
  * @author Francisco Oliveria
  * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class ItemCura extends Item {
@@ -36,6 +36,15 @@ public class ItemCura extends Item {
         this.vida_recuperada = vida_recuperada;
     }
 
+    /**
+     * Construtor para criar um {@link ItemCura} com ID, status de coleta,
+     * tipo de item e quantidade de vida recuperada.
+     *
+     * @param id_item         O identificador único do item.
+     * @param colleceted      Indica se o item foi coletado.
+     * @param type            O tipo do item de cura.
+     * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
+     */
     public ItemCura(int id_item, boolean colleceted, TypeItemCura type, double vida_recuperada) {
         super(id_item, colleceted);
         this.type = type;

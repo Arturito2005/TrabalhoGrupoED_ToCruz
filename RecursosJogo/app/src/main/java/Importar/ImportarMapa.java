@@ -24,11 +24,13 @@ import java.io.IOException;
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveria
  * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class ImportarMapa implements Importar {
 
-    private static LinearLinkedUnorderedList<Divisao> lista_divisoes; /** Variavel que guarda todas as divisoes do edificio*/
+    /** Variavel que guarda todas as divisoes do edificio*/
+    private static LinearLinkedUnorderedList<Divisao> lista_divisoes;
 
     /**
      * Construtor do ImportarMapa
