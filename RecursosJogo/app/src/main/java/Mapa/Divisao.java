@@ -1,5 +1,6 @@
 package Mapa;
 
+import Exceptions.EmptyCollectionException;
 import Interfaces.*;
 import Items.Item;
 import Items.ItemCura;
@@ -187,8 +188,13 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * Adiciona um inimigo à divisão.
      *
      * @param inimigo O inimigo a ser adicionado.
+     * @throws NullPointerException quando o inimigo recebido como parametro é null
      */
-    public void addInimigo(Inimigo inimigo) {
+    @Override
+    public void addInimigo(Inimigo inimigo) throws NullPointerException {
+        if(inimigo == null) {
+            throw new NullPointerException("O inimigo a adicionar não pode ser nulo");
+        }
         this.inimigos.addToRear(inimigo);
     }
 
@@ -198,8 +204,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * @param inimigo O inimigo a ser removido.
      * @return O inimigo removido.
      */
+    @Override
     public Inimigo removeInimigo(Inimigo inimigo) {
-        return this.inimigos.remove(inimigo);
+        Inimigo inimigo1 = null;
+        try {
+            inimigo1 = this.inimigos.remove(inimigo);
+        } catch (EmptyCollectionException | NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
     }
 
     /**
@@ -316,6 +330,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         if (toCruz.isDead()) {
             System.out.println("O inimigo " + inimigo.getNome() + "matou o To Cruz");
+            toCruz.setVida(0);
         } else {
             System.out.println("To Cruz resiste ao ataque e fica com " + vidaTo + " HP");
         }

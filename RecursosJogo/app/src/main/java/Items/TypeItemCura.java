@@ -15,5 +15,8 @@ public enum TypeItemCura {
      * Representa o tipo de item kit de vida
      */
     KIT_VIDA,
-    COLETE /**Representa o Tipo de item colete*/
+    /**
+     * Representa o Tipo de item colete
+     * */
+    COLETE
 }

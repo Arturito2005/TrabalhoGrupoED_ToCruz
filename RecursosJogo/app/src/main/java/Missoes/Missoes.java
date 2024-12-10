@@ -1,5 +1,6 @@
 package Missoes;
 
+import Exportar.ExportarDado;
 import Interfaces.MissoesInt;
 import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedUnorderedList;
@@ -37,7 +38,14 @@ public class Missoes implements MissoesInt {
     * E assim é só fazer um foreach das minhas para guarda-las.
     * */
     public void exportarMissoes() {
+        /*
+         *Adpatar com o codigo do Xico.
+         * ExportarDado exportarDado = new ExportarDado();
 
+        for(Missao missao: listaMissao) {
+            exportarDado.exportarDados();
+        }
+         *  */
     }
 
 }

@@ -1,5 +1,8 @@
 package Interfaces;
 
+import Exceptions.EmptyCollectionException;
+import Personagens.Inimigo;
+
 /**
  * Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.
  *
@@ -12,6 +15,23 @@ package Interfaces;
  */
 public interface DivisaoIt {
 
+    /**
+     * Adiciona um inimigo à divisão.
+     *
+     * @param inimigo O inimigo a ser adicionado.
+     * @throws NullPointerException Se o inimigo fornecido for nulo.
+     */
+    public void addInimigo(Inimigo inimigo) throws NullPointerException;
+
+    /**
+     * Remove um inimigo da divisão.
+     *
+     * @param inimigo O inimigo a ser removido.
+     * @return O inimigo removido.
+     * @throws EmptyCollectionException Se não houver inimigos na divisão.
+     * @throws NullPointerException Se o inimigo fornecido for nulo.
+     */
+    public Inimigo removeInimigo(Inimigo inimigo);
     /**
      * Verifica se há um confronto ativo na divisão.
      *

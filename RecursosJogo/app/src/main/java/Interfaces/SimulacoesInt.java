@@ -18,6 +18,7 @@ public interface SimulacoesInt {
 
     /**
      * Ativa o modo manual da missão.
+     * @return a simulação feita pelo jogador
      */
     public Simulacoes modojogoManual();
 
@@ -29,6 +30,7 @@ public interface SimulacoesInt {
 
     /**
      * O jogo é jogado de forma automatico.
+     * @return a simulacao realizada
      */
     public Simulacoes jogoAutomatico();
 }
