@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7f5fe3-3eba-4927-9d5d-4ae23c81a07f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/Menu/MetodosMenuMissao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
@@ -13,78 +12,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jars/EstruturasDados.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Exportar/ExportarDado.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Exportar/ExportarDado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Importar/ImportarMapa.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Importar/ImportarMapa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Items/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Items/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Items/ItemCura.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Items/ItemCura.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Items/TypeItemCura.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Items/TypeItemCura.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Menu/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Missoes/Missao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/Inimigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/Inimigo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/Personagem.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/Personagem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/ToCruz.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/classes/java/main/Personagens/ToCruz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/distributions/app.tar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/distributions/app.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/distributions/app.zip" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/distributions/app.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/Importar.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/Importar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Interfaces/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Items/Item.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Items/Item.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Items/ItemCura.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Items/ItemCura.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Alvo.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Alvo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Divisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Divisao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Edificio.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/Edificio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Mapa/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/Missao.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/Missao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Missoes/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/Inimigo.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/Inimigo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/Personagem.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/Personagem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/ToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/Personagens/ToCruz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/docs/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/docs/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/libs/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/libs/app.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/reports/tests/test/packages/TestImportar.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/tests/test/packages/TestImportar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/reports/tests/test/packages/TestsPersonagens.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/reports/tests/test/packages/TestsPersonagens.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/javadoc/javadoc.options" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/javadoc/javadoc.options" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Exportar/ExportarDado.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Exportar/ExportarDado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/DivisaoIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/DivisaoIt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/EdificoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/EdificoInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/ExportarInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/ExportarInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/Importar.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/Importar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/IteracoesInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/IteracoesInimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/IteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/IteracoesToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissaoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissaoInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissoesInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/SimulacoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/SimulacoesInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/ToCruzIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/ToCruzIt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Items/ItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Items/ItemCura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Items/TypeItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Items/TypeItemCura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Menu/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Menu/MenuMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Missoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Missoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/Inimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +127,7 @@
       <workItem from="1733736933761" duration="6089000" />
       <workItem from="1733745679126" duration="12728000" />
       <workItem from="1733770396334" duration="427000" />
-      <workItem from="1733819295656" duration="23506000" />
+      <workItem from="1733819295656" duration="24668000" />
     </task>
     <servers />
   </component>
@@ -230,11 +161,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java</url>
           <line>306</line>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java</url>
-          <line>822</line>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
