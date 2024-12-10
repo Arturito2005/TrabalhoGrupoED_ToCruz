@@ -26,8 +26,8 @@ public abstract class Personagem {
     /**
      * Construtor principal com todos os atributos.
      */
-    public Personagem(String nome, double vida, double poder) {
-        this.id_personagem = ID_PERSONAGEM_CONT++;
+    public Personagem(int id_personagem, String nome, double vida, double poder) {
+        this.id_personagem = id_personagem;
         this.nome = nome;
         this.vida = vida;
         this.poder = poder;
@@ -51,6 +51,10 @@ public abstract class Personagem {
         this.nome = nome;
         this.vida = DEFAULT_VIDA;
         this.poder = poder;
+    }
+
+    public int getId_personagem() {
+        return id_personagem;
     }
 
     /**

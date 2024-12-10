@@ -5,10 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a7f5fe3-3eba-4927-9d5d-4ae23c81a07f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/RecursosJogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/RecursosJogo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/RecursosJogo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/RecursosJogo.app.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/RecursosJogo.app.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/RecursosJogo.app.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/MissaoInt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/SimulacoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/SimulacoesInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Items/ItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Items/ItemCura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Mapa/Alvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Mapa/Alvo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Missao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Missoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Missoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/Inimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/Personagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Personagens/ToCruz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Exception" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -119,6 +136,7 @@
       <workItem from="1733736933761" duration="6089000" />
       <workItem from="1733745679126" duration="12728000" />
       <workItem from="1733770396334" duration="427000" />
+      <workItem from="1733819295656" duration="8895000" />
     </task>
     <servers />
   </component>

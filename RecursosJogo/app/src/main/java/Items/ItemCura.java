@@ -1,5 +1,7 @@
 package Items;
 
+import java.lang.reflect.Type;
+
 /**
  * Classe que representa um item de cura no jogo.
  *
@@ -30,6 +32,12 @@ public class ItemCura extends Item {
      */
     public ItemCura(TypeItemCura type, double vida_recuperada) {
         super();
+        this.type = type;
+        this.vida_recuperada = vida_recuperada;
+    }
+
+    public ItemCura(int id_item, boolean colleceted, TypeItemCura type, double vida_recuperada) {
+        super(id_item, colleceted);
         this.type = type;
         this.vida_recuperada = vida_recuperada;
     }

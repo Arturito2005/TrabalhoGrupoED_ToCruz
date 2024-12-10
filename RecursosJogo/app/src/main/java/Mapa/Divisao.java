@@ -78,6 +78,37 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
+     * Construtor de deepCopy da classe Divisao
+     * */
+    public Divisao(int id_divisao, String name, boolean entrada_saida, Alvo alvo, Item item, UnorderedListADT<Inimigo> inimigos, ToCruz toCruz) {
+        this.id_divisao = id_divisao;
+        this.name = name;
+        this.entrada_saida = entrada_saida;
+        Alvo temAlvo = new Alvo(alvo.getId_alvo(), alvo.getNome(), alvo.isAtinigido());
+        this.alvo = temAlvo;
+        ItemCura tempItemCura;
+
+        if(item instanceof ItemCura) {
+            tempItemCura = new ItemCura(item.getId_item(), item.isCollected(), ((ItemCura) item).getType(), ((ItemCura) item).getVida_recuperada());
+            this.item = tempItemCura;
+        }
+
+        UnorderedListADT<Inimigo> tempListaInimigos = new LinearLinkedUnorderedList<>();
+        for(Inimigo inimigo: inimigos) {
+            Inimigo tempInimigo = new Inimigo(inimigo.getId_personagem(), inimigo.getNome(), inimigo.getVida(), inimigo.getPoder());
+            tempListaInimigos.addToRear(tempInimigo);
+        }
+
+        this.inimigos = tempListaInimigos;
+        ToCruz tempToCruz = new ToCruz(toCruz.getId_personagem(), toCruz.getNome(), toCruz.getVida(), toCruz.getPoder(), toCruz.getMochila());
+        this.toCruz = tempToCruz;
+    }
+
+    public int getId_divisao() {
+        return id_divisao;
+    }
+
+    /**
      * Obtém o nome da divisão.
      *
      * @return O nome da divisão.

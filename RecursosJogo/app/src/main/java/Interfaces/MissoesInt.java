@@ -1,10 +1,9 @@
 package Interfaces;
 
+import Missoes.Missao;
+
 public interface MissoesInt {
 
-    public void modoManual();
+    public void addMissao(Missao missao) throws NullPointerException;
 
-    public void modoAutomatico();
-
-    public void jogoAutomatico();
 }

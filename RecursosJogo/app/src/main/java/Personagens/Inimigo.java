@@ -19,6 +19,10 @@ public class Inimigo extends Personagem {
         super(nome, poder);
     }
 
+    public Inimigo(int id_personagem, String nome, double vida, double poder) {
+        super(id_personagem, nome, vida, poder);
+    }
+
     /**
      * Retorna a representação uma String com os dados do inimigo.
      *

@@ -26,9 +26,16 @@ public class ToCruz extends Personagem implements ToCruzIt {
      */
     public ToCruz() {
         super("ToCruz");
-        mochila = new LinkedStack<>();
-        colectedAlvo = false;
+        this.mochila = new LinkedStack<>();
+        this.colectedAlvo = false;
     }
+
+    public ToCruz(int id_personagem, String nome, double vida, double poder, StackADT<ItemCura> mochila) {
+        super(id_personagem, nome, vida, poder);
+        this.mochila = new LinkedStack<>();
+        this.colectedAlvo = false;
+    }
+
 
     public boolean isColectedAlvo() {
         return colectedAlvo;
@@ -204,7 +211,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
      */
     @Override
     public String toString() {
-        return "ToCruz{" + "mochila=" + mochila.toString() + '}';
+        return "ToCruz{" + "mochila=" + mochila + '}';
     }
 
     @Override

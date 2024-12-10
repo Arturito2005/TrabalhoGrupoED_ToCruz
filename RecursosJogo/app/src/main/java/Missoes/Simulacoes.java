@@ -41,9 +41,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     /*
     * Ver como mando o edificio para não bugar
     * */
-    public Simulacoes(long versao, Edificio edificio) {
+    public Simulacoes(long versao_simulacao, Edificio edificio) {
         this.edificio = edificio;
-        this.versao_simulacao = versao;
+        this.versao_simulacao = versao_simulacao;
         this.vida_to = 0;
         this.trajeto_to = new LinkedQueue<>();
         this.inimigos_dead = new LinkedStack<>();
@@ -59,10 +59,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     public void addDivisaoTrajetoToCruz(Divisao divisao) {
         this.trajeto_to.enqueue(divisao);
-    }
-
-    public void addInimigosDead(Inimigo inimigo) {
-        this.inimigos_dead.push(inimigo);
     }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
@@ -95,8 +91,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
     }
-
-    //Sugere a melhor divisão para o ToCruz entrar.
 
     /**
      * Introduz de forma automatica o ToCruz na melhor divisao que ele pode entrar
@@ -155,6 +149,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         //3º Encontrar o caminho mais curto para um item
         best_entr.addToCruz(toCruz);
+        addDivisaoTrajetoToCruz(best_entr);
         addDivisaoTrajetoToCruz(best_entr);
 
         if (best_entr.haveConfronto()) {
@@ -251,8 +246,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      *
      * Fazer o codigo para arestas na network
      */
-    @Override
-    public void modoAutomatico() {
+    public void modojogoAutomatico() {
         Iterator<Divisao> itr = edificio.getPlantaEdificio().iterator();
         UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<Divisao>();
         Divisao div_alvo = null;
@@ -293,7 +287,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
-        //Esta comparacao não está assim tão bem pois ele considera que o andar dá dano ao toCruz
         if (best_distance < to.getVida()) {
             Iterator<Divisao> itr2 = edificio.shortesPathIt(best_div, div_alvo);
             System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div);
@@ -361,6 +354,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     /**
      * Joga o jogo de forma automático
      */
+    @Override
     public Simulacoes jogoAutomatico() {
         //ToCruz entra na sala (meter o codigo)
         //this.edificio.drawMapa();
@@ -769,7 +763,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Fazre o teste que comentei linha 603
      */
     @Override
-    public Simulacoes modoManual() {
+    public Simulacoes modojogoManual() {
         edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
@@ -820,8 +814,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         return this;
     }
 
-    //Ver como depois posso fazer o relatorio da missao
-    //Acabar de fazer
     private void relatoriosMissao() {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
         UnorderedListADT<Item> item_colected = new LinearLinkedUnorderedList<Item>();
@@ -909,29 +901,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         this.trajeto_to = trajeto_temp;
         //exportarMissao(trajeto_temp);
     }
-
-   /*
-   *  private void exportarMissao(QueueADT<Divisao> trajeto) {
-        QueueADT<QueueADT<Divisao>> trajetoQueue = new LinkedQueue<>();
-        trajetoQueue.enqueue(trajeto);
-        //ExportarDado exportar = new ExportarDado(cod_missao, trajetoQueue);
-        String path = "./Jsons/Export/";
-        String name_file = "";
-
-        do {
-            System.out.println("Introduza o nome do fichiro que vai conter o trajeto do To Cruz -->");
-            try {
-                name_file = sc.nextLine();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
-        } while (name_file.equals(""));
-
-        path += name_file;
-        //exportar.exportarDados(path);
-    }
-   * */
 
     @Override
     public String toString() {

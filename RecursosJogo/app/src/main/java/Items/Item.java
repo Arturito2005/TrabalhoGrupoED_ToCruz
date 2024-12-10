@@ -36,6 +36,15 @@ public abstract class Item {
         this.collected = false;
     }
 
+    public Item(int id_item, boolean collected) {
+        this.id_item = id_item;
+        this.collected = collected;
+    }
+
+    public int getId_item() {
+        return id_item;
+    }
+
     /**
      * Retorna se o item já foi coletado ou não.
      *
