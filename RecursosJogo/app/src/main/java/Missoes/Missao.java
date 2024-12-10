@@ -4,6 +4,8 @@ import Interfaces.MissaoInt;
 import Interfaces.OrderedListADT;
 import LinkedList.LinearLinkedOrderedList;
 import Mapa.Edificio;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -83,14 +85,25 @@ public class Missao implements MissaoInt {
         Simulacoes simula;
 
         do {
-            simula = new Simulacoes(tot_simulacoes, new Edificio(this.edificio.getId(), this.edificio.getName(), this.edificio.getPlantaEdificio()));
+
+            System.out.println("Começar simulação");
             System.out.println("0 - Sair");
             System.out.println("1 - Jogar");
+            System.out.print("Selecione uma opção -->");
+
+            try {
+                op = sc.nextInt();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
 
             if (op == 1) {
+                simula = new Simulacoes(tot_simulacoes, new Edificio(this.edificio.getId(), this.edificio.getName(), this.edificio.getPlantaEdificio()));
                 simulacoes.add(simula.modojogoManual());
+                tot_simulacoes++;
             }
-            tot_simulacoes++;
+
         } while (op != 0);
 
         for (Simulacoes simulacao : simulacoes) {

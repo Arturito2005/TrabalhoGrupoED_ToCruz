@@ -102,7 +102,7 @@ public class Edificio implements EdificoInt {
 
     @Override
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final) {
-        return this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
+        return this.planta_edificio.shortestPath(div_inicial, div_final);
     }
 
     //Dá já de forma automatica a divisao para o ToCruz andar

@@ -1,7 +1,6 @@
 package Menu;
 
 import Importar.ImportarMapa;
-import LinkedList.LinearLinkedUnorderedList;
 import Missoes.Missao;
 import Missoes.Missoes;
 
@@ -9,6 +8,9 @@ import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ *
+ * */
 public class MenuMissoes {
     private static final String path = "./Jsons/Import/FicheiroMissao.json";
 
@@ -96,7 +98,7 @@ public class MenuMissoes {
         switch (op_modo) {
             case 1: {
                 missao_sel.modoManual();
-              break;
+                break;
             } case 2: {
                 missao_sel.modoAutomatico();
                 break;
