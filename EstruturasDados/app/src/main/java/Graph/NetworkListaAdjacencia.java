@@ -2,11 +2,37 @@ package Graph;
 
 import Interfaces.NetworkADT;
 import LinkedList.LinearLinkedOrderedList;
-
 import java.util.Iterator;
 
+
+/**
+ * Representa uma rede de grafos implementada utilizando listas de adjacência.
+ * Esta classe é responsável por manipular grafos representados por listas de adjacência,
+ * incluindo a adição de arestas, a busca de caminhos e a iteração pelos vértices.
+ *
+ * @param <T> o tipo dos vértices no grafo
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implements NetworkADT<T> {
+
+    /**
+     * Array de listas encadeadas ordenadas representando a lista de adjacência para cada vértice.
+     * Cada índice da lista contém os vértices adjacentes a um vértice específico.
+     */
     protected LinearLinkedOrderedList<T>[] listaAdj;
+
+    /**
+     * Adiciona uma aresta entre dois vértices no grafo com um peso especificado.
+     * A aresta é adicionada em ambas as direções, já que o grafo é não direcionado.
+     *
+     * @param vertex1 o primeiro vértice da aresta
+     * @param vertex2 o segundo vértice da aresta
+     * @param weight o peso da aresta
+     */
     @Override
     public void addEdge(T vertex1, T vertex2, double weight) {
         if (indexIsValid(vertex1) && indexIsValid(vertex2)) {
@@ -15,6 +41,14 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
         }
     }
 
+    /**
+     * Edita o peso de uma aresta entre dois vértices no grafo.
+     * Este método não altera o peso da aresta, mas sim apenas a lista de adjacências dos vértices.
+     *
+     * @param vertex1 o primeiro vértice da aresta
+     * @param vertex2 o segundo vértice da aresta
+     * @param weight o novo peso da aresta
+     */
     public void editWeightEdge(T vertex1, T vertex2, double weight) {
         if (indexIsValid(vertex1) && indexIsValid(vertex2)) {
             this.listaAdj[getIndex(vertex1)].add(vertex2);
@@ -22,91 +56,55 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
         }
     }
 
+    /**
+     * Retorna o peso do caminho mais curto entre dois vértices.
+     * Este método é um esboço e atualmente retorna 0, sendo necessário implementação.
+     *
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
+     * @return o peso do caminho mais curto entre os vértices ou 0 se não implementado
+     */
     @Override
     public double shortestPathWeight(T vertex1, T vertex2) {
-        /*
-        * ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
-        int start_index = getIndex(vertex1);
-        int final_index = getIndex(vertex2);
 
-        if (!indexIsValid(start_index) || !indexIsValid(final_index)) {
-            //return resultList.iterator();
-            return 0;
-        }
-
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
-        int index = start_index;
-        int[] comprimeto = new int[numVertices];
-        int[] antecessor = new int[numVertices];
-        boolean[] visited = new boolean[numVertices];
-
-        for (int i = 0; i < numVertices; i++) {
-            visited[i] = false;
-        }
-
-        traversalQueue.enqueue(start_index);
-        visited[start_index] = true;
-        comprimeto[start_index] = 0;
-        antecessor[start_index] = -1;
-
-        while (!traversalQueue.isEmpty() && (index != final_index)) {
-            index = traversalQueue.dequeue();
-
-            Iterator<T> itr = listaAdj[index].iterator();
-
-            while (itr.hasNext()) {
-                T element = itr.next();
-                int index_ele = getIndex(element);
-
-                if (indexIsValid(index_ele) && !visited[index_ele]) {
-                    comprimeto[index_ele] = comprimeto[index_ele] + 1;
-                    antecessor[index_ele] = index;
-                    traversalQueue.enqueue(index_ele);
-                    visited[index_ele] = true;
-                }
-            }
-        }
-
-        //Não existe caminho
-        if (index != final_index) {
-            return resultList.iterator();
-        }
-
-        LinkedStack<Integer> stack = new LinkedStack<>();
-        index = final_index;
-        stack.push(final_index);
-
-        do {
-            index = antecessor[index];
-            stack.push(index);
-        } while (index != start_index);
-
-        while (!stack.isEmpty()) {
-            resultList.addToRear(vertices[stack.pop()]);
-        }
-
-        return resultList.iterator();
-        * */
         return 0;
     }
 
+    /**
+     * Retorna um iterador para os vértices adjacentes a um vértice de início.
+     * Este método está incompleto e retornará nulo por enquanto.
+     *
+     * @param startVertex o vértice inicial
+     * @return um iterador para os vértices adjacentes ao vértice de início
+     */
     @Override
     public Iterator<T> iteratorNextVertexs(T startVertex) {
         return null;
     }
 
+    /**
+     * Retorna um iterador para os vértices do grafo utilizando uma busca em profundidade (DFS).
+     *
+     * @return um iterador para os vértices do grafo
+     */
     @Override
     public Iterator<T> iterator() {
         return super.iteratorDFS(this.vertices[0]);
     }
 
-
-
+    /**
+     * Retorna os vértices adjacentes a um vértice específico com um peso de aresta específico.
+     * Este método não está implementado e retorna nulo por enquanto.
+     *
+     * @param weight o peso da aresta
+     * @param visited um array indicando quais vértices já foram visitados
+     * @return um array com os vértices adjacentes ao vértice atual
+     */
     protected int[] getEdgeWithWeightOf(double weight, boolean visited[]) {
         return null;
     }
 
-    /**
+    /*
      * No jogo esta arvore gerador é que nos vai gerar o caminho mais curto do ToCruz até uma sala, vai ter
      * de ser chamado constantemente para ser atualizada de acordo com a movimentação dos inimigos
      *
@@ -114,7 +112,7 @@ public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implement
      *
      * @return a minimum spanning tree of the network
      */
-   /**
+   /*
     public NetworkListaAdjacencia mstNetwork() {
     int x, y;
     int index;

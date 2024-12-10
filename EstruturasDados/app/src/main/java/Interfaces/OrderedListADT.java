@@ -1,21 +1,26 @@
 package Interfaces;
 
 /**
- * This interface defines the ADT for a generic ordered list. It is a
- * sub-interface of {@code ListADT<T>}, adding the specific functionality of
- * inserting elements in a defined order.
+ * Esta interface define o ADT para uma lista ordenada genérica. É uma
+ * sub-interface de {@code ListADT<T>}, adicionando a funcionalidade específica de
+ * inserir elementos em uma ordem definida.
+ * <p>
+ * A implementação desta interface deve garantir que os elementos sejam mantidos
+ * na ordem correta após cada inserção.
  *
- * The implementation of this interface must ensure that the elements are kept
- * in the correct order after each insertion.
- *
- * @param <T> the type of elements stored in this ordered list
+ * @param <T> o tipo dos elementos armazenados nesta lista ordenada
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface OrderedListADT<T> extends ListADT<T> {
 
     /**
-     * Adds the specified element to this list at the proper location
+     * Adiciona o elemento especificado a esta lista na localização apropriada.
      *
-     * @param element the element to be added to this list
+     * @param element o elemento a ser adicionado a esta lista
      */
     public void add(T element);
 }

@@ -7,10 +7,29 @@ import Interfaces.UnorderedListADT;
 import LinkedTree.LinkedHeap;
 import java.util.Iterator;
 
+/**
+ * Representa uma rede de grafos utilizando uma matriz de adjacência para armazenar os pesos das arestas.
+ * Esta classe implementa a interface {@link NetworkADT} e oferece funcionalidades para adicionar vértices e arestas,
+ * calcular caminhos mais curtos, iterar pelos vértices adjacentes e calcular a árvore geradora mínima.
+ *
+ * @param <T> o tipo de dado que representa os vértices no grafo
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> implements NetworkADT<T> {
 
+    /**
+     * A matriz de adjacência que armazena os pesos das arestas entre os vértices.
+     */
     protected double[][] adjMatrix;
 
+    /**
+     * Construtor que inicializa a matriz de adjacência com a capacidade padrão.
+     * Define todos os valores da matriz como infinito positivo, indicando a ausência de arestas.
+     */
     public NetworkMatrizAdjacencia() {
         super();
         this.adjMatrix = new double[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
@@ -21,6 +40,10 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
     }
 
+    /**
+     * Expande a matriz de adjacência para dobrar sua capacidade quando não houver mais espaço.
+     * Essa operação copia os dados da matriz atual para uma nova matriz maior e redefine os valores para infinito positivo.
+     */
     protected void expandadweightMatrix() {
         super.expandCapacity();
         double[][] tempMatriz = new double[this.vertices.length * 2][this.vertices.length * 2];
@@ -38,6 +61,11 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         this.adjMatrix = tempMatriz;
     }
 
+    /**
+     * Adiciona um vértice ao grafo. Se o número de vértices alcançar a capacidade máxima, a matriz de adjacência será expandida.
+     *
+     * @param vertex o vértice a ser adicionado
+     */
     @Override
     public void addVertex(T vertex) {
         if(this.vertices.length == this.numVertices) {
@@ -47,6 +75,14 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         super.addVertex(vertex);
     }
 
+    /**
+     * Adiciona uma aresta entre dois vértices no grafo com um peso especificado.
+     * A aresta é adicionada em ambas as direções, já que o grafo é não direcionado.
+     *
+     * @param vertex1 o primeiro vértice da aresta
+     * @param vertex2 o segundo vértice da aresta
+     * @param weight o peso da aresta
+     */
     @Override
     public void addEdge(T vertex1, T vertex2, double weight) {
         int index1 = getIndex(vertex1);
@@ -59,6 +95,14 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
     }
 
+    /**
+     * Retorna um iterador para os vértices adjacentes a um vértice de início.
+     * A iteração é feita pelos vértices que possuem uma aresta com o vértice de início,
+     * excluindo os vértices com peso infinito.
+     *
+     * @param startVertex o vértice inicial
+     * @return um iterador para os vértices adjacentes ao vértice de início
+     */
     @Override
     public Iterator<T> iteratorNextVertexs(T startVertex) {
         int index = getIndex(startVertex);
@@ -77,13 +121,14 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
         return adjacentVertices.iterator();
     }
+
     /**
-     * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas
-     * no caminho. Em caso de empate no custo, o caminho com menos arestas é priorizado.
+     * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas.
+     * Em caso de empate no custo, o caminho com menos arestas é priorizado.
      *
-     * @param startVertex O vértice de origem.
-     * @param finalVertex O vértice de destino.
-     * @return O custo do caminho mais curto entre os dois vértices. Retorna -1 se não houver caminho entre eles.
+     * @param startVertex o vértice de origem
+     * @param finalVertex o vértice de destino
+     * @return o custo do caminho mais curto entre os dois vértices ou Double.MAX_VALUE se não houver caminho
      */
     @Override
     public double shortestPathWeight(T startVertex, T finalVertex) {
@@ -142,11 +187,23 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         return distances[finalIndex];
     }
 
+    /**
+     * Retorna um iterador para os vértices do grafo utilizando uma busca em profundidade (DFS).
+     *
+     * @return um iterador para os vértices do grafo
+     */
     @Override
     public Iterator<T> iterator() {
         return super.iteratorDFS(this.vertices[0]);
     }
 
+    /**
+     * Retorna os vértices adjacentes a um vértice específico com um peso de aresta específico.
+     *
+     * @param weight o peso da aresta
+     * @param visited um array indicando quais vértices já foram visitados
+     * @return um array com os vértices adjacentes ao vértice atual
+     */
     protected int[] getEdgeWithWeightOf(double weight, boolean visited[]) {
         int[] edges = new int[2];
         for (int i = 0; i < this.adjMatrix.length; i++) {
@@ -165,10 +222,9 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
+     * Retorna a árvore geradora mínima do grafo, utilizando o algoritmo de Prim.
      *
-     * Returns a minimum spanning tree of the network.
-     *
-     * @return a minimum spanning tree of the network
+     * @return uma árvore geradora mínima do grafo
      */
     public NetworkMatrizAdjacencia<T> mstNetwork() {
         int x, y;

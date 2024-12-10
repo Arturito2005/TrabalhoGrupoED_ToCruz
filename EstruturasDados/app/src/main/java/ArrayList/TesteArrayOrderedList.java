@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class TesteArrayOrderedList {
 
     public static void main(String[] args) {
-        ArrayOrderedList<Integer> order1 = new ArrayOrderedList<>();
+        ArrayOrderedList<Integer> order1 = new ArrayOrderedList<Integer>();
 
         order1.add(1);
         order1.add(2);
@@ -29,7 +29,7 @@ public class TesteArrayOrderedList {
 
         System.out.println(order1.toString());
 
-        ArrayOrderedList<Integer> order2 = new ArrayOrderedList<>();
+        ArrayOrderedList<Integer> order2 = new ArrayOrderedList<Integer>();
 
         order2.add(2);
         order2.add(4);

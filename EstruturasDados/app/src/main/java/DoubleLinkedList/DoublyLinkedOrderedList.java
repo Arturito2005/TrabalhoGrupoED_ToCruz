@@ -3,12 +3,34 @@ package DoubleLinkedList;
 import Exceptions.EmptyCollectionException;
 import Interfaces.OrderedListADT;
 
+/**
+ * Esta classe representa uma lista duplamente encadeada ordenada.
+ * Ela implementa a interface {@link OrderedListADT} e herda de {@link DoublyLinkedList}.
+ * Elementos são armazenados na lista de forma ordenada de acordo com a ordem definida pela interface {@link Comparable}.
+ *
+ * @param <T> Tipo dos elementos na lista, que deve ser comparável com outros elementos do mesmo tipo.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class DoublyLinkedOrderedList<T> extends DoublyLinkedList<T> implements OrderedListADT<T> {
 
+    /**
+     * Constrói uma nova lista duplamente encadeada ordenada vazia.
+     */
     public DoublyLinkedOrderedList() {
         super();
     }
 
+    /**
+     * Adiciona um elemento na lista de forma ordenada.
+     * O novo elemento será inserido na posição correta para manter a ordem da lista.
+     *
+     * @param element O elemento a ser adicionado à lista.
+     * @throws ClassCastException Caso o elemento não seja comparável com outros elementos.
+     */
     @Override
     public void add(T element) {
         Comparable<T> temp = (Comparable<T>) element;
@@ -48,6 +70,12 @@ public class DoublyLinkedOrderedList<T> extends DoublyLinkedList<T> implements O
         this.modCount++;
     }
 
+    /**
+     * Inverte a ordem dos elementos na lista e retorna uma nova lista com os elementos invertidos.
+     *
+     * @return Uma nova lista com os elementos invertidos.
+     * @throws EmptyCollectionException Se a lista estiver vazia, lançará uma exceção.
+     */
     public DoublyLinkedList<T> inverse() throws EmptyCollectionException {
         if (this.count == 0) {
             throw new EmptyCollectionException("A lista está vaiza, logo não é possivel inverter");

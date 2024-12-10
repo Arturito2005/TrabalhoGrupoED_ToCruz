@@ -4,12 +4,25 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
 
-/*
-Testar esta classe unica classe sem os testes feitos quando a abri
-ela não tinha testes dela, tinha comentado os testes da double
+/**
+ * Classe de teste para a implementação de uma lista ordenada encadeada (LinearLinkedOrderedList).
+ *
+ * Este programa testa a funcionalidade de uma lista ordenada encadeada, realizando operações de
+ * inserção de elementos, remoção de elementos específicos, remoção do primeiro e do último elemento,
+ * além de iterar pela lista utilizando um iterador.
  */
 public class TestLinearLinkedOrderedList {
 
+    /**
+     * Método principal que executa os testes na lista encadeada ordenada.
+     *
+     * Este método cria duas listas ordenadas, adiciona elementos a elas, remove elementos específicos,
+     * remove o primeiro e o último elemento, e imprime o estado da lista após cada operação.
+     * Também são realizados testes para verificar a exceção lançada quando tentamos remover
+     * elementos de uma lista vazia ou tentar remover um elemento que não existe.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
 
         LinearLinkedOrderedList<Integer> linkedOrd1 = new LinearLinkedOrderedList();

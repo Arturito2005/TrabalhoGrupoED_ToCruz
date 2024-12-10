@@ -34,5 +34,4 @@ java {
     }
 }
 
-//Há coisas por comentar por isso só meter isto quando estiver tudo comentado
-//build.finalizedBy javadoc
+build.finalizedBy javadoc

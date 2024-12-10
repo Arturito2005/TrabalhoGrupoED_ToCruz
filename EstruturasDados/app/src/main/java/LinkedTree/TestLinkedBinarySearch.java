@@ -2,8 +2,24 @@ package LinkedTree;
 
 import Interfaces.BinarySearchTreeADT;
 
+/**
+ * Classe de teste para a implementação de uma Árvore Binária de Pesquisa (BST) utilizando lista encadeada.
+ *
+ * Este programa testa a funcionalidade de uma árvore binária de pesquisa, realizando operações de
+ * inserção de elementos, remoção do mínimo, e remoção de todas as ocorrências de determinados valores.
+ * Após cada operação, o estado da árvore é impresso.
+ */
 public class TestLinkedBinarySearch {
 
+    /**
+     * Método principal que executa os testes na árvore binária de pesquisa.
+     *
+     * Este método cria uma árvore binária de pesquisa, insere elementos nela, remove o mínimo,
+     * adiciona novos elementos e remove todas as ocorrências de valores específicos, imprimindo
+     * o estado da árvore após cada operação.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         BinarySearchTreeADT<Integer> searchTree = new LinkedBinarySearchTree<>();
 

@@ -3,29 +3,40 @@ package Interfaces;
 import java.util.Iterator;
 
 /**
- * NetworkADT defines the interface to a network.
+ * NetworkADT define a interface para uma rede.
  *
- * @param <T>
+ * @param <T> o tipo dos elementos armazenados nesta rede
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface NetworkADT<T> extends Iterable<T>, GraphADT<T> {
 
     /**
-     * Inserts an edge between two vertices of this graph.
+     * Insere uma aresta entre dois vértices deste grafo.
      *
-     * @param vertex1 the first vertex
-     * @param vertex2 the second vertex
-     * @param weight the weight
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
+     * @param weight  o peso da aresta
      */
     public void addEdge(T vertex1, T vertex2, double weight);
 
     /**
-     * Returns the weight of the shortest path in this network.
+     * Retorna o peso do caminho mais curto nesta rede.
      *
-     * @param vertex1 the first vertex
-     * @param vertex2 the second vertex
-     * @return the weight of the shortest path in this network
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
+     * @return o peso do caminho mais curto nesta rede
      */
     public double shortestPathWeight(T vertex1, T vertex2);
 
+    /**
+     * Retorna um iterador para os próximos vértices a partir do vértice inicial.
+     *
+     * @param startVertex o vértice de início
+     * @return um iterador para os próximos vértices a partir do vértice inicial
+     */
     public Iterator<T> iteratorNextVertexs(T startVertex);
 }

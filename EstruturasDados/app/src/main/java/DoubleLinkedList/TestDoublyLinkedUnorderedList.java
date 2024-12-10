@@ -3,8 +3,24 @@ package DoubleLinkedList;
 import Exceptions.ElementNotFoundException;
 import java.util.Iterator;
 
+/**
+ * Classe de teste para a implementação de uma lista duplamente encadeada não ordenada (DoubleLinkedUnorderedList).
+ *
+ * Este programa realiza operações de inserção e remoção de elementos em uma lista duplamente encadeada não ordenada,
+ * incluindo adições à frente, ao final e após um elemento específico. Além disso, realiza a iteração sobre a lista
+ * e a impressão de seus elementos.
+ */
 public class TestDoublyLinkedUnorderedList {
 
+    /**
+     * Método principal que executa os testes na lista duplamente encadeada não ordenada.
+     *
+     * Este método cria uma lista duplamente encadeada não ordenada, adiciona elementos na frente, no final
+     * e após um elemento específico, além de iterar sobre a lista para exibir os valores. Também trata exceções
+     * ao tentar adicionar um elemento após um item inexistente.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         DoubleLinkedUnorderedList<Integer> linkedUndo1 = new DoubleLinkedUnorderedList<>();
 

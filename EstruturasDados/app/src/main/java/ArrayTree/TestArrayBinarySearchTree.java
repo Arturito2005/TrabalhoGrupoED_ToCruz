@@ -1,7 +1,22 @@
 package ArrayTree;
 
+/**
+ * Classe de teste para a implementação de uma árvore binária de busca (ArrayBinarySearchTree).
+ *
+ * Este programa testa a adição de elementos a uma árvore binária de busca, além de realizar operações de remoção,
+ * como remover o mínimo e remover todas as ocorrências de um valor específico. A árvore é exibida após cada operação
+ * para verificar os resultados.
+ */
 public class TestArrayBinarySearchTree {
 
+    /**
+     * Método principal que executa os testes na árvore binária de busca.
+     *
+     * Este método cria uma árvore binária de busca, adiciona elementos, realiza remoções (do mínimo e de todas as ocorrências)
+     * e imprime o estado da árvore após cada operação. Ele também verifica a estrutura da árvore após inserções e remoções.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         ArrayBinarySearchTree<Integer> searchTree = new ArrayBinarySearchTree<>();
 

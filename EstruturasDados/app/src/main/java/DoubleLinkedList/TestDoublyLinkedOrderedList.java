@@ -4,8 +4,24 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
 
+/**
+ * Classe de teste para a implementação de uma lista duplamente encadeada ordenada (DoublyLinkedOrderedList).
+ *
+ * Este programa realiza operações de inserção, remoção e iteração sobre uma lista duplamente encadeada ordenada.
+ * Ele testa a adição de elementos, remoção de elementos específicos (primeiro, último e por valor),
+ * e inverte a lista para verificar o funcionamento do método de inversão.
+ */
 public class TestDoublyLinkedOrderedList {
 
+    /**
+     * Método principal que executa os testes na lista duplamente encadeada ordenada.
+     *
+     * Este método cria uma lista duplamente encadeada ordenada, adiciona elementos em ordem, remove elementos
+     * específicos (como o primeiro, último e por valor), itera sobre a lista para exibir seus valores e testa
+     * a inversão da lista.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         DoublyLinkedOrderedList<Integer> linkedOrd1 = new DoublyLinkedOrderedList();
 

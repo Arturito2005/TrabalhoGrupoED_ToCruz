@@ -3,33 +3,38 @@ package Interfaces;
 import Exceptions.ElementNotFoundException;
 
 /**
- * This interface defines the ADT (Abstract Data Type) for a generic unordered
- * list. It is a sub-interface of {@code ListADT<T>} and provides methods to add
- * elements to the front, rear, or after a specific target element in the list.
+ * Esta interface define o ADT (Tipo Abstrato de Dados) para uma lista genérica
+ * não ordenada. Ela é uma subinterface de {@code ListADT<T>} e fornece métodos
+ * para adicionar elementos à frente, atrás ou após um elemento alvo específico na lista.
  *
- * @param <T> the type of elements stored in this unordered list
+ * @param <T> o tipo dos elementos armazenados nesta lista não ordenada
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface UnorderedListADT<T> extends ListADT<T> {
 
     /**
-     * Adds the specified element to the front of this list.
+     * Adiciona o elemento especificado à frente desta lista.
      *
-     * @param element the element to be added to the front of this list
+     * @param element o elemento a ser adicionado à frente desta lista
      */
     public void addToFront(T element);
 
     /**
-     * Adds the specified element to the rear of this list.
+     * Adiciona o elemento especificado à traseira desta lista.
      *
-     * @param element the element to be added to the rear of this list
+     * @param element o elemento a ser adicionado à traseira desta lista
      */
     public void addToRear(T element);
 
     /**
-     * Adds the specified element after the specified target.
+     * Adiciona o elemento especificado após o alvo especificado.
      *
-     * @param element the element to be added after the target
-     * @param target the target is the item that the element will be added after
+     * @param element o elemento a ser adicionado após o alvo
+     * @param target o alvo é o item após o qual o elemento será adicionado
      * @throws ElementNotFoundException
      */
     public void addAfter(T element, T target) throws ElementNotFoundException;

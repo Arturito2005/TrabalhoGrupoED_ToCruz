@@ -4,12 +4,33 @@ import Exceptions.ElementNotFoundException;
 import Interfaces.UnorderedListADT;
 import Nodes.LinearNode;
 
+/**
+ * Implementação de uma lista ligada não ordenada. Permite adicionar elementos ao início, ao final,
+ * e após um elemento específico, mas sem manter os elementos em ordem.
+ * Esta classe estende {@link LinearLinkedList} e implementa a interface {@link UnorderedListADT}.
+ *
+ * @param <T> o tipo dos elementos na lista.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class LinearLinkedUnorderedList<T> extends LinearLinkedList<T> implements UnorderedListADT<T> {
 
+    /**
+     * Constrói uma nova lista ligada não ordenada, inicializando a lista vazia.
+     */
     public LinearLinkedUnorderedList() {
         super();
     }
 
+    /**
+     * Adiciona um novo elemento à frente da lista. Este método insere o elemento no início da lista,
+     * fazendo com que ele seja o primeiro elemento da lista.
+     *
+     * @param element o elemento a ser adicionado à frente da lista.
+     */
     @Override
     public void addToFront(T element) {
         LinearNode<T> new_node = new LinearNode<>(element);
@@ -26,6 +47,12 @@ public class LinearLinkedUnorderedList<T> extends LinearLinkedList<T> implements
         this.modCount++;
     }
 
+    /**
+     * Adiciona um novo elemento ao final da lista. Este método insere o elemento como o último
+     * nó da lista.
+     *
+     * @param element o elemento a ser adicionado ao final da lista.
+     */
     @Override
     public void addToRear(T element) {
         LinearNode<T> new_node = new LinearNode<>(element);
@@ -41,6 +68,14 @@ public class LinearLinkedUnorderedList<T> extends LinearLinkedList<T> implements
         this.modCount++;
     }
 
+    /**
+     * Adiciona um novo elemento após o elemento especificado (target) na lista.
+     * Se o elemento alvo não for encontrado, uma exceção {@link ElementNotFoundException} é lançada.
+     *
+     * @param element o elemento a ser adicionado após o alvo.
+     * @param target  o elemento após o qual o novo elemento será inserido.
+     * @throws ElementNotFoundException se o elemento alvo não for encontrado na lista.
+     */
     @Override
     public void addAfter(T element, T target) throws ElementNotFoundException {
         LinearNode<T> current = this.head;

@@ -5,9 +5,14 @@ import Exceptions.EmptyCollectionException;
 import Interfaces.HeapADT;
 
 /**
- * ArrayHeap provides an array implementation of a minheap.
+ * ArrayHeap fornece uma implementação de heap mínima usando um array.
  *
- * @param <T>
+ * @param <T> t
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T> {
 
@@ -16,11 +21,10 @@ public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T>
     }
 
     /**
-     * Adds the specified element to this heap in the appropriate position
-     * according to its key value. Note that equal elements are added to the
-     * right.
+     * Adiciona o elemento especificado a este heap na posição apropriada
+     * de acordo com seu valor-chave. Note que elementos iguais são adicionados à direita.
      *
-     * @param obj the element to be added to this heap
+     * @param obj o elemento a ser adicionado a este heap
      */
     @Override
     public void addElement(T obj) {
@@ -37,7 +41,7 @@ public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T>
     }
 
     /**
-     * Reorders this heap to maintain the ordering property after adding a node.
+     * Reordena este heap para manter a propriedade de ordenação após adicionar um nó.
      */
     private void heapifyAdd() {
         T temp;
@@ -54,11 +58,11 @@ public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T>
     }
 
     /**
-     * Remove the element with the lowest value in this heap and returns a
-     * reference to it. Throws an EmptyCollectionException if the heap is empty.
+     * Remove o elemento com o valor mais baixo deste heap e retorna uma
+     * referência para ele. Lança uma EmptyCollectionException se o heap estiver vazio.
      *
-     * @return a reference to the element with the lowest value in this head
-     * @throws EmptyCollectionException if an empty collection exception occurs
+     * @return uma referência para o elemento com o valor mais baixo deste heap
+     * @throws EmptyCollectionException se uma exceção de coleção vazia ocorrer
      */
     @Override
     public T removeMin() throws EmptyCollectionException {
@@ -76,7 +80,7 @@ public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T>
     }
 
     /**
-     * Reorders this heap to maintain the ordering property.
+     * Reordena este heap para manter a propriedade de ordenação.
      */
     private void heapifyRemove() {
         T temp;
@@ -122,9 +126,9 @@ public class ArrayHeap<T> extends ArrayBinarySearchTree<T> implements HeapADT<T>
     }
 
     /**
-     * Returns a reference to the element with the lowest value in this heap.
+     * Retorna uma referência para o elemento com o valor mais baixo deste heap.
      *
-     * @return a reference to the element with the lowest value in this heap
+     * @return uma referência para o elemento com o valor mais baixo deste heap
      */
     @Override
     public T findMin() throws EmptyCollectionException {

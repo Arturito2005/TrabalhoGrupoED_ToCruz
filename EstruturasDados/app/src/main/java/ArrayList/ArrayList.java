@@ -7,22 +7,47 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Implementação abstrata de uma lista genérica baseada em array.
+ * Esta classe fornece funcionalidades básicas para manipulação de listas, como adição, remoção, verificação de conteúdo,
+ * e iteração sobre os elementos. Também inclui métodos para acessar o primeiro e último elemento, e expandir a capacidade do array.
+ *
+ * @param <T> Tipo dos elementos da lista.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public abstract class ArrayList<T> implements ListADT<T> {
 
+    /** Capacidade padrão inicial do array */
     private static final int CAPACITY_DEFAULT = 100;
 
+    /** Contador de modificações na lista, usado para detectar modificações concorrentes */
     protected int modCount;
 
+    /** Contador de elementos na lista */
     protected int count;
 
+    /** Array que armazena os elementos da lista */
     protected T[] list;
 
+    /**
+     * Construtor padrão que inicializa a lista com a capacidade padrão de 100.
+     */
     public ArrayList() {
         this.modCount = 0;
         this.count = 0;
         this.list = (T[]) (new Object[CAPACITY_DEFAULT]);
     }
 
+    /**
+     * Construtor que inicializa a lista com uma capacidade especificada.
+     * Se a capacidade fornecida for menor ou igual a 0, a capacidade padrão será utilizada.
+     *
+     * @param capacity A capacidade inicial da lista.
+     */
     public ArrayList(int capacity) {
         this.modCount = 0;
         this.count = 0;
@@ -34,6 +59,10 @@ public abstract class ArrayList<T> implements ListADT<T> {
         }
     }
 
+    /**
+     * Expande o array interno para o dobro da sua capacidade atual.
+     * Este método é chamado quando a capacidade do array é atingida.
+     */
     protected void expandArray() {
         T[] temp = (T[]) (new Object[(this.list.length * 2)]);
 
@@ -42,6 +71,13 @@ public abstract class ArrayList<T> implements ListADT<T> {
         this.list = temp;
     }
 
+    /**
+     * Remove o primeiro elemento da lista.
+     * Lança uma exceção {@link EmptyCollectionException} se a lista estiver vazia.
+     *
+     * @return O elemento removido.
+     * @throws EmptyCollectionException Se a lista estiver vazia.
+     */
     @Override
     public T removeFirst() throws EmptyCollectionException {
         if (this.count == 0) {
@@ -61,6 +97,13 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return elementRemove;
     }
 
+    /**
+     * Remove o último elemento da lista.
+     * Lança uma exceção {@link EmptyCollectionException} se a lista estiver vazia.
+     *
+     * @return O elemento removido.
+     * @throws EmptyCollectionException Se a lista estiver vazia.
+     */
     @Override
     public T removeLast() throws EmptyCollectionException {
         if (this.count == 0) {
@@ -75,6 +118,16 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return elementRemove;
     }
 
+    /**
+     * Remove o elemento especificado da lista.
+     * Lança uma exceção {@link EmptyCollectionException} se a lista estiver vazia,
+     * e uma {@link ElementNotFoundException} se o elemento não for encontrado.
+     *
+     * @param element O elemento a ser removido.
+     * @return O elemento removido.
+     * @throws EmptyCollectionException Se a lista estiver vazia.
+     * @throws ElementNotFoundException Se o elemento não for encontrado.
+     */
     @Override
     public T remove(T element) throws EmptyCollectionException {
         if (this.count == 0) {
@@ -104,16 +157,37 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return elementRem;
     }
 
+    /**
+     * Retorna o primeiro elemento da lista.
+     * Lança uma exceção {@link EmptyCollectionException} se a lista estiver vazia.
+     *
+     * @return O primeiro elemento da lista.
+     * @throws EmptyCollectionException Se a lista estiver vazia.
+     */
     @Override
     public T first() {
         return this.list[0];
     }
 
+    /**
+     * Retorna o último elemento da lista.
+     * Lança uma exceção {@link EmptyCollectionException} se a lista estiver vazia.
+     *
+     * @return O último elemento da lista.
+     * @throws EmptyCollectionException Se a lista estiver vazia.
+     */
     @Override
     public T last() {
         return this.list[this.count - 1];
     }
 
+
+    /**
+     * Verifica se a lista contém o elemento especificado.
+     *
+     * @param target O elemento a ser buscado.
+     * @return true se o elemento estiver na lista, false caso contrário.
+     */
     @Override
     public boolean contains(T target) {
         boolean targetFound = false;
@@ -127,6 +201,11 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return targetFound;
     }
 
+    /**
+     * Verifica se a lista está vazia.
+     *
+     * @return true se a lista estiver vazia, false caso contrário.
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -138,16 +217,31 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return empty;
     }
 
+    /**
+     * Retorna o número de elementos na lista.
+     *
+     * @return O número de elementos na lista.
+     */
     @Override
     public int size() {
         return this.count;
     }
 
+    /**
+     * Retorna um iterador para a lista.
+     *
+     * @return Um iterador para percorrer os elementos da lista.
+     */
     @Override
     public Iterator<T> iterator() {
         return new MyIterator<>();
     }
 
+    /**
+     * Retorna uma representação em string da lista.
+     *
+     * @return A representação em string dos elementos da lista.
+     */
     @Override
     public String toString() {
         String temp = "";
@@ -159,25 +253,57 @@ public abstract class ArrayList<T> implements ListADT<T> {
         return temp;
     }
 
+    /**
+     * Classe interna para implementação do iterador da lista.
+     * Realiza a iteração sobre os elementos da lista e garante a segurança em relação a modificações concorrentes.
+     */
     private class MyIterator<E> implements Iterator<E> {
-
+        /**
+         * Variável que armazena a posição atual do iterador na lista.
+         * Inicializa com o valor 0, representando o início da iteração.
+         */
         private int current;
 
+        /**
+         * Variável que armazena o valor de modCount no momento da criação do iterador.
+         * Usada para detectar modificações concorrentes na lista enquanto a iteração está em andamento.
+         */
         private int exceptedModCount;
 
+        /**
+         * Variável booleana que indica se a remoção de um elemento é permitida no estado atual do iterador.
+         * Inicializa com 'false', e é alterada para 'true' quando o próximo elemento é acessado, permitindo a remoção.
+         */
         private boolean isOkToRemove;
 
+        /**
+         * Construtor do meu Iterator
+         * */
         private MyIterator() {
             this.current = 0;
             this.exceptedModCount = modCount;
             this.isOkToRemove = false;
         }
 
+        /**
+         * Verifica se há mais elementos para iterar.
+         *
+         * @return true se houver mais elementos, false caso contrário.
+         */
         @Override
         public boolean hasNext() {
             return (this.current != size());
         }
 
+        /**
+         * Retorna o próximo elemento da lista.
+         * Lança uma exceção {@link NoSuchElementException} se não houver mais elementos.
+         * Lança uma exceção {@link ConcurrentModificationException} se houver modificações concorrentes.
+         *
+         * @return O próximo elemento da lista.
+         * @throws ConcurrentModificationException Se houver modificações concorrentes.
+         * @throws NoSuchElementException Se não houver mais elementos.
+         */
         @Override
         public E next() {
             if (this.exceptedModCount != modCount) {
@@ -193,6 +319,14 @@ public abstract class ArrayList<T> implements ListADT<T> {
             return (E) list[current - 1];
         }
 
+        /**
+         * Remove o elemento atual da lista.
+         * Lança uma exceção {@link ConcurrentModificationException} se houver modificações concorrentes.
+         * Lança uma exceção {@link IllegalStateException} se a remoção não for permitida.
+         *
+         * @throws ConcurrentModificationException Se houver modificações concorrentes.
+         * @throws IllegalStateException Se a remoção não for permitida.
+         */
         @Override
         public void remove() {
             if (this.exceptedModCount != modCount) {

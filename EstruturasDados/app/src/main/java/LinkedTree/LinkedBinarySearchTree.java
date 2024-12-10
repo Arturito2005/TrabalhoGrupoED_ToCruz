@@ -3,16 +3,41 @@ package LinkedTree;
 import Interfaces.BinarySearchTreeADT;
 import Exceptions.ElementNotFoundException;
 
+/**
+ * Implementação de uma árvore binária de pesquisa (BST) utilizando uma árvore binária encadeada.
+ * A classe oferece operações para adicionar, remover e buscar elementos, bem como métodos para
+ * encontrar o menor e o maior elemento na árvore.
+ *
+ * @param <T> Tipo genérico dos elementos armazenados na árvore, que deve ser comparável.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements BinarySearchTreeADT<T> {
 
+    /**
+     * Constrói uma árvore binária de pesquisa vazia.
+     */
     public LinkedBinarySearchTree() {
         super();
     }
 
+    /**
+     * Constrói uma árvore binária de pesquisa com um elemento raiz.
+     *
+     * @param element Elemento que será inserido como raiz da árvore.
+     */
     public LinkedBinarySearchTree(T element) {
         super(element);
     }
 
+    /**
+     * Adiciona um elemento à árvore de pesquisa binária.
+     *
+     * @param element Elemento a ser adicionado à árvore.
+     */
     @Override
     public void addElement(T element) {
         BinaryTreeNode<T> temp = new BinaryTreeNode<>(element);
@@ -46,6 +71,12 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
         count++;
     }
 
+    /**
+     * Encontra e substitui um nó na árvore binária de pesquisa, de acordo com as regras de remoção.
+     *
+     * @param node Nó a ser substituído.
+     * @return O nó substituto após a remoção.
+     */
     protected BinaryTreeNode<T> replacement(BinaryTreeNode<T> node) {
         BinaryTreeNode<T> result;
 
@@ -78,6 +109,13 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
         return result;
     }
 
+    /**
+     * Remove um elemento da árvore binária de pesquisa.
+     *
+     * @param targetElement Elemento a ser removido.
+     * @return O elemento removido da árvore.
+     * @throws ElementNotFoundException Se o elemento não for encontrado na árvore.
+     */
     @Override
     public T removeElement(T targetElement) throws ElementNotFoundException {
         T result = null;
@@ -128,6 +166,11 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
         return result;
     }
 
+    /**
+     * Remove todas as ocorrências de um elemento da árvore.
+     *
+     * @param targetElement Elemento a ser removido.
+     */
     @Override
     public void removeAllOccurences(T targetElement) {
         try {
@@ -138,16 +181,33 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
         }
     }
 
+    /**
+     * Remove o menor elemento da árvore.
+     *
+     * @return O menor elemento removido da árvore.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
+     */
     @Override
     public T removeMin() throws ElementNotFoundException {
         return this.removeElement(findMin());
     }
 
+    /**
+     * Remove o maior elemento da árvore.
+     *
+     * @return O maior elemento removido da árvore.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
+     */
     @Override
     public T removeMax() throws ElementNotFoundException {
         return this.removeElement(findMax());
     }
 
+    /**
+     * Encontra o menor elemento na árvore.
+     *
+     * @return O menor elemento da árvore.
+     */
     @Override
     public T findMin() {
         T result = null;
@@ -169,6 +229,11 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
         return result;
     }
 
+    /**
+     * Encontra o maior elemento na árvore.
+     *
+     * @return O maior elemento da árvore.
+     */
     @Override
     public T findMax() {
         T result = null;

@@ -3,53 +3,58 @@ package Interfaces;
 import Exceptions.EmptyCollectionException;
 
 /**
- * This interface defines the ADT (Abstract Data Type) for a generic stack.
+ * Esta interface define o ADT (Tipo Abstrato de Dados) para uma pilha genérica.
  *
- * @param <T> the type of elements stored in this stack
+ * @param <T> o tipo dos elementos armazenados nesta pilha
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface StackADT<T> {
 
     /**
-     * Adds one element to the top of this stack.
+     * Adiciona um elemento ao topo desta pilha.
      *
-     * @param element element to be pushed onto stack
+     * @param element o elemento a ser empilhado
      */
     public void push(T element);
 
     /**
-     * Removes and returns the top element from this stack.
+     * Remove e retorna o elemento do topo desta pilha.
      *
-     * @return T element removed from the top of the stack
+     * @return T o elemento removido do topo da pilha
      * @throws EmptyCollectionException
      */
     public T pop() throws EmptyCollectionException;
 
     /**
-     * Returns without removing the top element of this stack.
+     * Retorna, sem remover, o elemento do topo desta pilha.
      *
-     * @return T element on top of the stack
+     * @return T o elemento no topo da pilha
      * @throws EmptyCollectionException
      */
     public T peek() throws EmptyCollectionException;
 
     /**
-     * Returns true if this stack contains no elements.
+     * Retorna true se esta pilha não contiver elementos.
      *
-     * @return boolean whether or not this stack is empty
+     * @return boolean se a pilha está vazia ou não
      */
     public boolean isEmpty();
 
     /**
-     * Returns the number of elements in this stack.
+     * Retorna o número de elementos nesta pilha.
      *
-     * @return int number of elements in this stack
+     * @return int o número de elementos nesta pilha
      */
     public int size();
 
     /**
-     * Returns a string representation of this stack.
+     * Retorna uma representação em string desta pilha.
      *
-     * @return String representation of this stack
+     * @return String a representação em string desta pilha
      */
     @Override
     public String toString();

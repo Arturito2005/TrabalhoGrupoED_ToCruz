@@ -3,60 +3,64 @@ package Interfaces;
 import Exceptions.ElementNotFoundException;
 
 /**
- * This interface defines the ADT for a binary search tree (BST).
+ * Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de busca binária (BST).
  *
- * @param <T> the type of elements stored in the binary search tree
+ * @param <T> o tipo de elementos armazenados na árvore de busca binária
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface BinarySearchTreeADT<T> extends BinaryTreeADT<T> {
 
     /**
-     * Adds the specified element to the proper location in this tree.
+     * Adiciona o elemento especificado na localização apropriada desta árvore.
      *
-     * @param element the element to be added to this tree
+     * @param element o elemento a ser adicionado nesta árvore
      */
     public void addElement(T element);
 
     /**
-     * Removes and returns the specified element from this tree.
+     * Remove e retorna o elemento especificado desta árvore.
      *
-     * @param targetElement the element to be removed from this tree
-     * @return the element removed from this tree
+     * @param targetElement o elemento a ser removido desta árvore
+     * @return o elemento removido desta árvore
      */
     public T removeElement(T targetElement) throws ElementNotFoundException;
 
     /**
-     * Removes all occurences of the specified element from this tree.
+     * Remove todas as ocorrências do elemento especificado desta árvore.
      *
-     * @param targetElement the element that the list will have all instances of
-     * it removed
+     * @param targetElement o elemento cujas todas as instâncias serão removidas da árvore
      */
     public void removeAllOccurences(T targetElement);
 
     /**
-     * Removes and returns the smallest element from this tree.
+     * Remove e retorna o menor elemento desta árvore.
      *
-     * @return the smallest element from this tree.
+     * @return o menor elemento desta árvore
      */
     public T removeMin() throws ElementNotFoundException;
 
     /**
-     * Removes and returns the largest element from this tree.
+     * Remove e retorna o maior elemento desta árvore.
      *
-     * @return the largest element from this tree
+     * @return o maior elemento desta árvore
      */
     public T removeMax() throws ElementNotFoundException;
 
     /**
-     * Returns a reference to the smallest element in this tree.
+     * Retorna uma referência para o menor elemento desta árvore.
      *
-     * @return a reference to the smallest element in this tree
+     * @return uma referência para o menor elemento desta árvore
      */
     public T findMin();
 
     /**
-     * Returns a reference to the largest element in this tree.
+     * Retorna uma referência para o maior elemento desta árvore.
      *
-     * @return a reference to the largest element in this tree
+     * @return uma referência para o maior elemento desta árvore
      */
     public T findMax();
 }

@@ -4,8 +4,26 @@ import Interfaces.UnorderedListADT;
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 
+/**
+ * Classe de teste para a implementação de uma lista não ordenada encadeada (LinearLinkedUnorderedList).
+ *
+ * Esta classe realiza testes para as operações básicas de uma lista não ordenada encadeada, como
+ * adicionar elementos à frente, adicionar ao final, adicionar após um elemento específico, remover
+ * o primeiro e o último elemento, e imprimir o estado da lista após cada operação.
+ */
 public class TestLinearLinkedUnorderedList {
 
+    /**
+     * Método principal que executa os testes na lista não ordenada encadeada.
+     *
+     * Este método cria uma lista não ordenada encadeada, adiciona elementos em várias posições
+     * (à frente, ao final e após um elemento específico), realiza remoções do primeiro e último
+     * elemento, e imprime o estado da lista após cada operação. Também realiza verificações de
+     * exceções lançadas em situações de erro, como quando um elemento não é encontrado para a operação
+     * de adição após um elemento específico.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         UnorderedListADT<Integer> linkedUndo1 = new LinearLinkedUnorderedList<>();
 
