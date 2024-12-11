@@ -2,8 +2,6 @@ package Menu;
 
 import Missoes.Missoes;
 
-import java.util.Scanner;
-
 /**
  * Classe responsável pelo menu de missões do jogo.
  * Contém o método principal que importa e realiza as missões disponíveis.
