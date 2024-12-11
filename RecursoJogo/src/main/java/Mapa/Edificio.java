@@ -62,10 +62,10 @@ public class Edificio implements EdificoInt {
      * @param name            Nome do edifício a ser copiado.
      * @param planta_edificio Grafo que representa as divisões e suas conexões.
      */
-    public Edificio(int id_edificio, String name, Network<Divisao> planta_edificio) {
+    public Edificio(int id_edificio, String name, NetworkMatrizADT<Divisao> planta_edificio) {
         this.id = id_edificio;
         this.name = name;
-        Network<Divisao> networkTemp = new Network<>();
+        NetworkMatrizADT<Divisao> networkTemp = new Network<>();
 
         for (Divisao divisao : planta_edificio) {
             Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItem(), divisao.getInimigos(), divisao.getToCruz());
