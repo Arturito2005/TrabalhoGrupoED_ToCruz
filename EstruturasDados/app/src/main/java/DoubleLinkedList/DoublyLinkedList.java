@@ -60,13 +60,14 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
             throw new EmptyCollectionException("A lista está vaiza!");
         }
 
-        T elementRem = this.tail.getElement();
+        T elementRem = this.head.getElement();
 
         if (this.count == 1) {
             this.head = null;
             this.tail = null;
         } else {
-            this.tail = this.tail.getPrevious_ele();
+            this.head = this.head.getNext_ele();
+            this.head.setPrevious_ele(null);
         }
 
         this.count--;
@@ -86,13 +87,14 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
             throw new EmptyCollectionException("A lista está vaiza!");
         }
 
-        T elementRem = this.head.getElement();
+        T elementRem = this.tail.getElement();
 
         if (this.count == 1) {
             this.head = null;
             this.tail = null;
         } else {
-            this.head = this.head.getNext_ele();
+            this.tail = this.tail.getPrevious_ele();
+            this.tail.setNext_ele(null);
         }
 
         this.count--;

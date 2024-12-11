@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestsPersonagens.TestToCruz" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-10T20:03:19" hostname="LAPTOP-8POH8N1C" time="0.009">
+<testsuite name="TestsPersonagens.TestToCruz" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-11T08:47:42" hostname="LAPTOP-8POH8N1C" time="0.008">
   <properties/>
   <testcase name="testguardarKitTypeDifKit_NesteCasoColete()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
   <testcase name="testUsarColeteNullPoninterException()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
   <testcase name="testUsarKitSemKitsNaMochila()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
   <testcase name="testUsarKitComAvidaCheia()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
-  <testcase name="testguardarKitNull()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
-  <testcase name="testguardarKitValida()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
+  <testcase name="testguardarKitNull()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
+  <testcase name="testguardarKitValida()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
   <testcase name="testUsarKitComKitNaMochilaEToComMenosDe100Pontos()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
-  <testcase name="testUsarColete()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
+  <testcase name="testUsarColete()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

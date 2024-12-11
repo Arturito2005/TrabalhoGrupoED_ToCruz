@@ -43,7 +43,8 @@ public class Missoes implements MissoesInt {
          * ExportarDado exportarDado = new ExportarDado();
 
         for(Missao missao: listaMissao) {
-            exportarDado.exportarDados();
+        * if(!missao.simulacoes.IsEmpty()) {
+            exportarDado.exportarDados(missao);
         }
          *  */
     }

@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Missao implements MissaoInt {
     private static Scanner sc = new Scanner(System.in);
 
-    private String cod_versao;
+    private String cod_missao;
 
     private long versao;
 
@@ -24,8 +24,8 @@ public class Missao implements MissaoInt {
 
     private OrderedListADT<Simulacoes> simulacoes;
 
-    public Missao(String cod_versao, long versao, Edificio edificio) {
-        this.cod_versao = cod_versao;
+    public Missao(String cod_missao, long versao, Edificio edificio) {
+        this.cod_missao = cod_missao;
         this.versao = versao;
         this.edificio = edificio;
         this.tot_simulacoes = 0;
@@ -33,14 +33,14 @@ public class Missao implements MissaoInt {
     }
 
     public Missao() {
-        this.cod_versao = "";
+        this.cod_missao = "";
         this.versao = 0;
         this.edificio = new Edificio();
         this.simulacoes = new LinearLinkedOrderedList<>();
     }
 
-    public String getCod_versao() {
-        return cod_versao;
+    public String getcod_missao() {
+        return cod_missao;
     }
 
     public OrderedListADT<Simulacoes> getSimulacoes() {

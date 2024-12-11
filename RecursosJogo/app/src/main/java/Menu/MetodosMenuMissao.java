@@ -128,7 +128,7 @@ public class MetodosMenuMissao {
             System.out.println("0 - Sair");
             for (Missao mis : missoes.getListaMissao()) {
                 arrayMissao[i++] = mis;
-                System.out.println(i + " - Missao" + mis.getCod_versao());
+                System.out.println(i + " - Missao" + mis.getcod_missao());
             }
 
             op_missao = -1;
@@ -143,9 +143,8 @@ public class MetodosMenuMissao {
                 }
             } while (op_missao < 0 && op_missao > i - 1);
 
-            if (op_missao != 0) {
-                Missao mis_selec = arrayMissao[op_missao];
-                SelecionarModoJogo(mis_selec);
+            if (op_missao > 0) {
+                SelecionarModoJogo(arrayMissao[op_missao]);
             }
         } while (op_missao != 0);
 

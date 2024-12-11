@@ -1,20 +1,20 @@
-2O item desta divisao já foi usado anteriormente
-O inimigo Inimigo Fraco
-O inimigo Inimigo Forte
-O inimigo Inimigo Fraco
-%Vida do inimigo Inimigo Forte: 50.0
-)O imimigoInimigo Fraco atacou o To Cruz
-.To Cruz resiste ao ataque e fica com 90.0 HP
-
-)O imimigoInimigo Forte atacou o To Cruz
-
-(O inimigo Inimigo Fortematou o To Cruz
-%Vida do inimigo Inimigo Fraco: 40.0
-%Vida do inimigo Inimigo Forte: 90.0
-ETo Cruz está com o alvo, agora só falta sair do edificio com vida
-#O imimigoInimigo atacou o To Cruz
-.To Cruz resiste ao ataque e fica com 90.0 HP
-A lista está vaiza!
-A lista está vaiza!
-A lista está vaiza!
-A lista está vaiza!
+2O item desta divisao já foi usado anteriormente
+O inimigo Inimigo Fraco
+O inimigo Inimigo Forte
+	O inimigo Inimigo Fraco
+	%Vida do inimigo Inimigo Forte: 50.0
+
+)O imimigoInimigo Fraco atacou o To Cruz
+
+.To Cruz resiste ao ataque e fica com 90.0 HP
+)O imimigoInimigo Forte atacou o To Cruz
+(O inimigo Inimigo Fortematou o To Cruz
+%Vida do inimigo Inimigo Fraco: 40.0
+%Vida do inimigo Inimigo Forte: 90.0
+ETo Cruz está com o alvo, agora só falta sair do edificio com vida
+#O imimigoInimigo atacou o To Cruz
+.To Cruz resiste ao ataque e fica com 90.0 HP
+A lista está vaiza!
+A lista está vaiza!
+A lista está vaiza!
+A lista está vaiza!

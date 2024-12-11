@@ -22,7 +22,7 @@ public interface IteracoesToCruz {
     /**
      * Permite o To Cruz atacar todos os inimigos da divisão.
      */
-    public void attackToCruz(StackADT<Inimigo> dead_inimigo);
+    public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigo);
 
     /**
      * Permite ao To Cruz utilziar o item da divisão

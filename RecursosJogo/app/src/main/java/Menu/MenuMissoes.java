@@ -15,7 +15,9 @@ public class MenuMissoes {
 
     public static void main(String[] args) {
         MetodosMenuMissao metodos = new MetodosMenuMissao();
+
         Missoes missoes = metodos.importarMissoes();
         metodos.RealizarMissoes(missoes);
+        //missoes.exportarMissoes();
     }
 }

@@ -33,7 +33,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     private QueueADT<Divisao> trajeto_to;
 
-    private StackADT<Inimigo> inimigos_dead;
+    private UnorderedListADT<Inimigo> inimigos_dead;
 
     private double vida_to;
 
@@ -47,7 +47,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         this.versao_simulacao = versao_simulacao;
         this.vida_to = 0;
         this.trajeto_to = new LinkedQueue<>();
-        this.inimigos_dead = new LinkedStack<>();
+        this.inimigos_dead = new LinearLinkedUnorderedList<Inimigo>();
     }
 
     public void addDivisaoTrajetoToCruz(Divisao divisao) {
@@ -370,16 +370,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      */
     @Override
     public Simulacoes jogoAutomatico() {
-        //ToCruz entra na sala (meter o codigo)
-        //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
-        BestStartToCruz(toCruz); //Ver se isto mete já o ToCruz na melhor divisao se sim alterar no modo manual se não alterar e meter como o manual
-
+        BestStartToCruz(toCruz);
         while (!finishgame) {
-            //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
             UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
@@ -396,7 +392,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             itrMapa = this.edificio.IteratorMapa();
             boolean findToCruz = false;
-            //this.edificio.drawMapa();
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
@@ -410,7 +405,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     findToCruz = true;
                 }
             }
-            //this.edificio.drawMapa();
         }
 
         relatoriosMissao();
@@ -648,7 +642,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         } else {
             try {
                 if(toCruz.mochilaTemKit() && toCruz.getVida() < 100) {
-                    String op_kit = "";
+                    String op_kit = null;
                     System.out.println("O to Cruz possui kits na sua mochila");
                     System.out.println("O proximo kit da mochila tem os seguintes pontos" + toCruz.getMochila().peek().getVida_recuperada() + " deseja se curar (Sim: S/ Nao: N)");
 
@@ -661,7 +655,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("Numero invalido!");
                             sc.next();
                         }
-                    } while(op_kit.equals("N") && op_kit.equals("n") && op_kit.equals("S") && op_kit.equals("s"));
+                    } while(!op_kit.equals("S") && !op_kit.equals("s") && !op_kit.equals("N") && !op_kit.equals("n"));
 
                     if(op_kit.equals("S") || op_kit.equals("s")) {
                         toCruz.usarKit();
@@ -910,7 +904,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         if (toCruz.getVida() > 0 && alvo != null) {
             System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
-            System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
+            System.out.println("Total de vida do ToCruz --> " + this.vida_to);
         } else {
             System.out.println("Missão falhada ಥ_ಥ");
         }
@@ -918,8 +912,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
         if (!inimigos_dead.isEmpty()) {
             int i = 1;
-            while (!inimigos_dead.isEmpty()) {
-                System.out.println("Inimigo nº" + i + " : " + inimigos_dead.pop().toString());
+            for(Inimigo inimigo: inimigos_dead) {
+                System.out.println("Inimigo nº" + i + " : " + inimigo.toString());
                 i++;
             }
         }

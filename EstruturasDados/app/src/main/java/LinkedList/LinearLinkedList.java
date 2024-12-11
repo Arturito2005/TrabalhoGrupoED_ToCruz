@@ -133,7 +133,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         boolean find = false;
         int pos_find = this.count;
 
-        while (current != null && find == false) {
+        while (current != null && !find) {
             if (current.getElement().equals(element)) {
                 find = true;
                 elementRem = element;
@@ -144,7 +144,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
             }
         }
 
-        if (find == false) {
+        if (!find) {
             throw new ElementNotFoundException("O elemento introduzido não existe na lista!");
         }
 

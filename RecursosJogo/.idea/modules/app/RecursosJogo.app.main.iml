@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../app/libs/EstruturasDados.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../../EstruturasDados/out/artifacts/EstruturasDados_jar/EstruturasDados.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,6 +20,5 @@
     <orderEntry type="library" name="Gradle: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.10" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" name="EstruturasDados" level="project" />
   </component>
 </module>

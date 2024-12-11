@@ -351,7 +351,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * @param dead_inimigos Pilha onde inimigos mortos serão armazenados.
      */
     @Override
-    public void attackToCruz(StackADT<Inimigo> dead_inimigos) {
+    public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigos) {
         Iterator<Inimigo> iterator = this.inimigos.iterator();
         UnorderedListADT<Inimigo> inimigosDead = new LinearLinkedUnorderedList<>();
 
@@ -369,7 +369,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         while (!inimigosDead.isEmpty()) {
             Inimigo inimigo = inimigosDead.removeFirst();
-            dead_inimigos.push(inimigo);
+            dead_inimigos.addToRear(inimigo);
             removeInimigo(inimigo);
         }
     }

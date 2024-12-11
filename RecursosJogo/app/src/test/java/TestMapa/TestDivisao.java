@@ -1,15 +1,13 @@
 package TestMapa;
 
-import Exceptions.EmptyCollectionException;
-import Interfaces.StackADT;
 import Items.Item;
 import Items.ItemCura;
 import Items.TypeItemCura;
+import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Alvo;
 import Mapa.Divisao;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-import Stacks.LinkedStack;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +27,7 @@ public class TestDivisao {
 
     private Inimigo inimigo2;
 
-    private StackADT<Inimigo> deadInimigos;
+    private LinearLinkedUnorderedList<Inimigo> deadInimigos;
 
     private Item itemCura;
 
@@ -41,7 +39,7 @@ public class TestDivisao {
         alvo = new Alvo(3, "Alvo", false);
         inimigo1 = new Inimigo(2, "Inimigo Fraco", 50, 5);
         inimigo2 = new Inimigo(3, "Inimigo Forte", 100, 10);
-        deadInimigos = new LinkedStack<>();
+        deadInimigos = new LinearLinkedUnorderedList<>();
 
         itemCura = new ItemCura(TypeItemCura.KIT_VIDA, 50);  // Supondo que a classe ItemCura herda de Item e tem um valor de cura
         divisao.addToCruz(toCruz);
@@ -176,7 +174,7 @@ public class TestDivisao {
         assertEquals(1, divisao.getInimigos().size(), "Deveria restar apenas um inimigo.");
         assertEquals(50, inimigo2.getVida(), "A vida do inimigo2 deveria ser 50.");
         assertFalse(deadInimigos.isEmpty(), "A pilha de inimigos mortos não deveria estar vazia.");
-        assertEquals(inimigo1, deadInimigos.pop(), "O inimigo1 deveria estar na pilha de inimigos mortos.");
+        assertEquals(inimigo1, deadInimigos.removeFirst(), "O inimigo1 deveria estar na pilha de inimigos mortos.");
     }
 
     @Test
@@ -186,10 +184,13 @@ public class TestDivisao {
         divisao.addInimigo(inimigo1);
         divisao.addInimigo(inimigo2);
         divisao.attackToCruz(deadInimigos);
+
         assertTrue(divisao.getInimigos().isEmpty(), "Todos os inimigos deveriam estar mortos.");
-        assertEquals(2, deadInimigos.size(), "A pilha de inimigos mortos deveria conter 2 inimigos.");
-        assertEquals(inimigo2, deadInimigos.pop(), "O inimigo2 deveria estar na pilha de inimigos mortos.");
-        assertEquals(inimigo1, deadInimigos.pop(), "O inimigo1 deveria estar na pilha de inimigos mortos.");
+
+        assertEquals(2, deadInimigos.size(), "A lista de inimigos mortos deveria conter 2 inimigos.");
+
+        assertTrue(deadInimigos.contains(inimigo2), "O inimigo2 deveria estar na lista de inimigos mortos.");
+        assertTrue(deadInimigos.contains(inimigo1), "O inimigo1 deveria estar na lista de inimigos mortos.");
     }
 
     @Test

@@ -217,7 +217,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      */
     @Override
     public void removeEdge(T vertex1, T vertex2) {
-        removeEdge(getIndex(vertex1), getIndex(vertex1));
+        removeEdge(getIndex(vertex1), getIndex(vertex2));
     }
 
     /**
