@@ -10,7 +10,7 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class MetodosMenuMissao {
+public abstract class MetodosMenuMissao {
 
     private static Scanner sc = new Scanner(System.in);
 
@@ -20,7 +20,7 @@ public class MetodosMenuMissao {
 
     private static final String destino = "./Jsons/Export/";
 
-    public Missoes importarMissoes() {
+    public static Missoes importarMissoes() {
         Missoes missoes = new Missoes();
         Missao missao;
         ImportarMapa importarMapa = new ImportarMapa();
@@ -66,7 +66,7 @@ public class MetodosMenuMissao {
         return missoes;
     }
 
-    public void RealizarMissoes(Missoes missoes) {
+    public static void RealizarMissoes(Missoes missoes) {
         if (missoes.getContMissoes() > 1) {
             int recomecar = -1;
             do {
@@ -90,7 +90,7 @@ public class MetodosMenuMissao {
         exportarMissoes(missoes);
     }
 
-    private void exportarMissoes(Missoes missoes) {
+    private static void exportarMissoes(Missoes missoes) {
         Iterator<Missao> iterator = missoes.getListaMissao().iterator();
         while (iterator.hasNext()) {
             Missao missao = iterator.next();
@@ -98,7 +98,7 @@ public class MetodosMenuMissao {
             exportar.exportarTrajetos(destino);
         }
     }
-    private void SelecionarModoJogo(Missao missao) {
+    private static void SelecionarModoJogo(Missao missao) {
         int op_modo;
         do {
             op_modo = -1;
@@ -137,7 +137,7 @@ public class MetodosMenuMissao {
         } while (op_modo != 0);
     }
 
-    private void executarVariasMissoes(Missoes missoes) {
+    private static void executarVariasMissoes(Missoes missoes) {
         int op_missao = -1;
         Missao[] arrayMissao = new Missao[missoes.getContMissoes()];
 

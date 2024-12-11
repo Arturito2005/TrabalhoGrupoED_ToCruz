@@ -421,12 +421,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
-        relatoriosMissao();
         double vida = toCruz.getVida();
         if (vida < 0) {
             vida = 0;
         }
         this.vida_to = vida;
+        relatoriosMissao(toCruz);
         return this;
     }
 
@@ -898,13 +898,13 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
-        relatoriosMissao();
         double vida = toCruz.getVida();
-
         if (vida < 0) {
             vida = 0;
         }
         this.vida_to = vida;
+        relatoriosMissao(toCruz);
+
         return this;
     }
 
@@ -912,21 +912,16 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Se for para guardar os inimigos e os itens coletados no exportar então modificar
      * a estrutura aqui
      * */
-    private void relatoriosMissao() {
+    private void relatoriosMissao(ToCruz toCruz) {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
         UnorderedListADT<Item> item_colected = new LinearLinkedUnorderedList<Item>();
         Alvo alvo = new Alvo();
-        ToCruz toCruz = null;
 
         while (itrMapa.hasNext()) {
             Divisao div = itrMapa.next();
 
             if (div.getItem() != null && div.getItem().isCollected()) {
                 item_colected.addToRear(div.getItem());
-            }
-
-            if (div.getToCruz() != null) {
-                toCruz = div.getToCruz();
             }
 
             if (div.getAlvo() != null) {
@@ -941,9 +936,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Relatorio do jogo: ");
         System.out.println("Vida final do ToCruz --> " + this.vida_to);
 
-        if (toCruz.getVida() > 0 && alvo != null) {
+        if (this.vida_to > 0 && alvo != null) {
             System.out.println("Missao realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
-            System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
+            System.out.println("Total de vida do ToCruz --> " + this.vida_to);
         } else {
             System.out.println("Missao falhada ಥ_ಥ");
         }

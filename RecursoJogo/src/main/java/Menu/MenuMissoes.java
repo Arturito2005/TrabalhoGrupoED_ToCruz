@@ -17,9 +17,7 @@ public class MenuMissoes {
      * @param args Argumentos de linha de comando (não utilizados neste caso).
      */
     public static void main(String[] args) {
-        MetodosMenuMissao metodos = new MetodosMenuMissao();
-
-        Missoes missoes = metodos.importarMissoes();
-        metodos.RealizarMissoes(missoes);
+        Missoes missoes = MetodosMenuMissao.importarMissoes();
+        MetodosMenuMissao.RealizarMissoes(missoes);
     }
 }
