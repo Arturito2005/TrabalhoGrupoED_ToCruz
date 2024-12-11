@@ -12,14 +12,20 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    /*
-    * Depois meter
-    * implementation files("libs/RecursoJogo.jar)
-    */
-    implementation files("C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar")
-    // DEPOIS METER O implementation File: "././Jars/NomeJar.jar"
+    implementation files("libs/RecursoJogo.jar")
 }
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+    }
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
+build.finalizedBy javadoc

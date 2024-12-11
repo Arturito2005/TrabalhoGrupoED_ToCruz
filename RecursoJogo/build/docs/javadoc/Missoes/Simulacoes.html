@@ -95,11 +95,13 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Simulacoes</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</span></div>
-<div class="block">Voltar a meter a sugestao do melhor caminho no modo Manual
- <p>
- Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas
- <p>
- A nivel de testes só falta testar no modo manual a parte de o ToCruz entrar numa divisao com item</div>
+<div class="block">Classe responsável por gerenciar as simulações do jogo, implementando o comportamento do ToCruz
+ enquanto interage com o edifício, inimigos e outros objetos do jogo. A classe é capaz de realizar
+ simulações manuais e automáticas, além de gerar relatórios ao final de cada simulação.
+
+ A classe implementa a interface <a href="../Interfaces/SimulacoesInt.html" title="interface in Interfaces"><code>SimulacoesInt</code></a> para fornecer os métodos necessários
+ para o controle do jogo e a interface <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link"><code>Comparable</code></a> para permitir comparações entre
+ diferentes simulações.</div>
 </div>
 </section>
 <section class="summary">
@@ -114,7 +116,9 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long,Mapa.Edificio)" class="member-name-link">Simulacoes</a><wbr>(long&nbsp;versao_simulacao,
  <a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a>&nbsp;edificio)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Construtor que inicializa os atributos da simulação com os valores fornecidos.</div>
+</div>
 </div>
 </section>
 </li>
@@ -131,40 +135,75 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addDivisaoTrajetoToCruz(Mapa.Divisao)" class="member-name-link">addDivisaoTrajetoToCruz</a><wbr>(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona uma divisão ao trajeto do ToCruz.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#calculateBestExitAutomatico(Personagens.ToCruz,Mapa.Divisao,Interfaces.UnorderedListADT)" class="member-name-link">calculateBestExitAutomatico</a><wbr>(<a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz,
  <a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_alvo,
  Interfaces.UnorderedListADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&nbsp;list_entradas)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calcula o melhor caminho para o ToCruz sair do edifício, considerando as entradas fornecidas.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareTo(Missoes.Simulacoes)" class="member-name-link">compareTo</a><wbr>(<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compara este objeto Simulacoes com outro para determinar a ordem de classificação.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compara este objeto Simulacoes com outro para verificar se são iguais.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.UnorderedListADT<wbr>&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInimigos_dead()" class="member-name-link">getInimigos_dead</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna a lista dos inimigos mortos.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.QueueADT<wbr>&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTrajeto_to()" class="member-name-link">getTrajeto_to</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna a fila de trajetos do ToCruz.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersao_simulacao()" class="member-name-link">getVersao_simulacao</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna a versão da simulação.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVida_to()" class="member-name-link">getVida_to</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna a quantidade de vida restante do ToCruz.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Gera um código de hash único para o objeto Simulacoes, baseado na versão da simulação, no trajeto de ToCruz,
+ na vida restante de ToCruz e no estado do edifício.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Simulacoes.html" title="class in Missoes">Simulacoes</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Joga o jogo de forma automático</div>
+<div class="block">Simula o jogo automaticamente, fazendo o ToCruz se mover, enfrentar inimigos e atingir objetivos.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modojogoAutomatico()" class="member-name-link">modojogoAutomatico</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">O caminho de volta do alvo para uma saida não está a dar</div>
+<div class="block">Realiza a simulação do jogo no modo automático, onde o personagem ToCruz é controlado
+ pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
+ sem morrer.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Simulacoes.html" title="class in Missoes">Simulacoes</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modojogoManual()" class="member-name-link">modojogoManual</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
- Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+<div class="block">Realiza a simulação do jogo no modo manual.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna uma representação em string da simulação, incluindo a versão da simulação, o trajeto
+ feito por ToCruz, o número de inimigos mortos, a vida restante de ToCruz e o estado atual do edifício.</div>
+</div>
 </div>
 </div>
 </div>
@@ -188,6 +227,12 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Simulacoes</span><wbr><span class="parameters">(long&nbsp;versao_simulacao,
  <a href="../Mapa/Edificio.html" title="class in Mapa">Edificio</a>&nbsp;edificio)</span></div>
+<div class="block">Construtor que inicializa os atributos da simulação com os valores fornecidos.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>versao_simulacao</code> - a versão da simulação.</dd>
+<dd><code>edificio</code> - o edifício onde a simulação ocorre.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -200,10 +245,67 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="getVersao_simulacao()">
+<h3>getVersao_simulacao</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getVersao_simulacao</span>()</div>
+<div class="block">Retorna a versão da simulação.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a versão da simulação.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getTrajeto_to()">
+<h3>getTrajeto_to</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</span>&nbsp;<span class="element-name">getTrajeto_to</span>()</div>
+<div class="block">Retorna a fila de trajetos do ToCruz.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a fila de trajetos do ToCruz.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getInimigos_dead()">
+<h3>getInimigos_dead</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</span>&nbsp;<span class="element-name">getInimigos_dead</span>()</div>
+<div class="block">Retorna a lista dos inimigos mortos.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a lista de inimigos mortos.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getVida_to()">
+<h3>getVida_to</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getVida_to</span>()</div>
+<div class="block">Retorna a quantidade de vida restante do ToCruz.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>a quantidade de vida do ToCruz.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="addDivisaoTrajetoToCruz(Mapa.Divisao)">
 <h3>addDivisaoTrajetoToCruz</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addDivisaoTrajetoToCruz</span><wbr><span class="parameters">(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</span></div>
+<div class="block">Adiciona uma divisão ao trajeto do ToCruz.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>divisao</code> - a divisão a ser adicionada ao trajeto.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -214,6 +316,15 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">calculateBestExitAutomatico</span><wbr><span class="parameters">(<a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz,
  <a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_alvo,
  Interfaces.UnorderedListADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&nbsp;list_entradas)</span></div>
+<div class="block">Calcula o melhor caminho para o ToCruz sair do edifício, considerando as entradas fornecidas.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>toCruz</code> - O objeto ToCruz que deve sair do edifício.</dd>
+<dd><code>div_alvo</code> - A divisão alvo que o ToCruz precisa alcançar.</dd>
+<dd><code>list_entradas</code> - A lista de entradas possíveis para o edifício.</dd>
+<dt>Returns:</dt>
+<dd>A distância do melhor caminho encontrado.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -222,9 +333,14 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>modojogoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modojogoAutomatico</span>()</div>
-<div class="block">O caminho de volta do alvo para uma saida não está a dar
- <p>
- Testar turno inimigo</div>
+<div class="block">Realiza a simulação do jogo no modo automático, onde o personagem ToCruz é controlado
+ pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
+ sem morrer. O método verifica as entradas e saídas do edifício, os inimigos presentes
+ e tenta calcular se é possível concluir a missão com vida.
+
+ O ToCruz segue automaticamente pelo edifício, enfrentando inimigos, até tentar atingir
+ o alvo e sair do edifício. Se a vida de ToCruz for insuficiente para completar o trajeto
+ ou escapar do edifício, uma mensagem será exibida.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/SimulacoesInt.html#modojogoAutomatico()">modojogoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></code></dd>
@@ -237,12 +353,12 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>jogoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Simulacoes.html" title="class in Missoes">Simulacoes</a></span>&nbsp;<span class="element-name">jogoAutomatico</span>()</div>
-<div class="block">Joga o jogo de forma automático</div>
+<div class="block">Simula o jogo automaticamente, fazendo o ToCruz se mover, enfrentar inimigos e atingir objetivos.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/SimulacoesInt.html#jogoAutomatico()">jogoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></code></dd>
 <dt>Returns:</dt>
-<dd>a simulacao realizada</dd>
+<dd>A instância atual da simulação após a execução do jogo automático.</dd>
 </dl>
 </div>
 </section>
@@ -252,16 +368,14 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>modojogoManual</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Simulacoes.html" title="class in Missoes">Simulacoes</a></span>&nbsp;<span class="element-name">modojogoManual</span>()</div>
-<div class="block">Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
- Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!
- <p>
- Meter para sugerir o caminho mais curto ao ToCRUZ
- Fazre o teste que comentei linha 603</div>
+<div class="block">Realiza a simulação do jogo no modo manual. O jogador controla o personagem ToCruz,
+ movendo-se pelo edifício, enfrentando inimigos e coletando itens até completar a missão
+ ou ser derrotado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/SimulacoesInt.html#modojogoManual()">modojogoManual</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></code></dd>
 <dt>Returns:</dt>
-<dd>a simulação feita pelo jogador</dd>
+<dd>O objeto Simulacoes atualizado com os resultados da simulação.</dd>
 </dl>
 </div>
 </section>
@@ -271,9 +385,13 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>toString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Retorna uma representação em string da simulação, incluindo a versão da simulação, o trajeto
+ feito por ToCruz, o número de inimigos mortos, a vida restante de ToCruz e o estado atual do edifício.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>Uma string representando o estado atual da simulação.</dd>
 </dl>
 </div>
 </section>
@@ -283,9 +401,15 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>equals</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<div class="block">Compara este objeto Simulacoes com outro para verificar se são iguais. A comparação leva em consideração
+ a versão da simulação, o trajeto de ToCruz, a vida restante de ToCruz e o estado do edifício.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - O objeto a ser comparado com o objeto atual.</dd>
+<dt>Returns:</dt>
+<dd>True se os objetos forem iguais, false caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -295,9 +419,13 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>hashCode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
+<div class="block">Gera um código de hash único para o objeto Simulacoes, baseado na versão da simulação, no trajeto de ToCruz,
+ na vida restante de ToCruz e no estado do edifício.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>Um código de hash gerado para o objeto Simulacoes.</dd>
 </dl>
 </div>
 </section>
@@ -307,9 +435,15 @@ implements <a href="../Interfaces/SimulacoesInt.html" title="interface in Interf
 <h3>compareTo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&nbsp;o)</span></div>
+<div class="block">Compara este objeto Simulacoes com outro para determinar a ordem de classificação.
+ A comparação é feita com base na vida restante de ToCruz e na versão da simulação.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html#compareTo(T)" title="class or interface in java.lang" class="external-link">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - O objeto Simulacoes a ser comparado.</dd>
+<dt>Returns:</dt>
+<dd>Um número negativo, zero ou positivo dependendo da ordem dos objetos.</dd>
 </dl>
 </div>
 </section>

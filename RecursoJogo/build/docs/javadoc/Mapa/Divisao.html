@@ -117,7 +117,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
  Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos,
  <a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor de deepCopy da classe Divisao</div>
+<div class="block">Construtor que realiza uma cópia profunda (deep copy) de uma instância da classe Divisao.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Divisao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
 <div class="col-last odd-row-color">
@@ -179,7 +179,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId_divisao()" class="member-name-link">getId_divisao</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o identificador único da divisão.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.UnorderedListADT<wbr>&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInimigos()" class="member-name-link">getInimigos</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -311,7 +313,20 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
  <a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item,
  Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos,
  <a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</span></div>
-<div class="block">Construtor de deepCopy da classe Divisao</div>
+<div class="block">Construtor que realiza uma cópia profunda (deep copy) de uma instância da classe Divisao.
+ Este construtor cria uma nova instância de Divisao e inicializa os campos com os valores fornecidos.
+ Se os parâmetros de objeto não forem nulos, o construtor cria novas instâncias desses objetos para garantir
+ que não haja compartilhamento de referências com o objeto original.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id_divisao</code> - O identificador único da divisão.</dd>
+<dd><code>name</code> - O nome da divisão.</dd>
+<dd><code>entrada_saida</code> - Indica se a divisão é de entrada ou saída (valor booleano).</dd>
+<dd><code>alvo</code> - O alvo associado à divisão, ou null se não houver alvo.</dd>
+<dd><code>item</code> - O item presente na divisão, ou null se não houver item.</dd>
+<dd><code>inimigos</code> - Lista de inimigos presentes na divisão, nunca null.</dd>
+<dd><code>toCruz</code> - O personagem ToCruz associado à divisão, ou null se não houver ToCruz.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -328,6 +343,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>getId_divisao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getId_divisao</span>()</div>
+<div class="block">Retorna o identificador único da divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O identificador único da divisão.</dd>
+</dl>
 </div>
 </section>
 </li>

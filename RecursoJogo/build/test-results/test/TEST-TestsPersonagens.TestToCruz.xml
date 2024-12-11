@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestsPersonagens.TestToCruz" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:16:51" hostname="LAPTOP-8POH8N1C" time="0.007">
+<testsuite name="TestsPersonagens.TestToCruz" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-11T17:06:59" hostname="LAPTOP-8POH8N1C" time="0.015">
   <properties/>
-  <testcase name="testguardarKitTypeDifKit_NesteCasoColete()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
+  <testcase name="testguardarKitTypeDifKit_NesteCasoColete()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
   <testcase name="testUsarColeteNullPoninterException()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
-  <testcase name="testUsarKitSemKitsNaMochila()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
-  <testcase name="testUsarKitComAvidaCheia()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
-  <testcase name="testguardarKitNull()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
-  <testcase name="testguardarKitValida()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
+  <testcase name="testUsarKitSemKitsNaMochila()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
+  <testcase name="testUsarKitComAvidaCheia()" classname="TestsPersonagens.TestToCruz" time="0.002"/>
+  <testcase name="testguardarKitNull()" classname="TestsPersonagens.TestToCruz" time="0.003"/>
+  <testcase name="testguardarKitValida()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
   <testcase name="testUsarKitComKitNaMochilaEToComMenosDe100Pontos()" classname="TestsPersonagens.TestToCruz" time="0.001"/>
   <testcase name="testUsarColete()" classname="TestsPersonagens.TestToCruz" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
+  <system-out><![CDATA[O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+To Cruz curou-se e ficou com: 30.0 HP
+O To Cruz utilizou um kit de vida com 20.0 HP
+To Cruz curou-se e ficou com: 120.0 HP
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

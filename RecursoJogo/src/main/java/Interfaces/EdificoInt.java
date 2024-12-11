@@ -45,14 +45,6 @@ public interface EdificoInt {
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final);
 
     /**
-     * Determina a próxima divisão automaticamente para seguir até a divisão final em direção à Cruz.
-     *
-     * @param div_inicial a divisão atual.
-     * @param div_final a divisão de destino.
-     * @return a próxima divisão no caminho.
-     */
-    public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final);
-    /**
      * Adiciona uma divisão ao edifício.
      *
      * @param divisao a divisão que será adicionada ao edifício.

@@ -10,24 +10,40 @@ import java.util.Objects;
 
 /**
  * Classe que representa um edifício no jogo.
- *
+ * <p>
  * Comentar o que falta quando conseguir fazer o desenho do Mapa
- * @author Artur
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class Edificio implements EdificoInt {
 
-    /** Contador para atribuir IDs únicos aos edifícios. */
+    /**
+     * Contador para atribuir IDs únicos aos edifícios.
+     */
     private static int ID_EDIFICIO_CONT = 0;
 
-    /** Nome padrão para o edifício caso não seja fornecido um. */
+    /**
+     * Nome padrão para o edifício caso não seja fornecido um.
+     */
     private static final String NAME_DEFAULT = "CIA Headquarters";
 
-    private int id;  /** Identificador único do edifício. */
+    private int id;
+    /**
+     * Identificador único do edifício.
+     */
 
-    private String name; /** Nome do edifício. */
-
-    private NetworkMatrizADT<Divisao> planta_edificio; /** Grafo que representa as divisões e suas conexões no edifício. */
+    private String name;
+    /**
+     * Nome do edifício.
+     */
+    /**
+     * Grafo que representa as divisões e suas conexões no edifício.
+     */
+    private NetworkMatrizADT<Divisao> planta_edificio;
 
     /**
      * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
@@ -39,20 +55,23 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Construtor de deepCopy do Edificio
+     * Construtor de deepCopy do Edificio.
+     * Cria um novo edifício copiando as divisões e as ligações do edifício original.
      *
-     * Ver se funciona.
-     * */
+     * @param id_edificio     ID do edifício a ser copiado.
+     * @param name            Nome do edifício a ser copiado.
+     * @param planta_edificio Grafo que representa as divisões e suas conexões.
+     */
     public Edificio(int id_edificio, String name, NetworkMatrizADT<Divisao> planta_edificio) {
         this.id = id_edificio;
         this.name = name;
         NetworkMatrizADT<Divisao> networkTemp = new Network<>();
 
-        for(Divisao divisao: planta_edificio) {
+        for (Divisao divisao : planta_edificio) {
             Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItem(), divisao.getInimigos(), divisao.getToCruz());
             networkTemp.addVertex(divisao_temp);
 
-            for(Divisao divisaoLig: planta_edificio) {
+            for (Divisao divisaoLig : planta_edificio) {
                 Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItem(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
                 double weight = planta_edificio.getWeightEdge(divisao_temp, tempDiv_lig);
                 networkTemp.addEdge(divisao_temp, tempDiv_lig, weight);
@@ -62,6 +81,11 @@ public class Edificio implements EdificoInt {
         this.planta_edificio = networkTemp;
     }
 
+    /**
+     * Retorna o identificador único do objeto.
+     *
+     * @return O identificador único do objeto.
+     */
     public int getId() {
         return id;
     }
@@ -84,33 +108,40 @@ public class Edificio implements EdificoInt {
         return planta_edificio;
     }
 
+    /**
+     * Retorna o caminho mais curto entre duas divisões, considerando o peso das arestas.
+     *
+     * @param div_inicial Divisão inicial.
+     * @param div_final   Divisão final.
+     * @return Peso do caminho mais curto entre as divisões.
+     */
     @Override
     public double getShortestPath(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathWeight(div_inicial, div_final);
     }
 
+    /**
+     * Retorna o número de arestas no caminho mais curto entre duas divisões.
+     *
+     * @param div_inicial Divisão inicial.
+     * @param div_final   Divisão final.
+     * @return Número de arestas no caminho mais curto entre as divisões.
+     */
     @Override
     public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathArest(div_inicial, div_final);
     }
 
+    /**
+     * Retorna um iterador para o caminho mais curto entre duas divisões.
+     *
+     * @param div_inicial Divisão inicial.
+     * @param div_final   Divisão final.
+     * @return Iterador para o caminho mais curto.
+     */
     @Override
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPath(div_inicial, div_final);
-    }
-
-    //Dá já de forma automatica a divisao para o ToCruz andar
-    @Override
-    public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final) {
-        Iterator<Divisao> it = this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
-        it.next();
-        Divisao div = it.next();
-
-        return div;
-    }
-
-    public double getWeight(Divisao div_inicial, Divisao div_final) {
-        return this.planta_edificio.getWeightEdge(div_inicial, div_final);
     }
 
     /**
@@ -128,7 +159,7 @@ public class Edificio implements EdificoInt {
      *
      * @param vertex1 Primeira divisão.
      * @param vertex2 Segunda divisão.
-     * @param weight Peso da ligação entre as divisões.
+     * @param weight  Peso da ligação entre as divisões.
      */
     @Override
     public void addLigacao(Divisao vertex1, Divisao vertex2, double weight) {
@@ -139,7 +170,7 @@ public class Edificio implements EdificoInt {
      * Atualiza o peso de uma ligação no grafo.
      *
      * @param vertex1 A divisão cuja ligação será atualizada.
-     * @param weight O novo peso da ligação.
+     * @param weight  O novo peso da ligação.
      */
     @Override
     public void updateWeight(Divisao vertex1, double weight) {
@@ -168,9 +199,12 @@ public class Edificio implements EdificoInt {
         return this.planta_edificio.iterator();
     }
 
-
     /**
-     * Desenha uma aresta entre duas divisões no console.
+     * Desenha a aresta entre duas divisões, mostrando seu peso.
+     *
+     * @param divOrigem  Divisão de origem.
+     * @param divDestino Divisão de destino.
+     * @param peso       Peso da aresta.
      */
     private void desenharAresta(Divisao divOrigem, Divisao divDestino, double peso) {
         String bordaOrigem = "-".repeat(divOrigem.getName().length() + 2); // Ajusta o comprimento da linha
@@ -179,6 +213,9 @@ public class Edificio implements EdificoInt {
         System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
     }
 
+    /**
+     * Desenha o mapa do edifício, exibindo suas divisões e conexões.
+     */
     public void drawMapa() {
         LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
@@ -191,7 +228,7 @@ public class Edificio implements EdificoInt {
             Iterator<Divisao> adjacentes = this.planta_edificio.iteratorNextVertexs(divOrigem);
             while (adjacentes.hasNext()) {
                 Divisao divDestino = adjacentes.next();
-                if(!divJaDesenhada.contains(divDestino)) {
+                if (!divJaDesenhada.contains(divDestino)) {
                     double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
                     System.out.println("    ^");
                     System.out.println("    |    <---> (Peso: " + peso + ")");

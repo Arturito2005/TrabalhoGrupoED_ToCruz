@@ -138,6 +138,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
 
         this.setVida(nova_vida);
         item.setCollected(true);
+        System.out.println("To Cruz curou-se e ficou com: " + this.getVida() + " HP");
     }
 
     /**
@@ -174,6 +175,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
         } else {
             mochila.push(item);
             item.setCollected(true);
+            System.out.println("O To Cruz guardou o kit de vida com " + item.getVida_recuperada() + " HP com sucesso");
         }
 
         return item;
@@ -196,6 +198,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
             } else {
                 kit = mochila.pop();
                 curar(kit);
+                System.out.println("O To Cruz utilizou um kit de vida com " + kit.getVida_recuperada() + " HP");
             }
         } else {
             throw new EmptyCollectionException("O To Cruz está sem kit de vidas na mochila");

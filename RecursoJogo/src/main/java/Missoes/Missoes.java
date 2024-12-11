@@ -1,51 +1,101 @@
 package Missoes;
 
 import Interfaces.MissoesInt;
-import Interfaces.UnorderedListADT;
-import LinkedList.LinearLinkedUnorderedList;
+import Interfaces.OrderedListADT;
+import LinkedList.LinearLinkedOrderedList;
 
+import java.util.Objects;
+
+/**
+ * Representa uma coleção de missões com capacidade de adicionar novas missões e rastrear a contagem total.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class Missoes implements MissoesInt {
 
+    /**
+     * Contador para rastrear o número total de missões adicionadas.
+     */
     private int contMissoes;
 
-    private UnorderedListADT<Missao> listaMissao;
+    /**
+     * Lista ordenada que armazena objetos do tipo Missao.
+     */
+    private OrderedListADT<Missao> listaMissao;
 
+    /**
+     * Construtor padrão que inicializa o contador de missões e a lista de missões.
+     */
     public Missoes() {
         this.contMissoes = 0;
-        listaMissao = new LinearLinkedUnorderedList<Missao>();
+        listaMissao = new LinearLinkedOrderedList<Missao>();
     }
 
+    /**
+     * Retorna o número total de missões adicionadas.
+     *
+     * @return o número total de missões.
+     */
     public int getContMissoes() {
         return this.contMissoes;
     }
 
-    public UnorderedListADT<Missao> getListaMissao() {
+    /**
+     * Retorna a lista ordenada de missões.
+     *
+     * @return a lista de missões.
+     */
+    public OrderedListADT<Missao> getListaMissao() {
         return this.listaMissao;
     }
 
+    /**
+     * Adiciona uma nova missão à lista de missões.
+     *
+     * @param missao a missão a ser adicionada.
+     * @throws NullPointerException se a missão fornecida for nula.
+     */
     @Override
     public void addMissao(Missao missao) throws NullPointerException {
-        if(missao == null) {
+        if (missao == null) {
             throw new NullPointerException("Não é possível introduzir missões nulas");
         }
-        listaMissao.addToRear(missao);
+        listaMissao.add(missao);
         this.contMissoes++;
     }
 
-    /*
-    * Talvez é melhor meter o exportar aqui porque tenho acesso a todas as missões!
-    * E assim é só fazer um foreach das minhas para guarda-las.
-    * */
-    public void exportarMissoes() {
-        /*
-         *Adpatar com o codigo do Xico.
-         * ExportarDado exportarDado = new ExportarDado();
-
-        for(Missao missao: listaMissao) {
-        * if(!missao.simulacoes.IsEmpty()) {
-            exportarDado.exportarDados(missao);
+    /**
+     * Compara a instância atual de Missoes com outro objeto para verificar se são iguais.
+     * A comparação é feita com base na lista de missões armazenada.
+     *
+     * @param o o objeto a ser comparado com a instância atual.
+     * @return {@code true} se os objetos forem iguais, {@code false} caso contrário.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
         }
-         *  */
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Missoes missoes = (Missoes) o;
+        return Objects.equals(listaMissao, missoes.listaMissao);
     }
 
+    /**
+     * Retorna o código hash para a instância atual de Missoes.
+     * O código hash é calculado com base na lista de missões.
+     *
+     * @return o código hash para a instância de Missoes.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(listaMissao);
+    }
 }

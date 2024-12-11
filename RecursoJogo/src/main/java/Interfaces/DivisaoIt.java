@@ -28,8 +28,6 @@ public interface DivisaoIt {
      *
      * @param inimigo O inimigo a ser removido.
      * @return O inimigo removido.
-     * @throws EmptyCollectionException Se não houver inimigos na divisão.
-     * @throws NullPointerException Se o inimigo fornecido for nulo.
      */
     public Inimigo removeInimigo(Inimigo inimigo);
     /**

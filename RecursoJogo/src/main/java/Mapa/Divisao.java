@@ -82,7 +82,18 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Construtor de deepCopy da classe Divisao
+     * Construtor que realiza uma cópia profunda (deep copy) de uma instância da classe Divisao.
+     * Este construtor cria uma nova instância de Divisao e inicializa os campos com os valores fornecidos.
+     * Se os parâmetros de objeto não forem nulos, o construtor cria novas instâncias desses objetos para garantir
+     * que não haja compartilhamento de referências com o objeto original.
+     *
+     * @param id_divisao O identificador único da divisão.
+     * @param name O nome da divisão.
+     * @param entrada_saida Indica se a divisão é de entrada ou saída (valor booleano).
+     * @param alvo O alvo associado à divisão, ou null se não houver alvo.
+     * @param item O item presente na divisão, ou null se não houver item.
+     * @param inimigos Lista de inimigos presentes na divisão, nunca null.
+     * @param toCruz O personagem ToCruz associado à divisão, ou null se não houver ToCruz.
      */
     public Divisao(int id_divisao, String name, boolean entrada_saida, Alvo alvo, Item item, UnorderedListADT<Inimigo> inimigos, ToCruz toCruz) {
         this.id_divisao = id_divisao;
@@ -122,6 +133,11 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.toCruz = tempToCruz;
     }
 
+    /**
+     * Retorna o identificador único da divisão.
+     *
+     * @return O identificador único da divisão.
+     */
     public int getId_divisao() {
         return id_divisao;
     }
@@ -176,6 +192,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      */
     public void addToCruz(ToCruz toCruz) {
         this.toCruz = toCruz;
+        System.out.println("O To Cruz moveu-se para a divisão: " + this.name);
     }
 
     /**
@@ -358,15 +375,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         Iterator<Inimigo> iterator = this.inimigos.iterator();
         UnorderedListADT<Inimigo> inimigosDead = new LinearLinkedUnorderedList<>();
 
+        System.out.println("Turno do To Cruz atacar!");
         while (iterator.hasNext()) {
             Inimigo inimigo = iterator.next();
             inimigo.setVida(inimigo.getVida() - this.toCruz.getPoder());
 
             if (inimigo.isDead()) {
-                System.out.println("O inimigo " + inimigo.getNome());
+                System.out.println("O To Cruz matou o inimigo " + inimigo.getNome());
                 inimigosDead.addToRear(inimigo);
             } else {
-                System.out.println("Vida do inimigo " + inimigo.getNome() + ": " + inimigo.getVida());
+                System.out.println("O inimigo " + inimigo.getNome() + "resitiu ao ataque do To Cruz e ficou com : " + inimigo.getVida() + " HP");
             }
         }
 

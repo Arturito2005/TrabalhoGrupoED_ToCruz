@@ -95,7 +95,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ExportarDado</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></span></div>
-<div class="block">Classe responsável por exportar os dados de trajetos de simulações para um ficheiro JSON.</div>
+<div class="block">Classe que implementa a interface ExportarInt para exportar dados
+ das versões de missões para um arquivo em formato JSON.
+ Esta classe permite gerar um arquivo com informações detalhadas
+ sobre as missões, simulações e inimigos mortos.</div>
 </div>
 </section>
 <section class="summary">
@@ -108,10 +111,9 @@ implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfac
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,Interfaces.QueueADT)" class="member-name-link">ExportarDado</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
- Interfaces.QueueADT&lt;Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&gt;&nbsp;trajetosSimulacoes)</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ExportarDado</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor da classe <a href="ExportarDado.html" title="class in Exportar"><code>ExportarDado</code></a>.</div>
+<div class="block">Construtor da classe ExportarDado.</div>
 </div>
 </div>
 </section>
@@ -128,9 +130,10 @@ implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfac
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportarDados(java.lang.String)" class="member-name-link">exportarDados</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#exportarVersoes(java.lang.String,Interfaces.UnorderedListADT)" class="member-name-link">exportarVersoes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+ Interfaces.UnorderedListADT&lt;<a href="../Missoes/Missao.html" title="class in Missoes">Missao</a>&gt;&nbsp;listaVersoes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Método responsável por exportar os dados para um ficheiro JSON.</div>
+<div class="block">Método que exporta as versões das missões e seus dados relacionados para um arquivo JSON.</div>
 </div>
 </div>
 </div>
@@ -150,17 +153,12 @@ implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfac
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,Interfaces.QueueADT)">
+<section class="detail" id="&lt;init&gt;()">
 <h3>ExportarDado</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ExportarDado</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
- Interfaces.QueueADT&lt;Interfaces.QueueADT&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;&gt;&nbsp;trajetosSimulacoes)</span></div>
-<div class="block">Construtor da classe <a href="ExportarDado.html" title="class in Exportar"><code>ExportarDado</code></a>.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>cod_missao</code> - Código da missão a ser exportada.</dd>
-<dd><code>trajetosSimulacoes</code> - Queue de trajetos simulados, onde cada trajeto é uma fila de divisões.</dd>
-</dl>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ExportarDado</span>()</div>
+<div class="block">Construtor da classe ExportarDado.
+ Inicializa a classe sem a necessidade de parâmetros.</div>
 </div>
 </section>
 </li>
@@ -173,19 +171,20 @@ implements <a href="../Interfaces/ExportarInt.html" title="interface in Interfac
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exportarDados(java.lang.String)">
-<h3>exportarDados</h3>
+<section class="detail" id="exportarVersoes(java.lang.String,Interfaces.UnorderedListADT)">
+<h3>exportarVersoes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportarDados</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span></div>
-<div class="block">Método responsável por exportar os dados para um ficheiro JSON.
-
- Este método percorre a fila de trajetos simulados, gera o ficheiro JSON
- contendo as divisões de cada trajeto e suas versões, e escreve o ficheiro no caminho fornecido.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">exportarVersoes</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+ Interfaces.UnorderedListADT&lt;<a href="../Missoes/Missao.html" title="class in Missoes">Missao</a>&gt;&nbsp;listaVersoes)</span></div>
+<div class="block">Método que exporta as versões das missões e seus dados relacionados para um arquivo JSON.
+ O arquivo JSON gerado contém as versões das missões, simulações e os inimigos abatidos,
+ sendo salvo no caminho especificado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/ExportarInt.html#exportarDados(java.lang.String)">exportarDados</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></code></dd>
+<dd><code><a href="../Interfaces/ExportarInt.html#exportarVersoes(java.lang.String,Interfaces.UnorderedListADT)">exportarVersoes</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ExportarInt.html" title="interface in Interfaces">ExportarInt</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>path</code> - Caminho do ficheiro onde os dados serão exportados.</dd>
+<dd><code>path</code> - O caminho para onde o arquivo JSON será salvo.</dd>
+<dd><code>listaVersoes</code> - A lista de missões com suas respectivas versões e simulações.</dd>
 </dl>
 </div>
 </section>

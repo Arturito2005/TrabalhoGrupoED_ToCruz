@@ -92,7 +92,10 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ExportarInt</span></div>
 <div class="block">Interface que define o contrato para exportação de dados.
  Esta interface deve ser implementada por classes que necessitem
- exportar informações para um ficheiro em um formato específico.</div>
+ exportar informações para um ficheiro em um formato específico.
+ As classes que implementam esta interface serão responsáveis por
+ fornecer a lógica de exportação dos dados de forma que seja possível
+ salvar informações sobre o percurso ou versões de um objeto (como o ToCruz).</div>
 </div>
 </section>
 <section class="summary">
@@ -109,9 +112,11 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportarDados(java.lang.String)" class="member-name-link">exportarDados</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#exportarVersoes(java.lang.String,Interfaces.UnorderedListADT)" class="member-name-link">exportarVersoes</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+ Interfaces.UnorderedListADT&lt;<a href="../Missoes/Missao.html" title="class in Missoes">Missao</a>&gt;&nbsp;listaVersoes)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Metodo que permite exportar os dados do percurso do ToCruz, para um ficherio</div>
+<div class="block">Método responsável por exportar os dados das versões do percurso do ToCruz
+ para um ficheiro em um formato determinado pela implementação.</div>
 </div>
 </div>
 </div>
@@ -128,14 +133,22 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="exportarDados(java.lang.String)">
-<h3>exportarDados</h3>
+<section class="detail" id="exportarVersoes(java.lang.String,Interfaces.UnorderedListADT)">
+<h3>exportarVersoes</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportarDados</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span></div>
-<div class="block">Metodo que permite exportar os dados do percurso do ToCruz, para um ficherio</div>
+<div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">exportarVersoes</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path,
+ Interfaces.UnorderedListADT&lt;<a href="../Missoes/Missao.html" title="class in Missoes">Missao</a>&gt;&nbsp;listaVersoes)</span></div>
+<div class="block">Método responsável por exportar os dados das versões do percurso do ToCruz
+ para um ficheiro em um formato determinado pela implementação.
+ A exportação incluirá todas as versões presentes na lista fornecida,
+ sendo que o caminho do ficheiro de destino será indicado pelo parâmetro
+ 'path'.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>path</code> - o caminho para guardar o ficheiro</dd>
+<dd><code>path</code> - O caminho completo para salvar o ficheiro exportado.
+             Este parâmetro define onde o ficheiro será armazenado no sistema de arquivos.</dd>
+<dd><code>listaVersoes</code> - A lista de versões do percurso do ToCruz que será exportada.
+                     Este parâmetro contém os dados que devem ser gravados no ficheiro.</dd>
 </dl>
 </div>
 </section>

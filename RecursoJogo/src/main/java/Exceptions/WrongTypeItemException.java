@@ -12,8 +12,11 @@ package Exceptions;
 public class WrongTypeItemException extends RuntimeException {
 
     /**
-     * Metodo construtor da classe WrongTypeItem
-     * */
+     * Construtor da exceção WrongTypeItemException.
+     * Inicializa a exceção com uma mensagem detalhando o erro.
+     *
+     * @param message A mensagem que descreve o erro específico.
+     */
     public WrongTypeItemException(String message) {
         super(message);
     }

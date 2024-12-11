@@ -23,6 +23,15 @@ public class Inimigo extends Personagem {
         super(nome, poder);
     }
 
+    /**
+     * Construtor da classe Inimigo.
+     * Inicializa um novo objeto Inimigo com as propriedades fornecidas.
+     *
+     * @param id_personagem O ID do personagem inimigo.
+     * @param nome O nome do inimigo.
+     * @param vida A quantidade de vida do inimigo.
+     * @param poder O poder do inimigo.
+     */
     public Inimigo(int id_personagem, String nome, double vida, double poder) {
         super(id_personagem, nome, vida, poder);
     }

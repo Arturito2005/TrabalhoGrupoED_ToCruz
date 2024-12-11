@@ -46,11 +46,19 @@ public class Alvo {
         this.atinigido = false;
     }
 
+    /**
+     * Construtor para criar um objeto Alvo com os parâmetros fornecidos.
+     *
+     * @param id_alvo   O ID único do alvo.
+     * @param nome      O nome do alvo.
+     * @param atinigido Indica se o alvo foi atingido (verdadeiro ou falso).
+     */
     public Alvo(int id_alvo, String nome, boolean atinigido) {
         this.id_alvo = id_alvo;
         this.nome = nome;
         this.atinigido = atinigido;
     }
+
     /**
      * Construtor padrão para criar um alvo sem nome. O identificador será gerado
      * automaticamente, e o nome será uma string vazia.
@@ -60,10 +68,20 @@ public class Alvo {
         this.nome = "";
     }
 
+    /**
+     * Retorna o ID do alvo.
+     *
+     * @return O ID do alvo.
+     */
     public int getId_alvo() {
         return id_alvo;
     }
 
+    /**
+     * Retorna o nome do alvo.
+     *
+     * @return O nome do alvo.
+     */
     public String getNome() {
         return nome;
     }

@@ -96,7 +96,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></span></div>
 <div class="block">Classe que representa um edifício no jogo.
-
+ <p>
  Comentar o que falta quando conseguir fazer o desenho do Mapa</div>
 </div>
 </section>
@@ -118,9 +118,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  Interfaces.NetworkMatrizADT&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;&nbsp;planta_edificio)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Construtor de deepCopy do Edificio
-
- Ver se funciona.</div>
+<div class="block">Construtor de deepCopy do Edificio.</div>
 </div>
 </div>
 </section>
@@ -150,7 +148,9 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMapa()" class="member-name-link">drawMapa</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Desenha o mapa do edifício, exibindo suas divisões e conexões.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -158,7 +158,9 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId()" class="member-name-link">getId</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o identificador único do objeto.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -178,39 +180,29 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShortestPath(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPath</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Calcula o menor caminho entre duas divisões baseado no peso das arestas.</div>
+<div class="block">Retorna o caminho mais curto entre duas divisões, considerando o peso das arestas.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShortestPathNumArestas(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPathNumArestas</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Calcula o menor caminho entre duas divisões baseado no número de arestas.</div>
+<div class="block">Retorna o número de arestas no caminho mais curto entre duas divisões.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getWeight(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getWeight</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
- <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Gera um código hash para o edifício, utilizando seu nome e planta.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IteratorMapa()" class="member-name-link">IteratorMapa</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para todas as divisões do edifício.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Divisao.html" title="class in Mapa">Divisao</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">nextDivAutomaticToCruz</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
- <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IteratorMapa()" class="member-name-link">IteratorMapa</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Determina a próxima divisão automaticamente para seguir até a divisão final em direção à Cruz.</div>
+<div class="block">Retorna um iterador para todas as divisões do edifício.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortesPathIt(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">shortesPathIt</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para o menor caminho entre duas divisões.</div>
+<div class="block">Retorna um iterador para o caminho mais curto entre duas divisões.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
@@ -256,9 +248,14 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edificio</span><wbr><span class="parameters">(int&nbsp;id_edificio,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
  Interfaces.NetworkMatrizADT&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;&nbsp;planta_edificio)</span></div>
-<div class="block">Construtor de deepCopy do Edificio
-
- Ver se funciona.</div>
+<div class="block">Construtor de deepCopy do Edificio.
+ Cria um novo edifício copiando as divisões e as ligações do edifício original.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id_edificio</code> - ID do edifício a ser copiado.</dd>
+<dd><code>name</code> - Nome do edifício a ser copiado.</dd>
+<dd><code>planta_edificio</code> - Grafo que representa as divisões e suas conexões.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -275,6 +272,11 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>getId</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getId</span>()</div>
+<div class="block">Retorna o identificador único do objeto.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O identificador único do objeto.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -310,16 +312,15 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getShortestPath</span><wbr><span class="parameters">(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/EdificoInt.html#getShortestPath(Mapa.Divisao,Mapa.Divisao)">EdificoInt</a></code></span></div>
-<div class="block">Calcula o menor caminho entre duas divisões baseado no peso das arestas.</div>
+<div class="block">Retorna o caminho mais curto entre duas divisões, considerando o peso das arestas.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/EdificoInt.html#getShortestPath(Mapa.Divisao,Mapa.Divisao)">getShortestPath</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>div_inicial</code> - a divisão inicial.</dd>
-<dd><code>div_final</code> - a divisão final.</dd>
+<dd><code>div_inicial</code> - Divisão inicial.</dd>
+<dd><code>div_final</code> - Divisão final.</dd>
 <dt>Returns:</dt>
-<dd>o custo total do menor caminho em termos de peso.</dd>
+<dd>Peso do caminho mais curto entre as divisões.</dd>
 </dl>
 </div>
 </section>
@@ -330,16 +331,15 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getShortestPathNumArestas</span><wbr><span class="parameters">(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/EdificoInt.html#getShortestPathNumArestas(Mapa.Divisao,Mapa.Divisao)">EdificoInt</a></code></span></div>
-<div class="block">Calcula o menor caminho entre duas divisões baseado no número de arestas.</div>
+<div class="block">Retorna o número de arestas no caminho mais curto entre duas divisões.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/EdificoInt.html#getShortestPathNumArestas(Mapa.Divisao,Mapa.Divisao)">getShortestPathNumArestas</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>div_inicial</code> - a divisão inicial.</dd>
-<dd><code>div_final</code> - a divisão final.</dd>
+<dd><code>div_inicial</code> - Divisão inicial.</dd>
+<dd><code>div_final</code> - Divisão final.</dd>
 <dt>Returns:</dt>
-<dd>o número mínimo de arestas entre as divisões.</dd>
+<dd>Número de arestas no caminho mais curto entre as divisões.</dd>
 </dl>
 </div>
 </section>
@@ -350,46 +350,16 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</span>&nbsp;<span class="element-name">shortesPathIt</span><wbr><span class="parameters">(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
  <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/EdificoInt.html#shortesPathIt(Mapa.Divisao,Mapa.Divisao)">EdificoInt</a></code></span></div>
-<div class="block">Retorna um iterador para o menor caminho entre duas divisões.</div>
+<div class="block">Retorna um iterador para o caminho mais curto entre duas divisões.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/EdificoInt.html#shortesPathIt(Mapa.Divisao,Mapa.Divisao)">shortesPathIt</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>div_inicial</code> - a divisão inicial.</dd>
-<dd><code>div_final</code> - a divisão final.</dd>
+<dd><code>div_inicial</code> - Divisão inicial.</dd>
+<dd><code>div_final</code> - Divisão final.</dd>
 <dt>Returns:</dt>
-<dd>um iterador que percorre as divisões no menor caminho.</dd>
+<dd>Iterador para o caminho mais curto.</dd>
 </dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)">
-<h3>nextDivAutomaticToCruz</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Divisao.html" title="class in Mapa">Divisao</a></span>&nbsp;<span class="element-name">nextDivAutomaticToCruz</span><wbr><span class="parameters">(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
- <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/EdificoInt.html#nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)">EdificoInt</a></code></span></div>
-<div class="block">Determina a próxima divisão automaticamente para seguir até a divisão final em direção à Cruz.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/EdificoInt.html#nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)">nextDivAutomaticToCruz</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></code></dd>
-<dt>Parameters:</dt>
-<dd><code>div_inicial</code> - a divisão atual.</dd>
-<dd><code>div_final</code> - a divisão de destino.</dd>
-<dt>Returns:</dt>
-<dd>a próxima divisão no caminho.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="getWeight(Mapa.Divisao,Mapa.Divisao)">
-<h3>getWeight</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getWeight</span><wbr><span class="parameters">(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
- <a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_final)</span></div>
 </div>
 </section>
 </li>
@@ -481,6 +451,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>drawMapa</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMapa</span>()</div>
+<div class="block">Desenha o mapa do edifício, exibindo suas divisões e conexões.</div>
 </div>
 </section>
 </li>

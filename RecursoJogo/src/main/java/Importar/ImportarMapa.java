@@ -30,6 +30,14 @@ import java.io.IOException;
 public class ImportarMapa implements Importar {
 
     /**
+     * Construtor padrão da classe ImportarMapa.
+     * Inicializa um novo objeto ImportarMapa sem parâmetros adicionais.
+     * Este construtor é utilizado para criar instâncias da classe quando não são necessárias configurações iniciais específicas.
+     */
+    public ImportarMapa() {
+    }
+
+    /**
      * Variavel que guarda todas as divisoes do edificio
      */
     private static LinearLinkedUnorderedList<Divisao> lista_divisoes;

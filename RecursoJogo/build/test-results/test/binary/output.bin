@@ -1,20 +1,62 @@
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
 2O item desta divisao já foi usado anteriormente
-O inimigo Inimigo Fraco
-O inimigo Inimigo Forte
-	O inimigo Inimigo Fraco
-	%Vida do inimigo Inimigo Forte: 50.0
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+Turno do To Cruz atacar!
+)O To Cruz matou o inimigo Inimigo Fraco
+)O To Cruz matou o inimigo Inimigo Forte
+	0O To Cruz moveu-se para a divisão: Sala Teste
+	0O To Cruz moveu-se para a divisão: Sala Teste
+	Turno do To Cruz atacar!
+	)O To Cruz matou o inimigo Inimigo Fraco
+	KO inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 50.0 HP
+
+0O To Cruz moveu-se para a divisão: Sala Teste
+
+0O To Cruz moveu-se para a divisão: Sala Teste
 
 )O imimigoInimigo Fraco atacou o To Cruz
 
 .To Cruz resiste ao ataque e fica com 90.0 HP
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
 )O imimigoInimigo Forte atacou o To Cruz
 (O inimigo Inimigo Fortematou o To Cruz
-%Vida do inimigo Inimigo Fraco: 40.0
-%Vida do inimigo Inimigo Forte: 90.0
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+Turno do To Cruz atacar!
+KO inimigo Inimigo Fracoresitiu ao ataque do To Cruz e ficou com : 40.0 HP
+KO inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 90.0 HP
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
 ETo Cruz está com o alvo, agora só falta sair do edificio com vida
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
 #O imimigoInimigo atacou o To Cruz
 .To Cruz resiste ao ataque e fica com 90.0 HP
+0O To Cruz moveu-se para a divisão: Sala Teste
 A lista está vaiza!
+0O To Cruz moveu-se para a divisão: Sala Teste
 A lista está vaiza!
 A lista está vaiza!
+Turno do To Cruz atacar!
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
 A lista está vaiza!
+0O To Cruz moveu-se para a divisão: Sala Teste
+0O To Cruz moveu-se para a divisão: Sala Teste
+"%9O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+"'9O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+"(9O To Cruz guardou o kit de vida com 20.0 HP com sucesso
+"('To Cruz curou-se e ficou com: 30.0 HP
+"(/O To Cruz utilizou um kit de vida com 20.0 HP
+")(To Cruz curou-se e ficou com: 120.0 HP

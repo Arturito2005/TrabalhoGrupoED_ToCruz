@@ -8,6 +8,14 @@ import Missoes.Missoes;
  */
 public class MenuMissoes {
 
+
+    /**
+     * Construtor padrão da classe MenuMissoes.
+     * Inicializa a classe para gerenciar o menu de missões do jogo.
+     */
+    public MenuMissoes() {
+    }
+
     /**
      * Método principal que executa o menu de missões.
      * Importa as missões e executa as missões.
