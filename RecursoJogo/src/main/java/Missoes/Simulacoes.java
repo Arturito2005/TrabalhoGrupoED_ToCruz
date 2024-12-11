@@ -471,10 +471,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         Iterator<Divisao> itr = edificio.getNextDivisoes(divisao_atual);
         ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
 
-        System.out.print("Selecione a divisao para o ToCruz se mover -->");
-
         int i = 0;
         String temp = "";
+        System.out.println("Divisoes disponiveis:");
         while (itr.hasNext()) {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
@@ -487,7 +486,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 temp = temp + " (divisao com item de cura item)";
             }
 
-
             System.out.println(temp);
             listDiv.addToRear(divisao);
         }
@@ -498,7 +496,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
          * Fim da sugestão
          * */
         do {
-            System.out.print("Selecione a divisao que o ToCruz vai se mover -->");
+            System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
 
             try {
                 op = sc.nextInt();
@@ -514,6 +512,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
             System.out.println(ex.getMessage());
         }
+
         return div;
     }
 
@@ -523,7 +522,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Verificar se estão todos os cenarios feitos
      *  */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
-        if (divisao.getItem() instanceof ItemCura) {
+        if (!divisao.getItem().isCollected()  && divisao.getItem() instanceof ItemCura) {
             ItemCura item = (ItemCura) divisao.getItem();
 
             switch (item.getType()) {
@@ -541,7 +540,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("0 - Usar Item");
                             System.out.println("1 - Deixa-lo na sala");
                             System.out.println("2 - Guardar");
-                            System.out.print("Selecione uma opção -->");
+                            System.out.println("Selecione uma opção -->");
                             try {
                                 op = sc.nextInt();
                             } catch (InputMismatchException ex) {
@@ -554,7 +553,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
                             System.out.println("0 - Usar Item");
                             System.out.println("1 - Deixa-lo na sala");
-                            System.out.print("Selecione uma opção -->");
+                            System.out.println("Selecione uma opção -->");
                             try {
                                 op = sc.nextInt();
                             } catch (InputMismatchException ex) {
@@ -566,7 +565,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
                         System.out.println("1 - Deixa-lo na sala");
                         System.out.println("2 - Guardar");
-                        System.out.print("Selecione uma opção -->");
+                        System.out.println("Selecione uma opção -->");
                         do {
                             try {
                                 op = sc.nextInt();
@@ -613,7 +612,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 do {
                     System.out.println("1 - Atacar");
                     System.out.println("2 - Usar kit");
-                    System.out.print("Selecione uma opção -->");
+                    System.out.println("Selecione uma opção -->");
                     try {
                         op = sc.nextInt();
                     } catch (InputMismatchException ex) {
@@ -647,7 +646,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     System.out.println("O proximo kit da mochila tem os seguintes pontos" + toCruz.getMochila().peek().getVida_recuperada() + " deseja se curar (Sim: S/ Nao: N)");
 
                     do {
-                        System.out.print("Deseja utilizar o kit de vida? (Sim: S/Nao: n) -->");
+                        System.out.println("Deseja utilizar o kit de vida? (Sim: S/Nao: n) -->");
 
                         try {
                             op_kit = sc.nextLine();
@@ -662,6 +661,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     }
                 }
                 divisao = this.getNewDivisaoTo(divisao_atual);
+
+                //Meter codigo coletar
                 divisao.addToCruz(divisao_atual.getToCruz());
                 divisao_atual.removeToCruz();
 
@@ -671,6 +672,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     divisao.attackToCruz(this.inimigos_dead);
                 }
 
+                //Meter para o item também não ser coletado
                 if (divisao.getItem() != null) {
                     DivisaoComItem(divisao, toCruz);
                 }
@@ -758,7 +760,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
 
         do {
-            System.out.print("Introduza onde o ToCruz vai entrar -->");
+            System.out.println("Introduza onde o ToCruz vai entrar -->");
 
             try {
                 op = sc.nextInt();
@@ -837,7 +839,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     } else if (div.isEntrada_saida() && !div.haveConfronto() && div.isToCruzInExit() && trajeto_to.size() > 1) {
                         String op = "";
                         do {
-                            System.out.print("Deseja sair do edifico(Sim: S/ Nao: N)? -->");
+                            System.out.println("Deseja sair do edifico(Sim: S/ Nao: N)? -->");
 
                             try {
                                 op = sc.nextLine();
