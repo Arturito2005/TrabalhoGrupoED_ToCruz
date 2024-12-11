@@ -384,16 +384,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      */
     @Override
     public Simulacoes jogoAutomatico() {
-        //ToCruz entra na sala (meter o codigo)
-        //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
-        BestStartToCruz(toCruz); //Ver se isto mete já o ToCruz na melhor divisao se sim alterar no modo manual se não alterar e meter como o manual
-
+        BestStartToCruz(toCruz);
         while (!finishgame) {
-            //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
             UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
@@ -410,7 +406,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             itrMapa = this.edificio.IteratorMapa();
             boolean findToCruz = false;
-            //this.edificio.drawMapa();
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
@@ -424,7 +419,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     findToCruz = true;
                 }
             }
-            //this.edificio.drawMapa();
         }
 
         relatoriosMissao();
