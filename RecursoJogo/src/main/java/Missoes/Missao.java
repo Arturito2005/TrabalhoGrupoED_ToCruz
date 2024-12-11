@@ -43,6 +43,10 @@ public class Missao implements MissaoInt {
         return cod_missao;
     }
 
+    public long getVersao() {
+        return versao;
+    }
+
     public OrderedListADT<Simulacoes> getSimulacoes() {
         return simulacoes;
     }

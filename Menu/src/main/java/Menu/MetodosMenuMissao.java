@@ -1,8 +1,5 @@
 package Menu;
 
-import Importar.ImportarMapa;
-import Missoes.Missao;
-import Missoes.Missoes;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
@@ -62,10 +59,7 @@ public class MetodosMenuMissao {
 
     public void RealizarMissoes(Missoes missoes) {
         if (missoes.getContMissoes() > 1) {
-            int recomecar = -1;
-            //do {
-                executarVariasMissoes(missoes);
-            //while(recomecar !=0);
+            executarVariasMissoes(missoes);
         } else {
             SelecionarModoJogo(missoes.getListaMissao().first());
         }
@@ -104,13 +98,16 @@ public class MetodosMenuMissao {
                 case 1: {
                     missao.modoManual();
                     break;
-                } case 2: {
+                }
+                case 2: {
                     missao.modoAutomatico();
                     break;
-                } case 3: {
+                }
+                case 3: {
                     missao.jogoAutomatico();
                     break;
-                } default: {
+                }
+                default: {
                     break;
                 }
             }
@@ -119,10 +116,10 @@ public class MetodosMenuMissao {
 
     private void executarVariasMissoes(Missoes missoes) {
         int op_missao = -1;
+        int i = 0;
         Missao[] arrayMissao = new Missao[missoes.getContMissoes()];
 
         do {
-            int i = 0;
             System.out.println("0 - Sair");
             for (Missao mis : missoes.getListaMissao()) {
                 arrayMissao[i++] = mis;
@@ -142,7 +139,7 @@ public class MetodosMenuMissao {
             } while (op_missao < 0 && op_missao > i - 1);
 
             if (op_missao > 0) {
-                SelecionarModoJogo(arrayMissao[op_missao - 1]);
+                SelecionarModoJogo(arrayMissao[op_missao]);
             }
         } while (op_missao != 0);
 
