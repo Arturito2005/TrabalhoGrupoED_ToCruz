@@ -2,7 +2,6 @@ package Graph;
 
 import Interfaces.NetworkADT;
 import LinkedList.LinearLinkedOrderedList;
-
 import java.util.Iterator;
 
 
@@ -19,6 +18,14 @@ import java.util.Iterator;
  * @version 1.0
  */
 public class NetworkListaAdjacencia<T> extends GraphListaAdjacencia<T> implements NetworkADT<T> {
+
+    /**
+     * Construtor padrão para a classe NetworkListaAdjacencia.
+     * Inicializa uma nova instância da classe sem configurar nenhuma propriedade específica.
+     */
+    public NetworkListaAdjacencia() {
+        super();
+    }
 
     /**
      * Array de listas encadeadas ordenadas representando a lista de adjacência para cada vértice.

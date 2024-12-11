@@ -141,13 +141,12 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
 
         double[] distances = new double[numVertices];
-        int[] predecessors = new int[numVertices];
         boolean[] visited = new boolean[numVertices];
         HeapADT<T> minHeap = new LinkedHeap<>();
 
         for (int i = 0; i < numVertices; i++) {
             distances[i] = Double.MAX_VALUE;
-            predecessors[i] = -1;
+            visited[i] = false;
         }
 
         distances[startIndex] = 0;
@@ -170,7 +169,6 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
 
                         if (newDistance < distances[neighborIndex]) {
                             distances[neighborIndex] = newDistance;
-                            predecessors[neighborIndex] = currentIndex;
                             minHeap.addElement(element);
                         }
                     }

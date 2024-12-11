@@ -50,4 +50,15 @@ public interface NetworkMatrizADT<T> extends NetworkADT<T> {
      * @return o peso total do caminho mais curto entre os dois vértices
      */
     public double shortestPathArest(T startVertex, T finalVertex);
+
+    /**
+     * Calcula o custo total do caminho mais curto entre dois vértices na rede,
+     * levando em consideração o peso cumulativo das arestas e o número de arestas percorridas.
+     *
+     * @param startVertex o vértice inicial do caminho
+     * @param finalVertex o vértice final do caminho
+     * @return o custo total do caminho mais curto, combinando o número de arestas e os pesos das arestas,
+     *         ou {@code Double.MAX_VALUE} se não existir um caminho entre os vértices
+     */
+    public double shortestPathTotalCustos(T startVertex, T finalVertex);
 }

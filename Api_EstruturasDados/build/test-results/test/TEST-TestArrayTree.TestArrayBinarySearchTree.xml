@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayTree.TestArrayBinarySearchTree" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:12:51" hostname="LAPTOP-8POH8N1C" time="0.012">
+<testsuite name="TestArrayTree.TestArrayBinarySearchTree" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-11T19:07:10" hostname="LAPTOP-8POH8N1C" time="0.009">
   <properties/>
   <testcase name="testFindElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
   <testcase name="testFindMax()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
-  <testcase name="testFindMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testFindMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
   <testcase name="testRemoveAllOccurrences()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.003"/>
   <testcase name="testAddElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
   <testcase name="testFindElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testRemoveElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
+  <testcase name="testRemoveElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
   <testcase name="testIsEmpty()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testRemoveMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
   <system-out><![CDATA[binary tree
 binary tree
 binary tree

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:12:51" hostname="LAPTOP-8POH8N1C" time="0.015">
+<testsuite name="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" tests="14" skipped="0" failures="0" errors="0" timestamp="2024-12-11T19:07:10" hostname="LAPTOP-8POH8N1C" time="0.015">
   <properties/>
   <testcase name="testRemoveIterator()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.003"/>
-  <testcase name="testSize()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
+  <testcase name="testSize()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
   <testcase name="testRemoveFirst()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <testcase name="testAddAfterElementNotFound()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.003"/>
   <testcase name="testAddAfter()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <testcase name="testAddToFront()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <testcase name="testNoSuchElementException()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
-  <testcase name="testRemoveLast()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
+  <testcase name="testRemoveLast()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <testcase name="testRemoveElementNotFound()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
   <testcase name="testAddToRear()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <testcase name="testRemoveElement()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
-  <testcase name="testIsEmpty()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
-  <testcase name="testIterator()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
-  <testcase name="testConcurrentModificationException()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
+  <testcase name="testIsEmpty()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
+  <testcase name="testIterator()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.001"/>
+  <testcase name="testConcurrentModificationException()" classname="TestDoubleLinkedList.TestDoubleLinkedUnorderedList" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

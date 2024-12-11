@@ -31,7 +31,7 @@ import java.util.*;
 public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     /**
-     * Instância do scanner para leitura de entradas do usuário.
+     * Instância do scanner para leitura de entradas do utilizador.
      */
     private static Scanner sc = new Scanner(System.in);
 
@@ -538,7 +538,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             Divisao div = itr.next();
 
             if ((div.getItem() != null && !div.getItem().isCollected()) || (div.isEntrada_saida() && div.getAlvo() != null && toCruz.isColectedAlvo())) {
-                distance = edificio.getShortestPath(div_to, div);
+                distance = edificio.shortes(div_to, div);
 
                 if (distance == 0) {
                     best_distance = distance;
@@ -631,7 +631,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Este método solicita ao usuário que selecione a próxima divisão para o ToCruz se mover,
+     * Este método solicita ao utilizador que selecione a próxima divisão para o ToCruz se mover,
      * exibindo informações sobre as divisões disponíveis, como se há inimigos, itens ou se é uma
      * entrada/saída. Também sugere o melhor caminho para o ToCruz pegar itens e atingir o alvo.
      *
@@ -716,7 +716,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      *
      * @param divisao A divisão onde o item foi encontrado.
      * @param toCruz O personagem que interage com o item.
-     * @throws InvalidOptionException Caso a opção fornecida pelo usuário seja inválida.
+     * @throws InvalidOptionException Caso a opção fornecida pelo utilizador seja inválida.
      * @throws InvalidTypeItemException Caso o tipo de item seja inválido.
      */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
@@ -1056,7 +1056,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 if (div.getToCruz() != null) {
                     if (div.getToCruz().isDead()) {
                         finishgame = true;
-                    } else if (div.isEntrada_saida() && !div.haveConfronto() && div.isToCruzInExit() && trajeto_to.size() > 1) {
+                    } else if (div.isEntrada_saida() && !div.haveConfronto() && trajeto_to.size() > 1) {
                         int op = -1;
 
                         do {

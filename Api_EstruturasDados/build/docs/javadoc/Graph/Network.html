@@ -166,10 +166,17 @@ implements <a href="../Interfaces/NetworkMatrizADT.html" title="interface in Int
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna o número mínimo de arestas entre dois vértices utilizando o algoritmo de Dijkstra.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWeightEdge(T,double)" class="member-name-link">updateWeightEdge</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex,
- double&nbsp;weight)</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#shortestPathTotalCustos(T,T)" class="member-name-link">shortestPathTotalCustos</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
+ <a href="Network.html" title="type parameter in Network">T</a>&nbsp;finalVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calcula o custo total do caminho mais curto entre dois vértices no grafo,
+ levando em consideração tanto o peso cumulativo das arestas quanto o número de arestas percorridas.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWeightEdge(T,double)" class="member-name-link">updateWeightEdge</a><wbr>(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;vertex,
+ double&nbsp;weight)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Atualiza o peso das arestas conectadas ao vértice fornecido.</div>
 </div>
 </div>
@@ -291,6 +298,27 @@ implements <a href="../Interfaces/NetworkMatrizADT.html" title="interface in Int
 <dd><code>finalVertex</code> - O vértice de destino.</dd>
 <dt>Returns:</dt>
 <dd>O número mínimo de arestas entre os vértices, ou infinito positivo se não houver caminho.</dd>
+</dl>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="shortestPathTotalCustos(T,T)">
+<h3 id="shortestPathTotalCustos(java.lang.Object,java.lang.Object)">shortestPathTotalCustos</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">shortestPathTotalCustos</span><wbr><span class="parameters">(<a href="Network.html" title="type parameter in Network">T</a>&nbsp;startVertex,
+ <a href="Network.html" title="type parameter in Network">T</a>&nbsp;finalVertex)</span></div>
+<div class="block">Calcula o custo total do caminho mais curto entre dois vértices no grafo,
+ levando em consideração tanto o peso cumulativo das arestas quanto o número de arestas percorridas.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/NetworkMatrizADT.html#shortestPathTotalCustos(T,T)">shortestPathTotalCustos</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/NetworkMatrizADT.html" title="interface in Interfaces">NetworkMatrizADT</a>&lt;<a href="Network.html" title="type parameter in Network">T</a>&gt;</code></dd>
+<dt>Parameters:</dt>
+<dd><code>startVertex</code> - o vértice inicial do caminho</dd>
+<dd><code>finalVertex</code> - o vértice final do caminho</dd>
+<dt>Returns:</dt>
+<dd>o custo total do caminho mais curto, combinando o número de arestas e os pesos das arestas,
+         ou <code>Double.MAX_VALUE</code> se não existir um caminho entre os vértices</dd>
 </dl>
 </div>
 </section>
