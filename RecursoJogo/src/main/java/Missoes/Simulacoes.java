@@ -40,9 +40,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     private Edificio edificio;
 
-    /*
-     * Ver como mando o edificio para não bugar
-     * */
     public Simulacoes(long versao_simulacao, Edificio edificio) {
         this.edificio = edificio;
         this.versao_simulacao = versao_simulacao;
@@ -72,7 +69,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
-        if (divisao.getItem() instanceof ItemCura) {
+        if (!divisao.getItem().isCollected() && divisao.getItem() instanceof ItemCura) {
             ItemCura Item = (ItemCura) divisao.getItem();
             ToCruz toCruz = divisao.getToCruz();
 
@@ -573,12 +570,10 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             switch (item.getType()) {
                 case COLETE: {
-                    //Verficar se o item já foi usado
                     toCruz.usarItem(item);
                     System.out.println("O To Cruz apanhou um colete e ficou com " + toCruz.getVida() + " HP");
                     break;
-                }
-                case KIT_VIDA: {
+                } case KIT_VIDA: {
                     int op = -1;
                     sc = new Scanner(System.in);
                     if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
@@ -717,7 +712,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     divisao.attackToCruz(this.inimigos_dead);
                 }
 
-                if (divisao.getItem() != null && !divisao.getItem().isCollected()) {
+                if (divisao.getItem() != null) {
                     DivisaoComItem(divisao, toCruz);
                 }
             } catch (NullPointerException ne) {
@@ -830,7 +825,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 if (divisao_nova.isToCruzInDivisaoAlvo()) {
                     divisao_nova.ToCruzGetAlvo();
                     toCruz.setColectedAlvo(true);
-                } else if (divisao_nova.getItem() != null && divisao_nova.getItem().isCollected()) {
+                } else if (divisao_nova.getItem() != null) {
                     DivisaoComItem(divisao_nova, divisao_nova.getToCruz());
                 }
             }
