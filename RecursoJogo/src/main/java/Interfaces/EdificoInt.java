@@ -36,6 +36,17 @@ public interface EdificoInt {
     public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final);
 
     /**
+     * Calcula o custo total do menor caminho entre duas divisões no edifício,
+     * considerando tanto o número de arestas quanto os pesos das ligações.
+     *
+     * @param div_inicial a divisão inicial.
+     * @param div_final a divisão final.
+     * @return o custo total do menor caminho entre as divisões,
+     *         ou {@code Double.MAX_VALUE} se não houver um caminho válido.
+     */
+    public double getShortestPathTotalCustos(Divisao div_inicial, Divisao div_final);
+
+    /**
      * Retorna um iterador para o menor caminho entre duas divisões.
      *
      * @param div_inicial a divisão inicial.

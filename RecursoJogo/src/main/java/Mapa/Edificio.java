@@ -43,7 +43,7 @@ public class Edificio implements EdificoInt {
     /**
      * Grafo que representa as divisões e suas conexões no edifício.
      */
-    private Network<Divisao> planta_edificio;
+    private NetworkMatrizADT<Divisao> planta_edificio;
 
     /**
      * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
@@ -130,6 +130,20 @@ public class Edificio implements EdificoInt {
     @Override
     public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final) {
         return this.planta_edificio.shortestPathArest(div_inicial, div_final);
+    }
+
+    /**
+     * Obtém o custo total do menor caminho entre duas divisões no edifício,
+     * combinando o número de arestas e os pesos das ligações.
+     *
+     * @param div_inicial a divisão inicial.
+     * @param div_final a divisão final.
+     * @return o custo total do menor caminho entre as divisões,
+     *         calculado pela planta do edifício.
+     */
+    @Override
+    public double getShortestPathTotalCustos(Divisao div_inicial, Divisao div_final) {
+        return this.planta_edificio.shortestPathTotalCustos(div_inicial, div_final);
     }
 
     /**
