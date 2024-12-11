@@ -2,13 +2,19 @@ package Exportar;
 
 import Interfaces.ExportarInt;
 import Interfaces.QueueADT;
+import Interfaces.UnorderedListADT;
+import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import Missoes.Missao;
+import Missoes.Simulacoes;
+import Personagens.Inimigo;
 import Queue.LinkedQueue;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Iterator;
 
 /**
  * Classe responsável por exportar os dados de trajetos de simulações para um ficheiro JSON.
@@ -21,64 +27,69 @@ import java.io.IOException;
  * @version 1.0
  */
 public class ExportarDado implements ExportarInt {
-    /**
-     * Codigo da missão a exportar
-     * */
-    private String cod_missao;
+    private Missao missao;
 
-    /**
-     * Trajeto realizado pelo ToCruz
-     * */
-    private QueueADT<QueueADT<Divisao>> trajetosSimulacoes;
-
-    /**
-     * Construtor da classe {@link ExportarDado}.
-     *
-     * @param cod_missao Código da missão a ser exportada.
-     * @param trajetosSimulacoes Queue de trajetos simulados, onde cada trajeto é uma fila de divisões.
-     */
-    public ExportarDado(String cod_missao, QueueADT<QueueADT<Divisao>> trajetosSimulacoes) {
-        this.cod_missao = cod_missao;
-        this.trajetosSimulacoes = trajetosSimulacoes;
+    public ExportarDado(Missao missao) {
+        this.missao = missao;
     }
 
-    /**
-     * Método responsável por exportar os dados para um ficheiro JSON.
-     *
-     * Este método percorre a fila de trajetos simulados, gera o ficheiro JSON
-     * contendo as divisões de cada trajeto e suas versões, e escreve o ficheiro no caminho fornecido.
-     *
-     * @param path Caminho do ficheiro onde os dados serão exportados.
-     */
     @Override
-    public void exportarDados(String path) {
+    public void exportarTrajetos(String path) {
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("cod-missao", this.cod_missao);
+        jsonObject.put("cod_missao", this.missao.getcod_missao());
+        jsonObject.put("versao", this.missao.getVersao());
 
         JSONArray simulacoesArray = new JSONArray();
-        int versao = 1;
+        Iterator<Simulacoes> iterator = this.missao.getSimulacoes().iterator();
+        while (iterator.hasNext()) {
+            Simulacoes simulacao = iterator.next();
+            JSONObject simulacaoObject = new JSONObject();
+            simulacaoObject.put("versao_simulacao", simulacao.getVersao_simulacao());
+            simulacaoObject.put("vida_to_cruz", simulacao.getVida_to());
 
-        while (!trajetosSimulacoes.isEmpty()) {
-            QueueADT<Divisao> trajeto = trajetosSimulacoes.dequeue();
-            QueueADT<Divisao> tempQueue = new LinkedQueue<>();
+            JSONArray trajetoArray = new JSONArray();
+            JSONArray inimigosArray = new JSONArray();
 
-            while (!trajeto.isEmpty()) {
-                Divisao divisao = trajeto.dequeue();
-                tempQueue.enqueue(divisao);
+            QueueADT<Divisao> trajetoQueue = simulacao.getTrajeto_to();
+            QueueADT<Divisao> tempTrajetoQueue = new LinkedQueue<>();
+            UnorderedListADT<Inimigo> inimigosList = simulacao.getInimigos_dead();
+            UnorderedListADT<Inimigo> tempInimigosList = new LinearLinkedUnorderedList<>();
 
-                JSONObject simulacaoObject = new JSONObject();
-                simulacaoObject.put("versao", versao++);
-                simulacaoObject.put("divisao", divisao.getName());
-                simulacoesArray.add(simulacaoObject);
+            while (!trajetoQueue.isEmpty()) {
+                Divisao divisao = trajetoQueue.dequeue();
+                tempTrajetoQueue.enqueue(divisao);
+
+                trajetoArray.add(divisao.getName());
             }
 
-            while (!tempQueue.isEmpty()) {
-                trajeto.enqueue(tempQueue.dequeue());
+            while (!tempTrajetoQueue.isEmpty()) {
+                trajetoQueue.enqueue(tempTrajetoQueue.dequeue());
             }
+            simulacaoObject.put("trajetoPercorrido", trajetoArray);
+
+            while (!inimigosList.isEmpty()) {
+                Inimigo inimigo = inimigosList.removeFirst();
+                tempInimigosList.addToFront(inimigo);
+
+                JSONObject inimigoObject = new JSONObject();
+                inimigoObject.put("nome", inimigo.getNome());
+                inimigoObject.put("poder", inimigo.getPoder());
+                // para a divisão é outra história, não temos acesso "direto"
+
+                inimigosArray.add(inimigoObject);
+
+            }
+
+            while (!tempInimigosList.isEmpty()) {
+                inimigosList.addToFront(tempInimigosList.removeFirst());
+            }
+            simulacaoObject.put("inimigosAbatidos", inimigosArray);
+
+            simulacoesArray.add(simulacaoObject);
         }
 
+        jsonObject.put("tot_simulacoes", this.missao.getTot_simulacoes());
         jsonObject.put("simulacoes", simulacoesArray);
-        jsonObject.put("tot_versoes", versao - 1);
 
         try (FileWriter file = new FileWriter(path)) {
             file.write(jsonObject.toJSONString());
@@ -87,4 +98,5 @@ public class ExportarDado implements ExportarInt {
             System.out.println("Erro: " + e.getMessage() + " ao exportar trajetos");
         }
     }
+
 }

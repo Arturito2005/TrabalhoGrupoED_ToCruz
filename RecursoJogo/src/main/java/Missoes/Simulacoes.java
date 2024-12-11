@@ -1,12 +1,12 @@
 package Missoes;
 
-import ArrayList.ArrayUnordered;
-import ArrayList.ArrayUnorderedList;
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
 import Interfaces.*;
 import Items.Item;
+import ArrayList.ArrayUnorderedList;
 import Items.ItemCura;
+import Items.TypeItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Alvo;
 import Mapa.Divisao;
@@ -15,6 +15,7 @@ import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
+import ArrayList.ArrayUnordered;
 
 import java.util.*;
 
@@ -50,6 +51,22 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         this.inimigos_dead = new LinearLinkedUnorderedList<Inimigo>();
     }
 
+    public long getVersao_simulacao() {
+        return versao_simulacao;
+    }
+
+    public QueueADT<Divisao> getTrajeto_to() {
+        return trajeto_to;
+    }
+
+    public UnorderedListADT<Inimigo> getInimigos_dead() {
+        return inimigos_dead;
+    }
+
+    public double getVida_to() {
+        return vida_to;
+    }
+
     public void addDivisaoTrajetoToCruz(Divisao divisao) {
         this.trajeto_to.enqueue(divisao);
     }
@@ -63,7 +80,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 switch (Item.getType()) {
                     case COLETE: {
                         toCruz.usarItem(Item);
-                        System.out.println("To Cruz apanho um colete de vida e ficou com " + toCruz.getVida() + " HP");
+                        System.out.println("O To Cruz apanhou um colete de vida e ficou com " + toCruz.getVida() + " HP");
                         break;
                     }
                     case KIT_VIDA: {
@@ -75,7 +92,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         break;
                     }
                     default: {
-                        throw new InvalidTypeItemException("Tipo de item de cura inválido");
+                        throw new InvalidTypeItemException("Tipo de item de cura invalido");
                     }
                 }
             } else {
@@ -262,8 +279,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         if (best_distance < toCruz.getVida()) {
             itr_caminho = edificio.shortesPathIt(best_div, div_alvo);
-            System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div);
-            System.out.println("Melhor caminho que o To Cruz pode fazer até ao alvo");
+            System.out.println("A melhor entrada que o To Cruz deve escolher e esta: " + best_div);
+            System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
 
             String temp = "";
             while (itr_caminho.hasNext()) {
@@ -360,7 +377,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
 
             if (calculateBestExitAutomatico(to, div_alvo, list_entradas) > to.getVida()) {
-                System.out.println("É impossível o To Cruz sair do edificio com vida!");
+                System.out.println("E impossível o To Cruz sair do edificio com vida!");
             }
         }
     }
@@ -370,12 +387,16 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      */
     @Override
     public Simulacoes jogoAutomatico() {
+        //ToCruz entra na sala (meter o codigo)
+        //this.edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
-        BestStartToCruz(toCruz);
+        BestStartToCruz(toCruz); //Ver se isto mete já o ToCruz na melhor divisao se sim alterar no modo manual se não alterar e meter como o manual
+
         while (!finishgame) {
+            //this.edificio.drawMapa();
             itrMapa = this.edificio.IteratorMapa();
             UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
             while (itrMapa.hasNext()) {
@@ -392,6 +413,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             itrMapa = this.edificio.IteratorMapa();
             boolean findToCruz = false;
+            //this.edificio.drawMapa();
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
@@ -405,6 +427,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     findToCruz = true;
                 }
             }
+            //this.edificio.drawMapa();
         }
 
         relatoriosMissao();
@@ -449,7 +472,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         Iterator<Divisao> shortestPath = edificio.shortesPathIt(div_to, best_div);
         String temp = "";
-        System.out.println("Sugestão de caminho mais curto para o To Cruz");
+        System.out.println("Sugestao de caminho mais curto para o To Cruz");
 
         while (shortestPath.hasNext()) {
             Divisao div = shortestPath.next();
@@ -471,19 +494,42 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         Iterator<Divisao> itr = edificio.getNextDivisoes(divisao_atual);
         ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
 
+        System.out.println("Selecione a divisao para o ToCruz se mover -->");
+
         int i = 0;
         String temp = "";
-        System.out.println("Divisoes disponiveis:");
         while (itr.hasNext()) {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
 
             if (divisao.isEntrada_saida()) {
-                temp = temp + " (esta divisao e uma entrada/saida)";
-            } else if (divisao.getAlvo() != null) {
-                temp = temp + " (divisao onde esta o alvo)";
-            } else if (divisao.getItem() != null) {
-                temp = temp + " (divisao com item de cura item)";
+                temp = temp + " (esta divisao e uma entrada/saida";
+            }
+            if (divisao.isEntrada_saida() && divisao.getInimigos().size() > 0) {
+                temp = temp + " e tem inimigos)";
+            }
+            if (!divisao.isEntrada_saida() && divisao.getInimigos().size() > 0) {
+                temp = temp + " (divisao com inimigos)";
+            }
+            if (divisao.getAlvo() != null) {
+                temp = temp + " (divisao onde esta o alvo";
+            }
+            if (divisao.getAlvo() != null && divisao.getInimigos().size() > 0) {
+                temp = temp + ", mas tem inimigos)";
+            }
+            if (divisao.getItem() != null && divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected()) {
+                if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
+                    temp = temp + " (divisao com kit";
+                } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
+                    temp = temp + " (divisao com colete";
+                }
+            }
+            if (divisao.getItem() != null && divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected() && divisao.getInimigos().size() > 0) {
+                if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
+                    temp = temp + " e com inimigos)";
+                } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
+                    temp = temp + " e com inimigos)";
+                }
             }
 
             System.out.println(temp);
@@ -495,6 +541,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         /*
          * Fim da sugestão
          * */
+        sc = new Scanner(System.in);
         do {
             System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
 
@@ -512,7 +559,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
             System.out.println(ex.getMessage());
         }
-
         return div;
     }
 
@@ -522,55 +568,56 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Verificar se estão todos os cenarios feitos
      *  */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
-        if (!divisao.getItem().isCollected()  && divisao.getItem() instanceof ItemCura) {
+        if (!divisao.getItem().isCollected() && divisao.getItem() instanceof ItemCura) {
             ItemCura item = (ItemCura) divisao.getItem();
 
             switch (item.getType()) {
                 case COLETE: {
+                    //Verficar se o item já foi usado
                     toCruz.usarItem(item);
-                    System.out.println("To Cruz apnhou um colete e ficou com " + toCruz.getVida() + " HP");
+                    System.out.println("O To Cruz apanhou um colete e ficou com " + toCruz.getVida() + " HP");
                     break;
                 }
                 case KIT_VIDA: {
                     int op = -1;
-
+                    sc = new Scanner(System.in);
                     if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
                         do {
-                            System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                            System.out.println("Esta numa sala com um kit de vida de " + item.getVida_recuperada());
                             System.out.println("0 - Usar Item");
                             System.out.println("1 - Deixa-lo na sala");
                             System.out.println("2 - Guardar");
-                            System.out.println("Selecione uma opção -->");
+                            System.out.print("Selecione uma opcao -->");
                             try {
                                 op = sc.nextInt();
                             } catch (InputMismatchException ex) {
-                                System.out.println("Numero inválido!");
+                                System.out.println("Numero invalido!");
                                 sc.next();
                             }
                         } while (op < 0 || op > 2);
                     } else if (toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
                         do {
-                            System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                            System.out.println("Esta numa sala com um kit de vida de " + item.getVida_recuperada());
                             System.out.println("0 - Usar Item");
                             System.out.println("1 - Deixa-lo na sala");
-                            System.out.println("Selecione uma opção -->");
+                            System.out.print("Selecione uma opcao -->");
                             try {
                                 op = sc.nextInt();
                             } catch (InputMismatchException ex) {
-                                System.out.println("Numero inválido!");
+                                System.out.println("Numero invalido!");
                                 sc.next();
                             }
                         } while (op < 0 || op > 1);
                     } else if (!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
-                        System.out.println("Está numa sala com um kit de vida de " + item.getVida_recuperada());
+                        System.out.println("Esta numa sala com um kit de vida de " + item.getVida_recuperada());
                         System.out.println("1 - Deixa-lo na sala");
                         System.out.println("2 - Guardar");
-                        System.out.println("Selecione uma opção -->");
+                        System.out.print("Selecione uma opcao -->");
                         do {
                             try {
                                 op = sc.nextInt();
                             } catch (InputMismatchException ex) {
-                                System.out.println("Numero inválido!");
+                                System.out.println("Numero invalido!");
                                 sc.next();
                             }
                         } while (op < 1 || op > 2);
@@ -582,7 +629,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             break;
                         }
                         case 1: {
-                            System.out.println("To Cruz não coleta o item");
+                            System.out.println("O To Cruz nao coleta o item");
                             break;
                         }
                         case 2: {
@@ -590,7 +637,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             break;
                         }
                         default: {
-                            throw new InvalidOptionException("Introduziu uma opção invalida");
+                            throw new InvalidOptionException("Introduziu uma opcao invalida");
                         }
                     }
                     break;
@@ -606,22 +653,22 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         ToCruz toCruz = divisao_atual.getToCruz();
         Divisao divisao = divisao_atual;
         int op = -1;
-
+        sc = new Scanner(System.in);
         if (divisao_atual.haveConfronto()) {
             if (toCruz.mochilaTemKit()) {
                 do {
                     System.out.println("1 - Atacar");
                     System.out.println("2 - Usar kit");
-                    System.out.println("Selecione uma opção -->");
+                    System.out.print("Selecione uma opcao -->");
                     try {
                         op = sc.nextInt();
                     } catch (InputMismatchException ex) {
-                        System.out.println("Numero inválido!");
+                        System.out.println("Numero invalido!");
                         sc.next();
                     }
                 } while (op < 1 || op > 2);
             } else {
-                System.out.println("Não é possível o To Cruz corrar-se porque não tem kits na mochila. Por isso ToCruz ataca!");
+                System.out.println("Nao e possível o To Cruz curar-se porque nao tem kits na mochila. Por isso ToCruz ataca!");
                 op = 1;
             }
 
@@ -635,18 +682,18 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     break;
                 }
                 default: {
-                    throw new InvalidOptionException("Opção invalida");
+                    throw new InvalidOptionException("Opcao invalida");
                 }
             }
         } else {
             try {
                 if(toCruz.mochilaTemKit() && toCruz.getVida() < 100) {
-                    String op_kit = null;
-                    System.out.println("O to Cruz possui kits na sua mochila");
-                    System.out.println("O proximo kit da mochila tem os seguintes pontos" + toCruz.getMochila().peek().getVida_recuperada() + " deseja se curar (Sim: S/ Nao: N)");
-
+                    String op_kit = "";
+                    System.out.println("O To Cruz possui kits na sua mochila");
+                    System.out.println("O proximo kit da mochila tem os seguintes pontos recuperados: " + toCruz.getMochila().peek().getVida_recuperada());
+                    sc = new Scanner(System.in);
                     do {
-                        System.out.println("Deseja utilizar o kit de vida? (Sim: S/Nao: n) -->");
+                        System.out.print("Deseja utilizar o kit de vida? (Sim: S/Nao: n) -->");
 
                         try {
                             op_kit = sc.nextLine();
@@ -654,15 +701,13 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("Numero invalido!");
                             sc.next();
                         }
-                    } while(!op_kit.equals("S") && !op_kit.equals("s") && !op_kit.equals("N") && !op_kit.equals("n"));
+                    } while(op_kit.equals("N") && op_kit.equals("n") && op_kit.equals("S") && op_kit.equals("s"));
 
                     if(op_kit.equals("S") || op_kit.equals("s")) {
                         toCruz.usarKit();
                     }
                 }
                 divisao = this.getNewDivisaoTo(divisao_atual);
-
-                //Meter codigo coletar
                 divisao.addToCruz(divisao_atual.getToCruz());
                 divisao_atual.removeToCruz();
 
@@ -672,8 +717,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     divisao.attackToCruz(this.inimigos_dead);
                 }
 
-                //Meter para o item também não ser coletado
-                if (divisao.getItem() != null) {
+                if (divisao.getItem() != null && !divisao.getItem().isCollected()) {
                     DivisaoComItem(divisao, toCruz);
                 }
             } catch (NullPointerException ne) {
@@ -724,7 +768,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
-                System.out.println("O inimigo" + inimigo.getNome() + " está na sala" + divisao.getName());
+                System.out.println("O inimigo" + inimigo.getNome() + " esta na sala" + divisao.getName());
                 inimigos_move.addToRear(inimigo);
             } else {
                 divisao.attackInimigo(inimigo);
@@ -759,6 +803,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
+        sc = new Scanner(System.in);
         do {
             System.out.println("Introduza onde o ToCruz vai entrar -->");
 
@@ -785,7 +830,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 if (divisao_nova.isToCruzInDivisaoAlvo()) {
                     divisao_nova.ToCruzGetAlvo();
                     toCruz.setColectedAlvo(true);
-                } else if (divisao_nova.getItem() != null) {
+                } else if (divisao_nova.getItem() != null && divisao_nova.getItem().isCollected()) {
                     DivisaoComItem(divisao_nova, divisao_nova.getToCruz());
                 }
             }
@@ -838,8 +883,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         finishgame = true;
                     } else if (div.isEntrada_saida() && !div.haveConfronto() && div.isToCruzInExit() && trajeto_to.size() > 1) {
                         String op = "";
+                        sc = new Scanner(System.in);
                         do {
-                            System.out.println("Deseja sair do edifico(Sim: S/ Nao: N)? -->");
+                            System.out.println("Deseja sair do edificio (Sim: S/ Nao: N)? -->");
 
                             try {
                                 op = sc.nextLine();
@@ -851,6 +897,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
                         if (op.equals("S") || op.equals("s")) {
                             finishgame = true;
+                        } else {
+                            turnoToCruz(div);
                         }
                     } else {
                         turnoToCruz(div);
@@ -905,10 +953,10 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Vida final do ToCruz --> " + this.vida_to);
 
         if (toCruz.getVida() > 0 && alvo != null) {
-            System.out.println("Missão realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
-            System.out.println("Total de vida do ToCruz --> " + this.vida_to);
+            System.out.println("Missao realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
+            System.out.println("Total de vida do ToCruz --> " + toCruz.getVida());
         } else {
-            System.out.println("Missão falhada ಥ_ಥ");
+            System.out.println("Missao falhada ಥ_ಥ");
         }
 
         System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
@@ -922,7 +970,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         System.out.println("Numero de itensColetados: " + item_colected.size());
         if (!item_colected.isEmpty()) {
-            System.out.println("Itens coletados pelo o ToCruz:");
+            System.out.println("Itens coletados pelo ToCruz:");
 
             int i = 1;
             while (!item_colected.isEmpty()) {
@@ -941,10 +989,10 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 i++;
             }
         } else {
-            System.out.println("A mochila do To Cruz está vazia.");
+            System.out.println("A mochila do To Cruz esta vazia.");
         }
 
-        System.out.println("Percurso feito pelo o ToCruz:");
+        System.out.println("Percurso feito pelo ToCruz:");
         String percurso = " ";
 
         QueueADT<Divisao> trajeto_temp = new LinkedQueue<Divisao>();

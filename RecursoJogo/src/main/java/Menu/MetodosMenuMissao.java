@@ -1,11 +1,13 @@
 package Menu;
 
+import Exportar.ExportarDado;
 import Importar.ImportarMapa;
 import Missoes.Missao;
 import Missoes.Missoes;
 
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MetodosMenuMissao {
@@ -15,6 +17,8 @@ public class MetodosMenuMissao {
     private static final String path = "./Jsons/Import/FicheiroMissao.json";
 
     private static final String path_name_def = "./Jsons/Import/";
+
+    private static final String destino = "./Jsons/Export/";
 
     public Missoes importarMissoes() {
         Missoes missoes = new Missoes();
@@ -56,7 +60,7 @@ public class MetodosMenuMissao {
                     System.out.println("Numero invalido!");
                     sc.next();
                 }
-            } while (continuar < 0 && continuar > 1)
+            } while (continuar < 0 && continuar > 1);
         } while (continuar != 0);
 
         return missoes;
@@ -82,18 +86,18 @@ public class MetodosMenuMissao {
         } else {
             SelecionarModoJogo(missoes.getListaMissao().first());
         }
+
+        exportarMissoes(missoes);
     }
 
-    /*
-     * Ver a melhor forma de exportar as tantas receber as missoes e só exportar as missoes com
-     * o cont de simulações maior que 0
-     * */
-    private void ExportarDadosMissao(Missoes missoes) {
-        /*
-         * Chamar metodo para exportar dados
-         * */
+    private void exportarMissoes(Missoes missoes) {
+        Iterator<Missao> iterator = missoes.getListaMissao().iterator();
+        while (iterator.hasNext()) {
+            Missao missao = iterator.next();
+            ExportarDado exportar = new ExportarDado(missao);
+            exportar.exportarTrajetos(destino);
+        }
     }
-
     private void SelecionarModoJogo(Missao missao) {
         int op_modo;
         do {

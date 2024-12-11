@@ -51,6 +51,10 @@ public class Missao implements MissaoInt {
         return simulacoes;
     }
 
+    public int getTot_simulacoes() {
+        return tot_simulacoes;
+    }
+
     public Edificio getEdificio() {
         return edificio;
     }

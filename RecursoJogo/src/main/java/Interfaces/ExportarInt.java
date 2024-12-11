@@ -19,5 +19,5 @@ public interface ExportarInt {
      *
      * @param path o caminho para guardar o ficheiro
      */
-    public void exportarDados(String path);
+    public void exportarTrajetos(String path);
 }
