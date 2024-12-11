@@ -12,7 +12,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Classe responsável por gerenciar o menu de missões do jogo.
+ * Classe responsável por gestão o menu de missões do jogo.
  * Contém métodos para importar, realizar e exportar missões, além de permitir a seleção do modo de jogo.
  *
  * @author Artur Pinto
@@ -25,7 +25,7 @@ public abstract class MetodosMenuMissao {
 
     /**
      * Construtor padrão da classe MetodosMenuMissao.
-     * Inicializa a classe para gerenciar o menu de missões, sem parâmetros adicionais.
+     * Inicializa a classe para gestão o menu de missões, sem parâmetros adicionais.
      */
     public MetodosMenuMissao() {
     }
@@ -197,7 +197,7 @@ public abstract class MetodosMenuMissao {
     }
 
     /**
-     * Método responsável por gerenciar a execução de várias missões. O jogador pode escolher
+     * Método responsável por gestão a execução de várias missões. O jogador pode escolher
      * qual missão deseja jogar a partir de uma lista de missões disponíveis.
      *
      * @param missoes Objeto contendo todas as missões disponíveis.
