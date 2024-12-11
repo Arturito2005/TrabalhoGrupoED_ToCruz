@@ -5,89 +5,94 @@ import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
 
 /**
- * This interface defines the ADT for a binary tree.
+ * Esta interface define o ADT para uma árvore binária.
  *
- * @param <T> the type of elements stored in the binary tree
+ * @param <T> o tipo de elementos armazenados na árvore binária
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface BinaryTreeADT<T> {
 
     /**
-     * Returns a reference to the root element
+     * Retorna uma referência para o elemento raiz.
      *
-     * @return a reference to the root
+     * @return uma referência para a raiz
      */
     public T getRoot();
 
     /**
-     * Indica se a lista está vazia ou não
+     * Indica se a árvore está vazia ou não.
      *
-     * @return true if this list contains no elements
+     * @return verdadeiro se a árvore não contém elementos, falso caso contrário
      */
     public boolean isEmpty();
 
     /**
-     * Returns the number of elements in this binary tree.
+     * Retorna o número de elementos nesta árvore binária.
      *
-     * @return the integer number of elements in this tree
+     * @return o número inteiro de elementos nesta árvore
      */
     public int size();
 
     /**
-     * Returns true if the binary tree contains an element that matches the
-     * specified element and false otherwise.
+     * Retorna verdadeiro se a árvore binária contém um elemento que corresponde ao
+     * elemento especificado, e falso caso contrário.
      *
-     * @param targetElement the element being sought in the tree
-     * @return true if the tree contains the target element
+     * @param targetElement o elemento procurado na árvore
+     * @return verdadeiro se a árvore contém o elemento alvo
      */
     public boolean contains(T targetElement);
 
     /**
-     * Returns a reference to the specified element if it is found in this
-     * binary tree.Throws an exception if the specified element is not found.
+     * Retorna uma referência ao elemento especificado se ele for encontrado nesta
+     * árvore binária. Lança uma exceção se o elemento especificado não for encontrado.
      *
-     * @param targetElement the element being sought in the tree
-     * @return a reference to the specified element
-     * @throws EmptyCollectionException,
-     * Exceptions.EmptyCollectionException
+     * @param targetElement o elemento procurado na árvore
+     * @return uma referência ao elemento especificado
+     * @throws ElementNotFoundException
+     * @throws EmptyCollectionException
      */
     public T find(T targetElement) throws ElementNotFoundException, EmptyCollectionException;
 
     /**
-     * Returns the string representation of the binary tree.
+     * Retorna a representação em string da árvore binária.
      *
-     * @return a string representation of the binary tree
+     * @return uma representação em string da árvore binária
      */
     @Override
     public String toString();
 
     /**
-     * Performs an inorder traversal on this binary tree by calling an
-     * overloaded, recursive inorder method that starts with the root.
+     * Realiza uma travessia em ordem nesta árvore binária chamando um método
+     * recursivo sobrecarregado de travessia em ordem que começa pela raiz.
      *
-     * @return an iterator over the elements of this binary tree
+     * @return um iterador sobre os elementos desta árvore binária
      */
     public Iterator<T> iteratorInOrder();
 
     /**
-     * Performs a preorder traversal on this binary tree by calling an
-     * overloaded, recursive preorder method that starts with the root.
+     * Realiza uma travessia em pré-ordem nesta árvore binária chamando um método
+     * recursivo sobrecarregado de travessia em pré-ordem que começa pela raiz.
      *
-     * @return an iterator over the elements of this binary tree
+     * @return um iterador sobre os elementos desta árvore binária
      */
     public Iterator<T> iteratorPreOrder();
 
     /**
-     * Performs a postorder traversal on this binary tree by calling an
-     * overloaded, recursive postorder method that starts with the root.
+     * Realiza uma travessia em pós-ordem nesta árvore binária chamando um método
+     * recursivo sobrecarregado de travessia em pós-ordem que começa pela raiz.
      *
-     * @return an iterator over the elements of this binary tree
+     * @return um iterador sobre os elementos desta árvore binária
      */
     public Iterator<T> iteratorPostOrder();
 
     /**
-     * Performs a levelorder traversal on the binary tree, using a queue.
+     * Realiza uma travessia em ordem de nível na árvore binária, utilizando uma fila.
      *
-     * @return an iterator over the elements of this binary tree
+     * @return um iterador sobre os elementos desta árvore binária
      */
     public Iterator<T> iteratorLevelOrder();
 }

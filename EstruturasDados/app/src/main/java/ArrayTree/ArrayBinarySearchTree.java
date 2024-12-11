@@ -6,24 +6,52 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
 
+/**
+ * Esta classe representa uma implementação de uma árvore binária de busca utilizando um array.
+ * A árvore permite a inserção, remoção e busca de elementos de forma ordenada, mantendo a propriedade da árvore binária de busca.
+ *
+ * @param <T> Tipo dos elementos armazenados na árvore, que deve ser comparável com outros elementos do mesmo tipo.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements BinarySearchTreeADT<T> {
 
+    /** A altura da árvore, calculada com base no número de níveis da árvore. */
     protected int height;
 
+    /** O índice máximo que contém um valor válido na árvore. */
     protected int maxIndex;
 
+    /**
+     * Constrói uma árvore binária de busca vazia.
+     */
     public ArrayBinarySearchTree() {
         super();
         height = 0;
         maxIndex = -1;
     }
 
+
+    /**
+     * Constrói uma árvore binária de busca com o elemento inicial fornecido.
+     *
+     * @param element O elemento a ser inserido na árvore.
+     */
     public ArrayBinarySearchTree(T element) {
         super(element);
         height = 1;
         maxIndex = 0;
     }
 
+    /**
+     * Adiciona um elemento à árvore mantendo a propriedade de ordenação.
+     * Se a árvore atingir o limite de capacidade, ela será expandida.
+     *
+     * @param element O elemento a ser adicionado à árvore.
+     */
     @Override
     public void addElement(T element) {
         if (tree.length < maxIndex * 2 + 3) {
@@ -66,6 +94,11 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         count++;
     }
 
+    /**
+     * Substitui o nó no índice alvo, ajustando os elementos da árvore conforme necessário.
+     *
+     * @param targetIndex O índice do nó que será substituído.
+     */
     protected void replace(int targetIndex) {
         int currentIndex, oldIndex, newIndex;
         ArrayUnorderedList<Integer> oldlist = new ArrayUnorderedList<Integer>();
@@ -216,6 +249,13 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         }
     }
 
+    /**
+     * Encontra o índice de um elemento na árvore.
+     *
+     * @param tempElement O elemento a ser procurado.
+     * @param value O valor para busca.
+     * @return O índice do elemento, ou -1 se não encontrado.
+     */
     private int findIndex(Comparable<T> tempElement, int value) {
         int pos = -1;
 
@@ -228,6 +268,14 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         return pos;
     }
 
+    /**
+     * Remove um elemento da árvore.
+     * A árvore será reorganizada para manter a propriedade de ordenação após a remoção.
+     *
+     * @param targetElement O elemento a ser removido.
+     * @return O elemento removido.
+     * @throws ElementNotFoundException Se o elemento não for encontrado na árvore.
+     */
     @Override
     public T removeElement(T targetElement) throws ElementNotFoundException {
         if (isEmpty() || targetElement == null) {
@@ -259,6 +307,12 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         return result;
     }
 
+    /**
+     * Remove todas as ocorrências de um elemento da árvore.
+     *
+     * @param targetElement O elemento cujas ocorrências serão removidas.
+     * @throws ElementNotFoundException Se o elemento não for encontrado.
+     */
     @Override
     public void removeAllOccurences(T targetElement) throws ElementNotFoundException {
         try {
@@ -269,16 +323,33 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         }
     }
 
+    /**
+     * Remove o elemento mínimo da árvore.
+     *
+     * @return O elemento mínimo removido.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
+     */
     @Override
     public T removeMin() throws ElementNotFoundException {
         return this.removeElement(findMin());
     }
 
+    /**
+     * Remove o elemento máximo da árvore.
+     *
+     * @return O elemento máximo removido.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
+     */
     @Override
     public T removeMax() throws ElementNotFoundException {
         return this.removeElement(findMax());
     }
 
+    /**
+     * Encontra o elemento mínimo na árvore.
+     *
+     * @return O elemento mínimo encontrado.
+     */
     @Override
     public T findMin() {
         T min = null;
@@ -294,6 +365,11 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         return min;
     }
 
+    /**
+     * Encontra o elemento máximo na árvore.
+     *
+     * @return O elemento máximo encontrado.
+     */
     @Override
     public T findMax() {
         T max = null;

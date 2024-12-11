@@ -5,12 +5,34 @@ import LinkedList.LinearLinkedUnorderedList;
 import LinkedTree.LinkedHeap;
 import java.util.Iterator;
 
+/**
+ * A classe Network estende a classe NetworkMatrizAdjacencia e implementa a interface NetworkMatrizADT.
+ * Representa uma rede de grafos com funcionalidades específicas para manipulação de pesos em arestas
+ * e cálculo de caminhos mais curtos entre vértices.
+ *
+ * @param <T> O tipo dos vértices da rede.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
 
+    /**
+     * Construtor padrão da classe Network. Inicializa a rede chamando o construtor da classe pai.
+     */
     public Network() {
         super();
     }
 
+    /**
+     * Retorna o peso da aresta entre dois vértices do grafo.
+     *
+     * @param vertex O primeiro vértice.
+     * @param vertex2 O segundo vértice.
+     * @return O peso da aresta entre os dois vértices, ou infinito positivo se não houver aresta.
+     */
     @Override
     public double getWeightEdge(T vertex, T vertex2) {
         int ind_vertex = getIndex(vertex);
@@ -19,6 +41,13 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         return getWeightEdge(ind_vertex, ind_vertex2);
     }
 
+    /**
+     * Retorna o peso da aresta entre dois vértices do grafo, dado seus índices.
+     *
+     * @param vertex O índice do primeiro vértice.
+     * @param vertex2 O índice do segundo vértice.
+     * @return O peso da aresta entre os dois vértices, ou infinito positivo se não houver aresta.
+     */
     private double getWeightEdge(int vertex, int vertex2) {
         double weight = 0;
 
@@ -31,6 +60,12 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         return weight;
     }
 
+    /**
+     * Atualiza o peso das arestas conectadas ao vértice fornecido.
+     *
+     * @param vertex O vértice cujas arestas serão atualizadas.
+     * @param weight O novo peso para as arestas conectadas ao vértice.
+     */
     @Override
     public void updateWeightEdge(T vertex, double weight) {
         int index1 = getIndex(vertex);
@@ -50,9 +85,13 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         }
     }
 
-    /*
-    * Funciona e retorna o caminho mais proximo.
-    * */
+    /**
+     * Calcula o caminho mais curto entre dois vértices utilizando o algoritmo de Dijkstra.
+     *
+     * @param startVertex O vértice de origem.
+     * @param finalVertex O vértice de destino.
+     * @return Um iterador contendo os vértices do caminho mais curto, ou um iterador vazio se não houver caminho.
+     */
     @Override
     public Iterator<T> shortestPath(T startVertex, T finalVertex) {
         UnorderedListADT<T> listResult = new LinearLinkedUnorderedList<>();
@@ -115,6 +154,13 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
         return listResult.iterator();
     }
 
+    /**
+     * Retorna o número mínimo de arestas entre dois vértices utilizando o algoritmo de Dijkstra.
+     *
+     * @param startVertex O vértice de origem.
+     * @param finalVertex O vértice de destino.
+     * @return O número mínimo de arestas entre os vértices, ou infinito positivo se não houver caminho.
+     */
     @Override
     public double shortestPathArest(T startVertex, T finalVertex) {
         int startIndex = getIndex(startVertex);

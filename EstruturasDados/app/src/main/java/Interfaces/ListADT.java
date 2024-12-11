@@ -2,91 +2,98 @@ package Interfaces;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
+
 import java.util.Iterator;
 
 /**
- * This interface defines the ADT for a generic list.
+ * Esta interface define o ADT para uma lista genérica.
+ * <p>
+ * Esta interface estende a interface {@code Iterable<T>}, permitindo que a lista
+ * seja iterável.
  *
- * This interface extends the {@code Iterable<T>} interface, allowing the list
- * to be iterable
- *
- * @param <T> the type of elements stored in this list
+ * @param <T> o tipo dos elementos armazenados nesta lista
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface ListADT<T> extends Iterable<T> {
 
     /**
-     * Removes and returns the first element from this list.
+     * Remove e retorna o primeiro elemento desta lista.
      *
-     * @return the first element from this list
-     * @throws EmptyCollectionException
+     * @return o primeiro elemento desta lista
+     * @throws EmptyCollectionException se a lista estiver vazia
      */
     public T removeFirst() throws EmptyCollectionException;
 
     /**
-     * Removes and returns the last element from this list.
+     * Remove e retorna o último elemento desta lista.
      *
-     * @return the last element from this list
-     * @throws EmptyCollectionException
+     * @return o último elemento desta lista
+     * @throws EmptyCollectionException se a lista estiver vazia
      */
     public T removeLast() throws EmptyCollectionException;
 
     /**
-     * Removes and returns the specified element from this list.
+     * Remove e retorna o elemento especificado desta lista.
      *
-     * @param element the element to be removed from the list
-     * @return the removed element
-     * @throws EmptyCollectionException
+     * @param element o elemento a ser removido da lista
+     * @return o elemento removido
+     * @throws EmptyCollectionException se a lista estiver vazia
+     * @throws ElementNotFoundException se o elemento não for encontrado
      */
     public T remove(T element) throws EmptyCollectionException, ElementNotFoundException;
 
     /**
-     * Returns a reference to the first element in this list.
+     * Retorna uma referência para o primeiro elemento desta lista.
      *
-     * @return a reference to the first element in this list
+     * @return uma referência para o primeiro elemento desta lista
      */
     public T first();
 
     /**
-     * Returns a reference to the last element in this list.
+     * Retorna uma referência para o último elemento desta lista.
      *
-     * @return a reference to the last element in this list
+     * @return uma referência para o último elemento desta lista
      */
     public T last();
 
     /**
-     * Returns true if this list contains the specified target element.
+     * Retorna true se esta lista contiver o elemento alvo especificado.
      *
-     * @param target the target that is being sought in the list
-     * @return true if the list contains this element
+     * @param target o elemento que está sendo buscado na lista
+     * @return true se a lista contiver este elemento
      */
     public boolean contains(T target);
 
     /**
-     * Returns true if this list contains no elements.
+     * Retorna true se esta lista não contiver elementos.
      *
-     * @return true if this list contains no elements
+     * @return true se esta lista não contiver elementos
      */
     public boolean isEmpty();
 
     /**
-     * Returns the number of elements in this list.
+     * Retorna o número de elementos nesta lista.
      *
-     * @return the integer representation of number of elements in this list
+     * @return a representação inteira do número de elementos nesta lista
      */
     public int size();
 
     /**
-     * Returns an iterator for the elements in this list.
+     * Retorna um iterador para os elementos desta lista.
      *
-     * @return an iterator over the elements in this list
+     * @return um iterador sobre os elementos desta lista
      */
     @Override
     public Iterator<T> iterator();
 
     /**
-     * Returns a string representation of this list.
+     * Retorna uma representação em string desta lista.
      *
-     * @return a string representation of this list
+     * @return uma representação em string desta lista
      */
     @Override
     public String toString();

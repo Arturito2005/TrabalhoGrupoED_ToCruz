@@ -3,53 +3,58 @@ package Interfaces;
 import Exceptions.EmptyCollectionException;
 
 /**
- * This interface defines the ADT for a queue.
+ * Esta interface define o ADT para uma fila.
  *
- * @param <T> the type of elements stored in the queue
+ * @param <T> o tipo dos elementos armazenados na fila
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface QueueADT<T> {
 
     /**
-     * Adds one element to the rear of this queue.
+     * Adiciona um elemento à parte traseira desta fila.
      *
-     * @param element the element to be added to the rear of this queue
+     * @param element o elemento a ser adicionado à parte traseira desta fila
      */
     public void enqueue(T element);
 
     /**
-     * Removes and returns the element at the front of this queue.
+     * Remove e retorna o elemento da frente desta fila.
      *
-     * @return the element at the front of this queue
+     * @return o elemento da frente desta fila
      * @throws EmptyCollectionException
      */
     public T dequeue() throws EmptyCollectionException;
 
     /**
-     * Returns without removing the element at the front of this queue.
+     * Retorna, sem remover, o elemento da frente desta fila.
      *
-     * @return the first element in this queue
+     * @return o primeiro elemento nesta fila
      * @throws EmptyCollectionException
      */
     public T first() throws EmptyCollectionException;
 
     /**
-     * Returns true if this queue contains no elements.
+     * Retorna true se esta fila não contiver elementos.
      *
-     * @return true if this queue is empty
+     * @return true se esta fila estiver vazia
      */
     public boolean isEmpty();
 
     /**
-     * Returns the number of elements in this queue.
+     * Retorna o número de elementos nesta fila.
      *
-     * @return the integer representation of the size of this queue
+     * @return a representação inteira do tamanho desta fila
      */
     public int size();
 
     /**
-     * Returns a string representation of this queue.
+     * Retorna uma representação em string desta fila.
      *
-     * @return the string representation of this queue
+     * @return a representação em string desta fila
      */
     @Override
     public String toString();

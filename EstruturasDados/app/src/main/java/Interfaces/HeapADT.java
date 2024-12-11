@@ -3,31 +3,36 @@ package Interfaces;
 import Exceptions.EmptyCollectionException;
 
 /**
- * The HeapADT interface represents the Heap data structure, which extends a binary tree.
+ * A interface HeapADT representa a estrutura de dados Heap, que estende uma árvore binária.
  *
- * @param <T> the type of elements stored in this heap, which must be comparable to determine the ordering.
+ * @param <T> o tipo dos elementos armazenados neste heap, que deve ser comparável para determinar a ordenação.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public interface HeapADT<T> extends BinaryTreeADT<T> {
 
     /**
-     * Adds the specified object to this heap.
+     * Adiciona o objeto especificado a este heap.
      *
-     * @param obj the element to added to this head
+     * @param obj o elemento a ser adicionado a este heap
      */
     public void addElement(T obj);
 
     /**
-     * Removes element with the lowest value from this heap.
+     * Remove o elemento com o menor valor deste heap.
      *
-     * @return the element with the lowest value from this heap
-     * @throws EmptyCollectionException
+     * @return o elemento com o menor valor deste heap
+     * @throws EmptyCollectionException se o heap estiver vazio
      */
     public T removeMin() throws EmptyCollectionException;
 
     /**
-     * Returns a reference to the element with the lowest value in this heap.
+     * Retorna uma referência para o elemento com o menor valor neste heap.
      *
-     * @return a reference to the element with the lowest value in this heap
+     * @return uma referência para o elemento com o menor valor neste heap
      */
     public T findMin();
 }

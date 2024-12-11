@@ -5,7 +5,10 @@ import java.util.Objects;
 /**
  * Classe abstrata que representa um item no jogo.
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public abstract class Item {
@@ -27,10 +30,32 @@ public abstract class Item {
 
     /**
      * Construtor padrão da classe {@link Item}.
-     * */
+     * Inicializa o identificador único com o valor do contador estático
+     * e define o status de coleta como falso.
+     */
     public Item() {
         this.id_item = ID_ITEM_CONT;
         this.collected = false;
+    }
+
+    /**
+     * Construtor da classe {@link Item} com parâmetros.
+     *
+     * @param id_item    O identificador único do item.
+     * @param collected  Indica se o item foi coletado.
+     */
+    public Item(int id_item, boolean collected) {
+        this.id_item = id_item;
+        this.collected = collected;
+    }
+
+    /**
+     * Retorna o identificador único do item.
+     *
+     * @return O ID do item.
+     */
+    public int getId_item() {
+        return id_item;
     }
 
     /**

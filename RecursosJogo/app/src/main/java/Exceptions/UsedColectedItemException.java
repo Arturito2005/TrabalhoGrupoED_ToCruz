@@ -4,7 +4,9 @@ package Exceptions;
  * Exceção personalizada que indica uma tentativa de reutilizar um item já coletado ou usado em um contexto onde isso não é permitido.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class UsedColectedItemException extends RuntimeException {

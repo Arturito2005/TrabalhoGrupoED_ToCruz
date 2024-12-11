@@ -13,8 +13,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,11 +20,17 @@ import java.io.IOException;
 /**
  * Classe responsável por gerar o Mapa da missão, do ToCruz
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
+ * @version 1.0
  */
 public class ImportarMapa implements Importar {
 
-    private static LinearLinkedUnorderedList<Divisao> lista_divisoes; /** Variavel que guarda todas as divisoes do edificio*/
+    /** Variavel que guarda todas as divisoes do edificio*/
+    private static LinearLinkedUnorderedList<Divisao> lista_divisoes;
 
     /**
      * Construtor do ImportarMapa
@@ -183,6 +187,7 @@ public class ImportarMapa implements Importar {
                     divisao.setItem(item);
                 }
 
+                //Refazer
                 missao = new Missao(codigo_missao, versao, edificio);
             }
         } catch (ParseException | FileNotFoundException e) {

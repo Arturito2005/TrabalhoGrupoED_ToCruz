@@ -7,25 +7,51 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import java.util.Iterator;
 
+
+/**
+ * Uma classe que representa uma árvore binária implementada usando um array.
+ * Fornece vários métodos para manipular e percorrer a árvore binária.
+ *
+ * @param <T> o tipo de elementos armazenados na árvore.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
 
+    /** Capacidade padrão para a árvore binária. */
     private static int DEFAULT_CAPACITY = 50;
 
+    /** O número de elementos na árvore. */
     protected int count;
 
+    /** O array que armazena os elementos da árvore. */
     protected T[] tree;
 
+    /**
+     * Constrói uma árvore binária vazia com capacidade padrão.
+     */
     public ArrayBinaryTree() {
         this.count = 0;
         this.tree = (T[]) ((new Object[DEFAULT_CAPACITY]));
     }
 
+    /**
+     * Constrói uma árvore binária com um elemento raiz.
+     *
+     * @param element o elemento raiz da árvore binária.
+     */
     public ArrayBinaryTree(T element) {
         count = 1;
         tree = (T[]) new Object[DEFAULT_CAPACITY];
         tree[0] = element;
     }
 
+    /**
+     * Expande a capacidade do array da árvore quando mais espaço é necessário.
+     */
     protected void expandCapacity() {
         T[] temp = (T[]) (new Object[(this.tree.length * 2)]);
 
@@ -34,11 +60,21 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         this.tree = temp;
     }
 
+    /**
+     * Retorna o elemento raiz da árvore.
+     *
+     * @return o elemento raiz.
+     */
     @Override
     public T getRoot() {
         return this.tree[0];
     }
 
+    /**
+     * Verifica se a árvore está vazia.
+     *
+     * @return true se a árvore estiver vazia, false caso contrário.
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -50,11 +86,22 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return empty;
     }
 
+    /**
+     * Retorna o número de elementos na árvore.
+     *
+     * @return o tamanho da árvore.
+     */
     @Override
     public int size() {
         return this.count;
     }
 
+    /**
+     * Verifica se a árvore contém o elemento especificado.
+     *
+     * @param targetElement o elemento a ser verificado.
+     * @return true se o elemento for encontrado, false caso contrário.
+     */
     @Override
     public boolean contains(T targetElement) {
         boolean contain = false;
@@ -73,6 +120,14 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return contain;
     }
 
+    /**
+     * Encontra e retorna o elemento alvo na árvore.
+     *
+     * @param targetElement o elemento a ser encontrado.
+     * @return o elemento alvo se encontrado.
+     * @throws ElementNotFoundException se o elemento não for encontrado.
+     * @throws EmptyCollectionException se a árvore estiver vazia.
+     */
     @Override
     public T find(T targetElement) throws ElementNotFoundException, EmptyCollectionException {
         if (this.count == 0) {
@@ -96,6 +151,12 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return temp;
     }
 
+    /**
+     * Realiza uma travessia em ordem (in-order) da árvore e adiciona os elementos à lista.
+     *
+     * @param n o índice atual no array da árvore.
+     * @param tempList a lista para armazenar os elementos na ordem.
+     */
     protected void inOrder(int n, ArrayUnorderedList<T> tempList) {
         if (n < this.tree.length) {
             if (tree[n] != null) {
@@ -106,6 +167,11 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para uma travessia em ordem (in-order) da árvore.
+     *
+     * @return um iterador para a travessia em ordem.
+     */
     @Override
     public Iterator<T> iteratorInOrder() {
         ArrayUnorderedList<T> tempList = new ArrayUnorderedList<T>();
@@ -114,6 +180,12 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia em pré-ordem (pre-order) da árvore e adiciona os elementos à lista.
+     *
+     * @param n o índice atual no array da árvore.
+     * @param tempList a lista para armazenar os elementos em pré-ordem.
+     */
     protected void preOrder(int n, ArrayUnorderedList<T> tempList) {
         if (n < this.tree.length) {
             if (tree[n] != null) {
@@ -124,6 +196,11 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para uma travessia em pré-ordem (pre-order) da árvore.
+     *
+     * @return um iterador para a travessia em pré-ordem.
+     */
     @Override
     public Iterator<T> iteratorPreOrder() {
         ArrayUnorderedList<T> tempList = new ArrayUnorderedList<T>();
@@ -132,6 +209,12 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia em pós-ordem (post-order) da árvore e adiciona os elementos à lista.
+     *
+     * @param n o índice atual no array da árvore.
+     * @param tempList a lista para armazenar os elementos em pós-ordem.
+     */
     protected void postOrder(int n, ArrayUnorderedList<T> tempList) {
         if (n < this.tree.length) {
             if (tree[n] != null) {
@@ -142,6 +225,11 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para uma travessia em pós-ordem (post-order) da árvore.
+     *
+     * @return um iterador para a travessia em pós-ordem.
+     */
     @Override
     public Iterator<T> iteratorPostOrder() {
         ArrayUnorderedList<T> tempList = new ArrayUnorderedList<T>();
@@ -150,6 +238,13 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia em nível (level-order) da árvore e adiciona os elementos à lista.
+     *
+     * @param n o índice atual no array da árvore.
+     * @param tempList a lista para armazenar os elementos em nível.
+     * @param nodes a fila para gerenciar os nós durante a travessia.
+     */
     protected void levelOrder(int n, ArrayUnorderedList<T> tempList, CircularArrayQueue<T> nodes) {
         if (n < this.tree.length) {
             nodes.enqueue(this.tree[n]);
@@ -177,6 +272,11 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para uma travessia em nível (level-order) da árvore.
+     *
+     * @return um iterador para a travessia em nível.
+     */
     @Override
     public Iterator<T> iteratorLevelOrder() {
         CircularArrayQueue<T> arrayQueue = new CircularArrayQueue<>();
@@ -186,6 +286,11 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Retorna uma representação em string da árvore em nível (level-order).
+     *
+     * @return uma string representando a árvore em nível.
+     */
     @Override
     public String toString() {
         String temp = "";

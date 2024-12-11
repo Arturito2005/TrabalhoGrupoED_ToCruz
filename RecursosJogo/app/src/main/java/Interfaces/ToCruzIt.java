@@ -9,13 +9,28 @@ import Items.ItemCura;
 /**
  * Interface que define todas as iterações que o ToCruz pode ter com qualquer item presentes no edificio.
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ *
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public interface ToCruzIt {
 
+    /**
+     * Verifica se a mochila do To Cruz está cheia.
+     *
+     * @return {@code true} se a mochila estiver cheia; {@code false} caso contrário.
+     */
     public boolean mochilaIsFull();
 
+    /**
+     * Verifica se há um kit de cura na mochila do To Cruz.
+     *
+     * @return {@code true} se houver um kit de cura na mochila; {@code false} caso contrário.
+     */
     public boolean mochilaTemKit();
     /**
      * Método para armazenar um item de cura na mochila do ToCruz.

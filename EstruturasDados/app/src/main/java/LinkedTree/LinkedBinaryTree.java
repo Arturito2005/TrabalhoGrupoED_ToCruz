@@ -7,27 +7,61 @@ import LinkedList.LinearLinkedUnorderedList;
 import Queue.LinkedQueue;
 import java.util.Iterator;
 
+/**
+ * Representa uma árvore binária ligada que implementa a interface {@link BinaryTreeADT}.
+ *
+ * @param <T> o tipo dos elementos armazenados na árvore binária.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
 
+    /**
+     * Contador de elementos na árvore binária.
+     */
     protected int count;
 
+    /**
+     * Raiz da árvore binária.
+     */
     protected BinaryTreeNode<T> root;
 
+    /**
+     * Construtor padrão que cria uma árvore binária vazia.
+     */
     public LinkedBinaryTree() {
         this.count = 0;
         this.root = null;
     }
 
+    /**
+     * Construtor que cria uma árvore binária com um único elemento.
+     *
+     * @param element o elemento a ser armazenado na raiz da árvore.
+     */
     public LinkedBinaryTree(T element) {
         this.count = 0;
         this.root = new BinaryTreeNode<>(element);
     }
 
+    /**
+     * Retorna o elemento armazenado na raiz da árvore.
+     *
+     * @return o elemento da raiz.
+     */
     @Override
     public T getRoot() {
         return this.root.element;
     }
 
+    /**
+     * Verifica se a árvore está vazia.
+     *
+     * @return {@code true} se a árvore estiver vazia, {@code false} caso contrário.
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -39,11 +73,22 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return empty;
     }
 
+    /**
+     * Retorna o número de elementos na árvore.
+     *
+     * @return o número de elementos na árvore.
+     */
     @Override
     public int size() {
         return this.count;
     }
 
+    /**
+     * Verifica se um elemento está presente na árvore.
+     *
+     * @param targetElement o elemento a ser procurado.
+     * @return {@code true} se o elemento for encontrado, {@code false} caso contrário.
+     */
     @Override
     public boolean contains(T targetElement) {
         boolean contains = false;
@@ -62,6 +107,13 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return contains;
     }
 
+    /**
+     * Método auxiliar que busca recursivamente um elemento na árvore.
+     *
+     * @param targetElement o elemento a ser procurado.
+     * @param next          o nó atual a ser verificado.
+     * @return o nó que contém o elemento ou {@code null} se o elemento não for encontrado.
+     */
     private BinaryTreeNode<T> findAgain(T targetElement, BinaryTreeNode<T> next) {
         if (next == null) {
             return null;
@@ -80,6 +132,14 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return temp;
     }
 
+    /**
+     * Procura um elemento na árvore binária.
+     *
+     * @param targetElement o elemento a ser procurado.
+     * @return o elemento encontrado.
+     * @throws ElementNotFoundException se o elemento não for encontrado.
+     * @throws EmptyCollectionException se a árvore estiver vazia.
+     */
     @Override
     public T find(T targetElement) throws ElementNotFoundException, EmptyCollectionException {
         if (this.count == 0) {
@@ -95,6 +155,13 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return current.element;
     }
 
+    /**
+     * Realiza uma travessia in-order (em ordem) na árvore e armazena os elementos
+     * em uma lista.
+     *
+     * @param node     o nó atual a ser visitado.
+     * @param tempList a lista onde os elementos serão armazenados.
+     */
     protected void inorder(BinaryTreeNode<T> node, LinearLinkedUnorderedList<T> tempList) {
         if (node != null) {
             inorder(node.left, tempList);
@@ -103,6 +170,11 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para a travessia in-order da árvore.
+     *
+     * @return um iterador para a travessia in-order.
+     */
     @Override
     public Iterator<T> iteratorInOrder() {
         LinearLinkedUnorderedList<T> tempList = new LinearLinkedUnorderedList<>();
@@ -111,6 +183,13 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia pre-order (pré-ordem) na árvore e armazena os elementos
+     * em uma lista.
+     *
+     * @param node     o nó atual a ser visitado.
+     * @param tempList a lista onde os elementos serão armazenados.
+     */
     protected void preOrder(BinaryTreeNode<T> node, LinearLinkedUnorderedList<T> tempList) {
         if (node != null) {
             tempList.addToRear(node.element);
@@ -119,6 +198,11 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para a travessia pre-order da árvore.
+     *
+     * @return um iterador para a travessia pre-order.
+     */
     @Override
     public Iterator<T> iteratorPreOrder() {
         LinearLinkedUnorderedList<T> tempList = new LinearLinkedUnorderedList<>();
@@ -127,6 +211,13 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia post-order (pós-ordem) na árvore e armazena os elementos
+     * em uma lista.
+     *
+     * @param node     o nó atual a ser visitado.
+     * @param tempList a lista onde os elementos serão armazenados.
+     */
     protected void posOrder(BinaryTreeNode<T> node, LinearLinkedUnorderedList<T> tempList) {
         if (node != null) {
             posOrder(node.left, tempList);
@@ -135,6 +226,11 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para a travessia post-order da árvore.
+     *
+     * @return um iterador para a travessia post-order.
+     */
     @Override
     public Iterator<T> iteratorPostOrder() {
         LinearLinkedUnorderedList<T> tempList = new LinearLinkedUnorderedList<>();
@@ -143,6 +239,13 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return tempList.iterator();
     }
 
+    /**
+     * Realiza uma travessia level-order (nível por nível) na árvore e armazena os
+     * elementos em uma lista.
+     *
+     * @param node     o nó atual a ser visitado.
+     * @param tempList a lista onde os elementos serão armazenados.
+     */
     protected void levelOrder(BinaryTreeNode<T> node, LinearLinkedUnorderedList<T> tempList) {
         LinkedQueue<BinaryTreeNode<T>> nodeQueue = new LinkedQueue<>();
 
@@ -170,6 +273,11 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para a travessia level-order da árvore.
+     *
+     * @return um iterador para a travessia level-order.
+     */
     @Override
     public Iterator<T> iteratorLevelOrder() {
         LinearLinkedUnorderedList<T> results = new LinearLinkedUnorderedList<>();
@@ -178,6 +286,12 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         return results.iterator();
     }
 
+    /**
+     * Retorna uma representação em string da árvore, realizando uma travessia
+     * level-order.
+     *
+     * @return uma string representando os elementos da árvore.
+     */
     @Override
     public String toString() {
         String temp = "";

@@ -13,27 +13,59 @@ import Stacks.LinkedStack;
 /**
  * Classe que representa o personagem principal do jogo, ToCruz.
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ *
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class ToCruz extends Personagem implements ToCruzIt {
 
-    private StackADT<ItemCura> mochila; /** Mochila para armazenar itens de cura.*/
+    /** Mochila para armazenar itens de cura.*/
+    private StackADT<ItemCura> mochila;
 
+    /** Indica se o objetivo principal foi coletado. */
     private boolean colectedAlvo;
     /**
      * Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.
      */
     public ToCruz() {
         super("ToCruz");
-        mochila = new LinkedStack<>();
-        colectedAlvo = false;
+        this.mochila = new LinkedStack<>();
+        this.colectedAlvo = false;
     }
 
+    /**
+     * Construtor alternativo para realizar uma deepCopy do ToCruz.
+     *
+     * @param id_personagem ID do personagem.
+     * @param nome Nome do personagem.
+     * @param vida Vida inicial do personagem.
+     * @param poder Poder inicial do personagem.
+     * @param mochila Mochila contendo itens de cura.
+     */
+    public ToCruz(int id_personagem, String nome, double vida, double poder, StackADT<ItemCura> mochila) {
+        super(id_personagem, nome, vida, poder);
+        this.mochila = new LinkedStack<>();
+        this.colectedAlvo = false;
+    }
+
+    /**
+     * Verifica se o alvo foi coletado, pelo o To Cruz.
+     *
+     * @return {@code true} se o alvo foi coletado; caso contrário, {@code false}.
+     */
     public boolean isColectedAlvo() {
         return colectedAlvo;
     }
 
+    /**
+     * Define o status de coleta do alvo.
+     *
+     * @param colectedAlvo {@code true} para indicar que o alvo foi coletado, {@code false} caso contrário.
+     */
     public void setColectedAlvo(boolean colectedAlvo) {
         this.colectedAlvo = colectedAlvo;
     }
@@ -49,7 +81,9 @@ public class ToCruz extends Personagem implements ToCruzIt {
 
 
     /**
-     * Método publico que verifica se a mochila do To Cruz já está cheia
+     * Verifica se a mochila está cheia.
+     *
+     * @return {@code true} se a mochila estiver cheia; caso contrário, {@code false}.
      */
     @Override
     public boolean mochilaIsFull() {
@@ -204,14 +238,25 @@ public class ToCruz extends Personagem implements ToCruzIt {
      */
     @Override
     public String toString() {
-        return "ToCruz{" + "mochila=" + mochila.toString() + '}';
+        return "ToCruz{" + "mochila=" + mochila + '}';
     }
 
+    /**
+     * Compara este objeto com outro para verificar igualdade.
+     *
+     * @param o O objeto a ser comparado.
+     * @return {@code true} se os objetos forem iguais; caso contrário, {@code false}.
+     */
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
 
+    /**
+     * Retorna o código hash para este objeto.
+     *
+     * @return O código hash calculado.
+     */
     @Override
     public int hashCode() {
         return super.hashCode();

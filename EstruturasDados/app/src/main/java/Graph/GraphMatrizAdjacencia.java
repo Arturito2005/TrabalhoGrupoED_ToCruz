@@ -5,25 +5,51 @@ import Exceptions.EmptyCollectionException;
 import Interfaces.GraphADT;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
+
 import java.util.Iterator;
 
 /**
- * Graph represents an adjacency matrix implementation of a graph.
+ * A classe {@code GraphMatrizAdjacencia} representa uma implementação de grafo
+ * utilizando uma matriz de adjacência. É uma implementação do tipo de dados
+ * {@link GraphADT} que permite adicionar e remover vértices e arestas, bem
+ * como realizar buscas em largura e profundidade, além de calcular o caminho
+ * mais curto entre dois vértices.
  *
- * @param <T>
+ * @param <T> tipo genérico representando os vértices do grafo
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
  */
 public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
+    /**
+     * A capacidade padrão inicial para o grafo. Define o número inicial de vértices que a rede pode conter.
+     */
     protected final int DEFAULT_CAPACITY = 10;
 
-    protected int numVertices; // number of vertices in the graph
-
-    protected boolean[][] adjMatrix; // adjacency matrix
-
-    protected T[] vertices; // values of vertices
+    /**
+     * O número de vértices presentes no grafo.
+     * Mantém o controle de quantos vértices foram inseridos no grafo até o momento.
+     */
+    protected int numVertices;
 
     /**
-     * Creates an empty graph.
+     * A matriz de adjacência que representa as conexões entre os vértices.
+     * Cada posição adjMatrix[i][j] contém o peso da aresta entre o vértice i e o vértice j,
+     * ou infinito (Double.POSITIVE_INFINITY) se não houver aresta.
+     */
+    protected boolean[][] adjMatrix;
+
+    /**
+     * Um array contendo os valores dos vértices.
+     * Cada posição vertices[i] armazena o valor do vértice de índice i no grafo.
+     */
+    protected T[] vertices;
+
+    /**
+     * Cria um grafo vazio com capacidade inicial padrão.
      */
     public GraphMatrizAdjacencia() {
         numVertices = 0;
@@ -31,7 +57,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         this.vertices = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
 
-    //Teste (Fazer para o Network)
+    /**
+     * Expande a capacidade do grafo, dobrando o tamanho da matriz de adjacência
+     * e o array de vértices.
+     */
     protected void expandCapacity() {
         T[] temp = (T[]) (new Object[(this.vertices.length * 2)]);
 
@@ -48,10 +77,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Adds a vertex to the graph, expanding the capacity of the graph if
-     * necessary. It also associates an object with the vertex.
+     * Adiciona um vértice ao grafo. Caso a capacidade do grafo seja atingida,
+     * a capacidade será expandida automaticamente.
      *
-     * @param vertex the vertex to add to the graph
+     * @param vertex o vértice a ser adicionado
      */
     @Override
     public void addVertex(T vertex) {
@@ -69,6 +98,12 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         numVertices++;
     }
 
+    /**
+     * Remove um vértice do grafo.
+     *
+     * @param vertex o vértice a ser removido
+     * @throws EmptyCollectionException caso o vértice não exista
+     */
     @Override
     public void removeVertex(T vertex) throws EmptyCollectionException {
         int indexVertex = getIndex(vertex);
@@ -93,6 +128,12 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         this.adjMatrix[numVertices] = null;
     }
 
+    /**
+     * Obtém o índice de um vértice no array de vértices.
+     *
+     * @param vertex o vértice a ser procurado
+     * @return o índice do vértice ou -1 se não encontrado
+     */
     protected int getIndex(T vertex) {
         int i = 0;
         boolean find = false;
@@ -113,7 +154,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Vê se o index é valido recebendo como parametro uma variavel int
+     * Verifica se um índice é válido, ou seja, se está dentro dos limites do grafo.
+     *
+     * @param index o índice a ser verificado
+     * @return {@code true} se o índice for válido, {@code false} caso contrário
      */
     protected boolean indexIsValid(int index) {
         boolean valid = false;
@@ -126,7 +170,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Vê se o index é valido recebendo como parametro uma variavel T
+     * Verifica se o índice de um vértice é válido.
+     *
+     * @param vertex o vértice a ser verificado
+     * @return {@code true} se o índice do vértice for válido, {@code false} caso contrário
      */
     protected boolean indexIsValid(T vertex) {
         boolean valid = false;
@@ -139,10 +186,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Inserts an edge between two vertices of the graph.
+     * Adiciona uma aresta entre dois vértices do grafo.
      *
-     * @param vertex1 the first vertex
-     * @param vertex2 the second vertex
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
      */
     @Override
     public void addEdge(T vertex1, T vertex2) {
@@ -150,10 +197,10 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Inserts an edge between two vertices of the graph.
+     * Adiciona uma aresta entre dois índices de vértices do grafo.
      *
-     * @param index1 the first index
-     * @param index2 the second index
+     * @param index1 o índice do primeiro vértice
+     * @param index2 o índice do segundo vértice
      */
     public void addEdge(int index1, int index2) {
         if (indexIsValid(index1) && indexIsValid(index2)) {
@@ -162,11 +209,23 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         }
     }
 
+    /**
+     * Remove uma aresta entre dois vértices do grafo.
+     *
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
+     */
     @Override
     public void removeEdge(T vertex1, T vertex2) {
-        removeEdge(getIndex(vertex1), getIndex(vertex1));
+        removeEdge(getIndex(vertex1), getIndex(vertex2));
     }
 
+    /**
+     * Remove uma aresta entre dois índices de vértices do grafo.
+     *
+     * @param index1 o índice do primeiro vértice
+     * @param index2 o índice do segundo vértice
+     */
     public void removeEdge(int index1, int index2) {
         if (indexIsValid(index1) && indexIsValid(index2)) {
             adjMatrix[index1][index2] = false;
@@ -174,12 +233,13 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         }
     }
 
+
     /**
-     * Returns an iterator that performs a breadth first search traversal
-     * starting at the given index.
+     * Retorna um iterador que realiza uma busca em largura (BFS) começando
+     * no vértice especificado.
      *
-     * @param startVertex the index to begin the search from
-     * @return an iterator that performs a breadth first traversal
+     * @param startVertex o vértice inicial da busca
+     * @return um iterador com o resultado da busca em largura
      */
     @Override
     public Iterator<T> iteratorBFS(T startVertex) {
@@ -220,11 +280,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Returns an iterator that performs a depth first search traversal starting
-     * at the given index.
+     * Retorna um iterador que realiza uma busca em profundidade (DFS) começando
+     * no vértice especificado.
      *
-     * @param startVertex the index to begin the search traversal from
-     * @return an iterator that performs a depth first traversal
+     * @param startVertex o vértice inicial da busca
+     * @return um iterador com o resultado da busca em profundidade
      */
     @Override
     public Iterator<T> iteratorDFS(T startVertex) {
@@ -270,6 +330,14 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Retorna um iterador que realiza a busca do caminho mais curto entre dois
+     * vértices usando o algoritmo de busca em largura (BFS).
+     *
+     * @param startVertex  o vértice inicial da busca
+     * @param targetVertex o vértice de destino da busca
+     * @return um iterador com o caminho mais curto encontrado
+     */
     @Override
     public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
@@ -331,6 +399,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Verifica se o grafo está vazio.
+     *
+     * @return {@code true} se o grafo estiver vazio, {@code false} caso contrário
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -342,6 +415,12 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return empty;
     }
 
+    /**
+     * Verifica se o grafo é conexo, ou seja, se existe um caminho entre todos os
+     * vértices.
+     *
+     * @return {@code true} se o grafo for conexo, {@code false} caso contrário
+     */
     @Override
     public boolean isConnected() {
         boolean connected = false;
@@ -363,6 +442,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return connected;
     }
 
+    /**
+     * Retorna o número de vértices no grafo.
+     *
+     * @return o número de vértices no grafo
+     */
     @Override
     public int size() {
         return this.numVertices;

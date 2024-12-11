@@ -2,8 +2,28 @@ package Graph;
 
 import java.util.Iterator;
 
+/**
+ * Classe de teste para a implementação de um grafo usando Lista de Adjacência.
+ *
+ * Este programa cria um grafo com vértices e arestas, testa se o grafo está
+ * conectado e calcula o caminho mais curto entre dois vértices utilizando uma
+ * lista de adjacência. Ele também utiliza a busca em largura (BFS) para iterar
+ * sobre os vértices e o caminho mais curto entre dois vértices.
+ */
 public class TestListaAdjacencia {
 
+    /**
+     * Método principal que executa os testes no grafo representado por uma lista
+     * de adjacência.
+     *
+     * Neste método, são adicionados vértices ao grafo, arestas entre eles são
+     * criadas, e em seguida são feitos testes para verificar se o grafo está
+     * conectado. O código também testa a iteração sobre os vértices utilizando
+     * busca em largura (BFS) e a obtenção do caminho mais curto entre dois
+     * vértices.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         GraphListaAdjacencia<String> graph = new GraphListaAdjacencia<>();
 

@@ -13,7 +13,10 @@ import java.io.IOException;
  * Classe responsável por exportar os dados de trajetos de simulações para um ficheiro JSON.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class ExportarDado implements ExportarInt {

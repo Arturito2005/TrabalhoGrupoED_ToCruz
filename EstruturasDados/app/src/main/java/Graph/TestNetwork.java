@@ -1,12 +1,29 @@
 package Graph;
 
-import Interfaces.NetworkADT;
-import Interfaces.NetworkMatrizADT;
-
 import java.util.Iterator;
 
+/**
+ * Classe de teste para a implementação de uma rede usando Matriz de Adjacência.
+ *
+ * Este programa testa funcionalidades de adição de vértices e arestas em uma rede
+ * representada por uma matriz de adjacência, além de calcular e imprimir o caminho
+ * mais curto entre pares de vértices.
+ *
+ * O código cria uma rede com vários vértices (representando diferentes locais)
+ * e arestas (representando conexões entre os locais com pesos), e em seguida calcula
+ * os caminhos mais curtos entre alguns pontos específicos da rede.
+ */
 public class TestNetwork {
 
+    /**
+     * Método principal que executa o teste da rede de matriz de adjacência.
+     *
+     * Neste método, são adicionados vértices à rede e arestas que conectam esses
+     * vértices. Depois, são realizados cálculos para encontrar os caminhos mais
+     * curtos entre diferentes pares de vértices e imprimir os resultados.
+     *
+     * @param args os argumentos da linha de comando (não são usados neste teste)
+     */
     public static void main(String[] args) {
         Network<String> netMatriz = new Network<>();
 

@@ -3,8 +3,12 @@ package Personagens;
 /**
  * Esta classe representa um inimigo no jogo.
  *
- * @author Francisco
  * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ *
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public class Inimigo extends Personagem {
@@ -17,6 +21,10 @@ public class Inimigo extends Personagem {
      */
     public Inimigo(String nome, double poder) {
         super(nome, poder);
+    }
+
+    public Inimigo(int id_personagem, String nome, double vida, double poder) {
+        super(id_personagem, nome, vida, poder);
     }
 
     /**

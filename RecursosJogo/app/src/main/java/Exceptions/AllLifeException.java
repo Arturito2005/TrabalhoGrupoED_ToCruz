@@ -4,7 +4,9 @@ package Exceptions;
  * Exceção personalizada que é lançada quando o To Cruz tem a vida toda e tenta curar-se.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class AllLifeException extends RuntimeException {

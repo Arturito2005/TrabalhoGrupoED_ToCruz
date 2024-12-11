@@ -95,6 +95,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Divisao</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>, <a href="../Interfaces/IteracoesInimigo.html" title="interface in Interfaces">IteracoesInimigo</a>, <a href="../Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a>, <a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></span></div>
+<div class="block">Representa uma divisão no mapa do jogo. Cada divisão contém características como nome,
+ inimigos presentes, itens, o personagem "ToCruz" e se é uma entrada/saída.</div>
 </div>
 </section>
 <section class="summary">
@@ -107,19 +109,20 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Divisao</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Divisao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.lang.String,boolean)" class="member-name-link">Divisao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- boolean&nbsp;entradas_saidas)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,boolean,Mapa.Alvo,Items.Item,LinkedList.LinearLinkedUnorderedList)" class="member-name-link">Divisao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- boolean&nbsp;entradas_saidas,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,boolean,Mapa.Alvo,Items.Item,Interfaces.UnorderedListADT,Personagens.ToCruz)" class="member-name-link">Divisao</a><wbr>(int&nbsp;id_divisao,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ boolean&nbsp;entrada_saida,
  <a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo,
  <a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item,
- LinkedList.LinearLinkedUnorderedList&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+ Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos,
+ <a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</code></div>
+<div class="col-last even-row-color">
+<div class="block">Construtor de deepCopy da classe Divisao</div>
+</div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String)" class="member-name-link">Divisao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Construtor da classe Divisao.</div>
+</div>
 </div>
 </section>
 </li>
@@ -136,99 +139,136 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addInimigo(Personagens.Inimigo)" class="member-name-link">addInimigo</a><wbr>(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona um inimigo à divisão.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToCruz(Personagens.ToCruz)" class="member-name-link">addToCruz</a><wbr>(<a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Adiciona o personagem "ToCruz" à divisão.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attackInimigo(Personagens.Inimigo)" class="member-name-link">attackInimigo</a><wbr>(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Permite o inimigo recebido como parametro atacar.</div>
+<div class="block">Faz com que um inimigo ataque "ToCruz".</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attackToCruz(Interfaces.StackADT)" class="member-name-link">attackToCruz</a><wbr>(Interfaces.StackADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;dead_inimigos)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#attackToCruz(Interfaces.UnorderedListADT)" class="member-name-link">attackToCruz</a><wbr>(Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;dead_inimigos)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Permite o To Cruz atacar todos os inimigos da divisão.</div>
+<div class="block">Faz com que todos os inimigos ataquem "ToCruz".</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#compareTo(java.lang.Object)" class="member-name-link">compareTo</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Compara esta divisão com outra com base no ID.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawnDivisao()" class="member-name-link">drawnDivisao</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Faz o desenho na consola da divisão</div>
+<div class="block">Desenha a representação visual da divisão no console.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se esta divisão é igual a outra.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="Alvo.html" title="class in Mapa">Alvo</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getAlvo()" class="member-name-link">getAlvo</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.UnorderedListADT<wbr>&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInimigos()" class="member-name-link">getInimigos</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Items/Item.html" title="class in Items">Item</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItem()" class="member-name-link">getItem</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getToCruz()" class="member-name-link">getToCruz</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtém o alvo presente na divisão.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId_divisao()" class="member-name-link">getId_divisao</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveConfronto()" class="member-name-link">haveConfronto</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.UnorderedListADT<wbr>&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getInimigos()" class="member-name-link">getInimigos</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Verifica se há um confronto ativo na divisão.</div>
+<div class="block">Obtém a lista de inimigos presentes na divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Items/Item.html" title="class in Items">Item</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getItem()" class="member-name-link">getItem</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtém o item presente na divisão.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getName()" class="member-name-link">getName</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtém o nome da divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getToCruz()" class="member-name-link">getToCruz</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Obtém o personagem "ToCruz" presente na divisão.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Calcula o código hash da divisão com base no nome.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveInimigo()" class="member-name-link">haveInimigo</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveConfronto()" class="member-name-link">haveConfronto</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Verifica se há inimigos presentes na divisão.</div>
+<div class="block">Verifica se há um confronto entre "ToCruz" e os inimigos.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEntrada_saida()" class="member-name-link">isEntrada_saida</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#haveInimigo()" class="member-name-link">haveInimigo</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se há inimigos na divisão.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToCruzInDivisaoAlvo()" class="member-name-link">isToCruzInDivisaoAlvo</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEntrada_saida()" class="member-name-link">isEntrada_saida</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Verifica se o ToCruz está na mesma divisão do alvo.</div>
+<div class="block">Verifica se a divisão é uma entrada/saída.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToCruzInExit()" class="member-name-link">isToCruzInExit</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToCruzInDivisaoAlvo()" class="member-name-link">isToCruzInDivisaoAlvo</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Verifica se o ToCruz está em alguma entrada ou saida.</div>
+<div class="block">Verifica se "ToCruz" está na divisão com o alvo.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeInimigo(Personagens.Inimigo)" class="member-name-link">removeInimigo</a><wbr>(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigos)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeToCruz()" class="member-name-link">removeToCruz</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAlvo(Mapa.Alvo)" class="member-name-link">setAlvo</a><wbr>(<a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEntrada_saida(boolean)" class="member-name-link">setEntrada_saida</a><wbr>(boolean&nbsp;entrada_saida)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItem(Items.Item)" class="member-name-link">setItem</a><wbr>(<a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ToCruzGetAlvo()" class="member-name-link">ToCruzGetAlvo</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Permite ao To Cruz coletar o Alvo da missão.</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isToCruzInExit()" class="member-name-link">isToCruzInExit</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Verifica se "ToCruz" está em uma saída.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usarItemDivisao()" class="member-name-link">usarItemDivisao</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeInimigo(Personagens.Inimigo)" class="member-name-link">removeInimigo</a><wbr>(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Permite ao To Cruz utilziar o item da divisão</div>
+<div class="block">Remove um inimigo específico da divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeToCruz()" class="member-name-link">removeToCruz</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Remove o personagem "ToCruz" da divisão.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAlvo(Mapa.Alvo)" class="member-name-link">setAlvo</a><wbr>(<a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o alvo presente na divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setEntrada_saida(boolean)" class="member-name-link">setEntrada_saida</a><wbr>(boolean&nbsp;entrada_saida)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define se a divisão é uma entrada/saída.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setItem(Items.Item)" class="member-name-link">setItem</a><wbr>(<a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Define o item presente na divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ToCruzGetAlvo()" class="member-name-link">ToCruzGetAlvo</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Marca o alvo como atingido por "ToCruz".</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna uma representação em string da divisão.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#usarItemDivisao()" class="member-name-link">usarItemDivisao</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Utiliza o item presente na divisão, se aplicável.</div>
 </div>
 </div>
 </div>
@@ -248,39 +288,30 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,boolean,Mapa.Alvo,Items.Item,LinkedList.LinearLinkedUnorderedList)">
-<h3>Divisao</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Divisao</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- boolean&nbsp;entradas_saidas,
- <a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo,
- <a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item,
- LinkedList.LinearLinkedUnorderedList&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos)</span></div>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="&lt;init&gt;(java.lang.String,boolean)">
-<h3>Divisao</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Divisao</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- boolean&nbsp;entradas_saidas)</span></div>
-</div>
-</section>
-</li>
-<li>
 <section class="detail" id="&lt;init&gt;(java.lang.String)">
 <h3>Divisao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Divisao</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name)</span></div>
+<div class="block">Construtor da classe Divisao.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>name</code> - Nome da divisão.</dd>
+</dl>
 </div>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;()">
+<section class="detail" id="&lt;init&gt;(int,java.lang.String,boolean,Mapa.Alvo,Items.Item,Interfaces.UnorderedListADT,Personagens.ToCruz)">
 <h3>Divisao</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Divisao</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Divisao</span><wbr><span class="parameters">(int&nbsp;id_divisao,
+ <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
+ boolean&nbsp;entrada_saida,
+ <a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo,
+ <a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item,
+ Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;inimigos,
+ <a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</span></div>
+<div class="block">Construtor de deepCopy da classe Divisao</div>
 </div>
 </section>
 </li>
@@ -293,10 +324,23 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
+<section class="detail" id="getId_divisao()">
+<h3>getId_divisao</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getId_divisao</span>()</div>
+</div>
+</section>
+</li>
+<li>
 <section class="detail" id="getName()">
 <h3>getName</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getName</span>()</div>
+<div class="block">Obtém o nome da divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O nome da divisão.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -305,6 +349,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>isEntrada_saida</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEntrada_saida</span>()</div>
+<div class="block">Verifica se a divisão é uma entrada/saída.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>true</code> se for entrada/saída, <code>false</code> caso contrário.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -313,6 +362,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>setEntrada_saida</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setEntrada_saida</span><wbr><span class="parameters">(boolean&nbsp;entrada_saida)</span></div>
+<div class="block">Define se a divisão é uma entrada/saída.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>entrada_saida</code> - <code>true</code> para definir como entrada/saída.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -321,6 +375,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>getToCruz</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></span>&nbsp;<span class="element-name">getToCruz</span>()</div>
+<div class="block">Obtém o personagem "ToCruz" presente na divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O personagem "ToCruz".</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -329,6 +388,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>removeToCruz</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">removeToCruz</span>()</div>
+<div class="block">Remove o personagem "ToCruz" da divisão.</div>
 </div>
 </section>
 </li>
@@ -337,6 +397,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>addToCruz</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addToCruz</span><wbr><span class="parameters">(<a href="../Personagens/ToCruz.html" title="class in Personagens">ToCruz</a>&nbsp;toCruz)</span></div>
+<div class="block">Adiciona o personagem "ToCruz" à divisão.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>toCruz</code> - O personagem "ToCruz" a ser adicionado.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -345,6 +410,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>getInimigos</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;</span>&nbsp;<span class="element-name">getInimigos</span>()</div>
+<div class="block">Obtém a lista de inimigos presentes na divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>A lista de inimigos.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -352,7 +422,17 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <section class="detail" id="addInimigo(Personagens.Inimigo)">
 <h3>addInimigo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addInimigo</span><wbr><span class="parameters">(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addInimigo</span><wbr><span class="parameters">(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</span>
+                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
+<div class="block">Adiciona um inimigo à divisão.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/DivisaoIt.html#addInimigo(Personagens.Inimigo)">addInimigo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>inimigo</code> - O inimigo a ser adicionado.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - quando o inimigo recebido como parametro é null</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -360,7 +440,16 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <section class="detail" id="removeInimigo(Personagens.Inimigo)">
 <h3>removeInimigo</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></span>&nbsp;<span class="element-name">removeInimigo</span><wbr><span class="parameters">(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigos)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></span>&nbsp;<span class="element-name">removeInimigo</span><wbr><span class="parameters">(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</span></div>
+<div class="block">Remove um inimigo específico da divisão.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="../Interfaces/DivisaoIt.html#removeInimigo(Personagens.Inimigo)">removeInimigo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>inimigo</code> - O inimigo a ser removido.</dd>
+<dt>Returns:</dt>
+<dd>O inimigo removido.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -369,6 +458,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>getItem</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Items/Item.html" title="class in Items">Item</a></span>&nbsp;<span class="element-name">getItem</span>()</div>
+<div class="block">Obtém o item presente na divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O item da divisão.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -377,6 +471,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>setItem</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setItem</span><wbr><span class="parameters">(<a href="../Items/Item.html" title="class in Items">Item</a>&nbsp;item)</span></div>
+<div class="block">Define o item presente na divisão.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>item</code> - O item a ser adicionado.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -385,6 +484,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>getAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="Alvo.html" title="class in Mapa">Alvo</a></span>&nbsp;<span class="element-name">getAlvo</span>()</div>
+<div class="block">Obtém o alvo presente na divisão.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O alvo da divisão.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -393,6 +497,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>setAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setAlvo</span><wbr><span class="parameters">(<a href="Alvo.html" title="class in Mapa">Alvo</a>&nbsp;alvo)</span></div>
+<div class="block">Define o alvo presente na divisão.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>alvo</code> - O alvo a ser definido.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -401,13 +510,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>isToCruzInExit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isToCruzInExit</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/DivisaoIt.html#isToCruzInExit()">DivisaoIt</a></code></span></div>
-<div class="block">Verifica se o ToCruz está em alguma entrada ou saida.</div>
+<div class="block">Verifica se "ToCruz" está em uma saída.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/DivisaoIt.html#isToCruzInExit()">isToCruzInExit</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> se o To Cruz está numa saida ou entrada, caso contrário <code>false</code>.</dd>
+<dd><code>true</code> se "ToCruz" estiver na saída, <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -417,13 +525,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>isToCruzInDivisaoAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isToCruzInDivisaoAlvo</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/DivisaoIt.html#isToCruzInDivisaoAlvo()">DivisaoIt</a></code></span></div>
-<div class="block">Verifica se o ToCruz está na mesma divisão do alvo.</div>
+<div class="block">Verifica se "ToCruz" está na divisão com o alvo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/DivisaoIt.html#isToCruzInDivisaoAlvo()">isToCruzInDivisaoAlvo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> se o To Cruz está na mesma divisão que o alvo, caso contrário <code>false</code>.</dd>
+<dd><code>true</code> se "ToCruz" estiver com o alvo, <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -433,13 +540,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>haveInimigo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">haveInimigo</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/DivisaoIt.html#haveInimigo()">DivisaoIt</a></code></span></div>
-<div class="block">Verifica se há inimigos presentes na divisão.</div>
+<div class="block">Verifica se há inimigos na divisão.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/DivisaoIt.html#haveInimigo()">haveInimigo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> se houver inimigos, caso contrário <code>false</code>.</dd>
+<dd><code>true</code> se houver inimigos, <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -449,13 +555,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>haveConfronto</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">haveConfronto</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/DivisaoIt.html#haveConfronto()">DivisaoIt</a></code></span></div>
-<div class="block">Verifica se há um confronto ativo na divisão.</div>
+<div class="block">Verifica se há um confronto entre "ToCruz" e os inimigos.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/DivisaoIt.html#haveConfronto()">haveConfronto</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
 <dt>Returns:</dt>
-<dd><code>true</code> se houver confronto, caso contrário <code>false</code>.</dd>
+<dd><code>true</code> se houver confronto, <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -465,13 +570,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>attackInimigo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">attackInimigo</span><wbr><span class="parameters">(<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&nbsp;inimigo)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/IteracoesInimigo.html#attackInimigo(Personagens.Inimigo)">IteracoesInimigo</a></code></span></div>
-<div class="block">Permite o inimigo recebido como parametro atacar.</div>
+<div class="block">Faz com que um inimigo ataque "ToCruz".</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/IteracoesInimigo.html#attackInimigo(Personagens.Inimigo)">attackInimigo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/IteracoesInimigo.html" title="interface in Interfaces">IteracoesInimigo</a></code></dd>
 <dt>Parameters:</dt>
-<dd><code>inimigo</code> - o objeto <a href="../Personagens/Inimigo.html" title="class in Personagens"><code>Inimigo</code></a> que será o inimigo a atacar o To Crruz.</dd>
+<dd><code>inimigo</code> - O inimigo que atacará "ToCruz".</dd>
 </dl>
 </div>
 </section>
@@ -481,8 +585,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>ToCruzGetAlvo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">ToCruzGetAlvo</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html#ToCruzGetAlvo()">IteracoesToCruz</a></code></span></div>
-<div class="block">Permite ao To Cruz coletar o Alvo da missão.</div>
+<div class="block">Marca o alvo como atingido por "ToCruz".</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/IteracoesToCruz.html#ToCruzGetAlvo()">ToCruzGetAlvo</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></code></dd>
@@ -491,15 +594,16 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 </section>
 </li>
 <li>
-<section class="detail" id="attackToCruz(Interfaces.StackADT)">
+<section class="detail" id="attackToCruz(Interfaces.UnorderedListADT)">
 <h3>attackToCruz</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">attackToCruz</span><wbr><span class="parameters">(Interfaces.StackADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;dead_inimigos)</span></div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html#attackToCruz(Interfaces.StackADT)">IteracoesToCruz</a></code></span></div>
-<div class="block">Permite o To Cruz atacar todos os inimigos da divisão.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">attackToCruz</span><wbr><span class="parameters">(Interfaces.UnorderedListADT&lt;<a href="../Personagens/Inimigo.html" title="class in Personagens">Inimigo</a>&gt;&nbsp;dead_inimigos)</span></div>
+<div class="block">Faz com que todos os inimigos ataquem "ToCruz".</div>
 <dl class="notes">
 <dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/IteracoesToCruz.html#attackToCruz(Interfaces.StackADT)">attackToCruz</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></code></dd>
+<dd><code><a href="../Interfaces/IteracoesToCruz.html#attackToCruz(Interfaces.UnorderedListADT)">attackToCruz</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>dead_inimigos</code> - Pilha onde inimigos mortos serão armazenados.</dd>
 </dl>
 </div>
 </section>
@@ -509,8 +613,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>usarItemDivisao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">usarItemDivisao</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html#usarItemDivisao()">IteracoesToCruz</a></code></span></div>
-<div class="block">Permite ao To Cruz utilziar o item da divisão</div>
+<div class="block">Utiliza o item presente na divisão, se aplicável.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/IteracoesToCruz.html#usarItemDivisao()">usarItemDivisao</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></code></dd>
@@ -523,8 +626,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>drawnDivisao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawnDivisao</span>()</div>
-<div class="block"><span class="description-from-type-label">Description copied from interface:&nbsp;<code><a href="../Interfaces/DivisaoIt.html#drawnDivisao()">DivisaoIt</a></code></span></div>
-<div class="block">Faz o desenho na consola da divisão</div>
+<div class="block">Desenha a representação visual da divisão no console.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/DivisaoIt.html#drawnDivisao()">drawnDivisao</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></code></dd>
@@ -537,9 +639,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>toString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
+<div class="block">Retorna uma representação em string da divisão.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>String representando a divisão.</dd>
 </dl>
 </div>
 </section>
@@ -549,9 +654,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>compareTo</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<div class="block">Compara esta divisão com outra com base no ID.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html#compareTo(T)" title="class or interface in java.lang" class="external-link">compareTo</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - Outro objeto a ser comparado.</dd>
+<dt>Returns:</dt>
+<dd>1 se esta divisão tiver um ID maior, -1 se for menor, 0 se forem iguais.</dd>
 </dl>
 </div>
 </section>
@@ -561,9 +671,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>equals</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
+<div class="block">Verifica se esta divisão é igual a outra.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>o</code> - Outro objeto a ser comparado.</dd>
+<dt>Returns:</dt>
+<dd><code>true</code> se forem iguais, <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -573,9 +688,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base
 <h3>hashCode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
+<div class="block">Calcula o código hash da divisão com base no nome.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Returns:</dt>
+<dd>O código hash.</dd>
 </dl>
 </div>
 </section>

@@ -1,26 +1,41 @@
 package Interfaces;
 
 /**
- * Interface contém os 2 modos de jogo da missão.
+ * Classe abstrata que representa cada personagem no jogo
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ *
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public interface MissaoInt {
 
     /**
-     * Ativa o modo manual da missão.
+     * Visualiza as simulações disponíveis para a missão.
+     * Este método exibe informações ou resultados de simulações realizadas pelo o ToCruz
+     * ordenadas pelo os pontos de vida que o mesmo terminou a missão.
+     */
+    public void viewSimulacoes();
+
+    /**
+     * Inicia o modo manual da missão.
+     * No modo manual, o jogador controla diretamente as ações ou decisões durante a missão.
      */
     public void modoManual();
 
     /**
-     * Sugere a melhor entrada ao To Cruz e o caminho que deve realizar para chegar ao alvo e se
-     * for possível sair do edificio com vida também mostra o caminho mais curto para sair do edificio.
-     * */
+     * Inicia o modo automático da missão.
+     * No modo automático, é indicado ao To Cruz qual o melhor caminho que ele deve realizar
+     * para chegar ao Alvo e se possível o caminho para voltar com vida.
+     */
     public void modoAutomatico();
 
     /**
-     * O jogo é jogado de forma automatico.
+     * Executa a missão automaticamente até o final.
+     * Este método realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.
      */
     public void jogoAutomatico();
 }

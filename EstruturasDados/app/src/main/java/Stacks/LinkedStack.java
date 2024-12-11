@@ -4,17 +4,42 @@ import Exceptions.EmptyCollectionException;
 import Interfaces.StackADT;
 import Nodes.LinearNode;
 
+/**
+ * Implementação de uma stack (stack) utilizando uma lista encadeada.
+ *
+ * @param <T> Tipo de dado dos elementos armazenados na stack.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class LinkedStack<T> implements StackADT<T> {
 
+    /**
+     * Índice do topo da stack, representando o número de elementos na stack.
+     */
     private int top;
 
+    /**
+     * Cabeça da lista encadeada, representando o topo da stack.
+     */
     private LinearNode<T> head;
 
+    /**
+     * Construtor padrão que cria uma stack vazia.
+     */
     public LinkedStack() {
         this.top = 0;
         this.head = null;
     }
 
+    /**
+     * Adiciona um elemento ao topo da stack.
+     * Este método cria um novo nó que será colocado no início da lista encadeada.
+     *
+     * @param element O elemento a ser adicionado à stack.
+     */
     @Override
     public void push(T element) {
         LinearNode<T> newNod = new LinearNode<>(element);
@@ -25,6 +50,13 @@ public class LinkedStack<T> implements StackADT<T> {
         this.top++;
     }
 
+    /**
+     * Remove e retorna o elemento do topo da stack.
+     * Se a stack estiver vazia, uma exceção será lançada.
+     *
+     * @return O elemento removido do topo da stack.
+     * @throws EmptyCollectionException Se a stack estiver vazia.
+     */
     @Override
     public T pop() throws EmptyCollectionException {
         if (this.top == 0) {
@@ -43,6 +75,13 @@ public class LinkedStack<T> implements StackADT<T> {
         return temp_element;
     }
 
+    /**
+     * Retorna o elemento do topo da stack sem removê-lo.
+     * Se a stack estiver vazia, uma exceção será lançada.
+     *
+     * @return O elemento do topo da stack.
+     * @throws EmptyCollectionException Se a stack estiver vazia.
+     */
     @Override
     public T peek() throws EmptyCollectionException {
         if (this.top == 0) {
@@ -52,6 +91,11 @@ public class LinkedStack<T> implements StackADT<T> {
         return this.head.getElement();
     }
 
+    /**
+     * Verifica se a stack está vazia.
+     *
+     * @return true se a stack estiver vazia, caso contrário false.
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -63,11 +107,22 @@ public class LinkedStack<T> implements StackADT<T> {
         return empty;
     }
 
+    /**
+     * Retorna o número de elementos na stack.
+     *
+     * @return O número de elementos na stack.
+     */
     @Override
     public int size() {
         return this.top;
     }
 
+    /**
+     * Retorna uma representação em String dos elementos da stack.
+     * Os elementos são listados do topo para o fundo da stack.
+     *
+     * @return A representação em String da stack.
+     */
     @Override
     public String toString() {
         String temp = "";

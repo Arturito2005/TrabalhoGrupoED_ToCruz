@@ -6,7 +6,10 @@ package Interfaces;
  * exportar informações para um ficheiro em um formato específico.
  *
  * @author Artur Pinto
- * @author Francisco
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public interface ExportarInt {

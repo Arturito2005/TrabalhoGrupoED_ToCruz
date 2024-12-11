@@ -111,6 +111,11 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color">
 <div class="block">Construtor padrão da classe <a href="Item.html" title="class in Items"><code>Item</code></a>.</div>
 </div>
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,boolean)" class="member-name-link">Item</a><wbr>(int&nbsp;id_item,
+ boolean&nbsp;collected)</code></div>
+<div class="col-last odd-row-color">
+<div class="block">Construtor da classe <a href="Item.html" title="class in Items"><code>Item</code></a> com parâmetros.</div>
+</div>
 </div>
 </section>
 </li>
@@ -131,23 +136,28 @@ loadScripts(document, 'script');</script>
 <div class="block">Compara este item com outro objeto para verificar se são iguais.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getId_item()" class="member-name-link">getId_item</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Retorna o identificador único do item.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna o código hash do item, baseado no seu identificador único.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCollected()" class="member-name-link">isCollected</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isCollected()" class="member-name-link">isCollected</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna se o item já foi coletado ou não.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCollected(boolean)" class="member-name-link">setCollected</a><wbr>(boolean&nbsp;collected)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCollected(boolean)" class="member-name-link">setCollected</a><wbr>(boolean&nbsp;collected)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Altera o status do item.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna uma String com os dados do Item.</div>
 </div>
 </div>
@@ -172,7 +182,24 @@ loadScripts(document, 'script');</script>
 <h3>Item</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Item</span>()</div>
-<div class="block">Construtor padrão da classe <a href="Item.html" title="class in Items"><code>Item</code></a>.</div>
+<div class="block">Construtor padrão da classe <a href="Item.html" title="class in Items"><code>Item</code></a>.
+ Inicializa o identificador único com o valor do contador estático
+ e define o status de coleta como falso.</div>
+</div>
+</section>
+</li>
+<li>
+<section class="detail" id="&lt;init&gt;(int,boolean)">
+<h3>Item</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Item</span><wbr><span class="parameters">(int&nbsp;id_item,
+ boolean&nbsp;collected)</span></div>
+<div class="block">Construtor da classe <a href="Item.html" title="class in Items"><code>Item</code></a> com parâmetros.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id_item</code> - O identificador único do item.</dd>
+<dd><code>collected</code> - Indica se o item foi coletado.</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -184,6 +211,19 @@ loadScripts(document, 'script');</script>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getId_item()">
+<h3>getId_item</h3>
+<div class="horizontal-scroll">
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getId_item</span>()</div>
+<div class="block">Retorna o identificador único do item.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>O ID do item.</dd>
+</dl>
+</div>
+</section>
+</li>
 <li>
 <section class="detail" id="isCollected()">
 <h3>isCollected</h3>

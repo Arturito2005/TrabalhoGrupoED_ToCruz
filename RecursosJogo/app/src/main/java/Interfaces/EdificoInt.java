@@ -11,16 +11,45 @@ import java.util.Iterator;
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveria
  * Nº mecanografico: 8230148
+ *
  * @version 1.0
  */
 public interface EdificoInt {
 
+    /**
+     * Calcula o menor caminho entre duas divisões baseado no peso das arestas.
+     *
+     * @param div_inicial a divisão inicial.
+     * @param div_final a divisão final.
+     * @return o custo total do menor caminho em termos de peso.
+     */
     public double getShortestPath(Divisao div_inicial, Divisao div_final);
 
+    /**
+     * Calcula o menor caminho entre duas divisões baseado no número de arestas.
+     *
+     * @param div_inicial a divisão inicial.
+     * @param div_final a divisão final.
+     * @return o número mínimo de arestas entre as divisões.
+     */
     public double getShortestPathNumArestas(Divisao div_inicial, Divisao div_final);
 
+    /**
+     * Retorna um iterador para o menor caminho entre duas divisões.
+     *
+     * @param div_inicial a divisão inicial.
+     * @param div_final a divisão final.
+     * @return um iterador que percorre as divisões no menor caminho.
+     */
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final);
 
+    /**
+     * Determina a próxima divisão automaticamente para seguir até a divisão final em direção à Cruz.
+     *
+     * @param div_inicial a divisão atual.
+     * @param div_final a divisão de destino.
+     * @return a próxima divisão no caminho.
+     */
     public Divisao nextDivAutomaticToCruz(Divisao div_inicial, Divisao div_final);
     /**
      * Adiciona uma divisão ao edifício.

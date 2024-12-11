@@ -5,7 +5,10 @@ import java.util.Objects;
 /**
  * Classe que representa um alvo no jogo.
  *
- * @author Artur
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class Alvo {
@@ -43,6 +46,11 @@ public class Alvo {
         this.atinigido = false;
     }
 
+    public Alvo(int id_alvo, String nome, boolean atinigido) {
+        this.id_alvo = id_alvo;
+        this.nome = nome;
+        this.atinigido = atinigido;
+    }
     /**
      * Construtor padrão para criar um alvo sem nome. O identificador será gerado
      * automaticamente, e o nome será uma string vazia.
@@ -50,6 +58,10 @@ public class Alvo {
     public Alvo() {
         this.id_alvo = ID_ALVO_CONT++;
         this.nome = "";
+    }
+
+    public int getId_alvo() {
+        return id_alvo;
     }
 
     public String getNome() {

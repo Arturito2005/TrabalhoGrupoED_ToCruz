@@ -4,18 +4,42 @@ import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
 import Interfaces.ListADT;
 import Nodes.LinearNode;
+
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+/**
+ * Representa uma lista ligada linear genérica. Esta classe implementa a interface {@link ListADT},
+ * fornecendo métodos para manipulação de elementos em uma lista ligada (adicionar, remover, acessar, etc.).
+ *
+ * @param <T> o tipo de dado armazenado na lista
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public abstract class LinearLinkedList<T> implements ListADT<T> {
 
+    /**
+     * Contador de modificações realizadas na lista. Usado para verificar modificações concorrentes.
+     */
     protected int modCount;
 
+    /**
+     * Contador de elementos na lista.
+     */
     protected int count;
 
+    /**
+     * Referência para o primeiro nó da lista (cabeça).
+     */
     protected LinearNode<T> head, tail;
 
+    /**
+     * Constrói uma lista vazia.
+     */
     public LinearLinkedList() {
         this.count = 0;
         this.modCount = 0;
@@ -23,11 +47,20 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         this.tail = this.head;
     }
 
+    /**
+     * Remove o único elemento da lista quando a lista contém apenas um elemento.
+     */
     private void removeOneElement() {
         this.head = null;
         this.tail = null;
     }
 
+    /**
+     * Remove o primeiro elemento da lista.
+     *
+     * @return o elemento removido
+     * @throws EmptyCollectionException se a lista estiver vazia
+     */
     @Override
     public T removeFirst() throws EmptyCollectionException {
         if (this.count == 0) {
@@ -47,6 +80,12 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return elementRem;
     }
 
+    /**
+     * Remove o último elemento da lista.
+     *
+     * @return o elemento removido
+     * @throws EmptyCollectionException se a lista estiver vazia
+     */
     @Override
     public T removeLast() throws EmptyCollectionException {
         if (this.count == 0) {
@@ -74,6 +113,14 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return elementRem;
     }
 
+    /**
+     * Remove o primeiro elemento correspondente ao valor fornecido.
+     *
+     * @param element o elemento a ser removido
+     * @return o elemento removido
+     * @throws EmptyCollectionException se a lista estiver vazia
+     * @throws ElementNotFoundException se o elemento não for encontrado na lista
+     */
     @Override
     public T remove(T element) throws EmptyCollectionException, ElementNotFoundException {
         if (this.count == 0) {
@@ -86,7 +133,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         boolean find = false;
         int pos_find = this.count;
 
-        while (current != null && find == false) {
+        while (current != null && !find) {
             if (current.getElement().equals(element)) {
                 find = true;
                 elementRem = element;
@@ -97,7 +144,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
             }
         }
 
-        if (find == false) {
+        if (!find) {
             throw new ElementNotFoundException("O elemento introduzido não existe na lista!");
         }
 
@@ -118,16 +165,32 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return elementRem;
     }
 
+    /**
+     * Retorna o primeiro elemento da lista.
+     *
+     * @return o primeiro elemento da lista
+     */
     @Override
     public T first() {
         return this.head.getElement();
     }
 
+    /**
+     * Retorna o último elemento da lista.
+     *
+     * @return o último elemento da lista
+     */
     @Override
     public T last() {
         return this.tail.getElement();
     }
 
+    /**
+     * Verifica se o elemento alvo existe na lista.
+     *
+     * @param target o elemento a ser verificado
+     * @return {@code true} se o elemento estiver presente na lista, {@code false} caso contrário
+     */
     @Override
     public boolean contains(T target) {
         boolean conatin = false;
@@ -144,6 +207,11 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return conatin;
     }
 
+    /**
+     * Verifica se a lista está vazia.
+     *
+     * @return {@code true} se a lista estiver vazia, {@code false} caso contrário
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -155,16 +223,31 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return empty;
     }
 
+    /**
+     * Retorna o número de elementos na lista.
+     *
+     * @return o número de elementos na lista
+     */
     @Override
     public int size() {
         return this.count;
     }
 
+    /**
+     * Retorna um iterador para percorrer a lista.
+     *
+     * @return um iterador para percorrer a lista
+     */
     @Override
     public Iterator<T> iterator() {
         return new MyIterator<>();
     }
 
+    /**
+     * Retorna uma representação em String da lista.
+     *
+     * @return uma String representando a lista
+     */
     @Override
     public String toString() {
         String temp = "";
@@ -180,16 +263,42 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         return temp;
     }
 
+    /**
+     * Implementação interna do iterador para a lista.
+     */
     private class MyIterator<E> implements Iterator<E> {
 
+        /**
+         * Representa o iterador para a lista ligada linear.
+         * Mantém o estado atual do iterador, incluindo o nó atual, o contador de modificações esperadas,
+         * o estado de remoção e o elemento atualmente disponível para remoção.
+         *
+         * @param <E> o tipo do elemento retornado pelo iterador
+         */
         private LinearNode<T> current;
 
+        /**
+         * Contador de modificações realizadas na lista. Usado para verificar modificações concorrentes.
+         * Caso a lista seja modificada enquanto o iterador está em uso, será lançada uma exceção de modificação concorrente.
+         */
         private int exceptedModCount;
 
+        /**
+         * Flag que indica se a remoção do elemento atual é permitida.
+         * A remoção só é permitida após a chamada do método {@link #next()}.
+         */
         private boolean isOkToRemove;
 
+        /**
+         * O elemento que foi obtido por meio do iterador e que pode ser removido.
+         * Armazena o último elemento acessado por {@link #next()} para possibilitar a remoção.
+         */
         private E elementOkToRemove;
 
+        /**
+         * Constrói um iterador inicializando o nó atual e o contador de modificações.
+         * Também define a flag de remoção e o elemento removível para os valores padrão.
+         */
         private MyIterator() {
             this.current = head;
             this.exceptedModCount = modCount;
@@ -197,11 +306,23 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
             this.elementOkToRemove = null;
         }
 
+        /**
+         * Verifica se há um próximo elemento na lista.
+         *
+         * @return {@code true} se houver um próximo elemento, {@code false} caso contrário
+         */
         @Override
         public boolean hasNext() {
             return (current != null);
         }
 
+        /**
+         * Retorna o próximo elemento da lista.
+         *
+         * @return o próximo elemento da lista
+         * @throws ConcurrentModificationException se a lista foi modificada enquanto o iterador está em uso
+         * @throws NoSuchElementException          se não houver mais elementos
+         */
         @Override
         public E next() {
             if (this.exceptedModCount != modCount) {
@@ -220,6 +341,12 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
             return element;
         }
 
+        /**
+         * Remove o último elemento retornado pelo iterador.
+         *
+         * @throws ConcurrentModificationException se a lista foi modificada enquanto o iterador está em uso
+         * @throws IllegalStateException           se o iterador não estiver em um estado válido para remoção
+         */
         @Override
         public void remove() {
             if (this.exceptedModCount != modCount) {

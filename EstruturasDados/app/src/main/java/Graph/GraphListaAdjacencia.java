@@ -7,24 +7,54 @@ import Interfaces.GraphADT;
 import LinkedList.LinearLinkedOrderedList;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
+
 import java.util.Iterator;
 
+/**
+ * Classe que implementa um grafo usando uma lista de adjacência.
+ *
+ * @param <T> tipo genérico que representa o tipo de dados dos vértices do grafo.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
+    /**
+     * Capacidade padrão do grafo
+     */
     protected final int DEFAULT_CAPACITY = 30;
 
-    protected T[] vertices; // Array de vértices
+    /**
+     * Array de vértices
+     */
+    protected T[] vertices;
 
-    protected LinearLinkedOrderedList<T>[] listaAdj; // Lista de adjacência como array de ListaLigada
+    /**
+     * Lista de adjacência como array de ListaLigada
+     */
+    protected LinearLinkedOrderedList<T>[] listaAdj;
 
-    protected int numVertices; // Número atual de vértices
+    /**
+     * Número atual de vértices
+     */
+    protected int numVertices;
 
+    /**
+     * Construtor do grafo, inicializa a lista de adjacência e o array de vértices.
+     */
     public GraphListaAdjacencia() {
         numVertices = 0;
         this.listaAdj = new LinearLinkedOrderedList[DEFAULT_CAPACITY];
         this.vertices = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
 
+    /**
+     * Expande a capacidade do grafo, duplicando o tamanho do array de vértices
+     * e da lista de adjacência.
+     */
     protected void expandCapacity() {
         T[] temp = (T[]) (new Object[(this.vertices.length * 2)]);
         System.arraycopy(this.vertices, 0, temp, 0, this.vertices.length);
@@ -36,10 +66,10 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Adds a vertex to the graph, expanding the capacity of the graph if
-     * necessary. It also associates an object with the vertex.
+     * Adiciona um vértice ao grafo, expandindo a capacidade do grafo, se necessário.
+     * Também associa um objeto ao vértice.
      *
-     * @param vertex the vertex to add to the graph
+     * @param vertex o vértice a ser adicionado ao grafo
      */
     @Override
     public void addVertex(T vertex) {
@@ -53,15 +83,21 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         numVertices++;
     }
 
-    //Testar bem (Ver se no while basta apenas ter o != null)
+    /**
+     * Remove um vértice do grafo, excluindo todas as suas arestas.
+     * Se o vértice não for encontrado, lança uma exceção.
+     *
+     * @param vertex o vértice a ser removido
+     * @throws ElementNotFoundException se o vértice não for encontrado
+     */
     @Override
     public void removeVertex(T vertex) throws ElementNotFoundException {
         int indexVertex = getIndex(vertex);
 
-        if(indexVertex == -1) {
+        if (indexVertex == -1) {
             throw new EmptyCollectionException("O vertice que introduziu não existe");
         }
-        
+
         while (!this.listaAdj[indexVertex].isEmpty()) {
             T element = this.listaAdj[indexVertex].removeFirst();
             int index = getIndex(element);
@@ -83,6 +119,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         this.listaAdj[numVertices] = null;
     }
 
+    /**
+     * Retorna o índice de um vértice no array de vértices. Se o vértice não for encontrado, retorna -1.
+     *
+     * @param vertex o vértice a ser procurado
+     * @return o índice do vértice ou -1 se não for encontrado
+     */
     protected int getIndex(T vertex) {
         int i = 0;
         boolean find = false;
@@ -103,9 +145,10 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Vê se o index é valido recebendo como parametro uma variavel int
-     * @param index
-     * @return 
+     * Verifica se o índice é válido.
+     *
+     * @param index o índice a ser verificado
+     * @return true se o índice for válido, false caso contrário
      */
     protected boolean indexIsValid(int index) {
         boolean valid = false;
@@ -118,9 +161,10 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Vê se o index é valido recebendo como parametro uma variavel T
-     * @param vertex
-     * @return 
+     * Verifica se o índice de um vértice é válido.
+     *
+     * @param vertex o vértice a ser verificado
+     * @return true se o índice for válido, false caso contrário
      */
     protected boolean indexIsValid(T vertex) {
         boolean valid = false;
@@ -133,10 +177,10 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Inserts an edge between two vertices of the graph.
+     * Insere uma aresta entre dois vértices do grafo.
      *
-     * @param vertex1 the first vertex
-     * @param vertex2 the second vertex
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
      */
     @Override
     public void addEdge(T vertex1, T vertex2) {
@@ -149,6 +193,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         }
     }
 
+    /**
+     * Remove uma aresta entre dois vértices do grafo.
+     *
+     * @param vertex1 o primeiro vértice
+     * @param vertex2 o segundo vértice
+     */
     @Override
     public void removeEdge(T vertex1, T vertex2) {
         if (indexIsValid(vertex1) && indexIsValid(vertex2)) {
@@ -157,6 +207,13 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         }
     }
 
+    /**
+     * Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início
+     * para suas divisões vizinhas.
+     *
+     * @param startVertex o vértice de início para a busca
+     * @return um iterador para os resultados da busca
+     */
     public Iterator<T> iteratorBFSNextDivisoes(T startVertex) {
         int indexVertex = getIndex(startVertex);
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
@@ -187,6 +244,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início.
+     *
+     * @param startVertex o vértice de início para a busca
+     * @return um iterador para os resultados da busca
+     */
     @Override
     public Iterator iteratorBFS(T startVertex) {
         int indexVertex = getIndex(startVertex);
@@ -214,14 +277,14 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
              * Find all vertices adjacent to x that have not been visited and
              * queue them up
              */
-            
+
             if (listaAdj[x.intValue()] != null) {
                 Iterator<T> itr = listaAdj[x.intValue()].iterator();
 
                 while (itr.hasNext()) {
-                    T element = itr.next();                    
+                    T element = itr.next();
                     int index = getIndex(element);
-                    
+
                     if (indexIsValid(index) && !visited[index]) {
                         traversalQueue.enqueue(index);
                         visited[index] = true;
@@ -233,6 +296,12 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Retorna um iterador para realizar a busca em profundidade (DFS) a partir de um vértice de início.
+     *
+     * @param startVertex o vértice de início para a busca
+     * @return um iterador para os resultados da busca
+     */
     @Override
     public Iterator iteratorDFS(T startVertex) {
         Integer x;
@@ -261,14 +330,14 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
              * Find a vertex adjacent to x that has not been visited and push it
              * on the stack
              */
-            
+
             if (listaAdj[x.intValue()] != null) {
                 Iterator<T> itr = listaAdj[x.intValue()].iterator();
 
                 while (itr.hasNext() && !found) {
-                    T element = itr.next();                    
+                    T element = itr.next();
                     int index = getIndex(element);
-                    
+
                     if (indexIsValid(index) && !visited[index]) {
                         traversalStack.push(index);
                         resultList.addToRear(vertices[index]);
@@ -277,7 +346,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
                     }
                 }
             }
-            
+
             if (!found && !traversalStack.isEmpty()) {
                 traversalStack.pop();
             }
@@ -286,6 +355,13 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Retorna um iterador para o caminho mais curto entre dois vértices usando a busca em largura (BFS).
+     *
+     * @param startVertex  o vértice de início para a busca
+     * @param targetVertex o vértice de destino para a busca
+     * @return um iterador para os vértices do caminho mais curto
+     */
     @Override
     public Iterator<T> iteratorShortestPath(T startVertex, T targetVertex) {
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
@@ -350,6 +426,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return resultList.iterator();
     }
 
+    /**
+     * Verifica se o grafo está vazio.
+     *
+     * @return true se o grafo estiver vazio, false caso contrário
+     */
     @Override
     public boolean isEmpty() {
         boolean empty = false;
@@ -361,6 +442,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return empty;
     }
 
+    /**
+     * Verifica se o grafo é conexo.
+     *
+     * @return true se o grafo for conexo, false caso contrário
+     */
     @Override
     public boolean isConnected() {
         boolean connected = false;
@@ -383,6 +469,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         return connected;
     }
 
+    /**
+     * Retorna o número de vértices no grafo.
+     *
+     * @return o número de vértices
+     */
     @Override
     public int size() {
         return this.numVertices;

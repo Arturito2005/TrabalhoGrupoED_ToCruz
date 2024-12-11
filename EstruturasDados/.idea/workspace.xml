@@ -10,28 +10,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31b31ff9-d985-48a9-a8e1-0e7d4a14c9e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Trajeto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestArrayHeaps/TestArrayHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestArrayList/TestArrayUnordered.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestArrayList/TestArrayUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestArrayList/TestArrayorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestArrayTree/TestArrayBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestDoubleLinkedList/TestDoubleLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestDoubleLinkedList/TestDoubleOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestLinkedList/TestLinearLinkedOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestLinkedList/TestLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestLinkedTree/TestLinkedBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/TestLinkedTree/TestLinkedHeap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/NetworkMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/Interfaces/NetworkMatrizADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Interfaces/NetworkMatrizADT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/EstruturasDados_jar/EstruturasDados.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayHeaps/TestArrayHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/TestArrayUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayList/TesteArrayOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ArrayTree/TestArrayBinarySearchTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/TestDoublyLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/DoubleLinkedList/TestDoublyLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/LinearLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/LinkedList/LinearLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/TestLinearLinkedOrderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedList/TestLinearLinkedUnorderedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/TestLinkedBinarySearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/LinkedTree/TestLinkedHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/RecursosJogo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/modules/app/RecursosJogo.app.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Importar/ImportarMapa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Importar/ImportarMapa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Menu/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Menu/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Personagens/Inimigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/classes/java/main/Personagens/Inimigo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/EdificoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/EdificoInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/distributions/app.tar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/distributions/app.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/distributions/app.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/distributions/app.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/Mapa/Divisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/Mapa/Divisao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/Missoes/Missao.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/Missoes/Missao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/docs/javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/libs/app.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/libs/app.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/packages/TestImportar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/packages/TestImportar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/packages/TestsPersonagens.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/reports/tests/test/packages/TestsPersonagens.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/IteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Interfaces/IteracoesToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Mapa/Divisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/MenuMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/MetodosMenuMissao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Menu/MetodosMenuMissao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Missoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestMapa/TestDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursosJogo/app/src/test/java/TestMapa/TestDivisao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,8 +106,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -90,12 +133,12 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Artur&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursosJogo&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursosJogo/libs/EstruturasDados.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -168,6 +211,10 @@
       <workItem from="1733684828154" duration="3150000" />
       <workItem from="1733738192634" duration="14885000" />
       <workItem from="1733766335832" duration="3104000" />
+      <workItem from="1733822527752" duration="10874000" />
+      <workItem from="1733856632995" duration="50000" />
+      <workItem from="1733861091508" duration="8459000" />
+      <workItem from="1733906293095" duration="271000" />
     </task>
     <servers />
   </component>
@@ -179,7 +226,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/Graph/TestNetwork.java</url>
-          <line>69</line>
+          <line>86</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

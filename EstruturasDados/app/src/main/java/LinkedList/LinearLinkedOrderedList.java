@@ -3,12 +3,34 @@ package LinkedList;
 import Interfaces.OrderedListADT;
 import Nodes.LinearNode;
 
+/**
+ * Implementação de uma lista ligada ordenada, que mantém os elementos em ordem crescente.
+ * Esta classe estende a classe {@link LinearLinkedList} e implementa a interface {@link OrderedListADT}.
+ *
+ * @param <T> o tipo dos elementos na lista. Os elementos devem ser comparáveis entre si.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public class LinearLinkedOrderedList<T> extends LinearLinkedList<T> implements OrderedListADT<T> {
 
+    /**
+     * Constrói uma nova lista ligada ordenada, inicializando a lista vazia.
+     */
     public LinearLinkedOrderedList() {
         super();
     }
 
+    /**
+     * Adiciona um novo elemento à lista, mantendo a ordem crescente.
+     * O elemento é inserido de maneira que a lista permaneça ordenada.
+     * A lista é percorrida até encontrar a posição correta para o novo elemento.
+     *
+     * @param element o elemento a ser adicionado à lista. Deve ser comparável com outros elementos.
+     * @throws ClassCastException se o elemento não for comparável com outros da lista.
+     */
     @Override
     public void add(T element) {
         Comparable<T> temp = (Comparable<T>) element;

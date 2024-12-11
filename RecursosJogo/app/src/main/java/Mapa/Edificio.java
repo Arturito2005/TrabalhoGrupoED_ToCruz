@@ -13,6 +13,7 @@ import java.util.Objects;
 /**
  * Classe que representa um edifício no jogo.
  *
+ * Comentar o que falta quando conseguir fazer o desenho do Mapa
  * @author Artur
  * @version 1.0
  */
@@ -37,6 +38,34 @@ public class Edificio implements EdificoInt {
         this.id = ID_EDIFICIO_CONT++;
         this.name = NAME_DEFAULT;
         this.planta_edificio = new Network<>();
+    }
+
+    /**
+     * Construtor de deepCopy do Edificio
+     *
+     * Ver se funciona.
+     * */
+    public Edificio(int id_edificio, String name, NetworkMatrizADT<Divisao> planta_edificio) {
+        this.id = id_edificio;
+        this.name = name;
+        NetworkMatrizADT<Divisao> networkTemp = new Network<>();
+
+        for(Divisao divisao: planta_edificio) {
+            Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItem(), divisao.getInimigos(), divisao.getToCruz());
+            networkTemp.addVertex(divisao_temp);
+
+            for(Divisao divisaoLig: planta_edificio) {
+                Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItem(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
+                double weight = planta_edificio.getWeightEdge(divisao_temp, tempDiv_lig);
+                networkTemp.addEdge(divisao_temp, tempDiv_lig, weight);
+            }
+        }
+
+        this.planta_edificio = networkTemp;
+    }
+
+    public int getId() {
+        return id;
     }
 
     /**
@@ -69,7 +98,7 @@ public class Edificio implements EdificoInt {
 
     @Override
     public Iterator<Divisao> shortesPathIt(Divisao div_inicial, Divisao div_final) {
-        return this.planta_edificio.iteratorShortestPath(div_inicial, div_final);
+        return this.planta_edificio.shortestPath(div_inicial, div_final);
     }
 
     //Dá já de forma automatica a divisao para o ToCruz andar
@@ -80,6 +109,10 @@ public class Edificio implements EdificoInt {
         Divisao div = it.next();
 
         return div;
+    }
+
+    public double getWeight(Divisao div_inicial, Divisao div_final) {
+        return this.planta_edificio.getWeightEdge(div_inicial, div_final);
     }
 
     /**
@@ -145,7 +178,6 @@ public class Edificio implements EdificoInt {
         String bordaOrigem = "-".repeat(divOrigem.getName().length() + 2); // Ajusta o comprimento da linha
         String bordaDestino = "-".repeat(divDestino.getName().length() + 2); // Ajusta o comprimento da linha
 
-        // Desenha a ligação no console
         System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
     }
 
@@ -171,6 +203,7 @@ public class Edificio implements EdificoInt {
             }
         }
     }
+
     /**
      * Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.
      *

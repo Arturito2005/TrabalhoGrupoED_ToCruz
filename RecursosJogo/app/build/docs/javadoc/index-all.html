@@ -58,8 +58,16 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Adiciona uma divisão ao edifício.</div>
 </dd>
-<dt><a href="Mapa/Divisao.html#addInimigo(Personagens.Inimigo)" class="member-name-link">addInimigo(Inimigo)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#addDivisaoTrajetoToCruz(Mapa.Divisao)" class="member-name-link">addDivisaoTrajetoToCruz(Divisao)</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Interfaces/DivisaoIt.html#addInimigo(Personagens.Inimigo)" class="member-name-link">addInimigo(Inimigo)</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
+<dd>
+<div class="block">Adiciona um inimigo à divisão.</div>
+</dd>
+<dt><a href="Mapa/Divisao.html#addInimigo(Personagens.Inimigo)" class="member-name-link">addInimigo(Inimigo)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Adiciona um inimigo à divisão.</div>
+</dd>
 <dt><a href="Interfaces/EdificoInt.html#addLigacao(Mapa.Divisao,Mapa.Divisao,double)" class="member-name-link">addLigacao(Divisao, Divisao, double)</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
 <dd>
 <div class="block">Cria uma ligação entre duas divisões, especificando um peso associado à ligação.</div>
@@ -68,8 +76,16 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Adiciona uma ligação entre duas divisões com um peso específico.</div>
 </dd>
-<dt><a href="Mapa/Divisao.html#addToCruz(Personagens.ToCruz)" class="member-name-link">addToCruz(ToCruz)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dt><a href="Interfaces/MissoesInt.html#addMissao(Missoes.Missao)" class="member-name-link">addMissao(Missao)</a> - Method in interface Interfaces.<a href="Interfaces/MissoesInt.html" title="interface in Interfaces">MissoesInt</a></dt>
+<dd>
+<div class="block">Adiciona uma missão ao sistema.</div>
+</dd>
+<dt><a href="Missoes/Missoes.html#addMissao(Missoes.Missao)" class="member-name-link">addMissao(Missao)</a> - Method in class Missoes.<a href="Missoes/Missoes.html" title="class in Missoes">Missoes</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Mapa/Divisao.html#addToCruz(Personagens.ToCruz)" class="member-name-link">addToCruz(ToCruz)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Adiciona o personagem "ToCruz" à divisão.</div>
+</dd>
 <dt><a href="Exceptions/AllLifeException.html" class="type-name-link" title="class in Exceptions">AllLifeException</a> - Exception Class in <a href="Exceptions/package-summary.html">Exceptions</a></dt>
 <dd>
 <div class="block">Exceção personalizada que é lançada quando o To Cruz tem a vida toda e tenta curar-se.</div>
@@ -86,6 +102,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor padrão para criar um alvo sem nome.</div>
 </dd>
+<dt><a href="Mapa/Alvo.html#%3Cinit%3E(int,java.lang.String,boolean)" class="member-name-link">Alvo(int, String, boolean)</a> - Constructor for class Mapa.<a href="Mapa/Alvo.html" title="class in Mapa">Alvo</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Mapa/Alvo.html#%3Cinit%3E(java.lang.String)" class="member-name-link">Alvo(String)</a> - Constructor for class Mapa.<a href="Mapa/Alvo.html" title="class in Mapa">Alvo</a></dt>
 <dd>
 <div class="block">Construtor para criar um alvo com um nome fornecido.</div>
@@ -95,35 +113,51 @@ loadScripts(document, 'script');</script>
 <div class="block">Permite o inimigo recebido como parametro atacar.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#attackInimigo(Personagens.Inimigo)" class="member-name-link">attackInimigo(Inimigo)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Interfaces/IteracoesToCruz.html#attackToCruz(Interfaces.StackADT)" class="member-name-link">attackToCruz(StackADT&lt;Inimigo&gt;)</a> - Method in interface Interfaces.<a href="Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></dt>
+<dd>
+<div class="block">Faz com que um inimigo ataque "ToCruz".</div>
+</dd>
+<dt><a href="Interfaces/IteracoesToCruz.html#attackToCruz(Interfaces.UnorderedListADT)" class="member-name-link">attackToCruz(UnorderedListADT&lt;Inimigo&gt;)</a> - Method in interface Interfaces.<a href="Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></dt>
 <dd>
 <div class="block">Permite o To Cruz atacar todos os inimigos da divisão.</div>
 </dd>
-<dt><a href="Mapa/Divisao.html#attackToCruz(Interfaces.StackADT)" class="member-name-link">attackToCruz(StackADT&lt;Inimigo&gt;)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dt><a href="Mapa/Divisao.html#attackToCruz(Interfaces.UnorderedListADT)" class="member-name-link">attackToCruz(UnorderedListADT&lt;Inimigo&gt;)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Faz com que todos os inimigos ataquem "ToCruz".</div>
+</dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
 <dl class="index">
+<dt><a href="Missoes/Simulacoes.html#calculateBestExitAutomatico(Personagens.ToCruz,Mapa.Divisao,Interfaces.UnorderedListADT)" class="member-name-link">calculateBestExitAutomatico(ToCruz, Divisao, UnorderedListADT&lt;Divisao&gt;)</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Items/TypeItemCura.html#COLETE" class="member-name-link">COLETE</a> - Enum constant in enum class Items.<a href="Items/TypeItemCura.html" title="enum class in Items">TypeItemCura</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Representa o Tipo de item colete</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#compareTo(java.lang.Object)" class="member-name-link">compareTo(Object)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/Trajeto.html#compareTo(Mapa.Trajeto)" class="member-name-link">compareTo(Trajeto)</a> - Method in class Mapa.<a href="Mapa/Trajeto.html" title="class in Mapa">Trajeto</a></dt>
+<dd>
+<div class="block">Compara esta divisão com outra com base no ID.</div>
+</dd>
+<dt><a href="Missoes/Simulacoes.html#compareTo(Missoes.Simulacoes)" class="member-name-link">compareTo(Simulacoes)</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:D">D</h2>
 <dl class="index">
+<dt><a href="Mapa/DesenhoMapa.html" class="type-name-link" title="class in Mapa">DesenhoMapa</a> - Class in <a href="Mapa/package-summary.html">Mapa</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Mapa/DesenhoMapa.html#%3Cinit%3E()" class="member-name-link">DesenhoMapa()</a> - Constructor for class Mapa.<a href="Mapa/DesenhoMapa.html" title="class in Mapa">DesenhoMapa</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Mapa/Divisao.html" class="type-name-link" title="class in Mapa">Divisao</a> - Class in <a href="Mapa/package-summary.html">Mapa</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/Divisao.html#%3Cinit%3E()" class="member-name-link">Divisao()</a> - Constructor for class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Representa uma divisão no mapa do jogo.</div>
+</dd>
+<dt><a href="Mapa/Divisao.html#%3Cinit%3E(int,java.lang.String,boolean,Mapa.Alvo,Items.Item,Interfaces.UnorderedListADT,Personagens.ToCruz)" class="member-name-link">Divisao(int, String, boolean, Alvo, Item, UnorderedListADT&lt;Inimigo&gt;, ToCruz)</a> - Constructor for class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Construtor de deepCopy da classe Divisao</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#%3Cinit%3E(java.lang.String)" class="member-name-link">Divisao(String)</a> - Constructor for class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/Divisao.html#%3Cinit%3E(java.lang.String,boolean)" class="member-name-link">Divisao(String, boolean)</a> - Constructor for class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/Divisao.html#%3Cinit%3E(java.lang.String,boolean,Mapa.Alvo,Items.Item,LinkedList.LinearLinkedUnorderedList)" class="member-name-link">Divisao(String, boolean, Alvo, Item, LinearLinkedUnorderedList&lt;Inimigo&gt;)</a> - Constructor for class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Construtor da classe Divisao.</div>
+</dd>
 <dt><a href="Interfaces/DivisaoIt.html" class="type-name-link" title="interface in Interfaces">DivisaoIt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
 <dd>
 <div class="block">Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.</div>
@@ -135,7 +169,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Faz o desenho na consola da divisão</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#drawnDivisao()" class="member-name-link">drawnDivisao()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Desenha a representação visual da divisão no console.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:E">E</h2>
 <dl class="index">
@@ -147,10 +183,20 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor padrão do edifício.</div>
 </dd>
+<dt><a href="Mapa/Edificio.html#%3Cinit%3E(int,java.lang.String,Interfaces.NetworkMatrizADT)" class="member-name-link">Edificio(int, String, NetworkMatrizADT&lt;Divisao&gt;)</a> - Constructor for class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
+<dd>
+<div class="block">Construtor de deepCopy do Edificio
+
+ Ver se funciona.</div>
+</dd>
 <dt><a href="Interfaces/EdificoInt.html" class="type-name-link" title="interface in Interfaces">EdificoInt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
 <dd>
 <div class="block">Interface que define o contrato para um edifício com divisões interconectadas.</div>
 </dd>
+<dt><a href="Exceptions/EmptyCollectionException.html" class="type-name-link" title="class in Exceptions">EmptyCollectionException</a> - Exception Class in <a href="Exceptions/package-summary.html">Exceptions</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Exceptions/EmptyCollectionException.html#%3Cinit%3E(java.lang.String)" class="member-name-link">EmptyCollectionException(String)</a> - Constructor for exception class Exceptions.<a href="Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Items/Item.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Items.<a href="Items/Item.html" title="class in Items">Item</a></dt>
 <dd>
 <div class="block">Compara este item com outro objeto para verificar se são iguais.</div>
@@ -164,21 +210,27 @@ loadScripts(document, 'script');</script>
 <div class="block">Compara este alvo com outro objeto para verificar se são iguais.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se esta divisão é igual a outra.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>
 <div class="block">Compara este edifício com outro objeto para verificar se são iguais.</div>
 </dd>
-<dt><a href="Missoes/Missao.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Personagens/Inimigo.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
 <div class="block">Compara este alvo com outro objeto para verificar se são iguais.</div>
 </dd>
 <dt><a href="Personagens/Personagem.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compara dois personagens com base no ID ou no nome.</div>
+</dd>
 <dt><a href="Personagens/ToCruz.html#equals(java.lang.Object)" class="member-name-link">equals(Object)</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Compara este objeto com outro para verificar igualdade.</div>
+</dd>
 <dt><a href="Exceptions/package-summary.html">Exceptions</a> - package Exceptions</dt>
 <dd>&nbsp;</dd>
 <dt><a href="Exportar/package-summary.html">Exportar</a> - package Exportar</dt>
@@ -203,6 +255,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Interface que define o contrato para exportação de dados.</div>
 </dd>
+<dt><a href="Missoes/Missoes.html#exportarMissoes()" class="member-name-link">exportarMissoes()</a> - Method in class Missoes.<a href="Missoes/Missoes.html" title="class in Missoes">Missoes</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
@@ -215,17 +269,47 @@ loadScripts(document, 'script');</script>
 <div class="block">Gera um objeto do tipo <a href="Missoes/Missao.html" title="class in Missoes"><code>Missao</code></a> representando a missão do To Cruz.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#getAlvo()" class="member-name-link">getAlvo()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Obtém o alvo presente na divisão.</div>
+</dd>
+<dt><a href="Missoes/Missao.html#getcod_missao()" class="member-name-link">getcod_missao()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Missoes/Missoes.html#getContMissoes()" class="member-name-link">getContMissoes()</a> - Method in class Missoes.<a href="Missoes/Missoes.html" title="class in Missoes">Missoes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Missoes/Missao.html#getEdificio()" class="member-name-link">getEdificio()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Mapa/Edificio.html#getId()" class="member-name-link">getId()</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Mapa/Alvo.html#getId_alvo()" class="member-name-link">getId_alvo()</a> - Method in class Mapa.<a href="Mapa/Alvo.html" title="class in Mapa">Alvo</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Mapa/Divisao.html#getId_divisao()" class="member-name-link">getId_divisao()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Items/Item.html#getId_item()" class="member-name-link">getId_item()</a> - Method in class Items.<a href="Items/Item.html" title="class in Items">Item</a></dt>
+<dd>
+<div class="block">Retorna o identificador único do item.</div>
+</dd>
+<dt><a href="Personagens/Personagem.html#getId_personagem()" class="member-name-link">getId_personagem()</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
+<dd>
+<div class="block">Retorna o identificador único do personagem.</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#getInimigos()" class="member-name-link">getInimigos()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Obtém a lista de inimigos presentes na divisão.</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#getItem()" class="member-name-link">getItem()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Obtém o item presente na divisão.</div>
+</dd>
+<dt><a href="Missoes/Missoes.html#getListaMissao()" class="member-name-link">getListaMissao()</a> - Method in class Missoes.<a href="Missoes/Missoes.html" title="class in Missoes">Missoes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Personagens/ToCruz.html#getMochila()" class="member-name-link">getMochila()</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
 <dd>
 <div class="block">Retorna a mochila do To Cruz.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#getName()" class="member-name-link">getName()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Obtém o nome da divisão.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#getName()" class="member-name-link">getName()</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>
 <div class="block">Retorna o nome do edifício.</div>
@@ -253,15 +337,23 @@ loadScripts(document, 'script');</script>
 <div class="block">Retorna o poder do personagem.</div>
 </dd>
 <dt><a href="Interfaces/EdificoInt.html#getShortestPath(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPath(Divisao, Divisao)</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Calcula o menor caminho entre duas divisões baseado no peso das arestas.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#getShortestPath(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPath(Divisao, Divisao)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Interfaces/EdificoInt.html#getShortestPathNumArestas(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPathNumArestas(Divisao, Divisao)</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Calcula o menor caminho entre duas divisões baseado no número de arestas.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#getShortestPathNumArestas(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPathNumArestas(Divisao, Divisao)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="Mapa/Divisao.html#getToCruz()" class="member-name-link">getToCruz()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dt><a href="Missoes/Missao.html#getSimulacoes()" class="member-name-link">getSimulacoes()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Mapa/Divisao.html#getToCruz()" class="member-name-link">getToCruz()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
+<dd>
+<div class="block">Obtém o personagem "ToCruz" presente na divisão.</div>
+</dd>
 <dt><a href="Items/ItemCura.html#getType()" class="member-name-link">getType()</a> - Method in class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
 <dd>
 <div class="block">Retorna o tipo de item de cura.</div>
@@ -274,6 +366,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Retorna a quantidade de vida que o item de cura pode recuperar.</div>
 </dd>
+<dt><a href="Mapa/Edificio.html#getWeight(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getWeight(Divisao, Divisao)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Interfaces/ToCruzIt.html#guardarKit(Items.ItemCura)" class="member-name-link">guardarKit(ItemCura)</a> - Method in interface Interfaces.<a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></dt>
 <dd>
 <div class="block">Método para armazenar um item de cura na mochila do ToCruz.</div>
@@ -294,33 +388,43 @@ loadScripts(document, 'script');</script>
 <div class="block">Gera um código hash para o alvo baseado no nome.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Calcula o código hash da divisão com base no nome.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>
 <div class="block">Gera um código hash para o edifício, utilizando seu nome e planta.</div>
 </dd>
-<dt><a href="Missoes/Missao.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Personagens/Inimigo.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
 <div class="block">Gera um código hash para o alvo baseado no nome.</div>
 </dd>
 <dt><a href="Personagens/Personagem.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retorna o código hash do personagem com base no nome.</div>
+</dd>
 <dt><a href="Personagens/ToCruz.html#hashCode()" class="member-name-link">hashCode()</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retorna o código hash para este objeto.</div>
+</dd>
 <dt><a href="Interfaces/DivisaoIt.html#haveConfronto()" class="member-name-link">haveConfronto()</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
 <div class="block">Verifica se há um confronto ativo na divisão.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#haveConfronto()" class="member-name-link">haveConfronto()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se há um confronto entre "ToCruz" e os inimigos.</div>
+</dd>
 <dt><a href="Interfaces/DivisaoIt.html#haveInimigo()" class="member-name-link">haveInimigo()</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
 <div class="block">Verifica se há inimigos presentes na divisão.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#haveInimigo()" class="member-name-link">haveInimigo()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se há inimigos na divisão.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
@@ -340,10 +444,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor do ImportarMapa</div>
 </dd>
+<dt><a href="Menu/MetodosMenuMissao.html#importarMissoes()" class="member-name-link">importarMissoes()</a> - Method in class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Personagens/Inimigo.html" class="type-name-link" title="class in Personagens">Inimigo</a> - Class in <a href="Personagens/package-summary.html">Personagens</a></dt>
 <dd>
 <div class="block">Esta classe representa um inimigo no jogo.</div>
 </dd>
+<dt><a href="Personagens/Inimigo.html#%3Cinit%3E(int,java.lang.String,double,double)" class="member-name-link">Inimigo(int, String, double, double)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="Personagens/Inimigo.html#%3Cinit%3E(java.lang.String,double)" class="member-name-link">Inimigo(String, double)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
 <div class="block">Construtor da classe Inimigo.</div>
@@ -371,7 +479,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Retorna o status de atingido do alvo.</div>
 </dd>
 <dt><a href="Personagens/ToCruz.html#isColectedAlvo()" class="member-name-link">isColectedAlvo()</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se o alvo foi coletado, pelo o To Cruz.</div>
+</dd>
 <dt><a href="Items/Item.html#isCollected()" class="member-name-link">isCollected()</a> - Method in class Items.<a href="Items/Item.html" title="class in Items">Item</a></dt>
 <dd>
 <div class="block">Retorna se o item já foi coletado ou não.</div>
@@ -381,19 +491,25 @@ loadScripts(document, 'script');</script>
 <div class="block">Retorna se o personagem está morto.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#isEntrada_saida()" class="member-name-link">isEntrada_saida()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se a divisão é uma entrada/saída.</div>
+</dd>
 <dt><a href="Interfaces/DivisaoIt.html#isToCruzInDivisaoAlvo()" class="member-name-link">isToCruzInDivisaoAlvo()</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
 <div class="block">Verifica se o ToCruz está na mesma divisão do alvo.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#isToCruzInDivisaoAlvo()" class="member-name-link">isToCruzInDivisaoAlvo()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se "ToCruz" está na divisão com o alvo.</div>
+</dd>
 <dt><a href="Interfaces/DivisaoIt.html#isToCruzInExit()" class="member-name-link">isToCruzInExit()</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
 <div class="block">Verifica se o ToCruz está em alguma entrada ou saida.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#isToCruzInExit()" class="member-name-link">isToCruzInExit()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se "ToCruz" está em uma saída.</div>
+</dd>
 <dt><a href="Items/Item.html" class="type-name-link" title="class in Items">Item</a> - Class in <a href="Items/package-summary.html">Items</a></dt>
 <dd>
 <div class="block">Classe abstrata que representa um item no jogo.</div>
@@ -402,14 +518,18 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor padrão da classe <a href="Items/Item.html" title="class in Items"><code>Item</code></a>.</div>
 </dd>
+<dt><a href="Items/Item.html#%3Cinit%3E(int,boolean)" class="member-name-link">Item(int, boolean)</a> - Constructor for class Items.<a href="Items/Item.html" title="class in Items">Item</a></dt>
+<dd>
+<div class="block">Construtor da classe <a href="Items/Item.html" title="class in Items"><code>Item</code></a> com parâmetros.</div>
+</dd>
 <dt><a href="Items/ItemCura.html" class="type-name-link" title="class in Items">ItemCura</a> - Class in <a href="Items/package-summary.html">Items</a></dt>
 <dd>
 <div class="block">Classe que representa um item de cura no jogo.</div>
 </dd>
-<dt><a href="Items/ItemCura.html#%3Cinit%3E()" class="member-name-link">ItemCura()</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
+<dt><a href="Items/ItemCura.html#%3Cinit%3E(int,boolean,Items.TypeItemCura,double)" class="member-name-link">ItemCura(int, boolean, TypeItemCura, double)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
 <dd>
-<div class="block">Construtor padrão para criar um <a href="Items/ItemCura.html" title="class in Items"><code>ItemCura</code></a> com valores nulos ou zero para suas
- propriedades.</div>
+<div class="block">Construtor para criar um <a href="Items/ItemCura.html" title="class in Items"><code>ItemCura</code></a> com ID, status de coleta,
+ tipo de item e quantidade de vida recuperada.</div>
 </dd>
 <dt><a href="Items/ItemCura.html#%3Cinit%3E(Items.TypeItemCura,double)" class="member-name-link">ItemCura(TypeItemCura, double)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
 <dd>
@@ -439,9 +559,15 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="Interfaces/MissaoInt.html#jogoAutomatico()" class="member-name-link">jogoAutomatico()</a> - Method in interface Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></dt>
 <dd>
+<div class="block">Executa a missão automaticamente até o final.</div>
+</dd>
+<dt><a href="Interfaces/SimulacoesInt.html#jogoAutomatico()" class="member-name-link">jogoAutomatico()</a> - Method in interface Interfaces.<a href="Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></dt>
+<dd>
 <div class="block">O jogo é jogado de forma automatico.</div>
 </dd>
 <dt><a href="Missoes/Missao.html#jogoAutomatico()" class="member-name-link">jogoAutomatico()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Missoes/Simulacoes.html#jogoAutomatico()" class="member-name-link">jogoAutomatico()</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>
 <div class="block">Joga o jogo de forma automático</div>
 </dd>
@@ -455,22 +581,23 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
-<dt><a href="Mapa/TestDraw.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class Mapa.<a href="Mapa/TestDraw.html" title="class in Mapa">TestDraw</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Menu/Menu.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class Menu.<a href="Menu/Menu.html" title="class in Menu">Menu</a></dt>
+<dt><a href="Menu/MenuMissoes.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class Menu.<a href="Menu/MenuMissoes.html" title="class in Menu">MenuMissoes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Mapa/package-summary.html">Mapa</a> - package Mapa</dt>
 <dd>&nbsp;</dd>
 <dt><a href="Menu/package-summary.html">Menu</a> - package Menu</dt>
 <dd>&nbsp;</dd>
-<dt><a href="Menu/Menu.html" class="type-name-link" title="class in Menu">Menu</a> - Class in <a href="Menu/package-summary.html">Menu</a></dt>
+<dt><a href="Menu/MenuMissoes.html" class="type-name-link" title="class in Menu">MenuMissoes</a> - Class in <a href="Menu/package-summary.html">Menu</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="Menu/Menu.html#%3Cinit%3E()" class="member-name-link">Menu()</a> - Constructor for class Menu.<a href="Menu/Menu.html" title="class in Menu">Menu</a></dt>
+<dt><a href="Menu/MenuMissoes.html#%3Cinit%3E()" class="member-name-link">MenuMissoes()</a> - Constructor for class Menu.<a href="Menu/MenuMissoes.html" title="class in Menu">MenuMissoes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Menu/MetodosMenuMissao.html" class="type-name-link" title="class in Menu">MetodosMenuMissao</a> - Class in <a href="Menu/package-summary.html">Menu</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Menu/MetodosMenuMissao.html#%3Cinit%3E()" class="member-name-link">MetodosMenuMissao()</a> - Constructor for class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Missoes/Missao.html" class="type-name-link" title="class in Missoes">Missao</a> - Class in <a href="Missoes/package-summary.html">Missoes</a></dt>
 <dd>
-<div class="block">Falta no updateWeight o weight total ser o dano que o ToCruz toma no total dos turnos todos (ver se realmente é para fazer isso)
- Falta verificar se nos metodos estão a ser utilizadas as melhores estruturas</div>
+<div class="block">Dar deepCopy das divisoes para não ser diretamente modificado o edificio das divisoes</div>
 </dd>
 <dt><a href="Missoes/Missao.html#%3Cinit%3E()" class="member-name-link">Missao()</a> - Constructor for class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
 <dd>&nbsp;</dd>
@@ -478,49 +605,72 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="Interfaces/MissaoInt.html" class="type-name-link" title="interface in Interfaces">MissaoInt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
 <dd>
-<div class="block">Interface contém os 2 modos de jogo da missão.</div>
+<div class="block">Classe abstrata que representa cada personagem no jogo</div>
 </dd>
 <dt><a href="Missoes/package-summary.html">Missoes</a> - package Missoes</dt>
 <dd>&nbsp;</dd>
-<dt><a href="Interfaces/ToCruzIt.html#mochilaIsFull()" class="member-name-link">mochilaIsFull()</a> - Method in interface Interfaces.<a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></dt>
+<dt><a href="Missoes/Missoes.html" class="type-name-link" title="class in Missoes">Missoes</a> - Class in <a href="Missoes/package-summary.html">Missoes</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Missoes/Missoes.html#%3Cinit%3E()" class="member-name-link">Missoes()</a> - Constructor for class Missoes.<a href="Missoes/Missoes.html" title="class in Missoes">Missoes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Interfaces/MissoesInt.html" class="type-name-link" title="interface in Interfaces">MissoesInt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
+<dd>
+<div class="block">Interface que define as operações relacionadas para gerir todas as missões
+ importadas pelo o ToCruz.</div>
+</dd>
+<dt><a href="Interfaces/ToCruzIt.html#mochilaIsFull()" class="member-name-link">mochilaIsFull()</a> - Method in interface Interfaces.<a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></dt>
+<dd>
+<div class="block">Verifica se a mochila do To Cruz está cheia.</div>
+</dd>
 <dt><a href="Personagens/ToCruz.html#mochilaIsFull()" class="member-name-link">mochilaIsFull()</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
 <dd>
-<div class="block">Método publico que verifica se a mochila do To Cruz já está cheia</div>
+<div class="block">Verifica se a mochila está cheia.</div>
 </dd>
 <dt><a href="Interfaces/ToCruzIt.html#mochilaTemKit()" class="member-name-link">mochilaTemKit()</a> - Method in interface Interfaces.<a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Verifica se há um kit de cura na mochila do To Cruz.</div>
+</dd>
 <dt><a href="Personagens/ToCruz.html#mochilaTemKit()" class="member-name-link">mochilaTemKit()</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
 <dd>
 <div class="block">Metodo para verificar se a mochila contém pelo menos um kit.</div>
 </dd>
 <dt><a href="Interfaces/MissaoInt.html#modoAutomatico()" class="member-name-link">modoAutomatico()</a> - Method in interface Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></dt>
 <dd>
+<div class="block">Inicia o modo automático da missão.</div>
+</dd>
+<dt><a href="Missoes/Missao.html#modoAutomatico()" class="member-name-link">modoAutomatico()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Interfaces/SimulacoesInt.html#modojogoAutomatico()" class="member-name-link">modojogoAutomatico()</a> - Method in interface Interfaces.<a href="Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></dt>
+<dd>
 <div class="block">Sugere a melhor entrada ao To Cruz e o caminho que deve realizar para chegar ao alvo e se
  for possível sair do edificio com vida também mostra o caminho mais curto para sair do edificio.</div>
 </dd>
-<dt><a href="Missoes/Missao.html#modoAutomatico()" class="member-name-link">modoAutomatico()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#modojogoAutomatico()" class="member-name-link">modojogoAutomatico()</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>
-<div class="block">Ver a melhor forma do getShortestPath, porque ele retornar o num_arestas também, talvez fazer
- outro metodo que apenas retona o numero de arestas, porque o ShortestPath tem logica apenas retorar o dano
- e ter outro que apenas retorna o num_arestas
-
- Fazer o codigo para arestas na network</div>
+<div class="block">O caminho de volta do alvo para uma saida não está a dar</div>
 </dd>
-<dt><a href="Interfaces/MissaoInt.html#modoManual()" class="member-name-link">modoManual()</a> - Method in interface Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></dt>
+<dt><a href="Interfaces/SimulacoesInt.html#modojogoManual()" class="member-name-link">modojogoManual()</a> - Method in interface Interfaces.<a href="Interfaces/SimulacoesInt.html" title="interface in Interfaces">SimulacoesInt</a></dt>
 <dd>
 <div class="block">Ativa o modo manual da missão.</div>
 </dd>
-<dt><a href="Missoes/Missao.html#modoManual()" class="member-name-link">modoManual()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#modojogoManual()" class="member-name-link">modojogoManual()</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>
 <div class="block">Testar apenas a sugestão do caminho mais curto e o ToCruz sair com o Alvo
  Não esquecer de fazer o codigo para mostrar aqui também a melhor sugestao de caminho de acordo com a divisao que o ToCruz está!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
 </dd>
+<dt><a href="Interfaces/MissaoInt.html#modoManual()" class="member-name-link">modoManual()</a> - Method in interface Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></dt>
+<dd>
+<div class="block">Inicia o modo manual da missão.</div>
+</dd>
+<dt><a href="Missoes/Missao.html#modoManual()" class="member-name-link">modoManual()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:N">N</h2>
 <dl class="index">
 <dt><a href="Interfaces/EdificoInt.html#nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">nextDivAutomaticToCruz(Divisao, Divisao)</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Determina a próxima divisão automaticamente para seguir até a divisão final em direção à Cruz.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#nextDivAutomaticToCruz(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">nextDivAutomaticToCruz(Divisao, Divisao)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>&nbsp;</dd>
 </dl>
@@ -530,61 +680,87 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Classe abstrata que representa cada personagem no jogo</div>
 </dd>
+<dt><a href="Personagens/Personagem.html#%3Cinit%3E(int,java.lang.String,double,double)" class="member-name-link">Personagem(int, String, double, double)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
+<dd>
+<div class="block">Construtor principal que inicializa todos os atributos do personagem.</div>
+</dd>
 <dt><a href="Personagens/Personagem.html#%3Cinit%3E(java.lang.String)" class="member-name-link">Personagem(String)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
-<div class="block">Construtor com nome e divisão, usa os valores padrão para vida e poder.</div>
+<div class="block">Construtor que inicializa o personagem com nome e utiliza valores padrão para vida e poder.</div>
 </dd>
 <dt><a href="Personagens/Personagem.html#%3Cinit%3E(java.lang.String,double)" class="member-name-link">Personagem(String, double)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
-<div class="block">Construtor com nome, poder e divisão, usa o valor padrão para vida.</div>
-</dd>
-<dt><a href="Personagens/Personagem.html#%3Cinit%3E(java.lang.String,double,double)" class="member-name-link">Personagem(String, double, double)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
-<dd>
-<div class="block">Construtor principal com todos os atributos.</div>
+<div class="block">Construtor que inicializa o personagem com nome e poder, e utiliza o valor padrão para vida.</div>
 </dd>
 <dt><a href="Personagens/package-summary.html">Personagens</a> - package Personagens</dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
+<dt><a href="Menu/MetodosMenuMissao.html#RealizarMissoes(Missoes.Missoes)" class="member-name-link">RealizarMissoes(Missoes)</a> - Method in class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Interfaces/DivisaoIt.html#removeInimigo(Personagens.Inimigo)" class="member-name-link">removeInimigo(Inimigo)</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
+<dd>
+<div class="block">Remove um inimigo da divisão.</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#removeInimigo(Personagens.Inimigo)" class="member-name-link">removeInimigo(Inimigo)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Remove um inimigo específico da divisão.</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#removeToCruz()" class="member-name-link">removeToCruz()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Remove o personagem "ToCruz" da divisão.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:S">S</h2>
 <dl class="index">
 <dt><a href="Mapa/Divisao.html#setAlvo(Mapa.Alvo)" class="member-name-link">setAlvo(Alvo)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Define o alvo presente na divisão.</div>
+</dd>
 <dt><a href="Mapa/Alvo.html#setAtinigido(boolean)" class="member-name-link">setAtinigido(boolean)</a> - Method in class Mapa.<a href="Mapa/Alvo.html" title="class in Mapa">Alvo</a></dt>
 <dd>
 <div class="block">Altera o status de atingido do alvo.</div>
 </dd>
 <dt><a href="Personagens/ToCruz.html#setColectedAlvo(boolean)" class="member-name-link">setColectedAlvo(boolean)</a> - Method in class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Define o status de coleta do alvo.</div>
+</dd>
 <dt><a href="Items/Item.html#setCollected(boolean)" class="member-name-link">setCollected(boolean)</a> - Method in class Items.<a href="Items/Item.html" title="class in Items">Item</a></dt>
 <dd>
 <div class="block">Altera o status do item.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#setEntrada_saida(boolean)" class="member-name-link">setEntrada_saida(boolean)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Define se a divisão é uma entrada/saída.</div>
+</dd>
 <dt><a href="Mapa/Divisao.html#setItem(Items.Item)" class="member-name-link">setItem(Item)</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Define o item presente na divisão.</div>
+</dd>
 <dt><a href="Personagens/Personagem.html#setVida(double)" class="member-name-link">setVida(double)</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
 <div class="block">Setter para alterar a quantidade de vida do personagem.</div>
 </dd>
 <dt><a href="Interfaces/EdificoInt.html#shortesPathIt(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">shortesPathIt(Divisao, Divisao)</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retorna um iterador para o menor caminho entre duas divisões.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#shortesPathIt(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">shortesPathIt(Divisao, Divisao)</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="Missoes/Simulacoes.html" class="type-name-link" title="class in Missoes">Simulacoes</a> - Class in <a href="Missoes/package-summary.html">Missoes</a></dt>
+<dd>
+<div class="block">Voltar a meter a sugestao do melhor caminho no modo Manual</div>
+</dd>
+<dt><a href="Missoes/Simulacoes.html#%3Cinit%3E(long,Mapa.Edificio)" class="member-name-link">Simulacoes(long, Edificio)</a> - Constructor for class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="Interfaces/SimulacoesInt.html" class="type-name-link" title="interface in Interfaces">SimulacoesInt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
+<dd>
+<div class="block">Interface contém os 2 modos de jogo da missão.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
-<dt><a href="Mapa/TestDraw.html" class="type-name-link" title="class in Mapa">TestDraw</a> - Class in <a href="Mapa/package-summary.html">Mapa</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/TestDraw.html#%3Cinit%3E()" class="member-name-link">TestDraw()</a> - Constructor for class Mapa.<a href="Mapa/TestDraw.html" title="class in Mapa">TestDraw</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="Personagens/ToCruz.html" class="type-name-link" title="class in Personagens">ToCruz</a> - Class in <a href="Personagens/package-summary.html">Personagens</a></dt>
 <dd>
 <div class="block">Classe que representa o personagem principal do jogo, ToCruz.</div>
@@ -593,12 +769,18 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.</div>
 </dd>
+<dt><a href="Personagens/ToCruz.html#%3Cinit%3E(int,java.lang.String,double,double,Interfaces.StackADT)" class="member-name-link">ToCruz(int, String, double, double, StackADT&lt;ItemCura&gt;)</a> - Constructor for class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
+<dd>
+<div class="block">Construtor alternativo para realizar uma deepCopy do ToCruz.</div>
+</dd>
 <dt><a href="Interfaces/IteracoesToCruz.html#ToCruzGetAlvo()" class="member-name-link">ToCruzGetAlvo()</a> - Method in interface Interfaces.<a href="Interfaces/IteracoesToCruz.html" title="interface in Interfaces">IteracoesToCruz</a></dt>
 <dd>
 <div class="block">Permite ao To Cruz coletar o Alvo da missão.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#ToCruzGetAlvo()" class="member-name-link">ToCruzGetAlvo()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Marca o alvo como atingido por "ToCruz".</div>
+</dd>
 <dt><a href="Interfaces/ToCruzIt.html" class="type-name-link" title="interface in Interfaces">ToCruzIt</a> - Interface in <a href="Interfaces/package-summary.html">Interfaces</a></dt>
 <dd>
 <div class="block">Interface que define todas as iterações que o ToCruz pode ter com qualquer item presentes no edificio.</div>
@@ -618,14 +800,14 @@ loadScripts(document, 'script');</script>
  nome e status de atingido.</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#toString()" class="member-name-link">toString()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Retorna uma representação em string da divisão.</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#toString()" class="member-name-link">toString()</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>
 <div class="block">Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.</div>
 </dd>
-<dt><a href="Mapa/Trajeto.html#toString()" class="member-name-link">toString()</a> - Method in class Mapa.<a href="Mapa/Trajeto.html" title="class in Mapa">Trajeto</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Missoes/Missao.html#toString()" class="member-name-link">toString()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dt><a href="Missoes/Simulacoes.html#toString()" class="member-name-link">toString()</a> - Method in class Missoes.<a href="Missoes/Simulacoes.html" title="class in Missoes">Simulacoes</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="Personagens/Inimigo.html#toString()" class="member-name-link">toString()</a> - Method in class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
@@ -639,10 +821,6 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Retorna uma string com todos os dados do ToCruz.</div>
 </dd>
-<dt><a href="Mapa/Trajeto.html" class="type-name-link" title="class in Mapa">Trajeto</a> - Class in <a href="Mapa/package-summary.html">Mapa</a></dt>
-<dd>&nbsp;</dd>
-<dt><a href="Mapa/Trajeto.html#%3Cinit%3E(long,Mapa.Divisao,double)" class="member-name-link">Trajeto(long, Divisao, double)</a> - Constructor for class Mapa.<a href="Mapa/Trajeto.html" title="class in Mapa">Trajeto</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="Items/TypeItemCura.html" class="type-name-link" title="enum class in Items">TypeItemCura</a> - Enum Class in <a href="Items/package-summary.html">Items</a></dt>
 <dd>
 <div class="block">Enum que aramzena todos os tipos de itens de cura</div>
@@ -672,7 +850,9 @@ loadScripts(document, 'script');</script>
 <div class="block">Permite ao To Cruz utilziar o item da divisão</div>
 </dd>
 <dt><a href="Mapa/Divisao.html#usarItemDivisao()" class="member-name-link">usarItemDivisao()</a> - Method in class Mapa.<a href="Mapa/Divisao.html" title="class in Mapa">Divisao</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Utiliza o item presente na divisão, se aplicável.</div>
+</dd>
 <dt><a href="Interfaces/ToCruzIt.html#usarKit()" class="member-name-link">usarKit()</a> - Method in interface Interfaces.<a href="Interfaces/ToCruzIt.html" title="interface in Interfaces">ToCruzIt</a></dt>
 <dd>
 <div class="block">Método para usar um kit de cura armazenados na mochila, o metodo retorna o ItemUsado</div>
@@ -701,6 +881,12 @@ loadScripts(document, 'script');</script>
 <div class="block">Returns an array containing the constants of this enum class, in
 the order they are declared.</div>
 </dd>
+<dt><a href="Interfaces/MissaoInt.html#viewSimulacoes()" class="member-name-link">viewSimulacoes()</a> - Method in interface Interfaces.<a href="Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></dt>
+<dd>
+<div class="block">Visualiza as simulações disponíveis para a missão.</div>
+</dd>
+<dt><a href="Missoes/Missao.html#viewSimulacoes()" class="member-name-link">viewSimulacoes()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:W">W</h2>
 <dl class="index">

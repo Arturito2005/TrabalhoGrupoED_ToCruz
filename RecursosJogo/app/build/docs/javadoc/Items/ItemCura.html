@@ -105,10 +105,13 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ItemCura</a>()</code></div>
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,boolean,Items.TypeItemCura,double)" class="member-name-link">ItemCura</a><wbr>(int&nbsp;id_item,
+ boolean&nbsp;colleceted,
+ <a href="TypeItemCura.html" title="enum class in Items">TypeItemCura</a>&nbsp;type,
+ double&nbsp;vida_recuperada)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor padrão para criar um <a href="ItemCura.html" title="class in Items"><code>ItemCura</code></a> com valores nulos ou zero para suas
- propriedades.</div>
+<div class="block">Construtor para criar um <a href="ItemCura.html" title="class in Items"><code>ItemCura</code></a> com ID, status de coleta,
+ tipo de item e quantidade de vida recuperada.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(Items.TypeItemCura,double)" class="member-name-link">ItemCura</a><wbr>(<a href="TypeItemCura.html" title="enum class in Items">TypeItemCura</a>&nbsp;type,
  double&nbsp;vida_recuperada)</code></div>
@@ -156,7 +159,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-Items.Item">Methods inherited from class&nbsp;Items.<a href="Item.html" title="class in Items">Item</a></h3>
-<code><a href="Item.html#hashCode()">hashCode</a>, <a href="Item.html#isCollected()">isCollected</a>, <a href="Item.html#setCollected(boolean)">setCollected</a></code></div>
+<code><a href="Item.html#getId_item()">getId_item</a>, <a href="Item.html#hashCode()">hashCode</a>, <a href="Item.html#isCollected()">isCollected</a>, <a href="Item.html#setCollected(boolean)">setCollected</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -188,12 +191,22 @@ loadScripts(document, 'script');</script>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;()">
+<section class="detail" id="&lt;init&gt;(int,boolean,Items.TypeItemCura,double)">
 <h3>ItemCura</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ItemCura</span>()</div>
-<div class="block">Construtor padrão para criar um <a href="ItemCura.html" title="class in Items"><code>ItemCura</code></a> com valores nulos ou zero para suas
- propriedades.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ItemCura</span><wbr><span class="parameters">(int&nbsp;id_item,
+ boolean&nbsp;colleceted,
+ <a href="TypeItemCura.html" title="enum class in Items">TypeItemCura</a>&nbsp;type,
+ double&nbsp;vida_recuperada)</span></div>
+<div class="block">Construtor para criar um <a href="ItemCura.html" title="class in Items"><code>ItemCura</code></a> com ID, status de coleta,
+ tipo de item e quantidade de vida recuperada.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>id_item</code> - O identificador único do item.</dd>
+<dd><code>colleceted</code> - Indica se o item foi coletado.</dd>
+<dd><code>type</code> - O tipo do item de cura.</dd>
+<dd><code>vida_recuperada</code> - A quantidade de vida a ser recuperada ao usar o item.</dd>
+</dl>
 </div>
 </section>
 </li>
