@@ -133,20 +133,6 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Obtém o custo total do menor caminho entre duas divisões no edifício,
-     * combinando o número de arestas e os pesos das ligações.
-     *
-     * @param div_inicial a divisão inicial.
-     * @param div_final a divisão final.
-     * @return o custo total do menor caminho entre as divisões,
-     *         calculado pela planta do edifício.
-     */
-    @Override
-    public double getShortestPathTotalCustos(Divisao div_inicial, Divisao div_final) {
-        return this.planta_edificio.shortestPathTotalCustos(div_inicial, div_final);
-    }
-
-    /**
      * Retorna um iterador para o caminho mais curto entre duas divisões.
      *
      * @param div_inicial Divisão inicial.

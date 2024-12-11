@@ -233,7 +233,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             System.out.println(e.getMessage());
         }
 
-        return null;
+        return inimigo1;
     }
 
     /**
@@ -362,6 +362,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     @Override
     public void ToCruzGetAlvo() {
         this.alvo.setAtinigido(true);
+        toCruz.setColectedAlvo(true);
         System.out.println("To Cruz está com o alvo, agora só falta sair do edificio com vida");
     }
 

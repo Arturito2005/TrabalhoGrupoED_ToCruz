@@ -20,10 +20,10 @@ import ArrayList.ArrayUnordered;
 import java.util.*;
 
 /**
- * Classe responsável por gerenciar as simulações do jogo, implementando o comportamento do ToCruz
+ * Classe responsável por gestão das simulações do jogo, implementando o comportamento do ToCruz
  * enquanto interage com o edifício, inimigos e outros objetos do jogo. A classe é capaz de realizar
  * simulações manuais e automáticas, além de gerar relatórios ao final de cada simulação.
- *
+ * <p>
  * A classe implementa a interface {@link SimulacoesInt} para fornecer os métodos necessários
  * para o controle do jogo e a interface {@link Comparable} para permitir comparações entre
  * diferentes simulações.
@@ -68,7 +68,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Construtor que inicializa os atributos da simulação com os valores fornecidos.
      *
      * @param versao_simulacao a versão da simulação.
-     * @param edificio o edifício onde a simulação ocorre.
+     * @param edificio         o edifício onde a simulação ocorre.
      */
     public Simulacoes(long versao_simulacao, Edificio edificio) {
         this.edificio = edificio;
@@ -175,7 +175,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private boolean ConditionUseKitMochila(ToCruz toCruz) {
         boolean usedKit = false;
 
-        if(toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
+        if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
             toCruz.usarKit();
             usedKit = true;
         }
@@ -189,66 +189,87 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * @param toCruz o personagem ToCruz que realizará a simulação.
      * @return a divisão onde o ToCruz deve começar sua trajetória.
      */
-    private Divisao BestStartToCruz(ToCruz toCruz) {
-        UnorderedListADT<Divisao> list_entradas = new ArrayUnorderedList<>();
-        Iterator<Divisao> itr;
+    private Divisao BestStartToCruz(ToCruz toCruz, UnorderedListADT<Divisao> list_entradas, Divisao div_alvo) {
+        Divisao best_div = null;
+        double best_distance = Double.MAX_VALUE;
+        double distance;
+        double num_arestas_com = Double.MAX_VALUE;
+        double num_arestas;
 
-        itr = edificio.getPlantaEdificio().iterator();
+        for (Divisao div_entr : list_entradas) {
+            distance = edificio.getShortestPath(div_entr, div_alvo);
 
-        while (itr.hasNext()) {
-            Divisao div = itr.next();
+            if (distance == 0 || distance == best_distance) {
+                best_distance = distance;
+                num_arestas = edificio.getShortestPathNumArestas(div_entr, div_alvo);
 
-            if (div.isEntrada_saida()) {
-                list_entradas.addToRear(div);
-            }
-        }
-
-        Divisao best_entr = null;
-        double min_dist = Double.MAX_VALUE;
-        itr = edificio.getPlantaEdificio().iterator();
-
-        while (itr.hasNext()) {
-            Divisao div = itr.next();
-
-            if (div.getItem() != null || div.getAlvo() != null) {
-                double min = Double.MAX_VALUE;
-                double distance;
-                Iterator<Divisao> itrEntr = list_entradas.iterator();
-                Divisao div_min = null;
-                int i = 0;
-
-                while (itrEntr.hasNext()) {
-                    Divisao div_entr = itrEntr.next();
-                    distance = this.edificio.getShortestPath(div_entr, div);
-
-                    if (distance < min || i == 0) {
-                        min = distance;
-                        div_min = div_entr;
+                if (num_arestas < num_arestas_com) {
+                    if (distance == 0) {
+                        num_arestas_com = num_arestas;
                     }
+                    best_div = div_entr;
 
-                    i++;
                 }
-
-                if (min < min_dist) {
-                    min_dist = min;
-                    best_entr = div_min;
-                }
+            } else if (distance < best_distance) {
+                best_div = div_entr;
+                best_distance = distance;
             }
         }
 
-        best_entr.addToCruz(toCruz);
-        addDivisaoTrajetoToCruz(best_entr);
-        addDivisaoTrajetoToCruz(best_entr);
+        if (best_distance < toCruz.getVida()) {
+            System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div);
+            System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
 
-        if (best_entr.haveConfronto()) {
-            best_entr.attackToCruz(this.inimigos_dead);
+            shortesPathTwopoints(best_div, div_alvo);
         }
 
-        if (best_entr.getItem() != null) {
-            DivisaoComItem(best_entr, best_entr.getToCruz());
+        return best_div;
+    }
+
+    private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
+        ToCruz toCruz = div_to.getToCruz();
+        Iterator<Divisao> itr = edificio.IteratorMapa();
+
+        Divisao best_destino = null;
+        double best_distance = Double.MAX_VALUE;
+        double distance;
+        double num_arestas_com = Double.MAX_VALUE;
+        double num_arestas;
+
+        while (itr.hasNext()) {
+            Divisao div = itr.next();
+
+            if (div.isEntrada_saida() && toCruz.isColectedAlvo()) {
+                distance = edificio.getShortestPath(div_to, div);
+
+                if (distance == 0 || distance == best_distance) {
+                    best_distance = distance;
+                    num_arestas = edificio.getShortestPathNumArestas(div_to, div);
+
+                    if (num_arestas < num_arestas_com) {
+                        if (distance == 0) {
+                            num_arestas_com = num_arestas;
+                        }
+                        best_destino = div;
+                    }
+                } else if (distance < best_distance) {
+                    best_distance = distance;
+                    best_destino = div;
+                }
+            } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
+                best_destino = div;
+            }
         }
 
-        return best_entr;
+        String temp;
+        if (best_destino.getAlvo() != null) {
+            temp = "Sugestão de melhor caminho para o To Cruz chegar ao alvo: " + best_destino.getAlvo().getNome();
+        } else {
+            temp = "Sugestão de melhor caminho para o ToCruz sair do edificio";
+        }
+
+        System.out.println(temp);
+        return shortesPathTwoPointsAutomatico(div_to, best_destino);
     }
 
     /**
@@ -283,90 +304,29 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         if (!divisao.haveConfronto() && divisao.isToCruzInDivisaoAlvo() && !divisao.getAlvo().isAtinigido()) {
             divisao.ToCruzGetAlvo();
-            toCruz.setColectedAlvo(true);
         }
     }
 
     /**
      * Calcula a melhor entrada para o ToCruz, baseado na distância e nas arestas do caminho até o alvo.
      *
-     * @param toCruz o personagem ToCruz.
-     * @param div_alvo a divisão alvo.
+     * @param toCruz        o personagem ToCruz.
+     * @param div_alvo      a divisão alvo.
      * @param list_entradas as divisões de entrada para o edifício.
      * @return a melhor distância para o ToCruz atingir o alvo.
      */
     private double calculateBesteEntradaToCruz(ToCruz toCruz, Divisao div_alvo, UnorderedListADT<Divisao> list_entradas) {
-        Divisao best_div = null;
-        double best_distance = Double.MAX_VALUE;
-        double distance;
-        double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
-
-        for (Divisao div_entr : list_entradas) {
-            distance = edificio.getShortestPath(div_entr, div_alvo);
-
-            if (distance == 0) {
-                best_distance = distance;
-                num_arestas = edificio.getShortestPathNumArestas(div_entr, div_alvo);
-
-                if (num_arestas < num_arestas_com) {
-                    best_div = div_entr;
-                    num_arestas_com = num_arestas;
-                }
-            } else if (distance < best_distance) {
-                best_div = div_entr;
-                best_distance = distance;
-            }
-        }
-
-        if (best_distance < toCruz.getVida()) {
-            System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div);
-            System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
-
-            shortesPathTwopoints(best_div, div_alvo);
-        }
-
-        return best_distance;
+        return edificio.getShortestPath(BestStartToCruz(toCruz, list_entradas, div_alvo), div_alvo);
     }
 
     /**
      * Calcula o melhor caminho para o ToCruz sair do edifício, considerando as entradas fornecidas.
      *
-     * @param toCruz O objeto ToCruz que deve sair do edifício.
-     * @param div_alvo A divisão alvo que o ToCruz precisa alcançar.
-     * @param list_entradas A lista de entradas possíveis para o edifício.
+     * @param div_alvo      A divisão alvo que o ToCruz precisa alcançar.
      * @return A distância do melhor caminho encontrado.
      */
-    public double calculateBestExitAutomatico(ToCruz toCruz, Divisao div_alvo, UnorderedListADT<Divisao> list_entradas) {
-        double best_distance = Double.MAX_VALUE;
-        Divisao best_div = null;
-        double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
-        double distance;
-
-        for (Divisao div_entr : list_entradas) {
-            distance = edificio.getShortestPath(div_entr, div_alvo);
-
-            if (distance == 0) {
-                best_distance = distance;
-                num_arestas = edificio.getShortestPathNumArestas(div_entr, div_alvo);
-
-                if (num_arestas < num_arestas_com) {
-                    best_div = div_entr;
-                    num_arestas_com = num_arestas;
-                }
-            } else if (distance < best_distance) {
-                best_div = div_entr;
-                best_distance = distance;
-            }
-        }
-
-        if (best_distance < toCruz.getVida()) {
-            System.out.println("Melhor caminho que o To Cruz deve fazer para sair do edificio");
-            shortesPathTwopoints(div_alvo, best_div);
-        }
-
-        return best_distance;
+    public double calculateBestExitAutomatico(Divisao div_alvo) {
+        return edificio.getShortestPath(div_alvo, sugestaoCaminhoToCruzAutomatico(div_alvo));
     }
 
     /**
@@ -374,7 +334,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
      * sem morrer. O método verifica as entradas e saídas do edifício, os inimigos presentes
      * e tenta calcular se é possível concluir a missão com vida.
-     *
+     * <p>
      * O ToCruz segue automaticamente pelo edifício, enfrentando inimigos, até tentar atingir
      * o alvo e sair do edifício. Se a vida de ToCruz for insuficiente para completar o trajeto
      * ou escapar do edifício, uma mensagem será exibida.
@@ -410,7 +370,10 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 turnoInimigo(div_inimi);
             }
 
-            if (calculateBestExitAutomatico(to, div_alvo, list_entradas) > to.getVida()) {
+            div_alvo.addToCruz(to);
+            div_alvo.getAlvo().setAtinigido(true);
+            to.setColectedAlvo(true);
+            if (calculateBestExitAutomatico(div_alvo) > to.getVida()) {
                 System.out.println("E impossível o To Cruz sair do edificio com vida!");
             }
         }
@@ -424,10 +387,25 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     @Override
     public Simulacoes jogoAutomatico() {
         ToCruz toCruz = new ToCruz();
-        Iterator<Divisao> itrMapa;
+        Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
+        UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<>();
+        Divisao div_alvo = null;
         boolean finishgame = false;
+        while (itrMapa.hasNext()) {
+            Divisao div = itrMapa.next();
 
-        BestStartToCruz(toCruz);
+            if (div.isEntrada_saida()) {
+                list_entradas.addToRear(div);
+            }
+
+            if (div.getAlvo() != null) {
+                div_alvo = div;
+            }
+        }
+
+        Divisao div_start = BestStartToCruz(toCruz, list_entradas, div_alvo);
+        addDivisaoTrajetoToCruz(div_start);
+        div_start.addToCruz(toCruz);
         while (!finishgame) {
             itrMapa = this.edificio.IteratorMapa();
             UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
@@ -483,16 +461,27 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             Divisao div = shortestPath.next();
 
             if (shortestPath.hasNext()) {
-                temp = temp + div.getName() + " -->";
+                temp += div.getName() + " -->";
             } else {
-                temp = temp + div.getName();
+                temp += div.getName();
             }
         }
         System.out.println(temp);
     }
 
-    private Divisao shortesPathTwoPointsAutomatico(Divisao div_start, Divisao Div_final) {
-        Iterator<Divisao> shortestPath = edificio.shortesPathIt(div_start, Div_final);
+    /**
+     * Calcula e imprime o menor caminho entre duas divisões, retornando a próxima divisão no caminho.
+     *
+     * Este método utiliza o iterador do menor caminho entre duas divisões fornecido pelo edifício.
+     * Ele constrói uma string representando o caminho completo e identifica a próxima divisão
+     * a ser visitada após a divisão inicial.
+     *
+     * @param div_start a divisão inicial no caminho.
+     * @param div_final a divisão final no caminho.
+     * @return a próxima divisão no menor caminho a partir da divisão inicial.
+     */
+    private Divisao shortesPathTwoPointsAutomatico(Divisao div_start, Divisao div_final) {
+        Iterator<Divisao> shortestPath = edificio.shortesPathIt(div_start, div_final);
         String temp = "";
         Divisao div_to = null;
 
@@ -500,7 +489,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         while (shortestPath.hasNext()) {
             Divisao div = shortestPath.next();
 
-            if(i == 1) {
+            if (i == 1) {
                 div_to = div;
             }
 
@@ -538,20 +527,36 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             Divisao div = itr.next();
 
             if ((div.getItem() != null && !div.getItem().isCollected()) || (div.isEntrada_saida() && div.getAlvo() != null && toCruz.isColectedAlvo())) {
-                distance = edificio.getShortestPathTotalCustos(div_to, div);
+                distance = edificio.getShortestPath(div_to, div);
 
-                if (distance < best_distance) {
+                if (distance == 0 || distance == best_distance) {
+                    best_distance = distance;
+                    num_arestas = edificio.getShortestPathNumArestas(div_to, div);
+
+                    if (num_arestas < num_arestas_com) {
+                        if (distance == 0) {
+                            num_arestas_com = num_arestas;
+                        }
+
+                        if (div.getItem() != null) {
+                            item_div = div;
+                        }
+                        if (div.isEntrada_saida()) {
+                            div_alvo = div;
+                        }
+                    }
+                } else if (distance < best_distance) {
                     best_distance = distance;
 
-                    if(div.getItem() != null) {
+                    if (div.getItem() != null) {
                         item_div = div;
                     }
 
-                    if(div.isEntrada_saida()){
+                    if (div.isEntrada_saida()) {
                         div_alvo = div;
                     }
                 }
-            } else if(div.getAlvo() != null && !toCruz.isColectedAlvo()) {
+            } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
                 div_alvo = div;
             }
         }
@@ -561,7 +566,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         shortesPathTwopoints(div_to, item_div);
 
         String temp;
-        if(div_alvo.getAlvo() != null) {
+        if (div_alvo.getAlvo() != null) {
             temp = "Sugestão de melhor caminho para o To Cruz chegar ao alvo: " + div_alvo.getAlvo().getNome();
         } else {
             temp = "Sugestão de melhor caminho para o ToCruz sair do edificio";
@@ -569,50 +574,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         System.out.println(temp);
         shortesPathTwopoints(div_to, div_alvo);
-    }
-
-    private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
-        ToCruz toCruz = div_to.getToCruz();
-        Iterator<Divisao> itr = edificio.IteratorMapa();
-
-        Divisao best_destino = null;
-        double best_distance = Double.MAX_VALUE;
-        double distance;
-        double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
-
-        while (itr.hasNext()) {
-            Divisao div = itr.next();
-
-            if (div.isEntrada_saida() && div.getAlvo() != null && toCruz.isColectedAlvo()) {
-                distance = edificio.getShortestPath(div_to, div);
-
-                if (distance == 0) {
-                    best_distance = distance;
-                    num_arestas = edificio.getShortestPathNumArestas(div_to, div);
-
-                    if (num_arestas < num_arestas_com) {
-                        num_arestas_com = num_arestas;
-                        best_destino = div;
-                    }
-                } else if (distance < best_distance) {
-                    best_distance = distance;
-                    best_destino = div;
-                }
-            } else if(div.getAlvo() != null && !toCruz.isColectedAlvo()) {
-                best_destino = div;
-            }
-        }
-
-        String temp;
-        if(best_destino.getAlvo() != null) {
-            temp = "Sugestão de melhor caminho para o To Cruz chegar ao alvo: " + best_destino.getAlvo().getNome();
-        } else {
-            temp = "Sugestão de melhor caminho para o ToCruz sair do edificio";
-        }
-
-        System.out.println(temp);
-        return shortesPathTwoPointsAutomatico(div_to, best_destino);
     }
 
     /**
@@ -635,7 +596,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             temp = i++ + " - " + divisao.getName();
 
             if (divisao.isEntrada_saida()) {
-                if(divisao.getInimigos().isEmpty()) {
+                if (divisao.getInimigos().isEmpty()) {
                     temp += " (esta divisao e uma entrada/saida)";
                 } else {
                     temp += " ((esta divisao e uma entrada/saida e tem inimigo)";
@@ -643,7 +604,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
 
             if (divisao.getAlvo() != null) {
-                if(divisao.getInimigos().isEmpty()) {
+                if (divisao.getInimigos().isEmpty()) {
                     temp += " (divisao onde esta o alvo)";
                 } else {
                     temp += "(divisao onde esta o alvo , mas tem inimigos)";
@@ -651,8 +612,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
 
             if (divisao.getItem() != null) {
-                if(divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected()) {
-                    if(divisao.getInimigos().isEmpty()) {
+                if (divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected()) {
+                    if (divisao.getInimigos().isEmpty()) {
                         if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
                             temp += " (divisao com kit)";
                         } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
@@ -700,8 +661,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Dependendo do tipo de item, ele pode ser usado, deixado na sala ou guardado no inventário.
      *
      * @param divisao A divisão onde o item foi encontrado.
-     * @param toCruz O personagem que interage com o item.
-     * @throws InvalidOptionException Caso a opção fornecida pelo utilizador seja inválida.
+     * @param toCruz  O personagem que interage com o item.
+     * @throws InvalidOptionException   Caso a opção fornecida pelo utilizador seja inválida.
      * @throws InvalidTypeItemException Caso o tipo de item seja inválido.
      */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
@@ -713,7 +674,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     toCruz.usarItem(item);
                     System.out.println("O To Cruz apanhou um colete e ficou com " + toCruz.getVida() + " HP");
                     break;
-                } case KIT_VIDA: {
+                }
+                case KIT_VIDA: {
                     int op = -1;
                     if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
                         do {
@@ -826,7 +788,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         } else {
             try {
-                if(toCruz.mochilaTemKit() && toCruz.getVida() < 100) {
+                if (toCruz.mochilaTemKit() && toCruz.getVida() < 100) {
                     int op_kit = -1;
                     System.out.println("O To Cruz possui kits na sua mochila");
                     System.out.println("O proximo kit da mochila tem os seguintes pontos recuperados: " + toCruz.getMochila().peek().getVida_recuperada() + " HP");
@@ -839,9 +801,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("Numero invalido!");
                             sc.next();
                         }
-                    } while(op_kit < 0 || op_kit >1);
+                    } while (op_kit < 0 || op_kit > 1);
 
-                    if(op_kit == 1) {
+                    if (op_kit == 1) {
                         toCruz.usarKit();
                     }
                 }
@@ -867,7 +829,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         if (!divisao.haveConfronto() && divisao.isToCruzInDivisaoAlvo()) {
             divisao.ToCruzGetAlvo();
-            toCruz.setColectedAlvo(true);
         }
     }
 
@@ -877,7 +838,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * A quantidade de movimentos é determinada aleatoriamente e o peso das salas é atualizado de acordo com o poder do inimigo.
      *
      * @param divisao_atual A sala onde o inimigo está atualmente.
-     * @param inimigo O inimigo que será movido para uma nova sala.
+     * @param inimigo       O inimigo que será movido para uma nova sala.
      * @return A nova sala onde o inimigo se encontra após o movimento.
      */
     private Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
@@ -945,7 +906,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      *
      * @param toCruz O personagem que irá entrar no edifício.
      * @return A sala em que o ToCruz entrou após a seleção.
-     * @throws NullPointerException Caso ocorra um erro de referência nula.
+     * @throws NullPointerException           Caso ocorra um erro de referência nula.
      * @throws ArrayIndexOutOfBoundsException Caso o índice da sala selecionada esteja fora dos limites.
      */
     private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
@@ -958,7 +919,17 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             Divisao div = itr.next();
 
             if (div.isEntrada_saida()) {
-                System.out.println(i + " - " + div.getName());
+                String temp = i + " - " + div.getName();
+
+                if(div.haveInimigo()) {
+                    temp += " (divisao com inimigo)";
+                }
+
+                if(div.getItem() != null) {
+                    temp += " (divisao com item)";
+                }
+
+                System.out.println(temp);
                 listDiv.addToRear(div);
                 i++;
             }
@@ -989,7 +960,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             if (!divisao_nova.haveConfronto()) {
                 if (divisao_nova.isToCruzInDivisaoAlvo()) {
                     divisao_nova.ToCruzGetAlvo();
-                    toCruz.setColectedAlvo(true);
                 } else if (divisao_nova.getItem() != null) {
                     DivisaoComItem(divisao_nova, divisao_nova.getToCruz());
                 }
@@ -1120,7 +1090,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Numero de inimigos mortos: " + inimigos_dead.size());
         if (!inimigos_dead.isEmpty()) {
             int i = 1;
-            for(Inimigo inimigo: inimigos_dead) {
+            for (Inimigo inimigo : inimigos_dead) {
                 System.out.println("Inimigo nº" + i + " : " + inimigo.toString());
                 i++;
             }

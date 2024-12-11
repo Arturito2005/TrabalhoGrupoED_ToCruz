@@ -134,17 +134,10 @@ extends <a href="NetworkADT.html" title="interface in Interfaces">NetworkADT</a>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Retorna o peso total da aresta entre dois vértices, considerando o caminho mais curto.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#shortestPathTotalCustos(T,T)" class="member-name-link">shortestPathTotalCustos</a><wbr>(<a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;startVertex,
- <a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;finalVertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Calcula o custo total do caminho mais curto entre dois vértices na rede,
- levando em consideração o peso cumulativo das arestas e o número de arestas percorridas.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateWeightEdge(T,double)" class="member-name-link">updateWeightEdge</a><wbr>(<a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;vertex,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#updateWeightEdge(T,double)" class="member-name-link">updateWeightEdge</a><wbr>(<a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;vertex,
  double&nbsp;weight)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
 <div class="block">Atualiza o peso da aresta entre o vértice especificado e o novo peso.</div>
 </div>
 </div>
@@ -233,25 +226,6 @@ extends <a href="NetworkADT.html" title="interface in Interfaces">NetworkADT</a>
 <dd><code>finalVertex</code> - o vértice final</dd>
 <dt>Returns:</dt>
 <dd>o peso total do caminho mais curto entre os dois vértices</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="shortestPathTotalCustos(T,T)">
-<h3 id="shortestPathTotalCustos(java.lang.Object,java.lang.Object)">shortestPathTotalCustos</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type">double</span>&nbsp;<span class="element-name">shortestPathTotalCustos</span><wbr><span class="parameters">(<a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;startVertex,
- <a href="NetworkMatrizADT.html" title="type parameter in NetworkMatrizADT">T</a>&nbsp;finalVertex)</span></div>
-<div class="block">Calcula o custo total do caminho mais curto entre dois vértices na rede,
- levando em consideração o peso cumulativo das arestas e o número de arestas percorridas.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice inicial do caminho</dd>
-<dd><code>finalVertex</code> - o vértice final do caminho</dd>
-<dt>Returns:</dt>
-<dd>o custo total do caminho mais curto, combinando o número de arestas e os pesos das arestas,
-         ou <code>Double.MAX_VALUE</code> se não existir um caminho entre os vértices</dd>
 </dl>
 </div>
 </section>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayList.TestArrayUnorderedList" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-12-11T19:07:10" hostname="LAPTOP-8POH8N1C" time="0.017">
+<testsuite name="TestArrayList.TestArrayUnorderedList" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:24" hostname="LAPTOP-8POH8N1C" time="0.021">
   <properties/>
-  <testcase name="testSize()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
-  <testcase name="testExpandArray()" classname="TestArrayList.TestArrayUnorderedList" time="0.0"/>
-  <testcase name="testAddAfterElementFound()" classname="TestArrayList.TestArrayUnorderedList" time="0.005"/>
+  <testcase name="testSize()" classname="TestArrayList.TestArrayUnorderedList" time="0.0"/>
+  <testcase name="testExpandArray()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
+  <testcase name="testAddAfterElementFound()" classname="TestArrayList.TestArrayUnorderedList" time="0.007"/>
   <testcase name="testAddAfterElementNotFound()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
   <testcase name="testAddToFront()" classname="TestArrayList.TestArrayUnorderedList" time="0.0"/>
   <testcase name="testContains()" classname="TestArrayList.TestArrayUnorderedList" time="0.003"/>
-  <testcase name="testAddToRear()" classname="TestArrayList.TestArrayUnorderedList" time="0.0"/>
+  <testcase name="testAddToRear()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
   <testcase name="testRemoveElement()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
   <testcase name="testIsEmpty()" classname="TestArrayList.TestArrayUnorderedList" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestImportar.TestImportarMapa" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-11T19:36:30" hostname="LAPTOP-8POH8N1C" time="0.021">
+<testsuite name="TestImportar.TestImportarMapa" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:49:09" hostname="LAPTOP-8POH8N1C" time="0.017">
   <properties/>
-  <testcase name="testGerarMapaComFicheiroInvalivdoNull()" classname="TestImportar.TestImportarMapa" time="0.021"/>
+  <testcase name="testGerarMapaComFicheiroInvalivdoNull()" classname="TestImportar.TestImportarMapa" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -11,7 +11,7 @@ public class MenuMissoes {
 
     /**
      * Construtor padrão da classe MenuMissoes.
-     * Inicializa a classe para gerenciar o menu de missões do jogo.
+     * Inicializa a classe para gerir o menu de missões do jogo.
      */
     public MenuMissoes() {
     }
