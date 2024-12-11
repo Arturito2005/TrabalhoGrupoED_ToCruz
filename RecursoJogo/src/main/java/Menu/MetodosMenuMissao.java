@@ -24,7 +24,7 @@ public class MetodosMenuMissao {
         String name_file;
         Scanner sc = new Scanner(System.in);
 
-        String continuar = "";
+        int continuar = -1;
         do {
             missao = new Missao();
             path_name = path_name_def;
@@ -48,14 +48,16 @@ public class MetodosMenuMissao {
                 throw new RuntimeException(e);
             }
 
-            System.out.print("Desenha importar mais alguma missao? (Sim:S / Não:N) -->");
-            try {
-                continuar = sc.nextLine();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
-        } while (!continuar.equals("N") && !continuar.equals("n"));
+            do {
+                System.out.print("Desenha importar mais alguma missao? (Nao:0 / Sim:1) -->");
+                try {
+                    continuar = sc.nextInt();
+                } catch (InputMismatchException ex) {
+                    System.out.println("Numero invalido!");
+                    sc.next();
+                }
+            } while (continuar < 0 && continuar > 1)
+        } while (continuar != 0);
 
         return missoes;
     }
@@ -63,9 +65,20 @@ public class MetodosMenuMissao {
     public void RealizarMissoes(Missoes missoes) {
         if (missoes.getContMissoes() > 1) {
             int recomecar = -1;
-            //do {
+            do {
                 executarVariasMissoes(missoes);
-            //while(recomecar !=0);
+
+                do {
+                    System.out.println("Deseja jogar outra missao? (Nao: 0/ Sim: 1)");
+
+                    try {
+                        recomecar = sc.nextInt();
+                    } catch (InputMismatchException ex) {
+                        System.out.println("Numero invalido!");
+                        sc.next();
+                    }
+                } while (recomecar < 0 && recomecar > 1);
+            } while (recomecar != 0);
         } else {
             SelecionarModoJogo(missoes.getListaMissao().first());
         }
@@ -104,13 +117,16 @@ public class MetodosMenuMissao {
                 case 1: {
                     missao.modoManual();
                     break;
-                } case 2: {
+                }
+                case 2: {
                     missao.modoAutomatico();
                     break;
-                } case 3: {
+                }
+                case 3: {
                     missao.jogoAutomatico();
                     break;
-                } default: {
+                }
+                default: {
                     break;
                 }
             }
@@ -145,6 +161,5 @@ public class MetodosMenuMissao {
                 SelecionarModoJogo(arrayMissao[op_missao - 1]);
             }
         } while (op_missao != 0);
-
     }
 }
