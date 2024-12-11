@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestQueue.TestLinkedQueue" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:12:51" hostname="LAPTOP-8POH8N1C" time="0.003">
+  <properties/>
+  <testcase name="testDequeueEmptylinkedQueueException()" classname="TestQueue.TestLinkedQueue" time="0.001"/>
+  <testcase name="testeDequeueDaQueue()" classname="TestQueue.TestLinkedQueue" time="0.0"/>
+  <testcase name="testeFirstLinkedQueue()" classname="TestQueue.TestLinkedQueue" time="0.001"/>
+  <testcase name="testFirstEmptylinkedQueueException()" classname="TestQueue.TestLinkedQueue" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

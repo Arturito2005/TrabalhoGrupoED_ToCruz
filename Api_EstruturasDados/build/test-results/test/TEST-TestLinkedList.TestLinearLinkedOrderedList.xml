@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestLinkedList.TestLinearLinkedOrderedList" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:12:51" hostname="LAPTOP-8POH8N1C" time="0.008">
+  <properties/>
+  <testcase name="testContainsElement()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.001"/>
+  <testcase name="testAddElementToSortedList()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <testcase name="testAddDuplicateElement()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <testcase name="testSize()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <testcase name="testRemoveFirstElement()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <testcase name="testRemoveLastElement()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <testcase name="testAddElementEmptyList()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.001"/>
+  <testcase name="testRemoveElementNotFound()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.001"/>
+  <testcase name="testRemoveElement()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.001"/>
+  <testcase name="testIsEmpty()" classname="TestLinkedList.TestLinearLinkedOrderedList" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

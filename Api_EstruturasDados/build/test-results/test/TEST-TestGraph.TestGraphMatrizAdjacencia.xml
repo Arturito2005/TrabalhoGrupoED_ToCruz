@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestGraph.TestGraphMatrizAdjacencia" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-12-11T10:12:51" hostname="LAPTOP-8POH8N1C" time="0.01">
+  <properties/>
+  <testcase name="testAddEdge()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.002"/>
+  <testcase name="testRemoveVertex()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.001"/>
+  <testcase name="testAddVertex()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.001"/>
+  <testcase name="testIteratorBFS()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.001"/>
+  <testcase name="testIteratorDFS()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.001"/>
+  <testcase name="testExpandCapacity()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.001"/>
+  <testcase name="testIteratorShortestPath()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.0"/>
+  <testcase name="testIsEmpty()" classname="TestGraph.TestGraphMatrizAdjacencia" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

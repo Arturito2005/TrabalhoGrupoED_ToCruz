@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Api_EstruturasDados:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/PMDPlugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Api_EstruturasDados_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayHeaps/ArrayHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayUnordered.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoubleLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoubleNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/ElementNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Exceptions/EmptyCollectionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/NetworkListaAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/NetworkMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/ArrayUnorderedADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/BinarySearchTreeADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/BinaryTreeADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/GraphADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/HeapADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/ListADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/OrderedListADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/QueueADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/StackADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/UnorderedListADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/BinaryTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/HeapNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinaryTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Nodes/LinearNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PriorityQueues/PriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/PriorityQueues/PriorityQueueNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/CircularArrayQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/LinkedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Stacks/ArrayStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Stacks/LinkedStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestArrayHeaps/TestArrayHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestArrayList/TestArrayUnordered.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestArrayList/TestArrayUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestArrayList/TestArrayorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestArrayTree/TestArrayBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestDoubleLinkedList/TestDoubleLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestDoubleLinkedList/TestDoubleOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetwork.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetworkMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestLinkedList/TestLinearLinkedOrderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestLinkedList/TestLinkedUnorderedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestLinkedTree/TestLinkedBinarySearchTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestLinkedTree/TestLinkedHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestPriorityQueue/TestPriorityQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestPriorityQueue/TestPriorityQueueNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestQueue/TestCircularArrayQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestQueue/TestLinkedQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestStacks/TestArrayStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestStacks/TestLinkedStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/test/java/TestGraph/TestNetworkMatrizAdjacencia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/artifacts/RecursoJogo_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstruturasDados/app/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../EstruturasDados/app/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/libs/EstruturasDados.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2q46O8y9SW1e6S9sPT4hS73TPft" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Artur",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.49770114",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\ED_AC_8230138_8230148\Api_EstruturasDados\src\test\java" />
+      <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\ED_AC_8230138_8230148\Api_EstruturasDados\src\main\java" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="" />
+      <created>1733909468163</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733909468163</updated>
+      <workItem from="1733909469126" duration="2604000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
