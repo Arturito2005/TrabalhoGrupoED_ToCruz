@@ -438,7 +438,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         double best_distance = Double.MAX_VALUE;
         double distance;
         double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas = 0;
+        double num_arestas;
 
         while (itr.hasNext()) {
             Divisao div = itr.next();
@@ -488,38 +488,42 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Selecione a divisao para o ToCruz se mover -->");
 
         int i = 0;
-        String temp = "";
+        String temp;
         while (itr.hasNext()) {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
 
             if (divisao.isEntrada_saida()) {
-                temp = temp + " (esta divisao e uma entrada/saida";
-            }
-            if (divisao.isEntrada_saida() && divisao.getInimigos().size() > 0) {
-                temp = temp + " e tem inimigos)";
-            }
-            if (!divisao.isEntrada_saida() && divisao.getInimigos().size() > 0) {
-                temp = temp + " (divisao com inimigos)";
-            }
-            if (divisao.getAlvo() != null) {
-                temp = temp + " (divisao onde esta o alvo";
-            }
-            if (divisao.getAlvo() != null && divisao.getInimigos().size() > 0) {
-                temp = temp + ", mas tem inimigos)";
-            }
-            if (divisao.getItem() != null && divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected()) {
-                if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
-                    temp = temp + " (divisao com kit";
-                } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
-                    temp = temp + " (divisao com colete";
+                if(divisao.getInimigos().isEmpty()) {
+                    temp += " (esta divisao e uma entrada/saida)";
+                } else {
+                    temp += " ((esta divisao e uma entrada/saida e tem inimigo)";
                 }
             }
-            if (divisao.getItem() != null && divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected() && divisao.getInimigos().size() > 0) {
-                if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
-                    temp = temp + " e com inimigos)";
-                } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
-                    temp = temp + " e com inimigos)";
+
+            if (divisao.getAlvo() != null) {
+                if(divisao.getInimigos().isEmpty()) {
+                    temp += " (divisao onde esta o alvo)";
+                } else {
+                    temp += "(divisao onde esta o alvo , mas tem inimigos)";
+                }
+            }
+
+            if (divisao.getItem() != null) {
+                if(divisao.getItem() instanceof ItemCura && !divisao.getItem().isCollected()) {
+                    if(divisao.getInimigos().isEmpty()) {
+                        if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
+                            temp += " (divisao com kit)";
+                        } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
+                            temp += " (divisao com colete)";
+                        }
+                    } else {
+                        if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
+                            temp += " (divisao com kit e com inimigo)";
+                        } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
+                            temp += " (divisao com colete e com inimigo)";
+                        }
+                    }
                 }
             }
 
@@ -532,7 +536,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         /*
          * Fim da sugestão
          * */
-        sc = new Scanner(System.in);
         do {
             System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
 
@@ -569,7 +572,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     break;
                 } case KIT_VIDA: {
                     int op = -1;
-                    sc = new Scanner(System.in);
                     if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
                         do {
                             System.out.println("Esta numa sala com um kit de vida de " + item.getVida_recuperada());
@@ -642,7 +644,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         ToCruz toCruz = divisao_atual.getToCruz();
         Divisao divisao = divisao_atual;
         int op = -1;
-        sc = new Scanner(System.in);
         if (divisao_atual.haveConfronto()) {
             if (toCruz.mochilaTemKit()) {
                 do {
@@ -677,25 +678,25 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         } else {
             try {
                 if(toCruz.mochilaTemKit() && toCruz.getVida() < 100) {
-                    String op_kit = "";
+                    int op_kit = -1;
                     System.out.println("O To Cruz possui kits na sua mochila");
                     System.out.println("O proximo kit da mochila tem os seguintes pontos recuperados: " + toCruz.getMochila().peek().getVida_recuperada());
-                    sc = new Scanner(System.in);
                     do {
-                        System.out.print("Deseja utilizar o kit de vida? (Sim: S/Nao: n) -->");
+                        System.out.print("Deseja utilizar o kit de vida? (Nao: 0/Sim: 1) -->");
 
                         try {
-                            op_kit = sc.nextLine();
+                            op_kit = sc.nextInt();
                         } catch (InputMismatchException ex) {
                             System.out.println("Numero invalido!");
                             sc.next();
                         }
-                    } while(op_kit.equals("N") && op_kit.equals("n") && op_kit.equals("S") && op_kit.equals("s"));
+                    } while(op_kit < 0 || op_kit >1);
 
-                    if(op_kit.equals("S") || op_kit.equals("s")) {
+                    if(op_kit == 1) {
                         toCruz.usarKit();
                     }
                 }
+
                 divisao = this.getNewDivisaoTo(divisao_atual);
                 divisao.addToCruz(divisao_atual.getToCruz());
                 divisao_atual.removeToCruz();
@@ -792,7 +793,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
-        sc = new Scanner(System.in);
         do {
             System.out.println("Introduza onde o ToCruz vai entrar -->");
 
@@ -871,20 +871,20 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     if (div.getToCruz().isDead()) {
                         finishgame = true;
                     } else if (div.isEntrada_saida() && !div.haveConfronto() && div.isToCruzInExit() && trajeto_to.size() > 1) {
-                        String op = "";
-                        sc = new Scanner(System.in);
+                        int op = -1;
+
                         do {
                             System.out.println("Deseja sair do edificio (Sim: S/ Nao: N)? -->");
 
                             try {
-                                op = sc.nextLine();
+                                op = sc.nextInt();
                             } catch (InputMismatchException ex) {
                                 System.out.println("Numero invalido!");
                                 sc.next();
                             }
-                        } while (!op.equals("S") && !op.equals("s") && !op.equals("N") && !op.equals("n"));
+                        } while (op < 0 || op > 1);
 
-                        if (op.equals("S") || op.equals("s")) {
+                        if (op == 1) {
                             finishgame = true;
                         } else {
                             turnoToCruz(div);
