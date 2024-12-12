@@ -15,7 +15,6 @@ import Personagens.ToCruz;
 import Queue.LinkedQueue;
 import Stacks.LinkedStack;
 import ArrayList.ArrayUnordered;
-
 import java.util.*;
 
 /**
@@ -55,7 +54,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Vida restante do personagem ToCruz durante a simulação.
      * Representa a quantidade de vida disponível para o ToCruz.
      */
-    private double vida_to;
+    private long vida_to;
 
     /**
      * Representa o edifício onde a simulação ocorre.
@@ -140,8 +139,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         toCruz.usarItem(item);
                         System.out.println("O To Cruz apanhou um colete de vida e ficou com " + toCruz.getVida() + " HP");
                         break;
-                    }
-                    case KIT_VIDA: {
+                    } case KIT_VIDA: {
                         if (!toCruz.mochilaIsFull() && (toCruz.getVida() == 100 || toCruz.getVida() + item.getVida_recuperada() >= 100)) {
                             toCruz.guardarKit(item);
                             System.out.println("O To Cruz guardou um kit de vida com " + item.getVida_recuperada() + " HP");
@@ -150,8 +148,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                             System.out.println("O To Cruz usou um kit de vida com " + item.getVida_recuperada() + " HP");
                         }
                         break;
-                    }
-                    default: {
+                    } default: {
                         throw new InvalidTypeItemException("Tipo de item de cura invalido");
                     }
                 }
@@ -191,16 +188,14 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private Divisao BestStartToCruz(ToCruz toCruz, UnorderedListADT<Divisao> list_entradas, Divisao div_alvo) {
         Divisao best_div = null;
         double best_distance = Double.MAX_VALUE;
-        double distance;
         double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
 
         for (Divisao div_entr : list_entradas) {
-            distance = edificio.getShortestPath(div_entr, div_alvo);
+            double distance = edificio.getShortestPath(div_entr, div_alvo);
 
             if (distance == 0 || distance == best_distance) {
                 best_distance = distance;
-                num_arestas = edificio.getShortestPathNumArestas(div_entr, div_alvo);
+                double num_arestas = edificio.getShortestPathNumArestas(div_entr, div_alvo);
 
                 if (num_arestas < num_arestas_com) {
                     if (distance == 0) {
@@ -228,22 +223,20 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
         ToCruz toCruz = div_to.getToCruz();
         Iterator<Divisao> itr = edificio.IteratorMapa();
-
         Divisao best_destino = null;
         double best_distance = Double.MAX_VALUE;
-        double distance;
         double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
+        boolean find_alvo = false;
 
-        while (itr.hasNext()) {
+        while (itr.hasNext() && !find_alvo) {
             Divisao div = itr.next();
 
             if (div.isEntrada_saida() && toCruz.isColectedAlvo()) {
-                distance = edificio.getShortestPath(div_to, div);
+                double distance = edificio.getShortestPath(div_to, div);
 
                 if (distance == 0 || distance == best_distance) {
                     best_distance = distance;
-                    num_arestas = edificio.getShortestPathNumArestas(div_to, div);
+                    double num_arestas = edificio.getShortestPathNumArestas(div_to, div);
 
                     if (num_arestas < num_arestas_com) {
                         if (distance == 0) {
@@ -257,6 +250,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 }
             } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
                 best_destino = div;
+                find_alvo = true;
             }
         }
 
@@ -282,7 +276,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         if (divisao_atual.haveConfronto()) {
             if (!ConditionUseKitMochila(toCruz)) {
-                divisao_atual.attackToCruz(this.inimigos_dead);
+                divisao_atual.attackToCruz(inimigos_dead);
             }
         } else {
             ConditionUseKitMochila(toCruz);
@@ -293,7 +287,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             divisao_atual.removeToCruz();
 
             if (divisao.haveConfronto()) {
-                divisao.attackToCruz(this.inimigos_dead);
+                divisao.attackToCruz(inimigos_dead);
             }
 
             if (divisao.getItem() != null) {
@@ -437,7 +431,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             }
         }
 
-        double vida = toCruz.getVida();
+        long vida = toCruz.getVida();
         if (vida < 0) {
             vida = 0;
         }
@@ -590,6 +584,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         int i = 0;
         String temp;
+
+        System.out.println();
+        System.out.println("Divisoes que o To Cruz pode entrar: ");
         while (itr.hasNext()) {
             Divisao divisao = itr.next();
             temp = i++ + " - " + divisao.getName();
@@ -634,6 +631,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
 
+        System.out.println();
         do {
             System.out.print("Selecione a divisao que o ToCruz vai se mover -->");
 
@@ -774,7 +772,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             switch (op) {
                 case 1: {
-                    divisao_atual.attackToCruz(this.inimigos_dead);
+                    divisao_atual.attackToCruz(inimigos_dead);
                     break;
                 }
                 case 2: {
@@ -814,7 +812,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 addDivisaoTrajetoToCruz(divisao);
 
                 if (divisao.haveConfronto()) {
-                    divisao.attackToCruz(this.inimigos_dead);
+                    divisao.attackToCruz(inimigos_dead);
                 }
 
                 if (divisao.getItem() != null) {
@@ -832,7 +830,6 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     private double poderFinalDivisao(Divisao div, long poder_inimigo) {
-
         long poder_total = poder_inimigo;
         if(div.getInimigos().isEmpty() && div.getInimigos().size() > 1) {
             for (Inimigo inimigo_div : div.getInimigos()) {
@@ -992,11 +989,11 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      */
     @Override
     public Simulacoes modojogoManual() {
-        edificio.drawMapa();
         ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
+        edificio.drawMapa();
         ToCruzEntrarEdificio(toCruz);
         while (!finishgame) {
             itrMapa = edificio.IteratorMapa();
@@ -1009,6 +1006,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 }
             }
 
+            edificio.drawMapa();
             int num_turnos = endTurno.size();
             for (int i = 0; i < num_turnos; i++) {
                 turnoInimigo(endTurno.removeFirst());
@@ -1047,11 +1045,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                     }
 
                     findToCruz = true;
+                    edificio.drawMapa();
                 }
             }
         }
 
-        double vida = toCruz.getVida();
+        long vida = toCruz.getVida();
         if (vida < 0) {
             vida = 0;
         }

@@ -83,4 +83,8 @@ public interface EdificoInt {
      */
     public Iterator<Divisao> IteratorMapa();
 
+    /**
+     * Metodo que realiza o desenho do mapa
+     * */
+    public void drawMapa();
 }

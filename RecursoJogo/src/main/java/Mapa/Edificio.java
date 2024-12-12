@@ -1,6 +1,5 @@
 package Mapa;
 
-import ArrayList.ArrayUnorderedList;
 import Graph.Network;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkMatrizADT;
@@ -215,94 +214,25 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Desenha o mapa do edifício, exibindo suas divisões e conexões.
+     * Desenha o mapa do edifício, mostrando suas divisões e conexões.
      */
     public void drawMapa() {
-        LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
 
         while (itrDiv.hasNext()) {
-            Divisao divOrigem = itrDiv.next();
-            divJaDesenhada.addToRear(divOrigem);
-            divOrigem.drawnDivisao();
+            Divisao div = itrDiv.next();
+            System.out.println("Lista de Divisão vizinhas a divisao: " + div.getName());
+            System.out.println();
 
-            Iterator<Divisao> adjacentes = this.planta_edificio.iteratorNextVertexs(divOrigem);
-            while (adjacentes.hasNext()) {
-                Divisao divDestino = adjacentes.next();
-                if (!divJaDesenhada.contains(divDestino)) {
-                    double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
-                    System.out.println("    ^");
-                    System.out.println("    |    <---> (Peso: " + peso + ")");
-                    System.out.println("    v");
-                    divDestino.drawnDivisao();
-                }
+            Iterator<Divisao> itr_adj = this.planta_edificio.iteratorNextVertexs(div);
+
+            while (itr_adj.hasNext()) {
+                Divisao div_adj = itr_adj.next();
+                System.out.println(div_adj.drawnDivisao());
             }
+
+            System.out.println();
         }
-    }
-
-    public void drawMapa2() {
-        int largura = planta_edificio.size() + 20;
-        int altura = planta_edificio.size() + 20;
-        String[][] tela = new String[altura][largura];
-
-        for (int i = 0; i < tela.length; i++) {
-            for (int j = 0; j < tela[i].length; j++) {
-                tela[i][j] = " ";
-            }
-        }
-
-        // 3. Arrays para armazenar as posições dos vértices
-        //String[] vertices = graph.vertices.toArray(new String[0]);
-        Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
-        int[][] posicoes = new int[this.planta_edificio.size()][2]; // [vértice][x, y]
-
-        // 4. Mapear vértices para posições
-        for (int i = 0; i < this.planta_edificio.size(); i++) {
-            posicoes[i][0] = i * 4 + 2;    // Coordenada X
-            posicoes[i][1] = 2 + (i % 2) * 4; // Coordenada Y
-        }
-
-        // 5. Adicionar vértices à tela
-        int i = 0;
-        while(itrDiv.hasNext()) {
-            int x = posicoes[i][0];
-            int y = posicoes[i][1];
-            Divisao vertice = itrDiv.next();
-            //Adaptar o drawDivisao para uma string
-            tela[y][x] = vertice.drawnDivisao();
-        }
-        // 6. Adicionar arestas à tela
-
-        itrDiv = this.planta_edificio.iterator();
-        //Pensar como adaptar isto
-        for (Edge edge : graph.arestas) {
-            int origemIndex = findIndex(vertices, edge.origem);
-            int destinoIndex = findIndex(vertices, edge.destino);
-
-            if (origemIndex != -1 && destinoIndex != -1) {
-                int[] origem = posicoes[origemIndex];
-                int[] destino = posicoes[destinoIndex];
-                desenharAresta(tela, origem[0], origem[1], destino[0], destino[1], edge.peso);
-            }
-        }
-
-        for (String[] linha : tela) {
-            System.out.println(linha);
-        }
-    }
-
-    private void desenharAresta(String[][] tela, int x1, int y1, int x2, int y2, int peso) {
-        int dx = Integer.signum(x2 - x1);
-        int dy = Integer.signum(y2 - y1);
-        int x = x1, y = y1;
-
-        while (x != x2 || y != y2) {
-            if (x != x2) x += dx;
-            if (y != y2) y += dy;
-            tela[y][x] = "-";
-        }
-
-        tela[(y1 + y2) / 2][(x1 + x2) / 2] = String.valueOf(peso);
     }
 
     /**

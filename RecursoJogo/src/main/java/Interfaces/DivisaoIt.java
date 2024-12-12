@@ -60,6 +60,8 @@ public interface DivisaoIt {
 
     /**
      * Faz o desenho na consola da divisão
+     *
+     * @return Uma string com o desenho da divisão
      * */
-    public void drawnDivisao();
+    public String drawnDivisao();
 }
