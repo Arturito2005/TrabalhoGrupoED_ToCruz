@@ -10,16 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,5 +1,6 @@
 package Mapa;
 
+import ArrayList.ArrayUnorderedList;
 import Graph.Network;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkMatrizADT;
@@ -237,6 +238,71 @@ public class Edificio implements EdificoInt {
                 }
             }
         }
+    }
+
+    public void drawMapa2() {
+        int largura = planta_edificio.size() + 20;
+        int altura = planta_edificio.size() + 20;
+        String[][] tela = new String[altura][largura];
+
+        for (int i = 0; i < tela.length; i++) {
+            for (int j = 0; j < tela[i].length; j++) {
+                tela[i][j] = " ";
+            }
+        }
+
+        // 3. Arrays para armazenar as posições dos vértices
+        //String[] vertices = graph.vertices.toArray(new String[0]);
+        Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
+        int[][] posicoes = new int[this.planta_edificio.size()][2]; // [vértice][x, y]
+
+        // 4. Mapear vértices para posições
+        for (int i = 0; i < this.planta_edificio.size(); i++) {
+            posicoes[i][0] = i * 4 + 2;    // Coordenada X
+            posicoes[i][1] = 2 + (i % 2) * 4; // Coordenada Y
+        }
+
+        // 5. Adicionar vértices à tela
+        int i = 0;
+        while(itrDiv.hasNext()) {
+            int x = posicoes[i][0];
+            int y = posicoes[i][1];
+            Divisao vertice = itrDiv.next();
+            //Adaptar o drawDivisao para uma string
+            tela[y][x] = vertice.drawnDivisao();
+        }
+        // 6. Adicionar arestas à tela
+
+        itrDiv = this.planta_edificio.iterator();
+        //Pensar como adaptar isto
+        for (Edge edge : graph.arestas) {
+            int origemIndex = findIndex(vertices, edge.origem);
+            int destinoIndex = findIndex(vertices, edge.destino);
+
+            if (origemIndex != -1 && destinoIndex != -1) {
+                int[] origem = posicoes[origemIndex];
+                int[] destino = posicoes[destinoIndex];
+                desenharAresta(tela, origem[0], origem[1], destino[0], destino[1], edge.peso);
+            }
+        }
+
+        for (String[] linha : tela) {
+            System.out.println(linha);
+        }
+    }
+
+    private void desenharAresta(String[][] tela, int x1, int y1, int x2, int y2, int peso) {
+        int dx = Integer.signum(x2 - x1);
+        int dy = Integer.signum(y2 - y1);
+        int x = x1, y = y1;
+
+        while (x != x2 || y != y2) {
+            if (x != x2) x += dx;
+            if (y != y2) y += dy;
+            tela[y][x] = "-";
+        }
+
+        tela[(y1 + y2) / 2][(x1 + x2) / 2] = String.valueOf(peso);
     }
 
     /**
