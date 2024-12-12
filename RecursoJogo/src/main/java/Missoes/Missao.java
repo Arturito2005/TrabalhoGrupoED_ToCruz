@@ -23,7 +23,7 @@ import java.util.Scanner;
  */
 public class Missao implements MissaoInt, Comparable<Missao> {
     /**
-     * Scanner para leitura de entradas do usuário.
+     * Scanner para leitura de entradas do utilizador.
      */
     private static Scanner sc = new Scanner(System.in);
 
@@ -124,7 +124,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Executa o modo manual da missão, permitindo ao usuário realizar simulações interativas.
+     * Executa o modo manual da missão, permitindo ao utilizador realizar simulações interativas.
      */
     @Override
     public void modoManual() {

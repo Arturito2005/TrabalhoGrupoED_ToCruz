@@ -11,27 +11,45 @@
   <component name="ChangeListManager">
     <list default="true" id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Interfaces/DivisaoIt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Interfaces/DivisaoIt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Interfaces/EdificoInt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Interfaces/EdificoInt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Divisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Divisao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/DivisaoIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/DivisaoIt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/EdificoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/EdificoInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestImportar/TestImportarMapa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestImportar/TestImportarMapa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestMapa/TestDivisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestMapa/TestDivisao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestsPersonagens/TestToCruz.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/test/TestsPersonagens/TestToCruz.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Interfaces/DivisaoIt.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Interfaces/DivisaoIt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Interfaces/EdificoInt.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Interfaces/EdificoInt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Items/ItemCura.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Items/ItemCura.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Mapa/Divisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Mapa/Divisao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Mapa/Edificio.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Mapa/Edificio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/Inimigo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/Inimigo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/Personagem.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/Personagem.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/ToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Personagens/ToCruz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestMapa.TestDivisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestMapa.TestDivisao.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestImportar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestImportar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestMapa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestsPersonagens.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestsPersonagens.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestMapa.TestDivisao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestMapa.TestDivisao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Missao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestImportar/TestImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestImportar/TestImportarMapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestMapa/TestDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestMapa/TestDivisao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +116,7 @@
       <workItem from="1733944550355" duration="1274000" />
       <workItem from="1733947505024" duration="77000" />
       <workItem from="1734013170660" duration="1651000" />
-      <workItem from="1734039974483" duration="1664000" />
+      <workItem from="1734039974483" duration="3392000" />
     </task>
     <servers />
   </component>

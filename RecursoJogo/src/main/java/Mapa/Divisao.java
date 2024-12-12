@@ -10,7 +10,6 @@ import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-
 import java.util.Iterator;
 import java.util.Objects;
 

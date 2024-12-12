@@ -27,14 +27,12 @@ public class TestImportarMapa {
         this.missao = new Missao();
     }
 
-
-    /*
     @Test
     public void testGerarMapaComFicheiroValido() throws IOException{
         Missao missao1 = importM.gerarMapa(path2);
         assertEquals(missao1, importM.gerarMapa(path2), "Como o ficheiro existe e tem dados os dados são importados para a missao");
     }
-    */
+
 
     @Test
     public void testGerarMapaComFicheiroInvalivdoNull() {
