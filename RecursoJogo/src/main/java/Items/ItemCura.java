@@ -21,7 +21,7 @@ public class ItemCura extends Item {
     /**
      * A quantidade de vida que o item de cura recupera.
      */
-    private double vida_recuperada;
+    private long vida_recuperada;
 
     /**
      * Construtor para criar um {@link ItemCura} com o tipo de item e a
@@ -30,7 +30,7 @@ public class ItemCura extends Item {
      * @param type O tipo do item de cura.
      * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
      */
-    public ItemCura(TypeItemCura type, double vida_recuperada) {
+    public ItemCura(TypeItemCura type, long vida_recuperada) {
         super();
         this.type = type;
         this.vida_recuperada = vida_recuperada;
@@ -45,7 +45,7 @@ public class ItemCura extends Item {
      * @param type            O tipo do item de cura.
      * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
      */
-    public ItemCura(int id_item, boolean colleceted, TypeItemCura type, double vida_recuperada) {
+    public ItemCura(int id_item, boolean colleceted, TypeItemCura type, long vida_recuperada) {
         super(id_item, colleceted);
         this.type = type;
         this.vida_recuperada = vida_recuperada;
@@ -65,7 +65,7 @@ public class ItemCura extends Item {
      *
      * @return a quantidade de vida recuperada.
      */
-    public double getVida_recuperada() {
+    public long getVida_recuperada() {
         return vida_recuperada;
     }
 

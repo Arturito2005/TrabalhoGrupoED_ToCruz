@@ -145,8 +145,16 @@ public class ImportarMapa implements Importar {
                     String divisao = (String) readingObjConte.get("divisao");
 
                     Divisao div = findDivisao(divisao);
+
+
+                    long poder_final = poder;
+                    if(!div.getInimigos().isEmpty()) {
+                        for(Inimigo inimigo: div.getInimigos()) {
+                            poder_final += inimigo.getPoder();
+                        }
+                    }
                     div.addInimigo(new Inimigo(nome, poder));
-                    edificio.updateWeight(div, poder);
+                    edificio.updateWeight(div, poder_final);
                 }
 
                 for (int i = 0; i < num_inimigos; i++) {

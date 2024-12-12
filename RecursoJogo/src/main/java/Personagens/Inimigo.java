@@ -19,7 +19,7 @@ public class Inimigo extends Personagem {
      * @param nome  Nome do inimigo.
      * @param poder Poder do inimigo.
      */
-    public Inimigo(String nome, double poder) {
+    public Inimigo(String nome, long poder) {
         super(nome, poder);
     }
 
@@ -32,7 +32,7 @@ public class Inimigo extends Personagem {
      * @param vida A quantidade de vida do inimigo.
      * @param poder O poder do inimigo.
      */
-    public Inimigo(int id_personagem, String nome, double vida, double poder) {
+    public Inimigo(int id_personagem, String nome, long vida, long poder) {
         super(id_personagem, nome, vida, poder);
     }
 

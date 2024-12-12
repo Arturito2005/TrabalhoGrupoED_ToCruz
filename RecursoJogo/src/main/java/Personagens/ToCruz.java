@@ -46,7 +46,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
      * @param poder Poder inicial do personagem.
      * @param mochila Mochila contendo itens de cura.
      */
-    public ToCruz(int id_personagem, String nome, double vida, double poder, StackADT<ItemCura> mochila) {
+    public ToCruz(int id_personagem, String nome, long vida, long poder, StackADT<ItemCura> mochila) {
         super(id_personagem, nome, vida, poder);
         this.mochila = new LinkedStack<>();
         this.colectedAlvo = false;
@@ -123,8 +123,8 @@ public class ToCruz extends Personagem implements ToCruzIt {
             throw new AllLifeException("Não é possível usar o kit médico, porque a vida está cheia");
         }
 
-        double cura = item.getVida_recuperada();
-        double nova_vida = 0;
+        long cura = item.getVida_recuperada();
+        long nova_vida = 0;
 
         if (item.getType().equals(TypeItemCura.KIT_VIDA)) {
             if (this.getVida() + cura > 100) {

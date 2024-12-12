@@ -343,7 +343,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      */
     @Override
     public void attackInimigo(Inimigo inimigo) {
-        double vidaTo = toCruz.getVida() - inimigo.getPoder();
+        long vidaTo = toCruz.getVida() - inimigo.getPoder();
         toCruz.setVida(vidaTo);
 
         System.out.println("O imimigo" + inimigo.getNome() + " atacou o To Cruz");

@@ -635,7 +635,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
 
         do {
-            System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
+            System.out.print("Selecione a divisao que o ToCruz vai se mover -->");
 
             try {
                 op = sc.nextInt();
@@ -831,6 +831,18 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
     }
 
+    private double poderFinalDivisao(Divisao div, long poder_inimigo) {
+
+        long poder_total = poder_inimigo;
+        if(div.getInimigos().isEmpty() && div.getInimigos().size() > 1) {
+            for (Inimigo inimigo_div : div.getInimigos()) {
+                poder_total += inimigo_div.getPoder();
+            }
+        }
+
+        return poder_total;
+    }
+
     /**
      * Move um inimigo de uma sala para outra dentro do edifício.
      * O inimigo se move de forma aleatória entre as salas conectadas à sala atual.
@@ -843,9 +855,10 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
         Random randomizer = new Random();
         int numMoves = randomizer.nextInt(3);
+        long poder_inimigo = inimigo.getPoder();
 
         for (int i = 0; i < numMoves; i++) {
-            edificio.updateWeight(divisao_atual, 0);
+            edificio.updateWeight(divisao_atual, poderFinalDivisao(divisao_atual, poder_inimigo) - poder_inimigo);
             StackADT<Divisao> stDiv = new LinkedStack<>();
             Divisao divisaoEscolhida;
             Iterator<Divisao> itrDiv = this.edificio.getNextDivisoes(divisao_atual);
@@ -862,9 +875,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
             divisaoEscolhida = stDiv.peek();
             divisao_atual.removeInimigo(inimigo);
-            divisaoEscolhida.addInimigo(inimigo);
 
-            this.edificio.updateWeight(divisaoEscolhida, inimigo.getPoder());
+            divisaoEscolhida.addInimigo(inimigo);
+            this.edificio.updateWeight(divisaoEscolhida, poderFinalDivisao(divisaoEscolhida, poder_inimigo));
             divisao_atual = divisaoEscolhida;
         }
         System.out.println("O inimigo" + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
@@ -935,7 +948,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
 
         do {
-            System.out.println("Introduza onde o ToCruz vai entrar -->");
+            System.out.print("Introduza onde o ToCruz vai entrar -->");
 
             try {
                 op = sc.nextInt();
@@ -1014,7 +1027,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         int op = -1;
 
                         do {
-                            System.out.println("Deseja sair do edificio (Nao:0 / Sim: 1)? -->");
+                            System.out.print("Deseja sair do edificio (Nao:0 / Sim: 1)? -->");
 
                             try {
                                 op = sc.nextInt();

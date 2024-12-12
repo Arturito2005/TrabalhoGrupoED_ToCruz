@@ -30,10 +30,10 @@ public abstract class Personagem {
     private String nome;
 
     /** Quantidade de vida que o personagem possui. */
-    private double vida;
+    private long vida;
 
     /** Poder do personagem. */
-    private double poder;
+    private long poder;
 
     /**
      * Construtor principal que inicializa todos os atributos do personagem.
@@ -43,7 +43,7 @@ public abstract class Personagem {
      * @param vida Quantidade inicial de vida do personagem.
      * @param poder Quantidade inicial de poder do personagem.
      */
-    public Personagem(int id_personagem, String nome, double vida, double poder) {
+    public Personagem(int id_personagem, String nome, long vida, long poder) {
         this.id_personagem = id_personagem;
         this.nome = nome;
         this.vida = vida;
@@ -68,7 +68,7 @@ public abstract class Personagem {
      * @param nome Nome do personagem.
      * @param poder Quantidade inicial de poder do personagem.
      */
-    public Personagem(String nome, double poder) {
+    public Personagem(String nome, long poder) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
         this.nome = nome;
         this.vida = DEFAULT_VIDA;
@@ -98,7 +98,7 @@ public abstract class Personagem {
      *
      * @return A quantidade de vida do personagem.
      */
-    public double getVida() {
+    public long getVida() {
         return vida;
     }
 
@@ -107,7 +107,7 @@ public abstract class Personagem {
      *
      * @param vida O novo valor de vida a ser atribuído ao personagem.
      */
-    public void setVida(double vida) {
+    public void setVida(long vida) {
         this.vida = vida;
     }
 
@@ -116,7 +116,7 @@ public abstract class Personagem {
      *
      * @return O poder do personagem.
      */
-    public double getPoder() {
+    public long getPoder() {
         return poder;
     }
 
