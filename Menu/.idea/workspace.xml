@@ -4,62 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/RecursoJogo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Export/TesteManual.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Export/failAut.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Export/hjhj.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Export/patadecoelho.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Export/trajetoTeste.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/Jsons/Import/FicheiroMissao.JSON" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Menu/MenuMissoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Menu/MetodosMenuMissao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Missao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Missao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Menu/MenuMissoes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Menu/MetodosMenuMissao.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Menu/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/Menu/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/docs/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestMapa.TestDivisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestMapa.TestDivisao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestImportar.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestImportar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestMapa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestsPersonagens.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/packages/TestsPersonagens.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestMapa.TestDivisao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestMapa.TestDivisao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/javadoc/javadoc.options" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/javadoc/javadoc.options" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Menu/MenuMissoes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Menu/MetodosMenuMissao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Missao.java" afterDir="false" />
-    </list>
+    <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,24 +34,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Menu [:Menu.MenuMissoes.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Artur&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.49770114&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Menu [:Menu.MenuMissoes.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Artur",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.49770114",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\ED_AC_8230138_8230148\Menu\libs" />
@@ -130,7 +75,7 @@
       <workItem from="1733912606075" duration="534000" />
       <workItem from="1733925746309" duration="3387000" />
       <workItem from="1733950214752" duration="1882000" />
-      <workItem from="1734082561966" duration="1190000" />
+      <workItem from="1734082561966" duration="1252000" />
     </task>
     <servers />
   </component>
