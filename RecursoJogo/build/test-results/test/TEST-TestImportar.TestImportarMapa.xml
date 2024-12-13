@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestImportar.TestImportarMapa" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-13T21:35:40" hostname="XICO" time="0.023">
+<testsuite name="TestImportar.TestImportarMapa" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-13T22:15:36" hostname="LAPTOP-8POH8N1C" time="0.035">
   <properties/>
-  <testcase name="testGerarMapaComFicheiroInvalivdoNull()" classname="TestImportar.TestImportarMapa" time="0.017"/>
-  <testcase name="testGerarMapaComFicheiroValido()" classname="TestImportar.TestImportarMapa" time="0.005"/>
+  <testcase name="testGerarMapaComFicheiroInvalivdoNull()" classname="TestImportar.TestImportarMapa" time="0.024"/>
+  <testcase name="testGerarMapaComFicheiroValido()" classname="TestImportar.TestImportarMapa" time="0.009"/>
   <system-out><![CDATA[.\Jsons\Import\FicheiroMissao.json (O sistema não conseguiu localizar o caminho especificado)
 .\Jsons\Import\FicheiroMissao.json (O sistema não conseguiu localizar o caminho especificado)
 ]]></system-out>

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMapa.TestDivisao" tests="20" skipped="0" failures="0" errors="0" timestamp="2024-12-13T21:35:40" hostname="XICO" time="0.039">
+<testsuite name="TestMapa.TestDivisao" tests="20" skipped="0" failures="0" errors="0" timestamp="2024-12-13T22:15:36" hostname="LAPTOP-8POH8N1C" time="0.051">
   <properties/>
-  <testcase name="testHaveInimigoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.006"/>
-  <testcase name="testUsarItemDivisao_ItemJaColetado()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testIsToCruzInDivisaoAlvoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.0"/>
+  <testcase name="testHaveInimigoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.007"/>
+  <testcase name="testUsarItemDivisao_ItemJaColetado()" classname="TestMapa.TestDivisao" time="0.002"/>
+  <testcase name="testIsToCruzInDivisaoAlvoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testIsToCruzInExitDaComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testAttackToCruz_AllInimigosDie()" classname="TestMapa.TestDivisao" time="0.002"/>
-  <testcase name="testAttackToCruz_OneInimigoDies()" classname="TestMapa.TestDivisao" time="0.005"/>
-  <testcase name="testAttackInimigo_ToCruzSurvives()" classname="TestMapa.TestDivisao" time="0.003"/>
+  <testcase name="testAttackToCruz_AllInimigosDie()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testAttackToCruz_OneInimigoDies()" classname="TestMapa.TestDivisao" time="0.006"/>
+  <testcase name="testAttackInimigo_ToCruzSurvives()" classname="TestMapa.TestDivisao" time="0.005"/>
   <testcase name="testToCruzGetAlvo_WithoutToCruz()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAttackInimigo_ToCruzDead()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testAttackToCruz_AllInimigosSurvive()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testAttackToCruz_AllInimigosSurvive()" classname="TestMapa.TestDivisao" time="0.002"/>
   <testcase name="testToCruzGetAlvo_WithoutAlvo()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testRemoveInimigoComSucesso()" classname="TestMapa.TestDivisao" time="0.0"/>
-  <testcase name="testToCruzGetAlvo_Success()" classname="TestMapa.TestDivisao" time="0.0"/>
-  <testcase name="testAttackInimigo_ReduceVida()" classname="TestMapa.TestDivisao" time="0.0"/>
-  <testcase name="testRemoveInimigoListaVazia()" classname="TestMapa.TestDivisao" time="0.002"/>
+  <testcase name="testRemoveInimigoComSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testToCruzGetAlvo_Success()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testAttackInimigo_ReduceVida()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testRemoveInimigoListaVazia()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAttackToCruz_NoInimigos()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAddInimigoNulo()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testUsarItemDivisao_NullPointerException()" classname="TestMapa.TestDivisao" time="0.0"/>
+  <testcase name="testUsarItemDivisao_NullPointerException()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testRemoveInimigoNulo()" classname="TestMapa.TestDivisao" time="0.0"/>
-  <testcase name="testHaveConfrontoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testHaveConfrontoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.0"/>
   <system-out><![CDATA[O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 O item desta divisao ja foi usado anteriormente
