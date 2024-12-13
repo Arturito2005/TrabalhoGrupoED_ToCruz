@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayList.TestArrayUnordered" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:24" hostname="LAPTOP-8POH8N1C" time="0.008">
+<testsuite name="TestArrayList.TestArrayUnordered" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.006">
   <properties/>
-  <testcase name="testFindInvalidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.003"/>
-  <testcase name="testFindAfterAddingElements()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>
-  <testcase name="testFindEmptyList()" classname="TestArrayList.TestArrayUnordered" time="0.0"/>
+  <testcase name="testFindInvalidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.002"/>
+  <testcase name="testFindAfterAddingElements()" classname="TestArrayList.TestArrayUnordered" time="0.0"/>
+  <testcase name="testFindEmptyList()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>
   <testcase name="testSizeAfterAddingElements()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>
-  <testcase name="testFindValidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>
+  <testcase name="testFindValidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

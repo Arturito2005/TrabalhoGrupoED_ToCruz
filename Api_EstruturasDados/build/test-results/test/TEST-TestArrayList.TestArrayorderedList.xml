@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayList.TestArrayorderedList" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:24" hostname="LAPTOP-8POH8N1C" time="0.012">
+<testsuite name="TestArrayList.TestArrayorderedList" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.011">
   <properties/>
-  <testcase name="testAdd()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
-  <testcase name="testAddElementAtBeginning()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
-  <testcase name="testSize()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
+  <testcase name="testAdd()" classname="TestArrayList.TestArrayorderedList" time="0.002"/>
+  <testcase name="testAddElementAtBeginning()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
+  <testcase name="testSize()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
   <testcase name="testRemoveFirst()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
   <testcase name="testAddMultipleElements()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
   <testcase name="testRemoveLast()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
   <testcase name="testAddElementAtEnd()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
   <testcase name="testRemoveElement()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
-  <testcase name="testAddElementInMiddle()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
-  <testcase name="testIsEmpty()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
+  <testcase name="testAddElementInMiddle()" classname="TestArrayList.TestArrayorderedList" time="0.0"/>
+  <testcase name="testIsEmpty()" classname="TestArrayList.TestArrayorderedList" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

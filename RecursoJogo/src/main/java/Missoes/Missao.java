@@ -132,24 +132,25 @@ public class Missao implements MissaoInt, Comparable<Missao> {
         Simulacoes simula;
 
         do {
-            System.out.println("Começar simulação");
-            System.out.println("0 - Voltar");
-            System.out.println("1 - Jogar");
-            System.out.print("Selecione uma opção -->");
+            do {
+                System.out.println("Começar simulação");
+                System.out.println("0 - Voltar");
+                System.out.println("1 - Jogar");
+                System.out.print("Selecione uma opção -->");
 
-            try {
-                op = sc.nextInt();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
+                try {
+                    op = sc.nextInt();
+                } catch (InputMismatchException ex) {
+                    System.out.println("Numero invalido!");
+                    sc.next();
+                }
+            } while (op < 0 || op > 1);
 
             if (op == 1) {
                 simula = new Simulacoes(tot_simulacoes, new Edificio(this.edificio.getId(), this.edificio.getName(), this.edificio.getPlantaEdificio()));
                 simulacoes.add(simula.modojogoManual());
                 tot_simulacoes++;
             }
-
         } while (op != 0);
 
         for (Simulacoes simulacao : simulacoes) {
