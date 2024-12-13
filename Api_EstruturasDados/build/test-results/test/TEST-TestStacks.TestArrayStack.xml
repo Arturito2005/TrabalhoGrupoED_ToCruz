@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestStacks.TestArrayStack" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:25" hostname="LAPTOP-8POH8N1C" time="0.004">
+<testsuite name="TestStacks.TestArrayStack" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.005">
   <properties/>
   <testcase name="testPeekStack()" classname="TestStacks.TestArrayStack" time="0.002"/>
   <testcase name="testPeekEmptyStackException()" classname="TestStacks.TestArrayStack" time="0.001"/>
-  <testcase name="testPopStack()" classname="TestStacks.TestArrayStack" time="0.001"/>
+  <testcase name="testPopStack()" classname="TestStacks.TestArrayStack" time="0.0"/>
   <testcase name="testPopEmptyStackException()" classname="TestStacks.TestArrayStack" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

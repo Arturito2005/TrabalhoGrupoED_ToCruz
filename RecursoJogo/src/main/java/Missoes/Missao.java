@@ -13,17 +13,17 @@ import java.util.Scanner;
 
 /**
  * Representa uma missão no contexto do jogo, contendo informações como código, versão,
- * ediífício associado e simulações realizadas. Permite executar modos de jogo manual e automático.
+ * edifício associado e simulações realizadas. Permite executar modos de jogo manual e automático.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class Missao implements MissaoInt, Comparable<Missao> {
     /**
-     * Scanner para leitura de entradas do usuário.
+     * Scanner para leitura de entradas do utilizador.
      */
     private static Scanner sc = new Scanner(System.in);
 
@@ -124,7 +124,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Executa o modo manual da missão, permitindo ao usuário realizar simulações interativas.
+     * Executa o modo manual da missão, permitindo ao utilizador realizar simulações interativas.
      */
     @Override
     public void modoManual() {
@@ -132,28 +132,30 @@ public class Missao implements MissaoInt, Comparable<Missao> {
         Simulacoes simula;
 
         do {
-            System.out.println("Começar simulação");
-            System.out.println("0 - Voltar");
-            System.out.println("1 - Jogar");
-            System.out.print("Selecione uma opção -->");
+            do {
+                System.out.println("Começar simulação");
+                System.out.println("0 - Voltar");
+                System.out.println("1 - Jogar");
+                System.out.print("Selecione uma opção -->");
 
-            try {
-                op = sc.nextInt();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
+                try {
+                    op = sc.nextInt();
+                } catch (InputMismatchException ex) {
+                    System.out.println("Numero invalido!");
+                    sc.next();
+                }
+            } while (op < 0 || op > 1);
 
             if (op == 1) {
                 simula = new Simulacoes(tot_simulacoes, new Edificio(this.edificio.getId(), this.edificio.getName(), this.edificio.getPlantaEdificio()));
                 simulacoes.add(simula.modojogoManual());
                 tot_simulacoes++;
             }
-
         } while (op != 0);
 
         for (Simulacoes simulacao : simulacoes) {
             System.out.println(simulacao.toString());
+            System.out.println();
         }
     }
 

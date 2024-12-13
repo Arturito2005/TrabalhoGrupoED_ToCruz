@@ -45,14 +45,12 @@ public class TestDivisao {
         divisao.addToCruz(toCruz);
     }
 
-/*
-      @Test
-      public void testRemoveInimigoComSucesso() {
-          divisao.addInimigo(inimigo);
-          Inimigo removido = divisao.removeInimigo(inimigo);
-          assertEquals(removido, "Como o inimigo foi removido, será retornado o mesmo");
-      }
-*/
+    @Test
+    public void testRemoveInimigoComSucesso() {
+        divisao.addInimigo(inimigo);
+        Inimigo removido = divisao.removeInimigo(inimigo);
+        assertEquals(removido, inimigo, "Como o inimigo foi removido, será retornado o mesmo");
+    }
 
     @Test
     public void testRemoveInimigoListaVazia() {

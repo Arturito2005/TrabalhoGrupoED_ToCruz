@@ -5,6 +5,11 @@ import Missoes.Missoes;
 /**
  * Classe responsável pelo menu de missões do jogo.
  * Contém o método principal que importa e realiza as missões disponíveis.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveria
+ * Nº mecanografico: 8230148
+ * @version 1.0
  */
 public class MenuMissoes {
 

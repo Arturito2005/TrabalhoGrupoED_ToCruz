@@ -172,9 +172,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.</div>
 </dd>
+<dt><a href="Interfaces/EdificoInt.html#drawMapa()" class="member-name-link">drawMapa()</a> - Method in interface Interfaces.<a href="Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></dt>
+<dd>
+<div class="block">Metodo que realiza o desenho do mapa</div>
+</dd>
 <dt><a href="Mapa/Edificio.html#drawMapa()" class="member-name-link">drawMapa()</a> - Method in class Mapa.<a href="Mapa/Edificio.html" title="class in Mapa">Edificio</a></dt>
 <dd>
-<div class="block">Desenha o mapa do edifício, exibindo suas divisões e conexões.</div>
+<div class="block">Desenha o mapa do edifício, mostrando suas divisões e conexões.</div>
 </dd>
 <dt><a href="Interfaces/DivisaoIt.html#drawnDivisao()" class="member-name-link">drawnDivisao()</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
@@ -278,7 +282,7 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="Importar/ImportarMapa.html#gerarMapa(java.lang.String)" class="member-name-link">gerarMapa(String)</a> - Method in class Importar.<a href="Importar/ImportarMapa.html" title="class in Importar">ImportarMapa</a></dt>
 <dd>
-<div class="block">Gera o mapa do eficio e guarda os dados da Missao a partir de um ficehrio JSON.</div>
+<div class="block">Gera o mapa do edificio e guarda os dados da Missao a partir de um ficehrio JSON.</div>
 </dd>
 <dt><a href="Interfaces/Importar.html#gerarMapa(java.lang.String)" class="member-name-link">gerarMapa(String)</a> - Method in interface Interfaces.<a href="Interfaces/Importar.html" title="interface in Interfaces">Importar</a></dt>
 <dd>
@@ -506,26 +510,20 @@ loadScripts(document, 'script');</script>
 <div class="block">Classe responsável por gerar o Mapa da missão, do ToCruz</div>
 </dd>
 <dt><a href="Importar/ImportarMapa.html#%3Cinit%3E()" class="member-name-link">ImportarMapa()</a> - Constructor for class Importar.<a href="Importar/ImportarMapa.html" title="class in Importar">ImportarMapa</a></dt>
-<dd>
-<div class="block">Construtor padrão da classe ImportarMapa.</div>
-</dd>
+<dd>&nbsp;</dd>
 <dt><a href="Importar/ImportarMapa.html#ImportarMapa()" class="member-name-link">ImportarMapa()</a> - Method in class Importar.<a href="Importar/ImportarMapa.html" title="class in Importar">ImportarMapa</a></dt>
 <dd>
 <div class="block">Construtor do ImportarMapa</div>
-</dd>
-<dt><a href="Menu/MetodosMenuMissao.html#importarMissoes()" class="member-name-link">importarMissoes()</a> - Static method in class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
-<dd>
-<div class="block">Método para importar missões de um arquivo JSON.</div>
 </dd>
 <dt><a href="Personagens/Inimigo.html" class="type-name-link" title="class in Personagens">Inimigo</a> - Class in <a href="Personagens/package-summary.html">Personagens</a></dt>
 <dd>
 <div class="block">Esta classe representa um inimigo no jogo.</div>
 </dd>
-<dt><a href="Personagens/Inimigo.html#%3Cinit%3E(int,java.lang.String,double,double)" class="member-name-link">Inimigo(int, String, double, double)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
+<dt><a href="Personagens/Inimigo.html#%3Cinit%3E(int,java.lang.String,long,long)" class="member-name-link">Inimigo(int, String, long, long)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
 <div class="block">Construtor da classe Inimigo.</div>
 </dd>
-<dt><a href="Personagens/Inimigo.html#%3Cinit%3E(java.lang.String,double)" class="member-name-link">Inimigo(String, double)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
+<dt><a href="Personagens/Inimigo.html#%3Cinit%3E(java.lang.String,long)" class="member-name-link">Inimigo(String, long)</a> - Constructor for class Personagens.<a href="Personagens/Inimigo.html" title="class in Personagens">Inimigo</a></dt>
 <dd>
 <div class="block">Construtor da classe Inimigo.</div>
 </dd>
@@ -599,12 +597,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Classe que representa um item de cura no jogo.</div>
 </dd>
-<dt><a href="Items/ItemCura.html#%3Cinit%3E(int,boolean,Items.TypeItemCura,double)" class="member-name-link">ItemCura(int, boolean, TypeItemCura, double)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
+<dt><a href="Items/ItemCura.html#%3Cinit%3E(int,boolean,Items.TypeItemCura,long)" class="member-name-link">ItemCura(int, boolean, TypeItemCura, long)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
 <dd>
 <div class="block">Construtor para criar um <a href="Items/ItemCura.html" title="class in Items"><code>ItemCura</code></a> com ID, status de coleta,
  tipo de item e quantidade de vida recuperada.</div>
 </dd>
-<dt><a href="Items/ItemCura.html#%3Cinit%3E(Items.TypeItemCura,double)" class="member-name-link">ItemCura(TypeItemCura, double)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
+<dt><a href="Items/ItemCura.html#%3Cinit%3E(Items.TypeItemCura,long)" class="member-name-link">ItemCura(TypeItemCura, long)</a> - Constructor for class Items.<a href="Items/ItemCura.html" title="class in Items">ItemCura</a></dt>
 <dd>
 <div class="block">Construtor para criar um <a href="Items/ItemCura.html" title="class in Items"><code>ItemCura</code></a> com o tipo de item e a
  quantidade de vida a ser recuperada.</div>
@@ -656,34 +654,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:M">M</h2>
 <dl class="index">
-<dt><a href="Menu/MenuMissoes.html#main(java.lang.String%5B%5D)" class="member-name-link">main(String[])</a> - Static method in class Menu.<a href="Menu/MenuMissoes.html" title="class in Menu">MenuMissoes</a></dt>
-<dd>
-<div class="block">Método principal que executa o menu de missões.</div>
-</dd>
 <dt><a href="Mapa/package-summary.html">Mapa</a> - package Mapa</dt>
 <dd>&nbsp;</dd>
-<dt><a href="Menu/package-summary.html">Menu</a> - package Menu</dt>
-<dd>&nbsp;</dd>
-<dt><a href="Menu/MenuMissoes.html" class="type-name-link" title="class in Menu">MenuMissoes</a> - Class in <a href="Menu/package-summary.html">Menu</a></dt>
-<dd>
-<div class="block">Classe responsável pelo menu de missões do jogo.</div>
-</dd>
-<dt><a href="Menu/MenuMissoes.html#%3Cinit%3E()" class="member-name-link">MenuMissoes()</a> - Constructor for class Menu.<a href="Menu/MenuMissoes.html" title="class in Menu">MenuMissoes</a></dt>
-<dd>
-<div class="block">Construtor padrão da classe MenuMissoes.</div>
-</dd>
-<dt><a href="Menu/MetodosMenuMissao.html" class="type-name-link" title="class in Menu">MetodosMenuMissao</a> - Class in <a href="Menu/package-summary.html">Menu</a></dt>
-<dd>
-<div class="block">Classe responsável por gerenciar o menu de missões do jogo.</div>
-</dd>
-<dt><a href="Menu/MetodosMenuMissao.html#%3Cinit%3E()" class="member-name-link">MetodosMenuMissao()</a> - Constructor for class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
-<dd>
-<div class="block">Construtor padrão da classe MetodosMenuMissao.</div>
-</dd>
 <dt><a href="Missoes/Missao.html" class="type-name-link" title="class in Missoes">Missao</a> - Class in <a href="Missoes/package-summary.html">Missoes</a></dt>
 <dd>
 <div class="block">Representa uma missão no contexto do jogo, contendo informações como código, versão,
- ediífício associado e simulações realizadas.</div>
+ edifício associado e simulações realizadas.</div>
 </dd>
 <dt><a href="Missoes/Missao.html#%3Cinit%3E()" class="member-name-link">Missao()</a> - Constructor for class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
 <dd>
@@ -762,7 +738,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="Missoes/Missao.html#modoManual()" class="member-name-link">modoManual()</a> - Method in class Missoes.<a href="Missoes/Missao.html" title="class in Missoes">Missao</a></dt>
 <dd>
-<div class="block">Executa o modo manual da missão, permitindo ao usuário realizar simulações interativas.</div>
+<div class="block">Executa o modo manual da missão, permitindo ao utilizador realizar simulações interativas.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:P">P</h2>
@@ -771,7 +747,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Classe abstrata que representa cada personagem no jogo</div>
 </dd>
-<dt><a href="Personagens/Personagem.html#%3Cinit%3E(int,java.lang.String,double,double)" class="member-name-link">Personagem(int, String, double, double)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
+<dt><a href="Personagens/Personagem.html#%3Cinit%3E(int,java.lang.String,long,long)" class="member-name-link">Personagem(int, String, long, long)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
 <div class="block">Construtor principal que inicializa todos os atributos do personagem.</div>
 </dd>
@@ -779,7 +755,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor que inicializa o personagem com nome e utiliza valores padrão para vida e poder.</div>
 </dd>
-<dt><a href="Personagens/Personagem.html#%3Cinit%3E(java.lang.String,double)" class="member-name-link">Personagem(String, double)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
+<dt><a href="Personagens/Personagem.html#%3Cinit%3E(java.lang.String,long)" class="member-name-link">Personagem(String, long)</a> - Constructor for class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
 <div class="block">Construtor que inicializa o personagem com nome e poder, e utiliza o valor padrão para vida.</div>
 </dd>
@@ -788,10 +764,6 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
-<dt><a href="Menu/MetodosMenuMissao.html#RealizarMissoes(Missoes.Missoes)" class="member-name-link">RealizarMissoes(Missoes)</a> - Static method in class Menu.<a href="Menu/MetodosMenuMissao.html" title="class in Menu">MetodosMenuMissao</a></dt>
-<dd>
-<div class="block">Método que gerencia a execução das missões.</div>
-</dd>
 <dt><a href="Interfaces/DivisaoIt.html#removeInimigo(Personagens.Inimigo)" class="member-name-link">removeInimigo(Inimigo)</a> - Method in interface Interfaces.<a href="Interfaces/DivisaoIt.html" title="interface in Interfaces">DivisaoIt</a></dt>
 <dd>
 <div class="block">Remove um inimigo da divisão.</div>
@@ -831,7 +803,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Define o item presente na divisão.</div>
 </dd>
-<dt><a href="Personagens/Personagem.html#setVida(double)" class="member-name-link">setVida(double)</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
+<dt><a href="Personagens/Personagem.html#setVida(long)" class="member-name-link">setVida(long)</a> - Method in class Personagens.<a href="Personagens/Personagem.html" title="class in Personagens">Personagem</a></dt>
 <dd>
 <div class="block">Setter para alterar a quantidade de vida do personagem.</div>
 </dd>
@@ -867,7 +839,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.</div>
 </dd>
-<dt><a href="Personagens/ToCruz.html#%3Cinit%3E(int,java.lang.String,double,double,Interfaces.StackADT)" class="member-name-link">ToCruz(int, String, double, double, StackADT&lt;ItemCura&gt;)</a> - Constructor for class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
+<dt><a href="Personagens/ToCruz.html#%3Cinit%3E(int,java.lang.String,long,long,Interfaces.StackADT)" class="member-name-link">ToCruz(int, String, long, long, StackADT&lt;ItemCura&gt;)</a> - Constructor for class Personagens.<a href="Personagens/ToCruz.html" title="class in Personagens">ToCruz</a></dt>
 <dd>
 <div class="block">Construtor alternativo para realizar uma deepCopy do ToCruz.</div>
 </dd>

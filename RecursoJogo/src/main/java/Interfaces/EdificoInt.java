@@ -10,7 +10,7 @@ import java.util.Iterator;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  *
  * @version 1.0
@@ -83,4 +83,8 @@ public interface EdificoInt {
      */
     public Iterator<Divisao> IteratorMapa();
 
+    /**
+     * Metodo que realiza o desenho do mapa
+     * */
+    public void drawMapa();
 }

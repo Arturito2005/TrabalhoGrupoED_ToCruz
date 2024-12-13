@@ -10,16 +10,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/ArrayTree/ArrayBinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/ArrayTree/ArrayBinarySearchTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Api_EstruturasDados-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/Api_EstruturasDados-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayHeaps.TestArrayHeap.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayHeaps.TestArrayHeap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayUnordered.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayUnordered.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayList.TestArrayorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayTree.TestArrayBinarySearchTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestArrayTree.TestArrayBinarySearchTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleLinkedUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleLinkedUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleOrderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleOrderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestGraphMatrizAdjacencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestGraphMatrizAdjacencia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestNetwork.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestNetwork.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestNetworkMatrizAdjacencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestGraph.TestNetworkMatrizAdjacencia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedList.TestLinearLinkedOrderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedList.TestLinearLinkedOrderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedList.TestLinkedUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedList.TestLinkedUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedTree.TestLinkedBinarySearchTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedTree.TestLinkedBinarySearchTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedTree.TestLinkedHeap.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestLinkedTree.TestLinkedHeap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueueNode.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueueNode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestQueue.TestCircularArrayQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestQueue.TestCircularArrayQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestQueue.TestLinkedQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestQueue.TestLinkedQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestStacks.TestArrayStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestStacks.TestArrayStack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestStacks.TestLinkedStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestStacks.TestLinkedStack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayHeaps.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayHeaps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestArrayTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestDoubleLinkedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestDoubleLinkedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestGraph.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestGraph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestLinkedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestLinkedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestLinkedTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestLinkedTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestPriorityQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestPriorityQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestStacks.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestStacks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayHeaps.TestArrayHeap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayHeaps.TestArrayHeap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayUnordered.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayUnordered.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayList.TestArrayorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayTree.TestArrayBinarySearchTree.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestArrayTree.TestArrayBinarySearchTree.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleLinkedUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleLinkedUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleOrderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleOrderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestGraphMatrizAdjacencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestGraphMatrizAdjacencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestNetwork.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestNetwork.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestNetworkMatrizAdjacencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestGraph.TestNetworkMatrizAdjacencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedList.TestLinearLinkedOrderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedList.TestLinearLinkedOrderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedList.TestLinkedUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedList.TestLinkedUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedTree.TestLinkedBinarySearchTree.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedTree.TestLinkedBinarySearchTree.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedTree.TestLinkedHeap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestLinkedTree.TestLinkedHeap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueueNode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueueNode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestQueue.TestCircularArrayQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestQueue.TestCircularArrayQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestQueue.TestLinkedQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestQueue.TestLinkedQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestStacks.TestArrayStack.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestStacks.TestArrayStack.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestStacks.TestLinkedStack.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestStacks.TestLinkedStack.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +140,9 @@
       <workItem from="1733943428201" duration="993000" />
       <workItem from="1733944550355" duration="1274000" />
       <workItem from="1733947505024" duration="77000" />
+      <workItem from="1734013170660" duration="1651000" />
+      <workItem from="1734039974483" duration="3392000" />
+      <workItem from="1734081601798" duration="838000" />
     </task>
     <servers />
   </component>

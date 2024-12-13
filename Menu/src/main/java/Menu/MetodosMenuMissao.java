@@ -167,6 +167,7 @@ public abstract class MetodosMenuMissao {
                 System.out.println("2 - Modo Automatico");
                 System.out.println("3 - Jogo Automatico");
                 System.out.print("Selecione o modo de jogo que pretende jogar -->");
+
                 try {
                     op_modo = sc.nextInt();
                 } catch (InputMismatchException ex) {
@@ -197,7 +198,7 @@ public abstract class MetodosMenuMissao {
     }
 
     /**
-     * Método responsável por gestão a execução de várias missões. O jogador pode escolher
+     * Método responsável por gerenciar a execução de várias missões. O jogador pode escolher
      * qual missão deseja jogar a partir de uma lista de missões disponíveis.
      *
      * @param missoes Objeto contendo todas as missões disponíveis.

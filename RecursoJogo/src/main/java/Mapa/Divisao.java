@@ -20,7 +20,7 @@ import java.util.Objects;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -87,13 +87,13 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * Se os parâmetros de objeto não forem nulos, o construtor cria novas instâncias desses objetos para garantir
      * que não haja compartilhamento de referências com o objeto original.
      *
-     * @param id_divisao O identificador único da divisão.
-     * @param name O nome da divisão.
+     * @param id_divisao    O identificador único da divisão.
+     * @param name          O nome da divisão.
      * @param entrada_saida Indica se a divisão é de entrada ou saída (valor booleano).
-     * @param alvo O alvo associado à divisão, ou null se não houver alvo.
-     * @param item O item presente na divisão, ou null se não houver item.
-     * @param inimigos Lista de inimigos presentes na divisão, nunca null.
-     * @param toCruz O personagem ToCruz associado à divisão, ou null se não houver ToCruz.
+     * @param alvo          O alvo associado à divisão, ou null se não houver alvo.
+     * @param item          O item presente na divisão, ou null se não houver item.
+     * @param inimigos      Lista de inimigos presentes na divisão, nunca null.
+     * @param toCruz        O personagem ToCruz associado à divisão, ou null se não houver ToCruz.
      */
     public Divisao(int id_divisao, String name, boolean entrada_saida, Alvo alvo, Item item, UnorderedListADT<Inimigo> inimigos, ToCruz toCruz) {
         this.id_divisao = id_divisao;
@@ -212,7 +212,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      */
     @Override
     public void addInimigo(Inimigo inimigo) throws NullPointerException {
-        if(inimigo == null) {
+        if (inimigo == null) {
             throw new NullPointerException("O inimigo a adicionar não pode ser nulo");
         }
         this.inimigos.addToRear(inimigo);
@@ -391,6 +391,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         while (!inimigosDead.isEmpty()) {
             Inimigo inimigo = inimigosDead.removeFirst();
+            inimigo.setVida(0);
             dead_inimigos.addToRear(inimigo);
             removeInimigo(inimigo);
         }
@@ -440,9 +441,12 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
     /**
      * Desenha a representação visual da divisão no console.
+     *
+     * @return Uma string com o desenho da divisão
      */
     @Override
-    public void drawnDivisao() {
+    public String drawnDivisao() {
+
         String dados_sala = "";
 
         if (this.toCruz != null) {
@@ -461,17 +465,26 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             dados_sala += "Saida" + " ";
         }
 
+        long damage_to = 0;
         if (!this.inimigos.isEmpty()) {
             for (Inimigo inimigo : this.inimigos) {
                 dados_sala += inimigo.getNome() + " ";
+                damage_to += inimigo.getPoder();
             }
         }
 
         int num_hifens;
+        String nome_sala;
+        if (damage_to > 0) {
+            nome_sala = this.name + "  Custo: " + damage_to;
+        } else {
+            nome_sala = this.name;
+        }
+
         if (dados_sala.length() > this.name.length()) {
             num_hifens = dados_sala.length();
         } else {
-            num_hifens = this.name.length();
+            num_hifens = nome_sala.length();
         }
 
         num_hifens = num_hifens + 7;
@@ -480,13 +493,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             bordas = bordas + "-";
         }
 
-        String nome_sala_central = "|" + centralizarTexto(this.name.trim(), bordas.length() - 2) + "|";
+
+        String nome_sala_central = "|" + centralizarTexto(nome_sala.trim(), bordas.length() - 2) + "|";
         String dados_sala_central = "|" + centralizarTexto(dados_sala.trim(), bordas.length() - 2) + "|";
 
-        System.out.println(bordas);
-        System.out.println(nome_sala_central);
-        System.out.println(dados_sala_central);
-        System.out.println(bordas);
+        String resultado = bordas + "\n" +
+                nome_sala_central + "\n" +
+                dados_sala_central + "\n" +
+                bordas;
+
+        return resultado;
     }
 
     /**

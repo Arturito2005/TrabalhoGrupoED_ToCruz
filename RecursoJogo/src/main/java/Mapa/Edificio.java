@@ -3,7 +3,6 @@ package Mapa;
 import Graph.Network;
 import Interfaces.EdificoInt;
 import Interfaces.NetworkMatrizADT;
-import LinkedList.LinearLinkedUnorderedList;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -15,7 +14,7 @@ import java.util.Objects;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -214,28 +213,24 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Desenha o mapa do edifício, exibindo suas divisões e conexões.
+     * Desenha o mapa do edifício, mostrando suas divisões e conexões.
      */
     public void drawMapa() {
-        LinearLinkedUnorderedList<Divisao> divJaDesenhada = new LinearLinkedUnorderedList<Divisao>();
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
 
         while (itrDiv.hasNext()) {
-            Divisao divOrigem = itrDiv.next();
-            divJaDesenhada.addToRear(divOrigem);
-            divOrigem.drawnDivisao();
+            Divisao div = itrDiv.next();
+            System.out.println("Lista de Divisão vizinhas a divisao: " + div.getName());
+            System.out.println();
 
-            Iterator<Divisao> adjacentes = this.planta_edificio.iteratorNextVertexs(divOrigem);
-            while (adjacentes.hasNext()) {
-                Divisao divDestino = adjacentes.next();
-                if (!divJaDesenhada.contains(divDestino)) {
-                    double peso = this.planta_edificio.getWeightEdge(divOrigem, divDestino);
-                    System.out.println("    ^");
-                    System.out.println("    |    <---> (Peso: " + peso + ")");
-                    System.out.println("    v");
-                    divDestino.drawnDivisao();
-                }
+            Iterator<Divisao> itr_adj = this.planta_edificio.iteratorNextVertexs(div);
+
+            while (itr_adj.hasNext()) {
+                Divisao div_adj = itr_adj.next();
+                System.out.println(div_adj.drawnDivisao());
             }
+
+            System.out.println();
         }
     }
 

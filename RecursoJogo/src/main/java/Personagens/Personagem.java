@@ -7,41 +7,53 @@ import java.util.Objects;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- *
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
- *
  * @version 1.0
  */
 public abstract class Personagem {
-    /** Variável estática para controlar o ID único para cada personagem. */
+    /**
+     * Variável estática para controlar o ID único para cada personagem.
+     */
     private static int ID_PERSONAGEM_CONT = 0;
 
-    /** Valor padrão para a quantidade de vida de um personagem. */
+    /**
+     * Valor padrão para a quantidade de vida de um personagem.
+     */
     private static final int DEFAULT_VIDA = 100;
 
-    /** Valor padrão para o poder de um personagem. */
+    /**
+     * Valor padrão para o poder de um personagem.
+     */
     private static final int DEFAULT_PODER = 40;
 
-    /** Identificador único de cada personagem. */
+    /**
+     * Identificador único de cada personagem.
+     */
     private int id_personagem;
 
-    /** Nome do personagem. */
+    /**
+     * Nome do personagem.
+     */
     private String nome;
 
-    /** Quantidade de vida que o personagem possui. */
+    /**
+     * Quantidade de vida que o personagem possui.
+     */
     private long vida;
 
-    /** Poder do personagem. */
+    /**
+     * Poder do personagem.
+     */
     private long poder;
 
     /**
      * Construtor principal que inicializa todos os atributos do personagem.
      *
      * @param id_personagem Identificador único do personagem.
-     * @param nome Nome do personagem.
-     * @param vida Quantidade inicial de vida do personagem.
-     * @param poder Quantidade inicial de poder do personagem.
+     * @param nome          Nome do personagem.
+     * @param vida          Quantidade inicial de vida do personagem.
+     * @param poder         Quantidade inicial de poder do personagem.
      */
     public Personagem(int id_personagem, String nome, long vida, long poder) {
         this.id_personagem = id_personagem;
@@ -65,7 +77,7 @@ public abstract class Personagem {
     /**
      * Construtor que inicializa o personagem com nome e poder, e utiliza o valor padrão para vida.
      *
-     * @param nome Nome do personagem.
+     * @param nome  Nome do personagem.
      * @param poder Quantidade inicial de poder do personagem.
      */
     public Personagem(String nome, long poder) {

@@ -11,10 +11,8 @@ import Items.ItemCura;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- *
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
- *
  * @version 1.0
  */
 public interface ToCruzIt {
@@ -32,13 +30,14 @@ public interface ToCruzIt {
      * @return {@code true} se houver um kit de cura na mochila; {@code false} caso contrário.
      */
     public boolean mochilaTemKit();
+
     /**
      * Método para armazenar um item de cura na mochila do ToCruz.
      *
      * @param item O item de cura que será armazenado.
      * @return Uma mensagem indicando o sucesso ou falha ao guardar o item.
-     * @throws NullPointerException Se o item fornecido for nulo.
-     * @throws WrongTypeItemException        Se o item fornecido não for do tipo kit de vida.
+     * @throws NullPointerException   Se o item fornecido for nulo.
+     * @throws WrongTypeItemException Se o item fornecido não for do tipo kit de vida.
      */
     public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItemException, AllLifeException, UsedColectedItemException;
 

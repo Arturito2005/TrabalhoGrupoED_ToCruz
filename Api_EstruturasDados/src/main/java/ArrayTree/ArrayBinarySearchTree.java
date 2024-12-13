@@ -35,7 +35,6 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
         maxIndex = -1;
     }
 
-
     /**
      * Constrói uma árvore binária de busca com o elemento inicial fornecido.
      *

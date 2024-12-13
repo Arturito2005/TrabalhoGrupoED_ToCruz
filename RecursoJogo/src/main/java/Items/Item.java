@@ -7,7 +7,7 @@ import java.util.Objects;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -41,8 +41,8 @@ public abstract class Item {
     /**
      * Construtor da classe {@link Item} com parâmetros.
      *
-     * @param id_item    O identificador único do item.
-     * @param collected  Indica se o item foi coletado.
+     * @param id_item   O identificador único do item.
+     * @param collected Indica se o item foi coletado.
      */
     public Item(int id_item, boolean collected) {
         this.id_item = id_item;

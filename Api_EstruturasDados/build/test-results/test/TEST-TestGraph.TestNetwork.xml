@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestGraph.TestNetwork" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:24" hostname="LAPTOP-8POH8N1C" time="0.01">
+<testsuite name="TestGraph.TestNetwork" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.007">
   <properties/>
-  <testcase name="testShortestPath()" classname="TestGraph.TestNetwork" time="0.006"/>
-  <testcase name="testShortestPathArestNoPath()" classname="TestGraph.TestNetwork" time="0.001"/>
+  <testcase name="testShortestPath()" classname="TestGraph.TestNetwork" time="0.003"/>
+  <testcase name="testShortestPathArestNoPath()" classname="TestGraph.TestNetwork" time="0.0"/>
   <testcase name="testShortestPathArest()" classname="TestGraph.TestNetwork" time="0.0"/>
-  <testcase name="testGetWeightEdge()" classname="TestGraph.TestNetwork" time="0.001"/>
+  <testcase name="testGetWeightEdge()" classname="TestGraph.TestNetwork" time="0.0"/>
   <testcase name="testUpdateWeightEdge()" classname="TestGraph.TestNetwork" time="0.0"/>
   <testcase name="testShortestPathNoPath()" classname="TestGraph.TestNetwork" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

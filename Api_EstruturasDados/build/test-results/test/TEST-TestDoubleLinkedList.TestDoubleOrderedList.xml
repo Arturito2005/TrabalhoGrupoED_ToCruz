@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestDoubleLinkedList.TestDoubleOrderedList" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-11T20:05:24" hostname="LAPTOP-8POH8N1C" time="0.013">
+<testsuite name="TestDoubleLinkedList.TestDoubleOrderedList" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.01">
   <properties/>
   <testcase name="testAddElementWhenListIsFull()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
   <testcase name="testRemoveFirstElement()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
   <testcase name="testAddElementToEmptyList()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
-  <testcase name="testInverseEmptyList()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.002"/>
-  <testcase name="testRemoveLastElement()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
+  <testcase name="testInverseEmptyList()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
+  <testcase name="testRemoveLastElement()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
   <testcase name="testAddMultipleElementsInOrder()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
   <testcase name="testAddElementToOrderedList()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
-  <testcase name="testRemoveElementNotFound()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
+  <testcase name="testRemoveElementNotFound()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
   <testcase name="testRemoveElement()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.001"/>
   <testcase name="testIsEmpty()" classname="TestDoubleLinkedList.TestDoubleOrderedList" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

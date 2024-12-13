@@ -23,19 +23,11 @@ import java.io.IOException;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
 public class ImportarMapa implements Importar {
-
-    /**
-     * Construtor padrão da classe ImportarMapa.
-     * Inicializa um novo objeto ImportarMapa sem parâmetros adicionais.
-     * Este construtor é utilizado para criar instâncias da classe quando não são necessárias configurações iniciais específicas.
-     */
-    public ImportarMapa() {
-    }
 
     /**
      * Variavel que guarda todas as divisoes do edificio
@@ -79,7 +71,7 @@ public class ImportarMapa implements Importar {
     }
 
     /**
-     * Gera o mapa do eficio e guarda os dados da Missao a partir de um ficehrio JSON.
+     * Gera o mapa do edificio e guarda os dados da Missao a partir de um ficehrio JSON.
      *
      * @param path Caminho para o ficheiro JSON.
      * @return O objeto Missao criado com os dados do ficheiro.
@@ -148,8 +140,8 @@ public class ImportarMapa implements Importar {
 
 
                     long poder_final = poder;
-                    if(!div.getInimigos().isEmpty()) {
-                        for(Inimigo inimigo: div.getInimigos()) {
+                    if (!div.getInimigos().isEmpty()) {
+                        for (Inimigo inimigo : div.getInimigos()) {
                             poder_final += inimigo.getPoder();
                         }
                     }
