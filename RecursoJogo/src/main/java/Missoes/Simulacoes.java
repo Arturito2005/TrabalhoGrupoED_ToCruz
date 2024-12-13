@@ -900,14 +900,17 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private void turnoInimigo(Divisao divisao) {
         UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
+
         for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
-                System.out.println("O inimigo" + inimigo.getNome() + " esta na sala" + divisao.getName());
+
+                System.out.println("O inimigo" + inimigo.getNome() + " esta na sala " + divisao.getName());
                 inimigos_move.addToRear(inimigo);
             } else {
                 divisao.attackInimigo(inimigo);
             }
         }
+
 
         for (Inimigo inimigo : inimigos_move) {
             Divisao div = moverInimigo(divisao, inimigo);
@@ -1079,17 +1082,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private void relatoriosMissao(ToCruz toCruz) {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
         UnorderedListADT<Item> item_colected = new LinearLinkedUnorderedList<Item>();
-        Alvo alvo = new Alvo();
 
         while (itrMapa.hasNext()) {
             Divisao div = itrMapa.next();
 
             if (div.getItem() != null && div.getItem().isCollected()) {
                 item_colected.addToRear(div.getItem());
-            }
-
-            if (div.getAlvo() != null) {
-                alvo = div.getAlvo();
             }
         }
 
@@ -1100,9 +1098,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         System.out.println("Relatorio do jogo: ");
         System.out.println("Vida final do ToCruz --> " + this.vida_to);
 
-        if (this.vida_to > 0 && alvo != null) {
+        if (this.vida_to > 0 && toCruz.isColectedAlvo()) {
             System.out.println("Missao realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
-            System.out.println("Total de vida do ToCruz --> " + this.vida_to);
         } else {
             System.out.println("Missao falhada ಥ_ಥ");
         }
