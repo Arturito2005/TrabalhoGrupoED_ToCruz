@@ -13,11 +13,11 @@ import java.util.Scanner;
 
 /**
  * Representa uma missão no contexto do jogo, contendo informações como código, versão,
- * ediífício associado e simulações realizadas. Permite executar modos de jogo manual e automático.
+ * edifício associado e simulações realizadas. Permite executar modos de jogo manual e automático.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */

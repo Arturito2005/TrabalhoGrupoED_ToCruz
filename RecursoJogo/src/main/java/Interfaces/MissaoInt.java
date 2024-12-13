@@ -5,10 +5,8 @@ package Interfaces;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- *
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
- *
  * @version 1.0
  */
 public interface MissaoInt {

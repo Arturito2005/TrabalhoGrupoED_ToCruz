@@ -15,7 +15,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
-
 /**
  * Classe que implementa a interface ExportarInt para exportar dados
  * das versões de missões para um arquivo em formato JSON.

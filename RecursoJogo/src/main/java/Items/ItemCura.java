@@ -5,10 +5,8 @@ package Items;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- *
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
- *
  * @version 1.0
  */
 public class ItemCura extends Item {
@@ -27,7 +25,7 @@ public class ItemCura extends Item {
      * Construtor para criar um {@link ItemCura} com o tipo de item e a
      * quantidade de vida a ser recuperada.
      *
-     * @param type O tipo do item de cura.
+     * @param type            O tipo do item de cura.
      * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
      */
     public ItemCura(TypeItemCura type, long vida_recuperada) {
@@ -89,7 +87,7 @@ public class ItemCura extends Item {
      *
      * @param o o objeto a ser comparado.
      * @return true se os itens de cura forem iguais (mesmo tipo e mesma quantidade de vida recuperada),
-     *         caso contrário false.
+     * caso contrário false.
      */
     @Override
     public boolean equals(Object o) {
@@ -97,7 +95,7 @@ public class ItemCura extends Item {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()){
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
 

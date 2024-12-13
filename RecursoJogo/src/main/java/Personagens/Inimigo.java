@@ -5,10 +5,8 @@ package Personagens;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- *
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
- *
  * @version 1.0
  */
 public class Inimigo extends Personagem {
@@ -28,9 +26,9 @@ public class Inimigo extends Personagem {
      * Inicializa um novo objeto Inimigo com as propriedades fornecidas.
      *
      * @param id_personagem O ID do personagem inimigo.
-     * @param nome O nome do inimigo.
-     * @param vida A quantidade de vida do inimigo.
-     * @param poder O poder do inimigo.
+     * @param nome          O nome do inimigo.
+     * @param vida          A quantidade de vida do inimigo.
+     * @param poder         O poder do inimigo.
      */
     public Inimigo(int id_personagem, String nome, long vida, long poder) {
         super(id_personagem, nome, vida, poder);

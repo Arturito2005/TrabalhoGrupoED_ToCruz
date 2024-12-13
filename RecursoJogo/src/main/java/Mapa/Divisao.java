@@ -10,6 +10,7 @@ import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
+
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -19,7 +20,7 @@ import java.util.Objects;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -390,6 +391,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         while (!inimigosDead.isEmpty()) {
             Inimigo inimigo = inimigosDead.removeFirst();
+            inimigo.setVida(0);
             dead_inimigos.addToRear(inimigo);
             removeInimigo(inimigo);
         }
@@ -472,8 +474,8 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
 
         int num_hifens;
-        String nome_sala = "";
-        if(damage_to > 0) {
+        String nome_sala;
+        if (damage_to > 0) {
             nome_sala = this.name + "  Custo: " + damage_to;
         } else {
             nome_sala = this.name;
