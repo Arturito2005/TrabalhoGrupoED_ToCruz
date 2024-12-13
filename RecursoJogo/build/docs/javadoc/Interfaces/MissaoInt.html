@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">MissaoInt</span></div>
-<div class="block">Classe abstrata que representa cada personagem no jogo</div>
+<div class="block">Interface que representa uma missão</div>
 </div>
 </section>
 <section class="summary">
@@ -109,7 +109,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Executa a missão automaticamente até o final.</div>
+<div class="block">Executa a missão automaticamente até ao final.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#modoAutomatico()" class="member-name-link">modoAutomatico</a>()</code></div>
@@ -124,7 +124,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#viewSimulacoes()" class="member-name-link">viewSimulacoes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Visualiza as simulações disponíveis para a missão.</div>
+<div class="block">O metodo permite visualizar as simulações disponíveis para a missão.</div>
 </div>
 </div>
 </div>
@@ -145,9 +145,9 @@ loadScripts(document, 'script');</script>
 <h3>viewSimulacoes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">viewSimulacoes</span>()</div>
-<div class="block">Visualiza as simulações disponíveis para a missão.
- Este método exibe informações ou resultados de simulações realizadas pelo o ToCruz
- ordenadas pelo os pontos de vida que o mesmo terminou a missão.</div>
+<div class="block">O metodo permite visualizar as simulações disponíveis para a missão.
+ Exibe informações ou resultados de simulações realizadas pelo ToCruz
+ ordenadas pelos pontos de vida restantes.</div>
 </div>
 </section>
 </li>
@@ -167,8 +167,8 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">modoAutomatico</span>()</div>
 <div class="block">Inicia o modo automático da missão.
- No modo automático, é indicado ao To Cruz qual o melhor caminho que ele deve realizar
- para chegar ao Alvo e se possível o caminho para voltar com vida.</div>
+ No modo automático, é indicado ao To Cruz qual é o melhor caminho que ele deve realizar
+ para chegar ao Alvo e se possível o caminho para sair do edifício com vida.</div>
 </div>
 </section>
 </li>
@@ -177,8 +177,8 @@ loadScripts(document, 'script');</script>
 <h3>jogoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">jogoAutomatico</span>()</div>
-<div class="block">Executa a missão automaticamente até o final.
- Este método realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.</div>
+<div class="block">Executa a missão automaticamente até ao final.
+ Este metodo realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.</div>
 </div>
 </section>
 </li>

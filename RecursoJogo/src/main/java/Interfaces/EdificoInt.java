@@ -5,7 +5,7 @@ import Mapa.Divisao;
 import java.util.Iterator;
 
 /**
- * Interface que define o contrato para um edifício com divisões interconectadas.
+ * Interface que define o contrato para um edifício com divisões interligadas.
  * Permite a manipulação e consulta de divisões, bem como das ligações entre elas.
  *
  * @author Artur Pinto
@@ -63,15 +63,15 @@ public interface EdificoInt {
     /**
      * Atualiza o peso de todas as ligações partindo de uma divisão específica.
      *
-     * @param vertex1 a divisão cuja ligação terá seu peso atualizado.
+     * @param vertex1 a divisão cuja ligação terá o seu peso atualizado.
      * @param weight  o novo peso para a ligação.
      */
     public void updateWeight(Divisao vertex1, double weight);
 
     /**
-     * Retorna um iterador com as divisões diretamente conectadas a uma divisão específica.
+     * Retorna um iterador com as divisões diretamente ligadas a uma divisão específica.
      *
-     * @param divisao a divisão cujas divisões conectadas serão retornadas.
+     * @param divisao a divisão cujas divisões ligadas serão retornadas.
      * @return um iterador com as divisões conectadas.
      */
     public Iterator<Divisao> getNextDivisoes(Divisao divisao);

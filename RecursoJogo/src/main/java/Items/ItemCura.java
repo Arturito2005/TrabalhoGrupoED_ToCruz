@@ -71,7 +71,7 @@ public class ItemCura extends Item {
      * Retorna uma string com os dados do {@link ItemCura}, incluindo o tipo do item de cura
      * e a quantidade de vida recuperada.
      *
-     * @return uma string representando o item de cura.
+     * @return uma string a representar o item de cura.
      */
     @Override
     public String toString() {

@@ -9,7 +9,7 @@ package PriorityQueues;
  * @param <T> Tipo de elemento armazenado no nó da fila de prioridade.
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */

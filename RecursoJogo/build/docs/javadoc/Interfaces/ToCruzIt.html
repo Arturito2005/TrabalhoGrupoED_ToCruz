@@ -90,7 +90,8 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">ToCruzIt</span></div>
-<div class="block">Interface que define todas as iterações que o ToCruz pode ter com qualquer item presentes no edificio.</div>
+<div class="block">Interface que define todas as interações que o ToCruz pode ter com quaisquer itens
+ presentes no edifício.</div>
 </div>
 </section>
 <section class="summary">
@@ -109,7 +110,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#guardarKit(Items.ItemCura)" class="member-name-link">guardarKit</a><wbr>(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Método para armazenar um item de cura na mochila do ToCruz.</div>
+<div class="block">Metodo para armazenar um item de cura na mochila do ToCruz.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mochilaIsFull()" class="member-name-link">mochilaIsFull</a>()</code></div>
@@ -119,18 +120,18 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#mochilaTemKit()" class="member-name-link">mochilaTemKit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Verifica se há um kit de cura na mochila do To Cruz.</div>
+<div class="block">Verifica se há um kit de vida na mochila do To Cruz.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#usarItem(Items.ItemCura)" class="member-name-link">usarItem</a><wbr>(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Método para usar os item de cura que não estão na mochila do To Cruz, ou seja, para o To Cruz utilziar
- o item na sala que o coletou sem guardar.</div>
+<div class="block">Metodo para usar um item de cura que não está na mochila do To Cruz, ou seja, para o To Cruz
+ utilizar o item na sala que o coletou sem guardar.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#usarKit()" class="member-name-link">usarKit</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Método para usar um kit de cura armazenados na mochila, o metodo retorna o ItemUsado</div>
+<div class="block">Metodo para usar um kit de cura armazenado na mochila.</div>
 </div>
 </div>
 </div>
@@ -164,10 +165,10 @@ loadScripts(document, 'script');</script>
 <h3>mochilaTemKit</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">mochilaTemKit</span>()</div>
-<div class="block">Verifica se há um kit de cura na mochila do To Cruz.</div>
+<div class="block">Verifica se há um kit de vida na mochila do To Cruz.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>true</code> se houver um kit de cura na mochila; <code>false</code> caso contrário.</dd>
+<dd><code>true</code> se houver um kit de vida na mochila; <code>false</code> caso contrário.</dd>
 </dl>
 </div>
 </section>
@@ -181,12 +182,12 @@ loadScripts(document, 'script');</script>
 <a href="../Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a>,
 <a href="../Exceptions/AllLifeException.html" title="class in Exceptions">AllLifeException</a>,
 <a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></span></div>
-<div class="block">Método para armazenar um item de cura na mochila do ToCruz.</div>
+<div class="block">Metodo para armazenar um item de cura na mochila do ToCruz.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>item</code> - O item de cura que será armazenado.</dd>
 <dt>Returns:</dt>
-<dd>Uma mensagem indicando o sucesso ou falha ao guardar o item.</dd>
+<dd>Uma mensagem a indicar o sucesso ou falha ao guardar o item.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o item fornecido for nulo.</dd>
 <dd><code><a href="../Exceptions/WrongTypeItemException.html" title="class in Exceptions">WrongTypeItemException</a></code> - Se o item fornecido não for do tipo kit de vida.</dd>
@@ -202,7 +203,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">usarKit</span>()
           throws <span class="exceptions">Exceptions.EmptyCollectionException</span></div>
-<div class="block">Método para usar um kit de cura armazenados na mochila, o metodo retorna o ItemUsado</div>
+<div class="block">Metodo para usar um kit de cura armazenado na mochila.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>O kit usado</dd>
@@ -219,13 +220,13 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="return-type"><a href="../Items/ItemCura.html" title="class in Items">ItemCura</a></span>&nbsp;<span class="element-name">usarItem</span><wbr><span class="parameters">(<a href="../Items/ItemCura.html" title="class in Items">ItemCura</a>&nbsp;item)</span>
            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
 <a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></span></div>
-<div class="block">Método para usar os item de cura que não estão na mochila do To Cruz, ou seja, para o To Cruz utilziar
- o item na sala que o coletou sem guardar.</div>
+<div class="block">Metodo para usar um item de cura que não está na mochila do To Cruz, ou seja, para o To Cruz
+ utilizar o item na sala que o coletou sem guardar.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>item</code> - O item de cura que será usado.</dd>
 <dt>Returns:</dt>
-<dd>Uma mensagem indicando o sucesso ou falha ao usar o item.</dd>
+<dd>Uma mensagem a indicar o sucesso ou falha ao usar o item.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o item fornecido for nulo.</dd>
 <dd><code><a href="../Exceptions/UsedColectedItemException.html" title="class in Exceptions">UsedColectedItemException</a></code></dd>

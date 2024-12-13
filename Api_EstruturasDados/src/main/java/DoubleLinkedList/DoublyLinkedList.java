@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Esta classe representa uma lista duplamente encadeada genérica. Ela implementa
+ * Esta classe representa uma lista duplamente ligada genérica. Ela implementa
  * as operações básicas de uma lista ordenada, como inserção, remoção, e iteração.
  * A lista mantém uma referência para o primeiro (head) e o último (tail) nó da lista.
  *
@@ -23,7 +23,7 @@ import java.util.NoSuchElementException;
 public abstract class DoublyLinkedList<T> implements ListADT<T> {
 
     /**
-     * Contador de modificações da lista, usado para controle de concorrência
+     * Contador de modificações da lista, usado para controlo de concorrência
      */
     protected int modCount;
 
@@ -38,7 +38,7 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
     protected DoubleNode<T> head, tail;
 
     /**
-     * Constrói uma lista duplamente encadeada vazia.
+     * Constrói uma lista duplamente ligada vazia.
      */
     public DoublyLinkedList() {
         this.count = 0;
@@ -255,7 +255,7 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
 
 
     /**
-     * Classe interna que implementa o iterador para a lista duplamente encadeada.
+     * Classe interna que implementa o iterador para a lista duplamente ligada.
      */
     private class MyIterator<E> implements Iterator<E> {
 
@@ -265,20 +265,20 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
         private DoubleNode<T> current;
 
         /**
-         * Contador de modificações esperado para o controle de concorrência.
+         * Contador de modificações esperado para o controlo de concorrência.
          * Usado para verificar se a lista foi modificada enquanto o iterador estava em uso.
          */
         private int exceptedModCount;
 
         /**
          * Flag que indica se o próximo elemento pode ser removido com segurança.
-         * Este valor é definido como true após a chamada do método next().
+         * Este valor é definido como true após a chamada do metodo next().
          */
         private boolean isOkToRemove;
 
         /**
          * O elemento que pode ser removido.
-         * Este elemento é armazenado após a chamada do método next() para ser removido posteriormente.
+         * Este elemento é armazenado após a chamada do metodo next() para ser removido posteriormente.
          */
         private E elementOkToRemove;
 
@@ -306,7 +306,8 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
          * Retorna o próximo elemento da lista.
          *
          * @return o próximo elemento.
-         * @throws ConcurrentModificationException se a lista foi modificada enquanto o iterador estava em uso.
+         * @throws ConcurrentModificationException se a lista foi modificada enquanto
+         * o iterador estava em uso.
          * @throws NoSuchElementException se não houver mais elementos.
          */
         @Override
@@ -330,8 +331,9 @@ public abstract class DoublyLinkedList<T> implements ListADT<T> {
         /**
          * Remove o último elemento retornado pelo iterador.
          *
-         * @throws ConcurrentModificationException se a lista foi modificada enquanto o iterador estava em uso.
-         * @throws IllegalStateException se o método next() não foi chamado antes de remove().
+         * @throws ConcurrentModificationException se a lista foi modificada enquanto
+         * o iterador estava em uso.
+         * @throws IllegalStateException se o metodo next() não foi chamado antes de remove().
          */
         @Override
         public void remove() {

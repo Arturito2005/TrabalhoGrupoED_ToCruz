@@ -67,7 +67,7 @@ public interface BinaryTreeADT<T> {
     public String toString();
 
     /**
-     * Realiza uma travessia em ordem nesta árvore binária chamando um método
+     * Realiza uma travessia em ordem nesta árvore binária chamando um metodo
      * recursivo sobrecarregado de travessia em ordem que começa pela raiz.
      *
      * @return um iterador sobre os elementos desta árvore binária
@@ -75,7 +75,7 @@ public interface BinaryTreeADT<T> {
     public Iterator<T> iteratorInOrder();
 
     /**
-     * Realiza uma travessia em pré-ordem nesta árvore binária chamando um método
+     * Realiza uma travessia em pré-ordem nesta árvore binária chamando um metodo
      * recursivo sobrecarregado de travessia em pré-ordem que começa pela raiz.
      *
      * @return um iterador sobre os elementos desta árvore binária
@@ -83,7 +83,7 @@ public interface BinaryTreeADT<T> {
     public Iterator<T> iteratorPreOrder();
 
     /**
-     * Realiza uma travessia em pós-ordem nesta árvore binária chamando um método
+     * Realiza uma travessia em pós-ordem nesta árvore binária chamando um metodo
      * recursivo sobrecarregado de travessia em pós-ordem que começa pela raiz.
      *
      * @return um iterador sobre os elementos desta árvore binária
@@ -91,7 +91,7 @@ public interface BinaryTreeADT<T> {
     public Iterator<T> iteratorPostOrder();
 
     /**
-     * Realiza uma travessia em ordem de nível na árvore binária, utilizando uma fila.
+     * Realiza uma travessia em ordem de nível na árvore binária, utilizando uma queue.
      *
      * @return um iterador sobre os elementos desta árvore binária
      */

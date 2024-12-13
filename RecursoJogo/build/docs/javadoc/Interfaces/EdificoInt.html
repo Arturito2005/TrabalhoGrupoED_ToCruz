@@ -90,7 +90,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">EdificoInt</span></div>
-<div class="block">Interface que define o contrato para um edifício com divisões interconectadas.
+<div class="block">Interface que define o contrato para um edifício com divisões interligadas.
  Permite a manipulação e consulta de divisões, bem como das ligações entre elas.</div>
 </div>
 </section>
@@ -127,7 +127,7 @@ loadScripts(document, 'script');</script>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getNextDivisoes(Mapa.Divisao)" class="member-name-link">getNextDivisoes</a><wbr>(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Retorna um iterador com as divisões diretamente conectadas a uma divisão específica.</div>
+<div class="block">Retorna um iterador com as divisões diretamente ligadas a uma divisão específica.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getShortestPath(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPath</a><wbr>(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
@@ -262,7 +262,7 @@ loadScripts(document, 'script');</script>
 <div class="block">Atualiza o peso de todas as ligações partindo de uma divisão específica.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>vertex1</code> - a divisão cuja ligação terá seu peso atualizado.</dd>
+<dd><code>vertex1</code> - a divisão cuja ligação terá o seu peso atualizado.</dd>
 <dd><code>weight</code> - o novo peso para a ligação.</dd>
 </dl>
 </div>
@@ -273,10 +273,10 @@ loadScripts(document, 'script');</script>
 <h3>getNextDivisoes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&gt;</span>&nbsp;<span class="element-name">getNextDivisoes</span><wbr><span class="parameters">(<a href="../Mapa/Divisao.html" title="class in Mapa">Divisao</a>&nbsp;divisao)</span></div>
-<div class="block">Retorna um iterador com as divisões diretamente conectadas a uma divisão específica.</div>
+<div class="block">Retorna um iterador com as divisões diretamente ligadas a uma divisão específica.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>divisao</code> - a divisão cujas divisões conectadas serão retornadas.</dd>
+<dd><code>divisao</code> - a divisão cujas divisões ligadas serão retornadas.</dd>
 <dt>Returns:</dt>
 <dd>um iterador com as divisões conectadas.</dd>
 </dl>

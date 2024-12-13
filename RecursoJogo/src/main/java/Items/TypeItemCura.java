@@ -1,7 +1,7 @@
 package Items;
 
 /**
- * Enum que aramzena todos os tipos de itens de cura
+ * Enum que armazena todos os tipos de itens de cura
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
  *
@@ -12,11 +12,11 @@ package Items;
  */
 public enum TypeItemCura {
     /**
-     * Representa o tipo de item kit de vida
+     * Representa o Tipo de item "kit de vida"
      */
     KIT_VIDA,
     /**
-     * Representa o Tipo de item colete
+     * Representa o Tipo de item "colete"
      * */
     COLETE
 }

@@ -17,7 +17,7 @@ import Interfaces.OrderedListADT;
 public class ArrayOrderedList<T> extends ArrayList<T> implements OrderedListADT<T> {
 
     /**
-     * Constrói uma lista ordenada com a capacidade padrão.
+     * Constrói uma lista ordenada com a capacidade default.
      */
     public ArrayOrderedList() {
         super();

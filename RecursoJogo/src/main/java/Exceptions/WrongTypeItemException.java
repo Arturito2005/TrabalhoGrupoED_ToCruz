@@ -1,7 +1,8 @@
 package Exceptions;
 
 /**
- * Classe da Exceção WrongTypeItem, esta exceção é chamada sempre que é introduzido um tipo de item errado
+ * Classe da Exceção WrongTypeItem, esta exceção é chamada sempre que é introduzido um
+ * tipo de item errado
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138

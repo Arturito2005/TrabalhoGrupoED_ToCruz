@@ -19,7 +19,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Classe responsável por gerar o Mapa da missão, do ToCruz
+ * Classe responsável por gerar o Mapa da missão do ToCruz
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -42,11 +42,11 @@ public class ImportarMapa implements Importar {
     }
 
     /**
-     * Método auxiliar para encontrar uma divisão pelo nome em uma lista de divisões.
-     * Cria uma cópia da lista e a percorre para evitar modificações na lista original.
+     * Metodo auxiliar para encontrar uma divisão pelo nome numa lista de divisões.
+     * Cria uma cópia da lista e percorre-a para evitar modificações na lista original.
      *
      * @param name Nome da divisão a ser encontrada.
-     * @return A divisão encontrada ou null se não for encontrada.
+     * @return A divisão encontrada ou null caso não seja encontrada.
      */
     private Divisao findDivisao(String name) {
         LinearLinkedUnorderedList<Divisao> current = new LinearLinkedUnorderedList<>();
@@ -71,18 +71,18 @@ public class ImportarMapa implements Importar {
     }
 
     /**
-     * Gera o mapa do edificio e guarda os dados da Missao a partir de um ficehrio JSON.
+     * Gera o mapa do edifício e guarda os dados da Missão a partir de um ficheiro JSON.
      *
      * @param path Caminho para o ficheiro JSON.
-     * @return O objeto Missao criado com os dados do ficheiro.
-     * @throws FileNotFoundException Se o arquivo não for encontrado.
+     * @return O objeto Missão criado com os dados do ficheiro.
+     * @throws FileNotFoundException Se o ficheiro não for encontrado.
      * @throws IOException           Se ocorrer algum erro de leitura do ficheiro.
      * @throws NullPointerException  Se o caminho for null.
      */
     @Override
-    public Missao gerarMapa(String path) throws FileNotFoundException, IOException, NullPointerException {
+    public Missao gerarMapa(String path) throws NullPointerException, FileNotFoundException, IOException {
         if (path == null) {
-            throw new NullPointerException("O caminho do ficheiro não pode ser null");
+            throw new NullPointerException("O caminho do ficheiro nao pode ser null");
         }
 
         JSONParser jsonP = new JSONParser();
@@ -121,7 +121,7 @@ public class ImportarMapa implements Importar {
                     if (divisaoc1 != null && divisaoc2 != null) {
                         edificio.addLigacao(divisaoc1, divisaoc2, 0);
                     } else {
-                        System.out.println("Alguma das divisões não existem");
+                        System.out.println("Pelo menos uma das divisoes nao existe");
                     }
                 }
 
@@ -197,7 +197,6 @@ public class ImportarMapa implements Importar {
                     divisao.setItem(item);
                 }
 
-                //Refazer
                 missao = new Missao(codigo_missao, versao, edificio);
             }
         } catch (ParseException | FileNotFoundException e) {

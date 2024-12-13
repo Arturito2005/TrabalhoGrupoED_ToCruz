@@ -1,8 +1,8 @@
 package DoubleLinkedList;
 
 /**
- * Esta classe representa um nó duplamente encadeado, utilizado em uma lista
- * duplamente encadeada. Cada nó contém um elemento de tipo genérico, além de
+ * Esta classe representa um nó duplamente ligado, utilizado numa lista
+ * duplamente ligada. Cada nó contém um elemento de tipo genérico, além de
  * referências para o próximo nó e o nó anterior.
  *
  * @param <T> o tipo do elemento armazenado no nó.

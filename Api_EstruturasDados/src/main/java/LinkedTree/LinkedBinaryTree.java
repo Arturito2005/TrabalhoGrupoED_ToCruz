@@ -109,7 +109,7 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     /**
-     * Método auxiliar que busca recursivamente um elemento na árvore.
+     * Metodo auxiliar que pesquisa recursivamente um elemento na árvore.
      *
      * @param targetElement o elemento a ser procurado.
      * @param next          o nó atual a ser verificado.

@@ -1,7 +1,7 @@
 package Interfaces;
 
 /**
- * Classe abstrata que representa cada personagem no jogo
+ * Interface que representa uma missão
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -12,9 +12,9 @@ package Interfaces;
 public interface MissaoInt {
 
     /**
-     * Visualiza as simulações disponíveis para a missão.
-     * Este método exibe informações ou resultados de simulações realizadas pelo o ToCruz
-     * ordenadas pelo os pontos de vida que o mesmo terminou a missão.
+     * O metodo permite visualizar as simulações disponíveis para a missão.
+     * Exibe informações ou resultados de simulações realizadas pelo ToCruz
+     * ordenadas pelos pontos de vida restantes.
      */
     public void viewSimulacoes();
 
@@ -26,14 +26,14 @@ public interface MissaoInt {
 
     /**
      * Inicia o modo automático da missão.
-     * No modo automático, é indicado ao To Cruz qual o melhor caminho que ele deve realizar
-     * para chegar ao Alvo e se possível o caminho para voltar com vida.
+     * No modo automático, é indicado ao To Cruz qual é o melhor caminho que ele deve realizar
+     * para chegar ao Alvo e se possível o caminho para sair do edifício com vida.
      */
     public void modoAutomatico();
 
     /**
-     * Executa a missão automaticamente até o final.
-     * Este método realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.
+     * Executa a missão automaticamente até ao final.
+     * Este metodo realiza todas as etapas da missão de forma automatizada, simulando o jogo completo.
      */
     public void jogoAutomatico();
 }

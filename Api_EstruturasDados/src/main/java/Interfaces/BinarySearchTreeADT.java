@@ -3,9 +3,9 @@ package Interfaces;
 import Exceptions.ElementNotFoundException;
 
 /**
- * Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de busca binária (BST).
+ * Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de pesquisa binária (BST).
  *
- * @param <T> o tipo de elementos armazenados na árvore de busca binária
+ * @param <T> o tipo de elementos armazenados na árvore de pesquisa binária
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveira

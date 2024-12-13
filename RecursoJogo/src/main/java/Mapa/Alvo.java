@@ -105,10 +105,10 @@ public class Alvo {
     }
 
     /**
-     * Retorna uma representação em string do alvo, incluindo seu identificador,
+     * Retorna uma representação em string do alvo, incluindo o seu identificador,
      * nome e status de atingido.
      *
-     * @return uma string representando o alvo.
+     * @return uma string a representar o alvo.
      */
     @Override
     public String toString() {
@@ -146,9 +146,9 @@ public class Alvo {
     }
 
     /**
-     * Gera um código hash para o alvo baseado no nome.
+     * Gera um código de hash para o alvo baseado no nome.
      *
-     * @return o código hash do nome do alvo.
+     * @return o código de hash do nome do alvo.
      */
     @Override
     public int hashCode() {

@@ -4,9 +4,10 @@ import Exceptions.EmptyCollectionException;
 import Interfaces.OrderedListADT;
 
 /**
- * Esta classe representa uma lista duplamente encadeada ordenada.
+ * Esta classe representa uma lista duplamente ligada ordenada.
  * Ela implementa a interface {@link OrderedListADT} e herda de {@link DoublyLinkedList}.
- * Elementos são armazenados na lista de forma ordenada de acordo com a ordem definida pela interface {@link Comparable}.
+ * Elementos são armazenados na lista de forma ordenada de acordo com a ordem definida
+ * pela interface {@link Comparable}.
  *
  * @param <T> Tipo dos elementos na lista, que deve ser comparável com outros elementos do mesmo tipo.
  * @author Artur Pinto
@@ -18,7 +19,7 @@ import Interfaces.OrderedListADT;
 public class DoublyLinkedOrderedList<T> extends DoublyLinkedList<T> implements OrderedListADT<T> {
 
     /**
-     * Constrói uma nova lista duplamente encadeada ordenada vazia.
+     * Constrói uma nova lista duplamente ligada ordenada vazia.
      */
     public DoublyLinkedOrderedList() {
         super();

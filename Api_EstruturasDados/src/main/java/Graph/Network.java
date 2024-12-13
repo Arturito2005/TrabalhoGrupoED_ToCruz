@@ -21,7 +21,8 @@ import java.util.Iterator;
 public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
 
     /**
-     * Construtor padrão da classe Network. Inicializa a rede chamando o construtor da classe pai.
+     * Construtor default da classe Network.
+     * Inicializa a rede chamando o construtor da classe pai.
      */
     public Network() {
         super();
@@ -91,7 +92,8 @@ public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMat
      *
      * @param startVertex O vértice de origem.
      * @param finalVertex O vértice de destino.
-     * @return Um iterador contendo os vértices do caminho mais curto, ou um iterador vazio se não houver caminho.
+     * @return Um iterador contendo os vértices do caminho mais curto,
+     * ou um iterador vazio se não houver caminho.
      */
     @Override
     public Iterator<T> shortestPath(T startVertex, T finalVertex) {

@@ -4,7 +4,7 @@ import Missoes.Missao;
 
 /**
  * Interface que define as operações relacionadas para gerir todas as missões
- * importadas pelo o ToCruz.
+ * importadas pelo ToCruz.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -15,7 +15,7 @@ import Missoes.Missao;
 public interface MissoesInt {
 
     /**
-     * Adiciona uma missão ao sistema.
+     * Adiciona uma missão.
      *
      * @param missao A missão a ser adicionada.
      * @throws NullPointerException Se a missão fornecida for nula.

@@ -12,10 +12,10 @@ import java.util.Iterator;
  * A classe {@code GraphMatrizAdjacencia} representa uma implementação de grafo
  * utilizando uma matriz de adjacência. É uma implementação do tipo de dados
  * {@link GraphADT} que permite adicionar e remover vértices e arestas, bem
- * como realizar buscas em largura e profundidade, além de calcular o caminho
+ * como realizar pesquisas em largura e profundidade, além de calcular o caminho
  * mais curto entre dois vértices.
  *
- * @param <T> tipo genérico representando os vértices do grafo
+ * @param <T> tipo genérico que representa os vértices do grafo
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveira
@@ -25,13 +25,14 @@ import java.util.Iterator;
 public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
     /**
-     * A capacidade padrão inicial para o grafo. Define o número inicial de vértices que a rede pode conter.
+     * A capacidade default inicial para o grafo.
+     * Define o número inicial de vértices que o grafo pode conter.
      */
     protected final int DEFAULT_CAPACITY = 10;
 
     /**
      * O número de vértices presentes no grafo.
-     * Mantém o controle de quantos vértices foram inseridos no grafo até o momento.
+     * Mantém o controlo de quantos vértices foram inseridos no grafo até o momento.
      */
     protected int numVertices;
 
@@ -43,13 +44,13 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     protected boolean[][] adjMatrix;
 
     /**
-     * Um array contendo os valores dos vértices.
+     * Um array que contém os valores dos vértices.
      * Cada posição vertices[i] armazena o valor do vértice de índice i no grafo.
      */
     protected T[] vertices;
 
     /**
-     * Cria um grafo vazio com capacidade inicial padrão.
+     * Cria um grafo vazio com capacidade inicial default.
      */
     public GraphMatrizAdjacencia() {
         numVertices = 0;
@@ -235,11 +236,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
 
 
     /**
-     * Retorna um iterador que realiza uma busca em largura (BFS) começando
+     * Retorna um iterador que realiza uma pesquisa em largura (BFS) começando
      * no vértice especificado.
      *
-     * @param startVertex o vértice inicial da busca
-     * @return um iterador com o resultado da busca em largura
+     * @param startVertex o vértice inicial da pesquisa
+     * @return um iterador com o resultado da pesquisa em largura
      */
     @Override
     public Iterator<T> iteratorBFS(T startVertex) {
@@ -280,11 +281,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador que realiza uma busca em profundidade (DFS) começando
+     * Retorna um iterador que realiza uma pesquisa em profundidade (DFS) começando
      * no vértice especificado.
      *
-     * @param startVertex o vértice inicial da busca
-     * @return um iterador com o resultado da busca em profundidade
+     * @param startVertex o vértice inicial da pesquisa
+     * @return um iterador com o resultado da pesquisa em profundidade
      */
     @Override
     public Iterator<T> iteratorDFS(T startVertex) {
@@ -331,11 +332,11 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador que realiza a busca do caminho mais curto entre dois
-     * vértices usando o algoritmo de busca em largura (BFS).
+     * Retorna um iterador que realiza a pesquisa do caminho mais curto entre dois
+     * vértices usando o algoritmo de pesquisa em largura (BFS).
      *
-     * @param startVertex  o vértice inicial da busca
-     * @param targetVertex o vértice de destino da busca
+     * @param startVertex  o vértice inicial da pesquisa
+     * @param targetVertex o vértice de destino da pesquisa
      * @return um iterador com o caminho mais curto encontrado
      */
     @Override

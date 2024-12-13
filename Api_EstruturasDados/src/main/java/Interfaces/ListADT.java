@@ -63,7 +63,7 @@ public interface ListADT<T> extends Iterable<T> {
     /**
      * Retorna true se esta lista contiver o elemento alvo especificado.
      *
-     * @param target o elemento que está sendo buscado na lista
+     * @param target o elemento que está a ser pesquisado na lista
      * @return true se a lista contiver este elemento
      */
     public boolean contains(T target);

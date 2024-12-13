@@ -95,8 +95,9 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Missao</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Comparable.html" title="class or interface in java.lang" class="external-link">Comparable</a>&lt;<a href="Missao.html" title="class in Missoes">Missao</a>&gt;</span></div>
-<div class="block">Representa uma missão no contexto do jogo, contendo informações como código, versão,
- edifício associado e simulações realizadas. Permite executar modos de jogo manual e automático.</div>
+<div class="block">Representa uma missão no contexto do jogo, com informações como código, versão,
+ edifício associado e simulações realizadas. Permite executar modos de jogo manual, automático
+ e "jogo automático".</div>
 </div>
 </section>
 <section class="summary">
@@ -111,7 +112,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Missao</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor padrão que inicializa a missão com valores padrão.</div>
+<div class="block">Construtor default que inicializa a missão com valores default.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,long,Mapa.Edificio)" class="member-name-link">Missao</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;cod_missao,
  long&nbsp;versao,
@@ -146,38 +147,40 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getcod_missao()" class="member-name-link">getcod_missao</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Obtém o código da missão.</div>
+<div class="block">Retorna o código da missão.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.OrderedListADT<wbr>&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSimulacoes()" class="member-name-link">getSimulacoes</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Obtém a lista de simulações realizadas nesta missão.</div>
+<div class="block">Retorna a lista de simulações realizadas nesta missão.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getTot_simulacoes()" class="member-name-link">getTot_simulacoes</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Obtém o total de simulações realizadas.</div>
+<div class="block">Retorna o número total de simulações realizadas.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getVersao()" class="member-name-link">getVersao</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Obtém a versão da missão.</div>
+<div class="block">Retorna a versão da missão.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Calcula o código hash para esta Missao com base no código e na versão.</div>
+<div class="block">Calcula o código de hash para a Missao com base no código e na versão.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#jogoAutomatico()" class="member-name-link">jogoAutomatico</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Executa um jogo automático nesta missão, ou seja, um jogo em que o ToCruz joga sem iteração do utilizador.</div>
+<div class="block">Executa um jogo automático nesta missão, ou seja, o jogador não interage para fazer
+ uma determinada ação.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoAutomatico()" class="member-name-link">modoAutomatico</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Executa o modo automático da missão, mostrando o caminho mais curto para o ToCruz entrar no
- edificio e coletar de volta e o melhor caminho que ele deve fazer para sair do edifico.</div>
+ edifício e coletar o alvo, e o melhor caminho que ele deve fazer, se possível,
+ para sair do edifício com o alvo.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#modoManual()" class="member-name-link">modoManual</a>()</code></div>
@@ -228,7 +231,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>Missao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Missao</span>()</div>
-<div class="block">Construtor padrão que inicializa a missão com valores padrão.</div>
+<div class="block">Construtor default que inicializa a missão com valores default.</div>
 </div>
 </section>
 </li>
@@ -245,7 +248,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>getcod_missao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">getcod_missao</span>()</div>
-<div class="block">Obtém o código da missão.</div>
+<div class="block">Retorna o código da missão.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>o código da missão</dd>
@@ -258,7 +261,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>getVersao</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getVersao</span>()</div>
-<div class="block">Obtém a versão da missão.</div>
+<div class="block">Retorna a versão da missão.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a versão da missão</dd>
@@ -271,7 +274,7 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>getSimulacoes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.OrderedListADT&lt;<a href="Simulacoes.html" title="class in Missoes">Simulacoes</a>&gt;</span>&nbsp;<span class="element-name">getSimulacoes</span>()</div>
-<div class="block">Obtém a lista de simulações realizadas nesta missão.</div>
+<div class="block">Retorna a lista de simulações realizadas nesta missão.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>a lista ordenada de simulações</dd>
@@ -284,10 +287,10 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>getTot_simulacoes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getTot_simulacoes</span>()</div>
-<div class="block">Obtém o total de simulações realizadas.</div>
+<div class="block">Retorna o número total de simulações realizadas.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>o total de simulações</dd>
+<dd>o número total de simulações</dd>
 </dl>
 </div>
 </section>
@@ -324,7 +327,8 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">modoAutomatico</span>()</div>
 <div class="block">Executa o modo automático da missão, mostrando o caminho mais curto para o ToCruz entrar no
- edificio e coletar de volta e o melhor caminho que ele deve fazer para sair do edifico.</div>
+ edifício e coletar o alvo, e o melhor caminho que ele deve fazer, se possível,
+ para sair do edifício com o alvo.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/MissaoInt.html#modoAutomatico()">modoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
@@ -337,7 +341,8 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>jogoAutomatico</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">jogoAutomatico</span>()</div>
-<div class="block">Executa um jogo automático nesta missão, ou seja, um jogo em que o ToCruz joga sem iteração do utilizador.</div>
+<div class="block">Executa um jogo automático nesta missão, ou seja, o jogador não interage para fazer
+ uma determinada ação.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/MissaoInt.html#jogoAutomatico()">jogoAutomatico</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/MissaoInt.html" title="interface in Interfaces">MissaoInt</a></code></dd>
@@ -367,7 +372,8 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>equals</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</span></div>
-<div class="block">Verifica a igualdade entre dois objetos Missao. A comparação é feita pelo código da missão e a versão.</div>
+<div class="block">Verifica a igualdade entre dois objetos Missao.
+ A comparação é feita pelo código da missão e a versão.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
@@ -384,12 +390,12 @@ implements <a href="../Interfaces/MissaoInt.html" title="interface in Interfaces
 <h3>hashCode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
-<div class="block">Calcula o código hash para esta Missao com base no código e na versão.</div>
+<div class="block">Calcula o código de hash para a Missao com base no código e na versão.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>o código hash calculado</dd>
+<dd>o código de hash calculado</dd>
 </dl>
 </div>
 </section>

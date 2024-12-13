@@ -82,14 +82,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Construtor que realiza uma cópia profunda (deep copy) de uma instância da classe Divisao.
-     * Este construtor cria uma nova instância de Divisao e inicializa os campos com os valores fornecidos.
-     * Se os parâmetros de objeto não forem nulos, o construtor cria novas instâncias desses objetos para garantir
-     * que não haja compartilhamento de referências com o objeto original.
+     * Construtor que realiza uma deep copy de uma instância da classe Divisao.
+     * Este construtor cria uma nova instância de Divisao e inicializa os campos com
+     * os valores fornecidos.
+     * Se os parâmetros dos objetos não forem nulos, o construtor cria novas instâncias
+     * desses objetos para garantir que não haja partilha de referências com o
+     * objeto original.
      *
      * @param id_divisao    O identificador único da divisão.
      * @param name          O nome da divisão.
-     * @param entrada_saida Indica se a divisão é de entrada ou saída (valor booleano).
+     * @param entrada_saida Indica se a divisão é de entrada ou saída (true ou false).
      * @param alvo          O alvo associado à divisão, ou null se não houver alvo.
      * @param item          O item presente na divisão, ou null se não houver item.
      * @param inimigos      Lista de inimigos presentes na divisão, nunca null.
@@ -143,7 +145,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Obtém o nome da divisão.
+     * Retorna o nome da divisão.
      *
      * @return O nome da divisão.
      */
@@ -161,7 +163,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Define se a divisão é uma entrada/saída.
+     * Atualiza o "estado" da divisão.
      *
      * @param entrada_saida {@code true} para definir como entrada/saída.
      */
@@ -170,25 +172,25 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Obtém o personagem "ToCruz" presente na divisão.
+     * Obtém a personagem "ToCruz" presente na divisão.
      *
-     * @return O personagem "ToCruz".
+     * @return personagem "ToCruz".
      */
     public ToCruz getToCruz() {
         return toCruz;
     }
 
     /**
-     * Remove o personagem "ToCruz" da divisão.
+     * Remove a personagem "ToCruz" da divisão.
      */
     public void removeToCruz() {
         this.toCruz = null;
     }
 
     /**
-     * Adiciona o personagem "ToCruz" à divisão.
+     * Adiciona a personagem "ToCruz" à divisão.
      *
-     * @param toCruz O personagem "ToCruz" a ser adicionado.
+     * @param toCruz personagem "ToCruz" a ser adicionada.
      */
     public void addToCruz(ToCruz toCruz) {
         this.toCruz = toCruz;
@@ -196,7 +198,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Obtém a lista de inimigos presentes na divisão.
+     * Retorna a lista de inimigos presentes na divisão.
      *
      * @return A lista de inimigos.
      */
@@ -208,12 +210,12 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * Adiciona um inimigo à divisão.
      *
      * @param inimigo O inimigo a ser adicionado.
-     * @throws NullPointerException quando o inimigo recebido como parametro é null
+     * @throws NullPointerException quando o inimigo recebido como paramêtro é null.
      */
     @Override
     public void addInimigo(Inimigo inimigo) throws NullPointerException {
         if (inimigo == null) {
-            throw new NullPointerException("O inimigo a adicionar não pode ser nulo");
+            throw new NullPointerException("O inimigo a adicionar nao pode ser nulo");
         }
         this.inimigos.addToRear(inimigo);
     }
@@ -237,7 +239,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Obtém o item presente na divisão.
+     * Retorna o item presente na divisão.
      *
      * @return O item da divisão.
      */
@@ -246,16 +248,16 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Define o item presente na divisão.
+     * Altera o item presente na divisão.
      *
-     * @param item O item a ser adicionado.
+     * @param item O item para alterar.
      */
     public void setItem(Item item) {
         this.item = item;
     }
 
     /**
-     * Obtém o alvo presente na divisão.
+     * Retorna o alvo presente na divisão.
      *
      * @return O alvo da divisão.
      */
@@ -264,18 +266,18 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Define o alvo presente na divisão.
+     * Altera o alvo presente na divisão.
      *
-     * @param alvo O alvo a ser definido.
+     * @param alvo O alvo para alterar.
      */
     public void setAlvo(Alvo alvo) {
         this.alvo = alvo;
     }
 
     /**
-     * Verifica se "ToCruz" está em uma saída.
+     * Verifica se o To Cruz está numa saída.
      *
-     * @return {@code true} se "ToCruz" estiver na saída, {@code false} caso contrário.
+     * @return {@code true} se o To Cruz estiver na saída, {@code false} caso contrário.
      */
     @Override
     public boolean isToCruzInExit() {
@@ -289,9 +291,9 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Verifica se "ToCruz" está na divisão com o alvo.
+     * Verifica se o To Cruz está na divisão com o alvo.
      *
-     * @return {@code true} se "ToCruz" estiver com o alvo, {@code false} caso contrário.
+     * @return {@code true} se o To Cruz estiver com o alvo, {@code false} caso contrário.
      */
     @Override
     public boolean isToCruzInDivisaoAlvo() {
@@ -321,7 +323,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Verifica se há um confronto entre "ToCruz" e os inimigos.
+     * Verifica se há um confronto entre o To Cruz e os inimigos.
      *
      * @return {@code true} se houver confronto, {@code false} caso contrário.
      */
@@ -337,19 +339,19 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Faz com que um inimigo ataque "ToCruz".
+     * Faz com que um inimigo ataque o To Cruz.
      *
-     * @param inimigo O inimigo que atacará "ToCruz".
+     * @param inimigo O inimigo que vai atacar o To Cruz.
      */
     @Override
     public void attackInimigo(Inimigo inimigo) {
         long vidaTo = toCruz.getVida() - inimigo.getPoder();
         toCruz.setVida(vidaTo);
 
-        System.out.println("O imimigo" + inimigo.getNome() + " atacou o To Cruz");
+        System.out.println("O imimigo " + inimigo.getNome() + " atacou o To Cruz");
 
         if (toCruz.isDead()) {
-            System.out.println("O inimigo " + inimigo.getNome() + "matou o To Cruz");
+            System.out.println("O inimigo " + inimigo.getNome() + " matou o To Cruz");
             toCruz.setVida(0);
         } else {
             System.out.println("To Cruz resiste ao ataque e fica com " + vidaTo + " HP");
@@ -357,19 +359,19 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Marca o alvo como atingido por "ToCruz".
+     * Marca o alvo como atingido pelo To Cruz.
      */
     @Override
     public void ToCruzGetAlvo() {
         this.alvo.setAtinigido(true);
         toCruz.setColectedAlvo(true);
-        System.out.println("To Cruz está com o alvo, agora só falta sair do edificio com vida");
+        System.out.println("To Cruz esta com o alvo, agora so falta sair do edificio com vida");
     }
 
     /**
-     * Faz com que todos os inimigos ataquem "ToCruz".
+     * Faz com que todos os inimigos ataquem o To Cruz.
      *
-     * @param dead_inimigos Pilha onde inimigos mortos serão armazenados.
+     * @param dead_inimigos Stack onde os inimigos mortos serão armazenados.
      */
     @Override
     public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigos) {
@@ -385,7 +387,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
                 System.out.println("O To Cruz matou o inimigo " + inimigo.getNome());
                 inimigosDead.addToRear(inimigo);
             } else {
-                System.out.println("O inimigo " + inimigo.getNome() + "resitiu ao ataque do To Cruz e ficou com : " + inimigo.getVida() + " HP");
+                System.out.println("O inimigo " + inimigo.getNome() + " resitiu ao ataque do To Cruz e ficou com: " + inimigo.getVida() + " HP");
             }
         }
 
@@ -410,7 +412,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
                 System.out.println(e.getMessage());
             }
         } else {
-            System.out.println("O item desta divisao já foi usado anteriormente");
+            System.out.println("O item desta divisao ja foi usado anteriormente");
         }
     }
 
@@ -440,7 +442,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Desenha a representação visual da divisão no console.
+     * Desenha a representação visual da divisão na consola.
      *
      * @return Uma string com o desenho da divisão
      */
@@ -508,7 +510,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     /**
      * Retorna uma representação em string da divisão.
      *
-     * @return String representando a divisão.
+     * @return String a representar a divisão.
      */
     @Override
     public String toString() {
@@ -524,7 +526,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     }
 
     /**
-     * Compara esta divisão com outra com base no ID.
+     * Compara esta divisão com outra, com base no ID.
      *
      * @param o Outro objeto a ser comparado.
      * @return 1 se esta divisão tiver um ID maior, -1 se for menor, 0 se forem iguais.

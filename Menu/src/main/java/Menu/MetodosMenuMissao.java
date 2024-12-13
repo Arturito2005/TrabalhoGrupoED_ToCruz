@@ -12,12 +12,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Classe responsável por gestão o menu de missões do jogo.
+ * Classe responsável pela gestão do menu de missões do jogo.
  * Contém métodos para importar, realizar e exportar missões, além de permitir a seleção do modo de jogo.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -25,17 +25,17 @@ public abstract class MetodosMenuMissao {
 
     /**
      * Construtor padrão da classe MetodosMenuMissao.
-     * Inicializa a classe para gestão o menu de missões, sem parâmetros adicionais.
+     * Inicializa a classe para a gestão do menu de missões, sem parâmetros adicionais.
      */
     public MetodosMenuMissao() {
     }
     /**
-     * Scanner para ler entradas do usuário.
+     * Scanner para ler as entradas do jogador.
      */
     private static Scanner sc = new Scanner(System.in);
 
     /**
-     * Caminho padrão para o diretório de importação de arquivos.
+     * Caminho padrão para o diretório de importação de ficheiros.
      */
     private static final String path_name_def = "./Jsons/Import/";
 
@@ -45,11 +45,11 @@ public abstract class MetodosMenuMissao {
     private static final String destino = "./Jsons/Export/";
 
     /**
-     * Método para importar missões de um arquivo JSON.
-     * O usuário é solicitado a fornecer o nome do arquivo e, em seguida, o mapa da missão é importado.
-     * Caso o arquivo seja lido com sucesso, as missões são adicionadas à lista de missões.
+     * Método para importar missões de um ficheiro JSON.
+     * O jogador é convidado a fornecer o nome do ficheiro e, em seguida, o mapa da missão é importado.
+     * Caso o ficheiro seja lido com sucesso, as missões são adicionadas à lista de missões.
      *
-     * @return Objeto Missoes contendo todas as missões importadas.
+     * @return Objeto Missoes que contém todas as missões importadas.
      */
     public static Missoes importarMissoes() {
         Missoes missoes = new Missoes();
@@ -78,7 +78,7 @@ public abstract class MetodosMenuMissao {
                 try {
                     missoes.addMissao(importarMapa.gerarMapa(path_name));
                     do {
-                        System.out.print("Desenha importar mais alguma missao? (Nao:0 / Sim:1) -->");
+                        System.out.print("Deseja importar mais alguma missao? (Nao: 0 / Sim: 1) -->");
                         try {
                             continuar = sc.nextInt();
                         } catch (InputMismatchException ex) {
@@ -97,10 +97,10 @@ public abstract class MetodosMenuMissao {
     }
 
     /**
-     * Método que gerencia a execução das missões. Caso existam várias missões, o usuário pode escolher
-     * jogar várias missões em sequência ou uma única missão.
+     * Método que gere a exportação das missões. Caso existam várias missões, o jogador pode escolher
+     * exportar várias missões em sequência ou uma única missão.
      *
-     * @param missoes Objeto contendo as missões a serem realizadas.
+     * @param missoes Objeto que contém as missões a serem exportadas.
      */
     private static void exportarMissoes(Missoes missoes) {
         ExportarDado exportar = new ExportarDado();
@@ -122,10 +122,10 @@ public abstract class MetodosMenuMissao {
     }
 
     /**
-     * Método que gerencia a execução das missões. Caso existam várias missões, o usuário pode escolher
+     * Método que gere a execução das missões. Caso existam várias missões, o utilizador pode escolher
      * jogar várias missões em sequência ou uma única missão.
      *
-     * @param missoes Objeto contendo as missões a serem realizadas.
+     * @param missoes Objeto que contém as missões a serem realizadas.
      */
     public static void RealizarMissoes(Missoes missoes) {
         if (missoes.getContMissoes() > 1) {
@@ -153,7 +153,7 @@ public abstract class MetodosMenuMissao {
 
     /**
      * Método que permite ao jogador selecionar o modo de jogo para uma missão específica.
-     * O jogador pode escolher entre modo manual, automático ou automático completo.
+     * O jogador pode escolher entre modo manual, automático ou jogo automático.
      *
      * @param missao A missão que será jogada no modo selecionado.
      */
@@ -198,10 +198,10 @@ public abstract class MetodosMenuMissao {
     }
 
     /**
-     * Método responsável por gerenciar a execução de várias missões. O jogador pode escolher
-     * qual missão deseja jogar a partir de uma lista de missões disponíveis.
+     * Método responsável por gerir a execução de várias missões. O jogador pode escolher
+     * a missão que deseja jogar a partir de uma lista de missões disponíveis.
      *
-     * @param missoes Objeto contendo todas as missões disponíveis.
+     * @param missoes Objeto que contém todas as missões disponíveis.
      */
     private static void executarVariasMissoes(Missoes missoes) {
         int op_missao = -1;
@@ -212,12 +212,12 @@ public abstract class MetodosMenuMissao {
             System.out.println("0 - Sair");
             for (Missao mis : missoes.getListaMissao()) {
                 arrayMissao[i++] = mis;
-                System.out.println(i + " - Missao" + mis.getcod_missao() + " versão nº " + mis.getVersao());
+                System.out.println(i + " - Missao " + mis.getcod_missao() + " versao nº " + mis.getVersao());
             }
 
             op_missao = -1;
             do {
-                System.out.print("Selecione a opção da missão que quer jogar -->");
+                System.out.print("Selecione a opção da missao que quer jogar -->");
 
                 try {
                     op_missao = sc.nextInt();

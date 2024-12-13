@@ -4,7 +4,7 @@ import Exceptions.EmptyCollectionException;
 import Personagens.Inimigo;
 
 /**
- * Interface para definir as condições que podem acontecer dentro de uma divisao do jogo.
+ * Interface para definir as condições que podem acontecer dentro de uma divisão do jogo.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -30,6 +30,7 @@ public interface DivisaoIt {
      * @return O inimigo removido.
      */
     public Inimigo removeInimigo(Inimigo inimigo);
+
     /**
      * Verifica se há um confronto ativo na divisão.
      *
@@ -59,7 +60,7 @@ public interface DivisaoIt {
     public boolean isToCruzInExit();
 
     /**
-     * Faz o desenho na consola da divisão
+     * Faz o desenho da divisão na consola
      *
      * @return Uma string com o desenho da divisão
      * */

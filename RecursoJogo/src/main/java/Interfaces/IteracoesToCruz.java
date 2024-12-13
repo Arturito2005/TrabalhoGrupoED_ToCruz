@@ -20,16 +20,16 @@ public interface IteracoesToCruz {
     public void ToCruzGetAlvo();
 
     /**
-     * Permite que o personagem ToCruz ataque todos os inimigos presentes na divisão.
+     * Permite ao ToCruz atacar todos os inimigos presentes na divisão.
      * Os inimigos mortos durante o ataque são adicionados à lista de inimigos mortos.
      *
      * @param dead_inimigo A lista de inimigos mortos durante o ataque, que será atualizada
-     *                     com os inimigos que foram derrotados por ToCruz.
+     *                     com os inimigos que foram abatidos pelo ToCruz.
      */
     public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigo);
 
     /**
-     * Permite ao To Cruz utilziar o item da divisão
+     * Permite ao To Cruz utilizar o item da divisão
      */
     public void usarItemDivisao();
 

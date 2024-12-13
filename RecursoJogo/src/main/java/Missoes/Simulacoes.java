@@ -19,12 +19,13 @@ import ArrayList.ArrayUnordered;
 import java.util.*;
 
 /**
- * Classe responsável por gestão das simulações do jogo, implementando o comportamento do ToCruz
- * enquanto interage com o edifício, inimigos e outros objetos do jogo. A classe é capaz de realizar
- * simulações manuais e automáticas, além de gerar relatórios ao final de cada simulação.
+ * Classe responsável pela gestão das simulações do jogo, implementando o comportamento do ToCruz
+ * enquanto interage com o edifício, inimigos e outros objetos do jogo.
+ * A classe é capaz de realizar simulações manuais, automáticas e jogo automático, além de
+ * gerar relatórios ao final de cada simulação.
  * <p>
  * A classe implementa a interface {@link SimulacoesInt} para fornecer os métodos necessários
- * para o controle do jogo e a interface {@link Comparable} para permitir comparações entre
+ * para o controlo do jogo e a interface {@link Comparable} para permitir comparações entre
  * diferentes simulações.
  *
  * @author Artur Pinto
@@ -36,7 +37,7 @@ import java.util.*;
 public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     /**
-     * Instância do scanner para leitura de entradas do utilizador.
+     * Instância do scanner para a leitura de entradas do jogador.
      */
     private static Scanner sc = new Scanner(System.in);
 
@@ -46,20 +47,20 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     private long versao_simulacao;
 
     /**
-     * Fila que armazena o trajeto percorrido pelo ToCruz dentro do edifício.
+     * Queue que armazena o trajeto percorrido pelo ToCruz dentro do edifício.
      * Representa a sequência de divisões visitadas durante a simulação.
      */
     private QueueADT<Divisao> trajeto_to;
 
     /**
      * Lista não ordenada de inimigos mortos durante a simulação.
-     * Usada para armazenar os inimigos que foram derrotados.
+     * Usada para armazenar os inimigos que foram abatidos.
      */
     private UnorderedListADT<Inimigo> inimigos_dead;
 
     /**
-     * Vida restante do personagem ToCruz durante a simulação.
-     * Representa a quantidade de vida disponível para o ToCruz.
+     * Vida restante da personagem ToCruz durante a simulação.
+     * Representa a quantidade de vida restante para o ToCruz.
      */
     private long vida_to;
 
@@ -73,7 +74,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
      * Construtor que inicializa os atributos da simulação com os valores fornecidos.
      *
      * @param versao_simulacao a versão da simulação.
-     * @param edificio         o edifício onde a simulação ocorre.
+     * @param edificio o edifício onde a simulação ocorre.
      */
     public Simulacoes(long versao_simulacao, Edificio edificio) {
         this.edificio = edificio;
@@ -93,9 +94,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Retorna a fila de trajetos do ToCruz.
+     * Retorna a queue de trajetos do ToCruz.
      *
-     * @return a fila de trajetos do ToCruz.
+     * @return a queue de trajetos do ToCruz.
      */
     public QueueADT<Divisao> getTrajeto_to() {
         return trajeto_to;
@@ -170,11 +171,12 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Verifica se o personagem ToCruz deve usar um kit de primeiros socorros da mochila,
-     * com base na condição de vida do personagem e na disponibilidade do kit na mochila.
+     * Verifica se a personagem ToCruz deve usar um kit de primeiros socorros da mochila,
+     * com base na condição de vida da personagem e na disponibilidade do kit na mochila.
      * Se a vida de ToCruz for menor ou igual a 30 e se a mochila contiver um kit, o kit é usado.
      *
-     * @param toCruz O objeto do personagem ToCruz, que será analisado para decidir se o kit será utilizado.
+     * @param toCruz O objeto da personagem ToCruz, que será analisado para decidir se o
+     * kit será utilizado.
      * @return Retorna verdadeiro se o kit foi usado, caso contrário retorna falso.
      */
     private boolean ConditionUseKitMochila(ToCruz toCruz) {
@@ -191,8 +193,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     /**
      * Determina a melhor divisão inicial para o ToCruz começar a sua trajetória dentro do edifício.
      *
-     * @param toCruz o personagem ToCruz que realizará a simulação.
-     * @return a divisão onde o ToCruz deve começar sua trajetória.
+     * @param toCruz a personagem ToCruz que realizará a simulação.
+     * @return a divisão onde o ToCruz deve começar o seu percurso.
      */
     private Divisao BestStartToCruz(ToCruz toCruz, UnorderedListADT<Divisao> list_entradas, Divisao div_alvo) {
         Divisao best_div = null;
@@ -220,7 +222,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
 
         if (best_distance < toCruz.getVida()) {
-            System.out.println("A melhor entrada que o To Cruz deve escolher é esta: " + best_div.getName());
+            System.out.println("A melhor entrada que o To Cruz deve escolher e esta: " + best_div.getName());
             System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
 
             shortesPathTwopoints(best_div, div_alvo);
@@ -229,6 +231,18 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         return best_div;
     }
 
+    /**
+     * Metodo que sugere o melhor caminho para o To Cruz alcançar o alvo ou sair do edifício
+     * automaticamente.
+     * Avalia as divisões do edifício para determinar o destino ideal com base na distância
+     * e no número de arestas.
+     *
+     * Se o alvo já tiver sido recolhido, sugere o caminho para a saída mais próxima.
+     * Caso contrário, sugere o caminho para a divisão onde o alvo se encontra.
+     *
+     * @param div_to A divisão de partida do To Cruz.
+     * @return O melhor caminho calculado entre dois pontos (partida e destino).
+     */
     private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
         ToCruz toCruz = div_to.getToCruz();
         Iterator<Divisao> itr = edificio.IteratorMapa();
@@ -265,9 +279,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         String temp;
         if (best_destino.getAlvo() != null) {
-            temp = "Sugestão de melhor caminho para o To Cruz chegar ao alvo: " + best_destino.getAlvo().getNome();
+            temp = "Sugestao de melhor caminho para o To Cruz chegar ao alvo: " + best_destino.getAlvo().getNome();
         } else {
-            temp = "Sugestão de melhor caminho para o ToCruz sair do edificio";
+            temp = "Sugestao de melhor caminho para o ToCruz sair do edificio";
         }
 
         System.out.println(temp);
@@ -275,7 +289,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Realiza o turno automático do ToCruz, considerando a presença de inimigos e a busca por itens ou alvos.
+     * Realiza o turno automático do ToCruz, considerando a presença de inimigos
+     * e a busca por itens ou alvos.
      *
      * @param divisao_atual a divisão onde o ToCruz se encontra.
      */
@@ -310,10 +325,11 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Calcula a melhor entrada para o ToCruz, baseado na distância e nas arestas do caminho até o alvo.
+     * Calcula a melhor entrada para o ToCruz, baseado na distância e nas arestas do
+     * caminho até o alvo.
      *
-     * @param toCruz        o personagem ToCruz.
-     * @param div_alvo      a divisão alvo.
+     * @param toCruz a personagem ToCruz.
+     * @param div_alvo a divisão alvo.
      * @param list_entradas as divisões de entrada para o edifício.
      * @return a melhor distância para o ToCruz atingir o alvo.
      */
@@ -332,14 +348,14 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Realiza a simulação do jogo no modo automático, onde o personagem ToCruz é controlado
+     * Realiza a simulação do jogo no modo automático, onde a personagem ToCruz é controlado
      * pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
-     * sem morrer. O método verifica as entradas e saídas do edifício, os inimigos presentes
+     * sem morrer. O metodo verifica as entradas e saídas do edifício, os inimigos presentes
      * e tenta calcular se é possível concluir a missão com vida.
      * <p>
-     * O ToCruz segue automaticamente pelo edifício, enfrentando inimigos, até tentar atingir
+     * O ToCruz segue automaticamente pelo edifício, enfrenta inimigos, até tentar atingir
      * o alvo e sair do edifício. Se a vida de ToCruz for insuficiente para completar o trajeto
-     * ou escapar do edifício, uma mensagem será exibida.
+     * ou escapar do edifício, o jogador é notificado.
      */
     @Override
     public void modojogoAutomatico() {
@@ -366,7 +382,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
 
         if (calculateBesteEntradaToCruz(to, div_alvo, list_entradas) > to.getVida()) {
-            System.out.println("O To Cruz não consegue chegar ao alvo sem morrer!");
+            System.out.println("O To Cruz nao consegue chegar ao alvo sem morrer!");
         } else {
             for (Divisao div_inimi : divisao_inimigo) {
                 turnoInimigo(div_inimi);
@@ -376,13 +392,14 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             div_alvo.getAlvo().setAtinigido(true);
             to.setColectedAlvo(true);
             if (calculateBestExitAutomatico(div_alvo) > to.getVida()) {
-                System.out.println("E impossível o To Cruz sair do edificio com vida!");
+                System.out.println("E impossivel o To Cruz sair do edificio com vida!");
             }
         }
     }
 
     /**
-     * Simula o jogo automaticamente, fazendo o ToCruz se mover, enfrentar inimigos e atingir objetivos.
+     * Simula o jogo automaticamente, fazendo o ToCruz se mover, enfrentar inimigos e
+     * atingir objetivos.
      *
      * @return A instância atual da simulação após a execução do jogo automático.
      */
@@ -472,10 +489,11 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Calcula e imprime o menor caminho entre duas divisões, retornando a próxima divisão no caminho.
+     * Calcula e imprime o menor caminho entre duas divisões,
+     * retornando a próxima divisão no caminho.
      * <p>
-     * Este método utiliza o iterador do menor caminho entre duas divisões fornecido pelo edifício.
-     * Ele constrói uma string representando o caminho completo e identifica a próxima divisão
+     * Este metodo utiliza o iterador do menor caminho entre duas divisões fornecido pelo edifício.
+     * Ele constrói uma string que representa o caminho completo e identifica a próxima divisão
      * a ser visitada após a divisão inicial.
      *
      * @param div_start a divisão inicial no caminho.
@@ -564,14 +582,14 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
 
 
-        System.out.println("Sugestao de caminho mais curto para o To Cruz chegar a um item");
+        System.out.println("Sugestao de caminho mais curto para o To Cruz chegar a um item de cura");
         shortesPathTwopoints(div_to, item_div);
 
         String temp;
         if (div_alvo.getAlvo() != null) {
-            temp = "Sugestão de melhor caminho para o To Cruz chegar ao alvo: " + div_alvo.getAlvo().getNome();
+            temp = "Sugestao de melhor caminho para o To Cruz chegar ao alvo: " + div_alvo.getAlvo().getNome();
         } else {
-            temp = "Sugestão de melhor caminho para o ToCruz sair do edificio";
+            temp = "Sugestao de melhor caminho para o ToCruz sair do edificio";
         }
 
         System.out.println(temp);
@@ -579,9 +597,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Este método solicita ao utilizador que selecione a próxima divisão para o ToCruz se mover,
+     * Este metodo solicita ao utilizador que selecione a próxima divisão para o ToCruz se mover,
      * exibindo informações sobre as divisões disponíveis, como se há inimigos, itens ou se é uma
-     * entrada/saída. Também sugere o melhor caminho para o ToCruz pegar itens e atingir o alvo.
+     * entrada/saída. Também sugere o melhor caminho para o ToCruz apanhar itens e atingir o alvo.
      *
      * @param divisao_atual A divisão onde o ToCruz se encontra atualmente.
      * @return A divisão para onde o ToCruz deve se mover.
@@ -604,7 +622,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 if (divisao.getInimigos().isEmpty()) {
                     temp += " (esta divisao e uma entrada/saida)";
                 } else {
-                    temp += " ((esta divisao e uma entrada/saida e tem inimigo)";
+                    temp += " (esta divisao e uma entrada/saida e tem inimigos)";
                 }
             }
 
@@ -612,7 +630,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 if (divisao.getInimigos().isEmpty()) {
                     temp += " (divisao onde esta o alvo)";
                 } else {
-                    temp += "(divisao onde esta o alvo , mas tem inimigos)";
+                    temp += "(divisao onde esta o alvo, mas tem inimigos)";
                 }
             }
 
@@ -626,9 +644,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                         }
                     } else {
                         if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.KIT_VIDA)) {
-                            temp += " (divisao com kit e com inimigo)";
+                            temp += " (divisao com kit e com inimigos)";
                         } else if (((ItemCura) divisao.getItem()).getType().equals(TypeItemCura.COLETE)) {
-                            temp += " (divisao com colete e com inimigo)";
+                            temp += " (divisao com colete e com inimigos)";
                         }
                     }
                 }
@@ -663,12 +681,13 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
 
     /**
-     * Este método trata de um item encontrado em uma divisão e permite que o ToCruz interaja com ele.
-     * Dependendo do tipo de item, ele pode ser usado, deixado na sala ou guardado no inventário.
+     * Este metodo trata de um item encontrado em uma divisão e permite que o ToCruz
+     * interaja com ele.
+     * Dependendo do tipo de item, ele pode ser usado, deixado na sala ou guardado na mochila.
      *
      * @param divisao A divisão onde o item foi encontrado.
-     * @param toCruz  O personagem que interage com o item.
-     * @throws InvalidOptionException   Caso a opção fornecida pelo utilizador seja inválida.
+     * @param toCruz A personagem que interage com o item.
+     * @throws InvalidOptionException Caso a opção fornecida pelo jogador seja inválida.
      * @throws InvalidTypeItemException Caso o tipo de item seja inválido.
      */
     private void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
@@ -752,8 +771,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Este método executa o turno do ToCruz em uma divisão, lidando com situações de combate
-     * e interações com itens. O ToCruz pode atacar inimigos ou usar kits de vida conforme necessário.
+     * Este metodo executa o turno do ToCruz em uma divisão, lidando com situações de combate
+     * e interações com itens. O ToCruz pode atacar inimigos ou usar kits de vida.
      *
      * @param divisao_atual A divisão onde o ToCruz se encontra.
      */
@@ -838,6 +857,17 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         }
     }
 
+    /**
+     * Metodo que calcula o poder total final de uma divisão, somando o poder inicial
+     * fornecido com o poder dos inimigos presentes na divisão.
+     *
+     * Caso a divisão não tenha inimigos ou contenha apenas um, o poder inicial é retornado.
+     * Caso existam vários inimigos, os seus poderes são somados ao poder inicial.
+     *
+     * @param div A divisão cuja força total será calculada.
+     * @param poder_inimigo O poder inicial base dos inimigos.
+     * @return O poder total calculado da divisão.
+     */
     private double poderFinalDivisao(Divisao div, long poder_inimigo) {
         long poder_total = poder_inimigo;
         if (div.getInimigos().isEmpty() && div.getInimigos().size() > 1) {
@@ -850,12 +880,13 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Move um inimigo de uma sala para outra dentro do edifício.
-     * O inimigo se move de forma aleatória entre as salas conectadas à sala atual.
-     * A quantidade de movimentos é determinada aleatoriamente e o peso das salas é atualizado de acordo com o poder do inimigo.
+     * Move um inimigo de uma divisão para outra dentro do edifício.
+     * O inimigo move-se de forma aleatória entre as divisões conectadas à divisão atual.
+     * A quantidade de movimentos é determinada aleatoriamente, variando entre 0 e 2,
+     * e o peso entre as salas no grafo é atualizado de acordo com o poder de ataque do inimigo.
      *
      * @param divisao_atual A sala onde o inimigo está atualmente.
-     * @param inimigo       O inimigo que será movido para uma nova sala.
+     * @param inimigo O inimigo que será movido para uma nova sala.
      * @return A nova sala onde o inimigo se encontra após o movimento.
      */
     private Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo) {
@@ -886,25 +917,23 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
             this.edificio.updateWeight(divisaoEscolhida, poderFinalDivisao(divisaoEscolhida, poder_inimigo));
             divisao_atual = divisaoEscolhida;
         }
-        System.out.println("O inimigo" + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
+        System.out.println("O inimigo " + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
         return divisao_atual;
     }
 
     /**
-     * Realiza o turno de movimento dos inimigos na sala especificada.
-     * Para cada inimigo na sala, se não houver confronto, o inimigo se move para uma nova sala.
+     * Realiza o turno de movimento dos inimigos na divisão especificada.
+     * Para cada inimigo na divisão, se não houver confronto, o inimigo move-se para uma nova divisão.
      * Caso contrário, o inimigo ataca.
      *
-     * @param divisao A sala onde os inimigos estão localizados e onde o turno será realizado.
+     * @param divisao A divisão onde os inimigos estão localizados e onde o turno será realizado.
      */
     private void turnoInimigo(Divisao divisao) {
         UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
 
-
         for (Inimigo inimigo : divisao.getInimigos()) {
             if (!divisao.haveConfronto()) {
-
-                System.out.println("O inimigo" + inimigo.getNome() + " esta na sala " + divisao.getName());
+                System.out.println("O inimigo " + inimigo.getNome() + " esta na sala " + divisao.getName());
                 inimigos_move.addToRear(inimigo);
             } else {
                 divisao.attackInimigo(inimigo);
@@ -921,14 +950,16 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Permite que o personagem ToCruz entre em um edifício, selecionando uma sala de entrada/saída.
-     * O jogador escolhe uma sala de entrada onde o ToCruz começará, e a sala escolhida será registrada.
-     * Caso o ToCruz entre em uma sala com confronto, ele pode lutar contra os inimigos ou interagir com itens.
+     * Permite que a personagem ToCruz entre num edifício, selecionando uma divisão de entrada/saída.
+     * O jogador escolhe uma sala de entrada onde o ToCruz começa o jogo, e a divisão escolhida
+     * é registada. Caso o ToCruz entre numa divisão com confronto,
+     * ele pode lutar contra os inimigos ou interagir com itens do chão.
      *
-     * @param toCruz O personagem que irá entrar no edifício.
-     * @return A sala em que o ToCruz entrou após a seleção.
-     * @throws NullPointerException           Caso ocorra um erro de referência nula.
-     * @throws ArrayIndexOutOfBoundsException Caso o índice da sala selecionada esteja fora dos limites.
+     * @param toCruz A personagem que irá entrar no edifício.
+     * @return A divisão em que o ToCruz entrou após a seleção.
+     * @throws NullPointerException Caso ocorra um erro de null pointer.
+     * @throws ArrayIndexOutOfBoundsException Caso o índice da sala selecionada esteja
+     * fora dos limites do array.
      */
     private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
         int op = -1;
@@ -943,7 +974,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
                 String temp = i + " - " + div.getName();
 
                 if (div.haveInimigo()) {
-                    temp += " (divisao com inimigo)";
+                    temp += " (divisao com inimigos)";
                 }
 
                 if (div.getItem() != null) {
@@ -993,9 +1024,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Realiza a simulação do jogo no modo manual. O jogador controla o personagem ToCruz,
+     * Realiza a simulação do jogo no modo manual. O jogador controla a personagem ToCruz,
      * movendo-se pelo edifício, enfrentando inimigos e coletando itens até completar a missão
-     * ou ser derrotado.
+     * (sair do edifício com o alvo) ou ser derrotado.
      *
      * @return O objeto Simulacoes atualizado com os resultados da simulação.
      */
@@ -1073,11 +1104,11 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Gera o relatório final do jogo, incluindo informações sobre o progresso do personagem ToCruz,
+     * Gera o relatório final do jogo, incluindo informações sobre o progresso da personagem ToCruz,
      * itens coletados, inimigos mortos e o status da missão.
-     * O relatório também exibe o percurso feito por ToCruz durante a simulação.
+     * O relatório também exibe o percurso feito pelo ToCruz durante a simulação.
      *
-     * @param toCruz O personagem cujo relatório será gerado.
+     * @param toCruz A personagem cujo relatório será gerado.
      */
     private void relatoriosMissao(ToCruz toCruz) {
         Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
@@ -1126,7 +1157,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
         StackADT<ItemCura> mochila = toCruz.getMochila();
         if (!mochila.isEmpty()) {
-            System.out.println("Itens na mochilda do ToCruz:");
+            System.out.println("Itens na mochila do ToCruz:");
 
             int i = 1;
             while (!mochila.isEmpty()) {
@@ -1157,10 +1188,11 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Retorna uma representação em string da simulação, incluindo a versão da simulação, o trajeto
-     * feito por ToCruz, o número de inimigos mortos, a vida restante de ToCruz e o estado atual do edifício.
+     * Retorna uma representação em string da simulação, incluindo a versão da simulação,
+     * o trajeto feito por ToCruz, o número de inimigos mortos, a vida restante de ToCruz
+     * e o estado atual do edifício.
      *
-     * @return Uma string representando o estado atual da simulação.
+     * @return Uma string a representar o estado atual da simulação.
      */
     @Override
     public String toString() {
@@ -1174,8 +1206,9 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Compara este objeto Simulacoes com outro para verificar se são iguais. A comparação leva em consideração
-     * a versão da simulação, o trajeto de ToCruz, a vida restante de ToCruz e o estado do edifício.
+     * Compara este objeto Simulacoes com outro para verificar se são iguais.
+     * A comparação leva em consideração a versão da simulação, o trajeto do ToCruz,
+     * a vida restante do ToCruz e o estado do edifício.
      *
      * @param o O objeto a ser comparado com o objeto atual.
      * @return True se os objetos forem iguais, false caso contrário.
@@ -1195,8 +1228,8 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Gera um código de hash único para o objeto Simulacoes, baseado na versão da simulação, no trajeto de ToCruz,
-     * na vida restante de ToCruz e no estado do edifício.
+     * Gera um código de hash único para o objeto Simulacoes, baseado na versão da simulação,
+     * no trajeto do ToCruz, na vida restante do ToCruz e no estado do edifício.
      *
      * @return Um código de hash gerado para o objeto Simulacoes.
      */
@@ -1207,7 +1240,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
 
     /**
      * Compara este objeto Simulacoes com outro para determinar a ordem de classificação.
-     * A comparação é feita com base na vida restante de ToCruz e na versão da simulação.
+     * A comparação é feita com base na vida restante do ToCruz e na versão da simulação.
      *
      * @param o O objeto Simulacoes a ser comparado.
      * @return Um número negativo, zero ou positivo dependendo da ordem dos objetos.

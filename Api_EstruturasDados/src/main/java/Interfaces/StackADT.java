@@ -17,7 +17,7 @@ public interface StackADT<T> {
     /**
      * Adiciona um elemento ao topo desta stack.
      *
-     * @param element o elemento a ser emstackdo
+     * @param element o elemento a ser empilhado
      */
     public void push(T element);
 

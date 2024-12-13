@@ -29,7 +29,7 @@ public abstract class Item {
     private boolean collected;
 
     /**
-     * Construtor padrão da classe {@link Item}.
+     * Construtor default da classe {@link Item}.
      * Inicializa o identificador único com o valor do contador estático
      * e define o status de coleta como falso.
      */

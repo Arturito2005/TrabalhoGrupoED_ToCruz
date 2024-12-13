@@ -95,9 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Edificio</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></span></div>
-<div class="block">Classe que representa um edifício no jogo.
- <p>
- Comentar o que falta quando conseguir fazer o desenho do Mapa</div>
+<div class="block">Classe que representa um edifício no jogo.</div>
 </div>
 </section>
 <section class="summary">
@@ -112,7 +110,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">Edificio</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor padrão do edifício.</div>
+<div class="block">Construtor default do edifício.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int,java.lang.String,Interfaces.NetworkMatrizADT)" class="member-name-link">Edificio</a><wbr>(int&nbsp;id_edificio,
  <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
@@ -149,7 +147,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawMapa()" class="member-name-link">drawMapa</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Desenha o mapa do edifício, mostrando suas divisões e conexões.</div>
+<div class="block">Desenha o mapa do edifício, exibindo as suas divisões e conexões.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#equals(java.lang.Object)" class="member-name-link">equals</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;o)</code></div>
@@ -174,7 +172,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>Interfaces.NetworkMatrizADT<wbr>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPlantaEdificio()" class="member-name-link">getPlantaEdificio</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna a planta do edifício (grafo de divisões).</div>
+<div class="block">Retorna a planta do edifício (grafo pesado de divisões).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getShortestPath(Mapa.Divisao,Mapa.Divisao)" class="member-name-link">getShortestPath</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;div_inicial,
@@ -191,7 +189,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hashCode()" class="member-name-link">hashCode</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gera um código hash para o edifício, utilizando seu nome e planta.</div>
+<div class="block">Gera um código de hash para o edifício, utilizando o seu nome e planta.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#IteratorMapa()" class="member-name-link">IteratorMapa</a>()</code></div>
@@ -207,7 +205,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.</div>
+<div class="block">Retorna uma representação em string do edifício, incluindo o seu ID, nome e planta.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#updateWeight(Mapa.Divisao,double)" class="member-name-link">updateWeight</a><wbr>(<a href="Divisao.html" title="class in Mapa">Divisao</a>&nbsp;vertex1,
@@ -237,7 +235,8 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>Edificio</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Edificio</span>()</div>
-<div class="block">Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.</div>
+<div class="block">Construtor default do edifício.
+ Inicializa o nome com o valor default e a planta do edifício como um grafo pesado vazio.</div>
 </div>
 </section>
 </li>
@@ -254,7 +253,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <dt>Parameters:</dt>
 <dd><code>id_edificio</code> - ID do edifício a ser copiado.</dd>
 <dd><code>name</code> - Nome do edifício a ser copiado.</dd>
-<dd><code>planta_edificio</code> - Grafo que representa as divisões e suas conexões.</dd>
+<dd><code>planta_edificio</code> - Grafo que representa as divisões e respetivas conexões.</dd>
 </dl>
 </div>
 </section>
@@ -298,10 +297,10 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>getPlantaEdificio</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">Interfaces.NetworkMatrizADT&lt;<a href="Divisao.html" title="class in Mapa">Divisao</a>&gt;</span>&nbsp;<span class="element-name">getPlantaEdificio</span>()</div>
-<div class="block">Retorna a planta do edifício (grafo de divisões).</div>
+<div class="block">Retorna a planta do edifício (grafo pesado de divisões).</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Grafo que representa as divisões e conexões do edifício.</dd>
+<dd>Grafo pesado que representa as divisões e conexões do edifício.</dd>
 </dl>
 </div>
 </section>
@@ -451,7 +450,7 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>drawMapa</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">drawMapa</span>()</div>
-<div class="block">Desenha o mapa do edifício, mostrando suas divisões e conexões.</div>
+<div class="block">Desenha o mapa do edifício, exibindo as suas divisões e conexões.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/EdificoInt.html#drawMapa()">drawMapa</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/EdificoInt.html" title="interface in Interfaces">EdificoInt</a></code></dd>
@@ -464,12 +463,12 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>toString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span>()</div>
-<div class="block">Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.</div>
+<div class="block">Retorna uma representação em string do edifício, incluindo o seu ID, nome e planta.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>String representando o edifício.</dd>
+<dd>String a representar o edifício.</dd>
 </dl>
 </div>
 </section>
@@ -496,12 +495,12 @@ implements <a href="../Interfaces/EdificoInt.html" title="interface in Interface
 <h3>hashCode</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">hashCode</span>()</div>
-<div class="block">Gera um código hash para o edifício, utilizando seu nome e planta.</div>
+<div class="block">Gera um código de hash para o edifício, utilizando o seu nome e planta.</div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>O código hash do edifício.</dd>
+<dd>O código de hash do edifício.</dd>
 </dl>
 </div>
 </section>

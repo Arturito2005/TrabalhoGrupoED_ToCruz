@@ -28,14 +28,14 @@ public class Inimigo extends Personagem {
      * @param id_personagem O ID do personagem inimigo.
      * @param nome          O nome do inimigo.
      * @param vida          A quantidade de vida do inimigo.
-     * @param poder         O poder do inimigo.
+     * @param poder         O poder de ataque do inimigo.
      */
     public Inimigo(int id_personagem, String nome, long vida, long poder) {
         super(id_personagem, nome, vida, poder);
     }
 
     /**
-     * Retorna a representação uma String com os dados do inimigo.
+     * Retorna a representação em String com os dados do inimigo.
      *
      * @return String com os detalhes do inimigo.
      */

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestMapa.TestDivisao" tests="20" skipped="0" failures="0" errors="0" timestamp="2024-12-13T10:10:21" hostname="LAPTOP-8POH8N1C" time="0.056">
+<testsuite name="TestMapa.TestDivisao" tests="20" skipped="0" failures="0" errors="0" timestamp="2024-12-13T21:35:40" hostname="XICO" time="0.039">
   <properties/>
-  <testcase name="testHaveInimigoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.007"/>
+  <testcase name="testHaveInimigoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.006"/>
   <testcase name="testUsarItemDivisao_ItemJaColetado()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testIsToCruzInDivisaoAlvoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.002"/>
+  <testcase name="testIsToCruzInDivisaoAlvoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.0"/>
   <testcase name="testIsToCruzInExitDaComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAttackToCruz_AllInimigosDie()" classname="TestMapa.TestDivisao" time="0.002"/>
-  <testcase name="testAttackToCruz_OneInimigoDies()" classname="TestMapa.TestDivisao" time="0.007"/>
-  <testcase name="testAttackInimigo_ToCruzSurvives()" classname="TestMapa.TestDivisao" time="0.005"/>
-  <testcase name="testToCruzGetAlvo_WithoutToCruz()" classname="TestMapa.TestDivisao" time="0.002"/>
+  <testcase name="testAttackToCruz_OneInimigoDies()" classname="TestMapa.TestDivisao" time="0.005"/>
+  <testcase name="testAttackInimigo_ToCruzSurvives()" classname="TestMapa.TestDivisao" time="0.003"/>
+  <testcase name="testToCruzGetAlvo_WithoutToCruz()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAttackInimigo_ToCruzDead()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAttackToCruz_AllInimigosSurvive()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testToCruzGetAlvo_WithoutAlvo()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testRemoveInimigoComSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testToCruzGetAlvo_Success()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testRemoveInimigoComSucesso()" classname="TestMapa.TestDivisao" time="0.0"/>
+  <testcase name="testToCruzGetAlvo_Success()" classname="TestMapa.TestDivisao" time="0.0"/>
   <testcase name="testAttackInimigo_ReduceVida()" classname="TestMapa.TestDivisao" time="0.0"/>
-  <testcase name="testRemoveInimigoListaVazia()" classname="TestMapa.TestDivisao" time="0.003"/>
+  <testcase name="testRemoveInimigoListaVazia()" classname="TestMapa.TestDivisao" time="0.002"/>
   <testcase name="testAttackToCruz_NoInimigos()" classname="TestMapa.TestDivisao" time="0.001"/>
   <testcase name="testAddInimigoNulo()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testUsarItemDivisao_NullPointerException()" classname="TestMapa.TestDivisao" time="0.001"/>
-  <testcase name="testRemoveInimigoNulo()" classname="TestMapa.TestDivisao" time="0.001"/>
+  <testcase name="testUsarItemDivisao_NullPointerException()" classname="TestMapa.TestDivisao" time="0.0"/>
+  <testcase name="testRemoveInimigoNulo()" classname="TestMapa.TestDivisao" time="0.0"/>
   <testcase name="testHaveConfrontoComSucessoeSemSucesso()" classname="TestMapa.TestDivisao" time="0.001"/>
   <system-out><![CDATA[O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
-O item desta divisao já foi usado anteriormente
+O item desta divisao ja foi usado anteriormente
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
@@ -37,29 +37,29 @@ O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 Turno do To Cruz atacar!
 O To Cruz matou o inimigo Inimigo Fraco
-O inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 50 HP
+O inimigo Inimigo Forte resitiu ao ataque do To Cruz e ficou com: 50 HP
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
-O imimigoInimigo Fraco atacou o To Cruz
+O imimigo Inimigo Fraco atacou o To Cruz
 To Cruz resiste ao ataque e fica com 90 HP
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
-O imimigoInimigo Forte atacou o To Cruz
-O inimigo Inimigo Fortematou o To Cruz
+O imimigo Inimigo Forte atacou o To Cruz
+O inimigo Inimigo Forte matou o To Cruz
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 Turno do To Cruz atacar!
-O inimigo Inimigo Fracoresitiu ao ataque do To Cruz e ficou com : 40 HP
-O inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 90 HP
+O inimigo Inimigo Fraco resitiu ao ataque do To Cruz e ficou com: 40 HP
+O inimigo Inimigo Forte resitiu ao ataque do To Cruz e ficou com: 90 HP
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
-To Cruz está com o alvo, agora só falta sair do edificio com vida
+To Cruz esta com o alvo, agora so falta sair do edificio com vida
 O To Cruz moveu-se para a divisão: Sala Teste
 O To Cruz moveu-se para a divisão: Sala Teste
-O imimigoInimigo atacou o To Cruz
+O imimigo Inimigo atacou o To Cruz
 To Cruz resiste ao ataque e fica com 90 HP
 O To Cruz moveu-se para a divisão: Sala Teste
 A lista está vaiza!

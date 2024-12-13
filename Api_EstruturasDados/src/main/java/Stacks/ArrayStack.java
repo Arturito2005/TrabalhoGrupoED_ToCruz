@@ -9,7 +9,7 @@ import Interfaces.StackADT;
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  * @param <T> O tipo de elementos armazenados na stack.

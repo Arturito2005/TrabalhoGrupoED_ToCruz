@@ -17,8 +17,8 @@ import java.util.Iterator;
 
 /**
  * Classe que implementa a interface ExportarInt para exportar dados
- * das versões de missões para um arquivo em formato JSON.
- * Esta classe permite gerar um arquivo com informações detalhadas
+ * das versões de missões para um ficheiro em formato JSON.
+ * Esta classe permite gerar um ficheiro com informações detalhadas
  * sobre as missões, simulações e inimigos mortos.
  *
  * @author Artur Pinto
@@ -38,12 +38,12 @@ public class ExportarDado implements ExportarInt {
     }
 
     /**
-     * Método que exporta as versões das missões e seus dados relacionados para um arquivo JSON.
-     * O arquivo JSON gerado contém as versões das missões, simulações e os inimigos abatidos,
-     * sendo salvo no caminho especificado.
+     * Metodo que exporta as versões das missões e os seus dados relacionados para um ficheiro JSON.
+     * O ficheiro JSON gerado contém as versões das missões, simulações e os inimigos abatidos,
+     * sendo guardado no caminho especificado.
      *
-     * @param path O caminho para onde o arquivo JSON será salvo.
-     * @param listaVersoes A lista de missões com suas respectivas versões e simulações.
+     * @param path O caminho para onde o ficheiro JSON será guardado.
+     * @param listaVersoes A lista de missões com as respetivas versões e simulações.
      */
     @Override
     public void exportarVersoes(String path, UnorderedListADT<Missao> listaVersoes) {

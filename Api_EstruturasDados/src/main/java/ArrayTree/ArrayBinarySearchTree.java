@@ -8,10 +8,12 @@ import Interfaces.BinarySearchTreeADT;
 import java.util.Iterator;
 
 /**
- * Esta classe representa uma implementação de uma árvore binária de busca utilizando um array.
- * A árvore permite a inserção, remoção e busca de elementos de forma ordenada, mantendo a propriedade da árvore binária de busca.
+ * Esta classe representa uma implementação de uma árvore binária de pesquisa utilizando um array.
+ * A árvore permite a inserção, remoção e pesquisa de elementos de forma ordenada, mantendo a
+ * propriedade da árvore binária de pesquisa.
  *
- * @param <T> Tipo dos elementos armazenados na árvore, que deve ser comparável com outros elementos do mesmo tipo.
+ * @param <T> Tipo dos elementos armazenados na árvore, que deve ser comparável com
+ * outros elementos do mesmo tipo.
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveira
@@ -27,7 +29,7 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     protected int maxIndex;
 
     /**
-     * Constrói uma árvore binária de busca vazia.
+     * Constrói uma árvore binária de pesquisa vazia.
      */
     public ArrayBinarySearchTree() {
         super();
@@ -36,7 +38,7 @@ public class ArrayBinarySearchTree<T> extends ArrayBinaryTree<T> implements Bina
     }
 
     /**
-     * Constrói uma árvore binária de busca com o elemento inicial fornecido.
+     * Constrói uma árvore binária de pesquisa com o elemento inicial fornecido.
      *
      * @param element O elemento a ser inserido na árvore.
      */

@@ -14,7 +14,7 @@ import Personagens.Inimigo;
  */
 public interface IteracoesInimigo {
     /**
-     * Permite o inimigo recebido como parametro atacar.
+     * Permite ao inimigo recebido como paramêtro de atacar.
      *
      * @param inimigo o objeto {@link Inimigo} que será o inimigo a atacar o To Crruz.
      */

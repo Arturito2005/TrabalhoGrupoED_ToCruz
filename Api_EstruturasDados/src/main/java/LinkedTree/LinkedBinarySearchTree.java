@@ -5,7 +5,7 @@ import Interfaces.BinarySearchTreeADT;
 
 /**
  * Implementação de uma árvore binária de pesquisa (BST) utilizando uma árvore binária encadeada.
- * A classe oferece operações para adicionar, remover e buscar elementos, bem como métodos para
+ * A classe oferece operações para adicionar, remover e pesquisar elementos, bem como métodos para
  * encontrar o menor e o maior elemento na árvore.
  *
  * @param <T> Tipo genérico dos elementos armazenados na árvore, que deve ser comparável.

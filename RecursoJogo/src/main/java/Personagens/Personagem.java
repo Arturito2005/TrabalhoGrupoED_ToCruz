@@ -18,12 +18,12 @@ public abstract class Personagem {
     private static int ID_PERSONAGEM_CONT = 0;
 
     /**
-     * Valor padrão para a quantidade de vida de um personagem.
+     * Valor padrão para a quantidade de vida de uma personagem.
      */
     private static final int DEFAULT_VIDA = 100;
 
     /**
-     * Valor padrão para o poder de um personagem.
+     * Valor padrão para o poder de uma personagem.
      */
     private static final int DEFAULT_PODER = 40;
 
@@ -33,27 +33,27 @@ public abstract class Personagem {
     private int id_personagem;
 
     /**
-     * Nome do personagem.
+     * Nome da personagem.
      */
     private String nome;
 
     /**
-     * Quantidade de vida que o personagem possui.
+     * Quantidade de vida que a personagem possui.
      */
     private long vida;
 
     /**
-     * Poder do personagem.
+     * Poder de ataque da personagem.
      */
     private long poder;
 
     /**
-     * Construtor principal que inicializa todos os atributos do personagem.
+     * Construtor principal que inicializa todos os atributos da personagem.
      *
-     * @param id_personagem Identificador único do personagem.
-     * @param nome          Nome do personagem.
-     * @param vida          Quantidade inicial de vida do personagem.
-     * @param poder         Quantidade inicial de poder do personagem.
+     * @param id_personagem Identificador único da personagem.
+     * @param nome          Nome da personagem.
+     * @param vida          Quantidade inicial de vida da personagem.
+     * @param poder         Quantidade inicial de poder de ataque da personagem.
      */
     public Personagem(int id_personagem, String nome, long vida, long poder) {
         this.id_personagem = id_personagem;
@@ -63,9 +63,9 @@ public abstract class Personagem {
     }
 
     /**
-     * Construtor que inicializa o personagem com nome e utiliza valores padrão para vida e poder.
+     * Construtor que inicializa a personagem com nome e utiliza valores padrão para vida e poder.
      *
-     * @param nome Nome do personagem.
+     * @param nome Nome da personagem.
      */
     public Personagem(String nome) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
@@ -75,10 +75,10 @@ public abstract class Personagem {
     }
 
     /**
-     * Construtor que inicializa o personagem com nome e poder, e utiliza o valor padrão para vida.
+     * Construtor que inicializa a personagem com nome e poder, e utiliza o valor padrão para a vida.
      *
-     * @param nome  Nome do personagem.
-     * @param poder Quantidade inicial de poder do personagem.
+     * @param nome  Nome da personagem.
+     * @param poder Quantidade inicial de poder de ataque da personagem.
      */
     public Personagem(String nome, long poder) {
         this.id_personagem = ID_PERSONAGEM_CONT++;
@@ -88,54 +88,54 @@ public abstract class Personagem {
     }
 
     /**
-     * Retorna o identificador único do personagem.
+     * Retorna o identificador único da personagem.
      *
-     * @return O identificador único do personagem.
+     * @return O identificador único da personagem.
      */
     public int getId_personagem() {
         return id_personagem;
     }
 
     /**
-     * Retorna o nome do personagem.
+     * Retorna o nome da personagem.
      *
-     * @return O nome do personagem.
+     * @return O nome da personagem.
      */
     public String getNome() {
         return nome;
     }
 
     /**
-     * Retorna a quantidade de vida do personagem.
+     * Retorna a quantidade de vida da personagem.
      *
-     * @return A quantidade de vida do personagem.
+     * @return A quantidade de vida da personagem.
      */
     public long getVida() {
         return vida;
     }
 
     /**
-     * Setter para alterar a quantidade de vida do personagem.
+     * Setter para alterar a quantidade de vida da personagem.
      *
-     * @param vida O novo valor de vida a ser atribuído ao personagem.
+     * @param vida O novo valor de vida a ser atribuído à personagem.
      */
     public void setVida(long vida) {
         this.vida = vida;
     }
 
     /**
-     * Retorna o poder do personagem.
+     * Retorna o poder de ataque da personagem.
      *
-     * @return O poder do personagem.
+     * @return O poder de ataque da personagem.
      */
     public long getPoder() {
         return poder;
     }
 
     /**
-     * Retorna se o personagem está morto.
+     * Retorna se a personagem está morta.
      *
-     * @return `true` se o personagem está morto, caso contrário `false`.
+     * @return `true` se a personagem está morta, caso contrário `false`.
      */
     public boolean isDead() {
         boolean dead = false;
@@ -148,9 +148,9 @@ public abstract class Personagem {
     }
 
     /**
-     * Retorna uma String com os dados do Personagem.
+     * Retorna uma String com os dados da Personagem.
      *
-     * @return toda a informação do Personagem
+     * @return toda a informação da Personagem
      */
     @Override
     public String toString() {
@@ -160,10 +160,10 @@ public abstract class Personagem {
     }
 
     /**
-     * Compara dois personagens com base no ID ou no nome.
+     * Compara duas personagens com base no ID ou no nome.
      *
      * @param o O objeto a ser comparado.
-     * @return {@code true} se os personagens são iguais, caso contrário {@code false}.
+     * @return {@code true} se as personagens são iguais, caso contrário {@code false}.
      */
     @Override
     public boolean equals(Object o) {
@@ -183,9 +183,9 @@ public abstract class Personagem {
     }
 
     /**
-     * Retorna o código hash do personagem com base no nome.
+     * Retorna o código hash da personagem com base no nome.
      *
-     * @return O código hash do personagem.
+     * @return O código hash da personagem.
      */
     @Override
     public int hashCode() {

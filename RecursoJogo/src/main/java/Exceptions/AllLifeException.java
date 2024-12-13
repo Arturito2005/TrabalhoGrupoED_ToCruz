@@ -1,7 +1,7 @@
 package Exceptions;
 
 /**
- * Exceção personalizada que é lançada quando o To Cruz tem a vida toda e tenta curar-se.
+ * Exceção personalizada que é lançada quando o To Cruz tem a vida cheia e tenta curar-se.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -15,7 +15,7 @@ public class AllLifeException extends RuntimeException {
      * Construtor da exceção AllLifeException.
      * Inicializa a exceção com uma mensagem específica.
      *
-     * @param message A mensagem detalhada explicando o motivo da exceção.
+     * @param message A mensagem detalhada a explicar o motivo da exceção.
      */
     public AllLifeException(String message) {
         super(message);

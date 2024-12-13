@@ -10,8 +10,10 @@ import java.util.NoSuchElementException;
 
 /**
  * Implementação abstrata de uma lista genérica baseada em array.
- * Esta classe fornece funcionalidades básicas para manipulação de listas, como adição, remoção, verificação de conteúdo,
- * e iteração sobre os elementos. Também inclui métodos para acessar o primeiro e último elemento, e expandir a capacidade do array.
+ * Esta classe fornece funcionalidades básicas para manipulação de listas, como adição,
+ * remoção, verificação de conteúdo, e iteração sobre os elementos.
+ * Também inclui métodos para aceder ao primeiro e último elemento,
+ * e expandir a capacidade do array.
  *
  * @param <T> Tipo dos elementos da lista.
  * @author Artur Pinto
@@ -22,10 +24,10 @@ import java.util.NoSuchElementException;
  */
 public abstract class ArrayList<T> implements ListADT<T> {
 
-    /** Capacidade padrão inicial do array */
+    /** Capacidade default inicial do array */
     private static final int CAPACITY_DEFAULT = 100;
 
-    /** Contador de modificações na lista, usado para detectar modificações concorrentes */
+    /** Contador de modificações na lista, usado para detetar modificações concorrentes */
     protected int modCount;
 
     /** Contador de elementos na lista */
@@ -35,7 +37,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
     protected T[] list;
 
     /**
-     * Construtor padrão que inicializa a lista com a capacidade padrão de 100.
+     * Construtor default que inicializa a lista com a capacidade default de 100.
      */
     public ArrayList() {
         this.modCount = 0;
@@ -45,7 +47,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
 
     /**
      * Construtor que inicializa a lista com uma capacidade especificada.
-     * Se a capacidade fornecida for menor ou igual a 0, a capacidade padrão será utilizada.
+     * Se a capacidade fornecida for menor ou igual a 0, a capacidade default é utilizada.
      *
      * @param capacity A capacidade inicial da lista.
      */
@@ -62,7 +64,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
 
     /**
      * Expande o array interno para o dobro da sua capacidade atual.
-     * Este método é chamado quando a capacidade do array é atingida.
+     * Este metodo é chamado quando a capacidade do array é atingida.
      */
     protected void expandArray() {
         T[] temp = (T[]) (new Object[(this.list.length * 2)]);
@@ -186,7 +188,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
     /**
      * Verifica se a lista contém o elemento especificado.
      *
-     * @param target O elemento a ser buscado.
+     * @param target O elemento a ser pesquisado.
      * @return true se o elemento estiver na lista, false caso contrário.
      */
     @Override
@@ -267,18 +269,19 @@ public abstract class ArrayList<T> implements ListADT<T> {
 
         /**
          * Variável que armazena o valor de modCount no momento da criação do iterador.
-         * Usada para detectar modificações concorrentes na lista enquanto a iteração está em andamento.
+         * Usada para detetar modificações concorrentes na lista enquanto a iteração está em curso.
          */
         private int exceptedModCount;
 
         /**
-         * Variável booleana que indica se a remoção de um elemento é permitida no estado atual do iterador.
-         * Inicializa com 'false', e é alterada para 'true' quando o próximo elemento é acessado, permitindo a remoção.
+         * Boolean que indica se a remoção de um elemento é permitida no estado atual do iterador.
+         * Inicializa com "false", e é alterada para "true" quando o próximo elemento é acedido,
+         * permitindo a remoção.
          */
         private boolean isOkToRemove;
 
         /**
-         * Construtor do meu Iterator
+         * Construtor do MyIterator
          * */
         private MyIterator() {
             this.current = 0;

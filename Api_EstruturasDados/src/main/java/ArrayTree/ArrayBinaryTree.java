@@ -10,7 +10,7 @@ import java.util.Iterator;
 
 
 /**
- * Uma classe que representa uma árvore binária implementada usando um array.
+ * Uma classe que representa uma árvore binária implementada, usa um array.
  * Fornece vários métodos para manipular e percorrer a árvore binária.
  *
  * @param <T> o tipo de elementos armazenados na árvore.
@@ -22,7 +22,7 @@ import java.util.Iterator;
  */
 public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
 
-    /** Capacidade padrão para a árvore binária. */
+    /** Capacidade default para a árvore binária. */
     private static int DEFAULT_CAPACITY = 50;
 
     /** O número de elementos na árvore. */
@@ -32,7 +32,7 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
     protected T[] tree;
 
     /**
-     * Constrói uma árvore binária vazia com capacidade padrão.
+     * Constrói uma árvore binária vazia com capacidade default.
      */
     public ArrayBinaryTree() {
         this.count = 0;
@@ -122,7 +122,7 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     /**
-     * Encontra e retorna o elemento alvo na árvore.
+     * Encontra e retorna o elemento target na árvore.
      *
      * @param targetElement o elemento a ser encontrado.
      * @return o elemento alvo se encontrado.
@@ -244,7 +244,7 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
      *
      * @param n o índice atual no array da árvore.
      * @param tempList a lista para armazenar os elementos em nível.
-     * @param nodes a fila para gerenciar os nós durante a travessia.
+     * @param nodes a queue para gerir os nós durante a travessia.
      */
     protected void levelOrder(int n, ArrayUnorderedList<T> tempList, CircularArrayQueue<T> nodes) {
         if (n < this.tree.length) {
@@ -290,7 +290,7 @@ public abstract class ArrayBinaryTree<T> implements BinaryTreeADT<T> {
     /**
      * Retorna uma representação em string da árvore em nível (level-order).
      *
-     * @return uma string representando a árvore em nível.
+     * @return uma string a representar a árvore em nível.
      */
     @Override
     public String toString() {

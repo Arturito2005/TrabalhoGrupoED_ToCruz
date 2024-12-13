@@ -12,8 +12,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 /**
- * Representa uma missão no contexto do jogo, contendo informações como código, versão,
- * edifício associado e simulações realizadas. Permite executar modos de jogo manual e automático.
+ * Representa uma missão no contexto do jogo, com informações como código, versão,
+ * edifício associado e simulações realizadas. Permite executar modos de jogo manual, automático
+ * e "jogo automático".
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -23,7 +24,7 @@ import java.util.Scanner;
  */
 public class Missao implements MissaoInt, Comparable<Missao> {
     /**
-     * Scanner para leitura de entradas do utilizador.
+     * Scanner para a leitura de entradas do jogador.
      */
     private static Scanner sc = new Scanner(System.in);
 
@@ -56,8 +57,8 @@ public class Missao implements MissaoInt, Comparable<Missao> {
      * Construtor que inicializa a missão com os parâmetros fornecidos.
      *
      * @param cod_missao o código da missão
-     * @param versao     a versão da missão
-     * @param edificio   o edifício associado
+     * @param versao a versão da missão
+     * @param edificio o edifício associado
      */
     public Missao(String cod_missao, long versao, Edificio edificio) {
         this.cod_missao = cod_missao;
@@ -68,7 +69,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Construtor padrão que inicializa a missão com valores padrão.
+     * Construtor default que inicializa a missão com valores default.
      */
     public Missao() {
         this.cod_missao = "";
@@ -78,7 +79,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Obtém o código da missão.
+     * Retorna o código da missão.
      *
      * @return o código da missão
      */
@@ -87,7 +88,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Obtém a versão da missão.
+     * Retorna a versão da missão.
      *
      * @return a versão da missão
      */
@@ -96,7 +97,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Obtém a lista de simulações realizadas nesta missão.
+     * Retorna a lista de simulações realizadas nesta missão.
      *
      * @return a lista ordenada de simulações
      */
@@ -105,9 +106,9 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Obtém o total de simulações realizadas.
+     * Retorna o número total de simulações realizadas.
      *
-     * @return o total de simulações
+     * @return o número total de simulações
      */
     public int getTot_simulacoes() {
         return tot_simulacoes;
@@ -133,10 +134,10 @@ public class Missao implements MissaoInt, Comparable<Missao> {
 
         do {
             do {
-                System.out.println("Começar simulação");
+                System.out.println("Comecar simulacao");
                 System.out.println("0 - Voltar");
                 System.out.println("1 - Jogar");
-                System.out.print("Selecione uma opção -->");
+                System.out.print("Selecione uma opcao -->");
 
                 try {
                     op = sc.nextInt();
@@ -161,7 +162,8 @@ public class Missao implements MissaoInt, Comparable<Missao> {
 
     /**
      * Executa o modo automático da missão, mostrando o caminho mais curto para o ToCruz entrar no
-     * edificio e coletar de volta e o melhor caminho que ele deve fazer para sair do edifico.
+     * edifício e coletar o alvo, e o melhor caminho que ele deve fazer, se possível,
+     * para sair do edifício com o alvo.
      */
     @Override
     public void modoAutomatico() {
@@ -170,7 +172,8 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Executa um jogo automático nesta missão, ou seja, um jogo em que o ToCruz joga sem iteração do utilizador.
+     * Executa um jogo automático nesta missão, ou seja, o jogador não interage para fazer
+     * uma determinada ação.
      */
     @Override
     public void jogoAutomatico() {
@@ -203,7 +206,8 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Verifica a igualdade entre dois objetos Missao. A comparação é feita pelo código da missão e a versão.
+     * Verifica a igualdade entre dois objetos Missao.
+     * A comparação é feita pelo código da missão e a versão.
      *
      * @param o o objeto a ser comparado com esta Missao
      * @return true se os objetos forem iguais, false caso contrário
@@ -222,9 +226,9 @@ public class Missao implements MissaoInt, Comparable<Missao> {
     }
 
     /**
-     * Calcula o código hash para esta Missao com base no código e na versão.
+     * Calcula o código de hash para a Missao com base no código e na versão.
      *
-     * @return o código hash calculado
+     * @return o código de hash calculado
      */
     @Override
     public int hashCode() {

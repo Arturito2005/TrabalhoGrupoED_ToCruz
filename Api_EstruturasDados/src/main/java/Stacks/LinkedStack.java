@@ -10,7 +10,7 @@ import Nodes.LinearNode;
  * @param <T> Tipo de dado dos elementos armazenados na stack.
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
- * @author Francisco Oliveria
+ * @author Francisco Oliveira
  * Nº mecanografico: 8230148
  * @version 1.0
  */
@@ -36,7 +36,7 @@ public class LinkedStack<T> implements StackADT<T> {
 
     /**
      * Adiciona um elemento ao topo da stack.
-     * Este método cria um novo nó que será colocado no início da lista encadeada.
+     * Este metodo cria um novo nó que será colocado no início da lista encadeada.
      *
      * @param element O elemento a ser adicionado à stack.
      */

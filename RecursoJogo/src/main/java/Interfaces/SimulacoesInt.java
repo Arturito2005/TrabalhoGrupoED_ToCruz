@@ -3,7 +3,7 @@ package Interfaces;
 import Missoes.Simulacoes;
 
 /**
- * Interface contém os 2 modos de jogo da missão.
+ * Interface que contém 3 modos de jogo da missão.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -21,15 +21,16 @@ public interface SimulacoesInt {
     public Simulacoes modojogoManual();
 
     /**
-     * Sugere a melhor entrada ao To Cruz e o caminho que deve realizar para chegar ao alvo e se
-     * for possível sair do edificio com vida também mostra o caminho mais curto para sair do edificio.
+     * Ativa o modo automático da missão.
+     *
+     *
      */
     public void modojogoAutomatico();
 
     /**
-     * O jogo é jogado de forma automatico.
+     * Ativa o modo "jogo automático" da missão.
      *
-     * @return a simulacao realizada
+     * @return a simulação feita pelo jogador
      */
     public Simulacoes jogoAutomatico();
 }

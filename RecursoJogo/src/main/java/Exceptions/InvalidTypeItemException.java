@@ -1,7 +1,8 @@
 package Exceptions;
 
 /**
- * Exceção personalizada que representa uma tentativa de uso ou manipulação de um item de tipo inválido em um contexto específico.
+ * Exceção personalizada que é lançada na tentativa de uso ou manipulação de um item
+ * de tipo inválido em um contexto específico.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138

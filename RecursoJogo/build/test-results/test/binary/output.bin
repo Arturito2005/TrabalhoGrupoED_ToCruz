@@ -2,7 +2,7 @@
 `.\Jsons\Import\FicheiroMissao.json (O sistema não conseguiu localizar o caminho especificado)
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
-2O item desta divisao já foi usado anteriormente
+1O item desta divisao ja foi usado anteriormente
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
@@ -21,29 +21,29 @@
 
 )O To Cruz matou o inimigo Inimigo Fraco
 
-IO inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 50 HP
+IO inimigo Inimigo Forte resitiu ao ataque do To Cruz e ficou com: 50 HP
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
-)O imimigoInimigo Fraco atacou o To Cruz
+*O imimigo Inimigo Fraco atacou o To Cruz
 ,To Cruz resiste ao ataque e fica com 90 HP
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
-)O imimigoInimigo Forte atacou o To Cruz
-(O inimigo Inimigo Fortematou o To Cruz
+*O imimigo Inimigo Forte atacou o To Cruz
+)O inimigo Inimigo Forte matou o To Cruz
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
 Turno do To Cruz atacar!
-IO inimigo Inimigo Fracoresitiu ao ataque do To Cruz e ficou com : 40 HP
-IO inimigo Inimigo Forteresitiu ao ataque do To Cruz e ficou com : 90 HP
+IO inimigo Inimigo Fraco resitiu ao ataque do To Cruz e ficou com: 40 HP
+IO inimigo Inimigo Forte resitiu ao ataque do To Cruz e ficou com: 90 HP
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
-ETo Cruz está com o alvo, agora só falta sair do edificio com vida
+CTo Cruz esta com o alvo, agora so falta sair do edificio com vida
 0O To Cruz moveu-se para a divisão: Sala Teste
 0O To Cruz moveu-se para a divisão: Sala Teste
-#O imimigoInimigo atacou o To Cruz
+$O imimigo Inimigo atacou o To Cruz
 ,To Cruz resiste ao ataque e fica com 90 HP
 0O To Cruz moveu-se para a divisão: Sala Teste
 A lista está vaiza!

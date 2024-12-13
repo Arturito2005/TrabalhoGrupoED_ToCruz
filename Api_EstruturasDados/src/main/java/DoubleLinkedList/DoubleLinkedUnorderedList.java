@@ -4,7 +4,7 @@ import Exceptions.ElementNotFoundException;
 import Interfaces.UnorderedListADT;
 
 /**
- * Esta classe implementa uma lista duplamente encadeada não ordenada.
+ * Esta classe implementa uma lista duplamente ligada não ordenada.
  * Ela fornece métodos para adicionar elementos à frente, ao final e após
  * um elemento específico da lista. Esta implementação estende a classe
  * <code>DoublyLinkedList</code> e implementa a interface <code>UnorderedListADT</code>.
@@ -19,7 +19,7 @@ import Interfaces.UnorderedListADT;
 public class DoubleLinkedUnorderedList<T> extends DoublyLinkedList<T> implements UnorderedListADT<T> {
 
     /**
-     * Construtor que cria uma nova lista duplamente encadeada não ordenada.
+     * Construtor que cria uma nova lista duplamente ligada não ordenada.
      * Inicializa a lista com cabeça e cauda como nulas e o contador de elementos como zero.
      */
     public DoubleLinkedUnorderedList() {

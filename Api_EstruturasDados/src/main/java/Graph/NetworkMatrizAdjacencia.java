@@ -28,7 +28,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     protected double[][] adjMatrix;
 
     /**
-     * Construtor que inicializa a matriz de adjacência com a capacidade padrão.
+     * Construtor que inicializa a matriz de adjacência com a capacidade default.
      * Define todos os valores da matriz como infinito positivo, indicando a ausência de arestas.
      */
     public NetworkMatrizAdjacencia() {
@@ -42,8 +42,9 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
-     * Expande a matriz de adjacência para dobrar sua capacidade quando não houver mais espaço.
-     * Essa operação copia os dados da matriz atual para uma nova matriz maior e redefine os valores para infinito positivo.
+     * Expande a matriz de adjacência para dobrar a sua capacidade quando não houver mais espaço.
+     * Essa operação copia os dados da matriz atual para uma nova matriz maior
+     * e redefine os valores para infinito positivo.
      */
     protected void expandadweightMatrix() {
         super.expandCapacity();
@@ -63,7 +64,8 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
-     * Adiciona um vértice ao grafo. Se o número de vértices alcançar a capacidade máxima, a matriz de adjacência será expandida.
+     * Adiciona um vértice ao grafo.
+     * Se o número de vértices alcançar a capacidade máxima, a matriz de adjacência será expandida.
      *
      * @param vertex o vértice a ser adicionado
      */
@@ -124,12 +126,14 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
-     * Calcula o caminho mais curto entre dois vértices, levando em consideração o custo das arestas e o número de arestas.
+     * Calcula o caminho mais curto entre dois vértices, levando em consideração o
+     * custo das arestas e o número de arestas.
      * Em caso de empate no custo, o caminho com menos arestas é priorizado.
      *
      * @param startVertex o vértice de origem
      * @param finalVertex o vértice de destino
-     * @return o custo do caminho mais curto entre os dois vértices ou Double.MAX_VALUE se não houver caminho
+     * @return o custo do caminho mais curto entre os dois vértices ou
+     * Double.MAX_VALUE se não houver caminho
      */
     @Override
     public double shortestPathWeight(T startVertex, T finalVertex) {
@@ -184,7 +188,7 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
-     * Retorna um iterador para os vértices do grafo utilizando uma busca em profundidade (DFS).
+     * Retorna um iterador para os vértices do grafo utilizando uma pesquisa em profundidade (DFS).
      *
      * @return um iterador para os vértices do grafo
      */
@@ -218,9 +222,9 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
     }
 
     /**
-     * Retorna a árvore geradora mínima do grafo, utilizando o algoritmo de Prim.
+     * Retorna a árvore geradora de custo mínimo do grafo, utilizando o algoritmo de Prim.
      *
-     * @return uma árvore geradora mínima do grafo
+     * @return uma árvore geradora de custo mínimo do grafo
      */
     public NetworkMatrizAdjacencia<T> mstNetwork() {
         int x, y;
@@ -235,14 +239,13 @@ public class NetworkMatrizAdjacencia<T> extends GraphMatrizAdjacencia<T> impleme
         }
 
         resultGraph.adjMatrix = new double[numVertices][numVertices];
-        //Talvez meter aqui 0;
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
                 resultGraph.adjMatrix[i][j] = Double.POSITIVE_INFINITY;
             }
         }
 
-        //Inicializa o numero de veritices do grafo resultado
+        //Inicializa o numero de vertices do grafo resultado
         resultGraph.vertices = (T[])(new Object[numVertices]);
         boolean[] visited = new boolean[numVertices];
 

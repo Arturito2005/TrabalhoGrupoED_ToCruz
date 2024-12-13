@@ -95,7 +95,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ImportarMapa</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/Importar.html" title="interface in Interfaces">Importar</a></span></div>
-<div class="block">Classe responsável por gerar o Mapa da missão, do ToCruz</div>
+<div class="block">Classe responsável por gerar o Mapa da missão do ToCruz</div>
 </div>
 </section>
 <section class="summary">
@@ -127,7 +127,7 @@ implements <a href="../Interfaces/Importar.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../Missoes/Missao.html" title="class in Missoes">Missao</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#gerarMapa(java.lang.String)" class="member-name-link">gerarMapa</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Gera o mapa do edificio e guarda os dados da Missao a partir de um ficehrio JSON.</div>
+<div class="block">Gera o mapa do edifício e guarda os dados da Missão a partir de um ficheiro JSON.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ImportarMapa()" class="member-name-link">ImportarMapa</a>()</code></div>
@@ -181,19 +181,19 @@ implements <a href="../Interfaces/Importar.html" title="interface in Interfaces"
 <h3>gerarMapa</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../Missoes/Missao.html" title="class in Missoes">Missao</a></span>&nbsp;<span class="element-name">gerarMapa</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;path)</span>
-                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a>,
-<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></span></div>
-<div class="block">Gera o mapa do edificio e guarda os dados da Missao a partir de um ficehrio JSON.</div>
+                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a>,
+<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a>,
+<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Gera o mapa do edifício e guarda os dados da Missão a partir de um ficheiro JSON.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/Importar.html#gerarMapa(java.lang.String)">gerarMapa</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/Importar.html" title="interface in Interfaces">Importar</a></code></dd>
 <dt>Parameters:</dt>
 <dd><code>path</code> - Caminho para o ficheiro JSON.</dd>
 <dt>Returns:</dt>
-<dd>O objeto Missao criado com os dados do ficheiro.</dd>
+<dd>O objeto Missão criado com os dados do ficheiro.</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code> - Se o arquivo não for encontrado.</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/FileNotFoundException.html" title="class or interface in java.io" class="external-link">FileNotFoundException</a></code> - Se o ficheiro não for encontrado.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - Se ocorrer algum erro de leitura do ficheiro.</dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/NullPointerException.html" title="class or interface in java.lang" class="external-link">NullPointerException</a></code> - Se o caminho for null.</dd>
 </dl>

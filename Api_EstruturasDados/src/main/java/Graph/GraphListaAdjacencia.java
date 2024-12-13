@@ -11,7 +11,7 @@ import Stacks.LinkedStack;
 import java.util.Iterator;
 
 /**
- * Classe que implementa um grafo usando uma lista de adjacência.
+ * Classe que implementa um grafo, usa uma lista de adjacência.
  *
  * @param <T> tipo genérico que representa o tipo de dados dos vértices do grafo.
  * @author Artur Pinto
@@ -23,7 +23,7 @@ import java.util.Iterator;
 public class GraphListaAdjacencia<T> implements GraphADT<T> {
 
     /**
-     * Capacidade padrão do grafo
+     * Capacidade default do grafo
      */
     protected final int DEFAULT_CAPACITY = 30;
 
@@ -208,11 +208,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início
+     * Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início
      * para suas divisões vizinhas.
      *
-     * @param startVertex o vértice de início para a busca
-     * @return um iterador para os resultados da busca
+     * @param startVertex o vértice de início para a pesquisq
+     * @return um iterador para os resultados da pesquisa
      */
     public Iterator<T> iteratorBFSNextDivisoes(T startVertex) {
         int indexVertex = getIndex(startVertex);
@@ -245,10 +245,10 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início.
+     * Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início.
      *
-     * @param startVertex o vértice de início para a busca
-     * @return um iterador para os resultados da busca
+     * @param startVertex o vértice de início para a pesquisa
+     * @return um iterador para os resultados da pesquisa
      */
     @Override
     public Iterator iteratorBFS(T startVertex) {
@@ -297,10 +297,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador para realizar a busca em profundidade (DFS) a partir de um vértice de início.
+     * Retorna um iterador para realizar a pesquisa em profundidade (DFS)
+     * a partir de um vértice de início.
      *
-     * @param startVertex o vértice de início para a busca
-     * @return um iterador para os resultados da busca
+     * @param startVertex o vértice de início para a pesquisa
+     * @return um iterador para os resultados da pesquisa
      */
     @Override
     public Iterator iteratorDFS(T startVertex) {
@@ -356,10 +357,11 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Retorna um iterador para o caminho mais curto entre dois vértices usando a busca em largura (BFS).
+     * Retorna um iterador para o caminho mais curto entre dois vértices usando a pesquisa
+     * em largura (BFS).
      *
-     * @param startVertex  o vértice de início para a busca
-     * @param targetVertex o vértice de destino para a busca
+     * @param startVertex  o vértice de início para a pesquisa
+     * @param targetVertex o vértice de destino para a pesquisa
      * @return um iterador para os vértices do caminho mais curto
      */
     @Override

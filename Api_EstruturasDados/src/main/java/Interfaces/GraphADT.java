@@ -47,18 +47,18 @@ public interface GraphADT<T> {
     public void removeEdge(T vertex1, T vertex2);
 
     /**
-     * Retorna um iterador de busca em largura (BFS) começando com o vértice fornecido.
+     * Retorna um iterador de pesquisa em largura (BFS) começando com o vértice fornecido.
      *
      * @param startVertex o vértice inicial
-     * @return um iterador de busca em largura começando no vértice fornecido
+     * @return um iterador de pesquisa em largura começando no vértice fornecido
      */
     public Iterator<T> iteratorBFS(T startVertex);
 
     /**
-     * Retorna um iterador de busca em profundidade (DFS) começando com o vértice fornecido.
+     * Retorna um iterador de pesquisa em profundidade (DFS) começando com o vértice fornecido.
      *
      * @param startVertex o vértice inicial
-     * @return um iterador de busca em profundidade começando no vértice fornecido
+     * @return um iterador de pesquisa em profundidade começando no vértice fornecido
      */
     public Iterator<T> iteratorDFS(T startVertex);
 

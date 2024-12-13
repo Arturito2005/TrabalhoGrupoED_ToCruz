@@ -9,8 +9,6 @@ import java.util.Objects;
 
 /**
  * Classe que representa um edifício no jogo.
- * <p>
- * Comentar o que falta quando conseguir fazer o desenho do Mapa
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -30,22 +28,24 @@ public class Edificio implements EdificoInt {
      */
     private static final String NAME_DEFAULT = "CIA Headquarters";
 
-    private int id;
     /**
      * Identificador único do edifício.
      */
+    private int id;
 
-    private String name;
     /**
      * Nome do edifício.
      */
+    private String name;
+
     /**
-     * Grafo que representa as divisões e suas conexões no edifício.
+     * Grafo pesado que representa as divisões e respetivas conexões no edifício.
      */
     private NetworkMatrizADT<Divisao> planta_edificio;
 
     /**
-     * Construtor padrão do edifício. Inicializa o nome com o valor padrão e a planta do edifício como um grafo vazio.
+     * Construtor default do edifício.
+     * Inicializa o nome com o valor default e a planta do edifício como um grafo pesado vazio.
      */
     public Edificio() {
         this.id = ID_EDIFICIO_CONT++;
@@ -59,7 +59,7 @@ public class Edificio implements EdificoInt {
      *
      * @param id_edificio     ID do edifício a ser copiado.
      * @param name            Nome do edifício a ser copiado.
-     * @param planta_edificio Grafo que representa as divisões e suas conexões.
+     * @param planta_edificio Grafo que representa as divisões e respetivas conexões.
      */
     public Edificio(int id_edificio, String name, NetworkMatrizADT<Divisao> planta_edificio) {
         this.id = id_edificio;
@@ -99,9 +99,9 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Retorna a planta do edifício (grafo de divisões).
+     * Retorna a planta do edifício (grafo pesado de divisões).
      *
-     * @return Grafo que representa as divisões e conexões do edifício.
+     * @return Grafo pesado que representa as divisões e conexões do edifício.
      */
     public NetworkMatrizADT<Divisao> getPlantaEdificio() {
         return planta_edificio;
@@ -111,7 +111,7 @@ public class Edificio implements EdificoInt {
      * Retorna o caminho mais curto entre duas divisões, considerando o peso das arestas.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final   Divisão final.
+     * @param div_final Divisão final.
      * @return Peso do caminho mais curto entre as divisões.
      */
     @Override
@@ -123,7 +123,7 @@ public class Edificio implements EdificoInt {
      * Retorna o número de arestas no caminho mais curto entre duas divisões.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final   Divisão final.
+     * @param div_final Divisão final.
      * @return Número de arestas no caminho mais curto entre as divisões.
      */
     @Override
@@ -135,7 +135,7 @@ public class Edificio implements EdificoInt {
      * Retorna um iterador para o caminho mais curto entre duas divisões.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final   Divisão final.
+     * @param div_final Divisão final.
      * @return Iterador para o caminho mais curto.
      */
     @Override
@@ -158,7 +158,7 @@ public class Edificio implements EdificoInt {
      *
      * @param vertex1 Primeira divisão.
      * @param vertex2 Segunda divisão.
-     * @param weight  Peso da ligação entre as divisões.
+     * @param weight Peso da ligação entre as divisões.
      */
     @Override
     public void addLigacao(Divisao vertex1, Divisao vertex2, double weight) {
@@ -169,7 +169,7 @@ public class Edificio implements EdificoInt {
      * Atualiza o peso de uma ligação no grafo.
      *
      * @param vertex1 A divisão cuja ligação será atualizada.
-     * @param weight  O novo peso da ligação.
+     * @param weight O novo peso da ligação.
      */
     @Override
     public void updateWeight(Divisao vertex1, double weight) {
@@ -199,28 +199,14 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Desenha a aresta entre duas divisões, mostrando seu peso.
-     *
-     * @param divOrigem  Divisão de origem.
-     * @param divDestino Divisão de destino.
-     * @param peso       Peso da aresta.
-     */
-    private void desenharAresta(Divisao divOrigem, Divisao divDestino, double peso) {
-        String bordaOrigem = "-".repeat(divOrigem.getName().length() + 2); // Ajusta o comprimento da linha
-        String bordaDestino = "-".repeat(divDestino.getName().length() + 2); // Ajusta o comprimento da linha
-
-        System.out.println(" ".repeat(4) + bordaOrigem + "---- (Peso: " + peso + ") ----" + bordaDestino);
-    }
-
-    /**
-     * Desenha o mapa do edifício, mostrando suas divisões e conexões.
+     * Desenha o mapa do edifício, exibindo as suas divisões e conexões.
      */
     public void drawMapa() {
         Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
 
         while (itrDiv.hasNext()) {
             Divisao div = itrDiv.next();
-            System.out.println("Lista de Divisão vizinhas a divisao: " + div.getName());
+            System.out.println("Lista de Divisoes vizinhas a divisao: " + div.getName());
             System.out.println();
 
             Iterator<Divisao> itr_adj = this.planta_edificio.iteratorNextVertexs(div);
@@ -235,9 +221,9 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Retorna uma representação em string do edifício, incluindo seu ID, nome e planta.
+     * Retorna uma representação em string do edifício, incluindo o seu ID, nome e planta.
      *
-     * @return String representando o edifício.
+     * @return String a representar o edifício.
      */
     @Override
     public String toString() {
@@ -272,9 +258,9 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Gera um código hash para o edifício, utilizando seu nome e planta.
+     * Gera um código de hash para o edifício, utilizando o seu nome e planta.
      *
-     * @return O código hash do edifício.
+     * @return O código de hash do edifício.
      */
     @Override
     public int hashCode() {

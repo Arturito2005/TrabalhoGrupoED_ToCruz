@@ -7,7 +7,8 @@ import LinkedList.LinearLinkedOrderedList;
 import java.util.Objects;
 
 /**
- * Representa uma coleção de missões com capacidade de adicionar novas missões e rastrear a contagem total.
+ * Representa uma coleção de missões com capacidade de adicionar novas
+ * missões e fazer a contagem total de missões.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -18,7 +19,7 @@ import java.util.Objects;
 public class Missoes implements MissoesInt {
 
     /**
-     * Contador para rastrear o número total de missões adicionadas.
+     * Contador para o número total de missões adicionadas.
      */
     private int contMissoes;
 
@@ -62,7 +63,7 @@ public class Missoes implements MissoesInt {
     @Override
     public void addMissao(Missao missao) throws NullPointerException {
         if (missao == null) {
-            throw new NullPointerException("Não é possível introduzir missões nulas");
+            throw new NullPointerException("Nao e possivel introduzir missoes nulas");
         }
         listaMissao.add(missao);
         this.contMissoes++;
@@ -89,10 +90,10 @@ public class Missoes implements MissoesInt {
     }
 
     /**
-     * Retorna o código hash para a instância atual de Missoes.
-     * O código hash é calculado com base na lista de missões.
+     * Retorna o código de hash para a instância atual de Missoes.
+     * O código de hash é calculado com base na lista de missões.
      *
-     * @return o código hash para a instância de Missoes.
+     * @return o código de hash para a instância de Missoes.
      */
     @Override
     public int hashCode() {

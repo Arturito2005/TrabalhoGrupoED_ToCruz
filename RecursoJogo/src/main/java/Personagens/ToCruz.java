@@ -22,7 +22,7 @@ import Stacks.LinkedStack;
 public class ToCruz extends Personagem implements ToCruzIt {
 
     /**
-     * Mochila para armazenar itens de cura.
+     * Mochila para armazenar os kits de vida.
      */
     private StackADT<ItemCura> mochila;
 
@@ -32,7 +32,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
     private boolean colectedAlvo;
 
     /**
-     * Construtor padrão que inicializa o personagem ToCruz sem uma divisão inicial.
+     * Construtor padrão que inicializa a personagem ToCruz sem uma divisão inicial.
      */
     public ToCruz() {
         super("ToCruz");
@@ -43,11 +43,11 @@ public class ToCruz extends Personagem implements ToCruzIt {
     /**
      * Construtor alternativo para realizar uma deepCopy do ToCruz.
      *
-     * @param id_personagem ID do personagem.
-     * @param nome          Nome do personagem.
-     * @param vida          Vida inicial do personagem.
-     * @param poder         Poder inicial do personagem.
-     * @param mochila       Mochila contendo itens de cura.
+     * @param id_personagem ID da personagem.
+     * @param nome          Nome da personagem.
+     * @param vida          Vida inicial da personagem.
+     * @param poder         Poder inicial da personagem.
+     * @param mochila       Mochila a conter os kits de cura.
      */
     public ToCruz(int id_personagem, String nome, long vida, long poder, StackADT<ItemCura> mochila) {
         super(id_personagem, nome, vida, poder);
@@ -56,7 +56,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
     }
 
     /**
-     * Verifica se o alvo foi coletado, pelo o To Cruz.
+     * Verifica se o alvo foi coletado pelo To Cruz.
      *
      * @return {@code true} se o alvo foi coletado; caso contrário, {@code false}.
      */
@@ -76,7 +76,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
     /**
      * Retorna a mochila do To Cruz.
      *
-     * @return A Stack de itens de cura armazenados na mochila.
+     * @return A Stack com os kits de vida armazenados na mochila.
      */
     public StackADT<ItemCura> getMochila() {
         return mochila;
@@ -100,9 +100,9 @@ public class ToCruz extends Personagem implements ToCruzIt {
     }
 
     /**
-     * Metodo para verificar se a mochila contém pelo menos um kit.
+     * Metodo para verificar se a mochila contém pelo menos um kit de vida.
      *
-     * @return true se a mochila contiver pelo menos um item, false se estiver vazia.
+     * @return true se a mochila contiver pelo menos um kit de vida, false se estiver vazia.
      */
     @Override
     public boolean mochilaTemKit() {
@@ -116,14 +116,14 @@ public class ToCruz extends Personagem implements ToCruzIt {
     }
 
     /**
-     * Método privado que aplica a cura ao personagem utilizando um item de cura.
-     * Atualiza a vida do personagem com base no tipo e na quantidade de cura fornecida pelo item.
+     * Metodo privado que aplica a cura à personagem utilizando um item de cura.
+     * Atualiza a vida da personagem com base no tipo e na quantidade de cura fornecida pelo item.
      *
      * @param item O item de cura a ser utilizado.
      */
     private void curar(ItemCura item) throws AllLifeException {
         if (this.getVida() >= 100 && !item.getType().equals(TypeItemCura.COLETE)) {
-            throw new AllLifeException("Não é possível usar o kit médico, porque a vida está cheia");
+            throw new AllLifeException("Nao e possivel usar o kit medico, porque a vida esta cheia");
         }
 
         long cura = item.getVida_recuperada();
@@ -145,30 +145,30 @@ public class ToCruz extends Personagem implements ToCruzIt {
     }
 
     /**
-     * Método para guardar um kit médico na mochila.
-     * Caso a mochila esteja cheia, o personagem poderá usá-lo imediatamente se necessário.
+     * Metodo para guardar um kit de vida na mochila.
+     * Caso a mochila esteja cheia, a personagem poderá usá-lo imediatamente se necessário.
      *
      * @param item O item de cura a ser guardado.
-     * @return Uma mensagem indicando o estado da operação (guardado, usado ou descartado).
+     * @return Uma mensagem a indicar o estado da operação (guardado, usado ou descartado).
      * @throws NullPointerException   Se o item for nulo.
      * @throws WrongTypeItemException Se o tipo do item não for um kit de vida.
      */
     @Override
     public ItemCura guardarKit(ItemCura item) throws NullPointerException, WrongTypeItemException, AllLifeException, UsedColectedItemException {
         if (item == null) {
-            throw new NullPointerException("O kit medico a guardar na mochila não pode ser null");
+            throw new NullPointerException("O kit medico a guardar na mochila nao pode ser null");
         }
 
         if (item.getType() != TypeItemCura.KIT_VIDA) {
-            throw new WrongTypeItemException("O tipo de item de cura a guardar a mochila é do tipo Kit de vida");
+            throw new WrongTypeItemException("O tipo de item de cura a guardar na mochila e do tipo Kit de vida");
         }
 
         if (item.isCollected()) {
-            throw new UsedColectedItemException("O item a usar já foi utilizado anteriormente pelo o To Cruz");
+            throw new UsedColectedItemException("O item a usar ja foi utilizado anteriormente pelo To Cruz");
         }
 
         if (this.mochila.size() == 3) {
-            System.out.println("A mochila está cheia");
+            System.out.println("A mochila esta cheia");
 
             try {
                 curar(item);
@@ -185,10 +185,10 @@ public class ToCruz extends Personagem implements ToCruzIt {
     }
 
     /**
-     * Método para usar um kit médico da mochila.
+     * Metodo para usar um kit de vida da mochila.
      * Apenas possível se houver kits na mochila e se a vida não estiver cheia.
      *
-     * @return Uma mensagem indicando o resultado da operação.
+     * @return Uma mensagem a indicar o resultado da operação.
      */
     @Override
     public ItemCura usarKit() throws EmptyCollectionException {
@@ -197,35 +197,35 @@ public class ToCruz extends Personagem implements ToCruzIt {
 
         if (!this.mochila.isEmpty()) {
             if (this.getVida() == 100) {
-                throw new AllLifeException("Não é possível usar o kit médico, porque a vida está cheia");
+                throw new AllLifeException("Nao e possível usar o kit medico, porque a vida esta cheia");
             } else {
                 kit = mochila.pop();
                 curar(kit);
                 System.out.println("O To Cruz utilizou um kit de vida com " + kit.getVida_recuperada() + " HP");
             }
         } else {
-            throw new EmptyCollectionException("O To Cruz está sem kit de vidas na mochila");
+            throw new EmptyCollectionException("O To Cruz esta sem kits de vida na mochila");
         }
 
         return kit;
     }
 
     /**
-     * Método para usar um item.
+     * Metodo para usar um item.
      *
      * @param item O item do tipo colete a ser usado.
-     * @return Uma mensagem indicando que o colete foi usado.
+     * @return Uma mensagem a indicar que o colete foi usado.
      * @throws NullPointerException   Se o colete for nulo.
      * @throws WrongTypeItemException Se o item não for do tipo colete.
      */
     @Override
     public ItemCura usarItem(ItemCura item) throws NullPointerException, UsedColectedItemException {
         if (item == null) {
-            throw new NullPointerException("O item não pode ser nulo");
+            throw new NullPointerException("O item nao pode ser nulo");
         }
 
         if (item.isCollected()) {
-            throw new UsedColectedItemException("O item a usar já foi utilizado anteriormente pelo o To Cruz");
+            throw new UsedColectedItemException("O item a usar ja foi utilizado anteriormente pelo To Cruz");
         }
 
         try {
@@ -240,7 +240,7 @@ public class ToCruz extends Personagem implements ToCruzIt {
     /**
      * Retorna uma string com todos os dados do ToCruz.
      *
-     * @return Uma string com detalhes do personagem e sua mochila.
+     * @return Uma string com detalhes da personagem e respetiva mochila.
      */
     @Override
     public String toString() {

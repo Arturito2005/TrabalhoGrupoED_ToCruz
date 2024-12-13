@@ -1,7 +1,8 @@
 package Exceptions;
 
 /**
- * Exceção personalizada que indica uma tentativa de reutilizar um item já coletado ou usado em um contexto onde isso não é permitido.
+ * Exceção personalizada que indica uma tentativa de reutilizar um item
+ * já coletado ou usado em um contexto onde isso não é permitido.
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
