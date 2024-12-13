@@ -155,6 +155,7 @@ public class Missao implements MissaoInt, Comparable<Missao> {
 
         for (Simulacoes simulacao : simulacoes) {
             System.out.println(simulacao.toString());
+            System.out.println();
         }
     }
 
