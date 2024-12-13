@@ -16,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Missoes/Simulacoes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
@@ -31,7 +30,6 @@
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1733912606075" duration="534000" />
       <workItem from="1733925746309" duration="3387000" />
       <workItem from="1733950214752" duration="1882000" />
-      <workItem from="1734082561966" duration="1599000" />
+      <workItem from="1734082561966" duration="1907000" />
     </task>
     <servers />
   </component>
