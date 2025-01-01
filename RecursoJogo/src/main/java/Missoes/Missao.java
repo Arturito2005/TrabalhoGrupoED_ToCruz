@@ -78,6 +78,10 @@ public class Missao implements MissaoInt, Comparable<Missao> {
         this.simulacoes = new LinearLinkedOrderedList<>();
     }
 
+    public Edificio getEdificio() {
+        return edificio;
+    }
+
     /**
      * Retorna o código da missão.
      *

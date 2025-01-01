@@ -398,7 +398,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
     }
 
     /**
-     * Simula o jogo automaticamente, fazendo o ToCruz se mover, enfrentar inimigos e
+     * Simula o jogo automaticamente, fazendo o ToCruz se , enfrentar inimigos e
      * atingir objetivos.
      *
      * @return A instância atual da simulação após a execução do jogo automático.
