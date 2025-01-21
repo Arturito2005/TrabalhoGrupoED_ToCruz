@@ -59,7 +59,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     /**
      * Item presente na divisão.
      */
-    private Item item;
+    private UnorderedListADT<Item> item;
 
     /**
      * Alvo presente na divisão.
@@ -76,7 +76,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.name = name;
         this.entrada_saida = false;
         this.alvo = null;
-        this.item = null;
+        this.item = new LinearLinkedUnorderedList<>();
         this.inimigos = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
@@ -110,15 +110,20 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
 
         this.alvo = temAlvo;
 
-        Item tempItem = null;
+        UnorderedListADT<Item> tempListaItens = new LinearLinkedUnorderedList<>();
+        for (Item itens : tempListaItens) {
+            Item tempItem = null;
 
-        if (item != null) {
-            if (item instanceof ItemCura) {
+            if (itens instanceof ItemCura) {
                 tempItem = new ItemCura(item.getId_item(), item.isCollected(), ((ItemCura) item).getType(), ((ItemCura) item).getVida_recuperada());
             }
-        }
 
-        this.item = tempItem;
+            //Em principio é muito desnecessario
+            if(tempItem != null) {
+               tempListaItens.addToRear(tempItem);
+            }
+        }
+        this.item = tempListaItens;
 
         UnorderedListADT<Inimigo> tempListaInimigos = new LinearLinkedUnorderedList<>();
         for (Inimigo inimigo : inimigos) {
@@ -132,6 +137,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         if (toCruz != null) {
             tempToCruz = new ToCruz(toCruz.getId_personagem(), toCruz.getNome(), toCruz.getVida(), toCruz.getPoder(), toCruz.getMochila());
         }
+
         this.toCruz = tempToCruz;
     }
 

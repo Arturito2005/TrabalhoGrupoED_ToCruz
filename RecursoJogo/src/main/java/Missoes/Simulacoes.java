@@ -263,27 +263,7 @@ public class Simulacoes implements SimulacoesInt, Comparable<Simulacoes> {
         shortesPathTwopoints(div_to, div_alvo);
     }
 
-    /**
-     * Metodo que calcula o poder total final de uma divisão, somando o poder inicial
-     * fornecido com o poder dos inimigos presentes na divisão.
-     *
-     * Caso a divisão não tenha inimigos ou contenha apenas um, o poder inicial é retornado.
-     * Caso existam vários inimigos, os seus poderes são somados ao poder inicial.
-     *
-     * @param div A divisão cuja força total será calculada.
-     * @param poder_inimigo O poder inicial base dos inimigos.
-     * @return O poder total calculado da divisão.
-     */
-    private double poderFinalDivisao(Divisao div, long poder_inimigo) {
-        long poder_total = poder_inimigo;
-        if (div.getInimigos().isEmpty() && div.getInimigos().size() > 1) {
-            for (Inimigo inimigo_div : div.getInimigos()) {
-                poder_total += inimigo_div.getPoder();
-            }
-        }
 
-        return poder_total;
-    }
 
     /**
      * Move um inimigo de uma divisão para outra dentro do edifício.
