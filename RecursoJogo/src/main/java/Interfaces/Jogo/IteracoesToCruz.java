@@ -29,9 +29,4 @@ public interface IteracoesToCruz {
      */
     public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigo);
 
-    /**
-     * Permite ao To Cruz utilizar o item da divisão
-     */
-    public void usarItemDivisao();
-
 }

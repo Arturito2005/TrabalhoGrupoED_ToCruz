@@ -59,7 +59,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
     /**
      * Item presente na divisão.
      */
-    private UnorderedListADT<Item> item;
+    private UnorderedListADT<Item> itens;
 
     /**
      * Alvo presente na divisão.
@@ -76,7 +76,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.name = name;
         this.entrada_saida = false;
         this.alvo = null;
-        this.item = new LinearLinkedUnorderedList<>();
+        this.itens = new LinearLinkedUnorderedList<>();
         this.inimigos = new LinearLinkedUnorderedList<>();
         this.toCruz = null;
     }
@@ -123,7 +123,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
                tempListaItens.addToRear(tempItem);
             }
         }
-        this.item = tempListaItens;
+        this.itens = tempListaItens;
 
         UnorderedListADT<Inimigo> tempListaInimigos = new LinearLinkedUnorderedList<>();
         for (Inimigo inimigo : inimigos) {
@@ -244,22 +244,21 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         return inimigo1;
     }
 
-    /**
-     * Retorna o item presente na divisão.
-     *
-     * @return O item da divisão.
-     */
-    public Item getItem() {
-        return item;
+    public void addItem(Item item) throws NullPointerException {
+        if (item == null) {
+            throw new NullPointerException("O item nao pode ser nulo");
+        }
+        this.itens.addToRear(item);
     }
 
-    /**
-     * Altera o item presente na divisão.
-     *
-     * @param item O item para alterar.
-     */
-    public void setItem(Item item) {
-        this.item = item;
+    public Item removeItem(Item item)  {
+        try {
+            this.itens.remove(item);
+        } catch (EmptyCollectionException | NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return item;
     }
 
     /**
@@ -405,21 +404,18 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
     }
 
-    /**
-     * Utiliza o item presente na divisão, se aplicável.
-     */
-    @Override
-    public void usarItemDivisao() {
-        if (!this.item.isCollected() && (item instanceof ItemCura)) {
-            try {
-                this.toCruz.usarItem((ItemCura) this.item);
-                this.item.setCollected(true);
-            } catch (NullPointerException e) {
-                System.out.println(e.getMessage());
+    public boolean containItem(Item item) {
+        boolean contain = false;
+
+        Iterator<Item> iterator = this.itens.iterator();
+        while(iterator.hasNext() && !contain) {
+            Item nextItem = iterator.next();
+            if (item.equals(nextItem)) {
+                contain = true;
             }
-        } else {
-            System.out.println("O item desta divisao ja foi usado anteriormente");
         }
+
+        return contain;
     }
 
     /**

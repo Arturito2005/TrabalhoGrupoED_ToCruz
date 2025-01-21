@@ -10,14 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Personagens/ToCruz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesToCruz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/JogoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/JogoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Jogo/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Jogo/Jogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

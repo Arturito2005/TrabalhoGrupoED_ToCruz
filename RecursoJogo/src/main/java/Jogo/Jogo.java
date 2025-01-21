@@ -125,9 +125,33 @@ public class Jogo implements JogoInterface {
         return divisao_atual;
     }
 
+    //Meter throw InvalidDivisaoExeception, por exemplo
     @Override
-    public void usarItemDivisao(Divisao divisao) {
-        divisao
+    public void usarItemDivisao(Item item, Divisao divisao){
+        if (divisao.containItem(item)) {
+            try {
+                this.toCruz.usarItem((ItemCura) item);
+                this.collectedItem.addToRear(item);
+                divisao.removeItem(item);
+            } catch (NullPointerException e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            System.out.println("O item desta divisao ja foi usado anteriormente");
+        }
+    }
+
+    //Meter os Thorws do guardarKit, ou verificação para permitir apenas guardarKits
+    public void guardarItemMochila(Item item, Divisao divisao) {
+        if(divisao.containItem(item)) {
+            try {
+                this.toCruz.guardarKit((ItemCura) item);
+                this.collectedItem.addToRear(item);
+                divisao.removeItem(item);
+            } catch (NullPointerException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     @Override
