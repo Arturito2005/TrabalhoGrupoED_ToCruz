@@ -5,6 +5,7 @@ import Interfaces.UnorderedListADT;
 import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import Missoes.Simulacoes;
 
 import java.util.Iterator;
 
@@ -230,6 +231,7 @@ public class ModoAutomatico {
         return edificio.getShortestPath(div_alvo, sugestaoCaminhoToCruzAutomatico(div_alvo));
     }
 
+    /*Apenas sugestão do caminho automatico*/
     /**
      * Realiza a simulação do jogo no modo automático, onde a personagem ToCruz é controlado
      * pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
@@ -278,6 +280,76 @@ public class ModoAutomatico {
                 System.out.println("E impossivel o To Cruz sair do edificio com vida!");
             }
         }
+    }
+
+    /*Principal Automaitco*/
+    /**
+     * Simula o jogo automaticamente, fazendo o ToCruz se , enfrentar inimigos e
+     * atingir objetivos.
+     *
+     * @return A instância atual da simulação após a execução do jogo automático.
+     */
+    @Override
+    public Simulacoes jogoAutomatico() {
+        ToCruz toCruz = new ToCruz();
+        Iterator<Divisao> itrMapa = this.edificio.IteratorMapa();
+        UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<>();
+        Divisao div_alvo = null;
+        boolean finishgame = false;
+        while (itrMapa.hasNext()) {
+            Divisao div = itrMapa.next();
+
+            if (div.isEntrada_saida()) {
+                list_entradas.addToRear(div);
+            }
+
+            if (div.getAlvo() != null) {
+                div_alvo = div;
+            }
+        }
+
+        Divisao div_start = BestStartToCruz(toCruz, list_entradas, div_alvo);
+        addDivisaoTrajetoToCruz(div_start);
+        div_start.addToCruz(toCruz);
+        while (!finishgame) {
+            itrMapa = this.edificio.IteratorMapa();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            while (itrMapa.hasNext()) {
+                Divisao div = itrMapa.next();
+
+                if (div.haveInimigo()) {
+                    endTurno.addToRear(div);
+                }
+            }
+
+            while (!endTurno.isEmpty()) {
+                turnoInimigo(endTurno.removeFirst());
+            }
+
+            itrMapa = this.edificio.IteratorMapa();
+            boolean findToCruz = false;
+            while (itrMapa.hasNext() && !findToCruz) {
+                Divisao div = itrMapa.next();
+
+                if (div.getToCruz() != null) {
+                    if (div.getToCruz().isDead() || (div.isToCruzInExit() && div.getToCruz().isColectedAlvo())) {
+                        finishgame = true;
+                    } else {
+                        turnoAutomaticoToCruz(div);
+                    }
+
+                    findToCruz = true;
+                }
+            }
+        }
+
+        long vida = toCruz.getVida();
+        if (vida < 0) {
+            vida = 0;
+        }
+        this.vida_to = vida;
+        relatoriosMissao(toCruz);
+        return this;
     }
 
 

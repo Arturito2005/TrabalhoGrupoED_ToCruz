@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/TurnoAutomatico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/TurnoManual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/Jogo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoAutomatico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoManual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +196,7 @@
       <workItem from="1735990149026" duration="257000" />
       <workItem from="1736004416412" duration="10000" />
       <workItem from="1737450592844" duration="407000" />
-      <workItem from="1737451618626" duration="264000" />
+      <workItem from="1737451618626" duration="805000" />
     </task>
     <servers />
   </component>
