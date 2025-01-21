@@ -1,6 +1,6 @@
 package Exportar;
 
-import Interfaces.ExportarInt;
+import Interfaces.ProcessData.ExportarInt;
 import Interfaces.QueueADT;
 import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedUnorderedList;

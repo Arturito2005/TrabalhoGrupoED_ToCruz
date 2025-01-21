@@ -16,7 +16,7 @@ import Items.ItemCura;
  * Nº mecanografico: 8230148
  * @version 1.0
  */
-public interface ToCruzIt {
+public interface MochilaIteracoes {
 
     /**
      * Verifica se a mochila do To Cruz está cheia.

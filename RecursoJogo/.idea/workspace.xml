@@ -10,48 +10,89 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DefesaED.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/MenuTurnos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Jogo/Jogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Mapa/Nota" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Missoes/Nota" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayHeaps.TestArrayHeap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayHeaps.TestArrayHeap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayUnordered.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayUnordered.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayList.TestArrayorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayTree.TestArrayBinarySearchTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestArrayTree.TestArrayBinarySearchTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleLinkedUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleLinkedUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleOrderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestDoubleLinkedList.TestDoubleOrderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestGraphMatrizAdjacencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestGraphMatrizAdjacencia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestNetwork.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestNetwork.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestNetworkMatrizAdjacencia.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestGraph.TestNetworkMatrizAdjacencia.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedList.TestLinearLinkedOrderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedList.TestLinearLinkedOrderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedList.TestLinkedUnorderedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedList.TestLinkedUnorderedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedTree.TestLinkedBinarySearchTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedTree.TestLinkedBinarySearchTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedTree.TestLinkedHeap.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestLinkedTree.TestLinkedHeap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueueNode.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestPriorityQueue.TestPriorityQueueNode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestQueue.TestCircularArrayQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestQueue.TestCircularArrayQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestQueue.TestLinkedQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestQueue.TestLinkedQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestStacks.TestArrayStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestStacks.TestArrayStack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestStacks.TestLinkedStack.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/classes/TestStacks.TestLinkedStack.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayHeaps.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayHeaps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestArrayTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestDoubleLinkedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestDoubleLinkedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestGraph.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestGraph.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestLinkedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestLinkedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestLinkedTree.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestLinkedTree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestPriorityQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestPriorityQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestQueue.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestQueue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestStacks.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/reports/tests/test/packages/TestStacks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayHeaps.TestArrayHeap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayHeaps.TestArrayHeap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayUnordered.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayUnordered.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayList.TestArrayorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayTree.TestArrayBinarySearchTree.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestArrayTree.TestArrayBinarySearchTree.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleLinkedUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleLinkedUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleOrderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestDoubleLinkedList.TestDoubleOrderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestGraphMatrizAdjacencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestGraphMatrizAdjacencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestNetwork.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestNetwork.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestNetworkMatrizAdjacencia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestGraph.TestNetworkMatrizAdjacencia.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedList.TestLinearLinkedOrderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedList.TestLinearLinkedOrderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedList.TestLinkedUnorderedList.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedList.TestLinkedUnorderedList.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedTree.TestLinkedBinarySearchTree.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedTree.TestLinkedBinarySearchTree.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedTree.TestLinkedHeap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestLinkedTree.TestLinkedHeap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueueNode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestPriorityQueue.TestPriorityQueueNode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestQueue.TestCircularArrayQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestQueue.TestCircularArrayQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestQueue.TestLinkedQueue.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestQueue.TestLinkedQueue.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestStacks.TestArrayStack.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestStacks.TestArrayStack.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestStacks.TestLinkedStack.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/TEST-TestStacks.TestLinkedStack.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/Missoes/Missao.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/Missoes/Missao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/Missoes/Simulacoes.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/Missoes/Simulacoes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/RecursoJogo-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestImportar.TestImportarMapa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestMapa.TestDivisao.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestMapa.TestDivisao.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/TestsPersonagens.TestToCruz.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestImportar.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestImportar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestMapa.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestMapa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/TestsPersonagens.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/TestsPersonagens.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestImportar.TestImportarMapa.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestMapa.TestDivisao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestMapa.TestDivisao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-TestsPersonagens.TestToCruz.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/javadoc/javadoc.options" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/javadoc/javadoc.options" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Exportar/ExportarDado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exportar/ExportarDado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/DivisaoIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/DivisaoIt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/EdificoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/EdificoInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/ExportarInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/ProcessData/ExportarInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Importar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/ProcessData/Importar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/IteracoesInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesInimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/IteracoesToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/MissaoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/MissoesInt/MissaoInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/MissoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/MissoesInt/MissoesInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/SimulacoesInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/SimulacoesInt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/ToCruzIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/MochilaIteracoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Missoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Missoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Personagens/ToCruz.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,29 +166,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build RecursoJogo.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecursoJogo [:DefesaED.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecursoJogo [:Menu.MenuMissoes.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.RecursoJogo [build].executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.TestImportarMapa.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo/libs/Api_EstruturasDados.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.49770114&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build RecursoJogo.executor": "Run",
+    "Gradle.RecursoJogo [:DefesaED.main()].executor": "Run",
+    "Gradle.RecursoJogo [:Menu.MenuMissoes.main()].executor": "Run",
+    "Gradle.RecursoJogo [build].executor": "Debug",
+    "Gradle.TestImportarMapa.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/RecursoJogo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.49770114",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\artur\OneDrive\Desktop\universidade\2_ano\ED\ED_AC_8230138_8230148\RecursoJogo\Jsons\Import" />
@@ -189,6 +231,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -221,6 +271,9 @@
       <workItem from="1734472769552" duration="11000" />
       <workItem from="1734512302621" duration="3870000" />
       <workItem from="1734522359418" duration="203000" />
+      <workItem from="1735990149026" duration="257000" />
+      <workItem from="1736004416412" duration="10000" />
+      <workItem from="1737450592844" duration="407000" />
     </task>
     <servers />
   </component>

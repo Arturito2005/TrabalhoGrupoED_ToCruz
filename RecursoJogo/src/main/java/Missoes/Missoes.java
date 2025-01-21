@@ -1,6 +1,6 @@
 package Missoes;
 
-import Interfaces.MissoesInt;
+import Interfaces.MissoesInt.MissoesInt;
 import Interfaces.OrderedListADT;
 import LinkedList.LinearLinkedOrderedList;
 

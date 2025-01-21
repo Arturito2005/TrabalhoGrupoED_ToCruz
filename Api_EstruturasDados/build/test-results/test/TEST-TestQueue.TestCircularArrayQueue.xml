@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestQueue.TestCircularArrayQueue" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.007">
+<testsuite name="TestQueue.TestCircularArrayQueue" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.006">
   <properties/>
   <testcase name="testDequeueEmptyCircularQueueException()" classname="TestQueue.TestCircularArrayQueue" time="0.002"/>
-  <testcase name="testFirstEmptyCircularQueueException()" classname="TestQueue.TestCircularArrayQueue" time="0.002"/>
+  <testcase name="testFirstEmptyCircularQueueException()" classname="TestQueue.TestCircularArrayQueue" time="0.001"/>
   <testcase name="testeDequeueDaCircularQueue()" classname="TestQueue.TestCircularArrayQueue" time="0.001"/>
   <testcase name="testeFirstCircularQueue()" classname="TestQueue.TestCircularArrayQueue" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

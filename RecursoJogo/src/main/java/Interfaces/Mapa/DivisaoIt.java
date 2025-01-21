@@ -1,6 +1,5 @@
-package Interfaces;
+package Interfaces.Mapa;
 
-import Exceptions.EmptyCollectionException;
 import Personagens.Inimigo;
 
 /**

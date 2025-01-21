@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.MissoesInt;
 
 import Missoes.Missao;
 

@@ -1,5 +1,6 @@
-package Interfaces;
+package Interfaces.Jogo;
 
+import Interfaces.UnorderedListADT;
 import Personagens.Inimigo;
 
 /**

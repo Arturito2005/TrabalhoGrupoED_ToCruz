@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.Mapa;
 
 import Mapa.Divisao;
 

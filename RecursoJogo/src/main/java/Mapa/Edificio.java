@@ -1,7 +1,7 @@
 package Mapa;
 
 import Graph.Network;
-import Interfaces.EdificoInt;
+import Interfaces.Mapa.EdificoInt;
 import Interfaces.NetworkMatrizADT;
 
 import java.util.Iterator;

@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.Jogo;
 
 import Missoes.Simulacoes;
 

@@ -1,6 +1,6 @@
 package Importar;
 
-import Interfaces.Importar;
+import Interfaces.ProcessData.Importar;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import LinkedList.LinearLinkedUnorderedList;

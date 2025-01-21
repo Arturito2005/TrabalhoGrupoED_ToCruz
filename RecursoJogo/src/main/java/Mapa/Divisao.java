@@ -1,9 +1,9 @@
 package Mapa;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.DivisaoIt;
-import Interfaces.IteracoesInimigo;
-import Interfaces.IteracoesToCruz;
+import Interfaces.Mapa.DivisaoIt;
+import Interfaces.Jogo.IteracoesInimigo;
+import Interfaces.Jogo.IteracoesToCruz;
 import Interfaces.UnorderedListADT;
 import Items.Item;
 import Items.ItemCura;

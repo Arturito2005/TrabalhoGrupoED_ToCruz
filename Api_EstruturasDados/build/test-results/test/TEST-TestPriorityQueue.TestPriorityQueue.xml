@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestPriorityQueue.TestPriorityQueue" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.002">
+<testsuite name="TestPriorityQueue.TestPriorityQueue" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.004">
   <properties/>
-  <testcase name="testRemoveNextQueue()" classname="TestPriorityQueue.TestPriorityQueue" time="0.001"/>
+  <testcase name="testRemoveNextQueue()" classname="TestPriorityQueue.TestPriorityQueue" time="0.003"/>
   <testcase name="testRemoveNextEmptyExpceptionQueue()" classname="TestPriorityQueue.TestPriorityQueue" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

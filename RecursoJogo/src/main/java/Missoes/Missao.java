@@ -1,10 +1,8 @@
 package Missoes;
 
-import Interfaces.MissaoInt;
+import MissaoInt;
 import Interfaces.OrderedListADT;
-import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedOrderedList;
-import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Edificio;
 
 import java.util.InputMismatchException;

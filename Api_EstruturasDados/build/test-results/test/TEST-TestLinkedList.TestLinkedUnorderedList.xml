@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestLinkedList.TestLinkedUnorderedList" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-12-13T09:47:51" hostname="LAPTOP-8POH8N1C" time="0.006">
+<testsuite name="TestLinkedList.TestLinkedUnorderedList" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.01">
   <properties/>
   <testcase name="testSize()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
-  <testcase name="testAddAfterElementNotFound()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
-  <testcase name="testAddAfter()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
+  <testcase name="testAddAfterElementNotFound()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.002"/>
+  <testcase name="testAddAfter()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
   <testcase name="testAddToFront()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
   <testcase name="testAddToRear()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
   <testcase name="testRemoveElement()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>

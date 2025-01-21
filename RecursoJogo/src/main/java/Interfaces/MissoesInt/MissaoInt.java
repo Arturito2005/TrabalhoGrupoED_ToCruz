@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.MissoesInt;
 
 /**
  * Interface que representa uma missão
