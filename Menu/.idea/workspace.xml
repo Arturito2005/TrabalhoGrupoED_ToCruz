@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu/Modos/ModoAutomatico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu/Modos/ModoManual.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/Jogo/Jogo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Menu/Turnos/TurnoInimigo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Menu/Turnos/TurnoToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/Modos/ModoAutomatico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Missoes/Simulacoes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +103,7 @@
       <workItem from="1734197112817" duration="2347000" />
       <workItem from="1734256599921" duration="13000" />
       <workItem from="1737450583300" duration="416000" />
-      <workItem from="1737451623039" duration="362000" />
+      <workItem from="1737451623039" duration="560000" />
     </task>
     <servers />
   </component>
