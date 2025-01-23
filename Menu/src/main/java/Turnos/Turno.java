@@ -2,18 +2,18 @@ package Turnos;
 
 import Cenarios.Cenarios;
 import Interfaces.Turno.TurnoInt;
-import Jogo.Simulacao;
 import Mapa.Divisao;
 
 public abstract class Turno implements TurnoInt {
 
-    protected Simulacao simulacao;
+    private Cenarios cenario;
 
-    protected Cenarios cenario;
+    public Cenarios getCenario() {
+        return cenario;
+    }
 
-    public Turno(Cenarios cenario, Simulacao simulacao) {
+    public Turno(Cenarios cenario) {
         this.cenario = cenario;
-        this.simulacao = simulacao;
     }
 
     public abstract void turno(Divisao divisao);

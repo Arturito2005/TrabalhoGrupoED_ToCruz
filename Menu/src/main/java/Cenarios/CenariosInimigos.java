@@ -1,18 +1,23 @@
 package Cenarios;
 
 import Exceptions.InvalidPersonagemException;
+import Interfaces.Cenarios.CenarioInimigosInterface;
 import Interfaces.StackADT;
+import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Personagens.Inimigo;
 import Personagens.Personagem;
-import Personagens.ToCruz;
 import Stacks.LinkedStack;
 
 import java.util.Iterator;
 import java.util.Random;
 
-public class CenariosInimigos extends Cenarios {
+public class CenariosInimigos extends Cenarios implements CenarioInimigosInterface {
+
+    public CenariosInimigos(Simulacao simulacao) {
+        super(simulacao);
+    }
 
     /**
      * Metodo que calcula o poder total final de uma divisão, somando o poder inicial
@@ -36,7 +41,8 @@ public class CenariosInimigos extends Cenarios {
         return poder_total;
     }
 
-    public Divisao mover(Personagem personagem, Divisao divisao_atual) {
+    @Override
+    public Divisao andar(Personagem personagem, Divisao divisao_atual) {
         if (!(personagem instanceof Inimigo)) {
             throw new InvalidPersonagemException("O Personagem a receber como paramentro tem de ser um inimigo");
         }
@@ -74,27 +80,5 @@ public class CenariosInimigos extends Cenarios {
         System.out.println("O inimigo " + inimigo.getNome() + " moveu-se para a sala: " + divisao_atual.getName());
 
         return divisao_atual;
-    }
-
-    @Override
-    public void ataque(Personagem personagem, Divisao divisao_atual) {
-        if(!(personagem instanceof Inimigo)) {
-            throw new InvalidPersonagemException("O Personagem a receber como paramentro tem de ser um inimigo");
-        }
-
-        Inimigo inimigo = (Inimigo) personagem;
-        ToCruz toCruz = getSimulacao().getToCruz();
-        long newvidaTo = toCruz.getVida() - inimigo.getPoder();
-
-        toCruz.setVida(newvidaTo);
-
-        System.out.println("O imimigo " + inimigo.getNome() + " atacou o To Cruz");
-
-        if (toCruz.isDead()) {
-            System.out.println("O inimigo " + inimigo.getNome() + " matou o To Cruz");
-            toCruz.setVida(0);
-        } else {
-            System.out.println("To Cruz resiste ao ataque e fica com " + newvidaTo + " HP");
-        }
     }
 }

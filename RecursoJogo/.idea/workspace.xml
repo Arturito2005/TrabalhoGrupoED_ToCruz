@@ -10,71 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Cenarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosInimigos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosToCruz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Exceptions/InvalidPersonagemException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Turno/TurnoInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Turno/TurnoToCruzInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/GameModes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/Turno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Importar/MudarComOimportarImporta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/MissoesInt/VersaoInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Jogo/Simulacao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Missoes/Versao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenarioInimigosInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Modos/ModoJogoManualInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/FinalizadoVerMelhoria" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/libs/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/libs/RecursoJogo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/MenuTurnos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoAutomatico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoCaminhoAutomatico.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Turnos/TurnoToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosInimigos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosInimigos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/CenariosToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/Turno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoToCruz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Exportar/ExportarDado.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Exportar/ExportarDado.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Importar/ImportarMapa.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Importar/ImportarMapa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/DivisaoIt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/EdificoInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/ExportarInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/Importar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/IteracoesInimigo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/IteracoesToCruz.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/MissaoInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/MissoesInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/SimulacoesInt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Interfaces/ToCruzIt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Items/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Items/Item.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Items/ItemCura.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Items/ItemCura.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Mapa/Divisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Mapa/Divisao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missoes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Missoes/Missoes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Missoes/Simulacoes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Missoes/Simulacoes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Personagens/ToCruz.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Personagens/ToCruz.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DefesaED.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DefesaED.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Exportar/ExportarDado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Exportar/ExportarDado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesInimigo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/IteracoesToCruz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/JogoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/JogoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/SimulacoesInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/MissoesInt/MissaoInt.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Items/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Items/ItemCura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Items/ItemCura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Jogo/Jogo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Nota" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Nota" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Simulacoes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Personagens/ToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Personagens/ToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/InimigoIteracoes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/JogoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Simulacao/SimulacaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Jogo/ToCruzInteracoes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Jogo/Simulacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Jogo/Simulacao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,6 +213,8 @@
       <workItem from="1737547861171" duration="421000" />
       <workItem from="1737562629978" duration="2000" />
       <workItem from="1737623263685" duration="4614000" />
+      <workItem from="1737633852519" duration="2827000" />
+      <workItem from="1737641320849" duration="653000" />
     </task>
     <servers />
   </component>

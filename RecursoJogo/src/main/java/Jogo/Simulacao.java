@@ -1,25 +1,20 @@
 package Jogo;
 
-import Interfaces.Jogo.JogoInterface;
+import Interfaces.Simulacao.SimulacaoInterface;
 import Interfaces.QueueADT;
 import Interfaces.StackADT;
 import Interfaces.UnorderedListADT;
 import Items.Item;
 import Items.ItemCura;
-import Items.TypeItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
-import Stacks.LinkedStack;
-
-import java.util.Iterator;
 import java.util.Objects;
-import java.util.Random;
 
-public class Simulacao implements JogoInterface, Comparable<Simulacao> {
+public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
 
     private boolean collectedAlvo;
 
@@ -88,8 +83,9 @@ public class Simulacao implements JogoInterface, Comparable<Simulacao> {
     }
 
     @Override
-    public void addCollectedItem(Item item) {
+    public void addCollectedItem(Item item, Divisao divisao) {
         this.collectedItem.addToRear(item);
+        divisao.removeItem(item);
     }
     /**
      * Gera o relatório final do jogo, incluindo informações sobre o progresso da personagem ToCruz,
@@ -138,164 +134,13 @@ public class Simulacao implements JogoInterface, Comparable<Simulacao> {
         System.out.println(percursoToCruz.toString());
     }
 
-    @Override
-    public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao) {
-        divisaoAtual.removeToCruz();
-        percursoToCruz.enqueue(divisaoAtual);
-        novaDivisao.addToCruz(toCruz);
-    }
-    /*Fim dos metodos do Jogo*/
-
-    /// ////////////////////////////////////////////////////
-    /// Passar todos estes metodos para o menu
-    /// ////////////////////////////////////////////////////
-    /*Metodos do ToCruz*/
-
-    //Já está no menu e está geral
-    @Override
-    public void attackToCruz(Inimigo inimigo, Divisao divisao) {
-        System.out.println("Turno do To Cruz atacar!");
-        inimigo.setVida(inimigo.getVida() - this.toCruz.getPoder());
-
-        if (inimigo.isDead()) {
-            System.out.println("O To Cruz matou o inimigo " + inimigo.getNome());
-            inimigosDead.addToRear(inimigo);
-            divisao.removeInimigo(inimigo);
-        } else {
-            System.out.println("O inimigo " + inimigo.getNome() + " resitiu ao ataque do To Cruz e ficou com: " + inimigo.getVida() + " HP");
-        }
-    }
 
     @Override
-    public void usarItemDivisao(Item item, Divisao divisao) {
-        if (divisao.containItem(item)) {
-            if (item instanceof ItemCura) {
-                if ((((ItemCura) item).getType().equals(TypeItemCura.KIT_VIDA) && toCruz.getVida() < 100) || ((ItemCura) item).equals(TypeItemCura.COLETE)) {
-                    try {
-                        this.toCruz.usarItem((ItemCura) item);
-                        this.collectedItem.addToRear(item);
-                        divisao.removeItem(item);
-                    } catch (NullPointerException e) {
-                        System.out.println(e.getMessage());
-                    }
-                }
-            }
-        } else {
-            System.out.println("O item desta divisao ja foi usado anteriormente");
-        }
-    }
-
-    @Override
-    public void guardarItemMochila(Item item, Divisao divisao) {
-        if (divisao.containItem(item) && !toCruz.mochilaIsFull()) {
-            try {
-                this.toCruz.guardarKit((ItemCura) item);
-                this.collectedItem.addToRear(item);
-                divisao.removeItem(item);
-            } catch (NullPointerException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-    }
-
-    @Override
-    public void getAlvo() {
+    public boolean getAlvo() {
         this.collectedAlvo = true;
+        return this.collectedAlvo;
     }
-    /*Fim dos metodos do ToCruz*/
-
-    /*
-     * Outros Metodos
-     * */
-
-    /**
-     * Sugere o melhor caminho para o ToCruz chegar a um item ou a um alvo.
-     * O ToCruz deve coletar o item e, em seguida, atingir o alvo.
-     *
-     * @param div_to A divisão onde o ToCruz está localizado.
-     */
-    @Override
-    public void sugestaoCaminhoToCruzKitEAlvo(Divisao div_to) {
-        ToCruz toCruz = div_to.getToCruz();
-        Iterator<Divisao> itr = edificio.IteratorMapa();
-
-        Divisao item_div = null;
-        Divisao div_alvo = null;
-        double best_distance = Double.MAX_VALUE;
-        double distance;
-        double num_arestas_com = Double.MAX_VALUE;
-        double num_arestas;
-
-        while (itr.hasNext()) {
-            Divisao div = itr.next();
-
-            if (!div.getItens().isEmpty() || (div.isEntrada_saida() && div.getAlvo() != null && this.collectedAlvo)) {
-                distance = edificio.getShortestPath(div_to, div);
-
-                if (distance == 0 || distance == best_distance) {
-                    best_distance = distance;
-                    num_arestas = edificio.getShortestPathNumArestas(div_to, div);
-
-                    if (num_arestas < num_arestas_com) {
-                        if (distance == 0) {
-                            num_arestas_com = num_arestas;
-                        }
-
-                        item_div = div;
-
-                        if (div.isEntrada_saida()) {
-                            div_alvo = div;
-                        }
-                    }
-                } else if (distance < best_distance) {
-                    best_distance = distance;
-
-                    item_div = div;
-
-                    if (div.isEntrada_saida()) {
-                        div_alvo = div;
-                    }
-                }
-            } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
-                div_alvo = div;
-            }
-        }
-
-        System.out.println("Sugestao de caminho mais curto para o To Cruz chegar a um item de cura");
-        shortesPathTwopoints(div_to, item_div);
-
-        String temp;
-        if (div_alvo.getAlvo() != null) {
-            temp = "Sugestao de melhor caminho para o To Cruz chegar ao alvo: " + div_alvo.getAlvo().getNome();
-        } else {
-            temp = "Sugestao de melhor caminho para o ToCruz sair do edificio";
-        }
-
-        System.out.println(temp);
-        shortesPathTwopoints(div_to, div_alvo);
-    }
-
-    /**
-     * Imprime o caminho mais curto entre duas divisões no mapa.
-     *
-     * @param div_start A divisão de início do caminho.
-     * @param Div_final A divisão final do caminho.
-     */
-    private void shortesPathTwopoints(Divisao div_start, Divisao Div_final) {
-        Iterator<Divisao> shortestPath = edificio.shortesPathIt(div_start, Div_final);
-        String temp = "";
-
-        while (shortestPath.hasNext()) {
-            Divisao div = shortestPath.next();
-
-            if (shortestPath.hasNext()) {
-                temp += div.getName() + " -->";
-            } else {
-                temp += div.getName();
-            }
-        }
-        System.out.println(temp);
-    }
+    /*Fim dos metodos da simulacao*/
 
     /**
      * Retorna uma representação em string da simulação, incluindo a versão da simulação,

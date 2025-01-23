@@ -1,18 +1,18 @@
-package Interfaces.Jogo;
+package Interfaces.Simulacao;
 
 import Items.Item;
 import Mapa.Divisao;
 import Personagens.Inimigo;
 
-public interface JogoInterface extends ToCruzInteracoes{
+public interface SimulacaoInterface {
 
     public void inimigoDead(Inimigo inimigo, Divisao divisao);
 
     public void updatePercursoToCruz(Divisao divisao);
 
-    public void addCollectedItem(Item item);
+    public void addCollectedItem(Item item, Divisao divisao);
 
     public void relatorioMissao();
 
-    public void sugestaoCaminhoToCruzKitEAlvo(Divisao div_to);
+    public boolean getAlvo();
 }

@@ -1,6 +1,6 @@
 package Turnos;
 
-import Cenarios.Cenarios;
+import Cenarios.CenariosInimigos;
 import Interfaces.UnorderedListADT;
 import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
@@ -12,8 +12,8 @@ import Personagens.Inimigo;
 * */
 public class TurnoInimigo extends Turno {
 
-    public TurnoInimigo(Cenarios cenario, Simulacao simulacao) {
-        super(cenario, simulacao);
+    public TurnoInimigo(CenariosInimigos cenario) {
+        super(cenario);
     }
 
     /**
@@ -26,6 +26,8 @@ public class TurnoInimigo extends Turno {
     @Override
     public void turno(Divisao divisao_atual) {
         UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
+        CenariosInimigos cenario = (CenariosInimigos) this.getCenario();
+        Simulacao simulacao = cenario.getSimulacao();
 
         for (Inimigo inimigo : divisao_atual.getInimigos()) {
             if (!divisao_atual.haveConfronto()) {
@@ -37,7 +39,7 @@ public class TurnoInimigo extends Turno {
         }
 
         for (Inimigo inimigo : inimigos_move) {
-            Divisao div = cenario.getSimulacao().moverInimigo(divisao_atual, inimigo);
+            Divisao div = cenario.andar(inimigo, divisao_atual);
             if (div.haveConfronto()) {
                 cenario.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
             }
