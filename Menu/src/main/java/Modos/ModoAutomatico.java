@@ -1,10 +1,11 @@
-package Menu.Modos;
+package Modos;
 
 import Exceptions.InvalidTypeItemException;
 import Interfaces.UnorderedListADT;
 import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import Mapa.Edificio;
 import Missoes.Simulacoes;
 
 import java.util.Iterator;
@@ -15,44 +16,11 @@ import java.util.Iterator;
 public class ModoAutomatico {
 
     /**
-     * Realiza a verificação e uso de itens automáticos de cura para o ToCruz.
-     *
-     * @param divisao a divisão onde o ToCruz se encontra.
-     * @throws InvalidTypeItemException se o tipo de item for inválido.
+     * Executa um jogo automático nesta missão, ou seja, o jogador não interage para fazer
+     * uma determinada ação.
      */
-    private void ConditionGetUseItemAutomatico(Divisao divisao) throws InvalidTypeItemException {
-        if (!divisao.getItem().isCollected() && divisao.getItem() instanceof ItemCura) {
-            ItemCura item = (ItemCura) divisao.getItem();
-            ToCruz toCruz = divisao.getToCruz();
 
-            if (item != null) {
-                switch (item.getType()) {
-                    case COLETE: {
-                        toCruz.usarItem(item);
-                        System.out.println("O To Cruz apanhou um colete de vida e ficou com " + toCruz.getVida() + " HP");
-                        break;
-                    }
-                    case KIT_VIDA: {
-                        if (!toCruz.mochilaIsFull() && (toCruz.getVida() == 100 || toCruz.getVida() + item.getVida_recuperada() >= 100)) {
-                            toCruz.guardarKit(item);
-                            System.out.println("O To Cruz guardou um kit de vida com " + item.getVida_recuperada() + " HP");
-                        } else if (toCruz.getVida() + item.getVida_recuperada() <= 100) {
-                            toCruz.usarItem(item);
-                            System.out.println("O To Cruz usou um kit de vida com " + item.getVida_recuperada() + " HP");
-                        }
-                        break;
-                    }
-                    default: {
-                        throw new InvalidTypeItemException("Tipo de item de cura invalido");
-                    }
-                }
-            } else {
-                if (toCruz.getVida() <= 30 && toCruz.mochilaTemKit()) {
-                    toCruz.usarKit();
-                }
-            }
-        }
-    }
+
 
     /**
      * Verifica se a personagem ToCruz deve usar um kit de primeiros socorros da mochila,
@@ -113,99 +81,6 @@ public class ModoAutomatico {
         }
 
         return best_div;
-    }
-
-    /**
-     * Metodo que sugere o melhor caminho para o To Cruz alcançar o alvo ou sair do edifício
-     * automaticamente.
-     * Avalia as divisões do edifício para determinar o destino ideal com base na distância
-     * e no número de arestas.
-     *
-     * Se o alvo já tiver sido recolhido, sugere o caminho para a saída mais próxima.
-     * Caso contrário, sugere o caminho para a divisão onde o alvo se encontra.
-     *
-     * @param div_to A divisão de partida do To Cruz.
-     * @return O melhor caminho calculado entre dois pontos (partida e destino).
-     */
-    private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
-        ToCruz toCruz = div_to.getToCruz();
-        Iterator<Divisao> itr = edificio.IteratorMapa();
-        Divisao best_destino = null;
-        double best_distance = Double.MAX_VALUE;
-        double num_arestas_com = Double.MAX_VALUE;
-        boolean find_alvo = false;
-
-        while (itr.hasNext() && !find_alvo) {
-            Divisao div = itr.next();
-
-            if (div.isEntrada_saida() && toCruz.isColectedAlvo()) {
-                double distance = edificio.getShortestPath(div_to, div);
-
-                if (distance == 0 || distance == best_distance) {
-                    best_distance = distance;
-                    double num_arestas = edificio.getShortestPathNumArestas(div_to, div);
-
-                    if (num_arestas < num_arestas_com) {
-                        if (distance == 0) {
-                            num_arestas_com = num_arestas;
-                        }
-                        best_destino = div;
-                    }
-                } else if (distance < best_distance) {
-                    best_distance = distance;
-                    best_destino = div;
-                }
-            } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
-                best_destino = div;
-                find_alvo = true;
-            }
-        }
-
-        String temp;
-        if (best_destino.getAlvo() != null) {
-            temp = "Sugestao de melhor caminho para o To Cruz chegar ao alvo: " + best_destino.getAlvo().getNome();
-        } else {
-            temp = "Sugestao de melhor caminho para o ToCruz sair do edificio";
-        }
-
-        System.out.println(temp);
-        return shortesPathTwoPointsAutomatico(div_to, best_destino);
-    }
-
-    /**
-     * Realiza o turno automático do ToCruz, considerando a presença de inimigos
-     * e a busca por itens ou alvos.
-     *
-     * @param divisao_atual a divisão onde o ToCruz se encontra.
-     */
-    private void turnoAutomaticoToCruz(Divisao divisao_atual) {
-        ToCruz toCruz = divisao_atual.getToCruz();
-        Divisao divisao = divisao_atual;
-
-        if (divisao_atual.haveConfronto()) {
-            if (!ConditionUseKitMochila(toCruz)) {
-                divisao_atual.attackToCruz(inimigos_dead);
-            }
-        } else {
-            ConditionUseKitMochila(toCruz);
-            divisao = sugestaoCaminhoToCruzAutomatico(divisao_atual);
-
-            divisao.addToCruz(toCruz);
-            this.addDivisaoTrajetoToCruz(divisao);
-            divisao_atual.removeToCruz();
-
-            if (divisao.haveConfronto()) {
-                divisao.attackToCruz(inimigos_dead);
-            }
-
-            if (divisao.getItem() != null) {
-                ConditionGetUseItemAutomatico(divisao);
-            }
-        }
-
-        if (!divisao.haveConfronto() && divisao.isToCruzInDivisaoAlvo() && !divisao.getAlvo().isAtinigido()) {
-            divisao.ToCruzGetAlvo();
-        }
     }
 
     /**

@@ -1,5 +1,6 @@
 package Importar;
 
+import Interfaces.MissoesInt.VersaoInterface;
 import Interfaces.ProcessData.Importar;
 import Items.ItemCura;
 import Items.TypeItemCura;
@@ -8,6 +9,7 @@ import Mapa.Alvo;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Missoes.Missao;
+import Missoes.Versao;
 import Personagens.Inimigo;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -97,8 +99,9 @@ public class ImportarMapa implements Importar {
                 JSONObject readingObj = (JSONObject) obj;
 
                 String codigo_missao = (String) readingObj.get("cod-missao");
-                long versao = (long) readingObj.get("versao");
+                long num_versao = (long) readingObj.get("versao");
                 Edificio edificio = new Edificio();
+
                 JSONArray edificio_array = (JSONArray) readingObj.get("edificio");
 
                 for (Object edificioNome : edificio_array) {
@@ -106,6 +109,7 @@ public class ImportarMapa implements Importar {
                     edificio.addDivisao(divisao);
                     lista_divisoes.addToRear(divisao);
                 }
+
 
                 JSONArray ligacoes_array = (JSONArray) readingObj.get("ligacoes");
 
@@ -171,6 +175,7 @@ public class ImportarMapa implements Importar {
                 Alvo alvo = new Alvo(tipo_alvo);
                 divisao_al.setAlvo(alvo);
 
+                //Adaptar para dar depois para qualquer tipo de item
                 JSONArray itens_array = (JSONArray) readingObj.get("itens");
                 for (Object cont_obj : itens_array) {
                     JSONObject readingObjConte = (JSONObject) cont_obj;
@@ -194,10 +199,11 @@ public class ImportarMapa implements Importar {
 
                     Divisao divisao = findDivisao(divisao_item);
                     ItemCura item = new ItemCura(type, pontos_vida);
-                    divisao.setItem(item);
+                    divisao.addItem(item);
                 }
 
-                missao = new Missao(codigo_missao, versao, edificio);
+                Versao versao = new Versao(num_versao, edificio);
+                missao = new Missao(codigo_missao, versao);
             }
         } catch (ParseException | FileNotFoundException e) {
             System.out.println(e.getMessage());

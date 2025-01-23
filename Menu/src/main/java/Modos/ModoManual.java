@@ -1,18 +1,177 @@
-package Menu.Modos;
+package Modos;
 
 import ArrayList.ArrayUnordered;
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
 import Interfaces.ArrayUnorderedADT;
+import Interfaces.UnorderedListADT;
 import Items.ItemCura;
 import Items.TypeItemCura;
+import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import Mapa.Edificio;
+import Missoes.Simulacao;
+import Personagens.ToCruz;
 
 import java.util.InputMismatchException;
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class ModoManual {
+    private Scanner sc = new Scanner(System.in);
 
+    /**
+     * Realiza a simulação do jogo no modo manual. O jogador controla a personagem ToCruz,
+     * movendo-se pelo edifício, enfrentando inimigos e coletando itens até completar a missão
+     * (sair do edifício com o alvo) ou ser derrotado.
+     *
+     * @return O objeto Simulacoes atualizado com os resultados da simulação.
+     */
+    @Override
+    public Simulacoes modojogoManual() {
+        ToCruz toCruz = new ToCruz();
+        Iterator<Divisao> itrMapa;
+        boolean finishgame = false;
+
+        edificio.drawMapa();
+        ToCruzEntrarEdificio(toCruz);
+        while (!finishgame) {
+            itrMapa = edificio.IteratorMapa();
+            UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
+            while (itrMapa.hasNext()) {
+                Divisao div = itrMapa.next();
+
+                if (div.haveInimigo()) {
+                    endTurno.addToRear(div);
+                }
+            }
+
+            edificio.drawMapa();
+            int num_turnos = endTurno.size();
+            for (int i = 0; i < num_turnos; i++) {
+                turnoInimigo(endTurno.removeFirst());
+            }
+
+            itrMapa = edificio.IteratorMapa();
+            boolean findToCruz = false;
+
+            while (itrMapa.hasNext() && !findToCruz) {
+                Divisao div = itrMapa.next();
+
+                if (div.getToCruz() != null) {
+                    if (div.getToCruz().isDead()) {
+                        finishgame = true;
+                    } else if (div.isEntrada_saida() && !div.haveConfronto() && trajeto_to.size() > 1) {
+                        int op = -1;
+
+                        do {
+                            System.out.print("Deseja sair do edificio (Nao:0 / Sim: 1)? -->");
+
+                            try {
+                                op = sc.nextInt();
+                            } catch (InputMismatchException ex) {
+                                System.out.println("Numero invalido!");
+                                sc.next();
+                            }
+                        } while (op < 0 || op > 1);
+
+                        if (op == 1) {
+                            finishgame = true;
+                        } else {
+                            turnoToCruz(div);
+                        }
+                    } else {
+                        turnoToCruz(div);
+                    }
+
+                    findToCruz = true;
+                    edificio.drawMapa();
+                }
+            }
+        }
+
+        long vida = toCruz.getVida();
+        if (vida < 0) {
+            vida = 0;
+        }
+        this.vida_to = vida;
+        relatoriosMissao(toCruz);
+
+        return this;
+    }
+
+    /**
+     * Permite que a personagem ToCruz entre num edifício, selecionando uma divisão de entrada/saída.
+     * O jogador escolhe uma sala de entrada onde o ToCruz começa o jogo, e a divisão escolhida
+     * é registada. Caso o ToCruz entre numa divisão com confronto,
+     * ele pode lutar contra os inimigos ou interagir com itens do chão.
+     *
+     * @param toCruz A personagem que irá entrar no edifício.
+     * @return A divisão em que o ToCruz entrou após a seleção.
+     * @throws NullPointerException Caso ocorra um erro de null pointer.
+     * @throws ArrayIndexOutOfBoundsException Caso o índice da sala selecionada este fora dos limites do array.
+     */
+    private Divisao ToCruzEntrarEdificio(ToCruz toCruz) {
+        int op = -1;
+        int i = 0;
+        Iterator<Divisao> itr = this.edificio.getPlantaEdificio().iterator();
+        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
+
+        while (itr.hasNext()) {
+            Divisao div = itr.next();
+
+            if (div.isEntrada_saida()) {
+                String temp = i + " - " + div.getName();
+
+                if (div.haveInimigo()) {
+                    temp += " (divisao com inimigos)";
+                }
+
+                if (div.getItem() != null) {
+                    temp += " (divisao com item)";
+                }
+
+                System.out.println(temp);
+                listDiv.addToRear(div);
+                i++;
+            }
+        }
+
+        do {
+            System.out.print("Introduza onde o ToCruz vai entrar -->");
+
+            try {
+                op = sc.nextInt();
+            } catch (InputMismatchException ex) {
+                System.out.println("Numero invalido!");
+                sc.next();
+            }
+        } while (op < 0 || op > listDiv.size() - 1);
+
+        Divisao divisao_nova = null;
+
+        try {
+            divisao_nova = listDiv.find(op);
+            divisao_nova.addToCruz(toCruz);
+            addDivisaoTrajetoToCruz(divisao_nova);
+
+            if (divisao_nova.haveConfronto()) {
+                divisao_nova.attackToCruz(this.inimigos_dead);
+            }
+
+            if (!divisao_nova.haveConfronto()) {
+                if (divisao_nova.isToCruzInDivisaoAlvo()) {
+                    divisao_nova.ToCruzGetAlvo();
+                } else if (divisao_nova.getItem() != null) {
+                    DivisaoComItem(divisao_nova, divisao_nova.getToCruz());
+                }
+            }
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return divisao_nova;
+    }
     /**
      * Este metodo solicita ao utilizador que selecione a próxima divisão para o ToCruz se mover,
      * exibindo informações sobre as divisões disponíveis, como se há inimigos, itens ou se é uma

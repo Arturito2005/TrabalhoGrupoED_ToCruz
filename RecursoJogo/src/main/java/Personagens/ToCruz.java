@@ -20,7 +20,8 @@ import Stacks.LinkedStack;
  * @version 1.0
  */
 
-public class ToCruz implements MochilaIteracoes {
+public class ToCruz extends Personagem implements MochilaIteracoes {
+
     /**
      * Mochila para armazenar os kits de vida.
      */
@@ -140,7 +141,6 @@ public class ToCruz implements MochilaIteracoes {
         }
 
         this.setVida(nova_vida);
-        item.setCollected(true);
         System.out.println("To Cruz curou-se e ficou com: " + this.getVida() + " HP");
     }
 
@@ -163,10 +163,6 @@ public class ToCruz implements MochilaIteracoes {
             throw new WrongTypeItemException("O tipo de item de cura a guardar na mochila e do tipo Kit de vida");
         }
 
-        if (item.isCollected()) {
-            throw new UsedColectedItemException("O item a usar ja foi utilizado anteriormente pelo To Cruz");
-        }
-
         if (this.mochila.size() == 3) {
             System.out.println("A mochila esta cheia");
 
@@ -177,7 +173,6 @@ public class ToCruz implements MochilaIteracoes {
             }
         } else {
             mochila.push(item);
-            item.setCollected(true);
             System.out.println("O To Cruz guardou o kit de vida com " + item.getVida_recuperada() + " HP com sucesso");
         }
 
@@ -222,10 +217,6 @@ public class ToCruz implements MochilaIteracoes {
     public ItemCura usarItem(ItemCura item) throws NullPointerException, UsedColectedItemException {
         if (item == null) {
             throw new NullPointerException("O item nao pode ser nulo");
-        }
-
-        if (item.isCollected()) {
-            throw new UsedColectedItemException("O item a usar ja foi utilizado anteriormente pelo To Cruz");
         }
 
         try {

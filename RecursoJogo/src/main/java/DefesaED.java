@@ -15,7 +15,7 @@ public class DefesaED {
 
         try {
             Missao missao = importarMapa.gerarMapa("./Json/FicheiroMissao.json");
-            Iterator<Divisao> itr = missao.getEdificio().getPlantaEdificio().iterator();
+            Iterator<Divisao> itr = missao.getVersao().getEdificio().getPlantaEdificio().iterator();
             Divisao divisao;
             boolean find = false;
 
@@ -25,7 +25,7 @@ public class DefesaED {
                 if(divisao1.isEntrada_saida()) {
                     divisao = divisao1;
                     filaDivisao.enqueue(divisao);
-                    Iterator<Divisao> itrAcess = missao.getEdificio().getNextDivisoes(divisao);
+                    Iterator<Divisao> itrAcess = missao.getVersao().getEdificio().getNextDivisoes(divisao);
 
                     while(itrAcess.hasNext()) {
                         filaDivisao.enqueue(itrAcess.next());

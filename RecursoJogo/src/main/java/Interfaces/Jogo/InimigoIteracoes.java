@@ -8,4 +8,6 @@ public interface InimigoIteracoes {
     public void attackInimigo(Inimigo inimigo);
 
     public Divisao moverInimigo(Divisao divisao_atual, Inimigo inimigo);
+
+    public void turnoInimigo(Divisao divisao);
 }

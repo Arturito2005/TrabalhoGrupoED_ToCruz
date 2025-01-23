@@ -6,14 +6,17 @@ import Interfaces.UnorderedListADT;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Missoes.Missao;
-import Missoes.Simulacoes;
+import Missoes.Versao;
 import Personagens.Inimigo;
 import Queue.LinkedQueue;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
+
+import Jogo.Simulacao;
 
 /**
  * Classe que implementa a interface ExportarInt para exportar dados
@@ -25,7 +28,6 @@ import java.util.Iterator;
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveira
  * Nº mecanográfico: 8230148
- *
  * @version 1.0
  */
 public class ExportarDado implements ExportarInt {
@@ -42,35 +44,40 @@ public class ExportarDado implements ExportarInt {
      * O ficheiro JSON gerado contém as versões das missões, simulações e os inimigos abatidos,
      * sendo guardado no caminho especificado.
      *
-     * @param path O caminho para onde o ficheiro JSON será guardado.
-     * @param listaVersoes A lista de missões com as respetivas versões e simulações.
+     * @param path         O caminho para onde o ficheiro JSON será guardado.
+     * @param listaMissoes A lista de missões com as respetivas versões e simulações.
      */
     @Override
-    public void exportarVersoes(String path, UnorderedListADT<Missao> listaVersoes) {
+    public void exportarVersoes(String path, UnorderedListADT<Missao> listaMissoes) {
         JSONObject jsonObject = new JSONObject();
 
-        jsonObject.put("cod_missao", listaVersoes.first().getcod_missao());
+        jsonObject.put("cod_missao", listaMissoes.first().getcod_missao());
 
         JSONArray versaoArray = new JSONArray();
 
-        for (Missao missao : listaVersoes) {
+        int tot_versoes = 0;
+        for (Missao missao : listaMissoes) {
+            Versao versao = missao.getVersao();
+            tot_versoes += versao.getTot_simulacoes();
             JSONObject versaoObject = new JSONObject();
-            versaoObject.put("versao", missao.getVersao());
+
+            versaoObject.put("versao", versao.getNum_versao());
 
             JSONArray simulacoesArray = new JSONArray();
-            Iterator<Simulacoes> iterator = missao.getSimulacoes().iterator();
+            Iterator<Simulacao> iterator = versao.getSimulacoes().iterator();
+
             while (iterator.hasNext()) {
-                Simulacoes simulacao = iterator.next();
+                Simulacao jogo = iterator.next();
                 JSONObject simulacaoObject = new JSONObject();
-                simulacaoObject.put("versao_simulacao", simulacao.getVersao_simulacao());
-                simulacaoObject.put("vida_to_cruz", simulacao.getVida_to());
+                simulacaoObject.put("versao_simulacao", jogo.getVersao());
+                simulacaoObject.put("vida_to_cruz", jogo.getVidaFinalTo());
 
                 JSONArray trajetoArray = new JSONArray();
                 JSONArray inimigosArray = new JSONArray();
 
-                QueueADT<Divisao> trajetoQueue = simulacao.getTrajeto_to();
+                QueueADT<Divisao> trajetoQueue = jogo.getPercursoToCruz();
                 QueueADT<Divisao> tempTrajetoQueue = new LinkedQueue<>();
-                UnorderedListADT<Inimigo> inimigosList = simulacao.getInimigos_dead();
+                UnorderedListADT<Inimigo> inimigosList = jogo.getInimigosDead();
                 UnorderedListADT<Inimigo> tempInimigosList = new LinearLinkedUnorderedList<>();
 
                 while (!trajetoQueue.isEmpty()) {
@@ -110,7 +117,7 @@ public class ExportarDado implements ExportarInt {
         }
 
         jsonObject.put("versoes", versaoArray);
-        jsonObject.put("tot_simulacoes", listaVersoes.first().getTot_simulacoes());
+        jsonObject.put("tot_simulacoes", tot_versoes);
 
         try (FileWriter file = new FileWriter(path)) {
             file.write(jsonObject.toJSONString());

@@ -2,16 +2,12 @@ package Mapa;
 
 import Exceptions.EmptyCollectionException;
 import Interfaces.Mapa.DivisaoIt;
-import Interfaces.Jogo.IteracoesInimigo;
-import Interfaces.Jogo.IteracoesToCruz;
 import Interfaces.UnorderedListADT;
 import Items.Item;
 import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
-
-import java.util.Iterator;
 import java.util.Objects;
 
 /**
@@ -24,7 +20,7 @@ import java.util.Objects;
  * Nº mecanografico: 8230148
  * @version 1.0
  */
-public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, DivisaoIt {
+public class Divisao implements Comparable, DivisaoIt {
 
     /**
      * Contador estático para geração de IDs únicos para as divisões.
@@ -97,7 +93,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
      * @param inimigos      Lista de inimigos presentes na divisão, nunca null.
      * @param toCruz        O personagem ToCruz associado à divisão, ou null se não houver ToCruz.
      */
-    public Divisao(int id_divisao, String name, boolean entrada_saida, Alvo alvo, Item item, UnorderedListADT<Inimigo> inimigos, ToCruz toCruz) {
+    public Divisao(int id_divisao, String name, boolean entrada_saida, Alvo alvo, UnorderedListADT<Item> item, UnorderedListADT<Inimigo> inimigos, ToCruz toCruz) {
         this.id_divisao = id_divisao;
         this.name = name;
         this.entrada_saida = entrada_saida;
@@ -115,13 +111,10 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             Item tempItem = null;
 
             if (itens instanceof ItemCura) {
-                tempItem = new ItemCura(item.getId_item(), item.isCollected(), ((ItemCura) item).getType(), ((ItemCura) item).getVida_recuperada());
+                tempItem = new ItemCura(itens.getId_item(), ((ItemCura) itens).getType(), ((ItemCura) itens).getVida_recuperada());
             }
 
-            //Em principio é muito desnecessario
-            if(tempItem != null) {
-               tempListaItens.addToRear(tempItem);
-            }
+            tempListaItens.addToRear(tempItem);
         }
         this.itens = tempListaItens;
 
@@ -130,8 +123,8 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             Inimigo tempInimigo = new Inimigo(inimigo.getId_personagem(), inimigo.getNome(), inimigo.getVida(), inimigo.getPoder());
             tempListaInimigos.addToRear(tempInimigo);
         }
-        this.inimigos = tempListaInimigos;
 
+        this.inimigos = tempListaInimigos;
 
         ToCruz tempToCruz = null;
         if (toCruz != null) {
@@ -251,7 +244,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         this.itens.addToRear(item);
     }
 
-    public Item removeItem(Item item)  {
+    public Item removeItem(Item item) {
         try {
             this.itens.remove(item);
         } catch (EmptyCollectionException | NullPointerException e) {
@@ -259,6 +252,10 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         }
 
         return item;
+    }
+
+    public UnorderedListADT<Item> getItens() {
+        return itens;
     }
 
     /**
@@ -343,76 +340,11 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
         return confronto;
     }
 
-    /**
-     * Faz com que um inimigo ataque o To Cruz.
-     *
-     * @param inimigo O inimigo que vai atacar o To Cruz.
-     */
-    @Override
-    public void attackInimigo(Inimigo inimigo) {
-        long vidaTo = toCruz.getVida() - inimigo.getPoder();
-        toCruz.setVida(vidaTo);
-
-        System.out.println("O imimigo " + inimigo.getNome() + " atacou o To Cruz");
-
-        if (toCruz.isDead()) {
-            System.out.println("O inimigo " + inimigo.getNome() + " matou o To Cruz");
-            toCruz.setVida(0);
-        } else {
-            System.out.println("To Cruz resiste ao ataque e fica com " + vidaTo + " HP");
-        }
-    }
-
-    /**
-     * Marca o alvo como atingido pelo To Cruz.
-     */
-    @Override
-    public void ToCruzGetAlvo() {
-        this.alvo.setAtinigido(true);
-        toCruz.setColectedAlvo(true);
-        System.out.println("To Cruz esta com o alvo, agora so falta sair do edificio com vida");
-    }
-
-    /**
-     * Faz com que todos os inimigos ataquem o To Cruz.
-     *
-     * @param dead_inimigos Stack onde os inimigos mortos serão armazenados.
-     */
-    @Override
-    public void attackToCruz(UnorderedListADT<Inimigo> dead_inimigos) {
-        Iterator<Inimigo> iterator = this.inimigos.iterator();
-        UnorderedListADT<Inimigo> inimigosDead = new LinearLinkedUnorderedList<>();
-
-        System.out.println("Turno do To Cruz atacar!");
-        while (iterator.hasNext()) {
-            Inimigo inimigo = iterator.next();
-            inimigo.setVida(inimigo.getVida() - this.toCruz.getPoder());
-
-            if (inimigo.isDead()) {
-                System.out.println("O To Cruz matou o inimigo " + inimigo.getNome());
-                inimigosDead.addToRear(inimigo);
-            } else {
-                System.out.println("O inimigo " + inimigo.getNome() + " resitiu ao ataque do To Cruz e ficou com: " + inimigo.getVida() + " HP");
-            }
-        }
-
-        while (!inimigosDead.isEmpty()) {
-            Inimigo inimigo = inimigosDead.removeFirst();
-            inimigo.setVida(0);
-            dead_inimigos.addToRear(inimigo);
-            removeInimigo(inimigo);
-        }
-    }
-
     public boolean containItem(Item item) {
         boolean contain = false;
 
-        Iterator<Item> iterator = this.itens.iterator();
-        while(iterator.hasNext() && !contain) {
-            Item nextItem = iterator.next();
-            if (item.equals(nextItem)) {
-                contain = true;
-            }
+        if (this.itens.contains(item)) {
+            contain = true;
         }
 
         return contain;
@@ -457,8 +389,12 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
             dados_sala += this.toCruz.getNome() + " ";
         }
 
-        if (this.item != null && item instanceof ItemCura) {
-            dados_sala += ((ItemCura) item).getType() + " " + ((ItemCura) item).getVida_recuperada() + " HP ";
+        if (!this.itens.isEmpty()) {
+            for (Item item : this.itens) {
+                if (item instanceof ItemCura) {
+                    dados_sala += ((ItemCura) item).getType() + " " + ((ItemCura) item).getVida_recuperada() + " HP ";
+                }
+            }
         }
 
         if (this.alvo != null) {
@@ -522,7 +458,7 @@ public class Divisao implements Comparable, IteracoesInimigo, IteracoesToCruz, D
                 ", entrada_saida=" + entrada_saida +
                 ", toCruz=" + toCruz +
                 ", inimigos=" + inimigos +
-                ", item=" + item +
+                ", itens=" + itens +
                 ", alvo=" + alvo +
                 '}';
     }

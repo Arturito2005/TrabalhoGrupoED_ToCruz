@@ -67,11 +67,11 @@ public class Edificio implements EdificoInt {
         NetworkMatrizADT<Divisao> networkTemp = new Network<>();
 
         for (Divisao divisao : planta_edificio) {
-            Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItem(), divisao.getInimigos(), divisao.getToCruz());
+            Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItens(), divisao.getInimigos(), divisao.getToCruz());
             networkTemp.addVertex(divisao_temp);
 
             for (Divisao divisaoLig : planta_edificio) {
-                Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItem(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
+                Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItens(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
                 double weight = planta_edificio.getWeightEdge(divisao_temp, tempDiv_lig);
                 networkTemp.addEdge(divisao_temp, tempDiv_lig, weight);
             }

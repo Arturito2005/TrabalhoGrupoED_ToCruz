@@ -4,15 +4,15 @@ import Items.Item;
 import Mapa.Divisao;
 import Personagens.Inimigo;
 
-public interface JogoInterface extends InimigoIteracoes, ToCruzInteracoes{
+public interface JogoInterface extends ToCruzInteracoes{
 
-    public void getAlvo();
+    public void inimigoDead(Inimigo inimigo, Divisao divisao);
+
+    public void updatePercursoToCruz(Divisao divisao);
+
+    public void addCollectedItem(Item item);
 
     public void relatorioMissao();
 
-    public void inimigoDead(Inimigo inimigo);
-
-    public void usarItemDivisao(Item item, Divisao divisao);
-
-    public void guardarItemMochila(Item item, Divisao divisao);
+    public void sugestaoCaminhoToCruzKitEAlvo(Divisao div_to);
 }

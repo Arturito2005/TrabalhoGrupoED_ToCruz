@@ -39,12 +39,11 @@ public class ItemCura extends Item {
      * tipo de item e quantidade de vida recuperada.
      *
      * @param id_item         O identificador único do item.
-     * @param colleceted      Indica se o item foi coletado.
      * @param type            O tipo do item de cura.
      * @param vida_recuperada A quantidade de vida a ser recuperada ao usar o item.
      */
-    public ItemCura(int id_item, boolean colleceted, TypeItemCura type, long vida_recuperada) {
-        super(id_item, colleceted);
+    public ItemCura(int id_item, TypeItemCura type, long vida_recuperada) {
+        super(id_item);
         this.type = type;
         this.vida_recuperada = vida_recuperada;
     }

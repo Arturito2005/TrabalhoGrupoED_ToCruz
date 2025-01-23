@@ -24,29 +24,21 @@ public abstract class Item {
     private int id_item;
 
     /**
-     * Indica se o item foi coletado.
-     */
-    private boolean collected;
-
-    /**
      * Construtor default da classe {@link Item}.
      * Inicializa o identificador único com o valor do contador estático
      * e define o status de coleta como falso.
      */
     public Item() {
         this.id_item = ID_ITEM_CONT;
-        this.collected = false;
     }
 
     /**
      * Construtor da classe {@link Item} com parâmetros.
      *
      * @param id_item   O identificador único do item.
-     * @param collected Indica se o item foi coletado.
      */
-    public Item(int id_item, boolean collected) {
+    public Item(int id_item) {
         this.id_item = id_item;
-        this.collected = collected;
     }
 
     /**
@@ -58,23 +50,6 @@ public abstract class Item {
         return id_item;
     }
 
-    /**
-     * Retorna se o item já foi coletado ou não.
-     *
-     * @return true se o item foi coletado, caso contrário false.
-     */
-    public boolean isCollected() {
-        return collected;
-    }
-
-    /**
-     * Altera o status do item.
-     *
-     * @param collected true se o item for coletado, caso contrário false.
-     */
-    public void setCollected(boolean collected) {
-        this.collected = collected;
-    }
 
     /**
      * Retorna uma String com os dados do Item.
@@ -85,7 +60,6 @@ public abstract class Item {
     public String toString() {
         return "Item{" +
                 "id_item=" + id_item +
-                ", collected=" + collected +
                 '}';
     }
 
