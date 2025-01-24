@@ -13,7 +13,7 @@ import java.util.Iterator;
 
 public class ModoCaminhoAutomatico extends ModosAutomaticos {
 
-    public ModoCaminhoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
+    public FModoCaminhoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
         super(turnoTo, turnoInimigo);
     }
 
@@ -37,7 +37,7 @@ public class ModoCaminhoAutomatico extends ModosAutomaticos {
         UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<>();
         UnorderedListADT<Divisao> divisao_inimigo = new LinearLinkedUnorderedList<>();
         Divisao div_alvo = null;
-        ToCruz to = simulacao.getToCruz();
+        ToCruz toCruz = simulacao.getToCruz();
 
         while (itr.hasNext()) {
             Divisao div = itr.next();
@@ -55,7 +55,7 @@ public class ModoCaminhoAutomatico extends ModosAutomaticos {
             }
         }
 
-        if (calculateBesteEntradaToCruz(to, div_alvo, list_entradas) > to.getVida()) {
+        if (calculateBesteEntradaToCruz(toCruz, div_alvo, list_entradas) > toCruz.getVida()) {
             System.out.println("O To Cruz nao consegue chegar ao alvo sem morrer!");
         } else {
             for (Divisao div_inimi : divisao_inimigo) {
@@ -63,8 +63,8 @@ public class ModoCaminhoAutomatico extends ModosAutomaticos {
             }
 
             cenariosTo.getSimulacao().updatePercursoToCruz(div_alvo);
-
-            if (calculateBestExitAutomatico(div_alvo) > to.getVida()) {
+            div_alvo.addToCruz(toCruz);
+            if (calculateBestExitAutomatico(div_alvo) > toCruz.getVida()) {
                 System.out.println("E impossivel o To Cruz sair do edificio com vida!");
             }
         }

@@ -6,10 +6,12 @@ import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
 import Interfaces.ArrayUnorderedADT;
 import Interfaces.Cenarios.CenariosToCruzInterface;
+import Interfaces.UnorderedListADT;
 import Items.Item;
 import Items.ItemCura;
 import Items.TypeItemCura;
 import Jogo.Simulacao;
+import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Personagens.Inimigo;
@@ -20,8 +22,8 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 /*
-* Criar cenario para quando o ToCruz entra numa divisão e inicia cofronto para evitar estar sempre a criar um for
-* */
+ * Criar cenario para quando o ToCruz entra numa divisão e inicia cofronto para evitar estar sempre a criar um for
+ * */
 public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruzInterface {
     private Scanner sc;
 
@@ -30,10 +32,21 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
         this.sc = new Scanner(System.in);
     }
 
+    //Pode estar aqui o erro
     public void ataqueToCruz(Divisao divisao) {
         ToCruz toCruz = getSimulacao().getToCruz();
-        for(Inimigo inimigo : divisao.getInimigos()) {
+        UnorderedListADT<Inimigo> inimigosDead = new LinearLinkedUnorderedList<>();
+        for (Inimigo inimigo : divisao.getInimigos()) {
             ataque(toCruz, inimigo, divisao);
+
+            if (inimigo.isDead()) {
+                inimigosDead.addToRear(inimigo);
+            }
+        }
+
+        for (Inimigo inimigo : inimigosDead) {
+            Simulacao simulacao = getSimulacao();
+            simulacao.inimigoDead(inimigo, divisao);
         }
     }
 
@@ -78,7 +91,14 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
     }
 
     @Override
-    public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao) {
+    public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao) throws NullPointerException {
+        if (divisaoAtual == null) {
+            throw new NullPointerException("A divisao atual está nula!");
+        } else if(novaDivisao == null) {
+            //É esta que está a vir a nulo
+            throw new NullPointerException("A nova divisão está nula!");
+        }
+
         ToCruz toCruz = new ToCruz();
         Simulacao simulacao = getSimulacao();
 
@@ -97,6 +117,8 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
         int i = 0;
         String temp;
 
+        System.out.println();
+        sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
         System.out.println();
         System.out.println("Divisoes que o To Cruz pode entrar: ");
         while (itr.hasNext()) {
@@ -120,7 +142,7 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
             }
 
             if (!divisao.getItens().isEmpty()) {
-                for(Item item: divisao.getItens()) {
+                for (Item item : divisao.getItens()) {
                     if (item instanceof ItemCura) {
                         ItemCura itemCura = (ItemCura) item;
                         if (divisao.getInimigos().isEmpty()) {
@@ -144,8 +166,6 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
             System.out.println(temp);
             listDiv.addToRear(divisao);
         }
-
-        sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
 
         System.out.println();
         do {
@@ -175,8 +195,8 @@ public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruz
      * Dependendo do tipo de item, ele pode ser usado, deixado na sala ou guardado na mochila.
      *
      * @param divisao A divisão onde o item foi encontrado.
-     * @param toCruz A personagem que interage com o item.
-     * @throws InvalidOptionException Caso a opção fornecida pelo jogador seja inválida.
+     * @param toCruz  A personagem que interage com o item.
+     * @throws InvalidOptionException   Caso a opção fornecida pelo jogador seja inválida.
      * @throws InvalidTypeItemException Caso o tipo de item seja inválido.
      */
     @Override

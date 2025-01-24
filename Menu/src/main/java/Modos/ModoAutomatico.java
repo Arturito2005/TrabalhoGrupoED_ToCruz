@@ -14,8 +14,8 @@ import Turnos.TurnoToCruz;
 import java.util.Iterator;
 
 /*
- * Por enquanto possui os dois modos automaticos
- * */
+* Parece funcionar, tirando os problemas no ataque e da primeria divisao ser nula, que não percebo o porque de acontecer ambos
+* */
 public class ModoAutomatico extends ModosAutomaticos {
 
     public ModoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
@@ -57,6 +57,7 @@ public class ModoAutomatico extends ModosAutomaticos {
         Divisao div_start = BestStartToCruz(toCruz, list_entradas, div_alvo);
         simulacao.updatePercursoToCruz(div_start);
         div_start.addToCruz(toCruz);
+
         while (!finishgame) {
             itrMapa = edificio.IteratorMapa();
             UnorderedListADT<Divisao> endTurno = new LinearLinkedUnorderedList<>();
@@ -68,23 +69,28 @@ public class ModoAutomatico extends ModosAutomaticos {
                 }
             }
 
-            while (!endTurno.isEmpty()) {
+            while (!endTurno.isEmpty() && !toCruz.isDead()) {
                 turnoInimigo.turno(endTurno.removeFirst());
             }
 
-            itrMapa = edificio.IteratorMapa();
-            boolean findToCruz = false;
-            while (itrMapa.hasNext() && !findToCruz) {
-                Divisao div = itrMapa.next();
+            if(toCruz.isDead()) {
+                finishgame = true;
+                System.out.println("O To Cruz foi morto!");
+            } else {
+                itrMapa = edificio.IteratorMapa();
+                boolean findToCruz = false;
+                while (itrMapa.hasNext() && !findToCruz) {
+                    Divisao div = itrMapa.next();
 
-                if (div.getToCruz() != null) {
-                    if (div.getToCruz().isDead() || (cenariosDivisao.isToCruzInDivisaoAlvo(div) && simulacao.isCollectedAlvo())) {
-                        finishgame = true;
-                    } else {
-                        turnoTo.turnoAutomatico(div);
+                    if (div.getToCruz() != null) {
+                        if (cenariosDivisao.isToCruzInDivisaoAlvo(div) && simulacao.isCollectedAlvo()) {
+                            finishgame = true;
+                        } else {
+                            turnoTo.turnoAutomatico(div);
+                        }
+
+                        findToCruz = true;
                     }
-
-                    findToCruz = true;
                 }
             }
         }

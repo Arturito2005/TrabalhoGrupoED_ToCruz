@@ -37,12 +37,10 @@ public class ModoManual extends ModosJogo {
      */
     @Override
     public Simulacao jogar() {
-
         CenariosToCruz cenariosTo = getCenariosTo();
         CenariosDivisao cenariosDivisao = getCenariosDivisao();
         TurnoToCruz turnoTo = getTurnoTo();
         TurnoInimigo turnoInimigo = getTurnoInimigo();
-
         Edificio edificio = cenariosTo.getSimulacao().getEdificio();
         Draw drawMapa = new DrawMap(edificio);
         Simulacao simulacao = cenariosTo.getSimulacao();
@@ -74,6 +72,7 @@ public class ModoManual extends ModosJogo {
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
+                //O ToCruz não foi movido para a divisao corretamente
                 if (div.getToCruz() != null) {
                     if (div.getToCruz().isDead()) {
                         finishgame = true;
@@ -169,7 +168,8 @@ public class ModoManual extends ModosJogo {
 
         try {
             divisao_nova = listDiv.find(op);
-            cenariosTo.getSimulacao().updatePercursoToCruz(divisao_nova);
+            simulacao.updatePercursoToCruz(divisao_nova);
+            divisao_nova.addToCruz(toCruz);
 
             if (cenariosDivisao.haveConfronto(divisao_nova)) {
                 cenariosTo.ataqueToCruz(divisao_nova);

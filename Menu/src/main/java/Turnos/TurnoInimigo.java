@@ -7,6 +7,9 @@ import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Personagens.Inimigo;
+import Personagens.ToCruz;
+
+import java.util.Iterator;
 
 /*
 * Feito, falta testar
@@ -30,8 +33,14 @@ public class TurnoInimigo extends Turno {
         CenariosInimigos cenarioInimigo = (CenariosInimigos) this.getCenarioPersonagens();
         CenariosDivisao cenariosDivisao = this.getCenariosDivisao();
         Simulacao simulacao = cenarioInimigo.getSimulacao();
+        ToCruz toCruz = simulacao.getToCruz();
+        Iterator<Inimigo> itr_inimigos;
+        boolean deadToCruz = false;
 
-        for (Inimigo inimigo : divisao_atual.getInimigos()) {
+        itr_inimigos = divisao_atual.getInimigos().iterator();
+        while (itr_inimigos.hasNext() && !deadToCruz) {
+            Inimigo inimigo = itr_inimigos.next();
+
             if (!cenariosDivisao.haveConfronto(divisao_atual)) {
                 System.out.println("O inimigo " + inimigo.getNome() + " esta na sala " + divisao_atual.getName());
                 inimigos_move.addToRear(inimigo);
@@ -40,7 +49,9 @@ public class TurnoInimigo extends Turno {
             }
         }
 
-        for (Inimigo inimigo : inimigos_move) {
+        itr_inimigos = inimigos_move.iterator();
+        while (itr_inimigos.hasNext() && !deadToCruz) {
+            Inimigo inimigo = itr_inimigos.next();
             Divisao div = cenarioInimigo.andar(inimigo, divisao_atual);
             if (cenariosDivisao.haveConfronto(div)) {
                 cenarioInimigo.ataque(inimigo, simulacao.getToCruz(), divisao_atual);

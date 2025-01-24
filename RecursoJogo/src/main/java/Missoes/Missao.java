@@ -67,7 +67,8 @@ public class Missao implements Comparable<Missao> {
      */
     @Override
     public int compareTo(Missao o) {
-        int value = 0;
+        int value;
+
         if (this.cod_missao.compareTo(o.cod_missao) < 0) {
             value = 1;
         } else if (this.cod_missao.compareTo(o.cod_missao) > 0) {

@@ -21,11 +21,11 @@ import java.util.Scanner;
 
 public class TurnoToCruz extends Turno implements TurnoToCruzInt {
 
-    private Scanner sc;
+    private static Scanner sc;
 
     public TurnoToCruz(CenariosToCruz cenariosToCruz, CenariosDivisao cenariosDivisao) {
         super(cenariosToCruz, cenariosDivisao);
-        this.sc = new Scanner(System.in);
+        sc = new Scanner(System.in);
     }
 
     /**
@@ -129,11 +129,13 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         int op = -1;
         CenariosToCruz cenariosTo = (CenariosToCruz) getCenarioPersonagens();
         Iterator<Divisao> itr = cenariosTo.getSimulacao().getEdificio().getNextDivisoes(divisao_atual);
-        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<Divisao>();
+        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
 
         int i = 0;
         String temp;
 
+        System.out.println();
+        cenariosTo.sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
         System.out.println();
         System.out.println("Divisoes que o To Cruz pode entrar: ");
         while (itr.hasNext()) {
@@ -181,7 +183,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
             listDiv.addToRear(divisao);
         }
 
-        cenariosTo.sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
         do {
             System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
 
@@ -209,8 +210,7 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
      * com base na condição de vida da personagem e na disponibilidade do kit na mochila.
      * Se a vida de ToCruz for menor ou igual a 30 e se a mochila contiver um kit, o kit é usado.
      *
-     * @param toCruz O objeto da personagem ToCruz, que será analisado para decidir se o
-     *               kit será utilizado.
+     * @param toCruz O objeto da personagem ToCruz, que será analisado para decidir se o kit será utilizado.
      * @return Retorna verdadeiro se o kit foi usado, caso contrário retorna falso.
      */
     private boolean ConditionUseKitMochila(ToCruz toCruz) {
@@ -223,6 +223,8 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
 
         return usedKit;
     }
+
+    //Refinar isto para retirar o i
 
     /**
      * Calcula e imprime o menor caminho entre duas divisões,
@@ -239,26 +241,33 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
     public Divisao shortesPathTwoPointsAutomatico(Divisao div_start, Divisao div_final) {
         Iterator<Divisao> shortestPath = getCenarioPersonagens().getSimulacao().getEdificio().shortesPathIt(div_start, div_final);
         String temp = "";
-        Divisao div_to = null;
+        Divisao div_to;
 
-        int i = 0;
-        while (shortestPath.hasNext()) {
-            Divisao div = shortestPath.next();
-
-            if (i == 1) {
-                div_to = div;
-            }
+        if (!shortestPath.hasNext()) {
+            div_to = div_final;
+        } else {
+            div_to = shortestPath.next();
 
             if (shortestPath.hasNext()) {
-                temp = temp + div.getName() + " -->";
+                temp += div_to.getName() + " -->";
             } else {
-                temp = temp + div.getName();
+                temp += div_to.getName();
             }
 
-            i++;
+            while (shortestPath.hasNext()) {
+                Divisao div = shortestPath.next();
+
+                if (shortestPath.hasNext()) {
+                    temp += div.getName() + " -->";
+                } else {
+                    temp += div.getName();
+                }
+            }
+
+            System.out.println(temp);
         }
 
-        System.out.println(temp);
+
         return div_to;
     }
 
@@ -275,7 +284,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
      * @return O melhor caminho calculado entre dois pontos (partida e destino).
      */
     private Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
-        ToCruz toCruz = div_to.getToCruz();
         Simulacao simulacao = getCenarioPersonagens().getSimulacao();
         Edificio edificio = simulacao.getEdificio();
         Iterator<Divisao> itr = edificio.IteratorMapa();
@@ -318,7 +326,13 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         }
 
         System.out.println(temp);
-        return shortesPathTwoPointsAutomatico(div_to, best_destino);
+        Divisao returnDiv = shortesPathTwoPointsAutomatico(div_to, best_destino);
+
+        if (returnDiv == null && find_alvo) {
+            returnDiv = best_destino;
+        }
+
+        return returnDiv;
     }
 
     /**
@@ -369,6 +383,8 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
      */
     @Override
     public void turnoAutomatico(Divisao divisao_atual) {
+        System.out.println();
+        System.out.println("Turno do ToCruz");
         ToCruz toCruz = divisao_atual.getToCruz();
         Divisao divisao = divisao_atual;
         CenariosToCruz cenarioTo = (CenariosToCruz) getCenarioPersonagens();
@@ -381,7 +397,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         } else {
             divisao = sugestaoCaminhoToCruzAutomatico(divisao_atual);
 
-            //Meter o moverToCruz no cenarioToCruz (se calhar, para tirar responsabilidade à simulação)
             cenarioTo.moverToCruz(divisao_atual, divisao);
             if (cenariosDivisao.haveConfronto(divisao)) {
                 cenarioTo.ataqueToCruz(divisao_atual);
@@ -396,5 +411,4 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
             cenarioTo.collectAlvo();
         }
     }
-
 }

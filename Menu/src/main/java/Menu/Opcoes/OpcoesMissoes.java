@@ -14,11 +14,12 @@ import Turnos.TurnoInimigo;
 import Turnos.TurnoToCruz;
 import Missoes.Missao;
 import Missoes.Versao;
+
 import java.util.InputMismatchException;
 
 /*
-* Ver se é adicionado
-* */
+ * Ver se é adicionado
+ * */
 public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
 
     public OpcoesMissoes() {
@@ -103,20 +104,23 @@ public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
                     modosJogo = new ModoManual(turnoTo, turnoInimigo);
                     resultado_simulacao = modosJogo.jogar();
                     break;
-                } case 2: {
+                }
+                case 2: {
                     modosJogo = new ModoAutomatico(turnoTo, turnoInimigo);
                     resultado_simulacao = modosJogo.jogar();
                     break;
-                } case 3: {
+                }
+                case 3: {
                     modosJogo = new ModoCaminhoAutomatico(turnoTo, turnoInimigo);
-                    resultado_simulacao = modosJogo.jogar();
+                    modosJogo.jogar();
                     break;
-                } default: {
+                }
+                default: {
                     break;
                 }
             }
 
-            if(resultado_simulacao != null) {
+            if (resultado_simulacao == null && op_modo != 3) {
                 throw new NullPointerException("O resultado da simulacao não pode ser nulo! Ocorreu algum problema!");
             }
 

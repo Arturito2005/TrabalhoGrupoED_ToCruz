@@ -110,7 +110,6 @@ public class ImportarMapa implements Importar {
                     lista_divisoes.addToRear(divisao);
                 }
 
-
                 JSONArray ligacoes_array = (JSONArray) readingObj.get("ligacoes");
 
                 for (Object ligacao : ligacoes_array) {

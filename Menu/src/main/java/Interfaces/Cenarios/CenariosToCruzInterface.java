@@ -16,7 +16,7 @@ public interface CenariosToCruzInterface {
 
     public void guardarKitMochila(Item item, Divisao divisao);
 
-    public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao);
+    public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao) throws NullPointerException;
 
     public void sugestaoCaminhoToCruzKitEAlvo(Divisao div_to);
 
