@@ -127,7 +127,7 @@ public class ModoManual extends ModosJogo {
         Simulacao simulacao = cenariosTo.getSimulacao();
         ToCruz toCruz = simulacao.getToCruz();
 
-        Iterator<Divisao> itr = simulacao.getEdificio().getPlantaEdificio().iterator();
+        Iterator<Divisao> itr = simulacao.getEdificio().IteratorMapa();
         ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
 
         while (itr.hasNext()) {

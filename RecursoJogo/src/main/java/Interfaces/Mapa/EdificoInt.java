@@ -82,9 +82,4 @@ public interface EdificoInt {
      * @return um iterador sobre todas as divisões do edifício.
      */
     public Iterator<Divisao> IteratorMapa();
-
-    /**
-     * Metodo que realiza o desenho do mapa
-     * */
-    public void drawMapa();
 }

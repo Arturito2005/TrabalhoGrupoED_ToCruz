@@ -3,6 +3,7 @@ package Interfaces.Mapa;
 import Exceptions.ContainElementException;
 import Items.Item;
 import Personagens.Inimigo;
+import Personagens.ToCruz;
 
 /**
  * Interface para definir as condições que podem acontecer dentro de uma divisão do jogo.
@@ -16,6 +17,9 @@ import Personagens.Inimigo;
  */
 public interface DivisaoIt {
 
+    public void addToCruz(ToCruz toCruz);
+
+    public ToCruz removeToCruz();
     /**
      * Adiciona um inimigo à divisão.
      *
@@ -32,12 +36,6 @@ public interface DivisaoIt {
      */
     public Inimigo removeInimigo(Inimigo inimigo);
 
-    /**
-     * Faz o desenho da divisão na consola
-     *
-     * @return Uma string com o desenho da divisão
-     * */
-    public String drawnDivisao();
 
     public boolean containInimigo(Inimigo inimigo);
 

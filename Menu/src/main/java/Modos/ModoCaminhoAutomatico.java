@@ -33,7 +33,7 @@ public class ModoCaminhoAutomatico extends ModosAutomaticos {
         Simulacao simulacao = cenariosTo.getSimulacao();
         TurnoInimigo turnoInimigo = getTurnoInimigo();
 
-        Iterator<Divisao> itr = simulacao.getEdificio().getPlantaEdificio().iterator();
+        Iterator<Divisao> itr = simulacao.getEdificio().IteratorMapa();
         UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<>();
         UnorderedListADT<Divisao> divisao_inimigo = new LinearLinkedUnorderedList<>();
         Divisao div_alvo = null;

@@ -18,7 +18,7 @@ public class CenariosDivisao extends Cenarios implements CenariosDivisaoInterfac
         boolean valid = false;
         Simulacao simulacao = getSimulacao();
 
-        Iterator<Divisao> divItr = simulacao.getEdificio().getPlantaEdificio().iterator();
+        Iterator<Divisao> divItr = simulacao.getEdificio().IteratorMapa();
 
         while (divItr.hasNext() && !valid) {
             Divisao div = divItr.next();

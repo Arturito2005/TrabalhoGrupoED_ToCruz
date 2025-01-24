@@ -218,11 +218,13 @@ public class Divisao implements Comparable, DivisaoIt {
      *
      * @param toCruz personagem "ToCruz" a ser adicionada.
      */
+    @Override
     public void addToCruz(ToCruz toCruz) {
         this.toCruz = toCruz;
         System.out.println("O To Cruz moveu-se para a divisão: " + this.name);
     }
 
+    @Override
     public ToCruz removeToCruz() {
         return this.toCruz = null;
     }
@@ -321,99 +323,6 @@ public class Divisao implements Comparable, DivisaoIt {
         }
 
         return item1;
-    }
-
-    /**
-     * Centraliza um texto para exibição.
-     *
-     * @param texto   Texto a ser centralizado.
-     * @param largura Largura total disponível.
-     * @return Texto centralizado.
-     */
-    private String centralizarTexto(String texto, int largura) {
-        int espacosTotal = largura - texto.length();
-        int espacosEsquerda = espacosTotal / 2;
-        int espacosDireita = espacosTotal - espacosEsquerda;
-        String temp = "";
-
-        for (int i = 0; i < espacosEsquerda; i++) {
-            temp += " ";
-        }
-
-        temp += texto;
-
-        for (int i = 0; i < espacosDireita; i++) {
-            temp += " ";
-        }
-        return temp;
-    }
-
-    /**
-     * Desenha a representação visual da divisão na consola.
-     *
-     * @return Uma string com o desenho da divisão
-     */
-    @Override
-    public String drawnDivisao() {
-
-        String dados_sala = "";
-
-        if (this.toCruz != null) {
-            dados_sala += this.toCruz.getNome() + " ";
-        }
-
-        if (!this.itens.isEmpty()) {
-            for (Item item : this.itens) {
-                if (item instanceof ItemCura) {
-                    dados_sala += ((ItemCura) item).getType() + " " + ((ItemCura) item).getVida_recuperada() + " HP ";
-                }
-            }
-        }
-
-        if (this.alvo != null) {
-            dados_sala += this.alvo.getNome() + " ";
-        }
-
-        if (this.entrada_saida) {
-            dados_sala += "Saida" + " ";
-        }
-
-        long damage_to = 0;
-        if (!this.inimigos.isEmpty()) {
-            for (Inimigo inimigo : this.inimigos) {
-                dados_sala += inimigo.getNome() + " ";
-                damage_to += inimigo.getPoder();
-            }
-        }
-
-        int num_hifens;
-        String nome_sala;
-        if (damage_to > 0) {
-            nome_sala = this.name + "  Custo: " + damage_to;
-        } else {
-            nome_sala = this.name;
-        }
-
-        if (dados_sala.length() > this.name.length()) {
-            num_hifens = dados_sala.length();
-        } else {
-            num_hifens = nome_sala.length();
-        }
-
-        num_hifens = num_hifens + 7;
-        String bordas = "";
-        for (int i = 0; i < num_hifens; i++) {
-            bordas = bordas + "-";
-        }
-
-
-        String nome_sala_central = "|" + centralizarTexto(nome_sala.trim(), bordas.length() - 2) + "|";
-        String dados_sala_central = "|" + centralizarTexto(dados_sala.trim(), bordas.length() - 2) + "|";
-
-        return bordas + "\n" +
-                nome_sala_central + "\n" +
-                dados_sala_central + "\n" +
-                bordas;
     }
 
     /**

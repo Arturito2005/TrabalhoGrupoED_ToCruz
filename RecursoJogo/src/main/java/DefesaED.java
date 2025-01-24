@@ -15,7 +15,7 @@ public class DefesaED {
 
         try {
             Missao missao = importarMapa.gerarMapa("./Json/FicheiroMissao.json");
-            Iterator<Divisao> itr = missao.getVersao().getEdificio().getPlantaEdificio().iterator();
+            Iterator<Divisao> itr = missao.getVersao().getEdificio().IteratorMapa();
             Divisao divisao;
             boolean find = false;
 

@@ -1,10 +1,8 @@
 package Mapa;
 
-import java.awt.*;
+import Interfaces.Draw.DrawInterface;
 
-public abstract class Draw {
+public abstract class Draw implements DrawInterface {
 
-    public void draw() {
-
-    }
+    public abstract void draw();
 }

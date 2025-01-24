@@ -81,30 +81,12 @@ public class Edificio implements EdificoInt {
     }
 
     /**
-     * Retorna o identificador único do objeto.
-     *
-     * @return O identificador único do objeto.
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
      * Retorna o nome do edifício.
      *
      * @return Nome do edifício.
      */
     public String getName() {
         return name;
-    }
-
-    /**
-     * Retorna a planta do edifício (grafo pesado de divisões).
-     *
-     * @return Grafo pesado que representa as divisões e conexões do edifício.
-     */
-    public NetworkMatrizADT<Divisao> getPlantaEdificio() {
-        return planta_edificio;
     }
 
     /**
@@ -195,28 +177,6 @@ public class Edificio implements EdificoInt {
     @Override
     public Iterator<Divisao> IteratorMapa() {
         return this.planta_edificio.iterator();
-    }
-
-    /**
-     * Desenha o mapa do edifício, exibindo as suas divisões e conexões.
-     */
-    public void drawMapa() {
-        Iterator<Divisao> itrDiv = this.planta_edificio.iterator();
-
-        while (itrDiv.hasNext()) {
-            Divisao div = itrDiv.next();
-            System.out.println("Lista de Divisoes vizinhas a divisao: " + div.getName());
-            System.out.println();
-
-            Iterator<Divisao> itr_adj = this.planta_edificio.iteratorNextVertexs(div);
-
-            while (itr_adj.hasNext()) {
-                Divisao div_adj = itr_adj.next();
-                System.out.println(div_adj.drawnDivisao());
-            }
-
-            System.out.println();
-        }
     }
 
     /**
