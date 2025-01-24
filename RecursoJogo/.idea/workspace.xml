@@ -11,18 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosPersonagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosPersonagem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoAutomatico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoCaminhoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoToCruz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Importar/ImportarMapa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Missoes/Missao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
