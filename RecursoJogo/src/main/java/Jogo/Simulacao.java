@@ -16,6 +16,10 @@ import java.util.Objects;
 
 public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
 
+    /**
+     * Talvez em vez da divisao ter o alvo aqui teria uma variavel chamada divisaoAlvo.
+     * */
+
     private boolean collectedAlvo;
 
     private ToCruz toCruz;
@@ -30,9 +34,9 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
 
     private double vidaFinalTo;
 
-    private int versao;
+    private long versao;
 
-    public Simulacao(Edificio edificio, int versao) {
+    public Simulacao(Edificio edificio, long versao) {
         this.collectedAlvo = false;
         this.toCruz = new ToCruz();
         this.inimigosDead = new LinearLinkedUnorderedList<>();
@@ -43,8 +47,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         this.versao = versao;
     }
 
-    /*Getters*/
-    public int getVersao() {
+    public long getVersao() {
         return versao;
     }
 
@@ -68,9 +71,14 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         return toCruz;
     }
 
-    /*Fim dos getters*/
+    public boolean isCollectedAlvo() {
+        return this.collectedAlvo;
+    }
 
-    /*Metodos do Jogo*/
+    public void setCollectedAlvo(boolean collectedAlvo) {
+        this.collectedAlvo = collectedAlvo;
+    }
+
     @Override
     public void inimigoDead(Inimigo inimigo, Divisao divisao) {
         this.inimigosDead.addToRear(inimigo);
@@ -87,13 +95,14 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         this.collectedItem.addToRear(item);
         divisao.removeItem(item);
     }
+
     /**
      * Gera o relatório final do jogo, incluindo informações sobre o progresso da personagem ToCruz,
      * itens coletados, inimigos mortos e o status da missão.
      * O relatório também exibe o percurso feito pelo ToCruz durante a simulação.
      */
     @Override
-    public void relatorioMissao() {
+    public void relatorioSimulacao() {
         this.vidaFinalTo = toCruz.getVida();
         System.out.println(" ");
         System.out.println("!---------------------------------!");
@@ -102,7 +111,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         System.out.println("Relatorio do jogo: ");
         System.out.println("Vida final do ToCruz --> " + vidaFinalTo);
 
-        if (this.vidaFinalTo > 0 && this.toCruz.isColectedAlvo()) {
+        if (this.vidaFinalTo > 0 && this.isCollectedAlvo()) {
             System.out.println("Missao realizada com sucesso! ☆*: .｡. o(≧▽≦)o .｡.:*☆");
         } else {
             System.out.println("Missao falhada ಥ_ಥ");
@@ -117,7 +126,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         if (!collectedItem.isEmpty()) {
             System.out.println("Numero de itensColetados: " + collectedItem.size());
             System.out.println("Itens coletados pelo ToCruz:");
-            this.collectedItem.toString();
+            System.out.println(this.collectedItem.toString());
         } else {
             System.out.println("O ToCruz não conseguiu coletar nenhum item.");
         }
@@ -125,7 +134,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         StackADT<ItemCura> mochila = toCruz.getMochila();
         if (!mochila.isEmpty()) {
             System.out.println("Itens na mochila do ToCruz:");
-            mochila.toString();
+            System.out.println(mochila.toString());
         } else {
             System.out.println("A mochila do To Cruz esta vazia.");
         }
@@ -134,12 +143,6 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         System.out.println(percursoToCruz.toString());
     }
 
-
-    @Override
-    public boolean getAlvo() {
-        this.collectedAlvo = true;
-        return this.collectedAlvo;
-    }
     /*Fim dos metodos da simulacao*/
 
     /**

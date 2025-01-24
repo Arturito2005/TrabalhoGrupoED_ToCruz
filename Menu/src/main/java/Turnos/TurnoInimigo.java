@@ -1,6 +1,7 @@
 package Turnos;
 
-import Cenarios.CenariosInimigos;
+import Cenarios.Divisao.CenariosDivisao;
+import Cenarios.Personagens.CenariosInimigos;
 import Interfaces.UnorderedListADT;
 import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
@@ -12,8 +13,8 @@ import Personagens.Inimigo;
 * */
 public class TurnoInimigo extends Turno {
 
-    public TurnoInimigo(CenariosInimigos cenario) {
-        super(cenario);
+    public TurnoInimigo(CenariosInimigos cenarioInimigo, CenariosDivisao cenarioDivisao) {
+        super(cenarioInimigo, cenarioDivisao);
     }
 
     /**
@@ -26,22 +27,23 @@ public class TurnoInimigo extends Turno {
     @Override
     public void turno(Divisao divisao_atual) {
         UnorderedListADT<Inimigo> inimigos_move = new LinearLinkedUnorderedList<>();
-        CenariosInimigos cenario = (CenariosInimigos) this.getCenario();
-        Simulacao simulacao = cenario.getSimulacao();
+        CenariosInimigos cenarioInimigo = (CenariosInimigos) this.getCenarioPersonagens();
+        CenariosDivisao cenariosDivisao = this.getCenariosDivisao();
+        Simulacao simulacao = cenarioInimigo.getSimulacao();
 
         for (Inimigo inimigo : divisao_atual.getInimigos()) {
-            if (!divisao_atual.haveConfronto()) {
+            if (!cenariosDivisao.haveConfronto(divisao_atual)) {
                 System.out.println("O inimigo " + inimigo.getNome() + " esta na sala " + divisao_atual.getName());
                 inimigos_move.addToRear(inimigo);
             } else {
-                cenario.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
+                cenarioInimigo.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
             }
         }
 
         for (Inimigo inimigo : inimigos_move) {
-            Divisao div = cenario.andar(inimigo, divisao_atual);
-            if (div.haveConfronto()) {
-                cenario.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
+            Divisao div = cenarioInimigo.andar(inimigo, divisao_atual);
+            if (cenariosDivisao.haveConfronto(div)) {
+                cenarioInimigo.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
             }
         }
     }

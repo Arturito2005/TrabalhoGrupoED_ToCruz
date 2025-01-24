@@ -29,11 +29,6 @@ public class Alvo {
     private String nome;
 
     /**
-     * Status que indica se o alvo foi atingido ou não.
-     */
-    private boolean atinigido;
-
-    /**
      * Construtor para criar um alvo com um nome fornecido.
      * O identificador do alvo será gerado automaticamente e o status será
      * definido como não atingido (false).
@@ -43,7 +38,6 @@ public class Alvo {
     public Alvo(String nome) {
         this.id_alvo = ID_ALVO_CONT++;
         this.nome = nome;
-        this.atinigido = false;
     }
 
     /**
@@ -51,12 +45,10 @@ public class Alvo {
      *
      * @param id_alvo   O ID único do alvo.
      * @param nome      O nome do alvo.
-     * @param atinigido Indica se o alvo foi atingido (verdadeiro ou falso).
      */
-    public Alvo(int id_alvo, String nome, boolean atinigido) {
+    public Alvo(int id_alvo, String nome) {
         this.id_alvo = id_alvo;
         this.nome = nome;
-        this.atinigido = atinigido;
     }
 
     /**
@@ -87,24 +79,6 @@ public class Alvo {
     }
 
     /**
-     * Retorna o status de atingido do alvo.
-     *
-     * @return true se o alvo foi atingido, false caso contrário.
-     */
-    public boolean isAtinigido() {
-        return atinigido;
-    }
-
-    /**
-     * Altera o status de atingido do alvo.
-     *
-     * @param atinigido O status do alvo (true se atingido, false caso contrário).
-     */
-    public void setAtinigido(boolean atinigido) {
-        this.atinigido = atinigido;
-    }
-
-    /**
      * Retorna uma representação em string do alvo, incluindo o seu identificador,
      * nome e status de atingido.
      *
@@ -114,8 +88,7 @@ public class Alvo {
     public String toString() {
         return "Alvo{" +
                 "id_alvo=" + id_alvo +
-                ", nome='" + nome + '\'' +
-                ", atinigido=" + atinigido +
+                ", nome='" + nome +
                 '}';
     }
 

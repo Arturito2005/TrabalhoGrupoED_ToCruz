@@ -1,6 +1,7 @@
 package Mapa;
 
 import Exceptions.EmptyCollectionException;
+import Exceptions.ContainElementException;
 import Interfaces.Mapa.DivisaoIt;
 import Interfaces.UnorderedListADT;
 import Items.Item;
@@ -8,6 +9,8 @@ import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
+
+import java.util.Iterator;
 import java.util.Objects;
 
 /**
@@ -101,7 +104,7 @@ public class Divisao implements Comparable, DivisaoIt {
 
         Alvo temAlvo = null;
         if (alvo != null) {
-            temAlvo = new Alvo(alvo.getId_alvo(), alvo.getNome(), alvo.isAtinigido());
+            temAlvo = new Alvo(alvo.getId_alvo(), alvo.getNome());
         }
 
         this.alvo = temAlvo;
@@ -180,78 +183,12 @@ public class Divisao implements Comparable, DivisaoIt {
     }
 
     /**
-     * Remove a personagem "ToCruz" da divisão.
-     */
-    public void removeToCruz() {
-        this.toCruz = null;
-    }
-
-    /**
-     * Adiciona a personagem "ToCruz" à divisão.
-     *
-     * @param toCruz personagem "ToCruz" a ser adicionada.
-     */
-    public void addToCruz(ToCruz toCruz) {
-        this.toCruz = toCruz;
-        System.out.println("O To Cruz moveu-se para a divisão: " + this.name);
-    }
-
-    /**
      * Retorna a lista de inimigos presentes na divisão.
      *
      * @return A lista de inimigos.
      */
     public UnorderedListADT<Inimigo> getInimigos() {
         return inimigos;
-    }
-
-    /**
-     * Adiciona um inimigo à divisão.
-     *
-     * @param inimigo O inimigo a ser adicionado.
-     * @throws NullPointerException quando o inimigo recebido como paramêtro é null.
-     */
-    @Override
-    public void addInimigo(Inimigo inimigo) throws NullPointerException {
-        if (inimigo == null) {
-            throw new NullPointerException("O inimigo a adicionar nao pode ser nulo");
-        }
-        this.inimigos.addToRear(inimigo);
-    }
-
-    /**
-     * Remove um inimigo específico da divisão.
-     *
-     * @param inimigo O inimigo a ser removido.
-     * @return O inimigo removido.
-     */
-    @Override
-    public Inimigo removeInimigo(Inimigo inimigo) {
-        Inimigo inimigo1 = null;
-        try {
-            inimigo1 = this.inimigos.remove(inimigo);
-        } catch (EmptyCollectionException | NullPointerException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return inimigo1;
-    }
-
-    public void addItem(Item item) throws NullPointerException {
-        if (item == null) {
-            throw new NullPointerException("O item nao pode ser nulo");
-        }
-        this.itens.addToRear(item);
-    }
-
-    public Item removeItem(Item item) {
-        try {
-            this.itens.remove(item);
-        } catch (EmptyCollectionException | NullPointerException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return item;
     }
 
     public UnorderedListADT<Item> getItens() {
@@ -277,77 +214,113 @@ public class Divisao implements Comparable, DivisaoIt {
     }
 
     /**
-     * Verifica se o To Cruz está numa saída.
+     * Adiciona a personagem "ToCruz" à divisão.
      *
-     * @return {@code true} se o To Cruz estiver na saída, {@code false} caso contrário.
+     * @param toCruz personagem "ToCruz" a ser adicionada.
      */
-    @Override
-    public boolean isToCruzInExit() {
-        boolean is = false;
+    public void addToCruz(ToCruz toCruz) {
+        this.toCruz = toCruz;
+        System.out.println("O To Cruz moveu-se para a divisão: " + this.name);
+    }
 
-        if (toCruz != null && entrada_saida) {
-            is = true;
-        }
-
-        return is;
+    public ToCruz removeToCruz() {
+        return this.toCruz = null;
     }
 
     /**
-     * Verifica se o To Cruz está na divisão com o alvo.
+     * Adiciona um inimigo à divisão.
      *
-     * @return {@code true} se o To Cruz estiver com o alvo, {@code false} caso contrário.
+     * @param inimigo O inimigo a ser adicionado.
+     * @throws NullPointerException quando o inimigo recebido como paramêtro é null.
      */
     @Override
-    public boolean isToCruzInDivisaoAlvo() {
-        boolean is = false;
-
-        if (toCruz != null && alvo != null) {
-            is = true;
+    public void addInimigo(Inimigo inimigo) throws NullPointerException, ContainElementException {
+        if (inimigo == null) {
+            throw new NullPointerException("O inimigo a adicionar nao pode ser nulo");
         }
 
-        return is;
+        if (containInimigo(inimigo)) {
+            throw new ContainElementException("O inimigo ( " + inimigo.getNome() + " ) já está na divisão");
+        }
+
+        this.inimigos.addToRear(inimigo);
+    }
+
+    @Override
+    public boolean containInimigo(Inimigo inimigo) {
+        boolean found = false;
+
+        Iterator<Inimigo> itrInimigos = this.inimigos.iterator();
+        while (itrInimigos.hasNext() && !found) {
+            Inimigo tempInimigo = itrInimigos.next();
+
+            if (tempInimigo.equals(inimigo)) {
+                found = true;
+            }
+        }
+
+        return found;
     }
 
     /**
-     * Verifica se há inimigos na divisão.
+     * Remove um inimigo específico da divisão.
      *
-     * @return {@code true} se houver inimigos, {@code false} caso contrário.
+     * @param inimigo O inimigo a ser removido.
+     * @return O inimigo removido.
      */
     @Override
-    public boolean haveInimigo() {
-        boolean have = false;
+    public Inimigo removeInimigo(Inimigo inimigo) {
+        Inimigo inimigo1 = null;
 
-        if (!inimigos.isEmpty()) {
-            have = true;
+        try {
+            inimigo1 = this.inimigos.remove(inimigo);
+        } catch (EmptyCollectionException | NullPointerException e) {
+            System.out.println(e.getMessage());
         }
 
-        return have;
+        return inimigo1;
     }
 
-    /**
-     * Verifica se há um confronto entre o To Cruz e os inimigos.
-     *
-     * @return {@code true} se houver confronto, {@code false} caso contrário.
-     */
     @Override
-    public boolean haveConfronto() {
-        boolean confronto = false;
-
-        if (toCruz != null && !this.inimigos.isEmpty()) {
-            confronto = true;
+    public void addItem(Item item) throws NullPointerException, ContainElementException {
+        if (item == null) {
+            throw new NullPointerException("O item nao pode ser nulo");
         }
 
-        return confronto;
+        if(containItem(item)) {
+            throw new ContainElementException("O item introduzido já existe na divisao");
+        }
+
+        this.itens.addToRear(item);
     }
 
+    @Override
     public boolean containItem(Item item) {
-        boolean contain = false;
+        boolean found = false;
 
-        if (this.itens.contains(item)) {
-            contain = true;
+        Iterator<Item> itrItem = this.itens.iterator();
+        while (itrItem.hasNext() && !found) {
+            Item tempItem = itrItem.next();
+
+            if (tempItem.equals(item)) {
+                found = true;
+            }
         }
 
-        return contain;
+        return found;
+    }
+
+    @Override
+    public Item removeItem(Item item) {
+        Item item1 = null;
+
+        try {
+            item1 = this.itens.remove(item);
+        } catch (EmptyCollectionException | NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return item1;
     }
 
     /**
@@ -437,12 +410,10 @@ public class Divisao implements Comparable, DivisaoIt {
         String nome_sala_central = "|" + centralizarTexto(nome_sala.trim(), bordas.length() - 2) + "|";
         String dados_sala_central = "|" + centralizarTexto(dados_sala.trim(), bordas.length() - 2) + "|";
 
-        String resultado = bordas + "\n" +
+        return bordas + "\n" +
                 nome_sala_central + "\n" +
                 dados_sala_central + "\n" +
                 bordas;
-
-        return resultado;
     }
 
     /**

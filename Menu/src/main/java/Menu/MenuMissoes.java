@@ -1,7 +1,11 @@
 package Menu;
 
-import Missoes.Missoes;
+import Menu.Opcoes.OpcoesFicheiros;
+import Menu.Opcoes.OpcoesMissoes;
 
+/*
+* Nota agora a missão penso que não seja guardada para exportar depois tenho que ter esse cuidade
+* */
 /**
  * Classe responsável pelo menu de missões do jogo.
  * Contém o método principal que importa e realiza as missões disponíveis.
@@ -27,7 +31,9 @@ public class MenuMissoes {
      * @param args Argumentos de linha de comando (não utilizados neste caso).
      */
     public static void main(String[] args) {
-        Missoes missoes = MetodosMenuMissao.importarMissoes();
-        MetodosMenuMissao.RealizarMissoes(missoes);
+        OpcoesFicheiros opFile = new OpcoesFicheiros();
+        OpcoesMissoes opMiss = new OpcoesMissoes();
+
+        opMiss.RealizarMissoes(opFile.importarMissoes());
     }
 }

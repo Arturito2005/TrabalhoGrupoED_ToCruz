@@ -187,7 +187,6 @@ public class Edificio implements EdificoInt {
         return this.planta_edificio.iteratorNextVertexs(divisao);
     }
 
-
     /**
      * Retorna um iterador para todas as divisões do edifício.
      *

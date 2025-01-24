@@ -1,6 +1,9 @@
-package Cenarios;
+package Cenarios.Personagens;
 
 import ArrayList.ArrayUnordered;
+import Cenarios.Cenarios;
+import Exceptions.InvalidOptionException;
+import Exceptions.InvalidTypeItemException;
 import Interfaces.ArrayUnorderedADT;
 import Interfaces.Cenarios.CenariosToCruzInterface;
 import Items.Item;
@@ -9,6 +12,7 @@ import Items.TypeItemCura;
 import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Personagens.Inimigo;
 import Personagens.ToCruz;
 
 import java.util.InputMismatchException;
@@ -18,24 +22,35 @@ import java.util.Scanner;
 /*
 * Criar cenario para quando o ToCruz entra numa divisão e inicia cofronto para evitar estar sempre a criar um for
 * */
-public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface {
-    private Scanner sc = new Scanner(System.in);
+public class CenariosToCruz extends CenariosPersonagem implements CenariosToCruzInterface {
+    private Scanner sc;
 
     public CenariosToCruz(Simulacao simulacao) {
         super(simulacao);
+        this.sc = new Scanner(System.in);
+    }
+
+    public void ataqueToCruz(Divisao divisao) {
+        ToCruz toCruz = getSimulacao().getToCruz();
+        for(Inimigo inimigo : divisao.getInimigos()) {
+            ataque(toCruz, inimigo, divisao);
+        }
+    }
+
+    public void collectAlvo() {
+        getSimulacao().setCollectedAlvo(true);
     }
 
     @Override
     public void usarItemDivisao(Item item, Divisao divisao) {
         ToCruz toCruz = new ToCruz();
-        Simulacao simulacao = getSimulacao();
 
         if (divisao.containItem(item)) {
             if (item instanceof ItemCura) {
                 if ((((ItemCura) item).getType().equals(TypeItemCura.KIT_VIDA) && toCruz.getVida() < 100) || item.equals(TypeItemCura.COLETE)) {
                     try {
                         toCruz.usarItem((ItemCura) item);
-                        simulacao.addCollectedItem(item);
+                        collectAlvo();
                         divisao.removeItem(item);
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
@@ -53,9 +68,8 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
 
         if (divisao.containItem(item) && !toCruz.mochilaIsFull()) {
             try {
-                Simulacao simulacao = getSimulacao();
                 toCruz.guardarKit((ItemCura) item);
-                simulacao.addCollectedItem(item);
+                collectAlvo();
                 divisao.removeItem(item);
             } catch (NullPointerException e) {
                 System.out.println(e.getMessage());
@@ -63,6 +77,7 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
         }
     }
 
+    @Override
     public void moverToCruz(Divisao divisaoAtual, Divisao novaDivisao) {
         ToCruz toCruz = new ToCruz();
         Simulacao simulacao = getSimulacao();
@@ -72,6 +87,7 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
         novaDivisao.addToCruz(toCruz);
     }
 
+    @Override
     public Divisao andar(Divisao divisao_atual) {
         int op = -1;
         Edificio edificio = getSimulacao().getEdificio();
@@ -154,6 +170,100 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
     }
 
     /**
+     * Este metodo trata de um item encontrado em uma divisão e permite que o ToCruz
+     * interaja com ele.
+     * Dependendo do tipo de item, ele pode ser usado, deixado na sala ou guardado na mochila.
+     *
+     * @param divisao A divisão onde o item foi encontrado.
+     * @param toCruz A personagem que interage com o item.
+     * @throws InvalidOptionException Caso a opção fornecida pelo jogador seja inválida.
+     * @throws InvalidTypeItemException Caso o tipo de item seja inválido.
+     */
+    @Override
+    public void DivisaoComItem(Divisao divisao, ToCruz toCruz) throws InvalidOptionException, InvalidTypeItemException {
+        for (Item item : divisao.getItens()) {
+            if (item instanceof ItemCura) {
+                ItemCura itemCura = (ItemCura) item;
+
+                switch (itemCura.getType()) {
+                    case COLETE: {
+                        toCruz.usarItem(itemCura);
+                        System.out.println("O To Cruz apanhou um colete e ficou com " + toCruz.getVida() + " HP");
+                        break;
+                    }
+                    case KIT_VIDA: {
+                        int op = -1;
+                        if (toCruz.getVida() < 100 && !toCruz.mochilaIsFull()) {
+                            do {
+                                System.out.println("Esta numa sala com um kit de vida de " + itemCura.getVida_recuperada());
+                                System.out.println("0 - Usar Item");
+                                System.out.println("1 - Deixa-lo na sala");
+                                System.out.println("2 - Guardar");
+                                System.out.print("Selecione uma opcao -->");
+                                try {
+                                    op = sc.nextInt();
+                                } catch (InputMismatchException ex) {
+                                    System.out.println("Numero invalido!");
+                                    sc.next();
+                                }
+                            } while (op < 0 || op > 2);
+                        } else if (toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
+                            do {
+                                System.out.println("Esta numa sala com um kit de vida de " + itemCura.getVida_recuperada());
+                                System.out.println("0 - Usar Item");
+                                System.out.println("1 - Deixa-lo na sala");
+                                System.out.print("Selecione uma opcao -->");
+                                try {
+                                    op = sc.nextInt();
+                                } catch (InputMismatchException ex) {
+                                    System.out.println("Numero invalido!");
+                                    sc.next();
+                                }
+                            } while (op < 0 || op > 1);
+                        } else if (!toCruz.mochilaIsFull() && toCruz.getVida() >= 100) {
+                            System.out.println("Esta numa sala com um kit de vida de " + itemCura.getVida_recuperada());
+                            System.out.println("1 - Deixa-lo na sala");
+                            System.out.println("2 - Guardar");
+                            System.out.print("Selecione uma opcao -->");
+                            do {
+                                try {
+                                    op = sc.nextInt();
+                                } catch (InputMismatchException ex) {
+                                    System.out.println("Numero invalido!");
+                                    sc.next();
+                                }
+                            } while (op < 1 || op > 2);
+                        }
+
+                        switch (op) {
+                            case 0: {
+                                usarItemDivisao(item, divisao);
+                                break;
+                            }
+                            case 1: {
+                                System.out.println("O To Cruz nao coleta o item");
+                                break;
+                            }
+                            case 2: {
+                                guardarKitMochila(item, divisao);
+                                break;
+                            }
+                            default: {
+                                throw new InvalidOptionException("Introduziu uma opcao invalida");
+                            }
+                        }
+                        break;
+                    }
+                    default: {
+                        throw new InvalidTypeItemException("Tipo de item invalido");
+                    }
+                }
+            }
+        }
+
+    }
+
+    /**
      * Sugere o melhor caminho para o ToCruz chegar a um item ou a um alvo.
      * O ToCruz deve coletar o item e, em seguida, atingir o alvo.
      *
@@ -161,8 +271,9 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
      */
     @Override
     public void sugestaoCaminhoToCruzKitEAlvo(Divisao div_to) {
+        Simulacao simulacao = getSimulacao();
         ToCruz toCruz = div_to.getToCruz();
-        Edificio edificio = getSimulacao().getEdificio();
+        Edificio edificio = simulacao.getEdificio();
         Iterator<Divisao> itr = edificio.IteratorMapa();
 
         Divisao item_div = null;
@@ -202,7 +313,7 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
                         div_alvo = div;
                     }
                 }
-            } else if (div.getAlvo() != null && !toCruz.isColectedAlvo()) {
+            } else if (div.getAlvo() != null && !simulacao.isCollectedAlvo()) {
                 div_alvo = div;
             }
         }
@@ -227,7 +338,7 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
      * @param div_start A divisão de início do caminho.
      * @param Div_final A divisão final do caminho.
      */
-    private void shortesPathTwopoints(Divisao div_start, Divisao Div_final) {
+    public void shortesPathTwopoints(Divisao div_start, Divisao Div_final) {
         Edificio edificio = getSimulacao().getEdificio();
         Iterator<Divisao> shortestPath = edificio.shortesPathIt(div_start, Div_final);
         String temp = "";
@@ -243,5 +354,4 @@ public class CenariosToCruz extends Cenarios implements CenariosToCruzInterface 
         }
         System.out.println(temp);
     }
-
 }

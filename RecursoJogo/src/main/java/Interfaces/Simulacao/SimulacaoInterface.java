@@ -12,7 +12,5 @@ public interface SimulacaoInterface {
 
     public void addCollectedItem(Item item, Divisao divisao);
 
-    public void relatorioMissao();
-
-    public boolean getAlvo();
+    public void relatorioSimulacao();
 }

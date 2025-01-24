@@ -4,7 +4,7 @@ import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;
 import Exceptions.UsedColectedItemException;
 import Exceptions.WrongTypeItemException;
-import Interfaces.MochilaIteracoes;
+import Interfaces.ToCruz.MochilaIteracoes;
 import Interfaces.StackADT;
 import Items.ItemCura;
 import Items.TypeItemCura;
@@ -28,17 +28,11 @@ public class ToCruz extends Personagem implements MochilaIteracoes {
     private StackADT<ItemCura> mochila;
 
     /**
-     * Indica se o objetivo principal foi coletado.
-     */
-    private boolean colectedAlvo;
-
-    /**
      * Construtor padrão que inicializa a personagem ToCruz sem uma divisão inicial.
      */
     public ToCruz() {
         super("ToCruz");
         this.mochila = new LinkedStack<>();
-        this.colectedAlvo = false;
     }
 
     /**
@@ -53,25 +47,6 @@ public class ToCruz extends Personagem implements MochilaIteracoes {
     public ToCruz(int id_personagem, String nome, long vida, long poder, StackADT<ItemCura> mochila) {
         super(id_personagem, nome, vida, poder);
         this.mochila = new LinkedStack<>();
-        this.colectedAlvo = false;
-    }
-
-    /**
-     * Verifica se o alvo foi coletado pelo To Cruz.
-     *
-     * @return {@code true} se o alvo foi coletado; caso contrário, {@code false}.
-     */
-    public boolean isColectedAlvo() {
-        return colectedAlvo;
-    }
-
-    /**
-     * Define o status de coleta do alvo.
-     *
-     * @param colectedAlvo {@code true} para indicar que o alvo foi coletado, {@code false} caso contrário.
-     */
-    public void setColectedAlvo(boolean colectedAlvo) {
-        this.colectedAlvo = colectedAlvo;
     }
 
     /**
@@ -187,7 +162,6 @@ public class ToCruz extends Personagem implements MochilaIteracoes {
      */
     @Override
     public ItemCura usarKit() throws EmptyCollectionException {
-        String temp = "";
         ItemCura kit;
 
         if (!this.mochila.isEmpty()) {

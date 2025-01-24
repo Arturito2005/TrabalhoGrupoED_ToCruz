@@ -1,5 +1,6 @@
-package Cenarios;
+package Cenarios.Personagens;
 
+import Cenarios.Cenarios;
 import Exceptions.InvalidPersonagemException;
 import Interfaces.Cenarios.CenarioInimigosInterface;
 import Interfaces.StackADT;
@@ -13,7 +14,7 @@ import Stacks.LinkedStack;
 import java.util.Iterator;
 import java.util.Random;
 
-public class CenariosInimigos extends Cenarios implements CenarioInimigosInterface {
+public class CenariosInimigos extends CenariosPersonagem implements CenarioInimigosInterface {
 
     public CenariosInimigos(Simulacao simulacao) {
         super(simulacao);

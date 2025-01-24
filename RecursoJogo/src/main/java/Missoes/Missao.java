@@ -13,7 +13,6 @@ import java.util.Objects;
  * Nº mecanografico: 8230148
  * @version 1.0
  */
-
 public class Missao implements Comparable<Missao> {
 
     /**

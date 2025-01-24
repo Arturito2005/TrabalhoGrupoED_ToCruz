@@ -1,17 +1,97 @@
 package Modos;
 
-import Mapa.Edificio;
+import Cenarios.Personagens.CenariosToCruz;
+import Interfaces.UnorderedListADT;
+import Jogo.Simulacao;
+import LinkedList.LinearLinkedUnorderedList;
+import Mapa.Divisao;
+import Personagens.ToCruz;
+import Turnos.TurnoInimigo;
+import Turnos.TurnoToCruz;
 
-public class ModoCaminhoAutomatico {
+import java.util.Iterator;
+
+public class ModoCaminhoAutomatico extends ModosAutomaticos {
+
+    public ModoCaminhoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
+        super(turnoTo, turnoInimigo);
+    }
 
     /**
-     * Executa o modo automático da missão, mostrando o caminho mais curto para o ToCruz entrar no
-     * edifício e coletar o alvo, e o melhor caminho que ele deve fazer, se possível,
-     * para sair do edifício com o alvo.
+     * Realiza a simulação do jogo no modo automático, onde a personagem ToCruz é controlado
+     * pelo sistema para tentar alcançar um alvo e, em seguida, encontrar uma saída do edifício
+     * sem morrer. O metodo verifica as entradas e saídas do edifício, os inimigos presentes
+     * e tenta calcular se é possível concluir a missão com vida.
+     * <p>
+     * O ToCruz segue automaticamente pelo edifício, enfrenta inimigos, até tentar atingir
+     * o alvo e sair do edifício. Se a vida de ToCruz for insuficiente para completar o trajeto
+     * ou escapar do edifício, o jogador é notificado.
      */
     @Override
-    public void modoAutomatico() {
-        Jogo simulacaoAutomatica = new Jogo(tot_simulacoes, new Edificio(this.edificio.getId(), this.edificio.getName(), this.edificio.getPlantaEdificio()));
-        simulacaoAutomatica.modojogoAutomatico();
+    public Simulacao jogar() {
+        CenariosToCruz cenariosTo = getCenariosTo();
+        Simulacao simulacao = cenariosTo.getSimulacao();
+        TurnoInimigo turnoInimigo = getTurnoInimigo();
+
+        Iterator<Divisao> itr = simulacao.getEdificio().getPlantaEdificio().iterator();
+        UnorderedListADT<Divisao> list_entradas = new LinearLinkedUnorderedList<>();
+        UnorderedListADT<Divisao> divisao_inimigo = new LinearLinkedUnorderedList<>();
+        Divisao div_alvo = null;
+        ToCruz to = simulacao.getToCruz();
+
+        while (itr.hasNext()) {
+            Divisao div = itr.next();
+
+            if (div.isEntrada_saida()) {
+                list_entradas.addToRear(div);
+            }
+
+            if (div.getAlvo() != null) {
+                div_alvo = div;
+            }
+
+            if (!div.getInimigos().isEmpty()) {
+                divisao_inimigo.addToRear(div);
+            }
+        }
+
+        if (calculateBesteEntradaToCruz(to, div_alvo, list_entradas) > to.getVida()) {
+            System.out.println("O To Cruz nao consegue chegar ao alvo sem morrer!");
+        } else {
+            for (Divisao div_inimi : divisao_inimigo) {
+                turnoInimigo.turno(div_inimi);
+            }
+
+            cenariosTo.getSimulacao().updatePercursoToCruz(div_alvo);
+
+            if (calculateBestExitAutomatico(div_alvo) > to.getVida()) {
+                System.out.println("E impossivel o To Cruz sair do edificio com vida!");
+            }
+        }
+
+        return simulacao;
+    }
+
+    /**
+     * Calcula a melhor entrada para o ToCruz, baseado na distância e nas arestas do
+     * caminho até o alvo.
+     *
+     * @param toCruz a personagem ToCruz.
+     * @param div_alvo a divisão alvo.
+     * @param list_entradas as divisões de entrada para o edifício.
+     * @return a melhor distância para o ToCruz atingir o alvo.
+     */
+    private double calculateBesteEntradaToCruz(ToCruz toCruz, Divisao div_alvo, UnorderedListADT<Divisao> list_entradas) {
+        return getCenariosTo().getSimulacao().getEdificio().getShortestPath(BestStartToCruz(toCruz, list_entradas, div_alvo), div_alvo);
+    }
+
+    /**
+     * Calcula o melhor caminho para o ToCruz sair do edifício, considerando as entradas fornecidas.
+     *
+     * @param div_alvo A divisão alvo que o ToCruz precisa alcançar.
+     * @return A distância do melhor caminho encontrado.
+     */
+    private double calculateBestExitAutomatico(Divisao div_alvo) {
+        return getCenariosTo().getSimulacao().getEdificio().getShortestPath(div_alvo, sugestaoCaminhoToCruzAutomatico(div_alvo));
     }
 }

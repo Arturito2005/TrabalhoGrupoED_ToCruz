@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.ToCruz;
 
 import Exceptions.AllLifeException;
 import Exceptions.EmptyCollectionException;

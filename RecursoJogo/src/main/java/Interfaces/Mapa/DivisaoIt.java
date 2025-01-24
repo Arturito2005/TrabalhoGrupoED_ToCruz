@@ -1,5 +1,7 @@
 package Interfaces.Mapa;
 
+import Exceptions.ContainElementException;
+import Items.Item;
 import Personagens.Inimigo;
 
 /**
@@ -31,37 +33,17 @@ public interface DivisaoIt {
     public Inimigo removeInimigo(Inimigo inimigo);
 
     /**
-     * Verifica se há um confronto ativo na divisão.
-     *
-     * @return {@code true} se houver confronto, caso contrário {@code false}.
-     */
-    public boolean haveConfronto();
-
-    /**
-     * Verifica se há inimigos presentes na divisão.
-     *
-     * @return {@code true} se houver inimigos, caso contrário {@code false}.
-     */
-    public boolean haveInimigo();
-
-    /**
-     * Verifica se o ToCruz está na mesma divisão do alvo.
-     *
-     * @return {@code true} se o To Cruz está na mesma divisão que o alvo, caso contrário {@code false}.
-     */
-    public boolean isToCruzInDivisaoAlvo();
-
-    /**
-     * Verifica se o ToCruz está em alguma entrada ou saida.
-     *
-     * @return {@code true} se o To Cruz está numa saida ou entrada, caso contrário {@code false}.
-     */
-    public boolean isToCruzInExit();
-
-    /**
      * Faz o desenho da divisão na consola
      *
      * @return Uma string com o desenho da divisão
      * */
     public String drawnDivisao();
+
+    public boolean containInimigo(Inimigo inimigo);
+
+    public void addItem(Item item) throws NullPointerException, ContainElementException;
+
+    public boolean containItem(Item item);
+
+    public Item removeItem(Item item);
 }

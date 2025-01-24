@@ -36,7 +36,7 @@ public class TestDivisao {
         divisao = new Divisao("Sala Teste");
         toCruz = new ToCruz(1, "ToCruz", 100, 20, null);
         inimigo = new Inimigo(2, "Inimigo", 50, 10);
-        alvo = new Alvo(3, "Alvo", false);
+        alvo = new Alvo(3, "Alvo");
         inimigo1 = new Inimigo(2, "Inimigo Fraco", 50, 5);
         inimigo2 = new Inimigo(3, "Inimigo Forte", 100, 10);
         deadInimigos = new LinearLinkedUnorderedList<>();

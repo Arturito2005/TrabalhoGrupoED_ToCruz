@@ -1,44 +1,28 @@
 package Modos;
 
 import ArrayList.ArrayUnordered;
-import Cenarios.CenariosInimigos;
-import Cenarios.CenariosToCruz;
+import Cenarios.Divisao.CenariosDivisao;
+import Cenarios.Personagens.CenariosToCruz;
 import Interfaces.ArrayUnorderedADT;
-import Interfaces.Modos.ModoJogoManualInterface;
 import Interfaces.UnorderedListADT;
 import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Mapa.Edificio;
-import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
 import Turnos.TurnoToCruz;
 
 import java.util.InputMismatchException;
 import java.util.Iterator;
-import java.util.Scanner;
 
 /*Testar a ver se funciona
 * Se der erro é porque a simulacao não está a ser bem atualizada.
 * */
-public class ModoManual implements ModoJogoManualInterface {
-    private Scanner sc;
+public class ModoManual extends ModosJogo {
 
-    private CenariosToCruz cenariosTo;
-
-    private CenariosInimigos cenariosInimigo;
-
-    private TurnoToCruz turnoTo;
-
-    private TurnoInimigo turnoInimigo;
-
-    public ModoManual(CenariosToCruz cenariosTo, CenariosInimigos cenariosInimigo, TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        this.cenariosTo = cenariosTo;
-        this.cenariosInimigo = cenariosInimigo;
-        this.turnoTo = turnoTo;
-        this.turnoInimigo = turnoInimigo;
-        this.sc = new Scanner(System.in);
+    public ModoManual(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
+        super(turnoTo, turnoInimigo);
     }
 
     /*Testar*/
@@ -50,10 +34,14 @@ public class ModoManual implements ModoJogoManualInterface {
      * @return O objeto Simulacoes atualizado com os resultados da simulação.
      */
     @Override
-    public Simulacao modojogoManual() {
+    public Simulacao jogar() {
+        CenariosToCruz cenariosTo = getCenariosTo();
+        CenariosDivisao cenariosDivisao = getCenariosDivisao();
+        TurnoToCruz turnoTo = getTurnoTo();
+        TurnoInimigo turnoInimigo = getTurnoInimigo();
+
         Edificio edificio = cenariosTo.getSimulacao().getEdificio();
         Simulacao simulacao = cenariosTo.getSimulacao();
-        ToCruz toCruz = new ToCruz();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
@@ -65,7 +53,7 @@ public class ModoManual implements ModoJogoManualInterface {
             while (itrMapa.hasNext()) {
                 Divisao div = itrMapa.next();
 
-                if (div.haveInimigo()) {
+                if (!div.getInimigos().isEmpty()) {
                     endTurno.addToRear(div);
                 }
             }
@@ -85,7 +73,7 @@ public class ModoManual implements ModoJogoManualInterface {
                 if (div.getToCruz() != null) {
                     if (div.getToCruz().isDead()) {
                         finishgame = true;
-                    } else if (div.isEntrada_saida() && !div.haveConfronto() && simulacao.getPercursoToCruz().size() > 1) {
+                    } else if (div.isEntrada_saida() && !cenariosDivisao.haveConfronto(div) && simulacao.getPercursoToCruz().size() > 1) {
                         int op = -1;
 
                         do {
@@ -114,7 +102,7 @@ public class ModoManual implements ModoJogoManualInterface {
             }
         }
 
-        simulacao.relatorioMissao();
+        simulacao.relatorioSimulacao();
 
         return cenariosTo.getSimulacao();
     }
@@ -134,6 +122,8 @@ public class ModoManual implements ModoJogoManualInterface {
         int op = -1;
         int i = 0;
 
+        CenariosToCruz cenariosTo = getCenariosTo();
+        CenariosDivisao cenariosDivisao = getCenariosDivisao();
         Simulacao simulacao = cenariosTo.getSimulacao();
         ToCruz toCruz = simulacao.getToCruz();
 
@@ -146,7 +136,7 @@ public class ModoManual implements ModoJogoManualInterface {
             if (div.isEntrada_saida()) {
                 String temp = i + " - " + div.getName();
 
-                if (div.haveInimigo()) {
+                if (!div.getInimigos().isEmpty()) {
                     temp += " (divisao com inimigos)";
                 }
 
@@ -175,22 +165,19 @@ public class ModoManual implements ModoJogoManualInterface {
 
         try {
             divisao_nova = listDiv.find(op);
-            cenariosTo.moverToCruz(divisao_nova, divisao_nova);
+            cenariosTo.getSimulacao().updatePercursoToCruz(divisao_nova);
 
-            if (divisao_nova.haveConfronto()) {
-                for (Inimigo inimigo: divisao_nova.getInimigos()) {
-                    cenariosTo.ataque(toCruz, inimigo, divisao_nova);
-                }
-
+            if (cenariosDivisao.haveConfronto(divisao_nova)) {
+                cenariosTo.ataqueToCruz(divisao_nova);
             }
 
             //Se ele matar logo todos os inimigos na sala com um hit
-            if (!divisao_nova.haveConfronto()) {
-                if (divisao_nova.isToCruzInDivisaoAlvo()) {
-                    simulacao.getAlvo();
+            if (!cenariosDivisao.haveConfronto(divisao_nova)) {
+                if (cenariosDivisao.isToCruzInDivisaoAlvo(divisao_nova)) {
+                    simulacao.setCollectedAlvo(true);
                 } else if (!divisao_nova.getItens().isEmpty()) {
                     //Está no Turno do ToCruz, mete-la nessa classe a public ou arranjar outra forma
-                    DivisaoComItem(divisao_nova, toCruz);
+                    cenariosTo.DivisaoComItem(divisao_nova, toCruz);
                 }
             }
         } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
