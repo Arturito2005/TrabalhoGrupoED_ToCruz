@@ -10,19 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Draw/DrawInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/DrawMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Divisao/CenariosDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Divisao/CenariosDivisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoCaminhoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DefesaED.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DefesaED.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/DivisaoIt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/DivisaoIt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/EdificoInt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Mapa/EdificoInt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Divisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +204,7 @@
       <workItem from="1737641320849" duration="653000" />
       <workItem from="1737646149993" duration="3294000" />
       <workItem from="1737730364173" duration="8000" />
-      <workItem from="1737730380989" duration="6842000" />
+      <workItem from="1737730380989" duration="7432000" />
     </task>
     <servers />
   </component>

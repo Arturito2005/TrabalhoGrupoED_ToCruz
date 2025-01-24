@@ -8,6 +8,8 @@ import Interfaces.UnorderedListADT;
 import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
+import Mapa.Draw;
+import Mapa.DrawMap;
 import Mapa.Edificio;
 import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
@@ -35,17 +37,19 @@ public class ModoManual extends ModosJogo {
      */
     @Override
     public Simulacao jogar() {
+
         CenariosToCruz cenariosTo = getCenariosTo();
         CenariosDivisao cenariosDivisao = getCenariosDivisao();
         TurnoToCruz turnoTo = getTurnoTo();
         TurnoInimigo turnoInimigo = getTurnoInimigo();
 
         Edificio edificio = cenariosTo.getSimulacao().getEdificio();
+        Draw drawMapa = new DrawMap(edificio);
         Simulacao simulacao = cenariosTo.getSimulacao();
         Iterator<Divisao> itrMapa;
         boolean finishgame = false;
 
-        edificio.drawMapa();
+        drawMapa.draw();
         ToCruzEntrarEdificio();
         while (!finishgame) {
             itrMapa = edificio.IteratorMapa();
@@ -58,7 +62,7 @@ public class ModoManual extends ModosJogo {
                 }
             }
 
-            edificio.drawMapa();
+            drawMapa.draw();
             int num_turnos = endTurno.size();
             for (int i = 0; i < num_turnos; i++) {
                 turnoInimigo.turno(endTurno.removeFirst());
@@ -97,7 +101,7 @@ public class ModoManual extends ModosJogo {
                     }
 
                     findToCruz = true;
-                    edificio.drawMapa();
+                    drawMapa.draw();
                 }
             }
         }
