@@ -4,6 +4,7 @@ import Interfaces.UnorderedListADT;
 import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Paths.ShortesPaths;
 import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
 import Turnos.TurnoToCruz;
@@ -55,7 +56,8 @@ public abstract class ModosAutomaticos extends ModosJogo {
             System.out.println("A melhor entrada que o To Cruz deve escolher e esta: " + best_div.getName());
             System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
             //Não devia este metodo de estar nos Cenarios do ToCruz.
-            getCenariosTo().shortesPathTwopoints(best_div, div_alvo);
+            ShortesPaths shortesPaths = new ShortesPaths(edificio);
+            shortesPaths.shortesPathTwopoints(best_div, div_alvo);
         }
 
         return best_div;
