@@ -23,8 +23,8 @@ import java.util.Iterator;
 * */
 public class ModoManual extends ModosJogo {
 
-    public ModoManual(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        super(turnoTo, turnoInimigo);
+    public ModoManual(Simulacao simulacao) {
+        super(simulacao);
     }
 
     /*Testar*/
@@ -181,7 +181,7 @@ public class ModoManual extends ModosJogo {
                     simulacao.setCollectedAlvo(true);
                 } else if (!divisao_nova.getItens().isEmpty()) {
                     //Está no Turno do ToCruz, mete-la nessa classe a public ou arranjar outra forma
-                    cenariosTo.DivisaoComItem(divisao_nova, toCruz);
+                    cenariosDivisao.DivisaoComItem(divisao_nova, toCruz);
                 }
             }
         } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {

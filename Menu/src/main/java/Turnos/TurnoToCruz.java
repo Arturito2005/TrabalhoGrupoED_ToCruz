@@ -5,6 +5,7 @@ import Cenarios.Divisao.CenariosDivisao;
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
 import Interfaces.ArrayUnorderedADT;
+import Interfaces.ShortestPath.ShortestPathInterface;
 import Interfaces.Turno.TurnoToCruzInt;
 import Items.Item;
 import Items.ItemCura;
@@ -12,6 +13,7 @@ import Items.TypeItemCura;
 import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Paths.ShortesPaths;
 import Personagens.ToCruz;
 import Cenarios.Personagens.CenariosToCruz;
 
@@ -96,7 +98,7 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
                     }
                 }
 
-                divisao = this.getNewDivisaoTo(divisao_atual);
+                divisao = cenariosTo.andar(divisao_atual);
                 cenariosTo.moverToCruz(divisao_atual, divisao);
 
                 if (cenariosDivisao.haveConfronto(divisao)) {
@@ -104,7 +106,7 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
                 }
 
                 if (!divisao.getItens().isEmpty()) {
-                    cenariosTo.DivisaoComItem(divisao, toCruz);
+                    cenariosDivisao.DivisaoComItem(divisao, toCruz);
                 }
             } catch (NullPointerException ne) {
                 System.out.println(ne.getMessage());
@@ -117,93 +119,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         }
     }
 
-    /**
-     * Este metodo solicita ao utilizador que selecione a próxima divisão para o ToCruz se mover,
-     * exibindo informações sobre as divisões disponíveis, como se há inimigos, itens ou se é uma
-     * entrada/saída. Também sugere o melhor caminho para o ToCruz apanhar itens e atingir o alvo.
-     *
-     * @param divisao_atual A divisão onde o ToCruz se encontra atualmente.
-     * @return A divisão para onde o ToCruz deve se mover.
-     */
-    private Divisao getNewDivisaoTo(Divisao divisao_atual) {
-        int op = -1;
-        CenariosToCruz cenariosTo = (CenariosToCruz) getCenarioPersonagens();
-        Iterator<Divisao> itr = cenariosTo.getSimulacao().getEdificio().getNextDivisoes(divisao_atual);
-        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
-
-        int i = 0;
-        String temp;
-
-        System.out.println();
-        cenariosTo.sugestaoCaminhoToCruzKitEAlvo(divisao_atual);
-        System.out.println();
-        System.out.println("Divisoes que o To Cruz pode entrar: ");
-        while (itr.hasNext()) {
-            Divisao divisao = itr.next();
-            temp = i++ + " - " + divisao.getName();
-
-            if (divisao.isEntrada_saida()) {
-                if (divisao.getInimigos().isEmpty()) {
-                    temp += " (esta divisao e uma entrada/saida)";
-                } else {
-                    temp += " (esta divisao e uma entrada/saida e tem inimigos)";
-                }
-            }
-
-            if (divisao.getAlvo() != null) {
-                if (divisao.getInimigos().isEmpty()) {
-                    temp += " (divisao onde esta o alvo)";
-                } else {
-                    temp += "(divisao onde esta o alvo, mas tem inimigos)";
-                }
-            }
-
-            if (!divisao.getItens().isEmpty()) {
-                for (Item item : divisao.getItens()) {
-                    if (item instanceof ItemCura) {
-                        if (divisao.getInimigos().isEmpty()) {
-                            if (((ItemCura) item).getType().equals(TypeItemCura.KIT_VIDA)) {
-                                temp += " (divisao com kit)";
-                            } else if (((ItemCura) item).getType().equals(TypeItemCura.COLETE)) {
-                                temp += " (divisao com colete)";
-                            }
-                        } else {
-                            if (((ItemCura) item).getType().equals(TypeItemCura.KIT_VIDA)) {
-                                temp += " (divisao com kit e com inimigos)";
-                            } else if (((ItemCura) item).getType().equals(TypeItemCura.COLETE)) {
-                                temp += " (divisao com colete e com inimigos)";
-                            }
-                        }
-                    }
-                }
-
-            }
-
-            System.out.println(temp);
-            listDiv.addToRear(divisao);
-        }
-
-        do {
-            System.out.println("Selecione a divisao que o ToCruz vai se mover -->");
-
-            try {
-                op = sc.nextInt();
-            } catch (InputMismatchException ex) {
-                System.out.println("Numero invalido!");
-                sc.next();
-            }
-        } while (op < 0 || op > listDiv.size() - 1);
-
-        Divisao div = null;
-
-        try {
-            div = listDiv.find(op);
-        } catch (NullPointerException | ArrayIndexOutOfBoundsException ex) {
-            System.out.println(ex.getMessage());
-        }
-
-        return div;
-    }
 
     /**
      * Verifica se a personagem ToCruz deve usar um kit de primeiros socorros da mochila,
@@ -225,51 +140,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
     }
 
     //Refinar isto para retirar o i
-
-    /**
-     * Calcula e imprime o menor caminho entre duas divisões,
-     * retornando a próxima divisão no caminho.
-     * <p>
-     * Este metodo utiliza o iterador do menor caminho entre duas divisões fornecido pelo edifício.
-     * Ele constrói uma string que representa o caminho completo e identifica a próxima divisão
-     * a ser visitada após a divisão inicial.
-     *
-     * @param div_start a divisão inicial no caminho.
-     * @param div_final a divisão final no caminho.
-     * @return a próxima divisão no menor caminho a partir da divisão inicial.
-     */
-    public Divisao shortesPathTwoPointsAutomatico(Divisao div_start, Divisao div_final) {
-        Iterator<Divisao> shortestPath = getCenarioPersonagens().getSimulacao().getEdificio().shortesPathIt(div_start, div_final);
-        String temp = "";
-        Divisao div_to;
-
-        if (!shortestPath.hasNext()) {
-            div_to = div_final;
-        } else {
-            div_to = shortestPath.next();
-
-            if (shortestPath.hasNext()) {
-                temp += div_to.getName() + " -->";
-            } else {
-                temp += div_to.getName();
-            }
-
-            while (shortestPath.hasNext()) {
-                Divisao div = shortestPath.next();
-
-                if (shortestPath.hasNext()) {
-                    temp += div.getName() + " -->";
-                } else {
-                    temp += div.getName();
-                }
-            }
-
-            System.out.println(temp);
-        }
-
-
-        return div_to;
-    }
 
     /**
      * Metodo que sugere o melhor caminho para o To Cruz alcançar o alvo ou sair do edifício
@@ -326,7 +196,8 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         }
 
         System.out.println(temp);
-        Divisao returnDiv = shortesPathTwoPointsAutomatico(div_to, best_destino);
+        ShortesPaths shortestPath = new ShortesPaths(edificio);
+        Divisao returnDiv = shortestPath.shortesPathTwoPointsAutomatico(div_to, best_destino);
 
         if (returnDiv == null && find_alvo) {
             returnDiv = best_destino;
@@ -408,7 +279,7 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
         }
 
         if (cenariosDivisao.isToCruzInDivisaoAlvo(divisao) && !simulacao.isCollectedAlvo() && cenariosDivisao.haveConfronto(divisao)) {
-            cenarioTo.collectAlvo();
+            cenariosDivisao.collectAlvo();
         }
     }
 }

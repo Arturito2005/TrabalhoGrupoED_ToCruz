@@ -1,5 +1,0 @@
-Existem Metodos que não tem logica estar em certas classes
-
-Turno do ToCruz tem ov shortesPathTwoPointsAutomatico, que não devia estar nele e que é usado em outra classe
-O cenario do ToCruz tem o shortesPathTwopoints, que também é o utilizado no ModoAutomatico.
-DivisaoComItem, está no cenario do ToCruz mas devia de estar noutra classe como cenariosDivisao

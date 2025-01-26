@@ -1,11 +1,13 @@
 package Modos;
 
 import Cenarios.Divisao.CenariosDivisao;
+import Cenarios.Personagens.CenariosInimigos;
 import Cenarios.Personagens.CenariosToCruz;
 import Interfaces.Modos.ModoJogoInterface;
 import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Paths.ShortesPaths;
 import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
 import Turnos.TurnoToCruz;
@@ -25,11 +27,12 @@ public abstract class ModosJogo implements ModoJogoInterface {
 
     private TurnoInimigo turnoInimigo;
 
-    public ModosJogo (TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        this.turnoTo = turnoTo;
-        this.cenariosTo = (CenariosToCruz) this.turnoTo.getCenarioPersonagens();
-        this.cenariosDivisao = this.turnoTo.getCenariosDivisao();
-        this.turnoInimigo = turnoInimigo;
+    public ModosJogo (Simulacao simulacao) {
+        this.cenariosTo = new CenariosToCruz(simulacao);
+        this.cenariosDivisao = new CenariosDivisao(simulacao);
+        this.turnoTo = new TurnoToCruz(cenariosTo, cenariosDivisao);
+        CenariosInimigos cenariosInimigos = new CenariosInimigos(simulacao);
+        this.turnoInimigo = new TurnoInimigo(cenariosInimigos, cenariosDivisao);
         this.sc = new Scanner(System.in);
     }
 
@@ -105,45 +108,8 @@ public abstract class ModosJogo implements ModoJogoInterface {
         }
 
         System.out.println(temp);
-        return shortesPathTwoPointsAutomatico(div_to, best_destino);
-    }
-
-    /**
-     * Calcula e imprime o menor caminho entre duas divisões,
-     * retornando a próxima divisão no caminho.
-     * <p>
-     * Este metodo utiliza o iterador do menor caminho entre duas divisões fornecido pelo edifício.
-     * Ele constrói uma string que representa o caminho completo e identifica a próxima divisão
-     * a ser visitada após a divisão inicial.
-     *
-     * @param div_start a divisão inicial no caminho.
-     * @param div_final a divisão final no caminho.
-     * @return a próxima divisão no menor caminho a partir da divisão inicial.
-     */
-    private Divisao shortesPathTwoPointsAutomatico(Divisao div_start, Divisao div_final) {
-        Iterator<Divisao> shortestPath = cenariosTo.getSimulacao().getEdificio().shortesPathIt(div_start, div_final);
-        String temp = "";
-        Divisao div_to = null;
-
-        int i = 0;
-        while (shortestPath.hasNext()) {
-            Divisao div = shortestPath.next();
-
-            if (i == 1) {
-                div_to = div;
-            }
-
-            if (shortestPath.hasNext()) {
-                temp = temp + div.getName() + " -->";
-            } else {
-                temp = temp + div.getName();
-            }
-
-            i++;
-        }
-
-        System.out.println(temp);
-        return div_to;
+        ShortesPaths shortesPaths = new ShortesPaths(edificio);
+        return shortesPaths.shortesPathTwoPointsAutomatico(div_to, best_destino);
     }
 
     public abstract Simulacao jogar();

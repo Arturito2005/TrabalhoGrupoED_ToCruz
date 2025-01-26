@@ -1,6 +1,7 @@
 package Modos;
 
 import Interfaces.UnorderedListADT;
+import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Personagens.ToCruz;
@@ -13,8 +14,9 @@ import Turnos.TurnoToCruz;
 *
 * */
 public abstract class ModosAutomaticos extends ModosJogo {
-    public ModosAutomaticos(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        super(turnoTo, turnoInimigo);
+
+    public ModosAutomaticos(Simulacao simulacao) {
+        super(simulacao);
     }
 
     /**

@@ -13,8 +13,8 @@ import java.util.Iterator;
 
 public class ModoCaminhoAutomatico extends ModosAutomaticos {
 
-    public FModoCaminhoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        super(turnoTo, turnoInimigo);
+    public ModoCaminhoAutomatico(Simulacao simulacao) {
+        super(simulacao);
     }
 
     /**

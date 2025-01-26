@@ -18,8 +18,8 @@ import java.util.Iterator;
 * */
 public class ModoAutomatico extends ModosAutomaticos {
 
-    public ModoAutomatico(TurnoToCruz turnoTo, TurnoInimigo turnoInimigo) {
-        super(turnoTo, turnoInimigo);
+    public ModoAutomatico(Simulacao simulacao) {
+        super(simulacao);
     }
 
     /**

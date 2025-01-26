@@ -76,11 +76,6 @@ public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
             op_modo = -1;
             Simulacao simulacao = new Simulacao(versao_missao.getEdificio(), versao_missao.getNum_versao());
 
-            CenariosDivisao cenariosDivisao = new CenariosDivisao(simulacao);
-            CenariosToCruz cenariosTo = new CenariosToCruz(simulacao);
-            CenariosInimigos cenariosInimigo = new CenariosInimigos(simulacao);
-            turnoTo = new TurnoToCruz(cenariosTo, cenariosDivisao);
-            turnoInimigo = new TurnoInimigo(cenariosInimigo, cenariosDivisao);
             do {
                 System.out.println("0 - Voltar");
                 System.out.println("1 - Modo Manual");
@@ -101,17 +96,17 @@ public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
             Simulacao resultado_simulacao = null;
             switch (op_modo) {
                 case 1: {
-                    modosJogo = new ModoManual(turnoTo, turnoInimigo);
+                    modosJogo = new ModoManual(simulacao);
                     resultado_simulacao = modosJogo.jogar();
                     break;
                 }
                 case 2: {
-                    modosJogo = new ModoAutomatico(turnoTo, turnoInimigo);
+                    modosJogo = new ModoAutomatico(simulacao);
                     resultado_simulacao = modosJogo.jogar();
                     break;
                 }
                 case 3: {
-                    modosJogo = new ModoCaminhoAutomatico(turnoTo, turnoInimigo);
+                    modosJogo = new ModoCaminhoAutomatico(simulacao);
                     modosJogo.jogar();
                     break;
                 }

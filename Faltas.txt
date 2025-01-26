@@ -1,0 +1,5 @@
+Falta mudar os nomes das estruturas extendiadas, na ADT das estruturas
+
+Trocar o grafo para um sem custos nas arestas, onde o custo do grafo estará no próprio vértice em vez da aresta
+
+Depois de finalizado estes 2 pontos implementar o grafo com lista ligada, para também ter essa implementação armazenada pois pode ser util
