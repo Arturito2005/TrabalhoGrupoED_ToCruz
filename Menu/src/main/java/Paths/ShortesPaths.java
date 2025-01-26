@@ -6,18 +6,45 @@ import Mapa.Edificio;
 
 import java.util.Iterator;
 
+/**
+ * Classe com os metodos para mostar o caminho mais curto entre dois vertice/divisoes do edificio
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class ShortesPaths implements ShortestPathInterface {
 
+    /** O edifício sobre o qual os caminhos mais curtos serão calculados*/
     private Edificio edificio;
 
+    /**
+     * Construtor que inicializa a classe com o edifício a ser usado para calcular os caminhos mais curtos.
+     *
+     * @param edificio O edifício onde os cálculos de caminho mais curto serão realizados.
+     */
     public ShortesPaths(Edificio edificio) {
         this.edificio = edificio;
     }
 
+    /**
+     * Retorna o edifício associado a esta instância de ShortesPaths.
+     *
+     * @return O edifício sobre o qual os caminhos mais curtos são calculados.
+     */
     public Edificio getEdificio() {
         return edificio;
     }
 
+    /**
+     * Define um novo edifício para a instância de ShortesPaths.
+     * Este método permite alterar o edifício atual para outro, permitindo recalcular os caminhos
+     * mais curtos com base no novo edifício.
+     *
+     * @param edificio O novo edifício a ser definido.
+     */
     public void setEdificio(Edificio edificio) {
         this.edificio = edificio;
     }

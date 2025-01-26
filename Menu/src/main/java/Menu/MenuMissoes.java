@@ -3,12 +3,10 @@ package Menu;
 import Menu.Opcoes.OpcoesFicheiros;
 import Menu.Opcoes.OpcoesMissoes;
 
-/*
-* Nota agora a missão penso que não seja guardada para exportar depois tenho que ter esse cuidade
-* */
 /**
  * Classe responsável pelo menu de missões do jogo.
  * Contém o método principal que importa e realiza as missões disponíveis.
+ *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
  * @author Francisco Oliveira

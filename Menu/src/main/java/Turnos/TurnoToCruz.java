@@ -1,15 +1,11 @@
 package Turnos;
 
-import ArrayList.ArrayUnordered;
 import Cenarios.Divisao.CenariosDivisao;
 import Exceptions.InvalidOptionException;
 import Exceptions.InvalidTypeItemException;
-import Interfaces.ArrayUnorderedADT;
-import Interfaces.ShortestPath.ShortestPathInterface;
 import Interfaces.Turno.TurnoToCruzInt;
 import Items.Item;
 import Items.ItemCura;
-import Items.TypeItemCura;
 import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
@@ -21,10 +17,31 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Classe responsável pela execução do turno do personagem ToCruz no cenário de jogo.
+ * Gerencia as interações do ToCruz, como combate, uso de itens e movimentação dentro de um edifício.
+ * Implementa a interface TurnoToCruzInt.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class TurnoToCruz extends Turno implements TurnoToCruzInt {
 
+    /**
+     * Scanner
+     * */
     private static Scanner sc;
 
+    /**
+     * Construtor da classe TurnoToCruz.
+     * Inicializa a classe Turno com os cenários e configura o scanner para entrada de dados.
+     *
+     * @param cenariosToCruz O cenário de personagens do ToCruz.
+     * @param cenariosDivisao O cenário de divisões do jogo.
+     */
     public TurnoToCruz(CenariosToCruz cenariosToCruz, CenariosDivisao cenariosDivisao) {
         super(cenariosToCruz, cenariosDivisao);
         sc = new Scanner(System.in);
@@ -138,8 +155,6 @@ public class TurnoToCruz extends Turno implements TurnoToCruzInt {
 
         return usedKit;
     }
-
-    //Refinar isto para retirar o i
 
     /**
      * Metodo que sugere o melhor caminho para o To Cruz alcançar o alvo ou sair do edifício

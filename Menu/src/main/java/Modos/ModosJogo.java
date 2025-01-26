@@ -8,23 +8,37 @@ import Jogo.Simulacao;
 import Mapa.Divisao;
 import Mapa.Edificio;
 import Paths.ShortesPaths;
-import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
 import Turnos.TurnoToCruz;
 
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Classe abstrata que define os modos de jogo. Implementa a interface {@link ModoJogoInterface}.
+ * Cada modo de jogo terá comportamentos específicos para a interação entre o personagem ToCruz e os inimigos no edifício.
+ * Contém métodos que lidam com o movimento do personagem ToCruz, o cálculo do caminho e o turno dos inimigos.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public abstract class ModosJogo implements ModoJogoInterface {
+    /** Scanner para entrada de dados do utilizador */
     protected Scanner sc;
 
-    //Posso talvez remover o cenarios do To Cruz uma vez que eles estão incluidos no turno
+    /** Cenários para o personagem ToCruz */
     private CenariosToCruz cenariosTo;
 
+    /** Cenários relacionados às divisões do edifício */
     private CenariosDivisao cenariosDivisao;
 
+    /** Turno do personagem ToCruz */
     private TurnoToCruz turnoTo;
 
+    /** Turno dos inimigos*/
     private TurnoInimigo turnoInimigo;
 
     public ModosJogo (Simulacao simulacao) {
@@ -36,18 +50,38 @@ public abstract class ModosJogo implements ModoJogoInterface {
         this.sc = new Scanner(System.in);
     }
 
+    /**
+     * Retorna o cenário relacionado ao personagem ToCruz.
+     *
+     * @return O cenário de ToCruz.
+     */
     public CenariosToCruz getCenariosTo() {
         return cenariosTo;
     }
 
+    /**
+     * Retorna o turno do personagem ToCruz.
+     *
+     * @return O turno do ToCruz.
+     */
     public TurnoToCruz getTurnoTo() {
         return turnoTo;
     }
 
+    /**
+     * Retorna o turno dos inimigos.
+     *
+     * @return O turno dos inimigos.
+     */
     public TurnoInimigo getTurnoInimigo() {
         return turnoInimigo;
     }
 
+    /**
+     * Retorna os cenários relacionados às divisões do edifício.
+     *
+     * @return O cenário das divisões do edifício.
+     */
     public CenariosDivisao getCenariosDivisao() {
         return cenariosDivisao;
     }
@@ -66,7 +100,6 @@ public abstract class ModosJogo implements ModoJogoInterface {
      */
     protected Divisao sugestaoCaminhoToCruzAutomatico(Divisao div_to) {
         Simulacao simulacao = cenariosTo.getSimulacao();
-        ToCruz toCruz = simulacao.getToCruz();
         Edificio edificio = simulacao.getEdificio();
         Iterator<Divisao> itr = edificio.IteratorMapa();
         Divisao best_destino = null;
@@ -112,5 +145,11 @@ public abstract class ModosJogo implements ModoJogoInterface {
         return shortesPaths.shortesPathTwoPointsAutomatico(div_to, best_destino);
     }
 
+    /**
+     * Método abstrato que define o comportamento do jogo em cada modo.
+     * Implementações específicas para os diferentes modos de jogo devem fornecer a lógica do jogo.
+     *
+     * @return o resultado da simulacao/jogo.
+     */
     public abstract Simulacao jogar();
 }

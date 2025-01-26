@@ -18,16 +18,30 @@ import Turnos.TurnoToCruz;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 
-/*Testar a ver se funciona
-* Se der erro é porque a simulacao não está a ser bem atualizada.
-* */
+/**
+ * Representa o modo manual de jogo, onde o jogador controla a personagem ToCruz
+ * através de divisões do edifício, tomando decisões sobre como se mover, combater inimigos
+ * e interagir com itens até alcançar a missão ou ser derrotado.
+ *
+ * O jogador escolhe as ações do ToCruz e interage com o mapa manualmente.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class ModoManual extends ModosJogo {
 
+    /**
+     * Construtor para o modo manual. Inicializa os cenários, turnos e o cenário atual do jogo.
+     *
+     * @param simulacao A simulação que contém as informações sobre o edifício, personagens, e o progresso do jogo.
+     */
     public ModoManual(Simulacao simulacao) {
         super(simulacao);
     }
 
-    /*Testar*/
     /**
      * Realiza a simulação do jogo no modo manual. O jogador controla a personagem ToCruz,
      * movendo-se pelo edifício, enfrentando inimigos e coletando itens até completar a missão
@@ -72,7 +86,6 @@ public class ModoManual extends ModosJogo {
             while (itrMapa.hasNext() && !findToCruz) {
                 Divisao div = itrMapa.next();
 
-                //O ToCruz não foi movido para a divisao corretamente
                 if (div.getToCruz() != null) {
                     if (div.getToCruz().isDead()) {
                         finishgame = true;
@@ -110,7 +123,6 @@ public class ModoManual extends ModosJogo {
         return cenariosTo.getSimulacao();
     }
 
-    /*Testar o mover que pode não dar*/
     /**
      * Permite que a personagem ToCruz entre num edifício, selecionando uma divisão de entrada/saída.
      * O jogador escolhe uma sala de entrada onde o ToCruz começa o jogo, e a divisão escolhida
@@ -180,7 +192,6 @@ public class ModoManual extends ModosJogo {
                 if (cenariosDivisao.isToCruzInDivisaoAlvo(divisao_nova)) {
                     simulacao.setCollectedAlvo(true);
                 } else if (!divisao_nova.getItens().isEmpty()) {
-                    //Está no Turno do ToCruz, mete-la nessa classe a public ou arranjar outra forma
                     cenariosDivisao.DivisaoComItem(divisao_nova, toCruz);
                 }
             }

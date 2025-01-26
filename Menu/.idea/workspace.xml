@@ -10,25 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/ShortestPath/ShortestPathInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Paths/ShortesPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Falta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cenarios/Divisao/CenariosDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cenarios/Divisao/CenariosDivisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cenarios/NotaImportante" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cenarios/Personagens/CenariosToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cenarios/Personagens/CenariosToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Cenarios/CenariosDivisaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Cenarios/CenariosDivisaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Cenarios/CenariosToCruzInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/FuncaoPasta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Menu/Opcoes/OpcoesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/Opcoes/OpcoesMissoes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoAutomatico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoCaminhoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoManual.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModosAutomaticos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModosAutomaticos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModosJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModosJogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/NotasImportante" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/FinalizadoVerMelhoria" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Paths/PensarSeValeApenaHierarquia" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Paths/ShortesPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Paths/ShortesPaths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/Turno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/TurnoToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/TurnoToCruz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <workItem from="1737633859164" duration="5586000" />
       <workItem from="1737646156585" duration="4522000" />
       <workItem from="1737730374956" duration="22612000" />
-      <workItem from="1737893254226" duration="2513000" />
+      <workItem from="1737893254226" duration="4175000" />
     </task>
     <servers />
   </component>

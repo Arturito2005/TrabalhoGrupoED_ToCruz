@@ -7,15 +7,29 @@ import Jogo.Simulacao;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Personagens.Inimigo;
-import Personagens.ToCruz;
 
 import java.util.Iterator;
 
-/*
-* Feito, falta testar
-* */
+/**
+ * Classe responsável pela execução do turno dos inimigos em uma divisão específica do jogo.
+ * Gerencia o movimento dos inimigos e seus ataques ao personagem ToCruz.
+ * Herda a classe Turno e implementa o comportamento específico para os inimigos.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class TurnoInimigo extends Turno {
 
+    /**
+     * Construtor da classe TurnoInimigo.
+     * Inicializa o turno para os inimigos no cenário de inimigos e no cenário de divisões.
+     *
+     * @param cenarioInimigo O cenário de inimigos, que contém os inimigos e a lógica de batalha.
+     * @param cenarioDivisao O cenário de divisões, que gerencia as interações das divisões no jogo.
+     */
     public TurnoInimigo(CenariosInimigos cenarioInimigo, CenariosDivisao cenarioDivisao) {
         super(cenarioInimigo, cenarioDivisao);
     }
@@ -33,7 +47,6 @@ public class TurnoInimigo extends Turno {
         CenariosInimigos cenarioInimigo = (CenariosInimigos) this.getCenarioPersonagens();
         CenariosDivisao cenariosDivisao = this.getCenariosDivisao();
         Simulacao simulacao = cenarioInimigo.getSimulacao();
-        ToCruz toCruz = simulacao.getToCruz();
         Iterator<Inimigo> itr_inimigos;
         boolean deadToCruz = false;
 

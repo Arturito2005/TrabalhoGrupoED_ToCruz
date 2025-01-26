@@ -7,12 +7,30 @@ import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Personagens.ToCruz;
 import Turnos.TurnoInimigo;
-import Turnos.TurnoToCruz;
 
 import java.util.Iterator;
 
+/**
+ * Representa um modo de jogo automatico onde o utilizador não consegue interagir com o ToCruz, onde
+ * este modo indica o caminho mais curto para o ToCruz ir até há divisão do alvo, no menor caminho
+ * e a sofrer o menor dano possível e se for possível, o caminho para para sair do edificio, seguindo os mesmos
+ * criterios
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class ModoCaminhoAutomatico extends ModosAutomaticos {
 
+    /**
+     * Construtor para o modo automático de caminho. Inicializa o cenário e as variáveis
+     * necessárias para a simulação do jogo.
+     *
+     * @param simulacao A simulação que contém as informações sobre o edifício, personagens,
+     *                  inimigos e o progresso do jogo.
+     */
     public ModoCaminhoAutomatico(Simulacao simulacao) {
         super(simulacao);
     }
@@ -76,8 +94,8 @@ public class ModoCaminhoAutomatico extends ModosAutomaticos {
      * Calcula a melhor entrada para o ToCruz, baseado na distância e nas arestas do
      * caminho até o alvo.
      *
-     * @param toCruz a personagem ToCruz.
-     * @param div_alvo a divisão alvo.
+     * @param toCruz        a personagem ToCruz.
+     * @param div_alvo      a divisão alvo.
      * @param list_entradas as divisões de entrada para o edifício.
      * @return a melhor distância para o ToCruz atingir o alvo.
      */

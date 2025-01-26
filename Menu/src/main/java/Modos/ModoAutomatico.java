@@ -13,11 +13,26 @@ import Turnos.TurnoToCruz;
 
 import java.util.Iterator;
 
-/*
-* Parece funcionar, tirando os problemas no ataque e da primeria divisao ser nula, que não percebo o porque de acontecer ambos
-* */
+/**
+ * Representa o modo automático do jogo, onde o personagem ToCruz é controlado automaticamente
+ * pelo sistema para enfrentar inimigos, antigir o alvo e sair do edificio.
+ *
+ * O modo automático simula o movimento do personagem e a interação com inimigos,
+ * com o alvo de maneira autônoma.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class ModoAutomatico extends ModosAutomaticos {
 
+    /**
+     * Construtor para o modo automático. Inicializa a simulação do jogo.
+     *
+     * @param simulacao A instância da simulação que contém o estado atual do jogo.
+     */
     public ModoAutomatico(Simulacao simulacao) {
         super(simulacao);
     }

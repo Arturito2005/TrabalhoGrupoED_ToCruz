@@ -6,16 +6,24 @@ import Mapa.Divisao;
 import Mapa.Edificio;
 import Paths.ShortesPaths;
 import Personagens.ToCruz;
-import Turnos.TurnoInimigo;
-import Turnos.TurnoToCruz;
 
-/*
-* Esta classe é a que vai ter os metodos em comum das classes de jogo automatico
-* resolvendo o problema dos metodos semelhantes entre ambas
-*
-* */
+/**
+ * Classe abstrata que representa os modos automáticos de jogo e contêm os metodos em comum para cada jogo automatico, estendendo a classe {@link ModosJogo}.
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public abstract class ModosAutomaticos extends ModosJogo {
 
+    /**
+     * Construtor da classe ModosAutomaticos que chama o construtor da classe {@link ModosJogo}.
+     * Inicializa os cenários e turnos necessários para o modo de jogo.
+     *
+     * @param simulacao A simulação que fornece o contexto do jogo, como o edifício e os personagens.
+     */
     public ModosAutomaticos(Simulacao simulacao) {
         super(simulacao);
     }
@@ -55,7 +63,7 @@ public abstract class ModosAutomaticos extends ModosJogo {
         if (best_distance < toCruz.getVida()) {
             System.out.println("A melhor entrada que o To Cruz deve escolher e esta: " + best_div.getName());
             System.out.println("Melhor caminho que o To Cruz pode fazer ate ao alvo");
-            //Não devia este metodo de estar nos Cenarios do ToCruz.
+
             ShortesPaths shortesPaths = new ShortesPaths(edificio);
             shortesPaths.shortesPathTwopoints(best_div, div_alvo);
         }

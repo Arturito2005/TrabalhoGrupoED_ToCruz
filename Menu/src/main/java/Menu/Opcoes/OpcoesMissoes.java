@@ -1,8 +1,5 @@
 package Menu.Opcoes;
 
-import Cenarios.Divisao.CenariosDivisao;
-import Cenarios.Personagens.CenariosInimigos;
-import Cenarios.Personagens.CenariosToCruz;
 import Interfaces.Opcoes.OpMissoesInterface;
 import Jogo.Simulacao;
 import Missoes.Missoes;
@@ -10,18 +7,25 @@ import Modos.ModoAutomatico;
 import Modos.ModoCaminhoAutomatico;
 import Modos.ModoManual;
 import Modos.ModosJogo;
-import Turnos.TurnoInimigo;
-import Turnos.TurnoToCruz;
 import Missoes.Missao;
 import Missoes.Versao;
 
 import java.util.InputMismatchException;
 
-/*
- * Ver se é adicionado
- * */
+/**
+ * Esta classe possui todos os metodos com as opcoes do menu, referentes há seleção da missao que o utilizador quer jogar e o modo de jogo pretendido
+ *
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanografico: 8230148
+ * @version 1.0
+ */
 public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
 
+    /**
+     * Contrutor da classe
+     * */
     public OpcoesMissoes() {
         super();
     }
@@ -68,9 +72,6 @@ public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
     private void SelecionarModoJogo(Missao missao) {
         int op_modo;
         Versao versao_missao = missao.getVersao();
-        //Ver se funciona ao instanciar modosJogo em vez de instanciar o modo no case
-        TurnoToCruz turnoTo;
-        TurnoInimigo turnoInimigo;
 
         do {
             op_modo = -1;
