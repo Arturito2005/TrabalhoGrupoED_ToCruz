@@ -51,7 +51,7 @@ public class ExtendedNetwork<T> extends NetworkMatrizAdjacencia<T> implements Ne
      * @return O peso da aresta entre os dois vértices, ou infinito positivo se não houver aresta.
      */
     private double getWeightEdge(int vertex, int vertex2) {
-        double weight = 0;
+        double weight;
 
         if(indexIsValid(vertex) || indexIsValid(vertex2)) {
             weight = this.adjMatrix[vertex][vertex2];

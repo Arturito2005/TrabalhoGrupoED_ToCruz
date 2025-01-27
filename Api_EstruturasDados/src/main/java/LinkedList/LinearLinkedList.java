@@ -44,7 +44,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         this.count = 0;
         this.modCount = 0;
         this.head = null;
-        this.tail = this.head;
+        this.tail = null;
     }
 
     /**
@@ -196,7 +196,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         boolean conatin = false;
         LinearNode<T> current = this.head;
 
-        while (current != null && conatin == false) {
+        while (current != null && !conatin) {
             if (current.getElement().equals(target)) {
                 conatin = true;
             } else {
@@ -255,7 +255,7 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
         int i = this.count;
 
         while (i > 0) {
-            temp = temp + current.getElement() + " ";
+            temp += current.getElement() + " ";
             current = current.getNext();
             i--;
         }
@@ -273,7 +273,6 @@ public abstract class LinearLinkedList<T> implements ListADT<T> {
          * Mantém o estado atual do iterador, incluindo o nó atual, o contador de modificações esperadas,
          * o estado de remoção e o elemento atualmente disponível para remoção.
          *
-         * @param <E> o tipo do elemento retornado pelo iterador
          */
         private LinearNode<T> current;
 

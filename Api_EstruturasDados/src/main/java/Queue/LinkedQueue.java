@@ -15,7 +15,7 @@ import Nodes.LinearNode;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class LinkedQueue<T> implements QueueADT<T> {
+public class LinkedQueue<T> extends Queue<T> {
 
     /**
      * Referência para o primeiro elemento (frente) da Queue
@@ -28,17 +28,12 @@ public class LinkedQueue<T> implements QueueADT<T> {
     private LinearNode<T> rear;
 
     /**
-     * Contador que mantém o número de elementos na Queue
-     */
-    private int count;
-
-    /**
      * Construtor padrão que inicializa a Queue vazia.
      */
     public LinkedQueue() {
+        super();
         this.front = null;
         this.rear = null;
-        this.count = 0;
     }
 
     /**
@@ -48,7 +43,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
      */
     @Override
     public void enqueue(T element) {
-        LinearNode<T> newNode = new LinearNode(element);
+        LinearNode<T> newNode = new LinearNode<>(element);
 
         if (this.front == null) {
             this.front = newNode;
@@ -97,32 +92,6 @@ public class LinkedQueue<T> implements QueueADT<T> {
     }
 
     /**
-     * Verifica se a Queue está vazia.
-     *
-     * @return true se a Queue estiver vazia, caso contrário false.
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.count == 0) {
-            empty = true;
-        }
-
-        return empty;
-    }
-
-    /**
-     * Retorna o número de elementos na Queue.
-     *
-     * @return O número de elementos na Queue.
-     */
-    @Override
-    public int size() {
-        return this.count;
-    }
-
-    /**
      * Retorna uma representação em string de todos os elementos da Queue.
      *
      * @return A representação em string dos elementos na Queue.
@@ -133,7 +102,7 @@ public class LinkedQueue<T> implements QueueADT<T> {
         LinearNode<T> current = this.front;
 
         while (current != null) {
-            temp = temp + current.getElement().toString();
+            temp += current.getElement().toString();
             current = current.getNext();
         }
 

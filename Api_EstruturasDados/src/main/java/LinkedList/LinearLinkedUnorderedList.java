@@ -82,7 +82,7 @@ public class LinearLinkedUnorderedList<T> extends LinearLinkedList<T> implements
         boolean find = false;
         int pos_find = this.count;
 
-        while (pos_find > 0 && find == false) {
+        while (pos_find > 0 && !find) {
             if (current.getElement().equals(target)) {
                 find = true;
             } else {

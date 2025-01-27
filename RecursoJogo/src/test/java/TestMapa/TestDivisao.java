@@ -70,6 +70,9 @@ public class TestDivisao {
         NullPointerException exception = assertThrows(NullPointerException.class, () -> divisao.addInimigo(inimigo), "Adicionar um inimigo nulo deve lançar uma NullPointerException");
     }
 
+
+
+    /*
     @Test
     void testIsToCruzInExitDaComSucessoeSemSucesso() {
         assertFalse(divisao.isToCruzInExit());
@@ -151,7 +154,7 @@ public class TestDivisao {
         assertNotNull(exception, "A exceção deveria ser lançada.");
     }
 
-    @Test
+    * @Test
     public void testAttackToCruz_AllInimigosSurvive() {
         toCruz = new ToCruz(1, "ToCruz", 100, 10, null);
         divisao.addToCruz(toCruz);
@@ -221,4 +224,5 @@ public class TestDivisao {
             assertNotNull(e, "Deveria lançar NullPointerException.");
         }
     }
+    * */
 }

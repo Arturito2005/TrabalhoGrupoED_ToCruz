@@ -15,7 +15,7 @@ public class TestLinkedQueue {
 
     @BeforeEach
     public void setUp() {
-        this.linkedQueue = new LinkedQueue<>();
+        this.linkedQueue = new LinkedQueue<String>();
     }
 
     @Test

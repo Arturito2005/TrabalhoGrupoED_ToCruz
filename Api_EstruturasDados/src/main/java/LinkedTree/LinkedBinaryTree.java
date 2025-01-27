@@ -92,8 +92,8 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
      */
     @Override
     public boolean contains(T targetElement) {
-        boolean contains = false;
         T target = null;
+        boolean contains = false;
 
         try {
             target = find(targetElement);
@@ -248,7 +248,7 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
      * @param tempList a lista onde os elementos serão armazenados.
      */
     protected void levelOrder(BinaryTreeNode<T> node, LinearLinkedUnorderedList<T> tempList) {
-        LinkedQueue<BinaryTreeNode<T>> nodeQueue = new LinkedQueue<>();
+        LinkedQueue<BinaryTreeNode<T>> nodeQueue = new LinkedQueue<BinaryTreeNode<T>>();
 
         if (node != null) {
             nodeQueue.enqueue(node);
@@ -299,7 +299,7 @@ public abstract class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
         Iterator<T> itr = this.iteratorLevelOrder();
 
         while (itr.hasNext()) {
-            temp = temp + itr.next() + " ";
+            temp += itr.next() + " ";
         }
 
         return temp;

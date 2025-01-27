@@ -1,6 +1,7 @@
 package LinkedTree;
 
 import Exceptions.ElementNotFoundException;
+import Exceptions.EmptyCollectionException;
 import Interfaces.BinarySearchTreeADT;
 
 /**
@@ -117,11 +118,15 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
      * @throws ElementNotFoundException Se o elemento não for encontrado na árvore.
      */
     @Override
-    public T removeElement(T targetElement) throws ElementNotFoundException {
+    public T removeElement(T targetElement) throws ElementNotFoundException, EmptyCollectionException {
+        if (count == 0) {
+            throw new EmptyCollectionException("A arovre binaria de pesquisa está vazia");
+        }
+
         T result = null;
 
         if (!isEmpty()) {
-            if (((Comparable) targetElement).equals(root.element)) {
+            if (targetElement.equals(root.element)) {
                 result = root.element;
                 root = replacement(root);
                 count--;
@@ -177,53 +182,68 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
             if (removeElement(targetElement) != null) {
                 removeAllOccurences(targetElement);
             }
-        } catch (ElementNotFoundException ex) {
+        } catch (ElementNotFoundException | EmptyCollectionException ex) {
+            System.out.println(ex.getMessage());
         }
+
     }
 
     /**
      * Remove o menor elemento da árvore.
      *
      * @return O menor elemento removido da árvore.
-     * @throws ElementNotFoundException Se a árvore estiver vazia.
      */
     @Override
-    public T removeMin() throws ElementNotFoundException {
-        return this.removeElement(findMin());
+    public T removeMin() {
+        T result = null;
+
+        try {
+            result = this.removeElement(findMin());
+        } catch (ElementNotFoundException | EmptyCollectionException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return result;
     }
 
     /**
      * Remove o maior elemento da árvore.
      *
      * @return O maior elemento removido da árvore.
-     * @throws ElementNotFoundException Se a árvore estiver vazia.
      */
     @Override
-    public T removeMax() throws ElementNotFoundException {
-        return this.removeElement(findMax());
+    public T removeMax() {
+        T result = null;
+
+        try {
+            result = this.removeElement(findMax());
+        } catch (ElementNotFoundException | EmptyCollectionException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return result;
     }
 
     /**
      * Encontra o menor elemento na árvore.
      *
      * @return O menor elemento da árvore.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
      */
     @Override
-    public T findMin() {
+    public T findMin() throws EmptyCollectionException {
+        if (isEmpty()) {
+            throw new EmptyCollectionException("A arvore binaria de pesquisa está vazia");
+        }
+
         T result = null;
+        BinaryTreeNode<T> current = this.root;
 
-        if (!isEmpty()) {
-            BinaryTreeNode<T> current = this.root;
-
-            while (current != null) {
-                if (current.left == null) {
-                    result = current.element;
-                }
-
-                current = current.left;
+        while (current != null) {
+            if (current.left == null) {
+                result = current.element;
             }
-        } else {
-            System.out.println("A arvore não possui nenhum elemento");
+
+            current = current.left;
         }
 
         return result;
@@ -233,23 +253,23 @@ public class LinkedBinarySearchTree<T> extends LinkedBinaryTree<T> implements Bi
      * Encontra o maior elemento na árvore.
      *
      * @return O maior elemento da árvore.
+     * @throws ElementNotFoundException Se a árvore estiver vazia.
      */
     @Override
-    public T findMax() {
+    public T findMax() throws EmptyCollectionException {
+        if (isEmpty()) {
+            throw new EmptyCollectionException("A arvore binaria de pesquisa está vazia");
+        }
+
         T result = null;
+        BinaryTreeNode<T> current = this.root;
 
-        if (!isEmpty()) {
-            BinaryTreeNode<T> current = this.root;
-
-            while (current != null) {
-                if (current.right == null) {
-                    result = current.element;
-                }
-
-                current = current.right;
+        while (current != null) {
+            if (current.right == null) {
+                result = current.element;
             }
-        } else {
-            System.out.println("A arvore não possui nenhum elemento");
+
+            current = current.right;
         }
 
         return result;

@@ -1,6 +1,7 @@
 package Interfaces;
 
 import Exceptions.ElementNotFoundException;
+import Exceptions.EmptyCollectionException;
 
 /**
  * Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de pesquisa binária (BST).
@@ -27,7 +28,7 @@ public interface BinarySearchTreeADT<T> extends BinaryTreeADT<T> {
      * @param targetElement o elemento a ser removido desta árvore
      * @return o elemento removido desta árvore
      */
-    public T removeElement(T targetElement) throws ElementNotFoundException;
+    public T removeElement(T targetElement) throws EmptyCollectionException, ElementNotFoundException;
 
     /**
      * Remove todas as ocorrências do elemento especificado desta árvore.
@@ -41,26 +42,26 @@ public interface BinarySearchTreeADT<T> extends BinaryTreeADT<T> {
      *
      * @return o menor elemento desta árvore
      */
-    public T removeMin() throws ElementNotFoundException;
+    public T removeMin();
 
     /**
      * Remove e retorna o maior elemento desta árvore.
      *
      * @return o maior elemento desta árvore
      */
-    public T removeMax() throws ElementNotFoundException;
+    public T removeMax();
 
     /**
      * Retorna uma referência para o menor elemento desta árvore.
      *
      * @return uma referência para o menor elemento desta árvore
      */
-    public T findMin();
+    public T findMin() throws EmptyCollectionException;
 
     /**
      * Retorna uma referência para o maior elemento desta árvore.
      *
      * @return uma referência para o maior elemento desta árvore
      */
-    public T findMax();
+    public T findMax() throws EmptyCollectionException;
 }

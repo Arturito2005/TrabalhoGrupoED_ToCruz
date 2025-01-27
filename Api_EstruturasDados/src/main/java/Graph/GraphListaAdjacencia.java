@@ -254,7 +254,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
     public Iterator iteratorBFS(T startVertex) {
         int indexVertex = getIndex(startVertex);
         Integer x;
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<Integer>();
         ArrayUnorderedList<T> resultList = new ArrayUnorderedList<T>();
 
         if (!indexIsValid(startVertex)) {
@@ -374,7 +374,7 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
             return resultList.iterator();
         }
 
-        LinkedQueue<Integer> traversalQueue = new LinkedQueue<>();
+        LinkedQueue<Integer> traversalQueue = new LinkedQueue<Integer>();
         int index = start_index;
         int[] comprimeto = new int[numVertices];
         int[] antecessor = new int[numVertices];

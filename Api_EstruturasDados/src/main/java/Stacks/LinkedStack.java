@@ -14,12 +14,7 @@ import Nodes.LinearNode;
  * Nº mecanografico: 8230148
  * @version 1.0
  */
-public class LinkedStack<T> implements StackADT<T> {
-
-    /**
-     * Índice do topo da stack, representando o número de elementos na stack.
-     */
-    private int top;
+public class LinkedStack<T> extends Stack<T> {
 
     /**
      * Cabeça da lista encadeada, representando o topo da stack.
@@ -30,7 +25,7 @@ public class LinkedStack<T> implements StackADT<T> {
      * Construtor padrão que cria uma stack vazia.
      */
     public LinkedStack() {
-        this.top = 0;
+        super();
         this.head = null;
     }
 
@@ -92,32 +87,6 @@ public class LinkedStack<T> implements StackADT<T> {
     }
 
     /**
-     * Verifica se a stack está vazia.
-     *
-     * @return true se a stack estiver vazia, caso contrário false.
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.top == 0) {
-            empty = true;
-        }
-
-        return empty;
-    }
-
-    /**
-     * Retorna o número de elementos na stack.
-     *
-     * @return O número de elementos na stack.
-     */
-    @Override
-    public int size() {
-        return this.top;
-    }
-
-    /**
      * Retorna uma representação em String dos elementos da stack.
      * Os elementos são listados do topo para o fundo da stack.
      *
@@ -129,7 +98,7 @@ public class LinkedStack<T> implements StackADT<T> {
         LinearNode<T> tempLinked = this.head;
 
         for (int i = 0; i < this.top; i++) {
-            temp = temp + tempLinked.getElement().toString() + " ";
+            temp += tempLinked.getElement().toString() + " ";
             tempLinked = tempLinked.getNext();
         }
 

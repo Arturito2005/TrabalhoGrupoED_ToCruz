@@ -46,7 +46,7 @@ public class PriorityQueue<T> extends ArrayHeap<PriorityQueueNode<T>> {
             throw new EmptyCollectionException("Não é possível remover, porque a heap está vazia");
         }
 
-        PriorityQueueNode<T> temp = (PriorityQueueNode<T>) super.removeMin();
+        PriorityQueueNode<T> temp = super.removeMin();
         return temp.getElement();
     }
 }

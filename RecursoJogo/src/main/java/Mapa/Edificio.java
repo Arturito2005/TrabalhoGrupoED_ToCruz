@@ -1,6 +1,6 @@
 package Mapa;
 
-import Graph.Network;
+import Graph.ExtendedNetwork;
 import Interfaces.Mapa.EdificoInt;
 import Interfaces.NetworkMatrizADT;
 
@@ -50,7 +50,7 @@ public class Edificio implements EdificoInt {
     public Edificio() {
         this.id = ID_EDIFICIO_CONT++;
         this.name = NAME_DEFAULT;
-        this.planta_edificio = new Network<>();
+        this.planta_edificio = new ExtendedNetwork<>();
     }
 
     /**
@@ -64,7 +64,7 @@ public class Edificio implements EdificoInt {
     public Edificio(int id_edificio, String name, NetworkMatrizADT<Divisao> planta_edificio) {
         this.id = id_edificio;
         this.name = name;
-        NetworkMatrizADT<Divisao> networkTemp = new Network<>();
+        NetworkMatrizADT<Divisao> networkTemp = new ExtendedNetwork<>();
 
         for (Divisao divisao : planta_edificio) {
             Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItens(), divisao.getInimigos(), divisao.getToCruz());

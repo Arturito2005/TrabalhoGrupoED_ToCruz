@@ -15,17 +15,12 @@ import Interfaces.QueueADT;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class CircularArrayQueue<T> implements QueueADT<T> {
+public class CircularArrayQueue<T> extends Queue<T> {
 
     /**
      * Capacidade padrão do array
      */
     private static final int DEFAULT_CAPACITY = 30;
-
-    /**
-     * Contador de elementos na circular array queue
-     */
-    private int count;
 
     /**
      * Índice do elemento da frente da circular array queue
@@ -48,7 +43,7 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
      * @param capacity capacidade do array
      */
     public CircularArrayQueue(int capacity) {
-        this.count = 0;
+        super();
         this.front = 0;
         this.rear = 0;
 
@@ -63,7 +58,7 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
      * Construtor para inicializar a circular array queue com uma capacidade específica.
      */
     public CircularArrayQueue() {
-        this.count = 0;
+        super();
         this.front = 0;
         this.rear = 0;
         this.array = (T[]) (new Object[DEFAULT_CAPACITY]);
@@ -138,32 +133,6 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
     }
 
     /**
-     * Verifica se a circular array queue está vazia.
-     *
-     * @return true se a circular array queue estiver vazia, caso contrário false.
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.count == 0) {
-            empty = true;
-        }
-
-        return empty;
-    }
-
-    /**
-     * Retorna o número de elementos na circular array queue.
-     *
-     * @return O número de elementos na circular array queue.
-     */
-    @Override
-    public int size() {
-        return this.count;
-    }
-
-    /**
      * Retorna uma representação em string de todos os elementos da circular array queue.
      *
      * @return A representação em string dos elementos na circular array queue.
@@ -174,7 +143,7 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
 
         for (T ele : this.array) {
             if (ele != null) {
-                temp = temp + ele;
+                temp += ele;
             }
         }
 

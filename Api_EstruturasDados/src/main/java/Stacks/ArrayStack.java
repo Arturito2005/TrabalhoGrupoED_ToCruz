@@ -4,8 +4,7 @@ import Exceptions.EmptyCollectionException;
 import Interfaces.StackADT;
 
 /**
- * Interface que define as operações relacionadas para gerir todas as missões
- * importadas pelo o ToCruz.
+ * Classe que representa uma Stack implementada com array
  *
  * @author Artur Pinto
  * Nº mecanográfico: 8230138
@@ -14,17 +13,12 @@ import Interfaces.StackADT;
  * @version 1.0
  * @param <T> O tipo de elementos armazenados na stack.
  */
-public class ArrayStack<T> implements StackADT<T> {
+public class ArrayStack<T> extends Stack<T> {
 
     /**
      * Tamanho padrão da stack.
      */
     private static final int DEFAULT_SIZE = 50;
-
-    /**
-     * Índice do topo da stack, indicando a próxima posição disponível.
-     */
-    private int top;
 
     /**
      * Array que armazena os elementos da stack.
@@ -35,8 +29,8 @@ public class ArrayStack<T> implements StackADT<T> {
      * Construtor padrão que cria uma stack com tamanho padrão.
      */
     public ArrayStack() {
+        super();
         this.stack = (T[]) (new Object[DEFAULT_SIZE]);
-        this.top = 0;
     }
 
     /**
@@ -46,9 +40,7 @@ public class ArrayStack<T> implements StackADT<T> {
     private void expandStack() {
         T[] tempStack = (T[]) (new Object[this.top * 2]);
 
-        for (int i = 0; i < top; i++) {
-            tempStack[i] = this.stack[i];
-        }
+        System.arraycopy(this.stack, 0, tempStack, 0, top);
 
         this.stack = tempStack;
     }
@@ -104,32 +96,6 @@ public class ArrayStack<T> implements StackADT<T> {
     }
 
     /**
-     * Verifica se a stack está vazia.
-     *
-     * @return true se a stack estiver vazia, caso contrário false.
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.top == 0) {
-            empty = true;
-        }
-
-        return empty;
-    }
-
-    /**
-     * Retorna o número de elementos na stack.
-     *
-     * @return O número de elementos na stack.
-     */
-    @Override
-    public int size() {
-        return this.top;
-    }
-
-    /**
      * Retorna uma representação em String dos elementos da stack.
      * Os elementos são listados do fundo para o topo.
      *
@@ -140,7 +106,7 @@ public class ArrayStack<T> implements StackADT<T> {
         String temp = "";
 
         for (int i = 0; i < this.top; i++) {
-            temp = temp + this.stack[i].toString() + " ";
+            temp += this.stack[i].toString() + " ";
         }
 
         return temp;

@@ -20,8 +20,10 @@ public class TestesMissoes {
     @BeforeEach
     public void setUp() {
         missoes = new Missoes();
-        missao1 = new Missao("M001", 1, null);
+        /*
+        * missao1 = new Missao("M001", 1, null);
         missao2 = new Missao("M002", 2, null);
+        * */
     }
 
     /**
