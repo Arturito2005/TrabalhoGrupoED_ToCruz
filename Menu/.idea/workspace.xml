@@ -9,21 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Falta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/MenuMissoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Menu/Opcoes/OpcoesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Menu/Opcoes/OpcoesMissoes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoAutomatico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoCaminhoAutomatico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoCaminhoAutomatico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModoManual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModosAutomaticos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModosAutomaticos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modos/ModosJogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modos/ModosJogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Paths/ShortesPaths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Paths/ShortesPaths.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/Turno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Turnos/TurnoToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Turnos/TurnoToCruz.java" afterDir="false" />
-    </list>
+    <list default="true" id="57b8ad92-10fe-4f87-8539-92989c4fc43c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,6 +108,7 @@
       <workItem from="1737646156585" duration="4522000" />
       <workItem from="1737730374956" duration="22612000" />
       <workItem from="1737893254226" duration="4175000" />
+      <workItem from="1737903046309" duration="27000" />
     </task>
     <servers />
   </component>

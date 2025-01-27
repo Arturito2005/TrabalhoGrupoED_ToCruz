@@ -1,6 +1,6 @@
 package TestArrayList;
 
-import ArrayList.ArrayUnordered;
+import ArrayList.ExtendedArrayUnordered;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestArrayUnordered {
 
-    private ArrayUnordered<Integer> list;
+    private ExtendedArrayUnordered<Integer> list;
 
     @BeforeEach
     public void setUp() {
-        list = new ArrayUnordered<Integer>();
+        list = new ExtendedArrayUnordered<Integer>();
     }
 
     @Test

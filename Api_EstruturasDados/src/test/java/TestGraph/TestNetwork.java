@@ -1,6 +1,6 @@
 package TestGraph;
 
-import Graph.Network;
+import Graph.ExtendedNetwork;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Iterator;
@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestNetwork {
 
-    private Network<String> graph;
+    private ExtendedNetwork<String> graph;
 
     @BeforeEach
     public void setUp() {
-        graph = new Network<>();
+        graph = new ExtendedNetwork<>();
         graph.addVertex("A");
         graph.addVertex("B");
         graph.addVertex("C");

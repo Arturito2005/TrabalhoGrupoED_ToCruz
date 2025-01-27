@@ -18,13 +18,13 @@ import java.util.Iterator;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class Network<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
+public class ExtendedNetwork<T> extends NetworkMatrizAdjacencia<T> implements NetworkMatrizADT<T> {
 
     /**
      * Construtor default da classe Network.
      * Inicializa a rede chamando o construtor da classe pai.
      */
-    public Network() {
+    public ExtendedNetwork() {
         super();
     }
 

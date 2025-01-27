@@ -14,12 +14,12 @@ import Interfaces.ArrayUnorderedADT;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class ArrayUnordered<T> extends ArrayUnorderedList<T> implements ArrayUnorderedADT<T> {
+public class ExtendedArrayUnordered<T> extends ArrayUnorderedList<T> implements ArrayUnorderedADT<T> {
 
     /**
      * Constrói uma lista não ordenada com a capacidade padrão.
      */
-    public ArrayUnordered() {
+    public ExtendedArrayUnordered() {
         super();
     }
 
