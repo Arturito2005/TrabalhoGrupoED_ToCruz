@@ -1,5 +1,7 @@
 plugins {
+    id 'application'
     id 'java'
+    id 'jacoco'
 }
 
 group = 'org.example'
@@ -15,16 +17,52 @@ dependencies {
     implementation files("libs/RecursoJogo.jar")
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(22)
+    }
+}
+
 test {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
+
+    finalizedBy jacocoTestReport
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(22)
+
+jacocoTestReport {
+    dependsOn test
+}
+
+
+jacoco {
+    toolVersion = "0.8.12"
+}
+
+test {
+    jacoco {
+        enabled = true
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.8
+            }
+        }
     }
 }
 
