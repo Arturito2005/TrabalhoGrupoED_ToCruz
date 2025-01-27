@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayTree.TestArrayBinarySearchTree" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.017">
+<testsuite name="TestArrayTree.TestArrayBinarySearchTree" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-01-27T13:25:05" hostname="LAPTOP-8POH8N1C" time="0.017">
   <properties/>
-  <testcase name="testFindElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
-  <testcase name="testFindMax()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
+  <testcase name="testFindElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testFindMax()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
   <testcase name="testFindMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
-  <testcase name="testRemoveAllOccurrences()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.006"/>
+  <testcase name="testRemoveAllOccurrences()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.005"/>
   <testcase name="testAddElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testFindElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testFindElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.002"/>
   <testcase name="testRemoveElementNotFound()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
   <testcase name="testRemoveElement()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testIsEmpty()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.001"/>
+  <testcase name="testIsEmpty()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
+  <testcase name="testRemoveMin()" classname="TestArrayTree.TestArrayBinarySearchTree" time="0.0"/>
   <system-out><![CDATA[binary tree
 binary tree
 binary tree

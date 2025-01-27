@@ -20,7 +20,7 @@ import java.util.Iterator;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class GraphListaAdjacencia<T> implements GraphADT<T> {
+public class GraphListaAdjacencia<T> extends Graph<T> {
 
     /**
      * Capacidade default do grafo
@@ -426,22 +426,6 @@ public class GraphListaAdjacencia<T> implements GraphADT<T> {
         }
 
         return resultList.iterator();
-    }
-
-    /**
-     * Verifica se o grafo está vazio.
-     *
-     * @return true se o grafo estiver vazio, false caso contrário
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.numVertices == 0) {
-            empty = true;
-        }
-
-        return empty;
     }
 
     /**

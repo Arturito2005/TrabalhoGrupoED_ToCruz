@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayList.TestArrayUnordered" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.007">
+<testsuite name="TestArrayList.TestArrayUnordered" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-01-27T13:25:05" hostname="LAPTOP-8POH8N1C" time="0.012">
   <properties/>
-  <testcase name="testFindInvalidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.002"/>
+  <testcase name="testFindInvalidIndex()" classname="TestArrayList.TestArrayUnordered" time="0.005"/>
   <testcase name="testFindAfterAddingElements()" classname="TestArrayList.TestArrayUnordered" time="0.0"/>
   <testcase name="testFindEmptyList()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>
   <testcase name="testSizeAfterAddingElements()" classname="TestArrayList.TestArrayUnordered" time="0.001"/>

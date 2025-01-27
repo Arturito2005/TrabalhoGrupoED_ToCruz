@@ -104,8 +104,10 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;T&gt;</span></div>
 <div class="block">Implementação abstrata de uma lista genérica baseada em array.
- Esta classe fornece funcionalidades básicas para manipulação de listas, como adição, remoção, verificação de conteúdo,
- e iteração sobre os elementos. Também inclui métodos para acessar o primeiro e último elemento, e expandir a capacidade do array.</div>
+ Esta classe fornece funcionalidades básicas para manipulação de listas, como adição,
+ remoção, verificação de conteúdo, e iteração sobre os elementos.
+ Também inclui métodos para aceder ao primeiro e último elemento,
+ e expandir a capacidade do array.</div>
 </div>
 </section>
 <section class="summary">
@@ -132,7 +134,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="col-first even-row-color"><code>protected int</code></div>
 <div class="col-second even-row-color"><code><a href="#modCount" class="member-name-link">modCount</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Contador de modificações na lista, usado para detectar modificações concorrentes</div>
+<div class="block">Contador de modificações na lista, usado para detetar modificações concorrentes</div>
 </div>
 </div>
 </section>
@@ -147,7 +149,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ArrayList</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor padrão que inicializa a lista com a capacidade padrão de 100.</div>
+<div class="block">Construtor default que inicializa a lista com a capacidade default de 100.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(int)" class="member-name-link">ArrayList</a><wbr>(int&nbsp;capacity)</code></div>
 <div class="col-last odd-row-color">
@@ -247,7 +249,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3>modCount</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">modCount</span></div>
-<div class="block">Contador de modificações na lista, usado para detectar modificações concorrentes</div>
+<div class="block">Contador de modificações na lista, usado para detetar modificações concorrentes</div>
 </div>
 </section>
 </li>
@@ -282,7 +284,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <h3>ArrayList</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayList</span>()</div>
-<div class="block">Construtor padrão que inicializa a lista com a capacidade padrão de 100.</div>
+<div class="block">Construtor default que inicializa a lista com a capacidade default de 100.</div>
 </div>
 </section>
 </li>
@@ -292,7 +294,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayList</span><wbr><span class="parameters">(int&nbsp;capacity)</span></div>
 <div class="block">Construtor que inicializa a lista com uma capacidade especificada.
- Se a capacidade fornecida for menor ou igual a 0, a capacidade padrão será utilizada.</div>
+ Se a capacidade fornecida for menor ou igual a 0, a capacidade default é utilizada.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>capacity</code> - A capacidade inicial da lista.</dd>
@@ -314,7 +316,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">expandArray</span>()</div>
 <div class="block">Expande o array interno para o dobro da sua capacidade atual.
- Este método é chamado quando a capacidade do array é atingida.</div>
+ Este metodo é chamado quando a capacidade do array é atingida.</div>
 </div>
 </section>
 </li>
@@ -425,7 +427,7 @@ implements <a href="../Interfaces/ListADT.html" title="interface in Interfaces">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/ListADT.html#contains(T)">contains</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/ListADT.html" title="interface in Interfaces">ListADT</a>&lt;<a href="ArrayList.html" title="type parameter in ArrayList">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>target</code> - O elemento a ser buscado.</dd>
+<dd><code>target</code> - O elemento a ser pesquisado.</dd>
 <dt>Returns:</dt>
 <dd>true se o elemento estiver na lista, false caso contrário.</dd>
 </dl>

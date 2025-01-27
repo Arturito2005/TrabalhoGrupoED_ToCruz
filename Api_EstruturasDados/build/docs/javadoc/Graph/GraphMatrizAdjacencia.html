@@ -89,7 +89,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><code>T</code> - tipo genérico representando os vértices do grafo</dd>
+<dd><code>T</code> - tipo genérico que representa os vértices do grafo</dd>
 </dl>
 <dl class="notes">
 <dt>All Implemented Interfaces:</dt>
@@ -106,7 +106,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="block">A classe <code>GraphMatrizAdjacencia</code> representa uma implementação de grafo
  utilizando uma matriz de adjacência. É uma implementação do tipo de dados
  <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"><code>GraphADT</code></a> que permite adicionar e remover vértices e arestas, bem
- como realizar buscas em largura e profundidade, além de calcular o caminho
+ como realizar pesquisas em largura e profundidade, além de calcular o caminho
  mais curto entre dois vértices.</div>
 </div>
 </section>
@@ -129,7 +129,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first odd-row-color"><code>protected final int</code></div>
 <div class="col-second odd-row-color"><code><a href="#DEFAULT_CAPACITY" class="member-name-link">DEFAULT_CAPACITY</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">A capacidade padrão inicial para o grafo.</div>
+<div class="block">A capacidade default inicial para o grafo.</div>
 </div>
 <div class="col-first even-row-color"><code>protected int</code></div>
 <div class="col-second even-row-color"><code><a href="#numVertices" class="member-name-link">numVertices</a></code></div>
@@ -139,7 +139,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first odd-row-color"><code>protected <a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#vertices" class="member-name-link">vertices</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Um array contendo os valores dos vértices.</div>
+<div class="block">Um array que contém os valores dos vértices.</div>
 </div>
 </div>
 </section>
@@ -154,7 +154,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">GraphMatrizAdjacencia</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Cria um grafo vazio com capacidade inicial padrão.</div>
+<div class="block">Cria um grafo vazio com capacidade inicial default.</div>
 </div>
 </div>
 </section>
@@ -222,21 +222,21 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFS(T)" class="member-name-link">iteratorBFS</a><wbr>(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador que realiza uma busca em largura (BFS) começando
+<div class="block">Retorna um iterador que realiza uma pesquisa em largura (BFS) começando
  no vértice especificado.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorDFS(T)" class="member-name-link">iteratorDFS</a><wbr>(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador que realiza uma busca em profundidade (DFS) começando
+<div class="block">Retorna um iterador que realiza uma pesquisa em profundidade (DFS) começando
  no vértice especificado.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(T,T)" class="member-name-link">iteratorShortestPath</a><wbr>(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex,
  <a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;targetVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador que realiza a busca do caminho mais curto entre dois
- vértices usando o algoritmo de busca em largura (BFS).</div>
+<div class="block">Retorna um iterador que realiza a pesquisa do caminho mais curto entre dois
+ vértices usando o algoritmo de pesquisa em largura (BFS).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(int,int)" class="member-name-link">removeEdge</a><wbr>(int&nbsp;index1,
@@ -285,7 +285,8 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>DEFAULT_CAPACITY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_CAPACITY</span></div>
-<div class="block">A capacidade padrão inicial para o grafo. Define o número inicial de vértices que a rede pode conter.</div>
+<div class="block">A capacidade default inicial para o grafo.
+ Define o número inicial de vértices que o grafo pode conter.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -303,7 +304,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">numVertices</span></div>
 <div class="block">O número de vértices presentes no grafo.
- Mantém o controle de quantos vértices foram inseridos no grafo até o momento.</div>
+ Mantém o controlo de quantos vértices foram inseridos no grafo até o momento.</div>
 </div>
 </section>
 </li>
@@ -323,7 +324,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>vertices</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected</span>&nbsp;<span class="return-type"><a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>[]</span>&nbsp;<span class="element-name">vertices</span></div>
-<div class="block">Um array contendo os valores dos vértices.
+<div class="block">Um array que contém os valores dos vértices.
  Cada posição vertices[i] armazena o valor do vértice de índice i no grafo.</div>
 </div>
 </section>
@@ -341,7 +342,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>GraphMatrizAdjacencia</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">GraphMatrizAdjacencia</span>()</div>
-<div class="block">Cria um grafo vazio com capacidade inicial padrão.</div>
+<div class="block">Cria um grafo vazio com capacidade inicial default.</div>
 </div>
 </section>
 </li>
@@ -511,15 +512,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorBFS(java.lang.Object)">iteratorBFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador que realiza uma busca em largura (BFS) começando
+<div class="block">Retorna um iterador que realiza uma pesquisa em largura (BFS) começando
  no vértice especificado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorBFS(T)">iteratorBFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice inicial da busca</dd>
+<dd><code>startVertex</code> - o vértice inicial da pesquisa</dd>
 <dt>Returns:</dt>
-<dd>um iterador com o resultado da busca em largura</dd>
+<dd>um iterador com o resultado da pesquisa em largura</dd>
 </dl>
 </div>
 </section>
@@ -529,15 +530,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorDFS(java.lang.Object)">iteratorDFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador que realiza uma busca em profundidade (DFS) começando
+<div class="block">Retorna um iterador que realiza uma pesquisa em profundidade (DFS) começando
  no vértice especificado.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorDFS(T)">iteratorDFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice inicial da busca</dd>
+<dd><code>startVertex</code> - o vértice inicial da pesquisa</dd>
 <dt>Returns:</dt>
-<dd>um iterador com o resultado da busca em profundidade</dd>
+<dd>um iterador com o resultado da pesquisa em profundidade</dd>
 </dl>
 </div>
 </section>
@@ -548,14 +549,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;startVertex,
  <a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&nbsp;targetVertex)</span></div>
-<div class="block">Retorna um iterador que realiza a busca do caminho mais curto entre dois
- vértices usando o algoritmo de busca em largura (BFS).</div>
+<div class="block">Retorna um iterador que realiza a pesquisa do caminho mais curto entre dois
+ vértices usando o algoritmo de pesquisa em largura (BFS).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorShortestPath(T,T)">iteratorShortestPath</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphMatrizAdjacencia.html" title="type parameter in GraphMatrizAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice inicial da busca</dd>
-<dd><code>targetVertex</code> - o vértice de destino da busca</dd>
+<dd><code>startVertex</code> - o vértice inicial da pesquisa</dd>
+<dd><code>targetVertex</code> - o vértice de destino da pesquisa</dd>
 <dt>Returns:</dt>
 <dd>um iterador com o caminho mais curto encontrado</dd>
 </dl>

@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">ArrayBinaryTree&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeADT</a>&lt;T&gt;</span></div>
-<div class="block">Uma classe que representa uma árvore binária implementada usando um array.
+<div class="block">Uma classe que representa uma árvore binária implementada, usa um array.
  Fornece vários métodos para manipular e percorrer a árvore binária.</div>
 </div>
 </section>
@@ -141,7 +141,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ArrayBinaryTree</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Constrói uma árvore binária vazia com capacidade padrão.</div>
+<div class="block">Constrói uma árvore binária vazia com capacidade default.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(T)" class="member-name-link">ArrayBinaryTree</a><wbr>(<a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a>&nbsp;element)</code></div>
 <div class="col-last odd-row-color">
@@ -174,7 +174,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#find(T)" class="member-name-link">find</a><wbr>(<a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a>&nbsp;targetElement)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Encontra e retorna o elemento alvo na árvore.</div>
+<div class="block">Encontra e retorna o elemento target na árvore.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getRoot()" class="member-name-link">getRoot</a>()</code></div>
@@ -289,7 +289,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <h3>ArrayBinaryTree</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayBinaryTree</span>()</div>
-<div class="block">Constrói uma árvore binária vazia com capacidade padrão.</div>
+<div class="block">Constrói uma árvore binária vazia com capacidade default.</div>
 </div>
 </section>
 </li>
@@ -392,7 +392,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a></span>&nbsp;<span class="element-name">find</span><wbr><span class="parameters">(<a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a>&nbsp;targetElement)</span>
        throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a>,
 <a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block">Encontra e retorna o elemento alvo na árvore.</div>
+<div class="block">Encontra e retorna o elemento target na árvore.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinaryTreeADT.html#find(T)">find</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeADT</a>&lt;<a href="ArrayBinaryTree.html" title="type parameter in ArrayBinaryTree">T</a>&gt;</code></dd>
@@ -509,7 +509,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <dt>Parameters:</dt>
 <dd><code>n</code> - o índice atual no array da árvore.</dd>
 <dd><code>tempList</code> - a lista para armazenar os elementos em nível.</dd>
-<dd><code>nodes</code> - a fila para gerenciar os nós durante a travessia.</dd>
+<dd><code>nodes</code> - a queue para gerir os nós durante a travessia.</dd>
 </dl>
 </div>
 </section>
@@ -541,7 +541,7 @@ implements <a href="../Interfaces/BinaryTreeADT.html" title="interface in Interf
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
 <dt>Returns:</dt>
-<dd>uma string representando a árvore em nível.</dd>
+<dd>uma string a representar a árvore em nível.</dd>
 </dl>
 </div>
 </section>

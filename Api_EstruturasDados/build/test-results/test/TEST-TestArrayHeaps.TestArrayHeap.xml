@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestArrayHeaps.TestArrayHeap" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.021">
+<testsuite name="TestArrayHeaps.TestArrayHeap" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-01-27T13:25:05" hostname="LAPTOP-8POH8N1C" time="0.043">
   <properties/>
-  <testcase name="testRemoveMinEmptyHeap()" classname="TestArrayHeaps.TestArrayHeap" time="0.015"/>
+  <testcase name="testRemoveMinEmptyHeap()" classname="TestArrayHeaps.TestArrayHeap" time="0.031"/>
   <testcase name="testFindMin()" classname="TestArrayHeaps.TestArrayHeap" time="0.0"/>
-  <testcase name="testAddElement()" classname="TestArrayHeaps.TestArrayHeap" time="0.0"/>
+  <testcase name="testAddElement()" classname="TestArrayHeaps.TestArrayHeap" time="0.003"/>
   <testcase name="testFindMinEmptyHeap()" classname="TestArrayHeaps.TestArrayHeap" time="0.0"/>
   <testcase name="testRemoveMin()" classname="TestArrayHeaps.TestArrayHeap" time="0.001"/>
-  <testcase name="testAddAndRemoveMultipleElements()" classname="TestArrayHeaps.TestArrayHeap" time="0.0"/>
+  <testcase name="testAddAndRemoveMultipleElements()" classname="TestArrayHeaps.TestArrayHeap" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

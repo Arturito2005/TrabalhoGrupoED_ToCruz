@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestLinkedTree.TestLinkedBinarySearchTree" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.011">
+<testsuite name="TestLinkedTree.TestLinkedBinarySearchTree" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-01-27T13:25:05" hostname="LAPTOP-8POH8N1C" time="0.014">
   <properties/>
   <testcase name="testFindElement()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
-  <testcase name="testFindMax()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
+  <testcase name="testFindMax()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.0"/>
   <testcase name="testFindMin()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
   <testcase name="testSize()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveAllOccurrences()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
+  <testcase name="testRemoveAllOccurrences()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.002"/>
   <testcase name="testAddElement()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
   <testcase name="testFindElementNotFound()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
   <testcase name="testRemoveElement()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
-  <testcase name="testIsEmpty()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
-  <testcase name="testRemoveMax()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.0"/>
-  <testcase name="testRemoveMin()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.0"/>
-  <system-out><![CDATA[O target introduzido não existe na arvore
+  <testcase name="testIsEmpty()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.0"/>
+  <testcase name="testRemoveMax()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
+  <testcase name="testRemoveMin()" classname="TestLinkedTree.TestLinkedBinarySearchTree" time="0.001"/>
+  <system-out><![CDATA[O elemento a remover não existe na arvore!
+O target introduzido não existe na arvore
 O target introduzido não existe na arvore
 O target introduzido não existe na arvore
 O target introduzido não existe na arvore

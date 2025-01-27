@@ -3,6 +3,16 @@ package Queue;
 import Exceptions.EmptyCollectionException;
 import Interfaces.QueueADT;
 
+/**
+ * Classe abstrata que representa uma Queue
+ *
+ * @param <T> Tipo genérico dos elementos armazenados na Queue.
+ * @author Artur Pinto
+ * Nº mecanográfico: 8230138
+ * @author Francisco Oliveira
+ * Nº mecanográfico: 8230148
+ * @version 1.0
+ */
 public abstract class Queue<T> implements QueueADT<T> {
 
     /**

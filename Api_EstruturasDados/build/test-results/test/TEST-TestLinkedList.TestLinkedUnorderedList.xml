@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestLinkedList.TestLinkedUnorderedList" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-09T15:40:23" hostname="LAPTOP-8POH8N1C" time="0.01">
+<testsuite name="TestLinkedList.TestLinkedUnorderedList" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-01-27T13:25:05" hostname="LAPTOP-8POH8N1C" time="0.009">
   <properties/>
   <testcase name="testSize()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
   <testcase name="testAddAfterElementNotFound()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.002"/>
   <testcase name="testAddAfter()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
   <testcase name="testAddToFront()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
-  <testcase name="testAddToRear()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.001"/>
+  <testcase name="testAddToRear()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
   <testcase name="testRemoveElement()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
   <testcase name="testIsEmpty()" classname="TestLinkedList.TestLinkedUnorderedList" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

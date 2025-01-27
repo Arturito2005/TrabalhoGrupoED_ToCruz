@@ -10,63 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cf18714-36ad-4160-b4ac-3ff9ce7b5d0c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Queue/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Stacks/Stack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FaltaAlterar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Interfaces/BinarySearchTreeADT.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Interfaces/BinarySearchTreeADT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedList$MyIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedList$MyIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedOrderedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedList/LinearLinkedOrderedList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedTree/LinkedBinarySearchTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedTree/LinkedBinarySearchTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedTree/LinkedBinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/LinkedTree/LinkedBinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Queue/LinkedQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Queue/LinkedQueue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Stacks/ArrayStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Stacks/ArrayStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Stacks/LinkedStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/main/Stacks/LinkedStack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/test/TestArrayList/TestArrayUnordered.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/test/TestArrayList/TestArrayUnordered.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/test/TestGraph/TestNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/classes/java/test/TestGraph/TestNetwork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/out/artifacts/Api_EstruturasDados_jar/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/ExtendedNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/ExtendedNetwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/GraphListaAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Graph/GraphMatrizAdjacencia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Interfaces/BinarySearchTreeADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Interfaces/BinarySearchTreeADT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedOrderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedOrderedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedUnorderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedList/LinearLinkedUnorderedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedTree/LinkedBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedTree/LinkedBinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedTree/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/LinkedTree/LinkedBinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/PriorityQueues/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/PriorityQueues/PriorityQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Queue/CircularArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Queue/CircularArrayQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Queue/LinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Queue/LinkedQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Stacks/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Stacks/ArrayStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Stacks/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/java/Stacks/LinkedStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/test/java/TestQueue/TestLinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/test/java/TestQueue/TestLinkedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/Nota" beforeDir="false" afterPath="$PROJECT_DIR$/../Api_EstruturasDados/src/main/Nota" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/TestMapa/TestDivisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/TestMapa/TestDivisao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Api_EstruturasDados.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Mapa/Edificio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMapa/TestDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMapa/TestDivisao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMissoes/TestesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMissoes/TestesMissoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +216,8 @@
       <workItem from="1737730364173" duration="8000" />
       <workItem from="1737730380989" duration="10462000" />
       <workItem from="1737973441021" duration="152000" />
-      <workItem from="1737979436152" duration="669000" />
+      <workItem from="1737979436152" duration="779000" />
+      <workItem from="1737984023631" duration="187000" />
     </task>
     <servers />
   </component>

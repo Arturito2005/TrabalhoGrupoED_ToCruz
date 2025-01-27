@@ -1,6 +1,7 @@
 $'binary tree
 $+binary tree
 $-binary tree
+sw-O elemento a remover não existe na arvore!
 sw,O target introduzido não existe na arvore
 sz,O target introduzido não existe na arvore
 s|,O target introduzido não existe na arvore

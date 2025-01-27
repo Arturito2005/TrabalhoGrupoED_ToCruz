@@ -102,7 +102,7 @@ loadScripts(document, 'script');</script>
 <span class="extends-implements">extends <a href="LinkedBinaryTree.html" title="class in LinkedTree">LinkedBinaryTree</a>&lt;T&gt;
 implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;T&gt;</span></div>
 <div class="block">Implementação de uma árvore binária de pesquisa (BST) utilizando uma árvore binária encadeada.
- A classe oferece operações para adicionar, remover e buscar elementos, bem como métodos para
+ A classe oferece operações para adicionar, remover e pesquisar elementos, bem como métodos para
  encontrar o menor e o maior elemento na árvore.</div>
 </div>
 </section>
@@ -275,7 +275,8 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <h3 id="removeElement(java.lang.Object)">removeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">removeElement</span><wbr><span class="parameters">(<a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a>&nbsp;targetElement)</span>
-                throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+                throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a>,
+<a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
 <div class="block">Remove um elemento da árvore binária de pesquisa.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
@@ -286,6 +287,7 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <dd>O elemento removido da árvore.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se o elemento não for encontrado na árvore.</dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -309,16 +311,13 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <section class="detail" id="removeMin()">
 <h3>removeMin</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">removeMin</span>()
-            throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">removeMin</span>()</div>
 <div class="block">Remove o menor elemento da árvore.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#removeMin()">removeMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O menor elemento removido da árvore.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se a árvore estiver vazia.</dd>
 </dl>
 </div>
 </section>
@@ -327,16 +326,13 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <section class="detail" id="removeMax()">
 <h3>removeMax</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">removeMax</span>()
-            throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">removeMax</span>()</div>
 <div class="block">Remove o maior elemento da árvore.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#removeMax()">removeMax</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O maior elemento removido da árvore.</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se a árvore estiver vazia.</dd>
 </dl>
 </div>
 </section>
@@ -345,13 +341,17 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <section class="detail" id="findMin()">
 <h3>findMin</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">findMin</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">findMin</span>()
+          throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
 <div class="block">Encontra o menor elemento na árvore.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#findMin()">findMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O menor elemento da árvore.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se a árvore estiver vazia.</dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -360,13 +360,17 @@ implements <a href="../Interfaces/BinarySearchTreeADT.html" title="interface in 
 <section class="detail" id="findMax()">
 <h3>findMax</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">findMax</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a></span>&nbsp;<span class="element-name">findMax</span>()
+          throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
 <div class="block">Encontra o maior elemento na árvore.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#findMax()">findMax</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="LinkedBinarySearchTree.html" title="type parameter in LinkedBinarySearchTree">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O maior elemento da árvore.</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code> - Se a árvore estiver vazia.</dd>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>
 </div>
 </section>

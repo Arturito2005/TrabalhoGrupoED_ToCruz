@@ -107,7 +107,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ArrayHeap&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="../ArrayTree/ArrayBinarySearchTree.html" title="class in ArrayTree">ArrayBinarySearchTree</a>&lt;T&gt;
 implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">HeapADT</a>&lt;T&gt;</span></div>
-<div class="block">ArrayHeap fornece uma implementação de heap mínima usando um array.</div>
+<div class="block">ArrayHeap fornece uma implementação de heap mínima, usa um array.</div>
 </div>
 </section>
 <section class="summary">
@@ -134,7 +134,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ArrayHeap</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Construtor generico da ArrayHeap</div>
+<div class="block">Construtor genérico da ArrayHeap</div>
 </div>
 </div>
 </section>
@@ -153,18 +153,18 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addElement(T)" class="member-name-link">addElement</a><wbr>(<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&nbsp;obj)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Adiciona o elemento especificado a este heap na posição apropriada
- de acordo com seu valor-chave.</div>
+<div class="block">Adiciona o elemento especificado a esta heap na posição apropriada
+ de acordo com o seu valor-chave.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#findMin()" class="member-name-link">findMin</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna uma referência para o elemento com o valor mais baixo deste heap.</div>
+<div class="block">Retorna uma referência para o elemento com o valor mais baixo desta heap.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeMin()" class="member-name-link">removeMin</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Remove o elemento com o valor mais baixo deste heap e retorna uma
+<div class="block">Remove o elemento com o valor mais baixo desta heap e retorna uma
  referência para ele.</div>
 </div>
 </div>
@@ -198,7 +198,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <h3>ArrayHeap</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ArrayHeap</span>()</div>
-<div class="block">Construtor generico da ArrayHeap</div>
+<div class="block">Construtor genérico da ArrayHeap</div>
 </div>
 </section>
 </li>
@@ -215,8 +215,8 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <h3 id="addElement(java.lang.Object)">addElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">addElement</span><wbr><span class="parameters">(<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&nbsp;obj)</span></div>
-<div class="block">Adiciona o elemento especificado a este heap na posição apropriada
- de acordo com seu valor-chave. Note que elementos iguais são adicionados à direita.</div>
+<div class="block">Adiciona o elemento especificado a esta heap na posição apropriada
+ de acordo com o seu valor-chave. Note-se que elementos iguais são adicionados à direita.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#addElement(T)">addElement</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
@@ -225,7 +225,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <dt>Overrides:</dt>
 <dd><code><a href="../ArrayTree/ArrayBinarySearchTree.html#addElement(T)">addElement</a></code>&nbsp;in class&nbsp;<code><a href="../ArrayTree/ArrayBinarySearchTree.html" title="class in ArrayTree">ArrayBinarySearchTree</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>obj</code> - o elemento a ser adicionado a este heap</dd>
+<dd><code>obj</code> - o elemento a ser adicionado a esta heap</dd>
 </dl>
 </div>
 </section>
@@ -236,8 +236,8 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a></span>&nbsp;<span class="element-name">removeMin</span>()
             throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block">Remove o elemento com o valor mais baixo deste heap e retorna uma
- referência para ele. Lança uma EmptyCollectionException se o heap estiver vazio.</div>
+<div class="block">Remove o elemento com o valor mais baixo desta heap e retorna uma
+ referência para ele. Lança uma EmptyCollectionException se a heap estiver vazia.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#removeMin()">removeMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
@@ -246,7 +246,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <dt>Overrides:</dt>
 <dd><code><a href="../ArrayTree/ArrayBinarySearchTree.html#removeMin()">removeMin</a></code>&nbsp;in class&nbsp;<code><a href="../ArrayTree/ArrayBinarySearchTree.html" title="class in ArrayTree">ArrayBinarySearchTree</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>uma referência para o elemento com o valor mais baixo deste heap</dd>
+<dd>uma referência para o elemento com o valor mais baixo desta heap</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - se uma exceção de coleção vazia ocorrer</dd>
 </dl>
@@ -259,7 +259,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a></span>&nbsp;<span class="element-name">findMin</span>()
           throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
-<div class="block">Retorna uma referência para o elemento com o valor mais baixo deste heap.</div>
+<div class="block">Retorna uma referência para o elemento com o valor mais baixo desta heap.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/BinarySearchTreeADT.html#findMin()">findMin</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/BinarySearchTreeADT.html" title="interface in Interfaces">BinarySearchTreeADT</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
@@ -268,7 +268,7 @@ implements <a href="../Interfaces/HeapADT.html" title="interface in Interfaces">
 <dt>Overrides:</dt>
 <dd><code><a href="../ArrayTree/ArrayBinarySearchTree.html#findMin()">findMin</a></code>&nbsp;in class&nbsp;<code><a href="../ArrayTree/ArrayBinarySearchTree.html" title="class in ArrayTree">ArrayBinarySearchTree</a>&lt;<a href="ArrayHeap.html" title="type parameter in ArrayHeap">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
-<dd>uma referência para o elemento com o valor mais baixo deste heap</dd>
+<dd>uma referência para o elemento com o valor mais baixo desta heap</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>

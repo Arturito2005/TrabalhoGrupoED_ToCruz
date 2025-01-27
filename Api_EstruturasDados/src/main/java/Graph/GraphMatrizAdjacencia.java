@@ -22,19 +22,13 @@ import java.util.Iterator;
  * Nº mecanográfico: 8230148
  * @version 1.0
  */
-public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
+public class GraphMatrizAdjacencia<T> extends Graph<T> {
 
     /**
      * A capacidade default inicial para o grafo.
      * Define o número inicial de vértices que o grafo pode conter.
      */
     protected final int DEFAULT_CAPACITY = 10;
-
-    /**
-     * O número de vértices presentes no grafo.
-     * Mantém o controlo de quantos vértices foram inseridos no grafo até o momento.
-     */
-    protected int numVertices;
 
     /**
      * A matriz de adjacência que representa as conexões entre os vértices.
@@ -53,7 +47,7 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
      * Cria um grafo vazio com capacidade inicial default.
      */
     public GraphMatrizAdjacencia() {
-        numVertices = 0;
+        super();
         this.adjMatrix = new boolean[DEFAULT_CAPACITY][DEFAULT_CAPACITY];
         this.vertices = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
@@ -401,22 +395,6 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
     }
 
     /**
-     * Verifica se o grafo está vazio.
-     *
-     * @return {@code true} se o grafo estiver vazio, {@code false} caso contrário
-     */
-    @Override
-    public boolean isEmpty() {
-        boolean empty = false;
-
-        if (this.numVertices == 0) {
-            empty = true;
-        }
-
-        return empty;
-    }
-
-    /**
      * Verifica se o grafo é conexo, ou seja, se existe um caminho entre todos os
      * vértices.
      *
@@ -443,13 +421,5 @@ public class GraphMatrizAdjacencia<T> implements GraphADT<T> {
         return connected;
     }
 
-    /**
-     * Retorna o número de vértices no grafo.
-     *
-     * @return o número de vértices no grafo
-     */
-    @Override
-    public int size() {
-        return this.numVertices;
-    }
+
 }

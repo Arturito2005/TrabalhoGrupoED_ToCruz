@@ -86,7 +86,7 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <dl class="notes">
 <dt>Type Parameters:</dt>
-<dd><code>T</code> - o tipo de elementos armazenados na árvore de busca binária</dd>
+<dd><code>T</code> - o tipo de elementos armazenados na árvore de pesquisa binária</dd>
 </dl>
 <dl class="notes">
 <dt>All Superinterfaces:</dt>
@@ -99,7 +99,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">BinarySearchTreeADT&lt;T&gt;</span><span class="extends-implements">
 extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeADT</a>&lt;T&gt;</span></div>
-<div class="block">Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de busca binária (BST).</div>
+<div class="block">Esta interface define a ADT (Tipo Abstrato de Dados) para uma árvore de pesquisa binária (BST).</div>
 </div>
 </section>
 <section class="summary">
@@ -185,7 +185,8 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <h3 id="removeElement(java.lang.Object)">removeElement</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">removeElement</span><wbr><span class="parameters">(<a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a>&nbsp;targetElement)</span>
-         throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+         throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a>,
+<a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
 <div class="block">Remove e retorna o elemento especificado desta árvore.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -193,6 +194,7 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <dt>Returns:</dt>
 <dd>o elemento removido desta árvore</dd>
 <dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 <dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code></dd>
 </dl>
 </div>
@@ -215,14 +217,11 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <section class="detail" id="removeMin()">
 <h3>removeMin</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">removeMin</span>()
-     throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">removeMin</span>()</div>
 <div class="block">Remove e retorna o menor elemento desta árvore.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>o menor elemento desta árvore</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -231,14 +230,11 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <section class="detail" id="removeMax()">
 <h3>removeMax</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">removeMax</span>()
-     throws <span class="exceptions"><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></span></div>
+<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">removeMax</span>()</div>
 <div class="block">Remove e retorna o maior elemento desta árvore.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>o maior elemento desta árvore</dd>
-<dt>Throws:</dt>
-<dd><code><a href="../Exceptions/ElementNotFoundException.html" title="class in Exceptions">ElementNotFoundException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -247,11 +243,14 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <section class="detail" id="findMin()">
 <h3>findMin</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">findMin</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">findMin</span>()
+   throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
 <div class="block">Retorna uma referência para o menor elemento desta árvore.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>uma referência para o menor elemento desta árvore</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>
 </div>
 </section>
@@ -260,11 +259,14 @@ extends <a href="BinaryTreeADT.html" title="interface in Interfaces">BinaryTreeA
 <section class="detail" id="findMax()">
 <h3>findMax</h3>
 <div class="horizontal-scroll">
-<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">findMax</span>()</div>
+<div class="member-signature"><span class="return-type"><a href="BinarySearchTreeADT.html" title="type parameter in BinarySearchTreeADT">T</a></span>&nbsp;<span class="element-name">findMax</span>()
+   throws <span class="exceptions"><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></span></div>
 <div class="block">Retorna uma referência para o maior elemento desta árvore.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>uma referência para o maior elemento desta árvore</dd>
+<dt>Throws:</dt>
+<dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code></dd>
 </dl>
 </div>
 </section>

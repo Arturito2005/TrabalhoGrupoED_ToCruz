@@ -37,7 +37,7 @@ loadScripts(document, 'script');</script>
 <p>Summary:</p>
 <ul>
 <li>Nested</li>
-<li>Field</li>
+<li><a href="#field-summary">Field</a></li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -57,7 +57,7 @@ loadScripts(document, 'script');</script>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
@@ -83,7 +83,9 @@ loadScripts(document, 'script');</script>
 <h1 title="Class CircularArrayQueue" class="title">Class CircularArrayQueue&lt;T&gt;</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="Queue.html" title="class in Queue">Queue.Queue</a>&lt;T&gt;
 <div class="inheritance">Queue.CircularArrayQueue&lt;T&gt;</div>
+</div>
 </div>
 <section class="class-description" id="class-description">
 <div class="horizontal-scroll">
@@ -97,8 +99,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CircularArrayQueue&lt;T&gt;</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
-implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;T&gt;</span></div>
+<span class="extends-implements">extends <a href="Queue.html" title="class in Queue">Queue</a>&lt;T&gt;</span></div>
 <div class="block">Implementação de uma circular array queue circular utilizando um array.
  A classe implementa a interface QueueADT e utiliza um array para armazenar os elementos de forma circular.
  Quando o array atinge sua capacidade máxima, ele é redimensionado.</div>
@@ -106,6 +107,15 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- =========== FIELD SUMMARY =========== -->
+<li>
+<section class="field-summary" id="field-summary">
+<h2>Field Summary</h2>
+<div class="inherited-list">
+<h3 id="fields-inherited-from-class-Queue.Queue">Fields inherited from class&nbsp;Queue.<a href="Queue.html" title="class in Queue">Queue</a></h3>
+<code><a href="Queue.html#count">count</a></code></div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -151,16 +161,6 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retorna o elemento da frente da circular array queue, sem removê-lo (first).</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isEmpty()" class="member-name-link">isEmpty</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Verifica se a circular array queue está vazia.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna o número de elementos na circular array queue.</div>
-</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString()" class="member-name-link">toString</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -169,6 +169,9 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 </div>
 </div>
 </div>
+<div class="inherited-list">
+<h3 id="methods-inherited-from-class-Queue.Queue">Methods inherited from class&nbsp;Queue.<a href="Queue.html" title="class in Queue">Queue</a></h3>
+<code><a href="Queue.html#isEmpty()">isEmpty</a>, <a href="Queue.html#size()">size</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#finalize()" title="class or interface in java.lang" class="external-link">finalize</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -223,6 +226,8 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#enqueue(T)">enqueue</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="Queue.html#enqueue(T)">enqueue</a></code>&nbsp;in class&nbsp;<code><a href="Queue.html" title="class in Queue">Queue</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
 <dd><code>element</code> - O elemento a ser adicionado na circular array queue.</dd>
 </dl>
@@ -240,6 +245,8 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#dequeue()">dequeue</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="Queue.html#dequeue()">dequeue</a></code>&nbsp;in class&nbsp;<code><a href="Queue.html" title="class in Queue">Queue</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O elemento removido da frente da circular array queue.</dd>
 <dt>Throws:</dt>
@@ -259,40 +266,12 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#first()">first</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="Queue.html#first()">first</a></code>&nbsp;in class&nbsp;<code><a href="Queue.html" title="class in Queue">Queue</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>O elemento da frente da circular array queue.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="../Exceptions/EmptyCollectionException.html" title="class in Exceptions">EmptyCollectionException</a></code> - Se a circular array queue estiver vazia.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="isEmpty()">
-<h3>isEmpty</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isEmpty</span>()</div>
-<div class="block">Verifica se a circular array queue está vazia.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/QueueADT.html#isEmpty()">isEmpty</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
-<dt>Returns:</dt>
-<dd>true se a circular array queue estiver vazia, caso contrário false.</dd>
-</dl>
-</div>
-</section>
-</li>
-<li>
-<section class="detail" id="size()">
-<h3>size</h3>
-<div class="horizontal-scroll">
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">size</span>()</div>
-<div class="block">Retorna o número de elementos na circular array queue.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="../Interfaces/QueueADT.html#size()">size</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
-<dt>Returns:</dt>
-<dd>O número de elementos na circular array queue.</dd>
 </dl>
 </div>
 </section>
@@ -306,8 +285,8 @@ implements <a href="../Interfaces/QueueADT.html" title="interface in Interfaces"
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/QueueADT.html#toString()">toString</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/QueueADT.html" title="interface in Interfaces">QueueADT</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
-<dt>Overrides:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Specified by:</dt>
+<dd><code><a href="Queue.html#toString()">toString</a></code>&nbsp;in class&nbsp;<code><a href="Queue.html" title="class in Queue">Queue</a>&lt;<a href="CircularArrayQueue.html" title="type parameter in CircularArrayQueue">T</a>&gt;</code></dd>
 <dt>Returns:</dt>
 <dd>A representação em string dos elementos na circular array queue.</dd>
 </dl>

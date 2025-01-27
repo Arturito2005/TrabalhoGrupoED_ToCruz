@@ -1,3 +1,7 @@
 Verificar se é preciso alterar testes ou modificar
 
-Cruar classe abstrata para o grafo
+Criar classe abstrata para o grafo
+
+Falta verificar se o codigo tem variaveis desncessarios e corrigir possiveis warming, da pasta do ArrayHeap, até as Exceptions pasta
+
+Meter o jacoco o mais proximo de 100%

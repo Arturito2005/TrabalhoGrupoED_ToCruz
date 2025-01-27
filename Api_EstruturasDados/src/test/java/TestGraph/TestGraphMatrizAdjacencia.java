@@ -14,7 +14,7 @@ public class TestGraphMatrizAdjacencia {
 
     @BeforeEach
     public void setUp() {
-        graph = new GraphMatrizAdjacencia<>();
+        graph = new GraphMatrizAdjacencia<String>();
     }
 
     @Test

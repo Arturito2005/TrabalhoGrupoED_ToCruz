@@ -103,7 +103,7 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">GraphListaAdjacencia&lt;T&gt;</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;T&gt;</span></div>
-<div class="block">Classe que implementa um grafo usando uma lista de adjacência.</div>
+<div class="block">Classe que implementa um grafo, usa uma lista de adjacência.</div>
 </div>
 </section>
 <section class="summary">
@@ -120,7 +120,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first even-row-color"><code>protected final int</code></div>
 <div class="col-second even-row-color"><code><a href="#DEFAULT_CAPACITY" class="member-name-link">DEFAULT_CAPACITY</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Capacidade padrão do grafo</div>
+<div class="block">Capacidade default do grafo</div>
 </div>
 <div class="col-first odd-row-color"><code>protected <a href="../LinkedList/LinearLinkedOrderedList.html" title="class in LinkedList">LinearLinkedOrderedList</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;[]</code></div>
 <div class="col-second odd-row-color"><code><a href="#listaAdj" class="member-name-link">listaAdj</a></code></div>
@@ -211,24 +211,26 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFS(T)" class="member-name-link">iteratorBFS</a><wbr>(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início.</div>
+<div class="block">Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorBFSNextDivisoes(T)" class="member-name-link">iteratorBFSNextDivisoes</a><wbr>(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início
+<div class="block">Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início
  para suas divisões vizinhas.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorDFS(T)" class="member-name-link">iteratorDFS</a><wbr>(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para realizar a busca em profundidade (DFS) a partir de um vértice de início.</div>
+<div class="block">Retorna um iterador para realizar a pesquisa em profundidade (DFS)
+ a partir de um vértice de início.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#iteratorShortestPath(T,T)" class="member-name-link">iteratorShortestPath</a><wbr>(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex,
  <a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;targetVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retorna um iterador para o caminho mais curto entre dois vértices usando a busca em largura (BFS).</div>
+<div class="block">Retorna um iterador para o caminho mais curto entre dois vértices usando a pesquisa
+ em largura (BFS).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeEdge(T,T)" class="member-name-link">removeEdge</a><wbr>(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;vertex1,
@@ -271,7 +273,7 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3>DEFAULT_CAPACITY</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">DEFAULT_CAPACITY</span></div>
-<div class="block">Capacidade padrão do grafo</div>
+<div class="block">Capacidade default do grafo</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -464,13 +466,13 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorBFSNextDivisoes(java.lang.Object)">iteratorBFSNextDivisoes</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFSNextDivisoes</span><wbr><span class="parameters">(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início
+<div class="block">Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início
  para suas divisões vizinhas.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice de início para a busca</dd>
+<dd><code>startVertex</code> - o vértice de início para a pesquisq</dd>
 <dt>Returns:</dt>
-<dd>um iterador para os resultados da busca</dd>
+<dd>um iterador para os resultados da pesquisa</dd>
 </dl>
 </div>
 </section>
@@ -480,14 +482,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorBFS(java.lang.Object)">iteratorBFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a></span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador para realizar a busca em largura (BFS) a partir de um vértice de início.</div>
+<div class="block">Retorna um iterador para realizar a pesquisa em largura (BFS) a partir de um vértice de início.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorBFS(T)">iteratorBFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice de início para a busca</dd>
+<dd><code>startVertex</code> - o vértice de início para a pesquisa</dd>
 <dt>Returns:</dt>
-<dd>um iterador para os resultados da busca</dd>
+<dd>um iterador para os resultados da pesquisa</dd>
 </dl>
 </div>
 </section>
@@ -497,14 +499,15 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <h3 id="iteratorDFS(java.lang.Object)">iteratorDFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a></span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador para realizar a busca em profundidade (DFS) a partir de um vértice de início.</div>
+<div class="block">Retorna um iterador para realizar a pesquisa em profundidade (DFS)
+ a partir de um vértice de início.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorDFS(T)">iteratorDFS</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice de início para a busca</dd>
+<dd><code>startVertex</code> - o vértice de início para a pesquisa</dd>
 <dt>Returns:</dt>
-<dd>um iterador para os resultados da busca</dd>
+<dd>um iterador para os resultados da pesquisa</dd>
 </dl>
 </div>
 </section>
@@ -515,13 +518,14 @@ implements <a href="../Interfaces/GraphADT.html" title="interface in Interfaces"
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorShortestPath</span><wbr><span class="parameters">(<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;startVertex,
  <a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&nbsp;targetVertex)</span></div>
-<div class="block">Retorna um iterador para o caminho mais curto entre dois vértices usando a busca em largura (BFS).</div>
+<div class="block">Retorna um iterador para o caminho mais curto entre dois vértices usando a pesquisa
+ em largura (BFS).</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code><a href="../Interfaces/GraphADT.html#iteratorShortestPath(T,T)">iteratorShortestPath</a></code>&nbsp;in interface&nbsp;<code><a href="../Interfaces/GraphADT.html" title="interface in Interfaces">GraphADT</a>&lt;<a href="GraphListaAdjacencia.html" title="type parameter in GraphListaAdjacencia">T</a>&gt;</code></dd>
 <dt>Parameters:</dt>
-<dd><code>startVertex</code> - o vértice de início para a busca</dd>
-<dd><code>targetVertex</code> - o vértice de destino para a busca</dd>
+<dd><code>startVertex</code> - o vértice de início para a pesquisa</dd>
+<dd><code>targetVertex</code> - o vértice de destino para a pesquisa</dd>
 <dt>Returns:</dt>
 <dd>um iterador para os vértices do caminho mais curto</dd>
 </dl>

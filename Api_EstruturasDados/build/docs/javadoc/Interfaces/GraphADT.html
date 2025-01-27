@@ -94,7 +94,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="../Graph/GraphListaAdjacencia.html" title="class in Graph">GraphListaAdjacencia</a></code>, <code><a href="../Graph/GraphMatrizAdjacencia.html" title="class in Graph">GraphMatrizAdjacencia</a></code>, <code><a href="../Graph/Network.html" title="class in Graph">Network</a></code>, <code><a href="../Graph/NetworkListaAdjacencia.html" title="class in Graph">NetworkListaAdjacencia</a></code>, <code><a href="../Graph/NetworkMatrizAdjacencia.html" title="class in Graph">NetworkMatrizAdjacencia</a></code></dd>
+<dd><code><a href="../Graph/ExtendedNetwork.html" title="class in Graph">ExtendedNetwork</a></code>, <code><a href="../Graph/GraphListaAdjacencia.html" title="class in Graph">GraphListaAdjacencia</a></code>, <code><a href="../Graph/GraphMatrizAdjacencia.html" title="class in Graph">GraphMatrizAdjacencia</a></code>, <code><a href="../Graph/NetworkListaAdjacencia.html" title="class in Graph">NetworkListaAdjacencia</a></code>, <code><a href="../Graph/NetworkMatrizAdjacencia.html" title="class in Graph">NetworkMatrizAdjacencia</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">GraphADT&lt;T&gt;</span></div>
@@ -138,12 +138,12 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#iteratorBFS(T)" class="member-name-link">iteratorBFS</a><wbr>(<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Retorna um iterador de busca em largura (BFS) começando com o vértice fornecido.</div>
+<div class="block">Retorna um iterador de pesquisa em largura (BFS) começando com o vértice fornecido.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#iteratorDFS(T)" class="member-name-link">iteratorDFS</a><wbr>(<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&nbsp;startVertex)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Retorna um iterador de busca em profundidade (DFS) começando com o vértice fornecido.</div>
+<div class="block">Retorna um iterador de pesquisa em profundidade (DFS) começando com o vértice fornecido.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a><wbr>&lt;<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#iteratorShortestPath(T,T)" class="member-name-link">iteratorShortestPath</a><wbr>(<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&nbsp;startVertex,
@@ -250,12 +250,12 @@ loadScripts(document, 'script');</script>
 <h3 id="iteratorBFS(java.lang.Object)">iteratorBFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorBFS</span><wbr><span class="parameters">(<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador de busca em largura (BFS) começando com o vértice fornecido.</div>
+<div class="block">Retorna um iterador de pesquisa em largura (BFS) começando com o vértice fornecido.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>startVertex</code> - o vértice inicial</dd>
 <dt>Returns:</dt>
-<dd>um iterador de busca em largura começando no vértice fornecido</dd>
+<dd>um iterador de pesquisa em largura começando no vértice fornecido</dd>
 </dl>
 </div>
 </section>
@@ -265,12 +265,12 @@ loadScripts(document, 'script');</script>
 <h3 id="iteratorDFS(java.lang.Object)">iteratorDFS</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/22/docs/api/java.base/java/util/Iterator.html" title="class or interface in java.util" class="external-link">Iterator</a>&lt;<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&gt;</span>&nbsp;<span class="element-name">iteratorDFS</span><wbr><span class="parameters">(<a href="GraphADT.html" title="type parameter in GraphADT">T</a>&nbsp;startVertex)</span></div>
-<div class="block">Retorna um iterador de busca em profundidade (DFS) começando com o vértice fornecido.</div>
+<div class="block">Retorna um iterador de pesquisa em profundidade (DFS) começando com o vértice fornecido.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>startVertex</code> - o vértice inicial</dd>
 <dt>Returns:</dt>
-<dd>um iterador de busca em profundidade começando no vértice fornecido</dd>
+<dd>um iterador de pesquisa em profundidade começando no vértice fornecido</dd>
 </dl>
 </div>
 </section>
