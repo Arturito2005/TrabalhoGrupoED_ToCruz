@@ -1,7 +1,7 @@
 package TestGraph;
 
 import Exceptions.EmptyCollectionException;
-import Graph.GraphMatrizAdjacencia;
+import Graph.ArrayGraph.ListaAdjacencia.MatrizAdjacencia.GraphMatrizAdjacencia;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

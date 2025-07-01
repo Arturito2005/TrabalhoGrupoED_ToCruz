@@ -1,6 +1,6 @@
 package ArrayList;
 
-import Interfaces.OrderedListADT;
+import Interfaces.List.OrderedListADT;
 
 /**
  * Implementação de uma lista ordenada utilizando um array.

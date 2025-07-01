@@ -1,0 +1,4 @@
+Testar o grafo com pesos nas vertices
+E criar o mesmo grafo mas em lista ligada, e o grafo e network normal com lista ligada
+Corrigir os testes, se não me engano apenas os do grafo
+No final dar build e passar o jar para a pasta dos recursos do jogo

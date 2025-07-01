@@ -1,7 +1,7 @@
 package ArrayList;
 
 import Exceptions.ElementNotFoundException;
-import Interfaces.UnorderedListADT;
+import Interfaces.List.UnorderedListADT;
 
 /**
  * Implementação de uma lista não ordenada utilizando um array.

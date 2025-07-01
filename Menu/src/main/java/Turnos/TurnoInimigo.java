@@ -58,7 +58,7 @@ public class TurnoInimigo extends Turno {
                 System.out.println("O inimigo " + inimigo.getNome() + " esta na sala " + divisao_atual.getName());
                 inimigos_move.addToRear(inimigo);
             } else {
-                cenarioInimigo.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
+                cenarioInimigo.ataque(inimigo, simulacao.getToCruz());
             }
         }
 
@@ -67,7 +67,7 @@ public class TurnoInimigo extends Turno {
             Inimigo inimigo = itr_inimigos.next();
             Divisao div = cenarioInimigo.andar(inimigo, divisao_atual);
             if (cenariosDivisao.haveConfronto(div)) {
-                cenarioInimigo.ataque(inimigo, simulacao.getToCruz(), divisao_atual);
+                cenarioInimigo.ataque(inimigo, simulacao.getToCruz());
             }
         }
     }

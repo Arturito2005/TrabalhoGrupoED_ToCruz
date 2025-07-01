@@ -1,7 +1,7 @@
 package DoubleLinkedList;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.OrderedListADT;
+import Interfaces.List.OrderedListADT;
 
 /**
  * Esta classe representa uma lista duplamente ligada ordenada.

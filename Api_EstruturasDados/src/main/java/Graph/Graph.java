@@ -1,17 +1,26 @@
 package Graph;
 
 import Exceptions.ElementNotFoundException;
-import Interfaces.GraphADT;
+import Interfaces.Graph.GraphADT;
 
 import java.util.Iterator;
 
 public abstract class Graph<T> implements GraphADT<T> {
 
+    /**
+     * Número atual de vértices
+     */
     protected int numVertices;
 
     public Graph() {
         this.numVertices = 0;
     }
+
+    /**
+     * Expande a capacidade do grafo, dobrando o tamanho da matriz de adjacência
+     * e o array de vértices.
+     */
+    protected abstract void expandCapacity();
 
     @Override
     public abstract void addVertex(T vertex);
@@ -34,6 +43,8 @@ public abstract class Graph<T> implements GraphADT<T> {
     @Override
     public abstract Iterator<T> iteratorShortestPath(T startVertex, T targetVertex);
 
+    @Override
+    public abstract boolean isConnected();
     /**
      * Verifica se o grafo está vazio.
      *
@@ -49,9 +60,6 @@ public abstract class Graph<T> implements GraphADT<T> {
 
         return empty;
     }
-
-    @Override
-    public abstract boolean isConnected();
 
     /**
      * Retorna o número de vértices no grafo.

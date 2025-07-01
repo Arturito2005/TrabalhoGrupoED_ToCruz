@@ -1,7 +1,6 @@
 package Stacks;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.StackADT;
 
 /**
  * Classe que representa uma Stack implementada com array

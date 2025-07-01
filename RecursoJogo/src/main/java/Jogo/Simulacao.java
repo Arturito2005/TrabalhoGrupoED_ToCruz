@@ -9,9 +9,11 @@ import Items.ItemCura;
 import LinkedList.LinearLinkedUnorderedList;
 import Mapa.Divisao;
 import Mapa.Edificio;
+import Missoes.Versao;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
 import Queue.LinkedQueue;
+
 import java.util.Objects;
 
 public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
@@ -28,7 +30,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
 
     private UnorderedListADT<Item> collectedItem;
 
-    private QueueADT<Divisao> percursoToCruz;
+    private LinkedQueue<Divisao> percursoToCruz;
 
     private Edificio edificio;
 
@@ -36,15 +38,15 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
 
     private long versao;
 
-    public Simulacao(Edificio edificio, long versao) {
+    public Simulacao(Versao versao) {
         this.collectedAlvo = false;
         this.toCruz = new ToCruz();
         this.inimigosDead = new LinearLinkedUnorderedList<>();
         this.collectedItem = new LinearLinkedUnorderedList<>();
         this.percursoToCruz = new LinkedQueue<>();
-        this.edificio = edificio;
+        this.edificio = versao.getEdificio();
         this.vidaFinalTo = toCruz.getVida();
-        this.versao = versao;
+        this.versao = versao.getNum_versao();
     }
 
     public long getVersao() {
@@ -55,7 +57,7 @@ public class Simulacao implements SimulacaoInterface, Comparable<Simulacao> {
         return inimigosDead;
     }
 
-    public QueueADT<Divisao> getPercursoToCruz() {
+    public LinkedQueue<Divisao> getPercursoToCruz() {
         return percursoToCruz;
     }
 

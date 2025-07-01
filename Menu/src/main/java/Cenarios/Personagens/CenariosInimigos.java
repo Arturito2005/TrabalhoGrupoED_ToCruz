@@ -1,6 +1,5 @@
 package Cenarios.Personagens;
 
-import Cenarios.Cenarios;
 import Exceptions.InvalidPersonagemException;
 import Interfaces.Cenarios.CenarioInimigosInterface;
 import Interfaces.StackADT;
@@ -33,7 +32,8 @@ public class CenariosInimigos extends CenariosPersonagem implements CenarioInimi
      */
     private double poderFinalDivisao(Divisao div, long poder_inimigo) {
         long poder_total = poder_inimigo;
-        if (div.getInimigos().isEmpty() && div.getInimigos().size() > 1) {
+
+        if (div.getInimigos().size() > 1) {
             for (Inimigo inimigo_div : div.getInimigos()) {
                 poder_total += inimigo_div.getPoder();
             }
@@ -43,16 +43,11 @@ public class CenariosInimigos extends CenariosPersonagem implements CenarioInimi
     }
 
     @Override
-    public Divisao andar(Personagem personagem, Divisao divisao_atual) {
-        if (!(personagem instanceof Inimigo)) {
-            throw new InvalidPersonagemException("O Personagem a receber como paramentro tem de ser um inimigo");
-        }
-
-        Inimigo inimigo = (Inimigo) personagem;
+    public Divisao andar(Inimigo inimigo, Divisao divisao_atual) {
         Edificio edificio = this.getSimulacao().getEdificio();
         Random randomizer = new Random();
         int numMoves = randomizer.nextInt(3);
-        long poder_inimigo = personagem.getPoder();
+        long poder_inimigo = inimigo.getPoder();
 
         for (int i = 0; i < numMoves; i++) {
             edificio.updateWeight(divisao_atual, poderFinalDivisao(divisao_atual, poder_inimigo) - poder_inimigo);

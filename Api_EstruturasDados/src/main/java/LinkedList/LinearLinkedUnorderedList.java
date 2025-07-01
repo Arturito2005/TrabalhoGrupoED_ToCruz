@@ -1,7 +1,7 @@
 package LinkedList;
 
 import Exceptions.ElementNotFoundException;
-import Interfaces.UnorderedListADT;
+import Interfaces.List.UnorderedListADT;
 import Nodes.LinearNode;
 
 /**

@@ -2,7 +2,7 @@ package LinkedList;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
-import Interfaces.ListADT;
+import Interfaces.List.ListADT;
 import Nodes.LinearNode;
 
 import java.util.ConcurrentModificationException;

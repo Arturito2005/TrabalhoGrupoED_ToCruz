@@ -1,7 +1,6 @@
 package Stacks;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.StackADT;
 import Nodes.LinearNode;
 
 /**

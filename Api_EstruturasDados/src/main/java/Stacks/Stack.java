@@ -1,7 +1,7 @@
 package Stacks;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.StackADT;
+import Interfaces.Stack.StackADT;
 
 /**
  * Classe abstrata de uma stack, que possui todos os metodos que uma Stack precisa de ter.

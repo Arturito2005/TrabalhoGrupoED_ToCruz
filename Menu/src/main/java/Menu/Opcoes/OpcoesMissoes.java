@@ -75,7 +75,7 @@ public class OpcoesMissoes extends Opcoes implements OpMissoesInterface {
 
         do {
             op_modo = -1;
-            Simulacao simulacao = new Simulacao(versao_missao.getEdificio(), versao_missao.getNum_versao());
+            Simulacao simulacao = new Simulacao(versao_missao);
 
             do {
                 System.out.println("0 - Voltar");

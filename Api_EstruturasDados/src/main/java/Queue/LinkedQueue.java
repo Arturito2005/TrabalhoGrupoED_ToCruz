@@ -1,7 +1,6 @@
 package Queue;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.QueueADT;
 import Nodes.LinearNode;
 
 /**

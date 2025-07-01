@@ -1,7 +1,7 @@
 package TestStacks;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.StackADT;
+import Interfaces.Stack.StackADT;
 import Stacks.ArrayStack;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

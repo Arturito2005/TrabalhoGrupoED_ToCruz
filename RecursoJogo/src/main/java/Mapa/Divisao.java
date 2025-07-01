@@ -101,30 +101,34 @@ public class Divisao implements Comparable, DivisaoIt {
         this.name = name;
         this.entrada_saida = entrada_saida;
 
-
         Alvo temAlvo = null;
         if (alvo != null) {
             temAlvo = new Alvo(alvo.getId_alvo(), alvo.getNome());
         }
-
         this.alvo = temAlvo;
 
         UnorderedListADT<Item> tempListaItens = new LinearLinkedUnorderedList<>();
-        for (Item itens : tempListaItens) {
-            Item tempItem = null;
+        if (item != null) {
+            for (Item itens : item) {
+                Item tempItem = null;
 
-            if (itens instanceof ItemCura) {
-                tempItem = new ItemCura(itens.getId_item(), ((ItemCura) itens).getType(), ((ItemCura) itens).getVida_recuperada());
+                if (itens instanceof ItemCura) {
+                    tempItem = new ItemCura(itens.getId_item(), ((ItemCura) itens).getType(), ((ItemCura) itens).getVida_recuperada());
+                }
+
+                tempListaItens.addToRear(tempItem);
             }
-
-            tempListaItens.addToRear(tempItem);
         }
+
         this.itens = tempListaItens;
 
         UnorderedListADT<Inimigo> tempListaInimigos = new LinearLinkedUnorderedList<>();
-        for (Inimigo inimigo : inimigos) {
-            Inimigo tempInimigo = new Inimigo(inimigo.getId_personagem(), inimigo.getNome(), inimigo.getVida(), inimigo.getPoder());
-            tempListaInimigos.addToRear(tempInimigo);
+
+        if (inimigos != null) {
+            for (Inimigo inimigo : inimigos) {
+                Inimigo tempInimigo = new Inimigo(inimigo.getId_personagem(), inimigo.getNome(), inimigo.getVida(), inimigo.getPoder());
+                tempListaInimigos.addToRear(tempInimigo);
+            }
         }
 
         this.inimigos = tempListaInimigos;
@@ -289,7 +293,7 @@ public class Divisao implements Comparable, DivisaoIt {
             throw new NullPointerException("O item nao pode ser nulo");
         }
 
-        if(containItem(item)) {
+        if (containItem(item)) {
             throw new ContainElementException("O item introduzido já existe na divisao");
         }
 

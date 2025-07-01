@@ -10,20 +10,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d7abff-aae4-401f-b3a5-361c0527eba6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Falta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/ArrayGraph/ArrayVertexGraph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/ArrayGraph/GraphPesosNosVertices/GraphMatrizPesoVertex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Graph/ArrayGraph/GraphPesosNosVertices/Vertex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Graph/GraphPesoVertexADT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/PastasComTestesRealizados" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestCenarios/TestCenarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestCenarios/TestDivisoes/TestCenariosDivisoes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestCenarios/TestPersonagens/TestCenariosInimigos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestCenarios/TestPersonagens/TestCenariosPersonagens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestCenarios/TestPersonagens/TestCenariosToCruz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestDraw/TestDrawAbstract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestDraw/TestDrawMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestModos/TestModosAutomaticos/TestModoAutomatico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestModos/TestModosAutomaticos/TestModoCaminhoAutomatico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestModos/TestModosAutomaticos/TestModosAutomaticos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestModos/TestModosJogo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestPath/TestPaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestTurnos/TestTurno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestTurnos/TestTurnoToCruz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Menu/src/test/java/TestTurnos/TesteTurnoInimigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayHeaps/ArrayHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayHeaps/ArrayHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayOrderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayOrderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayUnorderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ArrayUnorderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayList/ExtendedArrayUnordered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayList/ExtendedArrayUnordered.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ArrayTree/ArrayBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoubleLinkedUnorderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoubleLinkedUnorderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedOrderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DoubleLinkedList/DoublyLinkedOrderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/ExtendedNetwork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/GraphListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph/ArrayGraph/ListaAdjacencia/GraphListaAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/GraphMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/NetworkListaAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Graph/ArrayGraph/ListaAdjacencia/NetworkListaAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Graph/NetworkMatrizAdjacencia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/ArrayUnorderedADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/List/ArrayUnorderedADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/BinarySearchTreeADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Tree/BinarySearchTreeADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/BinaryTreeADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Tree/BinaryTreeADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/GraphADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Graph/GraphADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/HeapADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Heap/HeapADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/ListADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/List/ListADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Graph/Network/NetworkADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/NetworkMatrizADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Graph/Network/ExtendNetworkADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/OrderedListADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/List/OrderedListADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/QueueADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Queue/QueueADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/StackADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/Stack/StackADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Interfaces/UnorderedListADT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Interfaces/List/UnorderedListADT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedOrderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedOrderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedUnorderedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedList/LinearLinkedUnorderedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LinkedTree/LinkedHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/CircularArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/CircularArrayQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/LinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/LinkedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Stacks/ArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stacks/ArrayStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Stacks/LinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stacks/LinkedStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Stacks/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Stacks/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestGraphMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetworkMatrizAdjacencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestGraph/TestNetworkMatrizAdjacencia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestQueue/TestCircularArrayQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestQueue/TestCircularArrayQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestQueue/TestLinkedQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestQueue/TestLinkedQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestStacks/TestArrayStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStacks/TestArrayStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestStacks/TestLinkedStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStacks/TestLinkedStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Menu/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/libs/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/libs/RecursoJogo.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Cenarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Cenarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Divisao/CenariosDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Divisao/CenariosDivisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosInimigos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosInimigos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosPersonagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosPersonagem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosToCruz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Cenarios/Personagens/CenariosToCruz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Falta" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Falta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenarioInimigosInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenarioInimigosInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Interfaces/Cenarios/CenariosInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/Draw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/DrawMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Mapa/DrawMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Menu/Opcoes/OpcoesMissoes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Modos/ModoManual.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Menu/src/main/java/Turnos/TurnoInimigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Exportar/ExportarDado.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Exportar/ExportarDado.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Divisao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Divisao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Edificio.class" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/classes/java/main/Mapa/Edificio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/libs/Api_EstruturasDados.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/out/artifacts/RecursoJogo_jar/RecursoJogo.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Jogo/Simulacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Jogo/Simulacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Divisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Divisao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/main/java/Mapa/Edificio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestMapa/TestDivisao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RecursoJogo/src/test/java/TestMapa/TestDivisao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +137,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -60,8 +159,9 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;CorrecoesArtur&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/ED/ED_AC_8230138_8230148/Api_EstruturasDados&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/artur/OneDrive/Desktop/universidade/2_ano/1_Semestre/ED/ED_AC_8230138_8230148/Api_EstruturasDados&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -83,8 +183,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
-        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
       </set>
     </attachedChunks>
   </component>
@@ -135,6 +235,16 @@
       <workItem from="1736587521099" duration="214000" />
       <workItem from="1737973267456" duration="6696000" />
       <workItem from="1737984215196" duration="961000" />
+      <workItem from="1738157739439" duration="3239000" />
+      <workItem from="1738254593119" duration="18000" />
+      <workItem from="1739282560528" duration="3022000" />
+      <workItem from="1739714359269" duration="4178000" />
+      <workItem from="1743325890784" duration="32000" />
+      <workItem from="1744807039301" duration="3673000" />
+      <workItem from="1744828134674" duration="22000" />
+      <workItem from="1744902129637" duration="1870000" />
+      <workItem from="1744914015473" duration="603000" />
+      <workItem from="1744967869943" duration="45000" />
     </task>
     <servers />
   </component>

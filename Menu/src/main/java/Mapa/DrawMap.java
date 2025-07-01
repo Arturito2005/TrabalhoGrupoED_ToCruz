@@ -10,10 +10,8 @@ import java.util.Iterator;
 
 public class DrawMap extends Draw {
 
-    private Edificio edificio;
-
     public DrawMap(Edificio edificio) {
-        this.edificio = edificio;
+        super(edificio);
     }
 
     /**
@@ -21,6 +19,7 @@ public class DrawMap extends Draw {
      */
     @Override
     public void draw() {
+        Edificio edificio = getEdificio();
         Iterator<Divisao> itrDiv = edificio.IteratorMapa();
 
         while (itrDiv.hasNext()) {

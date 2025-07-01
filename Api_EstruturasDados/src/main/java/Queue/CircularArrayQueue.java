@@ -1,7 +1,6 @@
 package Queue;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.QueueADT;
 
 /**
  * Implementação de uma circular array queue circular utilizando um array.

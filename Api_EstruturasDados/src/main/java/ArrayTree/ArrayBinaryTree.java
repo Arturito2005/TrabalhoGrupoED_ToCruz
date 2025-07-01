@@ -3,7 +3,7 @@ package ArrayTree;
 import ArrayList.ArrayUnorderedList;
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
-import Interfaces.BinaryTreeADT;
+import Interfaces.Tree.BinaryTreeADT;
 import Queue.CircularArrayQueue;
 
 import java.util.Iterator;

@@ -1,6 +1,6 @@
 package ArrayList;
 
-import Interfaces.ArrayUnorderedADT;
+import Interfaces.List.ArrayUnorderedADT;
 
 /**
  * Implementação de uma lista não ordenada utilizando um array.

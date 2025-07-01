@@ -1,7 +1,7 @@
 package TestQueue;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.QueueADT;
+import Interfaces.Queue.QueueADT;
 import Queue.LinkedQueue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

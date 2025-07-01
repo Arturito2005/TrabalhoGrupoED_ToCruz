@@ -1,5 +1,6 @@
 Alterar Testes unitarios
 
+Alterar este metodo "sugestaoCaminhoToCruzKitEAlvo" (Ver nota)
 Testar o exportar, que ainda não foi testado
 
 Comentar todas classes da OpcoesFicheiros, para cima. Aproveitar e eliminar variaveis, que não estão a ser utilizadas, importes, etc

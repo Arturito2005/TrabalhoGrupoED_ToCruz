@@ -1,7 +1,7 @@
 package Queue;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.QueueADT;
+import Interfaces.Queue.QueueADT;
 
 /**
  * Classe abstrata que representa uma Queue

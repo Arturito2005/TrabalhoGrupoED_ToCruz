@@ -2,7 +2,7 @@ package ArrayHeaps;
 
 import ArrayTree.ArrayBinarySearchTree;
 import Exceptions.EmptyCollectionException;
-import Interfaces.HeapADT;
+import Interfaces.Heap.HeapADT;
 
 /**
  * ArrayHeap fornece uma implementação de heap mínima, usa um array.

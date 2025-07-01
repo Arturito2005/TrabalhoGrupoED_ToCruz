@@ -1,7 +1,7 @@
 package LinkedTree;
 
 import Exceptions.EmptyCollectionException;
-import Interfaces.HeapADT;
+import Interfaces.Heap.HeapADT;
 
 /**
  * A classe Heap implementa uma heap.

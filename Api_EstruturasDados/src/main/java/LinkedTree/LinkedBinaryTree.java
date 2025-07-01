@@ -2,7 +2,7 @@ package LinkedTree;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
-import Interfaces.BinaryTreeADT;
+import Interfaces.Tree.BinaryTreeADT;
 import LinkedList.LinearLinkedUnorderedList;
 import Queue.LinkedQueue;
 

@@ -1,6 +1,6 @@
 package Modos;
 
-import ArrayList.ArrayUnordered;
+import ArrayList.ExtendedArrayUnordered;
 import Cenarios.Divisao.CenariosDivisao;
 import Cenarios.Personagens.CenariosToCruz;
 import Interfaces.ArrayUnorderedADT;
@@ -143,7 +143,7 @@ public class ModoManual extends ModosJogo {
         ToCruz toCruz = simulacao.getToCruz();
 
         Iterator<Divisao> itr = simulacao.getEdificio().IteratorMapa();
-        ArrayUnorderedADT<Divisao> listDiv = new ArrayUnordered<>();
+        ArrayUnorderedADT<Divisao> listDiv = new ExtendedArrayUnordered<>();
 
         while (itr.hasNext()) {
             Divisao div = itr.next();

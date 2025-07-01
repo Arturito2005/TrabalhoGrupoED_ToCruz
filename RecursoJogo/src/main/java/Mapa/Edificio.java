@@ -66,16 +66,19 @@ public class Edificio implements EdificoInt {
         this.name = name;
         NetworkMatrizADT<Divisao> networkTemp = new ExtendedNetwork<>();
 
-        for (Divisao divisao : planta_edificio) {
-            Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItens(), divisao.getInimigos(), divisao.getToCruz());
-            networkTemp.addVertex(divisao_temp);
+        if (planta_edificio != null) {
+            for (Divisao divisao : planta_edificio) {
+                Divisao divisao_temp = new Divisao(divisao.getId_divisao(), divisao.getName(), divisao.isEntrada_saida(), divisao.getAlvo(), divisao.getItens(), divisao.getInimigos(), divisao.getToCruz());
+                networkTemp.addVertex(divisao_temp);
 
-            for (Divisao divisaoLig : planta_edificio) {
-                Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItens(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
-                double weight = planta_edificio.getWeightEdge(divisao_temp, tempDiv_lig);
-                networkTemp.addEdge(divisao_temp, tempDiv_lig, weight);
+                for (Divisao divisaoLig : planta_edificio) {
+                    Divisao tempDiv_lig = new Divisao(divisaoLig.getId_divisao(), divisaoLig.getName(), divisaoLig.isEntrada_saida(), divisaoLig.getAlvo(), divisaoLig.getItens(), divisaoLig.getInimigos(), divisaoLig.getToCruz());
+                    double weight = planta_edificio.getWeightEdge(divisao_temp, tempDiv_lig);
+                    networkTemp.addEdge(divisao_temp, tempDiv_lig, weight);
+                }
             }
         }
+
 
         this.planta_edificio = networkTemp;
     }
@@ -93,7 +96,7 @@ public class Edificio implements EdificoInt {
      * Retorna o caminho mais curto entre duas divisões, considerando o peso das arestas.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final Divisão final.
+     * @param div_final   Divisão final.
      * @return Peso do caminho mais curto entre as divisões.
      */
     @Override
@@ -105,7 +108,7 @@ public class Edificio implements EdificoInt {
      * Retorna o número de arestas no caminho mais curto entre duas divisões.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final Divisão final.
+     * @param div_final   Divisão final.
      * @return Número de arestas no caminho mais curto entre as divisões.
      */
     @Override
@@ -117,7 +120,7 @@ public class Edificio implements EdificoInt {
      * Retorna um iterador para o caminho mais curto entre duas divisões.
      *
      * @param div_inicial Divisão inicial.
-     * @param div_final Divisão final.
+     * @param div_final   Divisão final.
      * @return Iterador para o caminho mais curto.
      */
     @Override
@@ -140,7 +143,7 @@ public class Edificio implements EdificoInt {
      *
      * @param vertex1 Primeira divisão.
      * @param vertex2 Segunda divisão.
-     * @param weight Peso da ligação entre as divisões.
+     * @param weight  Peso da ligação entre as divisões.
      */
     @Override
     public void addLigacao(Divisao vertex1, Divisao vertex2, double weight) {
@@ -151,7 +154,7 @@ public class Edificio implements EdificoInt {
      * Atualiza o peso de uma ligação no grafo.
      *
      * @param vertex1 A divisão cuja ligação será atualizada.
-     * @param weight O novo peso da ligação.
+     * @param weight  O novo peso da ligação.
      */
     @Override
     public void updateWeight(Divisao vertex1, double weight) {

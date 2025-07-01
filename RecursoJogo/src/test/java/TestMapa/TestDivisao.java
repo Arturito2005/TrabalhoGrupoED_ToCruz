@@ -1,10 +1,5 @@
 package TestMapa;
 
-import Items.Item;
-import Items.ItemCura;
-import Items.TypeItemCura;
-import LinkedList.LinearLinkedUnorderedList;
-import Mapa.Alvo;
 import Mapa.Divisao;
 import Personagens.Inimigo;
 import Personagens.ToCruz;
@@ -21,27 +16,11 @@ public class TestDivisao {
 
     private Inimigo inimigo;
 
-    private Alvo alvo;
-
-    private Inimigo inimigo1;
-
-    private Inimigo inimigo2;
-
-    private LinearLinkedUnorderedList<Inimigo> deadInimigos;
-
-    private Item itemCura;
-
     @BeforeEach
     public void setUp() {
         divisao = new Divisao("Sala Teste");
         toCruz = new ToCruz(1, "ToCruz", 100, 20, null);
         inimigo = new Inimigo(2, "Inimigo", 50, 10);
-        alvo = new Alvo(3, "Alvo");
-        inimigo1 = new Inimigo(2, "Inimigo Fraco", 50, 5);
-        inimigo2 = new Inimigo(3, "Inimigo Forte", 100, 10);
-        deadInimigos = new LinearLinkedUnorderedList<>();
-
-        itemCura = new ItemCura(TypeItemCura.KIT_VIDA, 50);  // Supondo que a classe ItemCura herda de Item e tem um valor de cura
         divisao.addToCruz(toCruz);
     }
 
@@ -74,35 +53,10 @@ public class TestDivisao {
 
     /*
     @Test
-    void testIsToCruzInExitDaComSucessoeSemSucesso() {
-        assertFalse(divisao.isToCruzInExit());
-        divisao.addToCruz(toCruz);
-        divisao.setEntrada_saida(true);
-        assertTrue(divisao.isToCruzInExit());
-    }
-
-    @Test
-    void testIsToCruzInDivisaoAlvoComSucessoeSemSucesso() {
-        assertFalse(divisao.isToCruzInDivisaoAlvo());
-        divisao.addToCruz(toCruz);
-        divisao.setAlvo(alvo);
-        assertTrue(divisao.isToCruzInDivisaoAlvo());
-    }
-
-    @Test
     void testHaveInimigoComSucessoeSemSucesso() {
         assertFalse(divisao.haveInimigo());
         divisao.addInimigo(inimigo);
         assertTrue(divisao.haveInimigo());
-    }
-
-    @Test
-    void testHaveConfrontoComSucessoeSemSucesso() {
-        assertFalse(divisao.haveConfronto());
-        divisao.addToCruz(toCruz);
-        assertFalse(divisao.haveConfronto());
-        divisao.addInimigo(inimigo);
-        assertTrue(divisao.haveConfronto());
     }
 
     @Test
@@ -131,27 +85,6 @@ public class TestDivisao {
         divisao.attackInimigo(inimigo);
         assertEquals(90, toCruz.getVida(), "A vida de ToCruz deveria ser 90 após o ataque.");
         assertFalse(toCruz.isDead(), "ToCruz deveria sobreviver ao ataque.");
-    }
-
-    @Test
-    public void testToCruzGetAlvo_Success() {
-        divisao.addToCruz(toCruz);
-        divisao.setAlvo(alvo);
-        divisao.ToCruzGetAlvo();
-        assertTrue(alvo.isAtinigido(), "O alvo deveria estar marcado como atingido após o método ToCruzGetAlvo.");
-    }
-
-    @Test
-    public void testToCruzGetAlvo_WithoutAlvo() {
-        divisao.setAlvo(null);
-        assertThrows(NullPointerException.class, () -> divisao.ToCruzGetAlvo(), "Deveria lançar NullPointerException se não houver alvo.");
-    }
-
-    @Test
-    public void testToCruzGetAlvo_WithoutToCruz() {
-        NullPointerException exception = assertThrows(NullPointerException.class, () -> divisao.ToCruzGetAlvo(),
-                "Deveria lançar NullPointerException se ToCruz não estiver na divisão.");
-        assertNotNull(exception, "A exceção deveria ser lançada.");
     }
 
     * @Test
@@ -224,5 +157,5 @@ public class TestDivisao {
             assertNotNull(e, "Deveria lançar NullPointerException.");
         }
     }
-    * */
+    */
 }

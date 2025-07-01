@@ -13,9 +13,10 @@ public abstract class CenariosPersonagem extends Cenarios implements CenariosInt
     }
 
     @Override
-    public void ataque(Personagem atacante, Personagem atacado, Divisao divisaoConfronto) throws IllegalArgumentException {
+    public void ataque(Personagem atacante, Personagem atacado) throws IllegalArgumentException {
         System.out.println("Vida do atacante(" + atacante.getNome() + "): " + atacante.getVida());
         System.out.println("Vida do atacado( " + atacado.getNome() +  "): " + atacado.getVida());
+
         if (atacante.getVida() <= 0 || atacado.getVida() <= 0) {
             throw new IllegalArgumentException("Um dos personagens já se encontra morto!");
         }

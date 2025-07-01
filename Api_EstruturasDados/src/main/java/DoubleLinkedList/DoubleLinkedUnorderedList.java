@@ -1,7 +1,7 @@
 package DoubleLinkedList;
 
 import Exceptions.ElementNotFoundException;
-import Interfaces.UnorderedListADT;
+import Interfaces.List.UnorderedListADT;
 
 /**
  * Esta classe implementa uma lista duplamente ligada não ordenada.

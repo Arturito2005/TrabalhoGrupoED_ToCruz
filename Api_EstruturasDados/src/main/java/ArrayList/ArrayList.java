@@ -2,7 +2,7 @@ package ArrayList;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
-import Interfaces.ListADT;
+import Interfaces.List.ListADT;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;

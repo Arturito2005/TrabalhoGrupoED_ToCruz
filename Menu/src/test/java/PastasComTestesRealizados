@@ -1,0 +1,12 @@
+A realizar testes na TestOpcoes
+
+Já foram realizados os testes nas pastas:
+
+TestCenarios;
+TestDraw
+
+
+Falta testes ao package:
+TestModos e TestModos Automaticos;
+TestPath;
+TestTurnos;

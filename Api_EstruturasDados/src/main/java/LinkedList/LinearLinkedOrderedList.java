@@ -1,6 +1,6 @@
 package LinkedList;
 
-import Interfaces.OrderedListADT;
+import Interfaces.List.OrderedListADT;
 import Nodes.LinearNode;
 
 /**

@@ -1,6 +1,6 @@
 package TestGraph;
 
-import Graph.NetworkMatrizAdjacencia;
+import Graph.ArrayGraph.ListaAdjacencia.MatrizAdjacencia.NetworkMatrizAdjacencia;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

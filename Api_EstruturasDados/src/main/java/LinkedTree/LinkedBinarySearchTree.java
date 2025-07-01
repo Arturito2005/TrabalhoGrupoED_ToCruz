@@ -2,7 +2,7 @@ package LinkedTree;
 
 import Exceptions.ElementNotFoundException;
 import Exceptions.EmptyCollectionException;
-import Interfaces.BinarySearchTreeADT;
+import Interfaces.Tree.BinarySearchTreeADT;
 
 /**
  * Implementação de uma árvore binária de pesquisa (BST) utilizando uma árvore binária encadeada.
