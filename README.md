@@ -72,7 +72,7 @@ Neste projeto todo o codigo está devidamente comentado possuindo em cada reposi
 - **JavaDoc**: Ferramenta nativa do JDK para gerar documentação HTML a partir de comentários especiais no código-fonte Java, facilitando a manutenção e o uso de APIs.  
 
 ---
-### 📑 Referencias
+### 📑 Referências
 - Para o diagrama de Dijkstra fomos buscar o algoritmo ao seguintes sites:
  - https://www.devglan.com/datastructure/dijkstra-algorithm-java https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php
  - Apontamentos do professor:
