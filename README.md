@@ -32,13 +32,13 @@ All code in this project is fully commented, and each repository includes JavaDo
 ---
 ### 📑 References
 - For the Dijkstra diagram we referenced the following sites:  
-  - https://www.devglan.com/datastructure/dijkstra-algorithm-java  
-  - https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php  
+  - https://www.devglan.com/datastructure/dijkstra-algorithm-java (05/12/2024) 
+  - https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php (05/12/2024) 
   - Lecture notes:  
-    - https://moodle2.estg.ipp.pt/pluginfile.php/18311/mod_resource/content/0/Apontamentos_ED_CAP15.pdf  
-    - https://moodle2.estg.ipp.pt/pluginfile.php/17922/mod_resource/content/0/Apontamentos_ED_CAP14.pdf  
+    - https://moodle2.estg.ipp.pt/pluginfile.php/18311/mod_resource/content/0/Apontamentos_ED_CAP15.pdf (04/12/2024)  
+    - https://moodle2.estg.ipp.pt/pluginfile.php/17922/mod_resource/content/0/Apontamentos_ED_CAP14.pdf (04/12/2024)   
 - For import/export functionality we used the json‑simple JAR from:  
-  - https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple  
+  - https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple (05/12/2024)   
 - To randomly select the enemy’s new room when it moves, we used `java.util.Random`.
   
 ## Português
@@ -74,11 +74,11 @@ Neste projeto todo o codigo está devidamente comentado possuindo em cada reposi
 ---
 ### 📑 Referências
 - Para o diagrama de Dijkstra fomos buscar o algoritmo ao seguintes sites:  
-  - https://www.devglan.com/datastructure/dijkstra-algorithm-java  
-  - https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php  
+  - https://www.devglan.com/datastructure/dijkstra-algorithm-java (05/12/2024) 
+  - https://www.w3schools.com/dsa/dsa_algo_graphs_dijkstra.php (05/12/2024)   
   - Apontamentos do professor:  
-    - https://moodle2.estg.ipp.pt/pluginfile.php/18311/mod_resource/content/0/Apontamentos_ED_CAP15.pdf  
-    - https://moodle2.estg.ipp.pt/pluginfile.php/17922/mod_resource/content/0/Apontamentos_ED_CAP14.pdf  
+    - https://moodle2.estg.ipp.pt/pluginfile.php/18311/mod_resource/content/0/Apontamentos_ED_CAP15.pdf (04/12/2024)  
+    - https://moodle2.estg.ipp.pt/pluginfile.php/17922/mod_resource/content/0/Apontamentos_ED_CAP14.pdf (04/12/2024)  
 - Para a realização do importar e do exportar utilizamos o jar do json-simple, que está disponível, no seguinte site:  
-  - https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple  
+  - https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple (05/12/2024) 
 - Para fazer a seleção de forma aleatoria da nova divisão do inimigo, quando o mesmo se movimentar, utilizamos o `java.util.Random`
