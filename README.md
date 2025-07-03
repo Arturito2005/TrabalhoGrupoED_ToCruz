@@ -78,5 +78,6 @@ Neste projeto todo o codigo está devidamente comentado possuindo em cada reposi
  - Apontamentos do professor:
   - https://moodle2.estg.ipp.pt/pluginfile.php/18311/mod_resource/content/0/Apontamentos_ED_CAP15.pdf
   - https://moodle2.estg.ipp.pt/pluginfile.php/17922/mod_resource/content/0/Apontamentos_ED_CAP14.pdf
-- Para a realização do importar e do exportar utilizamos o jar do json-simple, que está disponível, no seguinte site: https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+- Para a realização do importar e do exportar utilizamos o jar do json-simple, que está disponível, no seguinte site:
+ - https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
 - Para fazer a seleção de forma aleatoria da nova divisão do inimigo, quando o mesmo se movimentar, utilizamos o `java.util.Random`
